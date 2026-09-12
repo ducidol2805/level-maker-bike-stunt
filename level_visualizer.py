@@ -12,6 +12,8 @@ import json
 import math
 import sys
 import tkinter as tk
+import time
+from collections import OrderedDict
 from tkinter import ttk
 from dataclasses import dataclass
 from pathlib import Path
@@ -19,8 +21,8 @@ from typing import Any, Iterable
 from obstacle_library import sample_curve
 
 try:
-    import matplotlib.pyplot as plt
-    from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
+    from matplotlib.backends.backend_agg import FigureCanvasAgg
+    from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
     from matplotlib.figure import Figure
     from matplotlib.patches import Polygon
 except ImportError as exc:  # pragma: no cover - user-facing dependency check
@@ -208,18 +210,23 @@ def build_figure(data: dict[str, Any], tolerance: float, outline_only: bool, sho
     for index, shape in enumerate(required_group(data, "RampPlatform")):
         draw_path(ax, points(shape, f"RampPlatform[{index}]"), color="#d97706", linewidth=3.6, solid_capstyle="round", label="RampPlatform" if index == 0 else None)
 
+    marker_groups: dict[str, list[Point]] = {}
     for index, item in enumerate(required_group(data, "InteractableObject")):
         kind = item.get("type")
         if kind == "explosive_ramp":
             draw_path(ax, points(item, f"InteractableObject[{index}]"), color="#dc2626", linewidth=4, linestyle="--", label="Explosive ramp")
             continue
-        x, y = point(item["transform"], f"InteractableObject[{index}].transform")
-        style = {"explosive_barrel": ("X", "#dc2626"), "speed_boost": (">", "#2563eb"), "coin": ("o", "#eab308")}.get(kind, ("?", "#6b7280"))
-        ax.scatter(x, y, s=90, marker=style[0], color=style[1], edgecolor="#111827", linewidth=0.8, zorder=7, label=kind)
+        marker_groups.setdefault(kind, []).append(point(item["transform"], f"InteractableObject[{index}].transform"))
+    for kind, positions in marker_groups.items():
+        xs, ys = zip(*positions)
+        style = {"explosive_barrel": ("X", "#dc2626"), "speed_boost": (">", "#2563eb"), "coin": ("o", "#eab308")}.get(kind, ("$?$", "#6b7280"))
+        ax.scatter(xs, ys, s=90, marker=style[0], color=style[1], edgecolor="#111827", linewidth=0.8, zorder=7, label=kind)
 
-    for index, checkpoint in enumerate(required_group(data, "CheckPoint")):
-        x, y = point(checkpoint["transform"], f"CheckPoint[{index}].transform")
-        ax.scatter(x, y, s=130, marker="P", color="#7c3aed", edgecolor="#111827", linewidth=0.8, zorder=8, label="Checkpoint" if index == 0 else None)
+    checkpoints = [point(item["transform"], f"CheckPoint[{index}].transform")
+                   for index, item in enumerate(required_group(data, "CheckPoint"))]
+    if checkpoints:
+        xs, ys = zip(*checkpoints)
+        ax.scatter(xs, ys, s=130, marker="P", color="#7c3aed", edgecolor="#111827", linewidth=0.8, zorder=8, label="Checkpoint")
 
     marker_specs = (("Start", "#16a34a", "o"), ("End", "#dc2626", "s"), ("Top", "#0ea5e9", "^"), ("Bottom", "#64748b", "v"))
     for name, color, symbol in marker_specs:
@@ -247,6 +254,8 @@ def build_figure(data: dict[str, Any], tolerance: float, outline_only: bool, sho
 
 
 def visualize(data: dict[str, Any], tolerance: float, outline_only: bool, output: Path | None) -> None:
+    import matplotlib.pyplot as plt
+
     figure = build_figure(data, tolerance, outline_only)
     if output:
         figure.savefig(output, dpi=180, bbox_inches="tight")
@@ -283,6 +292,35 @@ def discover_levels(directory: Path) -> list[Path]:
     )
 
 
+class PreviewCanvas(FigureCanvasTkAgg):
+    """Cache the static frame; navigation redraws axes with live tick labels."""
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        self._frame = None
+        super().__init__(*args, **kwargs)
+
+    def draw(self) -> None:
+        ax = self.figure.axes[0]
+        # Render the static layer once, then composite live axes before blit.
+        animated = ax.get_animated()
+        ax.set_animated(True)
+        try:
+            FigureCanvasAgg.draw(self)
+        finally:
+            ax.set_animated(animated)
+        self._frame = self.copy_from_bbox(self.figure.bbox)
+        ax.draw(self.get_renderer())
+        self.blit()
+
+    def draw_navigation(self) -> None:
+        if self._frame is None or self._idle_draw_id is not None:
+            self.draw()
+            return
+        self.restore_region(self._frame)
+        self.figure.axes[0].draw(self.get_renderer())
+        self.blit()
+
+
 class LevelBrowserApp:
     """Read-only desktop browser for a directory of level JSON files."""
 
@@ -301,9 +339,12 @@ class LevelBrowserApp:
                 self.selected = levels.index(start_path.resolve())
             except ValueError:
                 pass
-        self.canvas: FigureCanvasTkAgg | None = None
+        self.canvas: PreviewCanvas | None = None
         self._preview_connections: list[int] = []
         self._pan_axes: Any = None
+        self._level_cache: OrderedDict[Any, Any] = OrderedDict()
+        self._last_preview_draw = 0.0
+        self._preview_draw_after: str | None = None
         self.level_buttons: list[tk.Button] = []
         self.status = tk.StringVar(value="Select a level | Press H to hide/show the map legend")
 
@@ -362,7 +403,10 @@ class LevelBrowserApp:
 
         self.build_level_grid()
         if levels:
-            self.select(self.selected)
+            # Let Tk paint the shell first; expensive level rendering no longer
+            # blocks the window from appearing during startup.
+            self.status.set("Loading level preview…")
+            root.after_idle(lambda: self.select(self.selected))
         else:
             self.status.set("No level JSON files found. Pass a map file or a folder with --levels-dir.")
 
@@ -404,7 +448,7 @@ class LevelBrowserApp:
             return
         ax.set_xlim(anchor_x+(left-anchor_x)*factor, anchor_x+(right-anchor_x)*factor)
         ax.set_ylim(anchor_y+(bottom-anchor_y)*factor, anchor_y+(top-anchor_y)*factor)
-        self.canvas.draw_idle()
+        self._schedule_preview_draw()
 
     def _start_preview_pan(self, event: Any) -> None:
         if not self.canvas or event.canvas is not self.canvas or event.button != 1:
@@ -420,14 +464,38 @@ class LevelBrowserApp:
         if self._pan_axes is None or not self.canvas or event.canvas is not self.canvas:
             return
         self._pan_axes.drag_pan(1, None, event.x, event.y)
-        self.canvas.draw_idle()
+        self._schedule_preview_draw()
 
-    def _end_preview_pan(self, _event: Any = None) -> None:
+    def _end_preview_pan(self, _event: Any = None, *, redraw: bool = True) -> None:
         if self._pan_axes is not None:
             self._pan_axes.end_pan()
             self._pan_axes = None
         if self.canvas:
             self.canvas.get_tk_widget().configure(cursor="")
+        if redraw:
+            self._schedule_preview_draw(immediate=True)
+
+    def _schedule_preview_draw(self, *, immediate: bool = False) -> None:
+        """Limit expensive Agg redraws to a responsive, stable frame rate."""
+        if not self.canvas:
+            return
+        if immediate:
+            if self._preview_draw_after is not None:
+                self.root.after_cancel(self._preview_draw_after)
+                self._preview_draw_after = None
+            self._draw_preview_frame()
+            return
+        if self._preview_draw_after is not None:
+            return
+        elapsed = time.perf_counter() - self._last_preview_draw
+        delay_ms = max(0, math.ceil((1 / 60 - elapsed) * 1000))
+        self._preview_draw_after = self.root.after(delay_ms, self._draw_preview_frame)
+
+    def _draw_preview_frame(self) -> None:
+        self._preview_draw_after = None
+        if self.canvas:
+            self._last_preview_draw = time.perf_counter()
+            self.canvas.draw_navigation()
 
     def build_level_grid(self) -> None:
         for index, level in enumerate(self.levels):
@@ -456,8 +524,14 @@ class LevelBrowserApp:
         self.selected = max(0, min(index, len(self.levels) - 1))
         path = self.levels[self.selected]
         try:
-            data = load_json(path)
-            issues = validate(data, self.tolerance)
+            stat = path.stat()
+            cache_key = (path.resolve(), stat.st_mtime_ns, stat.st_size, self.tolerance, self.outline_only)
+            cached = self._level_cache.pop(cache_key, None)
+            if cached is None:
+                data = load_json(path)
+                issues = validate(data, self.tolerance)
+            else:
+                data, issues, figure, initial_view = cached
             errors = [issue for issue in issues if issue.severity == "error"]
             if errors:
                 raise ValueError("; ".join(issue.message for issue in errors[:2]))
@@ -465,20 +539,38 @@ class LevelBrowserApp:
             if preserve_view and self.canvas:
                 ax = self.canvas.figure.axes[0]
                 view = (ax.get_xlim(), ax.get_ylim())
+            if self.canvas:
+                self._end_preview_pan(redraw=False)
+                if self._preview_draw_after is not None:
+                    self.root.after_cancel(self._preview_draw_after)
+                    self._preview_draw_after = None
             self.current_data = data
-            figure = build_figure(data, self.tolerance, self.outline_only, self.legend_visible)
+            if cached is None:
+                figure = build_figure(data, self.tolerance, self.outline_only, True)
+                initial_view = (figure.axes[0].get_xlim(), figure.axes[0].get_ylim())
+            self._level_cache[cache_key] = (data, issues, figure, initial_view)
+            while len(self._level_cache) > 8:
+                self._level_cache.popitem(last=False)
+            for legend in figure.legends:
+                legend.set_visible(self.legend_visible)
+            figure.subplots_adjust(bottom=0.17 if self.legend_visible else 0.09)
             # Fill the preview viewport while keeping world X/Y at equal scale.
             # Zoom can now use the full panel even for a very long level.
             figure.axes[0].set_aspect("equal", adjustable="datalim")
-            if view:
-                figure.axes[0].set_xlim(view[0])
-                figure.axes[0].set_ylim(view[1])
+            figure.axes[0].set_xlim((view or initial_view)[0])
+            figure.axes[0].set_ylim((view or initial_view)[1])
             if self.canvas:
-                self._end_preview_pan()
+                previous_figure = self.canvas.figure
                 for connection in self._preview_connections:
                     self.canvas.mpl_disconnect(connection)
-                self.canvas.get_tk_widget().destroy()
-            self.canvas = FigureCanvasTkAgg(figure, master=self.preview)
+                figure.set_size_inches(previous_figure.get_size_inches(), forward=False)
+                figure.set_dpi(previous_figure.dpi)
+                self.canvas.figure = figure
+                figure.set_canvas(self.canvas)
+                self.canvas._frame = None
+            else:
+                self.canvas = PreviewCanvas(figure, master=self.preview)
+                self.canvas.get_tk_widget().grid(row=0, column=0, sticky="nsew")
             self._preview_connections = [self.canvas.mpl_connect(name, handler) for name, handler in (
                 ("scroll_event", self._zoom_preview),
                 ("button_press_event", self._start_preview_pan),
@@ -486,8 +578,7 @@ class LevelBrowserApp:
                 ("button_release_event", self._end_preview_pan),
                 ("figure_leave_event", self._end_preview_pan),
             )]
-            self.canvas.draw()
-            self.canvas.get_tk_widget().grid(row=0, column=0, sticky="nsew")
+            self.canvas.draw_idle()
             warnings = [issue.message for issue in issues if issue.severity == "warning"]
             suffix = f" | Warning: {warnings[0]}" if warnings else ""
             legend_state = "legend shown" if self.legend_visible else "legend hidden"
@@ -505,7 +596,7 @@ class LevelBrowserApp:
         self.select(self.selected + direction)
 
     def toggle_legend(self, _event: Any = None) -> str:
-        """Rebuild the preview so the plot expands when the legend is hidden."""
+        """Toggle the legend without rebuilding geometry or reloading JSON."""
         if not self.levels:
             return "break"
         self.legend_visible = not self.legend_visible

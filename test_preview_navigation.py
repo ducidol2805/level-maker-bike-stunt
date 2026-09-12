@@ -1,11 +1,16 @@
 """Exercise navigation callbacks on a hidden Tk preview, without user input."""
 import tkinter as tk
 import unittest
+import tempfile
+import shutil
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
 
 from matplotlib.backend_bases import MouseEvent
+from matplotlib.backends.backend_agg import FigureCanvasAgg
+from matplotlib.text import Text
+import numpy as np
 from level_visualizer import LevelBrowserApp
 
 
@@ -17,6 +22,7 @@ class NavigationTests(unittest.TestCase):
         base = Path(__file__).resolve().parent
         cls.app = LevelBrowserApp(cls.root, [base/'examples/sample_level.json',
                                            base/'levels/00_cinder_crown.json'], None, .05, False)
+        cls.root.update_idletasks()
 
     @classmethod
     def tearDownClass(cls):
@@ -90,6 +96,50 @@ class NavigationTests(unittest.TestCase):
         left,right = self.app.canvas.figure.axes[0].get_xlim()
         self.assertLess(left,0)
         self.assertGreater(right,307)
+
+    def test_navigation_keeps_labels_and_matches_full_render(self):
+        self.app.legend_visible = True
+        self.app.select(0)
+        self.root.update_idletasks()
+        ax = self.app.canvas.figure.axes[0]
+        texts = [t for t in self.app.canvas.figure.findobj(Text) if t.get_visible()]
+        x, y = ax.bbox.x0 + ax.bbox.width * .5, ax.bbox.y0 + ax.bbox.height * .5
+        self.mouse('scroll_event', x, y, step=2)
+        self.mouse('button_press_event', x, y, button=1)
+        self.mouse('motion_notify_event', x + 40, y + 20)
+        self.app._schedule_preview_draw(immediate=True)
+        self.assertTrue(all(t.get_visible() for t in texts))
+        actual = np.asarray(self.app.canvas.buffer_rgba()).copy()
+        FigureCanvasAgg.draw(self.app.canvas)
+        np.testing.assert_array_equal(actual, np.asarray(self.app.canvas.buffer_rgba()))
+        self.mouse('button_release_event', x + 40, y + 20, button=1)
+        self.app.canvas.resize(SimpleNamespace(width=1100, height=720))
+        self.root.update_idletasks()
+        ax.set_xlim(500, 600)
+        self.app.canvas.draw_navigation()
+        resized = np.asarray(self.app.canvas.buffer_rgba()).copy()
+        FigureCanvasAgg.draw(self.app.canvas)
+        np.testing.assert_array_equal(resized, np.asarray(self.app.canvas.buffer_rgba()))
+
+    def test_cached_level_reuses_canvas_and_invalidates_changed_file(self):
+        widget = self.app.canvas.get_tk_widget()
+        with patch('level_visualizer.build_figure', side_effect=AssertionError('Unexpected rebuild')):
+            self.app.select(0)
+        self.assertIs(self.app.canvas.get_tk_widget(), widget)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'level.json'
+            shutil.copyfile(self.app.levels[0], path)
+            original_levels = self.app.levels
+            try:
+                self.app.levels = [path]
+                self.app.select(0)
+                first = self.app.current_data
+                path.write_text(path.read_text(encoding='utf-8').replace('"map"', '"updatedMap"'), encoding='utf-8')
+                self.app.select(0)
+                self.assertIsNot(self.app.current_data, first)
+                self.assertIn('updatedMap', self.app.current_data)
+            finally:
+                self.app.levels = original_levels
 
 
 if __name__=='__main__':
