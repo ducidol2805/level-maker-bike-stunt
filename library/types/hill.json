@@ -1,0 +1,191 @@
+{
+  "type": "hill",
+  "builder": "surface",
+  "primarySkill": "weight_transfer",
+  "variants": [
+    {
+      "id": "hill.round_roller",
+      "name": "round roller",
+      "difficulty": 1,
+      "intent": "Stay grounded",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            15,
+            1
+          ],
+          [
+            20,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "hill.early_crest",
+      "name": "early crest",
+      "difficulty": 2,
+      "intent": "Absorb long descent",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            23,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "hill.late_crest",
+      "name": "late crest",
+      "difficulty": 3,
+      "intent": "Set pitch before short descent",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            16,
+            3
+          ],
+          [
+            19,
+            2
+          ],
+          [
+            23,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "hill.mesa",
+      "name": "mesa",
+      "difficulty": 2,
+      "intent": "Reset on plateau",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            13,
+            3
+          ],
+          [
+            19,
+            0
+          ],
+          [
+            23,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "hill.double_crest",
+      "name": "double crest",
+      "difficulty": 3,
+      "intent": "Coordinate two weight shifts",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            9,
+            0.5
+          ],
+          [
+            14,
+            3
+          ],
+          [
+            20,
+            0
+          ],
+          [
+            25,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bike Stunt Level",
+  "type": "object",
+  "required": ["Start", "End", "Top", "Bottom", "deadzone", "MainPlatform", "RampPlatform", "CheckPoint", "InteractableObject"],
+  "$defs": {
+    "vector": {
+      "type": "object",
+      "required": ["x", "y"],
+      "properties": {"x": {"type": "number"}, "y": {"type": "number"}},
+      "additionalProperties": false
+    },
+    "point": {
+      "type": "object",
+      "required": ["x", "y"],
+      "properties": {"x": {"type": "number"}, "y": {"type": "number"}, "rotation": {"type": "number", "default": 0}, "scale": {"type": "number", "default": 1}, "tangentIn": {"$ref": "#/$defs/vector"}, "tangentOut": {"$ref": "#/$defs/vector"}, "tangentMode": {"enum": ["linear", "continuous", "broken"]}, "corner": {"type": "boolean", "default": false}},
+      "additionalProperties": true
+    },
+    "shape": {
+      "type": "object",
+      "required": ["points"],
+      "properties": {"id": {"type": "string"}, "role": {"type": "string"}, "closed": {"type": "boolean", "default": false}, "points": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/point"}}, "metadata": {"type": "object"}},
+      "additionalProperties": true
+    }
+  },
+  "properties": {
+    "version": {"type": "string"},
+    "map": {"type": "object"},
+    "Start": {"$ref": "#/$defs/point"},
+    "End": {"$ref": "#/$defs/point"},
+    "Top": {"$ref": "#/$defs/point"},
+    "Bottom": {"$ref": "#/$defs/point"},
+    "deadzone": {"type": "array", "items": {"allOf": [{"$ref": "#/$defs/shape"}, {"properties": {"closed": {"const": true}}, "required": ["closed"]}]}},
+    "MainPlatform": {"type": "array", "items": {"allOf": [{"$ref": "#/$defs/shape"}, {"properties": {"closed": {"const": true}, "points": {"minItems": 3}}, "required": ["closed"]}]}},
+    "RampPlatform": {"type": "array", "items": {"$ref": "#/$defs/shape"}},
+    "CheckPoint": {"type": "array", "items": {"type": "object", "required": ["transform"], "properties": {"id": {"type": "string"}, "transform": {"$ref": "#/$defs/point"}}}},
+    "InteractableObject": {"type": "array", "items": {"type": "object", "required": ["type"], "properties": {"id": {"type": "string"}, "type": {"enum": ["explosive_ramp", "explosive_barrel", "speed_boost", "coin"]}, "transform": {"$ref": "#/$defs/point"}, "points": {"type": "array", "items": {"$ref": "#/$defs/point"}}, "properties": {"type": "object"}}}}
+  },
+  "additionalProperties": true
+}

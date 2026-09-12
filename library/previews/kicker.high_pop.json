@@ -1,0 +1,328 @@
+{
+  "MainPlatform": [
+    {
+      "id": "launch",
+      "closed": true,
+      "points": [
+        {
+          "x": 0,
+          "y": 0,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 4.0,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 12,
+          "y": 0,
+          "tangentIn": {
+            "x": -4.0,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.333333,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 16,
+          "y": 2.3,
+          "tangentIn": {
+            "x": -1.333333,
+            "y": -1.1188
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 16,
+          "y": -3,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 0,
+          "y": -3,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        }
+      ],
+      "metadata": {
+        "drivingSurfaceCount": 3
+      }
+    },
+    {
+      "id": "landing_recovery",
+      "closed": true,
+      "points": [
+        {
+          "x": 21,
+          "y": 1.3,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 3.333333,
+            "y": -2.287149
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 31,
+          "y": -1.444579,
+          "tangentIn": {
+            "x": -3.333333,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 4.0,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 43,
+          "y": -1.444579,
+          "tangentIn": {
+            "x": -4.0,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 43,
+          "y": -4.444579,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 21,
+          "y": -4.444579,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        }
+      ],
+      "metadata": {
+        "drivingSurfaceCount": 3
+      }
+    }
+  ],
+  "RampPlatform": [],
+  "deadzone": [
+    {
+      "id": "gap_kill",
+      "closed": true,
+      "points": [
+        {
+          "x": 15.9,
+          "y": -0.2,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 21.1,
+          "y": -0.2,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 21.1,
+          "y": -1.7,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 15.9,
+          "y": -1.7,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        }
+      ]
+    }
+  ],
+  "InteractableObject": [],
+  "CheckPoint": [],
+  "version": "2.0",
+  "map": {
+    "id": "kicker.high_pop",
+    "name": "kicker.high_pop",
+    "units": "unity",
+    "previewOnly": true
+  },
+  "Start": {
+    "x": 1,
+    "y": 1
+  },
+  "End": {
+    "x": 42,
+    "y": -0.444578959569216
+  },
+  "Top": {
+    "x": 16.0,
+    "y": 2.3
+  },
+  "Bottom": {
+    "x": 0,
+    "y": 0
+  },
+  "design": {
+    "variants": [
+      "kicker.high_pop"
+    ],
+    "validationStatus": "unvalidated_vehicle_physics",
+    "coinCount": 0,
+    "obstacles": [
+      {
+        "id": "kicker.high_pop",
+        "ports": {
+          "entry": {
+            "x": 0,
+            "y": 0,
+            "direction": [
+              1,
+              0
+            ]
+          },
+          "exit": {
+            "x": 43,
+            "y": -1.444578959569216,
+            "direction": [
+              1,
+              0
+            ]
+          }
+        },
+        "difficulty": 3,
+        "physics": {
+          "status": "unvalidated",
+          "requiredBikeSkills": [
+            "launch_pitch"
+          ],
+          "entrySpeedWindow": {
+            "minimum": 6.66,
+            "ideal": 7.4,
+            "maximum": 8.14,
+            "units": "units/s",
+            "status": "target_not_verified"
+          },
+          "exitSpeedWindow": null
+        },
+        "camera": {
+          "visibleLandingRequired": true,
+          "lookAheadDistance": 16,
+          "verticalFeatureVisibilityRequired": false
+        },
+        "jumpUnit": {
+          "approach": [
+            0,
+            12
+          ],
+          "launch": [
+            12,
+            16
+          ],
+          "flight": [
+            16,
+            21
+          ],
+          "landing": [
+            21,
+            31
+          ],
+          "recovery": [
+            31,
+            43
+          ],
+          "launchAngle": 40,
+          "landingCategory": "flow",
+          "checkpointCandidateAfterStabilization": 34
+        },
+        "joins": []
+      }
+    ]
+  }
+}

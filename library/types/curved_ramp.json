@@ -1,0 +1,117 @@
+{
+  "type": "curved_ramp",
+  "builder": "jump",
+  "primarySkill": "compression_to_launch",
+  "variants": [
+    {
+      "id": "curved_ramp.gentle_scoop",
+      "name": "gentle scoop",
+      "difficulty": 1,
+      "intent": "Smooth entry",
+      "parameters": {
+        "approach": 12,
+        "launch": 7,
+        "height": 2,
+        "angle": 25,
+        "gap": 5,
+        "delta": -1,
+        "landing": 10,
+        "recovery": 12
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "curved_ramp.deep_scoop",
+      "name": "deep scoop",
+      "difficulty": 3,
+      "intent": "Sustained lift",
+      "parameters": {
+        "approach": 14,
+        "launch": 8,
+        "height": 3.5,
+        "angle": 40,
+        "gap": 8,
+        "delta": -1.5,
+        "landing": 12,
+        "recovery": 14
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "curved_ramp.speed_scoop",
+      "name": "speed scoop",
+      "difficulty": 3,
+      "intent": "Shallow fast launch",
+      "parameters": {
+        "approach": 18,
+        "launch": 10,
+        "height": 3,
+        "angle": 28,
+        "gap": 12,
+        "delta": -1,
+        "landing": 14,
+        "recovery": 14
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "curved_ramp.trick_scoop",
+      "name": "trick scoop",
+      "difficulty": 4,
+      "intent": "Rotation airtime",
+      "parameters": {
+        "approach": 16,
+        "launch": 9,
+        "height": 4.5,
+        "angle": 48,
+        "gap": 9,
+        "delta": -2,
+        "landing": 14,
+        "recovery": 16
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "curved_ramp.raised_catch",
+      "name": "raised catch",
+      "difficulty": 4,
+      "intent": "Raised landing",
+      "parameters": {
+        "approach": 16,
+        "launch": 9,
+        "height": 4,
+        "angle": 44,
+        "gap": 7,
+        "delta": 1,
+        "landing": 10,
+        "recovery": 14
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    }
+  ]
+}

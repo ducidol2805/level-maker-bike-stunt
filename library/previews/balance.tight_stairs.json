@@ -1,0 +1,227 @@
+{
+  "MainPlatform": [
+    {
+      "id": "intentional_ledges",
+      "closed": true,
+      "points": [
+        {
+          "x": 0,
+          "y": 0,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 8,
+          "y": 0,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 8,
+          "y": 0.8,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 11.5,
+          "y": 0.8,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 11.5,
+          "y": 1.6,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 15.0,
+          "y": 1.6,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 15.0,
+          "y": 2.4,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 30.5,
+          "y": 2.4,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 30.5,
+          "y": -3,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 0,
+          "y": -3,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        }
+      ],
+      "metadata": {
+        "drivingSurfaceCount": 8
+      }
+    }
+  ],
+  "RampPlatform": [],
+  "deadzone": [],
+  "InteractableObject": [],
+  "CheckPoint": [],
+  "version": "2.0",
+  "map": {
+    "id": "balance.tight_stairs",
+    "name": "balance.tight_stairs",
+    "units": "unity",
+    "previewOnly": true
+  },
+  "Start": {
+    "x": 1,
+    "y": 1
+  },
+  "End": {
+    "x": 29.5,
+    "y": 3.4000000000000004
+  },
+  "Top": {
+    "x": 15.078486689814817,
+    "y": 2.4000000000000004
+  },
+  "Bottom": {
+    "x": 11.5,
+    "y": 1.2
+  },
+  "design": {
+    "variants": [
+      "balance.tight_stairs"
+    ],
+    "validationStatus": "unvalidated_vehicle_physics",
+    "coinCount": 0,
+    "obstacles": [
+      {
+        "id": "balance.tight_stairs",
+        "ports": {
+          "entry": {
+            "x": 0,
+            "y": 0,
+            "direction": [
+              1,
+              0
+            ]
+          },
+          "exit": {
+            "x": 30.5,
+            "y": 2.4000000000000004,
+            "direction": [
+              1,
+              0
+            ]
+          }
+        },
+        "difficulty": 5,
+        "physics": {
+          "status": "unvalidated",
+          "requiredBikeSkills": [
+            "front_wheel_lift",
+            "bunny_hop"
+          ],
+          "entrySpeedWindow": null,
+          "exitSpeedWindow": null
+        },
+        "camera": {
+          "visibleLandingRequired": true,
+          "lookAheadDistance": 16,
+          "verticalFeatureVisibilityRequired": false
+        },
+        "jumpUnit": null,
+        "joins": []
+      }
+    ]
+  }
+}

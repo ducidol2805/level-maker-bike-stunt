@@ -1,0 +1,184 @@
+{
+  "MainPlatform": [
+    {
+      "id": "terrain",
+      "closed": true,
+      "points": [
+        {
+          "x": 0,
+          "y": 0,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 1.666667,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 5,
+          "y": -0.3,
+          "tangentIn": {
+            "x": -1.666667,
+            "y": 0.185
+          },
+          "tangentOut": {
+            "x": 1.666667,
+            "y": -0.185
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 10,
+          "y": -4,
+          "tangentIn": {
+            "x": -1.666667,
+            "y": 0.524823
+          },
+          "tangentOut": {
+            "x": 1.666667,
+            "y": -0.524823
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 15,
+          "y": -5,
+          "tangentIn": {
+            "x": -1.666667,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 2.333333,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 22,
+          "y": -5,
+          "tangentIn": {
+            "x": -2.333333,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 22,
+          "y": -8,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 0,
+          "y": -8,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        }
+      ],
+      "metadata": {
+        "drivingSurfaceCount": 5
+      }
+    }
+  ],
+  "RampPlatform": [],
+  "deadzone": [],
+  "InteractableObject": [],
+  "CheckPoint": [],
+  "version": "2.0",
+  "map": {
+    "id": "fall.late_compression",
+    "name": "fall.late_compression",
+    "units": "unity",
+    "previewOnly": true
+  },
+  "Start": {
+    "x": 1,
+    "y": 1
+  },
+  "End": {
+    "x": 21,
+    "y": -4
+  },
+  "Top": {
+    "x": 0,
+    "y": 0
+  },
+  "Bottom": {
+    "x": 10.0,
+    "y": -4.0
+  },
+  "design": {
+    "variants": [
+      "fall.late_compression"
+    ],
+    "validationStatus": "unvalidated_vehicle_physics",
+    "coinCount": 0,
+    "obstacles": [
+      {
+        "id": "fall.late_compression",
+        "ports": {
+          "entry": {
+            "x": 0,
+            "y": 0,
+            "direction": [
+              1,
+              0
+            ]
+          },
+          "exit": {
+            "x": 22,
+            "y": -5,
+            "direction": [
+              1,
+              0
+            ]
+          }
+        },
+        "difficulty": 3,
+        "physics": {
+          "status": "unvalidated",
+          "requiredBikeSkills": [
+            "braking_control"
+          ],
+          "entrySpeedWindow": null,
+          "exitSpeedWindow": null
+        },
+        "camera": {
+          "visibleLandingRequired": true,
+          "lookAheadDistance": 16,
+          "verticalFeatureVisibilityRequired": false
+        },
+        "jumpUnit": null,
+        "joins": []
+      }
+    ]
+  }
+}

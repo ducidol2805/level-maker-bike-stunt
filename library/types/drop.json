@@ -1,0 +1,117 @@
+{
+  "type": "drop",
+  "builder": "jump",
+  "primarySkill": "drop_pitch_control",
+  "variants": [
+    {
+      "id": "drop.small",
+      "name": "small",
+      "difficulty": 1,
+      "intent": "Roll off",
+      "parameters": {
+        "approach": 12,
+        "launch": 0,
+        "height": 0,
+        "angle": 0,
+        "gap": 2,
+        "delta": -1.5,
+        "landing": 8,
+        "recovery": 12
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "drop.deep",
+      "name": "deep",
+      "difficulty": 3,
+      "intent": "Descending alignment",
+      "parameters": {
+        "approach": 14,
+        "launch": 0,
+        "height": 0,
+        "angle": 0,
+        "gap": 4,
+        "delta": -4,
+        "landing": 14,
+        "recovery": 16
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "drop.offset",
+      "name": "offset",
+      "difficulty": 3,
+      "intent": "Horizontal commitment",
+      "parameters": {
+        "approach": 16,
+        "launch": 0,
+        "height": 0,
+        "angle": 0,
+        "gap": 7,
+        "delta": -3,
+        "landing": 14,
+        "recovery": 16
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "drop.brake",
+      "name": "brake",
+      "difficulty": 4,
+      "intent": "Slow for short catch",
+      "parameters": {
+        "approach": 14,
+        "launch": 0,
+        "height": 0,
+        "angle": 0,
+        "gap": 3,
+        "delta": -2.5,
+        "landing": 5,
+        "recovery": 16
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "drop.long_runout",
+      "name": "long runout",
+      "difficulty": 2,
+      "intent": "Recovery practice",
+      "parameters": {
+        "approach": 16,
+        "launch": 0,
+        "height": 0,
+        "angle": 0,
+        "gap": 4,
+        "delta": -3,
+        "landing": 18,
+        "recovery": 20
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    }
+  ]
+}

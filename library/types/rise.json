@@ -1,0 +1,179 @@
+{
+  "type": "rise",
+  "builder": "surface",
+  "primarySkill": "uphill_throttle",
+  "variants": [
+    {
+      "id": "rise.gentle_climb",
+      "name": "gentle climb",
+      "difficulty": 1,
+      "intent": "Maintain traction",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            12,
+            2
+          ],
+          [
+            16,
+            2
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "rise.long_climb",
+      "name": "long climb",
+      "difficulty": 2,
+      "intent": "Sustain throttle",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            20,
+            5
+          ],
+          [
+            24,
+            5
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "rise.late_steepening",
+      "name": "late steepening",
+      "difficulty": 3,
+      "intent": "Lean forward progressively",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            0.5
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            14,
+            5
+          ],
+          [
+            18,
+            5
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "rise.two_stage",
+      "name": "two stage",
+      "difficulty": 3,
+      "intent": "Reset on intermediate shelf",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            15,
+            4
+          ],
+          [
+            19,
+            4
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "rise.crest_relief",
+      "name": "crest relief",
+      "difficulty": 2,
+      "intent": "Reduce wheelie at crest",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            14,
+            3.5
+          ],
+          [
+            20,
+            3.5
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    }
+  ]
+}

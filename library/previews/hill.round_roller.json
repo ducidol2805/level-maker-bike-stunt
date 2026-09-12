@@ -1,0 +1,184 @@
+{
+  "MainPlatform": [
+    {
+      "id": "terrain",
+      "closed": true,
+      "points": [
+        {
+          "x": 0,
+          "y": 0,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 1.666667,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tangentIn": {
+            "x": -1.666667,
+            "y": -0.333333
+          },
+          "tangentOut": {
+            "x": 1.666667,
+            "y": 0.333333
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tangentIn": {
+            "x": -1.666667,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.666667,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 15,
+          "y": 1,
+          "tangentIn": {
+            "x": -1.666667,
+            "y": 0.333333
+          },
+          "tangentOut": {
+            "x": 1.666667,
+            "y": -0.333333
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 20,
+          "y": 0,
+          "tangentIn": {
+            "x": -1.666667,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 20,
+          "y": -3,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 0,
+          "y": -3,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        }
+      ],
+      "metadata": {
+        "drivingSurfaceCount": 5
+      }
+    }
+  ],
+  "RampPlatform": [],
+  "deadzone": [],
+  "InteractableObject": [],
+  "CheckPoint": [],
+  "version": "2.0",
+  "map": {
+    "id": "hill.round_roller",
+    "name": "hill.round_roller",
+    "units": "unity",
+    "previewOnly": true
+  },
+  "Start": {
+    "x": 1,
+    "y": 1
+  },
+  "End": {
+    "x": 19,
+    "y": 1
+  },
+  "Top": {
+    "x": 10.0,
+    "y": 2.0
+  },
+  "Bottom": {
+    "x": 5.0,
+    "y": 1.0
+  },
+  "design": {
+    "variants": [
+      "hill.round_roller"
+    ],
+    "validationStatus": "unvalidated_vehicle_physics",
+    "coinCount": 0,
+    "obstacles": [
+      {
+        "id": "hill.round_roller",
+        "ports": {
+          "entry": {
+            "x": 0,
+            "y": 0,
+            "direction": [
+              1,
+              0
+            ]
+          },
+          "exit": {
+            "x": 20,
+            "y": 0,
+            "direction": [
+              1,
+              0
+            ]
+          }
+        },
+        "difficulty": 1,
+        "physics": {
+          "status": "unvalidated",
+          "requiredBikeSkills": [
+            "weight_transfer"
+          ],
+          "entrySpeedWindow": null,
+          "exitSpeedWindow": null
+        },
+        "camera": {
+          "visibleLandingRequired": true,
+          "lookAheadDistance": 16,
+          "verticalFeatureVisibilityRequired": false
+        },
+        "jumpUnit": null,
+        "joins": []
+      }
+    ]
+  }
+}

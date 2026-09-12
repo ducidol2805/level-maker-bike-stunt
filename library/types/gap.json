@@ -1,0 +1,117 @@
+{
+  "type": "gap",
+  "builder": "jump",
+  "primarySkill": "flight_and_flow_landing",
+  "variants": [
+    {
+      "id": "gap.intro",
+      "name": "intro",
+      "difficulty": 1,
+      "intent": "Wide visible catch",
+      "parameters": {
+        "approach": 12,
+        "launch": 6,
+        "height": 2,
+        "angle": 25,
+        "gap": 5,
+        "delta": -1,
+        "landing": 12,
+        "recovery": 12
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "gap.flow_double",
+      "name": "flow double",
+      "difficulty": 2,
+      "intent": "Maintain momentum",
+      "parameters": {
+        "approach": 14,
+        "launch": 7,
+        "height": 3,
+        "angle": 30,
+        "gap": 9,
+        "delta": -1,
+        "landing": 12,
+        "recovery": 14
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "gap.long_clear",
+      "name": "long clear",
+      "difficulty": 3,
+      "intent": "Commit entry speed",
+      "parameters": {
+        "approach": 20,
+        "launch": 9,
+        "height": 3.5,
+        "angle": 30,
+        "gap": 15,
+        "delta": -1.5,
+        "landing": 16,
+        "recovery": 16
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "gap.precision",
+      "name": "precision",
+      "difficulty": 4,
+      "intent": "Narrow catch",
+      "parameters": {
+        "approach": 16,
+        "launch": 7,
+        "height": 3,
+        "angle": 36,
+        "gap": 10,
+        "delta": 0,
+        "landing": 5,
+        "recovery": 16
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "gap.trick_gap",
+      "name": "trick gap",
+      "difficulty": 4,
+      "intent": "High arc broad catch",
+      "parameters": {
+        "approach": 18,
+        "launch": 9,
+        "height": 4.5,
+        "angle": 45,
+        "gap": 12,
+        "delta": -2,
+        "landing": 16,
+        "recovery": 18
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    }
+  ]
+}

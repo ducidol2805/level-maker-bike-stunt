@@ -1,0 +1,191 @@
+{
+  "type": "valley",
+  "builder": "surface",
+  "primarySkill": "suspension_timing",
+  "variants": [
+    {
+      "id": "valley.shallow_bowl",
+      "name": "shallow bowl",
+      "difficulty": 1,
+      "intent": "Gentle compression",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            5,
+            -1
+          ],
+          [
+            10,
+            -1.5
+          ],
+          [
+            15,
+            -1
+          ],
+          [
+            20,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "valley.deep_bowl",
+      "name": "deep bowl",
+      "difficulty": 3,
+      "intent": "Unload on exit",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            -4
+          ],
+          [
+            10,
+            -4
+          ],
+          [
+            16,
+            0
+          ],
+          [
+            20,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "valley.long_floor",
+      "name": "long floor",
+      "difficulty": 2,
+      "intent": "Stabilize before exit",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            5,
+            -2
+          ],
+          [
+            15,
+            -2
+          ],
+          [
+            22,
+            0
+          ],
+          [
+            26,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "valley.offset_exit",
+      "name": "offset exit",
+      "difficulty": 3,
+      "intent": "Accelerate early",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            -3
+          ],
+          [
+            8,
+            -3
+          ],
+          [
+            20,
+            0
+          ],
+          [
+            24,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "valley.double_bowl",
+      "name": "double bowl",
+      "difficulty": 4,
+      "intent": "Two compressions",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            -2
+          ],
+          [
+            9,
+            -0.5
+          ],
+          [
+            14,
+            -3
+          ],
+          [
+            20,
+            0
+          ],
+          [
+            25,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    }
+  ]
+}

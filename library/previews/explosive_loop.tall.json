@@ -1,0 +1,307 @@
+{
+  "MainPlatform": [
+    {
+      "id": "fallback",
+      "closed": true,
+      "points": [
+        {
+          "x": 0,
+          "y": 0,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 16.666667,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 50,
+          "y": 0,
+          "tangentIn": {
+            "x": -16.666667,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 50,
+          "y": -3,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 0,
+          "y": -3,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        }
+      ],
+      "metadata": {
+        "drivingSurfaceCount": 2
+      }
+    }
+  ],
+  "RampPlatform": [
+    {
+      "id": "loop_body",
+      "closed": false,
+      "points": [
+        {
+          "x": 27.598076,
+          "y": 4.0,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0.36767,
+            "y": 0.849098
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 27.938022,
+          "y": 6.80887,
+          "tangentIn": {
+            "x": 0.148699,
+            "y": -0.960198
+          },
+          "tangentOut": {
+            "x": -0.148699,
+            "y": 0.960198
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 26.791476,
+          "y": 9.208493,
+          "tangentIn": {
+            "x": 0.589833,
+            "y": -0.585486
+          },
+          "tangentOut": {
+            "x": -0.589833,
+            "y": 0.585486
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 24.738533,
+          "y": 9.984779,
+          "tangentIn": {
+            "x": 0.732542,
+            "y": 0.085452
+          },
+          "tangentOut": {
+            "x": -0.732542,
+            "y": -0.085452
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 22.817879,
+          "y": 8.744967,
+          "tangentIn": {
+            "x": 0.504621,
+            "y": 0.713156
+          },
+          "tangentOut": {
+            "x": -0.504621,
+            "y": -0.713156
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 22.001269,
+          "y": 6.116339,
+          "tangentIn": {
+            "x": 0.021387,
+            "y": 0.980039
+          },
+          "tangentOut": {
+            "x": -0.021387,
+            "y": -0.980039
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 22.701867,
+          "y": 3.42885,
+          "tangentIn": {
+            "x": -0.472668,
+            "y": 0.751071
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        }
+      ],
+      "metadata": {
+        "assemblyId": "loop_assembly"
+      }
+    }
+  ],
+  "deadzone": [],
+  "InteractableObject": [
+    {
+      "id": "connector",
+      "type": "explosive_ramp",
+      "closed": false,
+      "points": [
+        {
+          "x": 17,
+          "y": 0,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 3,
+            "y": 0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 27.598076,
+          "y": 4.0,
+          "tangentIn": {
+            "x": -0.36767,
+            "y": -0.849098
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        }
+      ],
+      "properties": {
+        "assemblyId": "loop_assembly",
+        "destroyAfter": "rear_wheel_clears_exit_join",
+        "postDestroyRoute": "fallback",
+        "resetOnCheckpoint": true
+      }
+    }
+  ],
+  "CheckPoint": [],
+  "version": "2.0",
+  "map": {
+    "id": "explosive_loop.tall",
+    "name": "explosive_loop.tall",
+    "units": "unity",
+    "previewOnly": true
+  },
+  "Start": {
+    "x": 1,
+    "y": 1
+  },
+  "End": {
+    "x": 49,
+    "y": 1
+  },
+  "Top": {
+    "x": 25.012872701171872,
+    "y": 9.999971105468749
+  },
+  "Bottom": {
+    "x": 0,
+    "y": 0
+  },
+  "design": {
+    "variants": [
+      "explosive_loop.tall"
+    ],
+    "validationStatus": "unvalidated_vehicle_physics",
+    "coinCount": 0,
+    "obstacles": [
+      {
+        "id": "explosive_loop.tall",
+        "ports": {
+          "entry": {
+            "x": 0,
+            "y": 0,
+            "direction": [
+              1,
+              0
+            ]
+          },
+          "exit": {
+            "x": 50,
+            "y": 0,
+            "direction": [
+              1,
+              0
+            ]
+          }
+        },
+        "difficulty": 4,
+        "physics": {
+          "status": "unvalidated",
+          "requiredBikeSkills": [
+            "loop_speed_and_exit",
+            "air_control"
+          ],
+          "entrySpeedWindow": null,
+          "exitSpeedWindow": null,
+          "loopSpeedEstimate": {
+            "status": "idealized_no_losses",
+            "formula": "sqrt(2*g*deltaY + g*radiusOfCurvatureAtTop)",
+            "value": 14.77
+          },
+          "exitDirection": "loop exit travels toward fallback; test reorientation before next obstacle"
+        },
+        "camera": {
+          "visibleLandingRequired": true,
+          "lookAheadDistance": 16,
+          "verticalFeatureVisibilityRequired": true
+        },
+        "jumpUnit": null,
+        "joins": [
+          {
+            "from": "connector",
+            "to": "loop_body",
+            "continuity": "C1",
+            "fromPoint": 1,
+            "toPoint": 0
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "type": "step_down",
+  "builder": "jump",
+  "primarySkill": "descending_alignment",
+  "variants": [
+    {
+      "id": "step_down.gentle",
+      "name": "gentle",
+      "difficulty": 1,
+      "intent": "Learn downward catch",
+      "parameters": {
+        "approach": 12,
+        "launch": 5,
+        "height": 1.5,
+        "angle": 20,
+        "gap": 4,
+        "delta": -1.5,
+        "landing": 10,
+        "recovery": 12
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "step_down.long",
+      "name": "long",
+      "difficulty": 3,
+      "intent": "Long descending flight",
+      "parameters": {
+        "approach": 18,
+        "launch": 8,
+        "height": 2.5,
+        "angle": 25,
+        "gap": 13,
+        "delta": -3,
+        "landing": 16,
+        "recovery": 16
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "step_down.deep",
+      "name": "deep",
+      "difficulty": 4,
+      "intent": "Correct pitch for deep catch",
+      "parameters": {
+        "approach": 18,
+        "launch": 7,
+        "height": 2,
+        "angle": 24,
+        "gap": 9,
+        "delta": -5,
+        "landing": 18,
+        "recovery": 18
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "step_down.tight",
+      "name": "tight",
+      "difficulty": 4,
+      "intent": "Brake to avoid overshoot",
+      "parameters": {
+        "approach": 14,
+        "launch": 6,
+        "height": 2,
+        "angle": 25,
+        "gap": 7,
+        "delta": -2.5,
+        "landing": 6,
+        "recovery": 16
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "step_down.trick",
+      "name": "trick",
+      "difficulty": 3,
+      "intent": "Long fall broad catch",
+      "parameters": {
+        "approach": 16,
+        "launch": 8,
+        "height": 3,
+        "angle": 38,
+        "gap": 9,
+        "delta": -4,
+        "landing": 18,
+        "recovery": 18
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    }
+  ]
+}

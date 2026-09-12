@@ -1,0 +1,107 @@
+{
+  "type": "explosive_loop",
+  "builder": "loop",
+  "primarySkill": "loop_speed_and_exit",
+  "variants": [
+    {
+      "id": "explosive_loop.round",
+      "name": "round",
+      "difficulty": 3,
+      "intent": "Read entry apex exit",
+      "parameters": {
+        "radiusX": 3,
+        "radiusY": 3,
+        "entryAngle": -25,
+        "exitAngle": 220,
+        "approach": 18,
+        "recovery": 18
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "explosive_loop.wide",
+      "name": "wide",
+      "difficulty": 3,
+      "intent": "Long inverted section",
+      "parameters": {
+        "radiusX": 4,
+        "radiusY": 3,
+        "entryAngle": -25,
+        "exitAngle": 220,
+        "approach": 20,
+        "recovery": 20
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "explosive_loop.tall",
+      "name": "tall",
+      "difficulty": 4,
+      "intent": "Energy at high crest",
+      "parameters": {
+        "radiusX": 3,
+        "radiusY": 4,
+        "entryAngle": -30,
+        "exitAngle": 220,
+        "approach": 22,
+        "recovery": 22
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "explosive_loop.late_exit",
+      "name": "late exit",
+      "difficulty": 4,
+      "intent": "Longer arc to fallback",
+      "parameters": {
+        "radiusX": 3.5,
+        "radiusY": 3.5,
+        "entryAngle": -25,
+        "exitAngle": 240,
+        "approach": 22,
+        "recovery": 22
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "explosive_loop.wide_high",
+      "name": "wide high",
+      "difficulty": 5,
+      "intent": "Large commitment",
+      "parameters": {
+        "radiusX": 4.5,
+        "radiusY": 4,
+        "entryAngle": -20,
+        "exitAngle": 230,
+        "approach": 26,
+        "recovery": 24
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "type": "flat",
+  "builder": "surface",
+  "primarySkill": "throttle_control",
+  "variants": [
+    {
+      "id": "flat.launch_run",
+      "name": "launch run",
+      "difficulty": 1,
+      "intent": "Build speed",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            18,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "support",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "flat.checkpoint_pad",
+      "name": "checkpoint pad",
+      "difficulty": 1,
+      "intent": "Stable restart",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            12,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "support",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "flat.braking_shelf",
+      "name": "braking shelf",
+      "difficulty": 2,
+      "intent": "Brake before precision",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            0.2
+          ],
+          [
+            10,
+            0.8
+          ],
+          [
+            16,
+            0.8
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "support",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "flat.rolling_reset",
+      "name": "rolling reset",
+      "difficulty": 2,
+      "intent": "Settle suspension",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            -0.35
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            16,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "support",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "flat.finish_release",
+      "name": "finish release",
+      "difficulty": 1,
+      "intent": "Clear runout",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            24,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "support",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    }
+  ]
+}

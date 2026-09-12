@@ -1,0 +1,239 @@
+{
+  "type": "wave",
+  "builder": "surface",
+  "primarySkill": "rhythm_and_pumping",
+  "variants": [
+    {
+      "id": "wave.two_soft",
+      "name": "two soft",
+      "difficulty": 1,
+      "intent": "Introduce pumping",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            16,
+            0
+          ],
+          [
+            20,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "wave.three_even",
+      "name": "three even",
+      "difficulty": 2,
+      "intent": "Repeat timing",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1.2
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            9,
+            1.2
+          ],
+          [
+            12,
+            0
+          ],
+          [
+            15,
+            1.2
+          ],
+          [
+            18,
+            0
+          ],
+          [
+            23,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "wave.growing",
+      "name": "growing",
+      "difficulty": 3,
+      "intent": "Increasing compression",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            0.7
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            12,
+            1.4
+          ],
+          [
+            16,
+            0
+          ],
+          [
+            20,
+            2
+          ],
+          [
+            24,
+            0
+          ],
+          [
+            30,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "wave.irregular",
+      "name": "irregular",
+      "difficulty": 4,
+      "intent": "Read changing spacing",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            12,
+            2
+          ],
+          [
+            17,
+            0
+          ],
+          [
+            20,
+            0.8
+          ],
+          [
+            25,
+            0
+          ],
+          [
+            31,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "wave.trough_train",
+      "name": "trough train",
+      "difficulty": 2,
+      "intent": "Stay low",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            -1
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            12,
+            -1.5
+          ],
+          [
+            16,
+            0
+          ],
+          [
+            20,
+            -1
+          ],
+          [
+            24,
+            0
+          ],
+          [
+            30,
+            0
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    }
+  ]
+}

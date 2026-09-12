@@ -1,0 +1,92 @@
+{
+  "type": "platform",
+  "builder": "platform",
+  "primarySkill": "balance_and_transition",
+  "variants": [
+    {
+      "id": "platform.flat_bridge",
+      "name": "flat bridge",
+      "difficulty": 1,
+      "intent": "Stable open bridge",
+      "parameters": {
+        "length": 12,
+        "height": 2,
+        "profile": "flat"
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "platform.arched_bridge",
+      "name": "arched bridge",
+      "difficulty": 2,
+      "intent": "Absorb arch",
+      "parameters": {
+        "length": 16,
+        "height": 2,
+        "profile": "arch"
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "platform.uphill_bridge",
+      "name": "uphill bridge",
+      "difficulty": 3,
+      "intent": "Raised traction",
+      "parameters": {
+        "length": 14,
+        "height": 3,
+        "profile": "rise"
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "platform.downhill_bridge",
+      "name": "downhill bridge",
+      "difficulty": 3,
+      "intent": "Control return descent",
+      "parameters": {
+        "length": 16,
+        "height": 3,
+        "profile": "fall"
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "platform.wave_bridge",
+      "name": "wave bridge",
+      "difficulty": 4,
+      "intent": "Raised rollers",
+      "parameters": {
+        "length": 18,
+        "height": 3,
+        "profile": "wave"
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    }
+  ]
+}

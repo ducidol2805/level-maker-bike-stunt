@@ -1,0 +1,117 @@
+{
+  "type": "kicker",
+  "builder": "jump",
+  "primarySkill": "launch_pitch",
+  "variants": [
+    {
+      "id": "kicker.low_skip",
+      "name": "low skip",
+      "difficulty": 1,
+      "intent": "Low flight",
+      "parameters": {
+        "approach": 10,
+        "launch": 4,
+        "height": 1,
+        "angle": 18,
+        "gap": 3,
+        "delta": -0.5,
+        "landing": 8,
+        "recovery": 10
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "kicker.quick_pop",
+      "name": "quick pop",
+      "difficulty": 2,
+      "intent": "Brief pitch correction",
+      "parameters": {
+        "approach": 10,
+        "launch": 3,
+        "height": 1.5,
+        "angle": 30,
+        "gap": 4,
+        "delta": -0.7,
+        "landing": 8,
+        "recovery": 10
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "kicker.long_flick",
+      "name": "long flick",
+      "difficulty": 3,
+      "intent": "Carry speed",
+      "parameters": {
+        "approach": 14,
+        "launch": 5,
+        "height": 1.4,
+        "angle": 22,
+        "gap": 7,
+        "delta": -0.6,
+        "landing": 10,
+        "recovery": 12
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "kicker.high_pop",
+      "name": "high pop",
+      "difficulty": 3,
+      "intent": "Higher arc",
+      "parameters": {
+        "approach": 12,
+        "launch": 4,
+        "height": 2.3,
+        "angle": 40,
+        "gap": 5,
+        "delta": -1,
+        "landing": 10,
+        "recovery": 12
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "kicker.precision_pop",
+      "name": "precision pop",
+      "difficulty": 4,
+      "intent": "Tighter catch",
+      "parameters": {
+        "approach": 12,
+        "launch": 3.5,
+        "height": 1.8,
+        "angle": 34,
+        "gap": 5,
+        "delta": 0,
+        "landing": 5,
+        "recovery": 12
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    }
+  ]
+}

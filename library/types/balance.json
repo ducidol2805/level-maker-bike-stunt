@@ -1,0 +1,107 @@
+{
+  "type": "balance",
+  "builder": "technical",
+  "primarySkill": "front_wheel_lift",
+  "variants": [
+    {
+      "id": "balance.single_curb",
+      "name": "single curb",
+      "difficulty": 2,
+      "intent": "First front wheel lift",
+      "parameters": {
+        "heights": [
+          0.5
+        ],
+        "spacing": 6,
+        "shelf": 8
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "balance.double_curb",
+      "name": "double curb",
+      "difficulty": 3,
+      "intent": "Reset before second lift",
+      "parameters": {
+        "heights": [
+          0.65,
+          0.65
+        ],
+        "spacing": 5,
+        "shelf": 8
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "balance.unequal_stairs",
+      "name": "unequal stairs",
+      "difficulty": 4,
+      "intent": "Change lift timing",
+      "parameters": {
+        "heights": [
+          0.5,
+          1,
+          0.6
+        ],
+        "spacing": 5,
+        "shelf": 10
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "balance.tall_ledge",
+      "name": "tall ledge",
+      "difficulty": 4,
+      "intent": "Bunny hop rear wheel drive",
+      "parameters": {
+        "heights": [
+          1.4
+        ],
+        "spacing": 7,
+        "shelf": 10
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "balance.tight_stairs",
+      "name": "tight stairs",
+      "difficulty": 5,
+      "intent": "Consecutive precise lifts",
+      "parameters": {
+        "heights": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "spacing": 3.5,
+        "shelf": 12
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    }
+  ]
+}

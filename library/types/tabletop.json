@@ -1,0 +1,97 @@
+{
+  "type": "tabletop",
+  "builder": "table",
+  "primarySkill": "jump_or_rollover",
+  "variants": [
+    {
+      "id": "tabletop.learner",
+      "name": "learner",
+      "difficulty": 1,
+      "intent": "Rollable fallback",
+      "parameters": {
+        "up": 6,
+        "top": 6,
+        "down": 7,
+        "height": 1.5
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "tabletop.long_deck",
+      "name": "long deck",
+      "difficulty": 2,
+      "intent": "Longer deck",
+      "parameters": {
+        "up": 7,
+        "top": 12,
+        "down": 9,
+        "height": 2
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "tabletop.steep_face",
+      "name": "steep face",
+      "difficulty": 3,
+      "intent": "Pitch on ascent",
+      "parameters": {
+        "up": 4,
+        "top": 7,
+        "down": 10,
+        "height": 3
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "tabletop.trick_table",
+      "name": "trick table",
+      "difficulty": 3,
+      "intent": "Broad fallback",
+      "parameters": {
+        "up": 9,
+        "top": 9,
+        "down": 10,
+        "height": 4
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "tabletop.brake_table",
+      "name": "brake table",
+      "difficulty": 4,
+      "intent": "Brake before shoulder",
+      "parameters": {
+        "up": 10,
+        "top": 5,
+        "down": 5,
+        "height": 3
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    }
+  ]
+}

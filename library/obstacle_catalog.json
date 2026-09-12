@@ -1,0 +1,99 @@
+{
+  "version": "2.0",
+  "units": "world units; assumed wheelbase 2; requires bike calibration",
+  "groups": [
+    {
+      "type": "flat",
+      "path": "types/flat.json",
+      "variantCount": 5
+    },
+    {
+      "type": "rise",
+      "path": "types/rise.json",
+      "variantCount": 5
+    },
+    {
+      "type": "fall",
+      "path": "types/fall.json",
+      "variantCount": 5
+    },
+    {
+      "type": "hill",
+      "path": "types/hill.json",
+      "variantCount": 5
+    },
+    {
+      "type": "valley",
+      "path": "types/valley.json",
+      "variantCount": 5
+    },
+    {
+      "type": "wave",
+      "path": "types/wave.json",
+      "variantCount": 5
+    },
+    {
+      "type": "kicker",
+      "path": "types/kicker.json",
+      "variantCount": 5
+    },
+    {
+      "type": "curved_ramp",
+      "path": "types/curved_ramp.json",
+      "variantCount": 5
+    },
+    {
+      "type": "tabletop",
+      "path": "types/tabletop.json",
+      "variantCount": 5
+    },
+    {
+      "type": "gap",
+      "path": "types/gap.json",
+      "variantCount": 5
+    },
+    {
+      "type": "step_up",
+      "path": "types/step_up.json",
+      "variantCount": 5
+    },
+    {
+      "type": "step_down",
+      "path": "types/step_down.json",
+      "variantCount": 5
+    },
+    {
+      "type": "drop",
+      "path": "types/drop.json",
+      "variantCount": 5
+    },
+    {
+      "type": "platform",
+      "path": "types/platform.json",
+      "variantCount": 5
+    },
+    {
+      "type": "balance",
+      "path": "types/balance.json",
+      "variantCount": 5
+    },
+    {
+      "type": "explosive_loop",
+      "path": "types/explosive_loop.json",
+      "variantCount": 5
+    }
+  ],
+  "variantCount": 80,
+  "compositionRules": {
+    "coinCountPerMap": 10,
+    "coins": "stunt/flight anchors first; remaining on sampled safe ground",
+    "difficulty": "teach, practice, combine within a difficulty band",
+    "checkpoint": "first stable pad after hard gap; keep finish distance max(8 units,8% length)",
+    "geometry": "local cubic Bezier; closed ground; open auxiliary ramps",
+    "joins": "position and travel tangent must match; check speed compatibility",
+    "validation": "geometry verified separately from bike simulation"
+  },
+  "sources": [
+    "research.md"
+  ]
+}

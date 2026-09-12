@@ -1,0 +1,179 @@
+{
+  "type": "fall",
+  "builder": "surface",
+  "primarySkill": "braking_control",
+  "variants": [
+    {
+      "id": "fall.gentle_descent",
+      "name": "gentle descent",
+      "difficulty": 1,
+      "intent": "Learn speed gain",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            12,
+            -2
+          ],
+          [
+            17,
+            -2
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "fall.long_descent",
+      "name": "long descent",
+      "difficulty": 2,
+      "intent": "Brake progressively",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            20,
+            -5
+          ],
+          [
+            27,
+            -5
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "fall.late_compression",
+      "name": "late compression",
+      "difficulty": 3,
+      "intent": "Prepare bottom compression",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            5,
+            -0.3
+          ],
+          [
+            10,
+            -4
+          ],
+          [
+            15,
+            -5
+          ],
+          [
+            22,
+            -5
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "fall.terraced",
+      "name": "terraced",
+      "difficulty": 2,
+      "intent": "Reset weight on shelves",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            5,
+            -2
+          ],
+          [
+            10,
+            -2
+          ],
+          [
+            15,
+            -4
+          ],
+          [
+            22,
+            -4
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": false,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "fall.steep_shelf",
+      "name": "steep shelf",
+      "difficulty": 4,
+      "intent": "Control pitch before shelf",
+      "parameters": {
+        "surface": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            8,
+            -6
+          ],
+          [
+            15,
+            -6
+          ],
+          [
+            22,
+            -6
+          ]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    }
+  ]
+}
