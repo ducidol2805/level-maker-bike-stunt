@@ -11,6 +11,7 @@ import json
 import math
 from pathlib import Path
 from statistics import median
+from terrain_export import normalize_main_platform
 
 ROOT = Path(__file__).resolve().parent
 GROUPS = ("MainPlatform", "RampPlatform", "deadzone", "InteractableObject")
@@ -287,7 +288,7 @@ def as_level(modules, map_id, name, *, preview=False):
         "Top":{"x":top[0],"y":top[1]},"Bottom":{"x":bottom[0],"y":bottom[1]},
         "design":{"variants":[m["id"] for m in modules],"validationStatus":"unvalidated_vehicle_physics","coinCount":len(selected),
                   "obstacles":[{k:m[k] for k in ("id","ports","difficulty","physics","camera","jumpUnit","joins")} for m in modules]}})
-    return level
+    return normalize_main_platform(level)
 
 
 def build_campaign_level(number):

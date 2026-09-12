@@ -1289,6 +1289,36 @@ loop exits, and landing transitions.
 
 ---
 
+# Start / End Platform Padding (Project Export Rule)
+
+`Start` and `End` are gameplay markers, not the outer vertices of the terrain.
+Keep their complete authored transforms unchanged when extending platforms,
+merging terrain, exporting, or preparing a preview. Never regenerate these
+markers from the expanded terrain bounds or rebase the map to remove negative X.
+
+After composition, extend only the first `MainPlatform` 20 world units to the
+left of its original outer edge and the last `MainPlatform` 20 world units to
+the right of its original outer edge. This ground padding prevents the map
+from looking cut off; it does not move the spawn or finish or add another
+gameplay challenge.
+
+- Add flat surface segments at the existing endpoint heights. Preserve the
+  original driving-surface positions and Bezier curves; do not stretch them.
+- Move the corresponding outer bottom corners horizontally to close the
+  extended terrain. Keep the common bottom Y unchanged.
+- Keep all markers, checkpoints, coins, ramps and obstacle placements fixed.
+  Do not count padding as extra Start-to-End gameplay distance.
+- Merge touching MainPlatform shapes at export, keeping gaps separate and
+  preserving Bezier data. Padding must not accumulate on repeated exports.
+- Compare Start/End transforms with the authoring source after export and
+  after copying to the preview folder; they must match exactly.
+
+For example, original terrain X bounds `[0, 307]` become `[-20, 327]`, while
+Start `(1, 1)` and End `(306, -6.75)` remain at those exact world positions.
+Use the existing `terrain_export.py` pipeline for this project.
+
+---
+
 # SpriteShape Conversion Guidelines
 
 When generating Unity SpriteShape geometry:

@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 from obstacle_library import build_campaign_level
+from terrain_export import export_level
 
 
 def main():
@@ -22,7 +23,7 @@ def main():
     levels = [build_campaign_level(n) for n in range(1, args.count+1)]
     args.output.mkdir(parents=True, exist_ok=True)
     for path, level in zip(paths, levels):
-        path.write_text(json.dumps(level, ensure_ascii=False, indent=2), encoding="utf-8")
+        path.write_text(json.dumps(export_level(level), ensure_ascii=False, indent=2), encoding="utf-8")
     manifest = {"count": len(levels), "catalogVersion": "2.0",
                 "validationStatus": "geometry_only; Unity playtests pending",
                 "maps": [{"id": level["map"]["id"], "file": path.name,

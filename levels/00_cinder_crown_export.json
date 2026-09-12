@@ -5,6 +5,20 @@
       "closed": true,
       "points": [
         {
+          "x": -20,
+          "y": 0,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
           "x": 0,
           "y": 0,
           "tangentIn": {
@@ -23,58 +37,6 @@
           "y": 0,
           "tangentIn": {
             "x": -4,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "broken",
-          "corner": false
-        },
-        {
-          "x": 12,
-          "y": -10.75,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        },
-        {
-          "x": 0,
-          "y": -10.75,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        }
-      ],
-      "metadata": {
-        "drivingSurfaceCount": 2,
-        "sourceVariant": "flat.checkpoint_pad"
-      }
-    },
-    {
-      "id": "s02_terrain",
-      "closed": true,
-      "points": [
-        {
-          "x": 12,
-          "y": 0,
-          "tangentIn": {
-            "x": 0,
             "y": 0
           },
           "tangentOut": {
@@ -134,58 +96,6 @@
             "y": 0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "broken",
-          "corner": false
-        },
-        {
-          "x": 35,
-          "y": -10.75,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        },
-        {
-          "x": 12,
-          "y": -10.75,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        }
-      ],
-      "metadata": {
-        "drivingSurfaceCount": 5,
-        "sourceVariant": "hill.early_crest"
-      }
-    },
-    {
-      "id": "s03_launch",
-      "closed": true,
-      "points": [
-        {
-          "x": 35,
-          "y": 0,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
             "x": 6.666667,
             "y": 0
           },
@@ -235,7 +145,7 @@
           "corner": false
         },
         {
-          "x": 35,
+          "x": -20,
           "y": -10.75,
           "tangentIn": {
             "x": 0,
@@ -250,8 +160,13 @@
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 3,
-        "sourceVariant": "gap.long_clear"
+        "drivingSurfaceCount": 9,
+        "sourceVariant": "flat.checkpoint_pad",
+        "sourceShapeIds": [
+          "s01_terrain",
+          "s02_terrain",
+          "s03_launch"
+        ]
       }
     },
     {
@@ -322,58 +237,6 @@
             "y": 0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "broken",
-          "corner": false
-        },
-        {
-          "x": 111,
-          "y": -10.75,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        },
-        {
-          "x": 79,
-          "y": -10.75,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        }
-      ],
-      "metadata": {
-        "drivingSurfaceCount": 5,
-        "sourceVariant": "gap.long_clear"
-      }
-    },
-    {
-      "id": "s04_terrain",
-      "closed": true,
-      "points": [
-        {
-          "x": 111,
-          "y": -3.2249999999999996,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
             "x": 1.333333,
             "y": 0
           },
@@ -430,58 +293,6 @@
             "y": 0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "broken",
-          "corner": false
-        },
-        {
-          "x": 131,
-          "y": -10.75,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        },
-        {
-          "x": 111,
-          "y": -10.75,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        }
-      ],
-      "metadata": {
-        "drivingSurfaceCount": 5,
-        "sourceVariant": "rise.crest_relief"
-      }
-    },
-    {
-      "id": "s05_fallback",
-      "closed": true,
-      "points": [
-        {
-          "x": 131,
-          "y": 0.27500000000000036,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
             "x": 14,
             "y": 0
           },
@@ -493,58 +304,6 @@
           "y": 0.27500000000000036,
           "tangentIn": {
             "x": -14,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "broken",
-          "corner": false
-        },
-        {
-          "x": 173,
-          "y": -10.75,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        },
-        {
-          "x": 131,
-          "y": -10.75,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        }
-      ],
-      "metadata": {
-        "drivingSurfaceCount": 2,
-        "sourceVariant": "explosive_loop.round"
-      }
-    },
-    {
-      "id": "s06_terrain",
-      "closed": true,
-      "points": [
-        {
-          "x": 173,
-          "y": 0.27500000000000036,
-          "tangentIn": {
-            "x": 0,
             "y": 0
           },
           "tangentOut": {
@@ -587,58 +346,6 @@
           "y": -1.7249999999999996,
           "tangentIn": {
             "x": -1.666667,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "broken",
-          "corner": false
-        },
-        {
-          "x": 190,
-          "y": -10.75,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        },
-        {
-          "x": 173,
-          "y": -10.75,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        }
-      ],
-      "metadata": {
-        "drivingSurfaceCount": 4,
-        "sourceVariant": "fall.gentle_descent"
-      }
-    },
-    {
-      "id": "s07_terrain",
-      "closed": true,
-      "points": [
-        {
-          "x": 190,
-          "y": -1.7249999999999996,
-          "tangentIn": {
-            "x": 0,
             "y": 0
           },
           "tangentOut": {
@@ -712,58 +419,6 @@
             "y": 0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "broken",
-          "corner": false
-        },
-        {
-          "x": 210,
-          "y": -10.75,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        },
-        {
-          "x": 190,
-          "y": -10.75,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        }
-      ],
-      "metadata": {
-        "drivingSurfaceCount": 6,
-        "sourceVariant": "wave.two_soft"
-      }
-    },
-    {
-      "id": "s08_launch",
-      "closed": true,
-      "points": [
-        {
-          "x": 210,
-          "y": -1.7249999999999996,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
             "x": 6,
             "y": 0
           },
@@ -813,7 +468,7 @@
           "corner": false
         },
         {
-          "x": 210,
+          "x": 79,
           "y": -10.75,
           "tangentIn": {
             "x": 0,
@@ -828,8 +483,16 @@
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 3,
-        "sourceVariant": "gap.trick_gap"
+        "drivingSurfaceCount": 20,
+        "sourceVariant": "gap.long_clear",
+        "sourceShapeIds": [
+          "s03_landing_recovery",
+          "s04_terrain",
+          "s05_fallback",
+          "s06_terrain",
+          "s07_terrain",
+          "s08_launch"
+        ]
       }
     },
     {
@@ -900,6 +563,20 @@
             "y": 0
           },
           "tangentOut": {
+            "x": 8,
+            "y": 0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 307,
+          "y": -7.75,
+          "tangentIn": {
+            "x": -8,
+            "y": 0
+          },
+          "tangentOut": {
             "x": 0,
             "y": 0
           },
@@ -907,7 +584,21 @@
           "corner": false
         },
         {
-          "x": 283,
+          "x": 327,
+          "y": -7.75,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 327,
           "y": -10.75,
           "tangentIn": {
             "x": 0,
@@ -936,74 +627,12 @@
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 5,
-        "sourceVariant": "gap.trick_gap"
-      }
-    },
-    {
-      "id": "s09_terrain",
-      "closed": true,
-      "points": [
-        {
-          "x": 283,
-          "y": -7.75,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 8,
-            "y": 0
-          },
-          "tangentMode": "broken",
-          "corner": false
-        },
-        {
-          "x": 307,
-          "y": -7.75,
-          "tangentIn": {
-            "x": -8,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "broken",
-          "corner": false
-        },
-        {
-          "x": 307,
-          "y": -10.75,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        },
-        {
-          "x": 283,
-          "y": -10.75,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        }
-      ],
-      "metadata": {
-        "drivingSurfaceCount": 2,
-        "sourceVariant": "flat.finish_release"
+        "drivingSurfaceCount": 7,
+        "sourceVariant": "gap.trick_gap",
+        "sourceShapeIds": [
+          "s08_landing_recovery",
+          "s09_terrain"
+        ]
       }
     }
   ],
@@ -1287,7 +916,7 @@
       "properties": {
         "assemblyId": "s05_loop_assembly",
         "destroyAfter": "rear_wheel_clears_exit_join",
-        "postDestroyRoute": "s05_fallback",
+        "postDestroyRoute": "s03_landing_recovery",
         "resetOnCheckpoint": true,
         "optionalRoute": true,
         "colliderDisableEvent": "rear wheel exits connector; remove supporting surface only after clearance"
@@ -2181,5 +1810,8 @@
       "rear-wheel-clear destruction and checkpoint reset",
       "all ten coins on one run"
     ]
+  },
+  "terrainExport": {
+    "boundaryPadding": 20
   }
 }
