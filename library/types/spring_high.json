@@ -1,0 +1,117 @@
+{
+  "type": "spring_high",
+  "builder": "spring_jump",
+  "primarySkill": "cinematic_launch_and_recovery",
+  "variants": [
+    {
+      "id": "spring_high.lift_1",
+      "name": "Lift 1",
+      "difficulty": 1,
+      "intent": "Cinematic ascent to a 6-unit higher platform",
+      "parameters": {
+        "approach": 14,
+        "gap": 10,
+        "height": 6,
+        "landing": 12,
+        "recovery": 14,
+        "targetInset": 4,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.35
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "spring_high.lift_2",
+      "name": "Lift 2",
+      "difficulty": 2,
+      "intent": "Cinematic ascent to a 10-unit higher platform",
+      "parameters": {
+        "approach": 16,
+        "gap": 12,
+        "height": 10,
+        "landing": 14,
+        "recovery": 16,
+        "targetInset": 4,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.35
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "spring_high.lift_3",
+      "name": "Lift 3",
+      "difficulty": 3,
+      "intent": "Cinematic ascent to a 14-unit higher platform",
+      "parameters": {
+        "approach": 18,
+        "gap": 14,
+        "height": 14,
+        "landing": 16,
+        "recovery": 18,
+        "targetInset": 4,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.35
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "spring_high.lift_4",
+      "name": "Lift 4",
+      "difficulty": 4,
+      "intent": "Cinematic ascent to a 18-unit higher platform",
+      "parameters": {
+        "approach": 20,
+        "gap": 16,
+        "height": 18,
+        "landing": 18,
+        "recovery": 20,
+        "targetInset": 4,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.35
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "spring_high.lift_5",
+      "name": "Lift 5",
+      "difficulty": 5,
+      "intent": "Cinematic ascent to a 24-unit higher platform",
+      "parameters": {
+        "approach": 22,
+        "gap": 18,
+        "height": 24,
+        "landing": 20,
+        "recovery": 22,
+        "targetInset": 4,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.35
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    }
+  ]
+}

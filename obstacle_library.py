@@ -12,6 +12,7 @@ import math
 from pathlib import Path
 from statistics import median
 from terrain_export import normalize_main_platform
+from spring_object import spring_trajectory
 
 ROOT = Path(__file__).resolve().parent
 GROUPS = ("MainPlatform", "RampPlatform", "deadzone", "InteractableObject")
@@ -175,6 +176,42 @@ def build_variant(family, variant):
         units = {"approach":[0,a],"launch":[a,takeoff_x],"flight":[takeoff_x,landing_x],"landing":[landing_x,catch_end_x],"recovery":[catch_end_x,end[0]],"launchAngle":p["angle"],"landingCategory":"precision" if p["landing"]<=6 else "flow","checkpointCandidateAfterStabilization":catch_end_x+3}
         if variant["difficulty"] >= 4:
             checkpoints.append({"x":catch_end_x+3,"y":landing_end_y+1,"expectedRestartSpeed":0,"requiresRestartTest":True})
+    elif kind == "spring_jump":
+        lip, gap, height = p['approach'], p['gap'], p['height']
+        landing_x = lip+gap
+        catch_end = landing_x+p['landing']
+        end = (catch_end+p['recovery'], height)
+        add_surface('spring_approach', [(0, 0), (lip, 0)])
+        add_surface('spring_landing_recovery', [(landing_x, height), (catch_end, height), end])
+        target_x = landing_x+p['targetInset']
+        clearance = p['referenceClearance']
+        distance = target_x-lip
+        # Set a gentle descending arrival slope at the target. The broad flat
+        # catch is intentional; suspension/contact still need a Unity test.
+        duration = math.sqrt(2*(height-p['arrivalSlope']*distance)/9.81)
+        spring = {'id': 'spring', 'type': 'SpringObject',
+            'transform': {'x': lip, 'y': clearance, 'rotation': 0},
+            'properties': {'targetPosition': {'x': target_x, 'y': height+clearance},
+                'flightTimeSeconds': duration, 'gravity': 9.81, 'launchMode': 'target_arc',
+                'activation': 'on_player_enter', 'rearm': 'on_exit', 'cinematic': True}}
+        result['InteractableObject'].append(spring)
+        result['deadzone'].append(linear_polygon('spring_gap_kill',
+            [(lip-.1,-1.5),(landing_x+.1,-1.5),(landing_x+.1,-3),(lip-.1,-3)]))
+        arc = spring_trajectory(spring)
+        for fraction in (.15, .325, .5, .675, .85):
+            x, y = arc[round(fraction*(len(arc)-1))]
+            anchors.append({'x':x, 'y':y, 'priority':7, 'role':'cinematic_spring_flight'})
+        units = {'approach':[0,lip], 'launch':[lip,lip], 'flight':[lip,landing_x],
+            'landing':[landing_x,catch_end], 'recovery':[catch_end,end[0]],
+            'launchAngle': math.degrees(math.atan2(height+.5*9.81*duration**2, distance)),
+            'landingCategory':'safe', 'checkpointCandidateAfterStabilization':catch_end+3,
+            'launchMechanism':'SpringObject'}
+        checkpoints.append({'x':catch_end+3,'y':height+clearance,
+                            'expectedRestartSpeed':0,'requiresRestartTest':True})
+        physics['springLaunch'] = {'status':'idealized_target_arc_only',
+            'flightTimeSeconds':duration, 'arrivalSlope':p['arrivalSlope'],
+            'entrySpeedPolicy':'incoming velocity replaced on trigger entry',
+            'landingImpact':'broad flat catch; suspension and landing impact pending Unity test'}
     elif kind == "loop":
         rx,ry = p["radiusX"],p["radiusY"]
         cx,cy = p["approach"]+rx,ry+2
@@ -194,7 +231,9 @@ def build_variant(family, variant):
         end = (cx+rx+p["recovery"],0)
         add_surface("fallback",[(0,0),end])
         joins.append({"from":"connector","to":"loop_body","continuity":"C1","fromPoint":1,"toPoint":0})
-        anchors.append({"x":cx,"y":cy+ry-.8,"priority":7,"role":"loop_inside_apex"})
+        for angle in (45,90,135):
+            anchors.append({'x':cx+(rx-.8)*math.cos(math.radians(angle)),
+                'y':cy+(ry-.8)*math.sin(math.radians(angle)), 'priority':7,'role':'loop_inside_arc'})
         physics["requiredBikeSkills"] += ["air_control"]
         physics["loopSpeedEstimate"] = {"status":"idealized_no_losses", "formula":"sqrt(2*g*deltaY + g*radiusOfCurvatureAtTop)","value":round(math.sqrt(2*9.81*(cy+ry)+9.81*rx*rx/ry),2)}
         physics["exitDirection"] = "loop exit travels toward fallback; test reorientation before next obstacle"
@@ -207,7 +246,7 @@ def build_variant(family, variant):
     result.update({"id":variant["id"],"type":type_id,"difficulty":variant["difficulty"],"intent":variant["intent"],
         "ports":{"entry":{"x":0,"y":0,"direction":[1,0]},"exit":{"x":end[0],"y":end[1],"direction":[1,0]}},
         "physics":physics,"jumpUnit":units,"coinCandidates":anchors,"checkpointCandidates":checkpoints,"joins":joins,
-        "camera":{"visibleLandingRequired":True,"lookAheadDistance":max(16,p.get("gap",0)+p.get("landing",0)),"verticalFeatureVisibilityRequired":kind=="loop"},
+        "camera":{"visibleLandingRequired":True,"lookAheadDistance":max(16,p.get("gap",0)+p.get("landing",0)),"verticalFeatureVisibilityRequired":kind in ("loop", "spring_jump")},
         "groundSamples":sampled,"validationStatus":"geometry_only; Unity bike playtest required"})
     return result
 
@@ -221,6 +260,16 @@ def place(module, x, y, instance_id):
             for point in item.get("points",[]):
                 point["x"] += x
                 point["y"] += y
+            if "transform" in item:
+                item['transform']['x'] += x
+                item['transform']['y'] += y
+            for point in item.get('properties', {}).get('previewTrajectory', {}).get('points', []):
+                point['x'] += x
+                point['y'] += y
+            if item.get('type') == 'SpringObject':
+                target = item['properties']['targetPosition']
+                target['x'] += x
+                target['y'] += y
             for field in ("properties","metadata"):
                 meta=item.get(field,{})
                 if "assemblyId" in meta:
@@ -265,11 +314,14 @@ def as_level(modules, map_id, name, *, preview=False):
         for shape in level[group]:
             all_points.extend(sample_curve(shape))
     for shape in level["InteractableObject"]:
-        all_points.extend(sample_curve(shape))
+        if 'points' in shape:
+            all_points.extend(sample_curve(shape))
+        elif shape.get('type') == 'SpringObject':
+            all_points.extend(spring_trajectory(shape))
     top=max(all_points,key=lambda a:a[1])
     bottom_y=median(y for x,y in ground_samples)
     bottom=min(ground_samples,key=lambda a:abs(a[1]-bottom_y))
-    coin_count=0 if preview else 10
+    coin_count=0 if preview else 20
     ordered=sorted(candidates,key=lambda a:(-a["priority"],a["x"]))
     # Safe filler is sampled from the actual driving surface, never arbitrary y.
     ordered.extend({"x":x,"y":y+1.2,"priority":0,"role":"safe_ground"} for x,y in ground_samples[::12])
@@ -281,6 +333,8 @@ def as_level(modules, map_id, name, *, preview=False):
             selected.append(coin)
     for i,coin in enumerate(selected):
         level["InteractableObject"].append({"id":f"coin_{i+1:02d}","type":"coin","transform":{"x":coin["x"],"y":coin["y"]},"properties":{"optional":True,"line":coin["role"],"collectionRisk":"pending_playtest"}})
+    if len(selected) != coin_count:
+        raise ValueError(f'Need {coin_count} distinct readable coin placements, found {len(selected)}')
     minimum_finish=max(8,(end_x-first["x"])*.08)
     level["CheckPoint"]=[{"id":f"cp_{i}","transform":{"x":cp["x"],"y":cp["y"],"rotation":0},"metadata":cp} for i,cp in enumerate(checkpoints) if end_x-cp["x"]>=minimum_finish]
     level.update({"version":"2.0","map":{"id":map_id,"name":name,"units":"unity","previewOnly":preview},
@@ -304,6 +358,9 @@ def build_campaign_level(number):
         4:["gap","step_up","step_down","explosive_loop","balance","curved_ramp"],
         5:["balance","explosive_loop","gap","step_up","drop","wave"]}
     selected_types=rng.sample(pools[world],4)
+    # A cinematic highlight on 10/50 tracks, not a replacement for every jump.
+    if number % 5 == 0:
+        selected_types[1] = 'spring_high' if (number//5) % 2 else 'spring_far'
     modules=[]
     x,y=0,0
 
@@ -330,7 +387,7 @@ def build_campaign_level(number):
         append("flat","checkpoint_pad")
     append("flat","finish_release")
     level=as_level(modules,f"campaign_{number:02d}",f"World {world} - Track {(number-1)%10+1:02d}")
-    level["map"].update({"seed":number,"generatedFrom":"library/obstacle_catalog.json","catalogVersion":"2.0"})
+    level["map"].update({"seed":number,"generatedFrom":"library/obstacle_catalog.json","catalogVersion":"2.1"})
     level["design"].update({"world":world,"difficulty":max(m["difficulty"] for m in modules),"sequence":selected_types,
         "compositionStatus":"port_geometry_checked; speed compatibility and vehicle reachability pending"})
     return level
@@ -362,8 +419,20 @@ def main():
             fig=Figure(figsize=(15,12),layout="constrained")
             axes=fig.subplots(5,1)
             for ax,module in zip(axes,modules):
+                # Contact sheets show the same finalized ground cross-section
+                # as the JSON preview, not independent local underside heights.
+                module = normalize_main_platform(module)
                 for group,color in (("deadzone","#ef6666"),("MainPlatform","#3eae78"),("RampPlatform","#e6a12c"),("InteractableObject","#ee4444")):
                     for shape in module[group]:
+                        if 'points' not in shape:
+                            if shape.get('type') == 'SpringObject':
+                                ax.plot(*zip(*spring_trajectory(shape)), color='#db2777', linestyle=':')
+                                target = shape['properties']['targetPosition']
+                                ax.scatter(target['x'], target['y'], color='#db2777', marker='x')
+                            p = shape['transform']
+                            ax.scatter(p['x'], p['y'], color='#db2777' if shape.get('type') == 'SpringObject' else color,
+                                       marker='^' if shape.get('type') == 'SpringObject' else 'o')
+                            continue
                         line=sample_curve(shape)
                         if shape.get("closed"):
                             ax.add_patch(Polygon(line,facecolor=color,edgecolor=color,alpha=.55))

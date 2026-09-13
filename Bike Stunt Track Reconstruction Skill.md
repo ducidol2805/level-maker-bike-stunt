@@ -585,6 +585,55 @@ exitType
 
 ---
 
+# Spring Jump Obstacle (Cinematic Platform Transfer)
+
+Treat the complete spring transfer as a reusable obstacle, not a SpringObject
+scattered independently into the level:
+
+```text
+Left MainPlatform / approach
+-> SpringObject at its right lip
+-> open flight gap with a deadzone below
+-> right MainPlatform / catch
+-> recovery -> next obstacle
+```
+
+The assembly contains exactly two closed MainPlatform terrain shapes, one
+SpringObject at the left platform's right edge, and a compact closed deadzone
+covering the full horizontal gap with a small edge overlap. Keep the gap empty
+of ground; do not add an invisible bridge or merge across it at export. Give
+both terrain undersides the map's common bottom Y after composition.
+
+Maintain two library groups, each with five authored variants:
+
+- `spring_high`: strong elevation change, emphasizing an upward cinematic reveal.
+- `spring_far`: long horizontal separation, emphasizing a sweeping flight.
+
+Read [spring_high](library/types/spring_high.json) and
+[spring_far](library/types/spring_far.json) when selecting variants; their
+parameters are the source of truth. Use the SpringObject contract in this skill
+when authoring launch/target fields or integrating the Unity trigger.
+
+Use these on some maps as a cinematic highlight, not on every map and not in
+back-to-back obstacle slots. The current campaign recipe uses one spring transfer
+on every fifth map, alternating high/far; this cadence is configurable, not a
+universal rule for every authored level.
+
+Show the spring and destination before commitment, frame the flight apex, and
+leave a broad catch plus stabilization space. Prefer coin rewards along the
+spring flight while keeping exactly 20 optional coins in a complete map.
+Place a checkpoint on the first stable post-catch pad, subject to the existing
+End-distance rule. Do not move Start/End when adding or exporting this obstacle.
+
+Validate the estimated arc clears the departure lip, the full gap and the
+destination's leading wall, arrives descending over the catch, and never crosses
+the deadzone. Translate the target with the spring during composition. Geometry
+checks alone do not certify playability: trigger timing, full-bike clearance,
+landing impact, rearming and camera behavior require Unity playtests. Isolated
+library previews are not complete maps and need not contain 20 coins.
+
+---
+
 # Jump Unit
 
 Do not analyze takeoff ramps independently.
@@ -1123,9 +1172,41 @@ Example:
 
 ---
 
+# Purposeful Cinematic Object Placement
+
+Design cinematic objects as a sequence with a readable setup, commitment,
+spectacle, landing/fallback and recovery. Name the beat each object serves;
+do not distribute springs, boosts or explosives at uniform distances or merely
+to satisfy a feature checklist. Reuse an assembly when its movement and camera
+intent fit the route, not just because an empty stretch is available.
+
+- Spring high: reveal a higher destination through vertical flight. Spring far:
+  emphasize a wide crossing. Frame the destination and apex; clear the catch.
+- Explosive ramp: create a deliberate one-use commitment into a stunt. Specify
+  when the full bike clears, what route remains afterwards, and reset behavior.
+- Speed boost: prepare or sustain the speed needed by a named stunt. Put it on
+  the appropriate approach/branch, not arbitrarily on recovery or before End.
+  Stack boosts only for an explicit purpose; test zero/one/two pickups. Do not
+  place boosts just before a spring that replaces incoming velocity unless
+  another documented gameplay purpose justifies them.
+- Explosive barrel: a directed optional pop or transfer with a readable landing,
+  clear recovery and a safe route for skipping it. Impulse plus entry velocity
+  and bike mass determine its flight; do not treat it as a deterministic spring.
+- Coins: guide the intended flight/contact line and reward commitment. Allocate
+  a budget per beat, with more coins on long cinematic arcs and fewer on short
+  jumps or tight loops. Keep spacing readable and leave intentional empty space
+  on restart pads, recovery and the final release.
+
+Record beat ID, purpose, participating object IDs, coin budget, camera cue and
+landing/recovery intent in the authored design. Mark assumed trajectories and
+speeds as unvalidated until tested with the real bike. Do not promise that all
+coins are collectible from static geometry alone.
+
+---
+
 # Coin Placement Policy
 
-Every map must contain exactly **10 collectible coins** unless an explicit
+Every map must contain exactly **20 collectible coins** unless an explicit
 level brief overrides that count. Coins are optional rewards; they must not be
 required for the critical driving line or for finishing the map.
 
@@ -1162,7 +1243,7 @@ optional = true
 collection risk level
 ```
 
-Before export, verify both the exact count of 10 and that the strongest visual
+Before export, verify both the exact count of 20 and that the strongest visual
 stunt moments received coin placement before any filler placement.
 
 ---

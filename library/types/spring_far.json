@@ -1,0 +1,117 @@
+{
+  "type": "spring_far",
+  "builder": "spring_jump",
+  "primarySkill": "cinematic_launch_and_recovery",
+  "variants": [
+    {
+      "id": "spring_far.crossing_1",
+      "name": "Crossing 1",
+      "difficulty": 1,
+      "intent": "Cinematic crossing over a 20-unit void",
+      "parameters": {
+        "approach": 14,
+        "gap": 20,
+        "height": 2,
+        "landing": 12,
+        "recovery": 14,
+        "targetInset": 4,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.35
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "spring_far.crossing_2",
+      "name": "Crossing 2",
+      "difficulty": 2,
+      "intent": "Cinematic crossing over a 28-unit void",
+      "parameters": {
+        "approach": 16,
+        "gap": 28,
+        "height": 3,
+        "landing": 14,
+        "recovery": 16,
+        "targetInset": 4,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.35
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "spring_far.crossing_3",
+      "name": "Crossing 3",
+      "difficulty": 3,
+      "intent": "Cinematic crossing over a 36-unit void",
+      "parameters": {
+        "approach": 18,
+        "gap": 36,
+        "height": 4,
+        "landing": 16,
+        "recovery": 18,
+        "targetInset": 4,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.35
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "spring_far.crossing_4",
+      "name": "Crossing 4",
+      "difficulty": 4,
+      "intent": "Cinematic crossing over a 44-unit void",
+      "parameters": {
+        "approach": 20,
+        "gap": 44,
+        "height": 5,
+        "landing": 18,
+        "recovery": 20,
+        "targetInset": 4,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.35
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "spring_far.crossing_5",
+      "name": "Crossing 5",
+      "difficulty": 5,
+      "intent": "Cinematic crossing over a 52-unit void",
+      "parameters": {
+        "approach": 22,
+        "gap": 52,
+        "height": 6,
+        "landing": 20,
+        "recovery": 22,
+        "targetInset": 4,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.35
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    }
+  ]
+}

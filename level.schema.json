@@ -16,6 +16,19 @@
       "properties": {"x": {"type": "number"}, "y": {"type": "number"}, "rotation": {"type": "number", "default": 0}, "scale": {"type": "number", "default": 1}, "tangentIn": {"$ref": "#/$defs/vector"}, "tangentOut": {"$ref": "#/$defs/vector"}, "tangentMode": {"enum": ["linear", "continuous", "broken"]}, "corner": {"type": "boolean", "default": false}},
       "additionalProperties": true
     },
+    "springProperties": {
+      "type": "object",
+      "required": ["targetPosition", "flightTimeSeconds"],
+      "properties": {
+        "targetPosition": {"$ref": "#/$defs/vector"},
+        "flightTimeSeconds": {"type": "number", "exclusiveMinimum": 0},
+        "gravity": {"type": "number", "exclusiveMinimum": 0, "default": 9.81},
+        "launchMode": {"const": "target_arc", "default": "target_arc"},
+        "activation": {"const": "on_player_enter", "default": "on_player_enter"},
+        "rearm": {"const": "on_exit", "default": "on_exit"},
+        "cinematic": {"type": "boolean", "default": true}
+      }
+    },
     "shape": {
       "type": "object",
       "required": ["points"],
@@ -34,7 +47,23 @@
     "MainPlatform": {"type": "array", "items": {"allOf": [{"$ref": "#/$defs/shape"}, {"properties": {"closed": {"const": true}, "points": {"minItems": 3}}, "required": ["closed"]}]}},
     "RampPlatform": {"type": "array", "items": {"$ref": "#/$defs/shape"}},
     "CheckPoint": {"type": "array", "items": {"type": "object", "required": ["transform"], "properties": {"id": {"type": "string"}, "transform": {"$ref": "#/$defs/point"}}}},
-    "InteractableObject": {"type": "array", "items": {"type": "object", "required": ["type"], "properties": {"id": {"type": "string"}, "type": {"enum": ["explosive_ramp", "explosive_barrel", "speed_boost", "coin"]}, "transform": {"$ref": "#/$defs/point"}, "points": {"type": "array", "items": {"$ref": "#/$defs/point"}}, "properties": {"type": "object"}}}}
+    "InteractableObject": {
+      "type": "array",
+      "items": {
+        "type": "object", "required": ["type"],
+        "properties": {
+          "id": {"type": "string"},
+          "type": {"enum": ["explosive_ramp", "explosive_barrel", "speed_boost", "coin", "SpringObject"]},
+          "transform": {"$ref": "#/$defs/point"},
+          "points": {"type": "array", "items": {"$ref": "#/$defs/point"}},
+          "properties": {"type": "object"}
+        },
+        "allOf": [{
+          "if": {"properties": {"type": {"const": "SpringObject"}}, "required": ["type"]},
+          "then": {"required": ["transform", "properties"], "properties": {"properties": {"$ref": "#/$defs/springProperties"}}}
+        }]
+      }
+    }
   },
   "additionalProperties": true
 }

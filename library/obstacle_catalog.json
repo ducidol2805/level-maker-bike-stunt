@@ -1,5 +1,5 @@
 {
-  "version": "2.0",
+  "version": "2.1",
   "units": "world units; assumed wheelbase 2; requires bike calibration",
   "groups": [
     {
@@ -78,22 +78,31 @@
       "variantCount": 5
     },
     {
+      "type": "spring_high",
+      "path": "types/spring_high.json",
+      "variantCount": 5
+    },
+    {
+      "type": "spring_far",
+      "path": "types/spring_far.json",
+      "variantCount": 5
+    },
+    {
       "type": "explosive_loop",
       "path": "types/explosive_loop.json",
       "variantCount": 5
     }
   ],
-  "variantCount": 80,
+  "variantCount": 90,
   "compositionRules": {
-    "coinCountPerMap": 10,
-    "coins": "stunt/flight anchors first; remaining on sampled safe ground",
+    "coinCountPerMap": 20,
+    "coins": "Allocate purposeful stunt/flight clusters first; sparse orientation coins only after highlight budgets; preserve readable spacing and clear recovery",
+    "cinematicObjects": "Every spring, explosive connector, barrel or boost must name the beat it serves, its launch/commitment purpose, landing or fallback and recovery; never scatter randomly or boost immediately before a velocity-replacing spring",
     "difficulty": "teach, practice, combine within a difficulty band",
     "checkpoint": "first stable pad after hard gap; keep finish distance max(8 units,8% length)",
     "geometry": "local cubic Bezier; closed ground; open auxiliary ramps",
+    "spring": "Two ground platforms, lip-mounted SpringObject and compact full-gap deadzone; spring_high 5 variants, spring_far 5 variants; one cinematic highlight on every fifth campaign map, with recovery",
     "joins": "position and travel tangent must match; check speed compatibility",
     "validation": "geometry verified separately from bike simulation"
-  },
-  "sources": [
-    "research.md"
-  ]
+  }
 }
