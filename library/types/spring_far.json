@@ -112,6 +112,136 @@
         "recoveryRequired": true,
         "repeatCooldown": 2
       }
+    },
+    {
+      "id": "spring_far.low_skim",
+      "name": "Low Skim",
+      "difficulty": 2,
+      "intent": "Skim a 24-unit void from a crest into a shallow landing bowl",
+      "parameters": {
+        "approach": 18,
+        "gap": 24,
+        "height": 2,
+        "landing": 16,
+        "recovery": 16,
+        "targetInset": 5,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.18,
+        "approachProfile": "crest",
+        "approachDepth": 1.8,
+        "landingProfile": "bowl",
+        "landingRelief": 1.6
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "spring_far.dip_crossing",
+      "name": "Dip Crossing",
+      "difficulty": 3,
+      "intent": "Build speed through a deep dip before a 32-unit crowned crossing",
+      "parameters": {
+        "approach": 22,
+        "gap": 32,
+        "height": 4,
+        "landing": 18,
+        "recovery": 18,
+        "targetInset": 5,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.3,
+        "approachProfile": "dip",
+        "approachDepth": 3,
+        "landingProfile": "crown",
+        "landingRelief": 2.5
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 3
+      }
+    },
+    {
+      "id": "spring_far.downhill_crossing",
+      "name": "Downhill Crossing",
+      "difficulty": 3,
+      "intent": "Clear a 40-unit void and flow into a lower exit terrace",
+      "parameters": {
+        "approach": 20,
+        "gap": 40,
+        "height": 5,
+        "landing": 20,
+        "recovery": 22,
+        "targetInset": 6,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.48,
+        "approachProfile": "ramp",
+        "launchOffset": 1.5,
+        "landingProfile": "downslope",
+        "landingRelief": 4
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 3
+      }
+    },
+    {
+      "id": "spring_far.roller_crossing",
+      "name": "Roller Crossing",
+      "difficulty": 4,
+      "intent": "Pump a roller approach before a 48-unit flight to a rolling far bank",
+      "parameters": {
+        "approach": 26,
+        "gap": 48,
+        "height": 7,
+        "landing": 24,
+        "recovery": 22,
+        "targetInset": 6,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.36,
+        "approachProfile": "rollers",
+        "approachDepth": 2,
+        "landingProfile": "rollers",
+        "landingRelief": 2.4
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 4
+      }
+    },
+    {
+      "id": "spring_far.frontier_crossing",
+      "name": "Frontier Crossing",
+      "difficulty": 5,
+      "intent": "Traverse a 60-unit frontier gap onto a high rising far bank",
+      "parameters": {
+        "approach": 28,
+        "gap": 60,
+        "height": 9,
+        "landing": 28,
+        "recovery": 26,
+        "targetInset": 7,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.58,
+        "approachProfile": "crest",
+        "approachDepth": 3,
+        "landingProfile": "upslope",
+        "landingRelief": 4.5
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 5
+      }
     }
   ]
 }

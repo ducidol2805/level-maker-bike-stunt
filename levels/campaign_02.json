@@ -22,14 +22,14 @@
           "x": 0,
           "y": 0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": -6.0,
+            "y": -0.0
           },
           "tangentOut": {
             "x": 6.0,
             "y": 0.0
           },
-          "tangentMode": "broken",
+          "tangentMode": "continuous",
           "corner": false
         },
         {
@@ -96,8 +96,22 @@
             "y": -0.0
           },
           "tangentOut": {
-            "x": 1.666667,
+            "x": 0.633333,
             "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 55.9,
+          "y": 5.396,
+          "tangentIn": {
+            "x": -0.633333,
+            "y": -0.274948
+          },
+          "tangentOut": {
+            "x": 1.033333,
+            "y": 0.4486
           },
           "tangentMode": "continuous",
           "corner": false
@@ -106,8 +120,8 @@
           "x": 59,
           "y": 6.8,
           "tangentIn": {
-            "x": -1.666667,
-            "y": -1.167013
+            "x": -1.033333,
+            "y": -0.723548
           },
           "tangentOut": {
             "x": 0,
@@ -146,7 +160,7 @@
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 8,
+        "drivingSurfaceCount": 9,
         "sourceVariant": "flat.launch_run",
         "sourceShapeIds": [
           "s00_terrain",
@@ -490,10 +504,10 @@
             "y": -0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 6.666666666666667,
+            "y": 0.0
           },
-          "tangentMode": "broken",
+          "tangentMode": "continuous",
           "corner": false
         },
         {
@@ -621,21 +635,21 @@
             "y": -0.0
           },
           "tangentOut": {
-            "x": 2.666667,
+            "x": 2.0,
             "y": 0.0
           },
           "tangentMode": "continuous",
           "corner": false
         },
         {
-          "x": 181.2,
+          "x": 179.2,
           "y": 15.324596703708153,
           "tangentIn": {
-            "x": -2.666667,
+            "x": -2.0,
             "y": -0.0
           },
           "tangentOut": {
-            "x": 1.333333,
+            "x": 2.0,
             "y": 0.0
           },
           "tangentMode": "continuous",
@@ -645,7 +659,7 @@
           "x": 185.2,
           "y": 15.324596703708153,
           "tangentIn": {
-            "x": -1.333333,
+            "x": -2.0,
             "y": -0.0
           },
           "tangentOut": {
@@ -795,6 +809,246 @@
   ],
   "InteractableObject": [
     {
+      "id": "s00_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 4.5,
+        "y": 1.2
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.launch_run",
+        "collectionRisk": "pending_playtest",
+        "beatId": "start",
+        "purpose": "Clear runway; show the first lesson before commitment."
+      },
+      "metadata": {
+        "sourceVariant": "flat.launch_run"
+      }
+    },
+    {
+      "id": "s00_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 9.0,
+        "y": 1.2
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.launch_run",
+        "collectionRisk": "pending_playtest",
+        "beatId": "start",
+        "purpose": "Clear runway; show the first lesson before commitment."
+      },
+      "metadata": {
+        "sourceVariant": "flat.launch_run"
+      }
+    },
+    {
+      "id": "s00_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 13.5,
+        "y": 1.2
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.launch_run",
+        "collectionRisk": "pending_playtest",
+        "beatId": "start",
+        "purpose": "Clear runway; show the first lesson before commitment."
+      },
+      "metadata": {
+        "sourceVariant": "flat.launch_run"
+      }
+    },
+    {
+      "id": "s01_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 24.205723130692714,
+        "y": 1.459059029485759
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "rise.long_climb",
+        "collectionRisk": "pending_playtest",
+        "beatId": "foothill",
+        "purpose": "Teach sustained throttle while the upper route enters view."
+      },
+      "metadata": {
+        "sourceVariant": "rise.long_climb"
+      }
+    },
+    {
+      "id": "s01_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 30.000000000000007,
+        "y": 3.7000000000000024
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "rise.long_climb",
+        "collectionRisk": "pending_playtest",
+        "beatId": "foothill",
+        "purpose": "Teach sustained throttle while the upper route enters view."
+      },
+      "metadata": {
+        "sourceVariant": "rise.long_climb"
+      }
+    },
+    {
+      "id": "s01_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 35.79427686930729,
+        "y": 5.940940970514241
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "rise.long_climb",
+        "collectionRisk": "pending_playtest",
+        "beatId": "foothill",
+        "purpose": "Teach sustained throttle while the upper route enters view."
+      },
+      "metadata": {
+        "sourceVariant": "rise.long_climb"
+      }
+    },
+    {
+      "id": "s02_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 60.16529462970925,
+        "y": 8.44836379039878
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "step_up.small_shelf",
+        "collectionRisk": "pending_playtest",
+        "beatId": "first_shelf",
+        "purpose": "Rehearse reaching a higher catch before the cinematic lift."
+      },
+      "metadata": {
+        "sourceVariant": "step_up.small_shelf"
+      }
+    },
+    {
+      "id": "s02_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 61.455736187221426,
+        "y": 8.775438500939785
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "step_up.small_shelf",
+        "collectionRisk": "pending_playtest",
+        "beatId": "first_shelf",
+        "purpose": "Rehearse reaching a higher catch before the cinematic lift."
+      },
+      "metadata": {
+        "sourceVariant": "step_up.small_shelf"
+      }
+    },
+    {
+      "id": "s02_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 62.78286502222754,
+        "y": 8.683176907276984
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "step_up.small_shelf",
+        "collectionRisk": "pending_playtest",
+        "beatId": "first_shelf",
+        "purpose": "Rehearse reaching a higher catch before the cinematic lift."
+      },
+      "metadata": {
+        "sourceVariant": "step_up.small_shelf"
+      }
+    },
+    {
+      "id": "s03_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 84.2,
+        "y": 6.524596703708153
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.checkpoint_pad",
+        "collectionRisk": "pending_playtest",
+        "beatId": "lift_setup",
+        "purpose": "Reset bike pitch and camera before the spring approach."
+      },
+      "metadata": {
+        "sourceVariant": "flat.checkpoint_pad"
+      }
+    },
+    {
+      "id": "s03_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 87.2,
+        "y": 6.524596703708153
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.checkpoint_pad",
+        "collectionRisk": "pending_playtest",
+        "beatId": "lift_setup",
+        "purpose": "Reset bike pitch and camera before the spring approach."
+      },
+      "metadata": {
+        "sourceVariant": "flat.checkpoint_pad"
+      }
+    },
+    {
+      "id": "s03_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 90.2,
+        "y": 6.524596703708153
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.checkpoint_pad",
+        "collectionRisk": "pending_playtest",
+        "beatId": "lift_setup",
+        "purpose": "Reset bike pitch and camera before the spring approach."
+      },
+      "metadata": {
+        "sourceVariant": "flat.checkpoint_pad"
+      }
+    },
+    {
       "id": "s04_spring",
       "type": "SpringObject",
       "transform": {
@@ -821,303 +1075,303 @@
       }
     },
     {
-      "id": "coin_01",
+      "id": "s04_coin_01",
       "type": "coin",
       "transform": {
-        "x": 22.97833451398684,
-        "y": 1.253928994425281
+        "x": 112.13910463695116,
+        "y": 10.500620408826155
       },
       "properties": {
         "optional": true,
-        "beatId": "foothill",
-        "line": "crest_or_flow",
-        "collectionRisk": "flow",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_02",
-      "type": "coin",
-      "transform": {
-        "x": 37.02166548601316,
-        "y": 6.146071005574719
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "foothill",
-        "line": "crest_or_flow",
-        "collectionRisk": "flow",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_03",
-      "type": "coin",
-      "transform": {
-        "x": 59.266759275183155,
-        "y": 7.977940768652918
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "first_shelf",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_04",
-      "type": "coin",
-      "transform": {
-        "x": 61.34945639995344,
-        "y": 8.76400723402556
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "first_shelf",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_05",
-      "type": "coin",
-      "transform": {
-        "x": 63.543927558301064,
-        "y": 8.43419052796499
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "first_shelf",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_06",
-      "type": "coin",
-      "transform": {
-        "x": 110.31717288388926,
-        "y": 8.035932055923354
-      },
-      "properties": {
-        "optional": true,
+        "placement": "library_obstacle",
+        "line": "spring_flight",
+        "sourceVariant": "spring_high.lift_2",
+        "collectionRisk": "pending_playtest",
         "beatId": "terrace_reveal",
-        "line": "cinematic_spring_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Reveal the 10-unit higher terrace through a tall coin-guided arc."
+      },
+      "metadata": {
+        "sourceVariant": "spring_high.lift_2"
       }
     },
     {
-      "id": "coin_07",
+      "id": "s04_coin_02",
       "type": "coin",
       "transform": {
-        "x": 111.80061902113734,
-        "y": 10.073449713044944
+        "x": 115.70096948445544,
+        "y": 14.15076458257391
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "spring_flight",
+        "sourceVariant": "spring_high.lift_2",
+        "collectionRisk": "pending_playtest",
         "beatId": "terrace_reveal",
-        "line": "cinematic_spring_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Reveal the 10-unit higher terrace through a tall coin-guided arc."
+      },
+      "metadata": {
+        "sourceVariant": "spring_high.lift_2"
       }
     },
     {
-      "id": "coin_08",
+      "id": "s04_coin_03",
       "type": "coin",
       "transform": {
-        "x": 113.42675485114054,
-        "y": 11.998608788731316
+        "x": 120.17252622822296,
+        "y": 16.543865775856716
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "spring_flight",
+        "sourceVariant": "spring_high.lift_2",
+        "collectionRisk": "pending_playtest",
         "beatId": "terrace_reveal",
-        "line": "cinematic_spring_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Reveal the 10-unit higher terrace through a tall coin-guided arc."
+      },
+      "metadata": {
+        "sourceVariant": "spring_high.lift_2"
       }
     },
     {
-      "id": "coin_09",
+      "id": "s05_coin_01",
       "type": "coin",
       "transform": {
-        "x": 115.23071307981704,
-        "y": 13.757341533969063
+        "x": 159.4384022799646,
+        "y": 19.40090439309691
       },
       "properties": {
         "optional": true,
-        "beatId": "terrace_reveal",
-        "line": "cinematic_spring_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_10",
-      "type": "coin",
-      "transform": {
-        "x": 117.25315471269961,
-        "y": 15.257494487614894
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "terrace_reveal",
-        "line": "cinematic_spring_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_11",
-      "type": "coin",
-      "transform": {
-        "x": 119.52055869870578,
-        "y": 16.34669837559806
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "terrace_reveal",
-        "line": "cinematic_spring_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_12",
-      "type": "coin",
-      "transform": {
-        "x": 121.98752303365822,
-        "y": 16.820021593540833
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "terrace_reveal",
-        "line": "cinematic_spring_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_13",
-      "type": "coin",
-      "transform": {
-        "x": 159.55370086765066,
-        "y": 19.437661280028994
-      },
-      "properties": {
-        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_platform",
+        "sourceVariant": "platform.uphill_bridge",
+        "collectionRisk": "pending_playtest",
         "beatId": "skywalk",
-        "line": "alternate_high_line",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Reward the upper ramp line while preserving continuous ground fallback."
+      },
+      "metadata": {
+        "sourceVariant": "platform.uphill_bridge"
       }
     },
     {
-      "id": "coin_14",
+      "id": "s05_coin_02",
       "type": "coin",
       "transform": {
-        "x": 165.18567533530583,
-        "y": 20.942422569979886
+        "x": 168.54714725255496,
+        "y": 21.31853635014929
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_platform",
+        "sourceVariant": "platform.uphill_bridge",
+        "collectionRisk": "pending_playtest",
         "beatId": "skywalk",
-        "line": "alternate_high_line",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Reward the upper ramp line while preserving continuous ground fallback."
+      },
+      "metadata": {
+        "sourceVariant": "platform.uphill_bridge"
       }
     },
     {
-      "id": "coin_15",
+      "id": "s05_coin_03",
       "type": "coin",
       "transform": {
-        "x": 170.99437765732205,
-        "y": 21.324596703708153
+        "x": 176.6224779286359,
+        "y": 18.300026805704228
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_platform",
+        "sourceVariant": "platform.uphill_bridge",
+        "collectionRisk": "pending_playtest",
         "beatId": "skywalk",
-        "line": "alternate_high_line",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_16",
-      "type": "coin",
-      "transform": {
-        "x": 176.3234785960326,
-        "y": 19.63315351703565
+        "purpose": "Reward the upper ramp line while preserving continuous ground fallback."
       },
-      "properties": {
-        "optional": true,
-        "beatId": "skywalk",
-        "line": "alternate_high_line",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+      "metadata": {
+        "sourceVariant": "platform.uphill_bridge"
       }
     },
     {
-      "id": "coin_17",
+      "id": "s06_coin_01",
       "type": "coin",
       "transform": {
-        "x": 196.1745698480236,
-        "y": 14.326176786614322
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "home_stairs",
-        "line": "crest_or_flow",
-        "collectionRisk": "flow",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_18",
-      "type": "coin",
-      "transform": {
-        "x": 216.5023643864293,
-        "y": 12.70661810654768
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "boulevard",
-        "line": "crest_or_flow",
-        "collectionRisk": "flow",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_19",
-      "type": "coin",
-      "transform": {
-        "x": 230.16478681669292,
+        "x": 190.47438534989126,
         "y": 14.524596703708152
       },
       "properties": {
         "optional": true,
-        "beatId": "boulevard",
-        "line": "crest_or_flow",
-        "collectionRisk": "flow",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "fall.terraced",
+        "collectionRisk": "pending_playtest",
+        "beatId": "home_stairs",
+        "purpose": "Descend in two readable steps after the skyline reveal."
+      },
+      "metadata": {
+        "sourceVariant": "fall.terraced"
       }
     },
     {
-      "id": "coin_20",
+      "id": "s06_coin_02",
       "type": "coin",
       "transform": {
-        "x": 243.88141488325712,
+        "x": 196.17457591211115,
+        "y": 14.326205632657508
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "fall.terraced",
+        "collectionRisk": "pending_playtest",
+        "beatId": "home_stairs",
+        "purpose": "Descend in two readable steps after the skyline reveal."
+      },
+      "metadata": {
+        "sourceVariant": "fall.terraced"
+      }
+    },
+    {
+      "id": "s06_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 201.47438534989126,
         "y": 12.524596703708152
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "fall.terraced",
+        "collectionRisk": "pending_playtest",
+        "beatId": "home_stairs",
+        "purpose": "Descend in two readable steps after the skyline reveal."
+      },
+      "metadata": {
+        "sourceVariant": "fall.terraced"
+      }
+    },
+    {
+      "id": "s07_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 218.68381636851436,
+        "y": 13.517661504345712
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "tabletop.long_deck",
+        "collectionRisk": "pending_playtest",
         "beatId": "boulevard",
-        "line": "crest_or_flow",
-        "collectionRisk": "flow",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Use the long deck as a final relaxed stunt before the finish."
+      },
+      "metadata": {
+        "sourceVariant": "tabletop.long_deck"
+      }
+    },
+    {
+      "id": "s07_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 230.1647859733481,
+        "y": 14.524596703708152
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "tabletop.long_deck",
+        "collectionRisk": "pending_playtest",
+        "beatId": "boulevard",
+        "purpose": "Use the long deck as a final relaxed stunt before the finish."
+      },
+      "metadata": {
+        "sourceVariant": "tabletop.long_deck"
+      }
+    },
+    {
+      "id": "s07_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 241.56366840016796,
+        "y": 12.698935118946826
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "tabletop.long_deck",
+        "collectionRisk": "pending_playtest",
+        "beatId": "boulevard",
+        "purpose": "Use the long deck as a final relaxed stunt before the finish."
+      },
+      "metadata": {
+        "sourceVariant": "tabletop.long_deck"
+      }
+    },
+    {
+      "id": "s08_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 262.2,
+        "y": 12.524596703708152
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.finish_release",
+        "collectionRisk": "pending_playtest",
+        "beatId": "finish",
+        "purpose": "Finish release after the last challenge."
+      },
+      "metadata": {
+        "sourceVariant": "flat.finish_release"
+      }
+    },
+    {
+      "id": "s08_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 271.2,
+        "y": 12.524596703708152
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.finish_release",
+        "collectionRisk": "pending_playtest",
+        "beatId": "finish",
+        "purpose": "Finish release after the last challenge."
+      },
+      "metadata": {
+        "sourceVariant": "flat.finish_release"
+      }
+    },
+    {
+      "id": "s08_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 280.2,
+        "y": 12.524596703708152
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.finish_release",
+        "collectionRisk": "pending_playtest",
+        "beatId": "finish",
+        "purpose": "Finish release after the last challenge."
+      },
+      "metadata": {
+        "sourceVariant": "flat.finish_release"
       }
     }
   ],
@@ -1160,7 +1414,7 @@
     "units": "unity",
     "previewOnly": false,
     "authoringMode": "curated_catalog_composition",
-    "catalogVersion": "2.1",
+    "catalogVersion": "2.6",
     "recipe": "library/campaign_recipes.json",
     "recipeNumber": 2,
     "referenceLevel": "levels/00_cinder_crown.json",
@@ -1175,8 +1429,8 @@
     "y": 12.324596703708153
   },
   "Top": {
-    "x": 170.99437765732205,
-    "y": 21.324596703708153
+    "x": 168.54714725255496,
+    "y": 21.31853635014929
   },
   "Bottom": {
     "x": 200.2,
@@ -1195,10 +1449,16 @@
       "flat.finish_release"
     ],
     "validationStatus": "geometry_checked; Unity bike playtests pending",
-    "coinCount": 20,
+    "coinCount": 27,
+    "coinPolicy": {
+      "perObstacle": 3,
+      "placement": "library_local"
+    },
     "obstacles": [
       {
         "id": "flat.launch_run",
+        "type": "flat",
+        "geometryProfile": "flat",
         "ports": {
           "entry": {
             "x": 0,
@@ -1236,6 +1496,8 @@
       },
       {
         "id": "rise.long_climb",
+        "type": "rise",
+        "geometryProfile": "rise",
         "ports": {
           "entry": {
             "x": 18,
@@ -1273,6 +1535,8 @@
       },
       {
         "id": "step_up.small_shelf",
+        "type": "step_up",
+        "geometryProfile": "elevated_landing_shelf",
         "ports": {
           "entry": {
             "x": 42,
@@ -1401,6 +1665,8 @@
       },
       {
         "id": "flat.checkpoint_pad",
+        "type": "flat",
+        "geometryProfile": "flat",
         "ports": {
           "entry": {
             "x": 81.2,
@@ -1438,6 +1704,8 @@
       },
       {
         "id": "spring_high.lift_2",
+        "type": "spring_high",
+        "geometryProfile": "spring_high",
         "ports": {
           "entry": {
             "x": 93.2,
@@ -1507,6 +1775,8 @@
       },
       {
         "id": "platform.uphill_bridge",
+        "type": "platform",
+        "geometryProfile": "platform",
         "ports": {
           "entry": {
             "x": 151.2,
@@ -1544,6 +1814,8 @@
       },
       {
         "id": "fall.terraced",
+        "type": "fall",
+        "geometryProfile": "fall",
         "ports": {
           "entry": {
             "x": 185.2,
@@ -1581,6 +1853,8 @@
       },
       {
         "id": "tabletop.long_deck",
+        "type": "tabletop",
+        "geometryProfile": "tabletop",
         "ports": {
           "entry": {
             "x": 207.2,
@@ -1618,6 +1892,8 @@
       },
       {
         "id": "flat.finish_release",
+        "type": "flat",
+        "geometryProfile": "flat",
         "ports": {
           "entry": {
             "x": 253.2,
@@ -1784,7 +2060,7 @@
         "beatId": "finish",
         "role": "resolution",
         "tension": 0,
-        "purpose": "Empty finish release after the last challenge.",
+        "purpose": "Finish release after the last challenge.",
         "xRange": [
           253.2,
           289.2
@@ -1806,8 +2082,12 @@
           0,
           18
         ],
-        "objectIds": [],
-        "coinCount": 0,
+        "objectIds": [
+          "s00_coin_01",
+          "s00_coin_02",
+          "s00_coin_03"
+        ],
+        "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
           10,
@@ -1821,7 +2101,7 @@
             "minX": -3,
             "maxX": 21.0,
             "minY": -2,
-            "maxY": 3
+            "maxY": 4.2
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -1838,10 +2118,11 @@
           42
         ],
         "objectIds": [
-          "coin_01",
-          "coin_02"
+          "s01_coin_01",
+          "s01_coin_02",
+          "s01_coin_03"
         ],
-        "coinCount": 2,
+        "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
           34,
@@ -1855,7 +2136,7 @@
             "minX": 15,
             "maxX": 45.0,
             "minY": -2,
-            "maxY": 9.146071005574719
+            "maxY": 8.94094097051424
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -1872,9 +2153,9 @@
           81.2
         ],
         "objectIds": [
-          "coin_03",
-          "coin_04",
-          "coin_05"
+          "s02_coin_01",
+          "s02_coin_02",
+          "s02_coin_03"
         ],
         "coinCount": 3,
         "checkpointId": "cp_first_shelf",
@@ -1890,7 +2171,7 @@
             "minX": 39,
             "maxX": 84.2,
             "minY": 2.9999999999999982,
-            "maxY": 11.76400723402556
+            "maxY": 11.775438500939785
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -1906,8 +2187,12 @@
           81.2,
           93.2
         ],
-        "objectIds": [],
-        "coinCount": 0,
+        "objectIds": [
+          "s03_coin_01",
+          "s03_coin_02",
+          "s03_coin_03"
+        ],
+        "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
           85.2,
@@ -1921,7 +2206,7 @@
             "minX": 78.2,
             "maxX": 96.2,
             "minY": 3.324596703708151,
-            "maxY": 8.324596703708155
+            "maxY": 9.524596703708152
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -1939,15 +2224,11 @@
         ],
         "objectIds": [
           "s04_spring",
-          "coin_06",
-          "coin_07",
-          "coin_08",
-          "coin_09",
-          "coin_10",
-          "coin_11",
-          "coin_12"
+          "s04_coin_01",
+          "s04_coin_02",
+          "s04_coin_03"
         ],
-        "coinCount": 7,
+        "coinCount": 3,
         "checkpointId": "cp_terrace_reveal",
         "recoveryRange": [
           135.2,
@@ -1978,12 +2259,11 @@
           185.2
         ],
         "objectIds": [
-          "coin_13",
-          "coin_14",
-          "coin_15",
-          "coin_16"
+          "s05_coin_01",
+          "s05_coin_02",
+          "s05_coin_03"
         ],
-        "coinCount": 4,
+        "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
           177.2,
@@ -1997,7 +2277,7 @@
             "minX": 148.2,
             "maxX": 188.2,
             "minY": 13.324596703708147,
-            "maxY": 24.324596703708153
+            "maxY": 24.31853635014929
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2014,9 +2294,11 @@
           207.2
         ],
         "objectIds": [
-          "coin_17"
+          "s06_coin_01",
+          "s06_coin_02",
+          "s06_coin_03"
         ],
-        "coinCount": 1,
+        "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
           199.2,
@@ -2047,9 +2329,9 @@
           253.2
         ],
         "objectIds": [
-          "coin_18",
-          "coin_19",
-          "coin_20"
+          "s07_coin_01",
+          "s07_coin_02",
+          "s07_coin_03"
         ],
         "coinCount": 3,
         "checkpointId": null,
@@ -2076,13 +2358,17 @@
         "id": "finish",
         "role": "resolution",
         "tension": 0,
-        "purpose": "Empty finish release after the last challenge.",
+        "purpose": "Finish release after the last challenge.",
         "xRange": [
           253.2,
           289.2
         ],
-        "objectIds": [],
-        "coinCount": 0,
+        "objectIds": [
+          "s08_coin_01",
+          "s08_coin_02",
+          "s08_coin_03"
+        ],
+        "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
           281.2,
@@ -2096,7 +2382,7 @@
             "minX": 250.2,
             "maxX": 292.2,
             "minY": 9.32459670370815,
-            "maxY": 14.324596703708156
+            "maxY": 15.524596703708152
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2105,12 +2391,15 @@
       }
     ],
     "coinAllocation": {
-      "foothill": 2,
+      "start": 3,
+      "foothill": 3,
       "first_shelf": 3,
-      "terrace_reveal": 7,
-      "skywalk": 4,
-      "home_stairs": 1,
-      "boulevard": 3
+      "lift_setup": 3,
+      "terrace_reveal": 3,
+      "skywalk": 3,
+      "home_stairs": 3,
+      "boulevard": 3,
+      "finish": 3
     },
     "length": 287.2,
     "recommendedPlaytestOrder": [
@@ -2119,13 +2408,13 @@
       "Loop with zero/one/two boosts where present",
       "Spring lip trigger, descending catch and rearming",
       "Barrel at low/typical/high entry speed",
-      "All 20 coins and per-beat camera framing"
+      "All obstacle coins and per-beat camera framing"
     ],
     "validationReport": {
       "status": "passed_static_geometry_and_point_mass_checks",
       "sourceMainShapes": 11,
       "exportedMainShapes": 3,
-      "coinCount": 20,
+      "coinCount": 27,
       "coveredGaps": [
         {
           "xRange": [
@@ -2149,6 +2438,12 @@
           "terrainClearance": "reference point >= 1 unit"
         }
       ],
+      "coinChecks": {
+        "perObstacle": 3,
+        "loopCoinsInsideRing": true,
+        "surfaceCoinsOnDrivingSurface": true,
+        "libraryCoinCount": 27
+      },
       "jumpChecks": [
         {
           "variant": "step_up.small_shelf",

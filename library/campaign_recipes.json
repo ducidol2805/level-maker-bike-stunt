@@ -1,154 +1,2797 @@
 {
-  "version": "1.0",
+  "version": "1.4",
   "referenceLevel": "levels/00_cinder_crown.json",
   "designSkill": "Bike Stunt Track Reconstruction Skill.md",
   "maps": [
     {
-      "number": 1, "name": "Ember Rhythm", "difficulty": "easy-medium", "finishLength": 36,
+      "number": 1,
+      "name": "Ember Rhythm",
+      "difficulty": "easy-medium",
+      "finishLength": 36,
       "intent": "Learn to pump two rollers, carry that rhythm into a visible gap, then repeat with a quicker pop.",
       "signature": "Pumping rhythm becomes flight timing; a broad tabletop teaches the motion before the first void.",
       "stages": [
-        {"variant":"wave.two_soft","beat":"pump","role":"teach","tension":1,"coins":3,"purpose":"Teach two readable weight shifts without a failure gap."},
-        {"variant":"tabletop.learner","beat":"table","role":"practice","tension":2,"coins":3,"purpose":"Practice crest timing with continuous rollable ground."},
-        {"variant":"hill.round_roller","beat":"approach","role":"build","tension":2,"coins":2,"purpose":"One rounded crest prepares the first flight."},
-        {"variant":"gap.flow_double","beat":"first_flight","role":"climax","tension":3,"coins":4,"checkpoint":true,"purpose":"Spend learned momentum on a visible gap and long sloped catch."},
-        {"variant":"valley.long_floor","beat":"breathe","role":"release","tension":1,"coins":2,"purpose":"Settle on the valley floor and rebuild speed gradually."},
-        {"variant":"kicker.quick_pop","beat":"reprise","role":"combine","tension":2,"coins":3,"checkpoint":true,"purpose":"Repeat the timing in a shorter flight after a clear recovery."},
-        {"variant":"wave.three_even","beat":"encore","role":"resolution","tension":2,"coins":3,"purpose":"Finish with a readable three-beat rhythm, then clear runout."}
+        {
+          "variant": "wave.two_soft",
+          "beat": "pump",
+          "role": "teach",
+          "tension": 1,
+          "purpose": "Teach two readable weight shifts without a failure gap."
+        },
+        {
+          "variant": "tabletop.learner",
+          "beat": "table",
+          "role": "practice",
+          "tension": 2,
+          "purpose": "Practice crest timing with continuous rollable ground."
+        },
+        {
+          "variant": "hill.round_roller",
+          "beat": "approach",
+          "role": "build",
+          "tension": 2,
+          "purpose": "One rounded crest prepares the first flight."
+        },
+        {
+          "variant": "gap.flow_double",
+          "beat": "first_flight",
+          "role": "climax",
+          "tension": 3,
+          "checkpoint": true,
+          "purpose": "Spend learned momentum on a visible gap and long sloped catch."
+        },
+        {
+          "variant": "valley.long_floor",
+          "beat": "breathe",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Settle on the valley floor and rebuild speed gradually."
+        },
+        {
+          "variant": "kicker.quick_pop",
+          "beat": "reprise",
+          "role": "combine",
+          "tension": 2,
+          "checkpoint": true,
+          "purpose": "Repeat the timing in a shorter flight after a clear recovery."
+        },
+        {
+          "variant": "wave.three_even",
+          "beat": "encore",
+          "role": "resolution",
+          "tension": 2,
+          "purpose": "Finish with a readable three-beat rhythm, then clear runout."
+        }
       ]
     },
     {
-      "number": 2, "name": "Azure Terrace", "difficulty": "medium", "finishLength": 36,
+      "number": 2,
+      "name": "Azure Terrace",
+      "difficulty": "medium",
+      "finishLength": 36,
       "intent": "Climb toward a visible terrace, rehearse an elevated catch, then reveal the skyline with one high spring.",
       "signature": "A 10-unit spring lift unlocks an upper route; the final terraced descent releases the tension.",
       "stages": [
-        {"variant":"rise.long_climb","beat":"foothill","role":"teach","tension":2,"coins":2,"purpose":"Teach sustained throttle while the upper route enters view."},
-        {"variant":"step_up.small_shelf","beat":"first_shelf","role":"practice","tension":2,"coins":3,"checkpoint":true,"purpose":"Rehearse reaching a higher catch before the cinematic lift."},
-        {"variant":"flat.checkpoint_pad","beat":"lift_setup","role":"release","tension":1,"coins":0,"purpose":"Reset bike pitch and camera before the spring approach."},
-        {"variant":"spring_high.lift_2","beat":"terrace_reveal","role":"climax","tension":3,"coins":7,"checkpoint":true,"purpose":"Reveal the 10-unit higher terrace through a tall coin-guided arc."},
-        {"variant":"platform.uphill_bridge","beat":"skywalk","role":"practice","tension":2,"coins":4,"purpose":"Reward the upper ramp line while preserving continuous ground fallback."},
-        {"variant":"fall.terraced","beat":"home_stairs","role":"release","tension":1,"coins":1,"purpose":"Descend in two readable steps after the skyline reveal."},
-        {"variant":"tabletop.long_deck","beat":"boulevard","role":"resolution","tension":2,"coins":3,"purpose":"Use the long deck as a final relaxed stunt before the finish."}
+        {
+          "variant": "rise.long_climb",
+          "beat": "foothill",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Teach sustained throttle while the upper route enters view."
+        },
+        {
+          "variant": "step_up.small_shelf",
+          "beat": "first_shelf",
+          "role": "practice",
+          "tension": 2,
+          "checkpoint": true,
+          "purpose": "Rehearse reaching a higher catch before the cinematic lift."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "lift_setup",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Reset bike pitch and camera before the spring approach."
+        },
+        {
+          "variant": "spring_high.lift_2",
+          "beat": "terrace_reveal",
+          "role": "climax",
+          "tension": 3,
+          "checkpoint": true,
+          "purpose": "Reveal the 10-unit higher terrace through a tall coin-guided arc."
+        },
+        {
+          "variant": "platform.uphill_bridge",
+          "beat": "skywalk",
+          "role": "practice",
+          "tension": 2,
+          "purpose": "Reward the upper ramp line while preserving continuous ground fallback."
+        },
+        {
+          "variant": "fall.terraced",
+          "beat": "home_stairs",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Descend in two readable steps after the skyline reveal."
+        },
+        {
+          "variant": "tabletop.long_deck",
+          "beat": "boulevard",
+          "role": "resolution",
+          "tension": 2,
+          "purpose": "Use the long deck as a final relaxed stunt before the finish."
+        }
       ]
     },
     {
-      "number": 3, "name": "Fuse Halo", "difficulty": "medium / optional advanced loop", "finishLength": 40,
+      "number": 3,
+      "name": "Fuse Halo",
+      "difficulty": "medium / optional advanced loop",
+      "finishLength": 40,
       "intent": "Teach curved takeoff, show the explosive connector and loop, then give the player a safe ground return.",
       "signature": "One boosted one-use loop is the landmark; the connector disappears only after full-bike clearance.",
       "stages": [
-        {"variant":"wave.two_soft","beat":"warmup","role":"teach","tension":1,"coins":2,"purpose":"Establish stable pumping before curved takeoff."},
-        {"variant":"curved_ramp.gentle_scoop","beat":"scoop","role":"practice","tension":2,"coins":3,"checkpoint":true,"purpose":"Teach leaning into a smooth rising curve and matching the catch."},
-        {"variant":"rise.crest_relief","beat":"halo_approach","role":"build","tension":2,"coins":2,"purpose":"Bring the halo into view and settle at its entry elevation."},
-        {"variant":"explosive_loop.round","beat":"halo","role":"climax","tension":4,"coins":6,"boosts":1,"checkpoint":true,"purpose":"Commit to the optional connector, boost into inversion, then land on the revealed fallback."},
-        {"variant":"flat.checkpoint_pad","beat":"halo_reset","role":"release","tension":1,"coins":0,"length":16,"purpose":"Let suspension and camera settle after the loop return."},
-        {"variant":"platform.arched_bridge","beat":"victory_bridge","role":"practice","tension":2,"coins":4,"purpose":"Offer an elevated reward line with safe ground underneath."},
-        {"variant":"kicker.low_skip","beat":"last_skip","role":"resolution","tension":1,"coins":3,"checkpoint":true,"purpose":"A small final skip echoes the opening scoop without another inversion."}
-      ]
+        {
+          "variant": "wave.two_soft",
+          "beat": "warmup",
+          "role": "teach",
+          "tension": 1,
+          "purpose": "Establish stable pumping before curved takeoff."
+        },
+        {
+          "variant": "curved_ramp.gentle_scoop",
+          "beat": "scoop",
+          "role": "practice",
+          "tension": 2,
+          "checkpoint": true,
+          "purpose": "Teach leaning into a smooth rising curve and matching the catch."
+        },
+        {
+          "variant": "rise.crest_relief",
+          "beat": "halo_approach",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Bring the halo into view and settle at its entry elevation."
+        },
+        {
+          "variant": "explosive_loop.round",
+          "beat": "halo",
+          "role": "climax",
+          "tension": 4,
+          "boosts": 1,
+          "checkpoint": true,
+          "purpose": "Commit to the optional connector, boost into inversion, then land on the revealed fallback."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "halo_reset",
+          "role": "release",
+          "tension": 1,
+          "length": 16,
+          "purpose": "Let suspension and camera settle after the loop return."
+        },
+        {
+          "variant": "platform.arched_bridge",
+          "beat": "victory_bridge",
+          "role": "practice",
+          "tension": 2,
+          "purpose": "Offer an elevated reward line with safe ground underneath."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_1",
+          "role": "release",
+          "tension": 1,
+          "length": 10.8,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "wave.three_even",
+          "beat": "halo_echo_rollers",
+          "role": "combine",
+          "tension": 2,
+          "purpose": "Repeat three flowing rollers after the ignition landmark."
+        },
+        {
+          "variant": "gap.flow_double",
+          "beat": "halo_echo_gap",
+          "role": "combine",
+          "tension": 2,
+          "purpose": "Carry the learned scoop timing across a broad second gap.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_2",
+          "role": "release",
+          "tension": 1,
+          "length": 10.8,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "platform.arched_bridge",
+          "beat": "halo_echo_bridge",
+          "role": "combine",
+          "tension": 2,
+          "purpose": "Ride the arched return bridge with a readable ground fallback."
+        },
+        {
+          "variant": "kicker.low_skip",
+          "beat": "last_skip",
+          "role": "resolution",
+          "tension": 1,
+          "checkpoint": true,
+          "purpose": "A small final skip echoes the opening scoop without another inversion."
+        }
+      ],
+      "lengthPlan": {
+        "baselineLength": 276.4,
+        "multiplier": 1.5,
+        "targetLength": 414.6,
+        "addedChallengeCount": 3
+      },
+      "difficultyProgression": {
+        "previous": "medium / optional advanced loop",
+        "target": "medium / optional advanced loop"
+      }
     },
     {
-      "number": 4, "name": "Skyline Courier", "difficulty": "medium", "finishLength": 40,
+      "number": 4,
+      "name": "Skyline Courier",
+      "difficulty": "medium",
+      "finishLength": 40,
       "intent": "Teach the high bridge route, then use an optional crest barrel for a short aerial delivery onto a readable catch.",
       "signature": "A barrel-assisted skybridge pop is the centerpiece; the ground route remains continuous below it.",
       "stages": [
-        {"variant":"hill.mesa","beat":"rooftop","role":"teach","tension":2,"coins":3,"purpose":"Introduce climbing onto and leaving a broad roof-like plateau."},
-        {"variant":"platform.flat_bridge","beat":"first_bridge","role":"practice","tension":2,"coins":3,"purpose":"Teach the high reward line over an unobstructed ground fallback."},
-        {"variant":"valley.shallow_bowl","beat":"street","role":"release","tension":1,"coins":2,"purpose":"Return to ground level and normalize speed before the barrel."},
-        {"variant":"platform.arched_bridge","beat":"delivery","role":"climax","tension":3,"coins":5,"barrel":true,"checkpoint":true,"purpose":"Use the crest barrel for an optional forward-up pop, descending onto the bridge return."},
-        {"variant":"flat.checkpoint_pad","beat":"delivery_reset","role":"release","tension":1,"coins":0,"length":16,"purpose":"Leave room after barrel landing for a zero-speed restart."},
-        {"variant":"step_down.gentle","beat":"off_ramp","role":"combine","tension":2,"coins":4,"checkpoint":true,"purpose":"Carry the learned landing pitch into a lower road."},
-        {"variant":"tabletop.long_deck","beat":"arrival","role":"resolution","tension":2,"coins":3,"purpose":"Finish on a wide, rollable deck with no further impulse objects."}
+        {
+          "variant": "hill.mesa",
+          "beat": "rooftop",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Introduce climbing onto and leaving a broad roof-like plateau."
+        },
+        {
+          "variant": "platform.flat_bridge",
+          "beat": "first_bridge",
+          "role": "practice",
+          "tension": 2,
+          "purpose": "Teach the high reward line over an unobstructed ground fallback."
+        },
+        {
+          "variant": "valley.shallow_bowl",
+          "beat": "street",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Return to ground level and normalize speed before the barrel."
+        },
+        {
+          "variant": "platform.arched_bridge",
+          "beat": "delivery",
+          "role": "climax",
+          "tension": 3,
+          "barrel": true,
+          "checkpoint": true,
+          "purpose": "Use the crest barrel for an optional forward-up pop, descending onto the bridge return."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "delivery_reset",
+          "role": "release",
+          "tension": 1,
+          "length": 16,
+          "purpose": "Leave room after barrel landing for a zero-speed restart."
+        },
+        {
+          "variant": "step_down.gentle",
+          "beat": "off_ramp",
+          "role": "combine",
+          "tension": 2,
+          "checkpoint": true,
+          "purpose": "Carry the learned landing pitch into a lower road."
+        },
+        {
+          "variant": "tabletop.long_deck",
+          "beat": "arrival",
+          "role": "resolution",
+          "tension": 2,
+          "purpose": "Finish on a wide, rollable deck with no further impulse objects."
+        }
       ]
     },
     {
-      "number": 5, "name": "Broken Horizon", "difficulty": "medium", "finishLength": 44,
+      "number": 5,
+      "name": "Broken Horizon",
+      "difficulty": "hard",
+      "finishLength": 44,
       "intent": "Build a sense of increasing horizontal distance, then let a spring carry the bike across the central canyon.",
-      "signature": "A 36-unit void and long eight-coin spring arc create the widest single reveal so far.",
+      "signature": "A 36-unit void and long spring arc with three obstacle coins create the widest single reveal so far. Extended with higher-tier transfers and technical obstacles.",
       "stages": [
-        {"variant":"wave.trough_train","beat":"low_rhythm","role":"teach","tension":2,"coins":2,"purpose":"Keep the bike low through three troughs before opening the horizon."},
-        {"variant":"gap.intro","beat":"near_bank","role":"practice","tension":2,"coins":3,"checkpoint":true,"purpose":"Teach identifying takeoff and landing banks on a small crossing."},
-        {"variant":"hill.early_crest","beat":"horizon_setup","role":"build","tension":2,"coins":2,"purpose":"Show the distant destination from an early crest with time to settle."},
-        {"variant":"spring_far.crossing_3","beat":"horizon","role":"climax","tension":3,"coins":8,"checkpoint":true,"purpose":"Cross the 36-unit canyon in one deliberate camera sweep with a broad catch."},
-        {"variant":"fall.long_descent","beat":"far_bank","role":"release","tension":1,"coins":1,"purpose":"Return camera and suspension to ground flow after the long flight."},
-        {"variant":"curved_ramp.speed_scoop","beat":"echo","role":"combine","tension":3,"coins":4,"landingLength":17,"checkpoint":true,"purpose":"Echo the canyon crossing as a shorter manually controlled flight with an extended catch."}
-      ]
+        {
+          "variant": "wave.trough_train",
+          "beat": "low_rhythm",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Keep the bike low through three troughs before opening the horizon."
+        },
+        {
+          "variant": "gap.precision",
+          "beat": "near_bank",
+          "role": "practice",
+          "tension": 4,
+          "checkpoint": true,
+          "purpose": "Master gap / precision with controlled entry speed and a stable recovery.",
+          "landingLength": 17
+        },
+        {
+          "variant": "hill.early_crest",
+          "beat": "horizon_setup",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Show the distant destination from an early crest with time to settle."
+        },
+        {
+          "variant": "spring_far.crossing_5",
+          "beat": "horizon",
+          "role": "climax",
+          "tension": 4,
+          "checkpoint": true,
+          "purpose": "Master spring far / crossing 5 with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "fall.long_descent",
+          "beat": "far_bank",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Return camera and suspension to ground flow after the long flight."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_1",
+          "role": "release",
+          "tension": 1,
+          "length": 13.0375,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "step_down.deep",
+          "beat": "horizon_lower_bank",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Land on a deeper lower bank after the enlarged crossing.",
+          "checkpoint": true
+        },
+        {
+          "variant": "wave.irregular",
+          "beat": "horizon_wind_rhythm",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Read irregular trough timing before the final scoop."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_2",
+          "role": "release",
+          "tension": 1,
+          "length": 13.0375,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "curved_ramp.speed_scoop",
+          "beat": "echo",
+          "role": "combine",
+          "tension": 3,
+          "landingLength": 17,
+          "checkpoint": true,
+          "purpose": "Echo the canyon crossing as a shorter manually controlled flight with an extended catch."
+        }
+      ],
+      "lengthPlan": {
+        "baselineLength": 348.45,
+        "multiplier": 1.5,
+        "targetLength": 522.675,
+        "addedChallengeCount": 2
+      },
+      "difficultyProgression": {
+        "previous": "medium",
+        "target": "hard"
+      }
     },
     {
-      "number": 6, "name": "Basalt Descent", "difficulty": "medium-hard", "finishLength": 40,
+      "number": 6,
+      "name": "Basalt Descent",
+      "difficulty": "medium-hard",
+      "finishLength": 40,
       "intent": "Teach braking and descending alignment in successive lower catch basins, separated by stabilization shelves.",
       "signature": "A downhill route built around horizontal drops and sloped catches; braking, rather than boosts, sets the pace.",
       "stages": [
-        {"variant":"rise.two_stage","beat":"rim","role":"build","tension":2,"coins":2,"purpose":"Reach the crater rim with an intermediate shelf that settles pitch."},
-        {"variant":"drop.long_runout","beat":"first_drop","role":"teach","tension":2,"coins":3,"checkpoint":true,"purpose":"Teach rolling off a horizontal lip into a generous sloped catch."},
-        {"variant":"flat.braking_shelf","beat":"brake_one","role":"release","tension":1,"coins":0,"purpose":"Give a visible braking cue before the long step-down."},
-        {"variant":"step_down.long","beat":"basalt_flight","role":"climax","tension":4,"coins":5,"checkpoint":true,"purpose":"Use a long descending flight to reward deliberate pitch control."},
-        {"variant":"valley.long_floor","beat":"basin","role":"release","tension":1,"coins":2,"purpose":"Settle in a broad basin before the deeper drop."},
-        {"variant":"flat.braking_shelf","beat":"brake_two","role":"build","tension":2,"coins":0,"purpose":"Signal speed reduction before the lower lip."},
-        {"variant":"drop.deep","beat":"lower_drop","role":"combine","tension":3,"coins":3,"checkpoint":true,"purpose":"Apply the learned drop technique to greater vertical separation."},
-        {"variant":"wave.two_soft","beat":"floor_rollers","role":"release","tension":1,"coins":2,"purpose":"Two low rollers restore a calm forward rhythm."},
-        {"variant":"platform.downhill_bridge","beat":"outlet","role":"resolution","tension":2,"coins":3,"purpose":"An optional descending bridge resolves the downhill theme above safe ground."}
+        {
+          "variant": "rise.two_stage",
+          "beat": "rim",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Reach the crater rim with an intermediate shelf that settles pitch."
+        },
+        {
+          "variant": "drop.long_runout",
+          "beat": "first_drop",
+          "role": "teach",
+          "tension": 2,
+          "checkpoint": true,
+          "purpose": "Teach rolling off a horizontal lip into a generous sloped catch."
+        },
+        {
+          "variant": "flat.braking_shelf",
+          "beat": "brake_one",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Give a visible braking cue before the long step-down."
+        },
+        {
+          "variant": "step_down.long",
+          "beat": "basalt_flight",
+          "role": "climax",
+          "tension": 4,
+          "checkpoint": true,
+          "purpose": "Use a long descending flight to reward deliberate pitch control."
+        },
+        {
+          "variant": "valley.long_floor",
+          "beat": "basin",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Settle in a broad basin before the deeper drop."
+        },
+        {
+          "variant": "flat.braking_shelf",
+          "beat": "brake_two",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Signal speed reduction before the lower lip."
+        },
+        {
+          "variant": "drop.deep",
+          "beat": "lower_drop",
+          "role": "combine",
+          "tension": 3,
+          "checkpoint": true,
+          "purpose": "Apply the learned drop technique to greater vertical separation."
+        },
+        {
+          "variant": "wave.two_soft",
+          "beat": "floor_rollers",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Two low rollers restore a calm forward rhythm."
+        },
+        {
+          "variant": "platform.downhill_bridge",
+          "beat": "outlet",
+          "role": "resolution",
+          "tension": 2,
+          "purpose": "An optional descending bridge resolves the downhill theme above safe ground."
+        }
       ]
     },
     {
-      "number": 7, "name": "Quarry Cadence", "difficulty": "medium-hard / optional loop", "finishLength": 40,
+      "number": 7,
+      "name": "Quarry Cadence",
+      "difficulty": "hard",
+      "finishLength": 40,
       "intent": "Alternate deliberate low-speed ledges with a faster optional loop so speed control becomes the central skill.",
-      "signature": "Curb, double curb, elevated catch, then a wide explosive halo; each speed regime has its own reset.",
+      "signature": "Curb, double curb, elevated catch, then a round ignition halo; each speed regime has its own reset. Extended with higher-tier transfers and technical obstacles.",
       "stages": [
-        {"variant":"balance.single_curb","beat":"curb","role":"teach","tension":2,"coins":2,"purpose":"Introduce one intentional ledge and a broad wheel-settling shelf."},
-        {"variant":"flat.checkpoint_pad","beat":"curb_reset","role":"release","tension":1,"coins":0,"purpose":"Allow a clean approach before repeating the ledge skill."},
-        {"variant":"balance.double_curb","beat":"stairs","role":"practice","tension":3,"coins":3,"checkpoint":true,"purpose":"Repeat the weight transfer twice, then checkpoint on the stable shelf."},
-        {"variant":"valley.shallow_bowl","beat":"speed_reset","role":"release","tension":1,"coins":2,"purpose":"Transition from careful ledges into forward momentum."},
-        {"variant":"step_up.long_shelf","beat":"shelf_transfer","role":"combine","tension":3,"coins":4,"landingLength":12,"checkpoint":true,"purpose":"Combine forward drive and front-wheel clearance over a visible elevated catch."},
-        {"variant":"hill.mesa","beat":"halo_setup","role":"build","tension":2,"coins":2,"purpose":"Use the plateau to reveal the loop and normalize its entry."},
-        {"variant":"explosive_loop.wide","beat":"quarry_halo","role":"climax","tension":4,"coins":5,"boosts":2,"checkpoint":true,"purpose":"Offer a wide optional inversion; two branch-only boosts support its larger radius."},
-        {"variant":"flat.checkpoint_pad","beat":"halo_release","role":"release","tension":1,"coins":0,"length":16,"purpose":"Provide a clear ground recovery after loop exit."},
-        {"variant":"tabletop.learner","beat":"exit_table","role":"resolution","tension":1,"coins":2,"purpose":"Finish with a familiar rollable shape after the speed contrast."}
-      ]
+        {
+          "variant": "balance.single_curb",
+          "beat": "curb",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Introduce one intentional ledge and a broad wheel-settling shelf."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "curb_reset",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Allow a clean approach before repeating the ledge skill."
+        },
+        {
+          "variant": "balance.unequal_stairs",
+          "beat": "stairs",
+          "role": "practice",
+          "tension": 4,
+          "checkpoint": true,
+          "purpose": "Master balance / unequal stairs with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "valley.shallow_bowl",
+          "beat": "speed_reset",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Transition from careful ledges into forward momentum."
+        },
+        {
+          "variant": "step_up.high_shelf",
+          "beat": "shelf_transfer",
+          "role": "combine",
+          "tension": 4,
+          "landingLength": 16,
+          "checkpoint": true,
+          "purpose": "Master step up / high shelf with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "hill.mesa",
+          "beat": "halo_setup",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Use the plateau to reveal the loop and normalize its entry."
+        },
+        {
+          "variant": "explosive_loop.double_ring",
+          "beat": "quarry_halo",
+          "role": "climax",
+          "tension": 4,
+          "boosts": 2,
+          "checkpoint": true,
+          "purpose": "Master explosive loop / double ring with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "halo_release",
+          "role": "release",
+          "tension": 1,
+          "length": 16,
+          "purpose": "Provide a clear ground recovery after loop exit."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_1",
+          "role": "release",
+          "tension": 1,
+          "length": 14.9,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "balance.tight_stairs",
+          "beat": "quarry_tight_steps",
+          "role": "combine",
+          "tension": 5,
+          "purpose": "Negotiate the quarry's tightest stepped ruin.",
+          "checkpoint": true
+        },
+        {
+          "variant": "step_down.tight",
+          "beat": "quarry_precise_descent",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Control pitch into a compact lower catch.",
+          "landingLength": 8,
+          "checkpoint": true
+        },
+        {
+          "variant": "wave.irregular",
+          "beat": "quarry_broken_rhythm",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Adjust to an irregular closing rhythm."
+        },
+        {
+          "variant": "tabletop.learner",
+          "beat": "exit_table",
+          "role": "resolution",
+          "tension": 1,
+          "purpose": "Finish with a familiar rollable shape after the speed contrast."
+        }
+      ],
+      "lengthPlan": {
+        "baselineLength": 308.8,
+        "multiplier": 1.5,
+        "targetLength": 463.2,
+        "addedChallengeCount": 3
+      },
+      "difficultyProgression": {
+        "previous": "medium-hard / optional loop",
+        "target": "hard"
+      }
     },
     {
-      "number": 8, "name": "Cloud Observatory", "difficulty": "medium-hard", "finishLength": 40,
+      "number": 8,
+      "name": "Cloud Observatory",
+      "difficulty": "medium-hard",
+      "finishLength": 40,
       "intent": "Make the upper destination the visual goal, reach it through a tall spring reveal, then explore its raised bridge.",
       "signature": "A 14-unit lift leads to a raised roller bridge with an optional barrel reprise.",
       "stages": [
-        {"variant":"curved_ramp.gentle_scoop","beat":"first_air","role":"teach","tension":2,"coins":3,"checkpoint":true,"purpose":"Establish airborne alignment before the much taller cinematic transfer."},
-        {"variant":"rise.long_climb","beat":"observatory_approach","role":"build","tension":2,"coins":2,"purpose":"Climb toward the visible observatory silhouette."},
-        {"variant":"spring_high.lift_3","beat":"observatory","role":"climax","tension":4,"coins":7,"checkpoint":true,"purpose":"Frame both platform heights and the apex of a 14-unit lift."},
-        {"variant":"hill.mesa","beat":"lookout","role":"release","tension":2,"coins":2,"purpose":"Give a wide upper plateau for camera recentering before the bridge."},
-        {"variant":"platform.wave_bridge","beat":"cloud_walk","role":"combine","tension":3,"coins":4,"barrel":true,"barrelEntrySpeed":5,"barrelImpulseY":4,"checkpoint":true,"purpose":"A restrained pop from the last raised crest rewards controlled bridge speed; ground remains available."},
-        {"variant":"fall.long_descent","beat":"return","role":"release","tension":1,"coins":0,"purpose":"Descend gradually after the aerial reprise without another launch object."},
-        {"variant":"wave.trough_train","beat":"ground_echo","role":"resolution","tension":2,"coins":2,"purpose":"Echo the raised rollers safely at ground level before the finish."}
+        {
+          "variant": "curved_ramp.gentle_scoop",
+          "beat": "first_air",
+          "role": "teach",
+          "tension": 2,
+          "checkpoint": true,
+          "purpose": "Establish airborne alignment before the much taller cinematic transfer."
+        },
+        {
+          "variant": "rise.long_climb",
+          "beat": "observatory_approach",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Climb toward the visible observatory silhouette."
+        },
+        {
+          "variant": "spring_high.lift_3",
+          "beat": "observatory",
+          "role": "climax",
+          "tension": 4,
+          "checkpoint": true,
+          "purpose": "Frame both platform heights and the apex of a 14-unit lift."
+        },
+        {
+          "variant": "hill.mesa",
+          "beat": "lookout",
+          "role": "release",
+          "tension": 2,
+          "purpose": "Give a wide upper plateau for camera recentering before the bridge."
+        },
+        {
+          "variant": "platform.wave_bridge",
+          "beat": "cloud_walk",
+          "role": "combine",
+          "tension": 3,
+          "barrel": true,
+          "barrelEntrySpeed": 5,
+          "barrelImpulseY": 4,
+          "checkpoint": true,
+          "purpose": "A restrained pop from the last raised crest rewards controlled bridge speed; ground remains available."
+        },
+        {
+          "variant": "fall.long_descent",
+          "beat": "return",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Descend gradually after the aerial reprise without another launch object."
+        },
+        {
+          "variant": "wave.trough_train",
+          "beat": "ground_echo",
+          "role": "resolution",
+          "tension": 2,
+          "purpose": "Echo the raised rollers safely at ground level before the finish."
+        }
       ]
     },
     {
-      "number": 9, "name": "Redline Viaduct", "difficulty": "hard / optional advanced loop", "finishLength": 40,
+      "number": 9,
+      "name": "Redline Viaduct",
+      "difficulty": "hard / optional advanced loop",
+      "finishLength": 40,
       "intent": "Build speed through compression, spend it on a tall optional loop, recover, then test one long manual gap.",
-      "signature": "A tall explosive halo and long-clear gap form two separated peaks, with a downhill bridge between them.",
+      "signature": "A round ignition halo and long-clear gap form two separated peaks, with a downhill bridge between them.",
       "stages": [
-        {"variant":"valley.offset_exit","beat":"compression","role":"build","tension":2,"coins":2,"purpose":"Teach early acceleration out of a long rising bowl exit."},
-        {"variant":"kicker.long_flick","beat":"speed_read","role":"practice","tension":3,"coins":3,"checkpoint":true,"purpose":"Read a longer takeoff and descending catch before the loop approach."},
-        {"variant":"flat.rolling_reset","beat":"loop_setup","role":"release","tension":1,"coins":0,"purpose":"Settle the suspension before entering the boost branch."},
-        {"variant":"explosive_loop.tall","beat":"redline","role":"climax","tension":5,"coins":6,"boosts":2,"checkpoint":true,"purpose":"Use two connector boosts to support a tall optional inversion and visible ground return."},
-        {"variant":"flat.checkpoint_pad","beat":"redline_reset","role":"release","tension":1,"coins":0,"length":18,"purpose":"Separate the loop speed regime from the later manual gap."},
-        {"variant":"platform.downhill_bridge","beat":"viaduct","role":"practice","tension":2,"coins":3,"purpose":"Use a descending high line to rebuild readable forward flow."},
-        {"variant":"gap.long_clear","beat":"last_span","role":"combine","tension":4,"coins":5,"landingLength":20,"checkpoint":true,"purpose":"A long visible manual crossing with a wide catch is the final exam after full recovery."},
-        {"variant":"wave.two_soft","beat":"cooldown","role":"resolution","tension":1,"coins":1,"purpose":"One final reward marks the calm roller cooldown."}
+        {
+          "variant": "valley.offset_exit",
+          "beat": "compression",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Teach early acceleration out of a long rising bowl exit."
+        },
+        {
+          "variant": "kicker.long_flick",
+          "beat": "speed_read",
+          "role": "practice",
+          "tension": 3,
+          "checkpoint": true,
+          "purpose": "Read a longer takeoff and descending catch before the loop approach."
+        },
+        {
+          "variant": "flat.rolling_reset",
+          "beat": "loop_setup",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Settle the suspension before entering the boost branch."
+        },
+        {
+          "variant": "explosive_loop.round",
+          "beat": "redline",
+          "role": "climax",
+          "tension": 5,
+          "boosts": 2,
+          "checkpoint": true,
+          "purpose": "Use two connector boosts to commit to the ignition loop and continue over its revealed tangent exit."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "redline_reset",
+          "role": "release",
+          "tension": 1,
+          "length": 18,
+          "purpose": "Separate the loop speed regime from the later manual gap."
+        },
+        {
+          "variant": "platform.downhill_bridge",
+          "beat": "viaduct",
+          "role": "practice",
+          "tension": 2,
+          "purpose": "Use a descending high line to rebuild readable forward flow."
+        },
+        {
+          "variant": "gap.long_clear",
+          "beat": "last_span",
+          "role": "combine",
+          "tension": 4,
+          "landingLength": 20,
+          "checkpoint": true,
+          "purpose": "A long visible manual crossing with a wide catch is the final exam after full recovery."
+        },
+        {
+          "variant": "wave.two_soft",
+          "beat": "cooldown",
+          "role": "resolution",
+          "tension": 1,
+          "purpose": "One final reward marks the calm roller cooldown."
+        }
       ]
     },
     {
-      "number": 10, "name": "Crown Relay", "difficulty": "medium-hard / optional advanced stunts", "finishLength": 48,
-      "intent": "Recombine Cinder Crown's features into a relay: manual gap, one-use inversion, upper terrace, barrel flourish and final wide crossing.",
-      "signature": "Two spring transfers with different purposes are separated by an upper bridge and recovery; the final crossing gets the largest coin budget.",
+      "number": 10,
+      "name": "Crown Relay",
+      "difficulty": "extreme",
+      "finishLength": 48,
+      "intent": "Extreme finale: combine precision manual catches, technical control and maximum-difficulty spring/loop sequences across an extended route.",
+      "signature": "Triple ignition crown, summit lift and frontier crossing followed by expert ruin control.",
       "stages": [
-        {"variant":"hill.double_crest","beat":"relay_start","role":"teach","tension":2,"coins":2,"purpose":"Two distinct crests establish the relay rhythm."},
-        {"variant":"gap.flow_double","beat":"qualifier","role":"practice","tension":3,"coins":3,"checkpoint":true,"purpose":"Complete a manual gap before committing to the optional stunt branch."},
-        {"variant":"rise.crest_relief","beat":"crown_setup","role":"build","tension":2,"coins":0,"purpose":"Reveal the loop landmark and settle its approach."},
-        {"variant":"explosive_loop.late_exit","beat":"crown","role":"climax","tension":4,"coins":4,"boosts":2,"checkpoint":true,"purpose":"Hold the optional loop longer, clear the explosive connector and recover on the fallback."},
-        {"variant":"flat.checkpoint_pad","beat":"crown_release","role":"release","tension":1,"coins":0,"length":16,"purpose":"Normalize velocity before the spring replaces it."},
-        {"variant":"spring_high.lift_1","beat":"upper_relay","role":"combine","tension":3,"coins":4,"checkpoint":true,"purpose":"A short vertical reveal transfers the route onto the upper terrace."},
-        {"variant":"platform.arched_bridge","beat":"flourish","role":"practice","tension":3,"coins":2,"barrel":true,"checkpoint":true,"purpose":"Offer a brief optional barrel flourish on the upper bridge with a clear landing."},
-        {"variant":"flat.checkpoint_pad","beat":"crossing_setup","role":"release","tension":1,"coins":0,"length":16,"purpose":"Separate barrel landing from the long spring trigger and preview the far bank."},
-        {"variant":"spring_far.crossing_2","beat":"final_relay","role":"climax","tension":4,"coins":5,"checkpoint":true,"purpose":"A 28-unit crossing resolves the relay in one wide camera sweep."},
-        {"variant":"fall.long_descent","beat":"home","role":"resolution","tension":1,"coins":0,"purpose":"Descend into an extended empty finish boulevard after the last checkpoint."}
+        {
+          "variant": "hill.double_crest",
+          "beat": "relay_start",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Two distinct crests establish the relay rhythm."
+        },
+        {
+          "variant": "gap.precision",
+          "beat": "qualifier",
+          "role": "practice",
+          "tension": 5,
+          "checkpoint": true,
+          "purpose": "Master gap / precision with controlled entry speed and a stable recovery.",
+          "landingLength": 17
+        },
+        {
+          "variant": "rise.crest_relief",
+          "beat": "crown_setup",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Reveal the loop landmark and settle its approach."
+        },
+        {
+          "variant": "explosive_loop.triple_ring",
+          "beat": "crown",
+          "role": "climax",
+          "tension": 5,
+          "boosts": 2,
+          "checkpoint": true,
+          "purpose": "Master explosive loop / triple ring with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "crown_release",
+          "role": "release",
+          "tension": 1,
+          "length": 16,
+          "purpose": "Normalize velocity before the spring replaces it."
+        },
+        {
+          "variant": "spring_high.summit_lift",
+          "beat": "upper_relay",
+          "role": "combine",
+          "tension": 5,
+          "checkpoint": true,
+          "purpose": "Master spring high / summit lift with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "platform.arched_bridge",
+          "beat": "flourish",
+          "role": "practice",
+          "tension": 3,
+          "barrel": true,
+          "checkpoint": true,
+          "purpose": "Offer a brief optional barrel flourish on the upper bridge with a clear landing."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "crossing_setup",
+          "role": "release",
+          "tension": 1,
+          "length": 16,
+          "purpose": "Separate barrel landing from the long spring trigger and preview the far bank."
+        },
+        {
+          "variant": "spring_far.frontier_crossing",
+          "beat": "final_relay",
+          "role": "climax",
+          "tension": 5,
+          "checkpoint": true,
+          "purpose": "Master spring far / frontier crossing with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_1",
+          "role": "release",
+          "tension": 1,
+          "length": 8.55,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "balance.tight_stairs",
+          "beat": "crown_expert_steps",
+          "role": "combine",
+          "tension": 5,
+          "purpose": "Clear tightly spaced crown ledges after the long transfer.",
+          "checkpoint": true
+        },
+        {
+          "variant": "wave.irregular",
+          "beat": "crown_expert_rhythm",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Read the final uneven roller cadence."
+        },
+        {
+          "variant": "fall.long_descent",
+          "beat": "home",
+          "role": "resolution",
+          "tension": 1,
+          "purpose": "Descend into an extended finish boulevard after the last checkpoint."
+        }
+      ],
+      "lengthPlan": {
+        "baselineLength": 428.6,
+        "multiplier": 1.5,
+        "targetLength": 642.9,
+        "addedChallengeCount": 2
+      },
+      "difficultyProgression": {
+        "previous": "medium-hard / optional advanced stunts",
+        "target": "extreme"
+      }
+    },
+    {
+      "number": 11,
+      "name": "Tidepool Run",
+      "theme": "beach",
+      "setting": "Low-tide sandbars",
+      "difficulty": "medium",
+      "finishLength": 40,
+      "intent": "Read gentle wave rhythms, cross the first tidal channel and settle on broad sandbanks.",
+      "signature": "Low rollers lead into a low spring skim; short manual hops echo the incoming tide.",
+      "stages": [
+        {
+          "variant": "wave.two_soft",
+          "beat": "ripple",
+          "role": "teach",
+          "tension": 1,
+          "purpose": "Read two shallow sand ripples."
+        },
+        {
+          "variant": "hill.round_roller",
+          "beat": "sandbar",
+          "role": "practice",
+          "tension": 2,
+          "purpose": "Carry speed over the first rounded sandbar."
+        },
+        {
+          "variant": "gap.flow_double",
+          "beat": "tidal_channel",
+          "role": "build",
+          "tension": 3,
+          "purpose": "Clear a visible channel onto the broad opposite bank.",
+          "checkpoint": true
+        },
+        {
+          "variant": "valley.shallow_bowl",
+          "beat": "tidal_pool",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Settle in the sheltered tidal pool."
+        },
+        {
+          "variant": "spring_far.low_skim",
+          "beat": "surf_skip",
+          "role": "climax",
+          "tension": 3,
+          "purpose": "Skim low over a wider inlet with the far shore visible.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "shore_reset",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Let the bike settle after the skim."
+        },
+        {
+          "variant": "kicker.quick_pop",
+          "beat": "foam_hop",
+          "role": "combine",
+          "tension": 2,
+          "purpose": "Repeat the water-crossing timing with a manual pop.",
+          "checkpoint": true
+        },
+        {
+          "variant": "tabletop.long_deck",
+          "beat": "dry_sand",
+          "role": "resolution",
+          "tension": 1,
+          "purpose": "Roll onto a long dry sandbank."
+        }
       ]
+    },
+    {
+      "number": 12,
+      "name": "Broken Boardwalk",
+      "theme": "beach",
+      "setting": "Abandoned wooden piers",
+      "difficulty": "medium",
+      "finishLength": 40,
+      "intent": "Carry momentum between detached pier sections, alternating elevated transfers with ground recovery.",
+      "signature": "Three different pier profiles culminate in a barrel pop above the shoreline.",
+      "stages": [
+        {
+          "variant": "tabletop.learner",
+          "beat": "pier_entry",
+          "role": "teach",
+          "tension": 1,
+          "purpose": "Use the wide deck to establish a stable approach."
+        },
+        {
+          "variant": "platform.flat_bridge",
+          "beat": "broken_pier",
+          "role": "practice",
+          "tension": 2,
+          "purpose": "Keep enough speed to reach the next detached pier section.",
+          "checkpoint": true
+        },
+        {
+          "variant": "valley.long_floor",
+          "beat": "under_pier",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Recover along the sand beneath the old pier."
+        },
+        {
+          "variant": "platform.crowned_span",
+          "beat": "watch_deck",
+          "role": "build",
+          "tension": 3,
+          "purpose": "Cross the raised watch deck with a readable return."
+        },
+        {
+          "variant": "flat.rolling_reset",
+          "beat": "dock_reset",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Reset pitch before the barrel deck."
+        },
+        {
+          "variant": "platform.arched_bridge",
+          "beat": "barrel_dock",
+          "role": "climax",
+          "tension": 3,
+          "purpose": "Pop from the arched dock and land before its runout.",
+          "barrel": true,
+          "checkpoint": true
+        },
+        {
+          "variant": "step_down.gentle",
+          "beat": "beach_return",
+          "role": "combine",
+          "tension": 2,
+          "purpose": "Match the lower beach catch.",
+          "checkpoint": true
+        },
+        {
+          "variant": "wave.three_even",
+          "beat": "plank_rhythm",
+          "role": "resolution",
+          "tension": 2,
+          "purpose": "Finish with three even boardwalk-like beats."
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "name": "Coral Causeway",
+      "theme": "beach",
+      "setting": "Reef shelves and shallow channels",
+      "difficulty": "medium",
+      "finishLength": 40,
+      "intent": "Alternate low reef shelves and short channels before a raised spring transfer.",
+      "signature": "A dipping spring launches from a reef basin onto an upper coral shelf.",
+      "stages": [
+        {
+          "variant": "rise.gentle_climb",
+          "beat": "reef_rise",
+          "role": "teach",
+          "tension": 1,
+          "purpose": "Climb onto the first reef shelf."
+        },
+        {
+          "variant": "balance.single_curb",
+          "beat": "coral_step",
+          "role": "practice",
+          "tension": 2,
+          "purpose": "Lift the front wheel over one readable reef edge.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "reef_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Recover wheel contact before the scoop."
+        },
+        {
+          "variant": "curved_ramp.gentle_scoop",
+          "beat": "reef_scoop",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Use a curved lip to cross a shallow channel.",
+          "checkpoint": true
+        },
+        {
+          "variant": "valley.shallow_bowl",
+          "beat": "reef_basin",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Collect the bike in a broad basin."
+        },
+        {
+          "variant": "spring_high.dip_lift",
+          "beat": "coral_lift",
+          "role": "climax",
+          "tension": 3,
+          "purpose": "Dip then spring onto the high coral shelf.",
+          "checkpoint": true
+        },
+        {
+          "variant": "platform.sag_bridge",
+          "beat": "reef_span",
+          "role": "combine",
+          "tension": 2,
+          "purpose": "Ride the sagging connection between shelves."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_1",
+          "role": "release",
+          "tension": 1,
+          "length": 11.45,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "gap.intro",
+          "beat": "outer_reef_channel",
+          "role": "combine",
+          "tension": 2,
+          "purpose": "Cross another shallow channel onto a broad reef catch.",
+          "checkpoint": true
+        },
+        {
+          "variant": "platform.arched_bridge",
+          "beat": "outer_reef_bridge",
+          "role": "combine",
+          "tension": 2,
+          "purpose": "Ride a second arched reef connection."
+        },
+        {
+          "variant": "wave.three_even",
+          "beat": "outer_reef_ripples",
+          "role": "combine",
+          "tension": 2,
+          "purpose": "Pump three coral-bank ripples."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_2",
+          "role": "release",
+          "tension": 1,
+          "length": 11.45,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "hill.round_roller",
+          "beat": "outer_reef_bank",
+          "role": "combine",
+          "tension": 1,
+          "purpose": "Cross the last rounded coral bank."
+        },
+        {
+          "variant": "fall.terraced",
+          "beat": "reef_descent",
+          "role": "resolution",
+          "tension": 2,
+          "purpose": "Return to shore in two visible terraces."
+        }
+      ],
+      "lengthPlan": {
+        "baselineLength": 301,
+        "multiplier": 1.5,
+        "targetLength": 451.5,
+        "addedChallengeCount": 4
+      },
+      "difficultyProgression": {
+        "previous": "medium",
+        "target": "medium"
+      }
+    },
+    {
+      "number": 14,
+      "name": "Sea Cliff Descent",
+      "theme": "beach",
+      "setting": "Terraced coastal bluffs",
+      "difficulty": "medium-hard",
+      "finishLength": 40,
+      "intent": "Climb a coastal bluff, then control descending speed across a sequence of lower catches.",
+      "signature": "Three descending transfers are separated by braking shelves and a sheltered cove.",
+      "stages": [
+        {
+          "variant": "rise.two_stage",
+          "beat": "bluff_climb",
+          "role": "build",
+          "tension": 3,
+          "purpose": "Climb the bluff with a pause on its middle shelf."
+        },
+        {
+          "variant": "flat.braking_shelf",
+          "beat": "cliff_brake",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Read the first drop before accelerating."
+        },
+        {
+          "variant": "drop.long_runout",
+          "beat": "upper_drop",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Roll off a level lip into a long coastal catch.",
+          "checkpoint": true
+        },
+        {
+          "variant": "valley.long_floor",
+          "beat": "sheltered_cove",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Rebuild control in the cove."
+        },
+        {
+          "variant": "step_down.long",
+          "beat": "cliff_transfer",
+          "role": "climax",
+          "tension": 4,
+          "purpose": "Carry controlled speed to a distant lower shelf.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.braking_shelf",
+          "beat": "lower_brake",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Reduce speed before the final drop."
+        },
+        {
+          "variant": "drop.offset",
+          "beat": "sea_stack_drop",
+          "role": "combine",
+          "tension": 3,
+          "purpose": "Align to the offset lower bank.",
+          "checkpoint": true
+        },
+        {
+          "variant": "platform.downhill_bridge",
+          "beat": "coastal_ramp",
+          "role": "resolution",
+          "tension": 2,
+          "purpose": "Follow the descending bridge toward the beach."
+        },
+        {
+          "variant": "wave.two_soft",
+          "beat": "shoreline",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Ease back into shoreline rhythm."
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "name": "Lagoon Express",
+      "theme": "beach",
+      "setting": "Wide lagoon and far-bank dunes",
+      "difficulty": "very hard",
+      "finishLength": 40,
+      "intent": "Build horizontal momentum and spend it on two separated lagoon crossings.",
+      "signature": "A low manual channel precedes a long spring crossing, followed by a curved reprise. Extended with higher-tier transfers and technical obstacles.",
+      "stages": [
+        {
+          "variant": "wave.trough_train",
+          "beat": "lagoon_ripples",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Pump three low shoreline troughs."
+        },
+        {
+          "variant": "gap.precision",
+          "beat": "first_inlet",
+          "role": "practice",
+          "tension": 4,
+          "purpose": "Master gap / precision with controlled entry speed and a stable recovery.",
+          "checkpoint": true,
+          "landingLength": 17
+        },
+        {
+          "variant": "hill.early_crest",
+          "beat": "lagoon_lookout",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Reveal the far bank early."
+        },
+        {
+          "variant": "spring_far.crossing_5",
+          "beat": "wide_lagoon",
+          "role": "climax",
+          "tension": 4,
+          "purpose": "Master spring far / crossing 5 with controlled entry speed and a stable recovery.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "far_bank_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Stabilize on the far bank.",
+          "length": 16
+        },
+        {
+          "variant": "platform.uphill_bridge",
+          "beat": "bank_steps",
+          "role": "combine",
+          "tension": 3,
+          "purpose": "Carry momentum between rising bank platforms."
+        },
+        {
+          "variant": "curved_ramp.speed_scoop",
+          "beat": "inlet_reprise",
+          "role": "combine",
+          "tension": 3,
+          "purpose": "Echo the lagoon flight with a manual scoop.",
+          "landingLength": 17,
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_1",
+          "role": "release",
+          "tension": 1,
+          "length": 11.475,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "step_up.high_shelf",
+          "beat": "lagoon_high_bank",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Reach a higher exposed lagoon-bank catch.",
+          "landingLength": 16,
+          "checkpoint": true
+        },
+        {
+          "variant": "wave.irregular",
+          "beat": "lagoon_crosswind",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Read the uneven approach left by crosswind."
+        },
+        {
+          "variant": "kicker.precision_pop",
+          "beat": "lagoon_precise_pop",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Time a precise pop over the final exposed inlet.",
+          "landingLength": 7,
+          "checkpoint": true
+        },
+        {
+          "variant": "fall.gentle_descent",
+          "beat": "beach_exit",
+          "role": "resolution",
+          "tension": 1,
+          "purpose": "Descend gently toward the finish."
+        }
+      ],
+      "lengthPlan": {
+        "baselineLength": 384.45,
+        "multiplier": 1.5,
+        "targetLength": 576.675,
+        "addedChallengeCount": 3
+      },
+      "difficultyProgression": {
+        "previous": "medium-hard",
+        "target": "very hard"
+      }
+    },
+    {
+      "number": 16,
+      "name": "Lighthouse Spiral",
+      "theme": "beach",
+      "setting": "Lighthouse headland",
+      "difficulty": "medium-hard",
+      "finishLength": 40,
+      "intent": "Climb toward the lighthouse, commit through its explosive ring and descend by the outer shore.",
+      "signature": "A raised spring approach introduces one ring with a revealed curved exit.",
+      "stages": [
+        {
+          "variant": "hill.mesa",
+          "beat": "headland",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Reach a broad headland plateau."
+        },
+        {
+          "variant": "step_up.long_shelf",
+          "beat": "lighthouse_base",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Transfer onto the higher foundation.",
+          "landingLength": 12,
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.rolling_reset",
+          "beat": "tower_reset",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Settle before the lighthouse lift."
+        },
+        {
+          "variant": "spring_high.crest_lift",
+          "beat": "lantern_lift",
+          "role": "build",
+          "tension": 3,
+          "purpose": "Launch off the crest toward the lantern terrace.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "ring_setup",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Recover before entering the ignition ring.",
+          "length": 16
+        },
+        {
+          "variant": "explosive_loop.round",
+          "beat": "lighthouse_ring",
+          "role": "climax",
+          "tension": 4,
+          "purpose": "Ride in, detonate the entry and leave by the revealed ramp.",
+          "boosts": 2,
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "ring_exit",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Leave room to settle after the ring.",
+          "length": 16
+        },
+        {
+          "variant": "platform.crowned_span",
+          "beat": "gallery",
+          "role": "combine",
+          "tension": 2,
+          "purpose": "Cross the lighthouse gallery."
+        },
+        {
+          "variant": "fall.long_descent",
+          "beat": "headland_exit",
+          "role": "resolution",
+          "tension": 2,
+          "purpose": "Return down the headland."
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "name": "Storm Pier",
+      "theme": "beach",
+      "setting": "Storm-damaged offshore piers",
+      "difficulty": "very hard",
+      "finishLength": 44,
+      "intent": "Link broken high platforms and changing wave rhythms while managing landing speed.",
+      "signature": "Detached double-hump piers lead to a roller spring crossing and a long final gap. Extended with higher-tier transfers and technical obstacles.",
+      "stages": [
+        {
+          "variant": "wave.irregular",
+          "beat": "rising_swell",
+          "role": "teach",
+          "tension": 4,
+          "purpose": "Master wave / irregular with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "platform.double_hump",
+          "beat": "broken_docks",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Maintain momentum across separated dock humps.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "dock_shelter",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Pause between broken pier sections."
+        },
+        {
+          "variant": "spring_far.frontier_crossing",
+          "beat": "storm_channel",
+          "role": "climax",
+          "tension": 4,
+          "purpose": "Master spring far / frontier crossing with controlled entry speed and a stable recovery.",
+          "checkpoint": true
+        },
+        {
+          "variant": "valley.long_floor",
+          "beat": "lee_shore",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Recenter on the sheltered shore."
+        },
+        {
+          "variant": "platform.switchback_bridge",
+          "beat": "bent_pier",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Adjust pitch through the bent pier profile."
+        },
+        {
+          "variant": "gap.trick_gap",
+          "beat": "last_break",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Master gap / trick gap with controlled entry speed and a stable recovery.",
+          "landingLength": 28,
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_1",
+          "role": "release",
+          "tension": 1,
+          "length": 14.05,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "platform.skyline_bridge",
+          "beat": "storm_high_pier",
+          "role": "combine",
+          "tension": 5,
+          "purpose": "Control the exposed high-pier profile."
+        },
+        {
+          "variant": "step_down.tight",
+          "beat": "storm_precision_bank",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Recover onto a compact lower storm-bank catch.",
+          "landingLength": 8,
+          "checkpoint": true
+        },
+        {
+          "variant": "balance.unequal_stairs",
+          "beat": "storm_wreckage",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Clear uneven dock wreckage before the final deck.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_2",
+          "role": "release",
+          "tension": 1,
+          "length": 14.05,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "kicker.precision_pop",
+          "beat": "storm_last_pop",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Time a short precise launch over the last broken dock.",
+          "landingLength": 7,
+          "checkpoint": true
+        },
+        {
+          "variant": "tabletop.long_deck",
+          "beat": "harbor_deck",
+          "role": "resolution",
+          "tension": 2,
+          "purpose": "Finish on a wide stable deck."
+        }
+      ],
+      "lengthPlan": {
+        "baselineLength": 486,
+        "multiplier": 1.5,
+        "targetLength": 729,
+        "addedChallengeCount": 4
+      },
+      "difficultyProgression": {
+        "previous": "hard",
+        "target": "very hard"
+      }
+    },
+    {
+      "number": 18,
+      "name": "Hidden Cove",
+      "theme": "beach",
+      "setting": "Twin coves beneath coastal terraces",
+      "difficulty": "hard",
+      "finishLength": 40,
+      "intent": "Use alternating basins and elevated catches to reveal a hidden upper beach.",
+      "signature": "A deep scoop and a high spring connect two coves separated by a rock wall.",
+      "stages": [
+        {
+          "variant": "valley.double_bowl",
+          "beat": "twin_coves",
+          "role": "teach",
+          "tension": 3,
+          "purpose": "Pump through two sheltered coves."
+        },
+        {
+          "variant": "curved_ramp.deep_scoop",
+          "landingLength": 15,
+          "beat": "cove_launch",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Climb out of the deep basin on a curved takeoff.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "rock_shelf",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Settle on a stable rock shelf."
+        },
+        {
+          "variant": "spring_high.ramp_lift",
+          "beat": "hidden_beach",
+          "role": "climax",
+          "tension": 4,
+          "purpose": "Lift over the dividing wall onto the hidden beach.",
+          "checkpoint": true
+        },
+        {
+          "variant": "platform.sag_bridge",
+          "beat": "cove_walk",
+          "role": "release",
+          "tension": 2,
+          "purpose": "Cross a low sagging walkway."
+        },
+        {
+          "variant": "step_up.uphill_extension",
+          "beat": "upper_cove",
+          "role": "combine",
+          "tension": 3,
+          "purpose": "Continue onto an ascending catch.",
+          "checkpoint": true
+        },
+        {
+          "variant": "fall.terraced",
+          "beat": "cove_steps",
+          "role": "release",
+          "tension": 2,
+          "purpose": "Descend the outer reef terraces."
+        },
+        {
+          "variant": "kicker.high_pop",
+          "beat": "sunset_pop",
+          "role": "resolution",
+          "tension": 3,
+          "purpose": "Leave the cove with one final high pop.",
+          "checkpoint": true
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "name": "Twin Harbor Rings",
+      "theme": "beach",
+      "setting": "Two harbor breakwaters",
+      "difficulty": "hard",
+      "finishLength": 44,
+      "intent": "Prepare for two consecutive explosive loops, then use the harbor bridge as a controlled exit.",
+      "signature": "Two independent ignition rings connect directly across the harbor landmark.",
+      "stages": [
+        {
+          "variant": "wave.three_even",
+          "beat": "harbor_rhythm",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Establish a steady approach rhythm."
+        },
+        {
+          "variant": "curved_ramp.speed_scoop",
+          "beat": "breakwater_scoop",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Warm up inversion entry with a speed scoop.",
+          "landingLength": 17,
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.rolling_reset",
+          "beat": "ring_runway",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Settle the bike before both rings."
+        },
+        {
+          "variant": "explosive_loop.double_ring",
+          "beat": "harbor_rings",
+          "role": "climax",
+          "tension": 5,
+          "purpose": "Complete two full explosive/reveal cycles in direct succession.",
+          "boosts": 2,
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "harbor_recovery",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Recover fully after the two-ring assembly.",
+          "length": 20
+        },
+        {
+          "variant": "platform.wave_bridge",
+          "beat": "harbor_walk",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Control pitch over the high wave bridge."
+        },
+        {
+          "variant": "spring_far.downhill_crossing",
+          "beat": "harbor_mouth",
+          "role": "combine",
+          "tension": 3,
+          "purpose": "Cross the harbor mouth from a descending approach.",
+          "checkpoint": true
+        },
+        {
+          "variant": "fall.long_descent",
+          "beat": "harbor_exit",
+          "role": "resolution",
+          "tension": 2,
+          "purpose": "Descend toward the outer beach."
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "name": "Archipelago Finale",
+      "theme": "beach",
+      "setting": "Chain of offshore islands",
+      "difficulty": "extreme",
+      "finishLength": 48,
+      "intent": "Extreme finale: combine precision manual catches, technical control and maximum-difficulty spring/loop sequences across an extended route.",
+      "signature": "Triple island rings, summit launch, frontier channel and precision island ruins.",
+      "stages": [
+        {
+          "variant": "hill.double_crest",
+          "beat": "island_approach",
+          "role": "teach",
+          "tension": 3,
+          "purpose": "Read two island-shaped crests."
+        },
+        {
+          "variant": "platform.double_hump",
+          "beat": "stepping_piers",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Carry momentum across separated pier islands.",
+          "checkpoint": true
+        },
+        {
+          "variant": "spring_high.summit_lift",
+          "beat": "high_island",
+          "role": "build",
+          "tension": 5,
+          "purpose": "Master spring high / summit lift with controlled entry speed and a stable recovery.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "island_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Recover on the island before both rings.",
+          "length": 18
+        },
+        {
+          "variant": "explosive_loop.triple_ring",
+          "beat": "island_rings",
+          "role": "climax",
+          "tension": 5,
+          "purpose": "Master explosive loop / triple ring with controlled entry speed and a stable recovery.",
+          "boosts": 2,
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "lagoon_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Normalize velocity before the final spring.",
+          "length": 20
+        },
+        {
+          "variant": "spring_far.frontier_crossing",
+          "beat": "outer_island",
+          "role": "combine",
+          "tension": 5,
+          "purpose": "Master spring far / frontier crossing with controlled entry speed and a stable recovery.",
+          "checkpoint": true
+        },
+        {
+          "variant": "platform.skyline_bridge",
+          "beat": "island_skyline",
+          "role": "combine",
+          "tension": 5,
+          "purpose": "Traverse the high island skyline."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_1",
+          "role": "release",
+          "tension": 1,
+          "length": 18.4,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "balance.tight_stairs",
+          "beat": "archipelago_ruin_steps",
+          "role": "combine",
+          "tension": 5,
+          "purpose": "Clear the tight steps on the outermost island ruin.",
+          "checkpoint": true
+        },
+        {
+          "variant": "step_up.precision_shelf",
+          "beat": "archipelago_precise_bank",
+          "role": "combine",
+          "tension": 5,
+          "purpose": "Reach a precision island shelf after the ruin steps.",
+          "landingLength": 13,
+          "checkpoint": true
+        },
+        {
+          "variant": "drop.brake",
+          "beat": "archipelago_cliff_drop",
+          "role": "combine",
+          "tension": 5,
+          "purpose": "Brake before a controlled island-cliff drop.",
+          "landingLength": 7,
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_2",
+          "role": "release",
+          "tension": 1,
+          "length": 18.4,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "wave.irregular",
+          "beat": "archipelago_rough_shore",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Read the uneven final shoreline cadence."
+        },
+        {
+          "variant": "fall.terraced",
+          "beat": "home_island",
+          "role": "resolution",
+          "tension": 2,
+          "purpose": "Descend in broad steps toward the finish."
+        }
+      ],
+      "lengthPlan": {
+        "baselineLength": 512,
+        "multiplier": 1.5,
+        "targetLength": 768,
+        "addedChallengeCount": 4
+      },
+      "difficultyProgression": {
+        "previous": "hard",
+        "target": "extreme"
+      }
+    },
+    {
+      "number": 21,
+      "name": "Dune Caravan",
+      "theme": "desert",
+      "setting": "Rolling dunes along a caravan trail",
+      "difficulty": "medium-hard",
+      "finishLength": 40,
+      "intent": "Establish desert rhythm with rounded dunes, compression basins and one broad manual crossing.",
+      "signature": "Alternating dune crests build momentum into a low gap and a final long tabletop.",
+      "stages": [
+        {
+          "variant": "hill.round_roller",
+          "beat": "first_dune",
+          "role": "teach",
+          "tension": 1,
+          "purpose": "Read the first rounded dune."
+        },
+        {
+          "variant": "wave.growing",
+          "beat": "dune_train",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Pump through dunes of increasing height."
+        },
+        {
+          "variant": "valley.offset_exit",
+          "beat": "wind_basin",
+          "role": "build",
+          "tension": 3,
+          "purpose": "Carry acceleration out of the wind-carved basin."
+        },
+        {
+          "variant": "gap.flow_double",
+          "beat": "dry_wash",
+          "role": "climax",
+          "tension": 3,
+          "purpose": "Cross a dry wash onto a broad catch.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.braking_shelf",
+          "beat": "caravan_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Settle on the caravan rest shelf."
+        },
+        {
+          "variant": "hill.double_crest",
+          "beat": "twin_dunes",
+          "role": "combine",
+          "tension": 3,
+          "purpose": "Maintain rhythm over paired dunes."
+        },
+        {
+          "variant": "tabletop.steep_face",
+          "beat": "dune_table",
+          "role": "combine",
+          "tension": 3,
+          "purpose": "Climb the steep dune face onto its wide top."
+        },
+        {
+          "variant": "fall.gentle_descent",
+          "beat": "trail_end",
+          "role": "resolution",
+          "tension": 1,
+          "purpose": "Ease down to the finish."
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "name": "Sandstone Steps",
+      "theme": "desert",
+      "setting": "Weathered sandstone terraces",
+      "difficulty": "medium-hard",
+      "finishLength": 40,
+      "intent": "Alternate technical ledges and elevated catches while keeping recovery between changes in speed.",
+      "signature": "Unequal ruin stairs feed a high shelf transfer, followed by a descending terrace exit.",
+      "stages": [
+        {
+          "variant": "rise.two_stage",
+          "beat": "mesa_entry",
+          "role": "build",
+          "tension": 3,
+          "purpose": "Climb the lower mesa in two stages."
+        },
+        {
+          "variant": "balance.double_curb",
+          "beat": "ruin_steps",
+          "role": "teach",
+          "tension": 3,
+          "purpose": "Read two deliberate sandstone steps.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "steps_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Reestablish speed after the ledges."
+        },
+        {
+          "variant": "step_up.long_shelf",
+          "beat": "sandstone_shelf",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Reach a broad upper sandstone shelf.",
+          "landingLength": 12,
+          "checkpoint": true
+        },
+        {
+          "variant": "valley.long_floor",
+          "beat": "mesa_basin",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Recover in a long basin."
+        },
+        {
+          "variant": "balance.unequal_stairs",
+          "beat": "eroded_steps",
+          "role": "climax",
+          "tension": 4,
+          "purpose": "Adjust wheel lift to unequal stair heights.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.braking_shelf",
+          "beat": "descent_brake",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Prepare for the lower terrace."
+        },
+        {
+          "variant": "step_down.long",
+          "beat": "terrace_drop",
+          "role": "combine",
+          "tension": 3,
+          "purpose": "Transfer to the lower terrace with aligned pitch.",
+          "checkpoint": true
+        },
+        {
+          "variant": "tabletop.long_deck",
+          "beat": "ruin_exit",
+          "role": "resolution",
+          "tension": 2,
+          "purpose": "Finish across a broad ruin roof."
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "name": "Oasis Circuit",
+      "theme": "desert",
+      "setting": "Palm oasis in a dune basin",
+      "difficulty": "medium-hard",
+      "finishLength": 40,
+      "intent": "Descend into an oasis, cross its basin and rise onto the surrounding dunes.",
+      "signature": "A dipping long spring and a high spring trace an up-and-out oasis route.",
+      "stages": [
+        {
+          "variant": "fall.terraced",
+          "beat": "oasis_entry",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Descend in clear terraces toward the oasis."
+        },
+        {
+          "variant": "valley.deep_bowl",
+          "beat": "oasis_bowl",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Pump through the deep oasis basin."
+        },
+        {
+          "variant": "spring_far.dip_crossing",
+          "beat": "oasis_water",
+          "role": "climax",
+          "tension": 4,
+          "purpose": "Launch out of the dip across the central pool.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "palm_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Settle on the palm-shaded bank.",
+          "length": 16
+        },
+        {
+          "variant": "platform.sag_bridge",
+          "beat": "oasis_bridge",
+          "role": "combine",
+          "tension": 2,
+          "purpose": "Ride the sagging bank connection."
+        },
+        {
+          "variant": "spring_high.dip_lift",
+          "beat": "dune_exit_lift",
+          "role": "combine",
+          "tension": 3,
+          "purpose": "Climb from the basin onto the dune rim.",
+          "checkpoint": true
+        },
+        {
+          "variant": "hill.early_crest",
+          "beat": "oasis_overlook",
+          "role": "release",
+          "tension": 2,
+          "purpose": "Reveal the route ahead from an early crest."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_1",
+          "role": "release",
+          "tension": 1,
+          "length": 9.4,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "hill.mesa",
+          "beat": "outer_oasis_terrace",
+          "role": "combine",
+          "tension": 2,
+          "purpose": "Reach a broad terrace beyond the first oasis circuit."
+        },
+        {
+          "variant": "gap.flow_double",
+          "beat": "outer_oasis_wash",
+          "role": "combine",
+          "tension": 2,
+          "purpose": "Cross another dry wash using the established flight timing.",
+          "checkpoint": true
+        },
+        {
+          "variant": "platform.crowned_span",
+          "beat": "outer_oasis_walk",
+          "role": "combine",
+          "tension": 2,
+          "purpose": "Follow the crowned walkway around the oasis."
+        },
+        {
+          "variant": "valley.long_floor",
+          "beat": "outer_oasis_basin",
+          "role": "combine",
+          "tension": 1,
+          "purpose": "Recover in the sheltered outer basin."
+        },
+        {
+          "variant": "wave.two_soft",
+          "beat": "outer_oasis_ripples",
+          "role": "combine",
+          "tension": 1,
+          "purpose": "Repeat two low sand ripples."
+        },
+        {
+          "variant": "wave.two_soft",
+          "beat": "sand_ripples",
+          "role": "resolution",
+          "tension": 1,
+          "purpose": "Finish over shallow sand ripples."
+        }
+      ],
+      "lengthPlan": {
+        "baselineLength": 352,
+        "multiplier": 1.5,
+        "targetLength": 528,
+        "addedChallengeCount": 5
+      },
+      "difficultyProgression": {
+        "previous": "medium-hard",
+        "target": "medium-hard"
+      }
+    },
+    {
+      "number": 24,
+      "name": "Red Canyon Run",
+      "theme": "desert",
+      "setting": "Deep red sandstone canyon",
+      "difficulty": "hard",
+      "finishLength": 44,
+      "intent": "Manage speed through lower canyon catches and a wide spring transfer between canyon walls.",
+      "signature": "Two controlled drops frame a long horizontal crossing across the canyon mouth.",
+      "stages": [
+        {
+          "variant": "hill.mesa",
+          "beat": "canyon_rim",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Reach the flat canyon rim."
+        },
+        {
+          "variant": "flat.braking_shelf",
+          "beat": "rim_brake",
+          "role": "teach",
+          "tension": 1,
+          "purpose": "Signal braking before leaving the rim."
+        },
+        {
+          "variant": "drop.deep",
+          "beat": "upper_canyon",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Drop onto the first lower canyon catch.",
+          "checkpoint": true
+        },
+        {
+          "variant": "valley.long_floor",
+          "beat": "canyon_floor",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Recover on the long canyon floor."
+        },
+        {
+          "variant": "spring_far.crossing_4",
+          "beat": "canyon_mouth",
+          "role": "climax",
+          "tension": 4,
+          "purpose": "Cross the canyon mouth in a long visible flight.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "far_wall_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Stabilize against the far wall.",
+          "length": 18
+        },
+        {
+          "variant": "step_down.deep",
+          "beat": "lower_wall",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Align to a much lower catch.",
+          "checkpoint": true
+        },
+        {
+          "variant": "platform.downhill_bridge",
+          "beat": "stone_ramp",
+          "role": "resolution",
+          "tension": 3,
+          "purpose": "Follow the stone ramp out of the canyon."
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "name": "Mirage Flats",
+      "theme": "desert",
+      "setting": "Salt flats and distant dune islands",
+      "difficulty": "very hard",
+      "finishLength": 48,
+      "intent": "Contrast long low approaches with sudden distant catches and broad recovery shelves.",
+      "signature": "A low skim rehearses the much longer crossing toward the apparent mirage. Extended with higher-tier transfers and technical obstacles.",
+      "stages": [
+        {
+          "variant": "wave.irregular",
+          "beat": "salt_ripples",
+          "role": "teach",
+          "tension": 4,
+          "purpose": "Master wave / irregular with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "spring_far.low_skim",
+          "beat": "first_mirage",
+          "role": "practice",
+          "tension": 2,
+          "purpose": "Skim low to a nearby dune island.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.rolling_reset",
+          "beat": "salt_flat_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Recover on the open salt flat."
+        },
+        {
+          "variant": "platform.double_hump",
+          "beat": "island_fragments",
+          "role": "build",
+          "tension": 4,
+          "purpose": "Master platform / double hump with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "hill.early_crest",
+          "beat": "far_mirage_reveal",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Show the distant landing from an early crest."
+        },
+        {
+          "variant": "spring_far.frontier_crossing",
+          "beat": "mirage_crossing",
+          "role": "climax",
+          "tension": 4,
+          "purpose": "Master spring far / frontier crossing with controlled entry speed and a stable recovery.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "mirage_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Leave a long recovery after the flight.",
+          "length": 20
+        },
+        {
+          "variant": "curved_ramp.raised_catch",
+          "landingLength": 16,
+          "beat": "mirage_echo",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Reach a raised catch with a manual curved launch.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_1",
+          "role": "release",
+          "tension": 1,
+          "length": 9.825,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "curved_ramp.trick_scoop",
+          "beat": "mirage_expert_scoop",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Carry controlled speed through a deeper trick scoop.",
+          "landingLength": 27,
+          "checkpoint": true
+        },
+        {
+          "variant": "step_down.tight",
+          "beat": "mirage_precise_bank",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Match the pitch of a compact distant lower catch.",
+          "landingLength": 8,
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_2",
+          "role": "release",
+          "tension": 1,
+          "length": 9.825,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "balance.unequal_stairs",
+          "beat": "mirage_stone_steps",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Read unequal stone ledges on the far bank.",
+          "checkpoint": true
+        },
+        {
+          "variant": "fall.long_descent",
+          "beat": "salt_return",
+          "role": "resolution",
+          "tension": 2,
+          "purpose": "Descend to the salt-flat finish."
+        }
+      ],
+      "lengthPlan": {
+        "baselineLength": 474.8,
+        "multiplier": 1.5,
+        "targetLength": 712.2,
+        "addedChallengeCount": 3
+      },
+      "difficultyProgression": {
+        "previous": "hard",
+        "target": "very hard"
+      }
+    },
+    {
+      "number": 26,
+      "name": "Buried Twin Rings",
+      "theme": "desert",
+      "setting": "Paired sandstone arches",
+      "difficulty": "hard",
+      "finishLength": 44,
+      "intent": "Climb out of buried ruins, pass two ignition arches and return through stepped desert ground.",
+      "signature": "Two directly linked explosive loops form the central paired-arch landmark.",
+      "stages": [
+        {
+          "variant": "balance.single_curb",
+          "beat": "buried_stone",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Clear the first half-buried sandstone block."
+        },
+        {
+          "variant": "rise.late_steepening",
+          "beat": "arch_climb",
+          "role": "build",
+          "tension": 3,
+          "purpose": "Climb toward the paired arches."
+        },
+        {
+          "variant": "curved_ramp.deep_scoop",
+          "landingLength": 15,
+          "beat": "arch_scoop",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Rehearse curved entry beneath the arches.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "arch_setup",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Settle before the ignition sequence.",
+          "length": 16
+        },
+        {
+          "variant": "explosive_loop.double_ring",
+          "beat": "buried_rings",
+          "role": "climax",
+          "tension": 5,
+          "purpose": "Complete two independent explosive and reveal cycles.",
+          "boosts": 2,
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "arch_recovery",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Recover fully after the second ring.",
+          "length": 20
+        },
+        {
+          "variant": "step_down.trick",
+          "landingLength": 22,
+          "beat": "ruin_transfer",
+          "role": "combine",
+          "tension": 3,
+          "purpose": "Transfer down to the outer ruin shelf.",
+          "checkpoint": true
+        },
+        {
+          "variant": "fall.terraced",
+          "beat": "ruin_descent",
+          "role": "resolution",
+          "tension": 2,
+          "purpose": "Descend through weathered sandstone terraces."
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "name": "Caravan Skyway",
+      "theme": "desert",
+      "setting": "High bridges between desert mesas",
+      "difficulty": "very hard",
+      "finishLength": 44,
+      "intent": "Alternate mesa rises and changing bridge profiles before a spring crossing to the caravan road.",
+      "signature": "A high lift unlocks the skyline bridge; a descending spring returns to the lower trail. Extended with higher-tier transfers and technical obstacles.",
+      "stages": [
+        {
+          "variant": "rise.long_climb",
+          "beat": "caravan_climb",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Climb onto the first mesa."
+        },
+        {
+          "variant": "platform.crowned_span",
+          "beat": "mesa_bridge",
+          "role": "practice",
+          "tension": 2,
+          "purpose": "Read a broad crowned connection."
+        },
+        {
+          "variant": "spring_high.summit_lift",
+          "beat": "skyway_lift",
+          "role": "climax",
+          "tension": 4,
+          "purpose": "Master spring high / summit lift with controlled entry speed and a stable recovery.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "skyway_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Stabilize before the exposed bridge."
+        },
+        {
+          "variant": "platform.skyline_bridge",
+          "beat": "skyway",
+          "role": "combine",
+          "tension": 5,
+          "purpose": "Manage pitch across the skyline profile."
+        },
+        {
+          "variant": "valley.long_floor",
+          "beat": "mesa_shelter",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Recover inside the high mesa basin."
+        },
+        {
+          "variant": "spring_far.frontier_crossing",
+          "beat": "caravan_return",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Master spring far / frontier crossing with controlled entry speed and a stable recovery.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_1",
+          "role": "release",
+          "tension": 1,
+          "length": 8.7,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "step_up.precision_shelf",
+          "beat": "skyway_precision_mesa",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Transfer onto a precise upper mesa catch.",
+          "landingLength": 13,
+          "checkpoint": true
+        },
+        {
+          "variant": "balance.tight_stairs",
+          "beat": "skyway_ruin_steps",
+          "role": "combine",
+          "tension": 5,
+          "purpose": "Negotiate tightly packed ruin ledges on the skyway.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_2",
+          "role": "release",
+          "tension": 1,
+          "length": 8.7,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "step_down.tight",
+          "beat": "skyway_lower_catch",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Control the final descending precision catch.",
+          "landingLength": 8,
+          "checkpoint": true
+        },
+        {
+          "variant": "tabletop.brake_table",
+          "beat": "trail_brake",
+          "role": "resolution",
+          "tension": 4,
+          "purpose": "Control the final table entry and settle on its deck."
+        }
+      ],
+      "lengthPlan": {
+        "baselineLength": 434,
+        "multiplier": 1.5,
+        "targetLength": 651,
+        "addedChallengeCount": 3
+      },
+      "difficultyProgression": {
+        "previous": "hard",
+        "target": "very hard"
+      }
+    },
+    {
+      "number": 28,
+      "name": "Sun Temple",
+      "theme": "desert",
+      "setting": "Tiered temple above a dune plateau",
+      "difficulty": "hard",
+      "finishLength": 48,
+      "intent": "Combine technical ruin steps, high catches and a summit lift to climb the sun temple.",
+      "signature": "A summit spring reaches the temple crown; a controlled drop resolves the ascent.",
+      "stages": [
+        {
+          "variant": "balance.unequal_stairs",
+          "beat": "temple_steps",
+          "role": "teach",
+          "tension": 4,
+          "purpose": "Adapt to weathered steps of unequal height.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "temple_court",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Reset speed in the lower temple court."
+        },
+        {
+          "variant": "step_up.high_shelf",
+          "landingLength": 16,
+          "beat": "temple_wall",
+          "role": "practice",
+          "tension": 4,
+          "purpose": "Reach the high temple wall catch.",
+          "checkpoint": true
+        },
+        {
+          "variant": "hill.mesa",
+          "beat": "temple_terrace",
+          "role": "release",
+          "tension": 2,
+          "purpose": "Recover on a wide temple terrace."
+        },
+        {
+          "variant": "spring_high.summit_lift",
+          "beat": "sun_crown",
+          "role": "climax",
+          "tension": 5,
+          "purpose": "Lift toward the temple's highest crown.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.braking_shelf",
+          "beat": "crown_brake",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Prepare for the descent from the crown."
+        },
+        {
+          "variant": "drop.brake",
+          "landingLength": 7,
+          "beat": "temple_descent",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Use a controlled roll-off onto the lower catch.",
+          "checkpoint": true
+        },
+        {
+          "variant": "platform.switchback_bridge",
+          "beat": "temple_gallery",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Traverse the bent outer gallery."
+        },
+        {
+          "variant": "fall.long_descent",
+          "beat": "temple_exit",
+          "role": "resolution",
+          "tension": 2,
+          "purpose": "Descend from the temple toward open dunes."
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "name": "Sandstorm Rhythm",
+      "theme": "desert",
+      "setting": "Irregular wind-carved dunes",
+      "difficulty": "hard",
+      "finishLength": 44,
+      "intent": "Read irregular terrain rhythms and change speed deliberately between precision transfers.",
+      "signature": "Broken dune timing culminates in a roller spring crossing, followed by one precise final gap.",
+      "stages": [
+        {
+          "variant": "wave.irregular",
+          "beat": "wind_ripples",
+          "role": "teach",
+          "tension": 4,
+          "purpose": "Read each irregular wind-carved crest."
+        },
+        {
+          "variant": "kicker.precision_pop",
+          "landingLength": 7,
+          "beat": "dune_pop",
+          "role": "practice",
+          "tension": 4,
+          "purpose": "Time a precise pop over the first dune break.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.braking_shelf",
+          "beat": "storm_shelter",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Reset speed behind a sheltering ridge."
+        },
+        {
+          "variant": "valley.double_bowl",
+          "beat": "wind_basins",
+          "role": "build",
+          "tension": 4,
+          "purpose": "Pump through two uneven basins."
+        },
+        {
+          "variant": "spring_far.roller_crossing",
+          "beat": "storm_crossing",
+          "role": "climax",
+          "tension": 4,
+          "purpose": "Launch from rollers over the exposed crossing.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "ridge_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Recover on a clear ridge shelf.",
+          "length": 18
+        },
+        {
+          "variant": "gap.precision",
+          "landingLength": 17,
+          "beat": "last_dune_break",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Match the final precision catch after recovery.",
+          "checkpoint": true
+        },
+        {
+          "variant": "tabletop.brake_table",
+          "beat": "storm_exit",
+          "role": "resolution",
+          "tension": 4,
+          "purpose": "Brake into the final wide table."
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "name": "Dune Crown Finale",
+      "theme": "desert",
+      "setting": "Three ancient arches at the desert frontier",
+      "difficulty": "extreme",
+      "finishLength": 56,
+      "intent": "Extreme finale: combine precision manual catches, technical control and maximum-difficulty spring/loop sequences across an extended route.",
+      "signature": "Triple desert crown, summit lift, frontier flight and an expert manual ruin gauntlet.",
+      "stages": [
+        {
+          "variant": "hill.double_crest",
+          "beat": "frontier_dunes",
+          "role": "teach",
+          "tension": 3,
+          "purpose": "Read the twin dunes approaching the ruins."
+        },
+        {
+          "variant": "step_up.precision_shelf",
+          "beat": "ruin_ascent",
+          "role": "practice",
+          "tension": 5,
+          "purpose": "Master step up / precision shelf with controlled entry speed and a stable recovery.",
+          "checkpoint": true,
+          "landingLength": 13
+        },
+        {
+          "variant": "spring_high.summit_lift",
+          "beat": "crown_terrace",
+          "role": "build",
+          "tension": 5,
+          "purpose": "Master spring high / summit lift with controlled entry speed and a stable recovery.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "crown_setup",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Settle fully before the triple ring.",
+          "length": 20
+        },
+        {
+          "variant": "explosive_loop.triple_ring",
+          "beat": "desert_crown",
+          "role": "climax",
+          "tension": 5,
+          "purpose": "Ride three directly connected explosive/reveal assemblies.",
+          "boosts": 2,
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "crown_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Recover before the final frontier crossing.",
+          "length": 24
+        },
+        {
+          "variant": "spring_far.frontier_crossing",
+          "beat": "frontier",
+          "role": "combine",
+          "tension": 5,
+          "purpose": "Commit across the final broad frontier gap.",
+          "checkpoint": true
+        },
+        {
+          "variant": "platform.skyline_bridge",
+          "beat": "victory_span",
+          "role": "resolution",
+          "tension": 5,
+          "purpose": "Master platform / skyline bridge with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_1",
+          "role": "release",
+          "tension": 1,
+          "length": 21.35,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "balance.tight_stairs",
+          "beat": "frontier_expert_steps",
+          "role": "combine",
+          "tension": 5,
+          "purpose": "Clear the tightest frontier ruin steps.",
+          "checkpoint": true
+        },
+        {
+          "variant": "gap.trick_gap",
+          "beat": "frontier_expert_gap",
+          "role": "combine",
+          "tension": 5,
+          "purpose": "Commit to the demanding manual frontier gap.",
+          "landingLength": 28,
+          "checkpoint": true
+        },
+        {
+          "variant": "step_down.tight",
+          "beat": "frontier_expert_descent",
+          "role": "combine",
+          "tension": 5,
+          "purpose": "Match the final compact lower catch.",
+          "landingLength": 8,
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_recovery_2",
+          "role": "release",
+          "tension": 1,
+          "length": 21.35,
+          "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "wave.irregular",
+          "beat": "frontier_rough_dunes",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Control the last uneven dune rhythm."
+        },
+        {
+          "variant": "fall.long_descent",
+          "beat": "desert_home",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Descend into the longest finish runout."
+        }
+      ],
+      "lengthPlan": {
+        "baselineLength": 549.8,
+        "multiplier": 1.5,
+        "targetLength": 824.7,
+        "addedChallengeCount": 4
+      },
+      "difficultyProgression": {
+        "previous": "expert",
+        "target": "extreme"
+      }
     }
   ]
 }

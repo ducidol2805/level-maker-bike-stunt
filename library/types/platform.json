@@ -5,13 +5,19 @@
   "variants": [
     {
       "id": "platform.flat_bridge",
-      "name": "flat bridge",
+      "name": "broken launch bridge",
       "difficulty": 1,
-      "intent": "Stable open bridge",
+      "intent": "Carry enough speed off a rising lip to reach two floating platform catches",
       "parameters": {
         "length": 12,
         "height": 2,
-        "profile": "flat"
+        "profile": "flat",
+        "totalLength": 42,
+        "segments": [
+          [[0, 0], [6, 0], [11, 2], [15, 4]],
+          [[22, 3], [28, 3.5]],
+          [[34, 4], [38, 1.5], [42, 0]]
+        ]
       },
       "physicsStatus": "unvalidated",
       "composition": {
@@ -73,19 +79,127 @@
     },
     {
       "id": "platform.wave_bridge",
-      "name": "wave bridge",
+      "name": "broken wave bridge",
       "difficulty": 4,
-      "intent": "Raised rollers",
+      "intent": "Launch between separated wave-shaped islands without losing momentum",
       "parameters": {
         "length": 18,
         "height": 3,
-        "profile": "wave"
+        "profile": "wave",
+        "totalLength": 54,
+        "segments": [
+          [[0, 0], [6, 0], [11, 2.5], [16, 5]],
+          [[24, 4], [29, 6.2], [34, 4.2]],
+          [[42, 5.2], [47, 3], [51, 1.2], [54, 0]]
+        ]
       },
       "physicsStatus": "unvalidated",
       "composition": {
         "role": "challenge",
         "recoveryRequired": true,
         "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "platform.crowned_span",
+      "name": "crowned span",
+      "difficulty": 2,
+      "intent": "Climb a pronounced central crown before a symmetric return",
+      "parameters": {
+        "length": 20,
+        "height": 2.5,
+        "profile": "crown",
+        "approach": 7,
+        "runout": 13
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "platform.sag_bridge",
+      "name": "sag bridge",
+      "difficulty": 2,
+      "intent": "Control compression through a suspended center basin",
+      "parameters": {
+        "length": 22,
+        "height": 2.2,
+        "profile": "sag",
+        "approach": 10,
+        "runout": 10
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "platform.double_hump",
+      "name": "broken double hump relay",
+      "difficulty": 3,
+      "intent": "Relay across three floating catches where every gap requires retained launch speed",
+      "parameters": {
+        "length": 24,
+        "height": 2.6,
+        "profile": "double_hump",
+        "approach": 8,
+        "runout": 15,
+        "totalLength": 68,
+        "segments": [
+          [[0, 0], [7, 0], [12, 3], [17, 6]],
+          [[26, 5], [31, 7.2], [36, 5]],
+          [[45, 6], [49, 4.2], [54, 5.5]],
+          [[62, 4.5], [65, 2], [68, 0]]
+        ]
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 3
+      }
+    },
+    {
+      "id": "platform.switchback_bridge",
+      "name": "switchback bridge",
+      "difficulty": 4,
+      "intent": "Manage an asymmetric sequence of steep raised transitions",
+      "parameters": {
+        "length": 21,
+        "height": 3.2,
+        "profile": "switchback",
+        "approach": 6,
+        "runout": 16
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 3
+      }
+    },
+    {
+      "id": "platform.skyline_bridge",
+      "name": "skyline bridge",
+      "difficulty": 5,
+      "intent": "Traverse stepped high decks around a dominant central tower",
+      "parameters": {
+        "length": 28,
+        "height": 3.8,
+        "profile": "skyline",
+        "approach": 12,
+        "runout": 18
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "challenge",
+        "recoveryRequired": true,
+        "repeatCooldown": 4
       }
     }
   ]

@@ -112,6 +112,136 @@
         "recoveryRequired": true,
         "repeatCooldown": 2
       }
+    },
+    {
+      "id": "spring_high.dip_lift",
+      "name": "Dip Lift",
+      "difficulty": 2,
+      "intent": "Compress through a shallow dip before an 8-unit lift onto a crowned landing",
+      "parameters": {
+        "approach": 18,
+        "gap": 15,
+        "height": 8,
+        "landing": 16,
+        "recovery": 14,
+        "targetInset": 4,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.28,
+        "approachProfile": "dip",
+        "approachDepth": 2.2,
+        "landingProfile": "crown",
+        "landingRelief": 2.4
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 2
+      }
+    },
+    {
+      "id": "spring_high.ramp_lift",
+      "name": "Ramp Lift",
+      "difficulty": 3,
+      "intent": "Launch from a raised approach into a 12-unit terraced transfer",
+      "parameters": {
+        "approach": 15,
+        "gap": 11,
+        "height": 12,
+        "landing": 18,
+        "recovery": 16,
+        "targetInset": 5,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.42,
+        "approachProfile": "ramp",
+        "launchOffset": 2.5,
+        "landingProfile": "upslope",
+        "landingRelief": 3
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 3
+      }
+    },
+    {
+      "id": "spring_high.crest_lift",
+      "name": "Crest Lift",
+      "difficulty": 3,
+      "intent": "Cross a crest approach into a 15-unit high descending terrace",
+      "parameters": {
+        "approach": 20,
+        "gap": 18,
+        "height": 15,
+        "landing": 19,
+        "recovery": 18,
+        "targetInset": 5,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.55,
+        "approachProfile": "crest",
+        "approachDepth": 2.8,
+        "landingProfile": "downslope",
+        "landingRelief": 3.5
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 3
+      }
+    },
+    {
+      "id": "spring_high.roller_lift",
+      "name": "Roller Lift",
+      "difficulty": 4,
+      "intent": "Time two approach rollers before a 19-unit lift onto a rolling summit",
+      "parameters": {
+        "approach": 24,
+        "gap": 16,
+        "height": 19,
+        "landing": 22,
+        "recovery": 20,
+        "targetInset": 6,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.38,
+        "approachProfile": "rollers",
+        "approachDepth": 1.8,
+        "landingProfile": "rollers",
+        "landingRelief": 2.2
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 4
+      }
+    },
+    {
+      "id": "spring_high.summit_lift",
+      "name": "Summit Lift",
+      "difficulty": 5,
+      "intent": "Commit from a deep compression into a 28-unit summit transfer",
+      "parameters": {
+        "approach": 26,
+        "gap": 23,
+        "height": 28,
+        "landing": 24,
+        "recovery": 24,
+        "targetInset": 6,
+        "referenceClearance": 1,
+        "arrivalSlope": -0.62,
+        "approachProfile": "dip",
+        "approachDepth": 3.5,
+        "landingProfile": "bowl",
+        "landingRelief": 3
+      },
+      "physicsStatus": "unvalidated",
+      "composition": {
+        "role": "cinematic_highlight",
+        "recoveryRequired": true,
+        "repeatCooldown": 5
+      }
     }
   ]
 }

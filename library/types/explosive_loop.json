@@ -1,19 +1,29 @@
 {
   "type": "explosive_loop",
   "builder": "loop",
-  "primarySkill": "loop_speed_and_exit",
+  "primarySkill": "commit_explode_reveal_continue",
   "variants": [
     {
       "id": "explosive_loop.round",
-      "name": "round",
+      "name": "round ignition loop",
       "difficulty": 3,
-      "intent": "Read entry apex exit",
+      "intent": "Cross beneath the ring on a curved explosive ramp, ride the upper ring from right to left, then cross back beneath it on the symmetric revealed ramp",
       "parameters": {
+        "layout": "round_loop",
         "radiusX": 3,
         "radiusY": 3,
-        "entryAngle": -25,
-        "exitAngle": 220,
+        "entryAngle": 0,
+        "exitAngle": 180,
         "approach": 18,
+        "symmetricTangents": true,
+        "boundaryClearance": 1,
+        "ringGroundClearance": 0.5,
+        "rampGroundHandleRatio": 0.64,
+        "ringTangentHandle": 3.5,
+        "revealLength": 18,
+        "revealProfile": "symmetric_tangent",
+        "revealRelief": 2,
+        "exitHeight": 0,
         "recovery": 18
       },
       "physicsStatus": "unvalidated",
@@ -24,83 +34,65 @@
       }
     },
     {
-      "id": "explosive_loop.wide",
-      "name": "wide",
-      "difficulty": 3,
-      "intent": "Long inverted section",
+      "id": "explosive_loop.double_ring",
+      "name": "double ignition ring",
+      "difficulty": 4,
+      "intent": "Complete two end-to-end copies of the crossed-ramp ring, each with its own explosion and revealed continuation",
       "parameters": {
-        "radiusX": 4,
+        "layout": "ring_chain_2",
+        "radiusX": 3,
         "radiusY": 3,
-        "entryAngle": -25,
-        "exitAngle": 220,
-        "approach": 20,
+        "entryAngle": 0,
+        "exitAngle": 180,
+        "approach": 18,
+        "sequenceRings": 2,
+        "symmetricTangents": true,
+        "boundaryClearance": 1,
+        "ringGroundClearance": 0.5,
+        "rampGroundHandleRatio": 0.64,
+        "ringTangentHandle": 3.5,
+        "revealLength": 18,
+        "revealProfile": "symmetric_tangent",
+        "revealRelief": 2,
+        "exitHeight": 0,
         "recovery": 20
       },
       "physicsStatus": "unvalidated",
       "composition": {
         "role": "challenge",
         "recoveryRequired": true,
-        "repeatCooldown": 2
+        "repeatCooldown": 3
       }
     },
     {
-      "id": "explosive_loop.tall",
-      "name": "tall",
-      "difficulty": 4,
-      "intent": "Energy at high crest",
-      "parameters": {
-        "radiusX": 3,
-        "radiusY": 4,
-        "entryAngle": -30,
-        "exitAngle": 220,
-        "approach": 22,
-        "recovery": 22
-      },
-      "physicsStatus": "unvalidated",
-      "composition": {
-        "role": "challenge",
-        "recoveryRequired": true,
-        "repeatCooldown": 2
-      }
-    },
-    {
-      "id": "explosive_loop.late_exit",
-      "name": "late exit",
-      "difficulty": 4,
-      "intent": "Longer arc to fallback",
-      "parameters": {
-        "radiusX": 3.5,
-        "radiusY": 3.5,
-        "entryAngle": -25,
-        "exitAngle": 240,
-        "approach": 22,
-        "recovery": 22
-      },
-      "physicsStatus": "unvalidated",
-      "composition": {
-        "role": "challenge",
-        "recoveryRequired": true,
-        "repeatCooldown": 2
-      }
-    },
-    {
-      "id": "explosive_loop.wide_high",
-      "name": "wide high",
+      "id": "explosive_loop.triple_ring",
+      "name": "triple ignition ring",
       "difficulty": 5,
-      "intent": "Large commitment",
+      "intent": "Complete three end-to-end copies of the crossed-ramp ring, preserving the explosion and reveal logic in every copy",
       "parameters": {
-        "radiusX": 4.5,
-        "radiusY": 4,
-        "entryAngle": -20,
-        "exitAngle": 230,
-        "approach": 26,
-        "recovery": 24
+        "layout": "ring_chain_3",
+        "radiusX": 3,
+        "radiusY": 3,
+        "entryAngle": 0,
+        "exitAngle": 180,
+        "approach": 18,
+        "sequenceRings": 3,
+        "symmetricTangents": true,
+        "boundaryClearance": 1,
+        "ringGroundClearance": 0.5,
+        "rampGroundHandleRatio": 0.64,
+        "ringTangentHandle": 3.5,
+        "revealLength": 18,
+        "revealProfile": "symmetric_tangent",
+        "revealRelief": 2,
+        "exitHeight": 0,
+        "recovery": 22
       },
       "physicsStatus": "unvalidated",
       "composition": {
         "role": "challenge",
         "recoveryRequired": true,
-        "repeatCooldown": 2
+        "repeatCooldown": 4
       }
     }
   ]

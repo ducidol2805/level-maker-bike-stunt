@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "number": 0,
+  "mapId": "cinder_crown",
+  "recipePath": "library/demo_recipe.json",
+  "name": "Cinder Crown - Full Feature Showcase",
+  "difficulty": "medium; optional advanced stunt line; Unity tuning pending",
+  "intent": "Showcase the library's roller, manual gap, explosive ring, high spring, barrel skybridge and long spring crossing.",
+  "signature": "Full feature showcase / high lift / skybridge / long spring flight",
+  "start": {"variant": "flat.checkpoint_pad", "length": 12},
+  "finishLength": 24,
+  "stages": [
+    {"variant":"hill.early_crest","beat":"roller","role":"teach","tension":1,
+     "parameterOverrides":{"surface":[[0,0],[3,0],[6,2],[9,0],[12,0]]},
+     "purpose":"Gentle weight-transfer introduction on the demo's compact roller."},
+    {"variant":"gap.intro","beat":"quarry","role":"practice","tension":2,"checkpoint":true,
+     "purpose":"Conventional jump, compact deadzone and sloped catch."},
+    {"variant":"explosive_loop.round","beat":"crown","role":"climax","tension":4,"boosts":2,"checkpoint":true,
+     "purpose":"Commit through the curved explosive ramp, invert, then continue over its revealed exit."},
+    {"variant":"spring_high.lift_1","beat":"ascent","role":"combine","tension":3,"checkpoint":true,
+     "purpose":"Reveal a higher terrace through vertical flight."},
+    {"variant":"platform.arched_bridge","beat":"skybridge","role":"combine","tension":3,"barrel":true,
+     "purpose":"Optional forward-up barrel flourish with three obstacle coins and a clear return."},
+    {"variant":"spring_far.crossing_1","beat":"crossing","role":"climax","tension":3,"checkpoint":true,
+     "purpose":"Wide final cinematic flight followed by stabilization."},
+    {"variant":"fall.gentle_descent","beat":"home","role":"resolution","tension":1,"length":24,"fitExitY":-7.75,
+     "purpose":"Smooth return to the demo's original finish elevation."}
+  ]
+}

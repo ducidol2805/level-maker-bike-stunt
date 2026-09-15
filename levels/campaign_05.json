@@ -22,14 +22,14 @@
           "x": 0,
           "y": 0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": -6.0,
+            "y": -0.0
           },
           "tangentOut": {
             "x": 6.0,
             "y": 0.0
           },
-          "tangentMode": "broken",
+          "tangentMode": "continuous",
           "corner": false
         },
         {
@@ -138,32 +138,46 @@
             "y": -0.0
           },
           "tangentOut": {
-            "x": 4.0,
+            "x": 2.933333,
             "y": 0.0
           },
           "tangentMode": "broken",
           "corner": false
         },
         {
-          "x": 60,
+          "x": 56.8,
           "y": 0,
           "tangentIn": {
-            "x": -4.0,
+            "x": -2.933333,
             "y": -0.0
           },
           "tangentOut": {
-            "x": 2.0,
+            "x": 3.053333,
             "y": 0.0
           },
           "tangentMode": "continuous",
           "corner": false
         },
         {
-          "x": 66,
-          "y": 2,
+          "x": 65.96000000000001,
+          "y": 0.48,
           "tangentIn": {
-            "x": -2.0,
-            "y": -0.932615
+            "x": -3.053333,
+            "y": -1.064821
+          },
+          "tangentOut": {
+            "x": 1.68,
+            "y": 0.585884
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 71,
+          "y": 3,
+          "tangentIn": {
+            "x": -1.68,
+            "y": -1.220591
           },
           "tangentOut": {
             "x": 0,
@@ -173,8 +187,8 @@
           "corner": false
         },
         {
-          "x": 66,
-          "y": -20.968190136101292,
+          "x": 71,
+          "y": -54.049459997654914,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -188,7 +202,7 @@
         },
         {
           "x": -20,
-          "y": -20.968190136101292,
+          "y": -54.049459997654914,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -202,7 +216,7 @@
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 12,
+        "drivingSurfaceCount": 13,
         "sourceVariant": "flat.launch_run",
         "sourceShapeIds": [
           "s00_terrain",
@@ -216,66 +230,66 @@
       "closed": true,
       "points": [
         {
-          "x": 71,
-          "y": 1.0,
+          "x": 81,
+          "y": 3.0,
           "tangentIn": {
             "x": 0,
             "y": 0
           },
           "tangentOut": {
-            "x": 1.6,
-            "y": -0.675953
+            "x": 2.266667,
+            "y": -0.736485
           },
           "tangentMode": "broken",
           "corner": false
         },
         {
-          "x": 75.8,
-          "y": -2.053005,
+          "x": 87.8,
+          "y": -0.711883,
           "tangentIn": {
-            "x": -1.6,
-            "y": 1.359383
+            "x": -2.266667,
+            "y": 1.738104
           },
           "tangentOut": {
-            "x": 1.6,
-            "y": -1.359383
+            "x": 2.266667,
+            "y": -1.738104
           },
           "tangentMode": "continuous",
           "corner": false
         },
         {
-          "x": 80.6,
-          "y": -7.156299,
+          "x": 94.6,
+          "y": -7.428623,
           "tangentIn": {
-            "x": -1.6,
-            "y": 2.042813
+            "x": -2.266667,
+            "y": 2.739723
           },
           "tangentOut": {
-            "x": 1.333333,
-            "y": -1.702344
+            "x": 1.416667,
+            "y": -1.712327
           },
           "tangentMode": "continuous",
           "corner": false
         },
         {
-          "x": 84.6,
-          "y": -9.709816,
+          "x": 98.85,
+          "y": -9.997113,
           "tangentIn": {
-            "x": -1.333333,
+            "x": -1.416667,
             "y": -0.0
           },
           "tangentOut": {
-            "x": 4.0,
+            "x": 5.333333,
             "y": 0.0
           },
           "tangentMode": "continuous",
           "corner": false
         },
         {
-          "x": 96.6,
-          "y": -9.709816,
+          "x": 114.85,
+          "y": -9.997113,
           "tangentIn": {
-            "x": -4.0,
+            "x": -5.333333,
             "y": -0.0
           },
           "tangentOut": {
@@ -286,8 +300,8 @@
           "corner": false
         },
         {
-          "x": 100.6,
-          "y": -7.709815961576123,
+          "x": 118.85,
+          "y": -7.997112769012489,
           "tangentIn": {
             "x": -1.333333,
             "y": -0.533333
@@ -300,8 +314,8 @@
           "corner": false
         },
         {
-          "x": 103.6,
-          "y": -6.709815961576123,
+          "x": 121.85,
+          "y": -6.997112769012489,
           "tangentIn": {
             "x": -1.0,
             "y": -0.0
@@ -314,8 +328,8 @@
           "corner": false
         },
         {
-          "x": 113.6,
-          "y": -8.709815961576123,
+          "x": 131.85,
+          "y": -8.997112769012489,
           "tangentIn": {
             "x": -3.333333,
             "y": 0.606061
@@ -328,24 +342,24 @@
           "corner": false
         },
         {
-          "x": 119.6,
-          "y": -9.709815961576123,
+          "x": 137.85,
+          "y": -9.997112769012489,
           "tangentIn": {
             "x": -2.0,
             "y": -0.0
           },
           "tangentOut": {
-            "x": 6.0,
+            "x": 7.333333,
             "y": 0.0
           },
           "tangentMode": "broken",
           "corner": false
         },
         {
-          "x": 137.6,
-          "y": -9.709815961576123,
+          "x": 159.85,
+          "y": -9.997112769012489,
           "tangentIn": {
-            "x": -6.0,
+            "x": -7.333333,
             "y": -0.0
           },
           "tangentOut": {
@@ -356,8 +370,8 @@
           "corner": false
         },
         {
-          "x": 137.6,
-          "y": -20.968190136101292,
+          "x": 159.85,
+          "y": -54.049459997654914,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -370,8 +384,8 @@
           "corner": false
         },
         {
-          "x": 71,
-          "y": -20.968190136101292,
+          "x": 81,
+          "y": -54.049459997654914,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -386,7 +400,7 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 10,
-        "sourceVariant": "gap.intro",
+        "sourceVariant": "gap.precision",
         "sourceShapeIds": [
           "s02_landing_recovery",
           "s03_terrain",
@@ -399,38 +413,38 @@
       "closed": true,
       "points": [
         {
-          "x": 173.6,
-          "y": -5.709815961576123,
+          "x": 211.85,
+          "y": -3.997112769012489,
           "tangentIn": {
             "x": 0,
             "y": 0
           },
           "tangentOut": {
-            "x": 5.333333,
+            "x": 6.666667,
             "y": 0.0
           },
           "tangentMode": "broken",
           "corner": false
         },
         {
-          "x": 189.6,
-          "y": -5.709815961576123,
+          "x": 231.85,
+          "y": -3.997112769012489,
           "tangentIn": {
-            "x": -5.333333,
+            "x": -6.666667,
             "y": -0.0
           },
           "tangentOut": {
-            "x": 6.0,
+            "x": 7.333333,
             "y": 0.0
           },
           "tangentMode": "continuous",
           "corner": false
         },
         {
-          "x": 207.6,
-          "y": -5.709815961576123,
+          "x": 253.85,
+          "y": -3.997112769012489,
           "tangentIn": {
-            "x": -6.0,
+            "x": -7.333333,
             "y": -0.0
           },
           "tangentOut": {
@@ -441,8 +455,8 @@
           "corner": false
         },
         {
-          "x": 211.6,
-          "y": -5.709815961576123,
+          "x": 257.85,
+          "y": -3.997112769012489,
           "tangentIn": {
             "x": -1.333333,
             "y": -0.0
@@ -455,8 +469,8 @@
           "corner": false
         },
         {
-          "x": 227.6,
-          "y": -10.709815961576123,
+          "x": 273.85,
+          "y": -8.997112769012489,
           "tangentIn": {
             "x": -5.333333,
             "y": -0.0
@@ -469,39 +483,67 @@
           "corner": false
         },
         {
-          "x": 234.6,
-          "y": -10.709815961576123,
+          "x": 280.85,
+          "y": -8.997112769012489,
           "tangentIn": {
             "x": -2.333333,
             "y": -0.0
           },
           "tangentOut": {
-            "x": 6.0,
+            "x": 4.345833,
             "y": 0.0
           },
           "tangentMode": "broken",
           "corner": false
         },
         {
-          "x": 252.6,
-          "y": -10.709815961576123,
+          "x": 293.88750000000005,
+          "y": -8.997112769012489,
           "tangentIn": {
-            "x": -6.0,
+            "x": -4.345833,
             "y": -0.0
           },
           "tangentOut": {
-            "x": 3.333333,
+            "x": 4.68,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 307.92750000000007,
+          "y": -8.997112769012489,
+          "tangentIn": {
+            "x": -4.68,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 2.37,
             "y": 0.0
           },
           "tangentMode": "continuous",
           "corner": false
         },
         {
-          "x": 262.6,
-          "y": -7.709815961576123,
+          "x": 315.0375,
+          "y": -8.437112769012488,
           "tangentIn": {
-            "x": -3.333333,
-            "y": -1.772365
+            "x": -2.37,
+            "y": -0.612011
+          },
+          "tangentOut": {
+            "x": 1.283333,
+            "y": 0.331399
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 318.88750000000005,
+          "y": -6.997112769012489,
+          "tangentIn": {
+            "x": -1.283333,
+            "y": -0.571377
           },
           "tangentOut": {
             "x": 0,
@@ -511,8 +553,8 @@
           "corner": false
         },
         {
-          "x": 262.6,
-          "y": -20.968190136101292,
+          "x": 318.88750000000005,
+          "y": -54.049459997654914,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -525,8 +567,8 @@
           "corner": false
         },
         {
-          "x": 173.6,
-          "y": -20.968190136101292,
+          "x": 211.85,
+          "y": -54.049459997654914,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -540,22 +582,305 @@
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 8,
-        "sourceVariant": "spring_far.crossing_3",
+        "drivingSurfaceCount": 10,
+        "sourceVariant": "spring_far.crossing_5",
         "sourceShapeIds": [
           "s04_spring_landing_recovery",
           "s05_terrain",
-          "s06_launch"
+          "s06_terrain",
+          "s07_launch"
         ]
       }
     },
     {
-      "id": "s06_landing_recovery",
+      "id": "s07_landing_recovery",
       "closed": true,
       "points": [
         {
-          "x": 274.6,
-          "y": -8.709815961576123,
+          "x": 327.88750000000005,
+          "y": -11.997112769012489,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 2.4,
+            "y": -2.487216
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 335.08750000000003,
+          "y": -22.22807676901249,
+          "tangentIn": {
+            "x": -2.4,
+            "y": 4.333427
+          },
+          "tangentOut": {
+            "x": 2.4,
+            "y": -4.333427
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 342.2875,
+          "y": -37.99767476901249,
+          "tangentIn": {
+            "x": -2.4,
+            "y": 6.179638
+          },
+          "tangentOut": {
+            "x": 1.5,
+            "y": -3.862274
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 346.7875,
+          "y": -43.79108576901249,
+          "tangentIn": {
+            "x": -1.5,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 6.0,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 364.7875,
+          "y": -43.79108576901249,
+          "tangentIn": {
+            "x": -6.0,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.0,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 367.7875,
+          "y": -42.79108582312974,
+          "tangentIn": {
+            "x": -1.0,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.333333,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 371.7875,
+          "y": -43.79108582312974,
+          "tangentIn": {
+            "x": -1.333333,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.666667,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 376.7875,
+          "y": -41.79108582312974,
+          "tangentIn": {
+            "x": -1.666667,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.666667,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 381.7875,
+          "y": -43.79108582312974,
+          "tangentIn": {
+            "x": -1.666667,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.0,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 384.7875,
+          "y": -42.991085823129744,
+          "tangentIn": {
+            "x": -1.0,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.666667,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 389.7875,
+          "y": -43.79108582312974,
+          "tangentIn": {
+            "x": -1.666667,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 2.0,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 395.7875,
+          "y": -43.79108582312974,
+          "tangentIn": {
+            "x": -2.0,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 4.345833,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 408.82500000000005,
+          "y": -43.79108582312974,
+          "tangentIn": {
+            "x": -4.345833,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 4.08,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 421.06500000000005,
+          "y": -43.79108582312974,
+          "tangentIn": {
+            "x": -4.08,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 2.52,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 428.62500000000006,
+          "y": -44.75108582312974,
+          "tangentIn": {
+            "x": -2.52,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.466667,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 433.02500000000003,
+          "y": -42.53108582312974,
+          "tangentIn": {
+            "x": -1.466667,
+            "y": -0.561485
+          },
+          "tangentOut": {
+            "x": 1.266667,
+            "y": 0.484919
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 436.82500000000005,
+          "y": -40.79108582312974,
+          "tangentIn": {
+            "x": -1.266667,
+            "y": -0.673499
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 436.82500000000005,
+          "y": -54.049459997654914,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 327.88750000000005,
+          "y": -54.049459997654914,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        }
+      ],
+      "metadata": {
+        "drivingSurfaceCount": 17,
+        "sourceVariant": "step_down.deep",
+        "sourceShapeIds": [
+          "s07_landing_recovery",
+          "s08_terrain",
+          "s09_terrain",
+          "s10_launch"
+        ]
+      }
+    },
+    {
+      "id": "s10_landing_recovery",
+      "closed": true,
+      "points": [
+        {
+          "x": 448.82500000000005,
+          "y": -41.79108582312974,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -568,8 +893,8 @@
           "corner": false
         },
         {
-          "x": 281.4,
-          "y": -11.631432961576122,
+          "x": 455.62500000000006,
+          "y": -44.71270282312974,
           "tangentIn": {
             "x": -2.266667,
             "y": 1.257803
@@ -582,8 +907,8 @@
           "corner": false
         },
         {
-          "x": 288.2,
-          "y": -16.25663096157612,
+          "x": 462.42500000000007,
+          "y": -49.33790082312974,
           "tangentIn": {
             "x": -2.266667,
             "y": 1.825663
@@ -596,8 +921,8 @@
           "corner": false
         },
         {
-          "x": 292.45,
-          "y": -17.968189961576122,
+          "x": 466.67500000000007,
+          "y": -51.04945982312974,
           "tangentIn": {
             "x": -1.416667,
             "y": -0.0
@@ -610,8 +935,8 @@
           "corner": false
         },
         {
-          "x": 306.45,
-          "y": -17.968189961576122,
+          "x": 480.67500000000007,
+          "y": -51.04945982312974,
           "tangentIn": {
             "x": -4.666667,
             "y": -0.0
@@ -624,22 +949,22 @@
           "corner": false
         },
         {
-          "x": 350.45,
-          "y": -17.968190136101292,
+          "x": 524.6750000000001,
+          "y": -51.049459997654914,
           "tangentIn": {
             "x": -14.666667,
             "y": -0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 6.666666666666667,
+            "y": 0.0
           },
-          "tangentMode": "broken",
+          "tangentMode": "continuous",
           "corner": false
         },
         {
-          "x": 370.45,
-          "y": -17.968190136101292,
+          "x": 544.6750000000001,
+          "y": -51.049459997654914,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -652,8 +977,8 @@
           "corner": false
         },
         {
-          "x": 370.45,
-          "y": -20.968190136101292,
+          "x": 544.6750000000001,
+          "y": -54.049459997654914,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -666,8 +991,8 @@
           "corner": false
         },
         {
-          "x": 274.6,
-          "y": -20.968190136101292,
+          "x": 448.82500000000005,
+          "y": -54.049459997654914,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -684,8 +1009,8 @@
         "drivingSurfaceCount": 7,
         "sourceVariant": "curved_ramp.speed_scoop",
         "sourceShapeIds": [
-          "s06_landing_recovery",
-          "s07_terrain"
+          "s10_landing_recovery",
+          "s11_terrain"
         ]
       }
     }
@@ -697,8 +1022,8 @@
       "closed": true,
       "points": [
         {
-          "x": 65.9,
-          "y": -0.5,
+          "x": 70.9,
+          "y": 1.5,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -711,8 +1036,8 @@
           "corner": false
         },
         {
-          "x": 71.1,
-          "y": -0.5,
+          "x": 81.1,
+          "y": 1.5,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -725,8 +1050,8 @@
           "corner": false
         },
         {
-          "x": 71.1,
-          "y": -2.0,
+          "x": 81.1,
+          "y": 0.0,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -739,8 +1064,8 @@
           "corner": false
         },
         {
-          "x": 65.9,
-          "y": -2.0,
+          "x": 70.9,
+          "y": 0.0,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -754,7 +1079,7 @@
         }
       ],
       "metadata": {
-        "sourceVariant": "gap.intro"
+        "sourceVariant": "gap.precision"
       }
     },
     {
@@ -762,8 +1087,8 @@
       "closed": true,
       "points": [
         {
-          "x": 137.5,
-          "y": -11.209815961576123,
+          "x": 159.75,
+          "y": -11.497112769012489,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -776,8 +1101,8 @@
           "corner": false
         },
         {
-          "x": 173.7,
-          "y": -11.209815961576123,
+          "x": 211.95,
+          "y": -11.497112769012489,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -790,8 +1115,8 @@
           "corner": false
         },
         {
-          "x": 173.7,
-          "y": -12.709815961576123,
+          "x": 211.95,
+          "y": -12.997112769012489,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -804,8 +1129,8 @@
           "corner": false
         },
         {
-          "x": 137.5,
-          "y": -12.709815961576123,
+          "x": 159.75,
+          "y": -12.997112769012489,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -819,16 +1144,16 @@
         }
       ],
       "metadata": {
-        "sourceVariant": "spring_far.crossing_3"
+        "sourceVariant": "spring_far.crossing_5"
       }
     },
     {
-      "id": "s06_gap_kill",
+      "id": "s07_gap_kill",
       "closed": true,
       "points": [
         {
-          "x": 262.5,
-          "y": -10.209815961576123,
+          "x": 318.7875,
+          "y": -13.497112769012489,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -841,8 +1166,8 @@
           "corner": false
         },
         {
-          "x": 274.7,
-          "y": -10.209815961576123,
+          "x": 327.98750000000007,
+          "y": -13.497112769012489,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -855,8 +1180,8 @@
           "corner": false
         },
         {
-          "x": 274.7,
-          "y": -11.709815961576123,
+          "x": 327.98750000000007,
+          "y": -14.997112769012489,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -869,8 +1194,73 @@
           "corner": false
         },
         {
-          "x": 262.5,
-          "y": -11.709815961576123,
+          "x": 318.7875,
+          "y": -14.997112769012489,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        }
+      ],
+      "metadata": {
+        "sourceVariant": "step_down.deep"
+      }
+    },
+    {
+      "id": "s10_gap_kill",
+      "closed": true,
+      "points": [
+        {
+          "x": 436.725,
+          "y": -43.29108582312974,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 448.92500000000007,
+          "y": -43.29108582312974,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 448.92500000000007,
+          "y": -44.79108582312974,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 436.725,
+          "y": -44.79108582312974,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -890,329 +1280,749 @@
   ],
   "InteractableObject": [
     {
+      "id": "s00_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 4.5,
+        "y": 1.2
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.launch_run",
+        "collectionRisk": "pending_playtest",
+        "beatId": "start",
+        "purpose": "Clear runway; show the first lesson before commitment."
+      },
+      "metadata": {
+        "sourceVariant": "flat.launch_run"
+      }
+    },
+    {
+      "id": "s00_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 9.0,
+        "y": 1.2
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.launch_run",
+        "collectionRisk": "pending_playtest",
+        "beatId": "start",
+        "purpose": "Clear runway; show the first lesson before commitment."
+      },
+      "metadata": {
+        "sourceVariant": "flat.launch_run"
+      }
+    },
+    {
+      "id": "s00_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 13.5,
+        "y": 1.2
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.launch_run",
+        "collectionRisk": "pending_playtest",
+        "beatId": "start",
+        "purpose": "Clear runway; show the first lesson before commitment."
+      },
+      "metadata": {
+        "sourceVariant": "flat.launch_run"
+      }
+    },
+    {
+      "id": "s01_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 25.51572809399831,
+        "y": 1.1595373560229263
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "wave.trough_train",
+        "collectionRisk": "pending_playtest",
+        "beatId": "low_rhythm",
+        "purpose": "Keep the bike low through three troughs before opening the horizon."
+      },
+      "metadata": {
+        "sourceVariant": "wave.trough_train"
+      }
+    },
+    {
+      "id": "s01_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 32.740235263745824,
+        "y": 0.8473501428030144
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "wave.trough_train",
+        "collectionRisk": "pending_playtest",
+        "beatId": "low_rhythm",
+        "purpose": "Keep the bike low through three troughs before opening the horizon."
+      },
+      "metadata": {
+        "sourceVariant": "wave.trough_train"
+      }
+    },
+    {
+      "id": "s01_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 40.25032903573925,
+        "y": 0.793376654568355
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "wave.trough_train",
+        "collectionRisk": "pending_playtest",
+        "beatId": "low_rhythm",
+        "purpose": "Keep the bike low through three troughs before opening the horizon."
+      },
+      "metadata": {
+        "sourceVariant": "wave.trough_train"
+      }
+    },
+    {
+      "id": "s02_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 74.92417428040362,
+        "y": 5.952123323858712
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "gap.precision",
+        "collectionRisk": "pending_playtest",
+        "beatId": "near_bank",
+        "purpose": "Master gap / precision with controlled entry speed and a stable recovery."
+      },
+      "metadata": {
+        "sourceVariant": "gap.precision"
+      }
+    },
+    {
+      "id": "s02_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 79.28459496327618,
+        "y": 6.013355846518252
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "gap.precision",
+        "collectionRisk": "pending_playtest",
+        "beatId": "near_bank",
+        "purpose": "Master gap / precision with controlled entry speed and a stable recovery."
+      },
+      "metadata": {
+        "sourceVariant": "gap.precision"
+      }
+    },
+    {
+      "id": "s02_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 83.24735239900481,
+        "y": 4.144383113685725
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "gap.precision",
+        "collectionRisk": "pending_playtest",
+        "beatId": "near_bank",
+        "purpose": "Master gap / precision with controlled entry speed and a stable recovery."
+      },
+      "metadata": {
+        "sourceVariant": "gap.precision"
+      }
+    },
+    {
+      "id": "s03_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 120.21130708016062,
+        "y": -6.203801695002598
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "hill.early_crest",
+        "collectionRisk": "pending_playtest",
+        "beatId": "horizon_setup",
+        "purpose": "Show the distant destination from an early crest with time to settle."
+      },
+      "metadata": {
+        "sourceVariant": "hill.early_crest"
+      }
+    },
+    {
+      "id": "s03_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 126.1053822427823,
+        "y": -6.386247939990673
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "hill.early_crest",
+        "collectionRisk": "pending_playtest",
+        "beatId": "horizon_setup",
+        "purpose": "Show the distant destination from an early crest with time to settle."
+      },
+      "metadata": {
+        "sourceVariant": "hill.early_crest"
+      }
+    },
+    {
+      "id": "s03_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 131.93723565407979,
+        "y": -7.8131542709444
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "hill.early_crest",
+        "collectionRisk": "pending_playtest",
+        "beatId": "horizon_setup",
+        "purpose": "Show the distant destination from an early crest with time to settle."
+      },
+      "metadata": {
+        "sourceVariant": "hill.early_crest"
+      }
+    },
+    {
       "id": "s04_spring",
       "type": "SpringObject",
       "transform": {
-        "x": 137.6,
-        "y": -8.709815961576123,
+        "x": 159.85,
+        "y": -8.997112769012489,
         "rotation": 0
       },
       "properties": {
         "targetPosition": {
-          "x": 177.6,
-          "y": -4.709815961576123
+          "x": 215.85,
+          "y": -2.997112769012489
         },
-        "flightTimeSeconds": 1.9156525704423026,
+        "flightTimeSeconds": 2.284548996683303,
         "gravity": 9.81,
         "launchMode": "target_arc",
         "activation": "on_player_enter",
         "rearm": "on_exit",
         "cinematic": true,
         "beatId": "horizon",
-        "purpose": "Cross the 36-unit canyon in one deliberate camera sweep with a broad catch."
+        "purpose": "Master spring far / crossing 5 with controlled entry speed and a stable recovery."
       },
       "metadata": {
-        "sourceVariant": "spring_far.crossing_3"
+        "sourceVariant": "spring_far.crossing_5"
       }
     },
     {
-      "id": "coin_01",
+      "id": "s04_coin_01",
       "type": "coin",
       "transform": {
-        "x": 24.023824032144393,
-        "y": 0.7089328197363846
+        "x": 173.06569683542014,
+        "y": -2.9656188766154328
       },
       "properties": {
         "optional": true,
-        "beatId": "low_rhythm",
-        "line": "crest_or_flow",
-        "collectionRisk": "flow",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_02",
-      "type": "coin",
-      "transform": {
-        "x": 41.755582235312964,
-        "y": 1.189229316160854
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "low_rhythm",
-        "line": "crest_or_flow",
-        "collectionRisk": "flow",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_03",
-      "type": "coin",
-      "transform": {
-        "x": 66.56278193597363,
-        "y": 3.232129226307194
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "near_bank",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_04",
-      "type": "coin",
-      "transform": {
-        "x": 70.71745325578289,
-        "y": 3.0831331592562483
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "near_bank",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_05",
-      "type": "coin",
-      "transform": {
-        "x": 74.0994505337486,
-        "y": 0.5375847231504037
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "near_bank",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_06",
-      "type": "coin",
-      "transform": {
-        "x": 100.86225688795622,
-        "y": -6.4008548653947654
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "horizon_setup",
-        "line": "crest_or_flow",
-        "collectionRisk": "flow",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_07",
-      "type": "coin",
-      "transform": {
-        "x": 114.86372713485275,
-        "y": -7.767387334988473
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "horizon_setup",
-        "line": "crest_or_flow",
-        "collectionRisk": "flow",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_08",
-      "type": "coin",
-      "transform": {
-        "x": 141.29817975153756,
-        "y": -6.829793634215244
-      },
-      "properties": {
-        "optional": true,
+        "placement": "library_obstacle",
+        "line": "spring_flight",
+        "sourceVariant": "spring_far.crossing_5",
+        "collectionRisk": "pending_playtest",
         "beatId": "horizon",
-        "line": "cinematic_spring_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Master spring far / crossing 5 with controlled entry speed and a stable recovery."
+      },
+      "metadata": {
+        "sourceVariant": "spring_far.crossing_5"
       }
     },
     {
-      "id": "coin_09",
+      "id": "s04_coin_02",
       "type": "coin",
       "transform": {
-        "x": 145.33948205360622,
-        "y": -5.126999471914518
+        "x": 187.20396970344402,
+        "y": 0.33013229667174926
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "spring_flight",
+        "sourceVariant": "spring_far.crossing_5",
+        "collectionRisk": "pending_playtest",
         "beatId": "horizon",
-        "line": "cinematic_spring_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Master spring far / crossing 5 with controlled entry speed and a stable recovery."
+      },
+      "metadata": {
+        "sourceVariant": "spring_far.crossing_5"
       }
     },
     {
-      "id": "coin_10",
+      "id": "s04_coin_03",
       "type": "coin",
       "transform": {
-        "x": 149.50504412394247,
-        "y": -3.756670670273645
+        "x": 201.71635999715306,
+        "y": 0.318733117039363
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "spring_flight",
+        "sourceVariant": "spring_far.crossing_5",
+        "collectionRisk": "pending_playtest",
         "beatId": "horizon",
-        "line": "cinematic_spring_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Master spring far / crossing 5 with controlled entry speed and a stable recovery."
+      },
+      "metadata": {
+        "sourceVariant": "spring_far.crossing_5"
       }
     },
     {
-      "id": "coin_11",
+      "id": "s05_coin_01",
       "type": "coin",
       "transform": {
-        "x": 153.77456069183222,
-        "y": -2.757140382073776
+        "x": 260.78286674912056,
+        "y": -3.2395304365280486
       },
       "properties": {
         "optional": true,
-        "beatId": "horizon",
-        "line": "cinematic_spring_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_12",
-      "type": "coin",
-      "transform": {
-        "x": 158.11864481920327,
-        "y": -2.161026172425842
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "horizon",
-        "line": "cinematic_spring_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_13",
-      "type": "coin",
-      "transform": {
-        "x": 162.50001645014558,
-        "y": -1.9900973709369083
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "horizon",
-        "line": "cinematic_spring_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_14",
-      "type": "coin",
-      "transform": {
-        "x": 166.87699783575525,
-        "y": -2.250389158980223
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "horizon",
-        "line": "cinematic_spring_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_15",
-      "type": "coin",
-      "transform": {
-        "x": 171.2084349169424,
-        "y": -2.932527049107037
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "horizon",
-        "line": "cinematic_spring_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_16",
-      "type": "coin",
-      "transform": {
-        "x": 220.96055862240456,
-        "y": -7.641365220724062
-      },
-      "properties": {
-        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "fall.long_descent",
+        "collectionRisk": "pending_playtest",
         "beatId": "far_bank",
-        "line": "crest_or_flow",
-        "collectionRisk": "flow",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Return camera and suspension to ground flow after the long flight."
+      },
+      "metadata": {
+        "sourceVariant": "fall.long_descent"
       }
     },
     {
-      "id": "coin_17",
+      "id": "s05_coin_02",
       "type": "coin",
       "transform": {
-        "x": 263.65178531680016,
-        "y": -6.195531068149631
+        "x": 267.2105455917457,
+        "y": -5.928690519351475
       },
       "properties": {
         "optional": true,
-        "beatId": "echo",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "fall.long_descent",
+        "collectionRisk": "pending_playtest",
+        "beatId": "far_bank",
+        "purpose": "Return camera and suspension to ground flow after the long flight."
+      },
+      "metadata": {
+        "sourceVariant": "fall.long_descent"
       }
     },
     {
-      "id": "coin_18",
+      "id": "s05_coin_03",
       "type": "coin",
       "transform": {
-        "x": 268.93875975084217,
-        "y": -4.968690661151925
+        "x": 273.87463847324955,
+        "y": -7.797112769012489
       },
       "properties": {
         "optional": true,
-        "beatId": "echo",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "fall.long_descent",
+        "collectionRisk": "pending_playtest",
+        "beatId": "far_bank",
+        "purpose": "Return camera and suspension to ground flow after the long flight."
+      },
+      "metadata": {
+        "sourceVariant": "fall.long_descent"
       }
     },
     {
-      "id": "coin_19",
+      "id": "s06_coin_01",
       "type": "coin",
       "transform": {
-        "x": 274.2612660348762,
-        "y": -6.022735349943056
+        "x": 284.109375,
+        "y": -7.797112769012489
       },
       "properties": {
         "optional": true,
-        "beatId": "echo",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.checkpoint_pad",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_recovery_1",
+        "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+      },
+      "metadata": {
+        "sourceVariant": "flat.checkpoint_pad"
       }
     },
     {
-      "id": "coin_20",
+      "id": "s06_coin_02",
       "type": "coin",
       "transform": {
-        "x": 278.92616276131963,
-        "y": -8.835334004373973
+        "x": 287.36875000000003,
+        "y": -7.797112769012489
       },
       "properties": {
         "optional": true,
-        "beatId": "echo",
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.checkpoint_pad",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_recovery_1",
+        "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+      },
+      "metadata": {
+        "sourceVariant": "flat.checkpoint_pad"
+      }
+    },
+    {
+      "id": "s06_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 290.628125,
+        "y": -7.797112769012489
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.checkpoint_pad",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_recovery_1",
+        "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+      },
+      "metadata": {
+        "sourceVariant": "flat.checkpoint_pad"
+      }
+    },
+    {
+      "id": "s07_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 324.223158246026,
+        "y": -6.126404278769132
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
         "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "sourceVariant": "step_down.deep",
+        "collectionRisk": "pending_playtest",
+        "beatId": "horizon_lower_bank",
+        "purpose": "Land on a deeper lower bank after the enlarged crossing."
+      },
+      "metadata": {
+        "sourceVariant": "step_down.deep"
+      }
+    },
+    {
+      "id": "s07_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 328.38370904451415,
+        "y": -9.702081136401006
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "step_down.deep",
+        "collectionRisk": "pending_playtest",
+        "beatId": "horizon_lower_bank",
+        "purpose": "Land on a deeper lower bank after the enlarged crossing."
+      },
+      "metadata": {
+        "sourceVariant": "step_down.deep"
+      }
+    },
+    {
+      "id": "s07_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 331.45228178559506,
+        "y": -14.291266504090453
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "step_down.deep",
+        "collectionRisk": "pending_playtest",
+        "beatId": "horizon_lower_bank",
+        "purpose": "Land on a deeper lower bank after the enlarged crossing."
+      },
+      "metadata": {
+        "sourceVariant": "step_down.deep"
+      }
+    },
+    {
+      "id": "s08_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 372.54699628753855,
+        "y": -42.466614040761364
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "wave.irregular",
+        "collectionRisk": "pending_playtest",
+        "beatId": "horizon_wind_rhythm",
+        "purpose": "Read irregular trough timing before the final scoop."
+      },
+      "metadata": {
+        "sourceVariant": "wave.irregular"
+      }
+    },
+    {
+      "id": "s08_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 379.8958379364964,
+        "y": -41.94886021524627
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "wave.irregular",
+        "collectionRisk": "pending_playtest",
+        "beatId": "horizon_wind_rhythm",
+        "purpose": "Read irregular trough timing before the final scoop."
+      },
+      "metadata": {
+        "sourceVariant": "wave.irregular"
+      }
+    },
+    {
+      "id": "s08_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 387.70380253175966,
+        "y": -42.290074707197846
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "wave.irregular",
+        "collectionRisk": "pending_playtest",
+        "beatId": "horizon_wind_rhythm",
+        "purpose": "Read irregular trough timing before the final scoop."
+      },
+      "metadata": {
+        "sourceVariant": "wave.irregular"
+      }
+    },
+    {
+      "id": "s09_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 399.046875,
+        "y": -42.59108582312974
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.checkpoint_pad",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_recovery_2",
+        "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+      },
+      "metadata": {
+        "sourceVariant": "flat.checkpoint_pad"
+      }
+    },
+    {
+      "id": "s09_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 402.30625000000003,
+        "y": -42.59108582312974
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.checkpoint_pad",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_recovery_2",
+        "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+      },
+      "metadata": {
+        "sourceVariant": "flat.checkpoint_pad"
+      }
+    },
+    {
+      "id": "s09_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 405.565625,
+        "y": -42.59108582312974
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.checkpoint_pad",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_recovery_2",
+        "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
+      },
+      "metadata": {
+        "sourceVariant": "flat.checkpoint_pad"
+      }
+    },
+    {
+      "id": "s10_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 441.41555087937337,
+        "y": -38.204803933784376
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "curved_ramp.speed_scoop",
+        "collectionRisk": "pending_playtest",
+        "beatId": "echo",
+        "purpose": "Echo the canyon crossing as a shorter manually controlled flight with an extended catch."
+      },
+      "metadata": {
+        "sourceVariant": "curved_ramp.speed_scoop"
+      }
+    },
+    {
+      "id": "s10_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 446.2605576289516,
+        "y": -38.38351780065345
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "curved_ramp.speed_scoop",
+        "collectionRisk": "pending_playtest",
+        "beatId": "echo",
+        "purpose": "Echo the canyon crossing as a shorter manually controlled flight with an extended catch."
+      },
+      "metadata": {
+        "sourceVariant": "curved_ramp.speed_scoop"
+      }
+    },
+    {
+      "id": "s10_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 450.7485970699198,
+        "y": -40.24754978431289
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "curved_ramp.speed_scoop",
+        "collectionRisk": "pending_playtest",
+        "beatId": "echo",
+        "purpose": "Echo the canyon crossing as a shorter manually controlled flight with an extended catch."
+      },
+      "metadata": {
+        "sourceVariant": "curved_ramp.speed_scoop"
+      }
+    },
+    {
+      "id": "s11_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 491.67500000000007,
+        "y": -49.84945999765491
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.finish_release",
+        "collectionRisk": "pending_playtest",
+        "beatId": "finish",
+        "purpose": "Finish release after the last challenge."
+      },
+      "metadata": {
+        "sourceVariant": "flat.finish_release"
+      }
+    },
+    {
+      "id": "s11_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 502.67500000000007,
+        "y": -49.84945999765491
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.finish_release",
+        "collectionRisk": "pending_playtest",
+        "beatId": "finish",
+        "purpose": "Finish release after the last challenge."
+      },
+      "metadata": {
+        "sourceVariant": "flat.finish_release"
+      }
+    },
+    {
+      "id": "s11_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 513.6750000000001,
+        "y": -49.84945999765491
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.finish_release",
+        "collectionRisk": "pending_playtest",
+        "beatId": "finish",
+        "purpose": "Finish release after the last challenge."
+      },
+      "metadata": {
+        "sourceVariant": "flat.finish_release"
       }
     }
   ],
@@ -1220,8 +2030,8 @@
     {
       "id": "cp_near_bank",
       "transform": {
-        "x": 87.6,
-        "y": -8.709815961576123,
+        "x": 101.85,
+        "y": -8.997112769012489,
         "rotation": 0
       },
       "metadata": {
@@ -1235,8 +2045,8 @@
     {
       "id": "cp_horizon",
       "transform": {
-        "x": 192.6,
-        "y": -4.709815961576123,
+        "x": 234.85,
+        "y": -2.997112769012489,
         "rotation": 0
       },
       "metadata": {
@@ -1248,10 +2058,25 @@
       }
     },
     {
+      "id": "cp_horizon_lower_bank",
+      "transform": {
+        "x": 349.7875,
+        "y": -42.79108582312974,
+        "rotation": 0
+      },
+      "metadata": {
+        "afterBeat": "horizon_lower_bank",
+        "expectedRestartSpeed": 0,
+        "purpose": "First stable pad after challenge resolution",
+        "resetExplosiveAssemblies": true,
+        "requiresRestartTest": true
+      }
+    },
+    {
       "id": "cp_echo",
       "transform": {
-        "x": 295.45,
-        "y": -16.968190136101292,
+        "x": 469.67500000000007,
+        "y": -50.049459997654914,
         "rotation": 0
       },
       "metadata": {
@@ -1270,44 +2095,54 @@
     "units": "unity",
     "previewOnly": false,
     "authoringMode": "curated_catalog_composition",
-    "catalogVersion": "2.1",
+    "catalogVersion": "2.6",
     "recipe": "library/campaign_recipes.json",
     "recipeNumber": 5,
     "referenceLevel": "levels/00_cinder_crown.json",
-    "subtitle": "A 36-unit void and long eight-coin spring arc create the widest single reveal so far."
+    "subtitle": "A 36-unit void and long spring arc with three obstacle coins create the widest single reveal so far. Extended with higher-tier transfers and technical obstacles."
   },
   "Start": {
     "x": 1,
     "y": 1
   },
   "End": {
-    "x": 349.45,
-    "y": -16.968190136101292
+    "x": 523.6750000000001,
+    "y": -50.049459997654914
   },
   "Top": {
-    "x": 66.56278193597363,
-    "y": 3.232129226307194
+    "x": 79.28459496327618,
+    "y": 6.013355846518252
   },
   "Bottom": {
-    "x": 276.1,
-    "y": -9.207847312185613
+    "x": 138.35,
+    "y": -9.997112769012487
   },
   "design": {
     "variants": [
       "flat.launch_run",
       "wave.trough_train",
-      "gap.intro",
+      "gap.precision",
       "hill.early_crest",
-      "spring_far.crossing_3",
+      "spring_far.crossing_5",
       "fall.long_descent",
+      "flat.checkpoint_pad",
+      "step_down.deep",
+      "wave.irregular",
+      "flat.checkpoint_pad",
       "curved_ramp.speed_scoop",
       "flat.finish_release"
     ],
     "validationStatus": "geometry_checked; Unity bike playtests pending",
-    "coinCount": 20,
+    "coinCount": 36,
+    "coinPolicy": {
+      "perObstacle": 3,
+      "placement": "library_local"
+    },
     "obstacles": [
       {
         "id": "flat.launch_run",
+        "type": "flat",
+        "geometryProfile": "flat",
         "ports": {
           "entry": {
             "x": 0,
@@ -1345,6 +2180,8 @@
       },
       {
         "id": "wave.trough_train",
+        "type": "wave",
+        "geometryProfile": "wave",
         "ports": {
           "entry": {
             "x": 18,
@@ -1381,7 +2218,9 @@
         "joins": []
       },
       {
-        "id": "gap.intro",
+        "id": "gap.precision",
+        "type": "gap",
+        "geometryProfile": "takeoff_and_landing_banks",
         "ports": {
           "entry": {
             "x": 48,
@@ -1392,24 +2231,24 @@
             ]
           },
           "exit": {
-            "x": 96.6,
-            "y": -9.709815961576123,
+            "x": 114.85,
+            "y": -9.997112769012489,
             "direction": [
               1,
               0
             ]
           }
         },
-        "difficulty": 1,
+        "difficulty": 4,
         "physics": {
           "status": "unvalidated",
           "requiredBikeSkills": [
             "flight_and_flow_landing"
           ],
           "entrySpeedWindow": {
-            "minimum": 6.7048,
-            "ideal": 7.9239,
-            "maximum": 9.143,
+            "minimum": 10.204,
+            "ideal": 11.33205,
+            "maximum": 12.4601,
             "units": "units/s",
             "status": "sampled_point_mass_only"
           },
@@ -1418,57 +2257,57 @@
             "coordinateSpace": "module_local",
             "ideal": {
               "result": "catch",
-              "speed": 7.9239,
-              "x": 26.769420341029782,
-              "y": -1.2246921065782583,
-              "airtime": 1.2211139421740287,
-              "pitchMismatchDegrees": 13.08,
+              "speed": 11.3321,
+              "x": 38.52660014904983,
+              "y": 0.2118562669942019,
+              "airtime": 1.6935976494706564,
+              "pitchMismatchDegrees": 12.99,
               "landingQuality": "aligned"
             },
             "sweep": [
               {
                 "multiplier": 0.8,
                 "result": "undershoot",
-                "speed": 6.3391
+                "speed": 9.0656
               },
               {
                 "multiplier": 0.9,
                 "result": "catch",
-                "speed": 7.1315,
-                "x": 24.086587420031428,
-                "y": 0.4883919092396427,
-                "airtime": 0.941708861250641,
-                "pitchMismatchDegrees": 16.48,
+                "speed": 10.1988,
+                "x": 33.15334352917968,
+                "y": 2.9493830809805255,
+                "airtime": 1.2305533421650887,
+                "pitchMismatchDegrees": 17.87,
                 "landingQuality": "aligned"
               },
               {
                 "multiplier": 1,
                 "result": "catch",
-                "speed": 7.9239,
-                "x": 26.769420341029782,
-                "y": -1.2246921065782583,
-                "airtime": 1.2211139421740287,
-                "pitchMismatchDegrees": 13.08,
+                "speed": 11.3321,
+                "x": 38.52660014904983,
+                "y": 0.2118562669942019,
+                "airtime": 1.6935976494706564,
+                "pitchMismatchDegrees": 12.99,
                 "landingQuality": "aligned"
               },
               {
                 "multiplier": 1.1,
                 "result": "catch",
-                "speed": 8.7163,
-                "x": 31.013405622616446,
-                "y": -5.242611265737347,
-                "airtime": 1.6473412902160578,
-                "pitchMismatchDegrees": 9.03,
+                "speed": 12.4653,
+                "x": 47.83586061380659,
+                "y": -8.705200958252409,
+                "airtime": 2.4627504209400124,
+                "pitchMismatchDegrees": 18.46,
                 "landingQuality": "aligned"
               },
               {
                 "multiplier": 1.2,
                 "result": "catch",
-                "speed": 9.5087,
-                "x": 35.10912042640123,
-                "y": -9.355030349640035,
-                "airtime": 1.9853255858185628,
-                "pitchMismatchDegrees": 35.41,
+                "speed": 13.5985,
+                "x": 51.989932481719194,
+                "y": -9.997113000645903,
+                "airtime": 2.635116565444477,
+                "pitchMismatchDegrees": 58.36,
                 "landingQuality": "hard_impact"
               }
             ],
@@ -1478,50 +2317,52 @@
         },
         "camera": {
           "visibleLandingRequired": true,
-          "lookAheadDistance": 17,
+          "lookAheadDistance": 27,
           "verticalFeatureVisibilityRequired": false
         },
         "jumpUnit": {
           "approach": [
             48,
-            60
+            64
           ],
           "launch": [
-            60,
-            66
-          ],
-          "flight": [
-            66,
+            64,
             71
           ],
-          "landing": [
+          "flight": [
             71,
-            84.6
+            81
+          ],
+          "landing": [
+            81,
+            98.85
           ],
           "recovery": [
-            84.6,
-            96.6
+            98.85,
+            114.85
           ],
-          "launchAngle": 25,
+          "launchAngle": 36,
           "landingCategory": "flow",
-          "checkpointCandidateAfterStabilization": 87.6
+          "checkpointCandidateAfterStabilization": 101.85
         },
         "joins": []
       },
       {
         "id": "hill.early_crest",
+        "type": "hill",
+        "geometryProfile": "hill",
         "ports": {
           "entry": {
-            "x": 96.6,
-            "y": -9.709815961576123,
+            "x": 114.85,
+            "y": -9.997112769012489,
             "direction": [
               1,
               0
             ]
           },
           "exit": {
-            "x": 119.6,
-            "y": -9.709815961576123,
+            "x": 137.85,
+            "y": -9.997112769012489,
             "direction": [
               1,
               0
@@ -1546,26 +2387,28 @@
         "joins": []
       },
       {
-        "id": "spring_far.crossing_3",
+        "id": "spring_far.crossing_5",
+        "type": "spring_far",
+        "geometryProfile": "spring_far",
         "ports": {
           "entry": {
-            "x": 119.6,
-            "y": -9.709815961576123,
+            "x": 137.85,
+            "y": -9.997112769012489,
             "direction": [
               1,
               0
             ]
           },
           "exit": {
-            "x": 207.6,
-            "y": -5.709815961576123,
+            "x": 253.85,
+            "y": -3.997112769012489,
             "direction": [
               1,
               0
             ]
           }
         },
-        "difficulty": 3,
+        "difficulty": 5,
         "physics": {
           "status": "unvalidated",
           "requiredBikeSkills": [
@@ -1575,7 +2418,7 @@
           "exitSpeedWindow": null,
           "springLaunch": {
             "status": "idealized_target_arc_only",
-            "flightTimeSeconds": 1.9156525704423026,
+            "flightTimeSeconds": 2.284548996683303,
             "arrivalSlope": -0.35,
             "entrySpeedPolicy": "incoming velocity replaced on trigger entry",
             "landingImpact": "broad flat catch; suspension and landing impact pending Unity test"
@@ -1583,51 +2426,53 @@
         },
         "camera": {
           "visibleLandingRequired": true,
-          "lookAheadDistance": 52,
+          "lookAheadDistance": 72,
           "verticalFeatureVisibilityRequired": true
         },
         "jumpUnit": {
           "approach": [
-            119.6,
-            137.6
+            137.85,
+            159.85
           ],
           "launch": [
-            137.6,
-            137.6
+            159.85,
+            159.85
           ],
           "flight": [
-            137.6,
-            173.6
+            159.85,
+            211.85
           ],
           "landing": [
-            173.6,
-            189.6
+            211.85,
+            231.85
           ],
           "recovery": [
-            189.6,
-            207.6
+            231.85,
+            253.85
           ],
-          "launchAngle": 28.810793742973058,
+          "launchAngle": 29.435416361392637,
           "landingCategory": "safe",
-          "checkpointCandidateAfterStabilization": 192.6,
+          "checkpointCandidateAfterStabilization": 234.85,
           "launchMechanism": "SpringObject"
         },
         "joins": []
       },
       {
         "id": "fall.long_descent",
+        "type": "fall",
+        "geometryProfile": "fall",
         "ports": {
           "entry": {
-            "x": 207.6,
-            "y": -5.709815961576123,
+            "x": 253.85,
+            "y": -3.997112769012489,
             "direction": [
               1,
               0
             ]
           },
           "exit": {
-            "x": 234.6,
-            "y": -10.709815961576123,
+            "x": 280.85,
+            "y": -8.997112769012489,
             "direction": [
               1,
               0
@@ -1652,19 +2497,268 @@
         "joins": []
       },
       {
-        "id": "curved_ramp.speed_scoop",
+        "id": "flat.checkpoint_pad",
+        "type": "flat",
+        "geometryProfile": "flat",
         "ports": {
           "entry": {
-            "x": 234.6,
-            "y": -10.709815961576123,
+            "x": 280.85,
+            "y": -8.997112769012489,
             "direction": [
               1,
               0
             ]
           },
           "exit": {
-            "x": 306.45,
-            "y": -17.968190136101292,
+            "x": 293.88750000000005,
+            "y": -8.997112769012489,
+            "direction": [
+              1,
+              0
+            ]
+          }
+        },
+        "difficulty": 1,
+        "physics": {
+          "status": "unvalidated",
+          "requiredBikeSkills": [
+            "throttle_control"
+          ],
+          "entrySpeedWindow": null,
+          "exitSpeedWindow": null
+        },
+        "camera": {
+          "visibleLandingRequired": true,
+          "lookAheadDistance": 16,
+          "verticalFeatureVisibilityRequired": false
+        },
+        "jumpUnit": null,
+        "joins": []
+      },
+      {
+        "id": "step_down.deep",
+        "type": "step_down",
+        "geometryProfile": "descending_landing_shelf",
+        "ports": {
+          "entry": {
+            "x": 293.88750000000005,
+            "y": -8.997112769012489,
+            "direction": [
+              1,
+              0
+            ]
+          },
+          "exit": {
+            "x": 364.7875,
+            "y": -43.79108582312974,
+            "direction": [
+              1,
+              0
+            ]
+          }
+        },
+        "difficulty": 4,
+        "physics": {
+          "status": "unvalidated",
+          "requiredBikeSkills": [
+            "descending_alignment"
+          ],
+          "entrySpeedWindow": {
+            "minimum": 7.2981,
+            "ideal": 8.17385,
+            "maximum": 9.0496,
+            "units": "units/s",
+            "status": "sampled_point_mass_only"
+          },
+          "exitSpeedWindow": null,
+          "pointMassCheck": {
+            "coordinateSpace": "module_local",
+            "ideal": {
+              "result": "catch",
+              "speed": 8.1738,
+              "x": 40.05169765628814,
+              "y": -11.22804915681135,
+              "airtime": 2.0157128290435273,
+              "pitchMismatchDegrees": 6.3,
+              "landingQuality": "aligned"
+            },
+            "sweep": [
+              {
+                "multiplier": 0.8,
+                "result": "undershoot",
+                "speed": 6.5391
+              },
+              {
+                "multiplier": 0.9,
+                "result": "catch",
+                "speed": 7.3565,
+                "x": 34.42339187137779,
+                "y": -3.4483832648313957,
+                "airtime": 1.4021933916614995,
+                "pitchMismatchDegrees": 10.77,
+                "landingQuality": "aligned"
+              },
+              {
+                "multiplier": 1,
+                "result": "catch",
+                "speed": 8.1738,
+                "x": 40.05169765628814,
+                "y": -11.22804915681135,
+                "airtime": 2.0157128290435273,
+                "pitchMismatchDegrees": 6.3,
+                "landingQuality": "aligned"
+              },
+              {
+                "multiplier": 1.1,
+                "result": "catch",
+                "speed": 8.9912,
+                "x": 50.051922672463874,
+                "y": -32.47318635953555,
+                "airtime": 3.0499417937143347,
+                "pitchMismatchDegrees": 14.18,
+                "landingQuality": "aligned"
+              },
+              {
+                "multiplier": 1.2,
+                "result": "catch",
+                "speed": 9.8086,
+                "x": 53.455000496281286,
+                "y": -34.793973000400214,
+                "airtime": 3.1755614804261008,
+                "pitchMismatchDegrees": 71.74,
+                "landingQuality": "hard_impact"
+              }
+            ],
+            "limitations": "No bike size, suspension, wheel collision, motor or air control."
+          },
+          "catchDesign": "Velocity-envelope catch, Bezier compression, full flat recovery"
+        },
+        "camera": {
+          "visibleLandingRequired": true,
+          "lookAheadDistance": 27,
+          "verticalFeatureVisibilityRequired": false
+        },
+        "jumpUnit": {
+          "approach": [
+            293.88750000000005,
+            311.88750000000005
+          ],
+          "launch": [
+            311.88750000000005,
+            318.88750000000005
+          ],
+          "flight": [
+            318.88750000000005,
+            327.88750000000005
+          ],
+          "landing": [
+            327.88750000000005,
+            346.7875
+          ],
+          "recovery": [
+            346.7875,
+            364.7875
+          ],
+          "launchAngle": 24,
+          "landingCategory": "flow",
+          "checkpointCandidateAfterStabilization": 349.7875
+        },
+        "joins": []
+      },
+      {
+        "id": "wave.irregular",
+        "type": "wave",
+        "geometryProfile": "wave",
+        "ports": {
+          "entry": {
+            "x": 364.7875,
+            "y": -43.79108582312974,
+            "direction": [
+              1,
+              0
+            ]
+          },
+          "exit": {
+            "x": 395.7875,
+            "y": -43.79108582312974,
+            "direction": [
+              1,
+              0
+            ]
+          }
+        },
+        "difficulty": 4,
+        "physics": {
+          "status": "unvalidated",
+          "requiredBikeSkills": [
+            "rhythm_and_pumping"
+          ],
+          "entrySpeedWindow": null,
+          "exitSpeedWindow": null
+        },
+        "camera": {
+          "visibleLandingRequired": true,
+          "lookAheadDistance": 16,
+          "verticalFeatureVisibilityRequired": false
+        },
+        "jumpUnit": null,
+        "joins": []
+      },
+      {
+        "id": "flat.checkpoint_pad",
+        "type": "flat",
+        "geometryProfile": "flat",
+        "ports": {
+          "entry": {
+            "x": 395.7875,
+            "y": -43.79108582312974,
+            "direction": [
+              1,
+              0
+            ]
+          },
+          "exit": {
+            "x": 408.82500000000005,
+            "y": -43.79108582312974,
+            "direction": [
+              1,
+              0
+            ]
+          }
+        },
+        "difficulty": 1,
+        "physics": {
+          "status": "unvalidated",
+          "requiredBikeSkills": [
+            "throttle_control"
+          ],
+          "entrySpeedWindow": null,
+          "exitSpeedWindow": null
+        },
+        "camera": {
+          "visibleLandingRequired": true,
+          "lookAheadDistance": 16,
+          "verticalFeatureVisibilityRequired": false
+        },
+        "jumpUnit": null,
+        "joins": []
+      },
+      {
+        "id": "curved_ramp.speed_scoop",
+        "type": "curved_ramp",
+        "geometryProfile": "compression_scoop",
+        "ports": {
+          "entry": {
+            "x": 408.82500000000005,
+            "y": -43.79108582312974,
+            "direction": [
+              1,
+              0
+            ]
+          },
+          "exit": {
+            "x": 480.67500000000007,
+            "y": -51.049459997654914,
             "direction": [
               1,
               0
@@ -1754,45 +2848,47 @@
         },
         "jumpUnit": {
           "approach": [
-            234.6,
-            252.6
+            408.82500000000005,
+            426.82500000000005
           ],
           "launch": [
-            252.6,
-            262.6
+            426.82500000000005,
+            436.82500000000005
           ],
           "flight": [
-            262.6,
-            274.6
+            436.82500000000005,
+            448.82500000000005
           ],
           "landing": [
-            274.6,
-            292.45
+            448.82500000000005,
+            466.67500000000007
           ],
           "recovery": [
-            292.45,
-            306.45
+            466.67500000000007,
+            480.67500000000007
           ],
           "launchAngle": 28,
           "landingCategory": "flow",
-          "checkpointCandidateAfterStabilization": 295.45
+          "checkpointCandidateAfterStabilization": 469.67500000000007
         },
         "joins": []
       },
       {
         "id": "flat.finish_release",
+        "type": "flat",
+        "geometryProfile": "flat",
         "ports": {
           "entry": {
-            "x": 306.45,
-            "y": -17.968190136101292,
+            "x": 480.67500000000007,
+            "y": -51.049459997654914,
             "direction": [
               1,
               0
             ]
           },
           "exit": {
-            "x": 350.45,
-            "y": -17.968190136101292,
+            "x": 524.6750000000001,
+            "y": -51.049459997654914,
             "direction": [
               1,
               0
@@ -1818,8 +2914,8 @@
       }
     ],
     "intent": "Build a sense of increasing horizontal distance, then let a spring carry the bike across the central canyon.",
-    "signature": "A 36-unit void and long eight-coin spring arc create the widest single reveal so far.",
-    "difficulty": "medium",
+    "signature": "A 36-unit void and long spring arc with three obstacle coins create the widest single reveal so far. Extended with higher-tier transfers and technical obstacles.",
+    "difficulty": "hard",
     "sequence": [
       {
         "instanceId": "s00",
@@ -1853,18 +2949,20 @@
       },
       {
         "instanceId": "s02",
-        "variant": "gap.intro",
+        "variant": "gap.precision",
         "beatId": "near_bank",
         "role": "practice",
-        "tension": 2,
-        "purpose": "Teach identifying takeoff and landing banks on a small crossing.",
+        "tension": 4,
+        "purpose": "Master gap / precision with controlled entry speed and a stable recovery.",
         "xRange": [
           48,
-          96.6
+          114.85
         ],
         "entryY": 0,
-        "exitY": -9.709815961576123,
-        "parameterOverrides": {}
+        "exitY": -9.997112769012489,
+        "parameterOverrides": {
+          "landingLength": 17
+        }
       },
       {
         "instanceId": "s03",
@@ -1874,26 +2972,26 @@
         "tension": 2,
         "purpose": "Show the distant destination from an early crest with time to settle.",
         "xRange": [
-          96.6,
-          119.6
+          114.85,
+          137.85
         ],
-        "entryY": -9.709815961576123,
-        "exitY": -9.709815961576123,
+        "entryY": -9.997112769012489,
+        "exitY": -9.997112769012489,
         "parameterOverrides": {}
       },
       {
         "instanceId": "s04",
-        "variant": "spring_far.crossing_3",
+        "variant": "spring_far.crossing_5",
         "beatId": "horizon",
         "role": "climax",
-        "tension": 3,
-        "purpose": "Cross the 36-unit canyon in one deliberate camera sweep with a broad catch.",
+        "tension": 4,
+        "purpose": "Master spring far / crossing 5 with controlled entry speed and a stable recovery.",
         "xRange": [
-          119.6,
-          207.6
+          137.85,
+          253.85
         ],
-        "entryY": -9.709815961576123,
-        "exitY": -5.709815961576123,
+        "entryY": -9.997112769012489,
+        "exitY": -3.997112769012489,
         "parameterOverrides": {}
       },
       {
@@ -1904,43 +3002,107 @@
         "tension": 1,
         "purpose": "Return camera and suspension to ground flow after the long flight.",
         "xRange": [
-          207.6,
-          234.6
+          253.85,
+          280.85
         ],
-        "entryY": -5.709815961576123,
-        "exitY": -10.709815961576123,
+        "entryY": -3.997112769012489,
+        "exitY": -8.997112769012489,
         "parameterOverrides": {}
       },
       {
         "instanceId": "s06",
+        "variant": "flat.checkpoint_pad",
+        "beatId": "extended_recovery_1",
+        "role": "release",
+        "tension": 1,
+        "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges.",
+        "xRange": [
+          280.85,
+          293.88750000000005
+        ],
+        "entryY": -8.997112769012489,
+        "exitY": -8.997112769012489,
+        "parameterOverrides": {
+          "length": 13.0375
+        }
+      },
+      {
+        "instanceId": "s07",
+        "variant": "step_down.deep",
+        "beatId": "horizon_lower_bank",
+        "role": "combine",
+        "tension": 4,
+        "purpose": "Land on a deeper lower bank after the enlarged crossing.",
+        "xRange": [
+          293.88750000000005,
+          364.7875
+        ],
+        "entryY": -8.997112769012489,
+        "exitY": -43.79108582312974,
+        "parameterOverrides": {}
+      },
+      {
+        "instanceId": "s08",
+        "variant": "wave.irregular",
+        "beatId": "horizon_wind_rhythm",
+        "role": "combine",
+        "tension": 4,
+        "purpose": "Read irregular trough timing before the final scoop.",
+        "xRange": [
+          364.7875,
+          395.7875
+        ],
+        "entryY": -43.79108582312974,
+        "exitY": -43.79108582312974,
+        "parameterOverrides": {}
+      },
+      {
+        "instanceId": "s09",
+        "variant": "flat.checkpoint_pad",
+        "beatId": "extended_recovery_2",
+        "role": "release",
+        "tension": 1,
+        "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges.",
+        "xRange": [
+          395.7875,
+          408.82500000000005
+        ],
+        "entryY": -43.79108582312974,
+        "exitY": -43.79108582312974,
+        "parameterOverrides": {
+          "length": 13.0375
+        }
+      },
+      {
+        "instanceId": "s10",
         "variant": "curved_ramp.speed_scoop",
         "beatId": "echo",
         "role": "combine",
         "tension": 3,
         "purpose": "Echo the canyon crossing as a shorter manually controlled flight with an extended catch.",
         "xRange": [
-          234.6,
-          306.45
+          408.82500000000005,
+          480.67500000000007
         ],
-        "entryY": -10.709815961576123,
-        "exitY": -17.968190136101292,
+        "entryY": -43.79108582312974,
+        "exitY": -51.049459997654914,
         "parameterOverrides": {
           "landingLength": 17
         }
       },
       {
-        "instanceId": "s07",
+        "instanceId": "s11",
         "variant": "flat.finish_release",
         "beatId": "finish",
         "role": "resolution",
         "tension": 0,
-        "purpose": "Empty finish release after the last challenge.",
+        "purpose": "Finish release after the last challenge.",
         "xRange": [
-          306.45,
-          350.45
+          480.67500000000007,
+          524.6750000000001
         ],
-        "entryY": -17.968190136101292,
-        "exitY": -17.968190136101292,
+        "entryY": -51.049459997654914,
+        "exitY": -51.049459997654914,
         "parameterOverrides": {
           "length": 44
         }
@@ -1956,8 +3118,12 @@
           0,
           18
         ],
-        "objectIds": [],
-        "coinCount": 0,
+        "objectIds": [
+          "s00_coin_01",
+          "s00_coin_02",
+          "s00_coin_03"
+        ],
+        "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
           10,
@@ -1971,7 +3137,7 @@
             "minX": -3,
             "maxX": 21.0,
             "minY": -2,
-            "maxY": 3
+            "maxY": 4.2
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -1988,10 +3154,11 @@
           48
         ],
         "objectIds": [
-          "coin_01",
-          "coin_02"
+          "s01_coin_01",
+          "s01_coin_02",
+          "s01_coin_03"
         ],
-        "coinCount": 2,
+        "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
           40,
@@ -2005,7 +3172,7 @@
             "minX": 15,
             "maxX": 51.0,
             "minY": -3.5,
-            "maxY": 4.189229316160854
+            "maxY": 4.159537356022926
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2015,32 +3182,32 @@
       {
         "id": "near_bank",
         "role": "practice",
-        "tension": 2,
-        "purpose": "Teach identifying takeoff and landing banks on a small crossing.",
+        "tension": 4,
+        "purpose": "Master gap / precision with controlled entry speed and a stable recovery.",
         "xRange": [
           48,
-          96.6
+          114.85
         ],
         "objectIds": [
-          "coin_03",
-          "coin_04",
-          "coin_05"
+          "s02_coin_01",
+          "s02_coin_02",
+          "s02_coin_03"
         ],
         "coinCount": 3,
         "checkpointId": "cp_near_bank",
         "recoveryRange": [
-          84.6,
-          96.6
+          98.85,
+          114.85
         ],
         "cameraCue": "Reveal destination before commitment, track apex, recenter during recovery",
         "camera": {
           "triggerX": 36,
-          "recenterX": 87.6,
+          "recenterX": 101.85,
           "framingBounds": {
             "minX": 45,
-            "maxX": 99.6,
-            "minY": -11.709816000000004,
-            "maxY": 6.232129226307194
+            "maxX": 117.85,
+            "minY": -11.997113000000004,
+            "maxY": 9.013355846518252
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2053,28 +3220,29 @@
         "tension": 2,
         "purpose": "Show the distant destination from an early crest with time to settle.",
         "xRange": [
-          96.6,
-          119.6
+          114.85,
+          137.85
         ],
         "objectIds": [
-          "coin_06",
-          "coin_07"
+          "s03_coin_01",
+          "s03_coin_02",
+          "s03_coin_03"
         ],
-        "coinCount": 2,
+        "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
-          111.6,
-          119.6
+          129.85,
+          137.85
         ],
         "cameraCue": "Reveal destination before commitment, track apex, recenter during recovery",
         "camera": {
-          "triggerX": 84.6,
-          "recenterX": 114.6,
+          "triggerX": 102.85,
+          "recenterX": 132.85,
           "framingBounds": {
-            "minX": 93.6,
-            "maxX": 122.6,
-            "minY": -11.709815961576123,
-            "maxY": -3.4008548653947654
+            "minX": 111.85,
+            "maxX": 140.85,
+            "minY": -11.997112769012489,
+            "maxY": -3.203801695002598
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2084,38 +3252,33 @@
       {
         "id": "horizon",
         "role": "climax",
-        "tension": 3,
-        "purpose": "Cross the 36-unit canyon in one deliberate camera sweep with a broad catch.",
+        "tension": 4,
+        "purpose": "Master spring far / crossing 5 with controlled entry speed and a stable recovery.",
         "xRange": [
-          119.6,
-          207.6
+          137.85,
+          253.85
         ],
         "objectIds": [
           "s04_spring",
-          "coin_08",
-          "coin_09",
-          "coin_10",
-          "coin_11",
-          "coin_12",
-          "coin_13",
-          "coin_14",
-          "coin_15"
+          "s04_coin_01",
+          "s04_coin_02",
+          "s04_coin_03"
         ],
-        "coinCount": 8,
+        "coinCount": 3,
         "checkpointId": "cp_horizon",
         "recoveryRange": [
-          189.6,
-          207.6
+          231.85,
+          253.85
         ],
         "cameraCue": "Reveal destination before commitment, track apex, recenter during recovery",
         "camera": {
-          "triggerX": 107.6,
-          "recenterX": 192.6,
+          "triggerX": 125.85,
+          "recenterX": 234.85,
           "framingBounds": {
-            "minX": 116.6,
-            "maxX": 210.6,
-            "minY": -11.709815961576126,
-            "maxY": 1.0124062606460988
+            "minX": 134.85,
+            "maxX": 256.85,
+            "minY": -11.997112769012492,
+            "maxY": 3.7544497309875133
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2128,27 +3291,169 @@
         "tension": 1,
         "purpose": "Return camera and suspension to ground flow after the long flight.",
         "xRange": [
-          207.6,
-          234.6
+          253.85,
+          280.85
         ],
         "objectIds": [
-          "coin_16"
+          "s05_coin_01",
+          "s05_coin_02",
+          "s05_coin_03"
         ],
-        "coinCount": 1,
+        "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
-          226.6,
-          234.6
+          272.85,
+          280.85
         ],
         "cameraCue": "Reveal destination before commitment, track apex, recenter during recovery",
         "camera": {
-          "triggerX": 195.6,
-          "recenterX": 229.6,
+          "triggerX": 241.85,
+          "recenterX": 275.85,
           "framingBounds": {
-            "minX": 204.6,
-            "maxX": 237.6,
-            "minY": -12.709815961576126,
-            "maxY": -2.709815961576121
+            "minX": 250.85,
+            "maxX": 283.85,
+            "minY": -10.997112769012492,
+            "maxY": -0.23953043652804862
+          },
+          "implementationStatus": "authored intent; Unity camera implementation pending"
+        },
+        "fallback": "continuous ground",
+        "validationStatus": "static geometry and idealized arcs; Unity playtests pending"
+      },
+      {
+        "id": "extended_recovery_1",
+        "role": "release",
+        "tension": 1,
+        "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges.",
+        "xRange": [
+          280.85,
+          293.88750000000005
+        ],
+        "objectIds": [
+          "s06_coin_01",
+          "s06_coin_02",
+          "s06_coin_03"
+        ],
+        "coinCount": 3,
+        "checkpointId": null,
+        "recoveryRange": [
+          285.88750000000005,
+          293.88750000000005
+        ],
+        "cameraCue": "Reveal destination before commitment, track apex, recenter during recovery",
+        "camera": {
+          "triggerX": 268.85,
+          "recenterX": 288.88750000000005,
+          "framingBounds": {
+            "minX": 277.85,
+            "maxX": 296.88750000000005,
+            "minY": -10.997112769012492,
+            "maxY": -4.797112769012489
+          },
+          "implementationStatus": "authored intent; Unity camera implementation pending"
+        },
+        "fallback": "continuous ground",
+        "validationStatus": "static geometry and idealized arcs; Unity playtests pending"
+      },
+      {
+        "id": "horizon_lower_bank",
+        "role": "combine",
+        "tension": 4,
+        "purpose": "Land on a deeper lower bank after the enlarged crossing.",
+        "xRange": [
+          293.88750000000005,
+          364.7875
+        ],
+        "objectIds": [
+          "s07_coin_01",
+          "s07_coin_02",
+          "s07_coin_03"
+        ],
+        "coinCount": 3,
+        "checkpointId": "cp_horizon_lower_bank",
+        "recoveryRange": [
+          346.7875,
+          364.7875
+        ],
+        "cameraCue": "Reveal destination before commitment, track apex, recenter during recovery",
+        "camera": {
+          "triggerX": 281.88750000000005,
+          "recenterX": 349.7875,
+          "framingBounds": {
+            "minX": 290.88750000000005,
+            "maxX": 367.7875,
+            "minY": -45.791085769012504,
+            "maxY": -3.126404278769132
+          },
+          "implementationStatus": "authored intent; Unity camera implementation pending"
+        },
+        "fallback": "deadzone catches missed crossing; restart at previous checkpoint",
+        "validationStatus": "static geometry and idealized arcs; Unity playtests pending"
+      },
+      {
+        "id": "horizon_wind_rhythm",
+        "role": "combine",
+        "tension": 4,
+        "purpose": "Read irregular trough timing before the final scoop.",
+        "xRange": [
+          364.7875,
+          395.7875
+        ],
+        "objectIds": [
+          "s08_coin_01",
+          "s08_coin_02",
+          "s08_coin_03"
+        ],
+        "coinCount": 3,
+        "checkpointId": null,
+        "recoveryRange": [
+          387.7875,
+          395.7875
+        ],
+        "cameraCue": "Reveal destination before commitment, track apex, recenter during recovery",
+        "camera": {
+          "triggerX": 352.7875,
+          "recenterX": 390.7875,
+          "framingBounds": {
+            "minX": 361.7875,
+            "maxX": 398.7875,
+            "minY": -45.791085823129755,
+            "maxY": -38.79108582312974
+          },
+          "implementationStatus": "authored intent; Unity camera implementation pending"
+        },
+        "fallback": "continuous ground",
+        "validationStatus": "static geometry and idealized arcs; Unity playtests pending"
+      },
+      {
+        "id": "extended_recovery_2",
+        "role": "release",
+        "tension": 1,
+        "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges.",
+        "xRange": [
+          395.7875,
+          408.82500000000005
+        ],
+        "objectIds": [
+          "s09_coin_01",
+          "s09_coin_02",
+          "s09_coin_03"
+        ],
+        "coinCount": 3,
+        "checkpointId": null,
+        "recoveryRange": [
+          400.82500000000005,
+          408.82500000000005
+        ],
+        "cameraCue": "Reveal destination before commitment, track apex, recenter during recovery",
+        "camera": {
+          "triggerX": 383.7875,
+          "recenterX": 403.82500000000005,
+          "framingBounds": {
+            "minX": 392.7875,
+            "maxX": 411.82500000000005,
+            "minY": -45.791085823129755,
+            "maxY": -39.59108582312974
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2161,30 +3466,29 @@
         "tension": 3,
         "purpose": "Echo the canyon crossing as a shorter manually controlled flight with an extended catch.",
         "xRange": [
-          234.6,
-          306.45
+          408.82500000000005,
+          480.67500000000007
         ],
         "objectIds": [
-          "coin_17",
-          "coin_18",
-          "coin_19",
-          "coin_20"
+          "s10_coin_01",
+          "s10_coin_02",
+          "s10_coin_03"
         ],
-        "coinCount": 4,
+        "coinCount": 3,
         "checkpointId": "cp_echo",
         "recoveryRange": [
-          292.45,
-          306.45
+          466.67500000000007,
+          480.67500000000007
         ],
         "cameraCue": "Reveal destination before commitment, track apex, recenter during recovery",
         "camera": {
-          "triggerX": 222.6,
-          "recenterX": 295.45,
+          "triggerX": 396.82500000000005,
+          "recenterX": 469.67500000000007,
           "framingBounds": {
-            "minX": 231.6,
-            "maxX": 309.45,
-            "minY": -19.96818996157613,
-            "maxY": -1.9686906611519248
+            "minX": 405.82500000000005,
+            "maxX": 483.67500000000007,
+            "minY": -53.04945982312975,
+            "maxY": -35.204803933784376
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2195,27 +3499,31 @@
         "id": "finish",
         "role": "resolution",
         "tension": 0,
-        "purpose": "Empty finish release after the last challenge.",
+        "purpose": "Finish release after the last challenge.",
         "xRange": [
-          306.45,
-          350.45
+          480.67500000000007,
+          524.6750000000001
         ],
-        "objectIds": [],
-        "coinCount": 0,
+        "objectIds": [
+          "s11_coin_01",
+          "s11_coin_02",
+          "s11_coin_03"
+        ],
+        "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
-          342.45,
-          350.45
+          516.6750000000001,
+          524.6750000000001
         ],
         "cameraCue": "Reveal destination before commitment, track apex, recenter during recovery",
         "camera": {
-          "triggerX": 294.45,
-          "recenterX": 345.45,
+          "triggerX": 468.67500000000007,
+          "recenterX": 519.6750000000001,
           "framingBounds": {
-            "minX": 303.45,
-            "maxX": 353.45,
-            "minY": -19.9681901361013,
-            "maxY": -14.968190136101285
+            "minX": 477.67500000000007,
+            "maxX": 527.6750000000001,
+            "minY": -53.04945999765493,
+            "maxY": -46.84945999765491
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2224,46 +3532,69 @@
       }
     ],
     "coinAllocation": {
-      "low_rhythm": 2,
+      "start": 3,
+      "low_rhythm": 3,
       "near_bank": 3,
-      "horizon_setup": 2,
-      "horizon": 8,
-      "far_bank": 1,
-      "echo": 4
+      "horizon_setup": 3,
+      "horizon": 3,
+      "far_bank": 3,
+      "extended_recovery_1": 3,
+      "horizon_lower_bank": 3,
+      "horizon_wind_rhythm": 3,
+      "extended_recovery_2": 3,
+      "echo": 3,
+      "finish": 3
     },
-    "length": 348.45,
+    "length": 522.6750000000001,
     "recommendedPlaytestOrder": [
       "Main route with no optional stunts",
       "Zero-speed restart at every checkpoint",
       "Loop with zero/one/two boosts where present",
       "Spring lip trigger, descending catch and rearming",
       "Barrel at low/typical/high entry speed",
-      "All 20 coins and per-beat camera framing"
+      "All obstacle coins and per-beat camera framing"
     ],
+    "lengthPlan": {
+      "baselineLength": 348.45,
+      "multiplier": 1.5,
+      "targetLength": 522.675,
+      "addedChallengeCount": 2
+    },
+    "difficultyProgression": {
+      "previous": "medium",
+      "target": "hard"
+    },
     "validationReport": {
       "status": "passed_static_geometry_and_point_mass_checks",
-      "sourceMainShapes": 11,
-      "exportedMainShapes": 4,
-      "coinCount": 20,
+      "sourceMainShapes": 16,
+      "exportedMainShapes": 5,
+      "coinCount": 36,
       "coveredGaps": [
         {
           "xRange": [
-            66.0,
-            71
+            71.0,
+            81
           ],
           "covered": true
         },
         {
           "xRange": [
-            137.6,
-            173.6
+            159.85,
+            211.85
           ],
           "covered": true
         },
         {
           "xRange": [
-            262.6,
-            274.6
+            318.88750000000005,
+            327.88750000000005
+          ],
+          "covered": true
+        },
+        {
+          "xRange": [
+            436.82500000000005,
+            448.82500000000005
           ],
           "covered": true
         }
@@ -2275,9 +3606,25 @@
           "terrainClearance": "reference point >= 1 unit"
         }
       ],
+      "coinChecks": {
+        "perObstacle": 3,
+        "loopCoinsInsideRing": true,
+        "surfaceCoinsOnDrivingSurface": true,
+        "libraryCoinCount": 36
+      },
       "jumpChecks": [
         {
-          "variant": "gap.intro",
+          "variant": "gap.precision",
+          "coordinateSpace": "module_local",
+          "alignedSpeedMultipliers": [
+            0.9,
+            1,
+            1.1
+          ],
+          "status": "point_mass_only"
+        },
+        {
+          "variant": "step_down.deep",
           "coordinateSpace": "module_local",
           "alignedSpeedMultipliers": [
             0.9,
@@ -2297,7 +3644,7 @@
           "status": "point_mass_only"
         }
       ],
-      "checkpointCount": 3,
+      "checkpointCount": 4,
       "exportIdempotent": true,
       "unchangedStartEnd": true,
       "remainingValidation": "Unity bike size, torque, suspension, restart, impulse, coin pickup and camera playtests"

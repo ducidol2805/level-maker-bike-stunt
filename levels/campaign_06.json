@@ -22,14 +22,14 @@
           "x": 0,
           "y": 0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": -6.0,
+            "y": -0.0
           },
           "tangentOut": {
             "x": 6.0,
             "y": 0.0
           },
-          "tangentMode": "broken",
+          "tangentMode": "continuous",
           "corner": false
         },
         {
@@ -251,22 +251,36 @@
             "y": -0.0
           },
           "tangentOut": {
-            "x": 6.0,
+            "x": 4.68,
             "y": 0.0
           },
           "tangentMode": "broken",
           "corner": false
         },
         {
-          "x": 129.0,
+          "x": 125.03999999999999,
           "y": -15.755882352941178,
           "tangentIn": {
-            "x": -6.0,
+            "x": -4.68,
             "y": -0.0
           },
           "tangentOut": {
-            "x": 2.666667,
+            "x": 2.52,
             "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 132.6,
+          "y": -15.055882352941179,
+          "tangentIn": {
+            "x": -2.52,
+            "y": -0.681555
+          },
+          "tangentOut": {
+            "x": 1.466667,
+            "y": 0.396672
           },
           "tangentMode": "continuous",
           "corner": false
@@ -275,8 +289,8 @@
           "x": 137.0,
           "y": -13.255882352941178,
           "tangentIn": {
-            "x": -2.666667,
-            "y": -1.243487
+            "x": -1.466667,
+            "y": -0.683918
           },
           "tangentOut": {
             "x": 0,
@@ -315,7 +329,7 @@
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 9,
+        "drivingSurfaceCount": 10,
         "sourceVariant": "drop.long_runout",
         "sourceShapeIds": [
           "s02_landing_recovery",
@@ -702,10 +716,10 @@
             "y": -0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 6.666666666666667,
+            "y": 0.0
           },
-          "tangentMode": "broken",
+          "tangentMode": "continuous",
           "corner": false
         },
         {
@@ -829,24 +843,24 @@
           "y": -47.27353259426825,
           "tangentIn": {
             "x": -3.733333,
-            "y": 0.903226
+            "y": 0.982456
           },
           "tangentOut": {
-            "x": 2.666667,
-            "y": -0.645161
+            "x": 2.0,
+            "y": -0.526316
           },
           "tangentMode": "continuous",
           "corner": false
         },
         {
-          "x": 324.8,
+          "x": 322.8,
           "y": -50.27353259426825,
           "tangentIn": {
-            "x": -2.666667,
+            "x": -2.0,
             "y": -0.0
           },
           "tangentOut": {
-            "x": 1.333333,
+            "x": 2.0,
             "y": 0.0
           },
           "tangentMode": "continuous",
@@ -856,7 +870,7 @@
           "x": 328.8,
           "y": -50.27353259426825,
           "tangentIn": {
-            "x": -1.333333,
+            "x": -2.0,
             "y": -0.0
           },
           "tangentOut": {
@@ -1071,303 +1085,663 @@
   ],
   "InteractableObject": [
     {
-      "id": "coin_01",
+      "id": "s00_coin_01",
       "type": "coin",
       "transform": {
-        "x": 21.593723245597893,
-        "y": 2.814338459270342
+        "x": 4.5,
+        "y": 1.2
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.launch_run",
+        "collectionRisk": "pending_playtest",
+        "beatId": "start",
+        "purpose": "Clear runway; show the first lesson before commitment."
+      },
+      "metadata": {
+        "sourceVariant": "flat.launch_run"
+      }
+    },
+    {
+      "id": "s00_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 9.0,
+        "y": 1.2
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.launch_run",
+        "collectionRisk": "pending_playtest",
+        "beatId": "start",
+        "purpose": "Clear runway; show the first lesson before commitment."
+      },
+      "metadata": {
+        "sourceVariant": "flat.launch_run"
+      }
+    },
+    {
+      "id": "s00_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 13.5,
+        "y": 1.2
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.launch_run",
+        "collectionRisk": "pending_playtest",
+        "beatId": "start",
+        "purpose": "Clear runway; show the first lesson before commitment."
+      },
+      "metadata": {
+        "sourceVariant": "flat.launch_run"
+      }
+    },
+    {
+      "id": "s01_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 22.52786264549691,
+        "y": 3.149793896754232
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "rise.two_stage",
+        "collectionRisk": "pending_playtest",
         "beatId": "rim",
-        "line": "crest_or_flow",
-        "collectionRisk": "flow",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Reach the crater rim with an intermediate shelf that settles pitch."
+      },
+      "metadata": {
+        "sourceVariant": "rise.two_stage"
       }
     },
     {
-      "id": "coin_02",
+      "id": "s01_coin_02",
       "type": "coin",
       "transform": {
-        "x": 33.01951266977737,
-        "y": 5.2
+        "x": 27.50000000000001,
+        "y": 3.2
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "rise.two_stage",
+        "collectionRisk": "pending_playtest",
         "beatId": "rim",
-        "line": "crest_or_flow",
-        "collectionRisk": "flow",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Reach the crater rim with an intermediate shelf that settles pitch."
+      },
+      "metadata": {
+        "sourceVariant": "rise.two_stage"
       }
     },
     {
-      "id": "coin_03",
+      "id": "s01_coin_03",
       "type": "coin",
       "transform": {
-        "x": 53.86357970076613,
-        "y": 4.903574309526579
+        "x": 32.04826115694395,
+        "y": 5.01015873899189
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "rise.two_stage",
+        "collectionRisk": "pending_playtest",
+        "beatId": "rim",
+        "purpose": "Reach the crater rim with an intermediate shelf that settles pitch."
+      },
+      "metadata": {
+        "sourceVariant": "rise.two_stage"
+      }
+    },
+    {
+      "id": "s02_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 56.272834191825666,
+        "y": 3.6185693089194437
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "drop.long_runout",
+        "collectionRisk": "pending_playtest",
         "beatId": "first_drop",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Teach rolling off a horizontal lip into a generous sloped catch."
+      },
+      "metadata": {
+        "sourceVariant": "drop.long_runout"
       }
     },
     {
-      "id": "coin_04",
+      "id": "s02_coin_02",
       "type": "coin",
       "transform": {
-        "x": 58.48033771152125,
-        "y": 1.1268812990546198
+        "x": 58.64627368072355,
+        "y": 0.888765334641036
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "drop.long_runout",
+        "collectionRisk": "pending_playtest",
         "beatId": "first_drop",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Teach rolling off a horizontal lip into a generous sloped catch."
+      },
+      "metadata": {
+        "sourceVariant": "drop.long_runout"
       }
     },
     {
-      "id": "coin_05",
+      "id": "s02_coin_03",
       "type": "coin",
       "transform": {
-        "x": 61.44209864560374,
-        "y": -4.190390097130971
+        "x": 60.489568521473075,
+        "y": -2.233329390389965
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "drop.long_runout",
+        "collectionRisk": "pending_playtest",
         "beatId": "first_drop",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Teach rolling off a horizontal lip into a generous sloped catch."
+      },
+      "metadata": {
+        "sourceVariant": "drop.long_runout"
       }
     },
     {
-      "id": "coin_06",
+      "id": "s03_coin_01",
       "type": "coin",
       "transform": {
-        "x": 138.16517073931539,
-        "y": -11.771291534908297
+        "x": 99.00402026390957,
+        "y": -15.155608789530923
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.braking_shelf",
+        "collectionRisk": "pending_playtest",
+        "beatId": "brake_one",
+        "purpose": "Give a visible braking cue before the long step-down."
+      },
+      "metadata": {
+        "sourceVariant": "flat.braking_shelf"
+      }
+    },
+    {
+      "id": "s03_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 102.98533392840868,
+        "y": -14.683450003195306
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.braking_shelf",
+        "collectionRisk": "pending_playtest",
+        "beatId": "brake_one",
+        "purpose": "Give a visible braking cue before the long step-down."
+      },
+      "metadata": {
+        "sourceVariant": "flat.braking_shelf"
+      }
+    },
+    {
+      "id": "s03_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 106.99012443994089,
+        "y": -14.555882352941179
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.braking_shelf",
+        "collectionRisk": "pending_playtest",
+        "beatId": "brake_one",
+        "purpose": "Give a visible braking cue before the long step-down."
+      },
+      "metadata": {
+        "sourceVariant": "flat.braking_shelf"
+      }
+    },
+    {
+      "id": "s04_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 142.06934935631992,
+        "y": -10.998278502805494
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "step_down.long",
+        "collectionRisk": "pending_playtest",
         "beatId": "basalt_flight",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Use a long descending flight to reward deliberate pitch control."
+      },
+      "metadata": {
+        "sourceVariant": "step_down.long"
       }
     },
     {
-      "id": "coin_07",
+      "id": "s04_coin_02",
       "type": "coin",
       "transform": {
-        "x": 142.49005970585145,
-        "y": -10.99320966416847
+        "x": 147.19731063682198,
+        "y": -11.97597101854583
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "step_down.long",
+        "collectionRisk": "pending_playtest",
         "beatId": "basalt_flight",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Use a long descending flight to reward deliberate pitch control."
+      },
+      "metadata": {
+        "sourceVariant": "step_down.long"
       }
     },
     {
-      "id": "coin_08",
+      "id": "s04_coin_03",
       "type": "coin",
       "transform": {
-        "x": 146.80595760463257,
-        "y": -11.821450200467837
+        "x": 151.6835348686543,
+        "y": -14.687681190541964
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "step_down.long",
+        "collectionRisk": "pending_playtest",
         "beatId": "basalt_flight",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Use a long descending flight to reward deliberate pitch control."
+      },
+      "metadata": {
+        "sourceVariant": "step_down.long"
       }
     },
     {
-      "id": "coin_09",
+      "id": "s05_coin_01",
       "type": "coin",
       "transform": {
-        "x": 150.6759690451476,
-        "y": -13.92753218337601
+        "x": 189.04449907697403,
+        "y": -27.758003182503536
       },
       "properties": {
         "optional": true,
-        "beatId": "basalt_flight",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_10",
-      "type": "coin",
-      "transform": {
-        "x": 154.02984230574714,
-        "y": -16.795598619142712
-      },
-      "properties": {
-        "optional": true,
-        "beatId": "basalt_flight",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_11",
-      "type": "coin",
-      "transform": {
-        "x": 187.70539209143757,
-        "y": -27.75582627885609
-      },
-      "properties": {
-        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "valley.long_floor",
+        "collectionRisk": "pending_playtest",
         "beatId": "basin",
-        "line": "crest_or_flow",
-        "collectionRisk": "flow",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Settle in a broad basin before the deeper drop."
+      },
+      "metadata": {
+        "sourceVariant": "valley.long_floor"
       }
     },
     {
-      "id": "coin_12",
+      "id": "s05_coin_02",
       "type": "coin",
       "transform": {
-        "x": 203.4608745804649,
-        "y": -25.949622728233333
+        "x": 195.7402274541655,
+        "y": -27.758003182503536
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "valley.long_floor",
+        "collectionRisk": "pending_playtest",
         "beatId": "basin",
-        "line": "crest_or_flow",
-        "collectionRisk": "flow",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Settle in a broad basin before the deeper drop."
+      },
+      "metadata": {
+        "sourceVariant": "valley.long_floor"
       }
     },
     {
-      "id": "coin_13",
+      "id": "s05_coin_03",
       "type": "coin",
       "transform": {
-        "x": 239.85356203002786,
-        "y": -25.354456966791087
+        "x": 202.19465670465675,
+        "y": -26.382953804553072
       },
       "properties": {
         "optional": true,
-        "beatId": "lower_drop",
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "valley.long_floor",
+        "collectionRisk": "pending_playtest",
+        "beatId": "basin",
+        "purpose": "Settle in a broad basin before the deeper drop."
+      },
+      "metadata": {
+        "sourceVariant": "valley.long_floor"
+      }
+    },
+    {
+      "id": "s06_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 212.80402026390956,
+        "y": -25.55772961909328
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.braking_shelf",
+        "collectionRisk": "pending_playtest",
+        "beatId": "brake_two",
+        "purpose": "Signal speed reduction before the lower lip."
+      },
+      "metadata": {
+        "sourceVariant": "flat.braking_shelf"
+      }
+    },
+    {
+      "id": "s06_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 216.78533392840868,
+        "y": -25.08557083275766
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.braking_shelf",
+        "collectionRisk": "pending_playtest",
+        "beatId": "brake_two",
+        "purpose": "Signal speed reduction before the lower lip."
+      },
+      "metadata": {
+        "sourceVariant": "flat.braking_shelf"
+      }
+    },
+    {
+      "id": "s06_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 220.79012443994088,
+        "y": -24.958003182503536
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.braking_shelf",
+        "collectionRisk": "pending_playtest",
+        "beatId": "brake_two",
+        "purpose": "Signal speed reduction before the lower lip."
+      },
+      "metadata": {
+        "sourceVariant": "flat.braking_shelf"
+      }
+    },
+    {
+      "id": "s07_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 242.44635939016501,
+        "y": -27.507110795215713
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
         "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
-      }
-    },
-    {
-      "id": "coin_14",
-      "type": "coin",
-      "transform": {
-        "x": 244.5705712669276,
-        "y": -31.041321939651855
-      },
-      "properties": {
-        "optional": true,
+        "sourceVariant": "drop.deep",
+        "collectionRisk": "pending_playtest",
         "beatId": "lower_drop",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Apply the learned drop technique to greater vertical separation."
+      },
+      "metadata": {
+        "sourceVariant": "drop.deep"
       }
     },
     {
-      "id": "coin_15",
+      "id": "s07_coin_02",
       "type": "coin",
       "transform": {
-        "x": 247.342395336405,
-        "y": -38.049964415539705
+        "x": 244.72706521512708,
+        "y": -31.364597304237485
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "drop.deep",
+        "collectionRisk": "pending_playtest",
         "beatId": "lower_drop",
-        "line": "estimated_flight",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Apply the learned drop technique to greater vertical separation."
+      },
+      "metadata": {
+        "sourceVariant": "drop.deep"
       }
     },
     {
-      "id": "coin_16",
+      "id": "s07_coin_03",
       "type": "coin",
       "transform": {
-        "x": 276.7707627238659,
-        "y": -48.073750412028275
+        "x": 246.45366916106008,
+        "y": -35.50719829183284
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "drop.deep",
+        "collectionRisk": "pending_playtest",
+        "beatId": "lower_drop",
+        "purpose": "Apply the learned drop technique to greater vertical separation."
+      },
+      "metadata": {
+        "sourceVariant": "drop.deep"
+      }
+    },
+    {
+      "id": "s08_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 277.7852279289279,
+        "y": -48.225674651106814
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "wave.two_soft",
+        "collectionRisk": "pending_playtest",
         "beatId": "floor_rollers",
-        "line": "crest_or_flow",
-        "collectionRisk": "flow",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Two low rollers restore a calm forward rhythm."
+      },
+      "metadata": {
+        "sourceVariant": "wave.two_soft"
       }
     },
     {
-      "id": "coin_17",
+      "id": "s08_coin_02",
       "type": "coin",
       "transform": {
-        "x": 288.6830832217085,
-        "y": -49.07099928504596
+        "x": 282.7315536754781,
+        "y": -48.599189529426006
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "wave.two_soft",
+        "collectionRisk": "pending_playtest",
         "beatId": "floor_rollers",
-        "line": "crest_or_flow",
-        "collectionRisk": "flow",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "Two low rollers restore a calm forward rhythm."
+      },
+      "metadata": {
+        "sourceVariant": "wave.two_soft"
       }
     },
     {
-      "id": "coin_18",
+      "id": "s08_coin_03",
       "type": "coin",
       "transform": {
-        "x": 299.862258700082,
-        "y": -44.969149076019164
+        "x": 287.67440878281724,
+        "y": -48.88052685748484
       },
       "properties": {
         "optional": true,
-        "beatId": "outlet",
-        "line": "alternate_high_line",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "wave.two_soft",
+        "collectionRisk": "pending_playtest",
+        "beatId": "floor_rollers",
+        "purpose": "Two low rollers restore a calm forward rhythm."
+      },
+      "metadata": {
+        "sourceVariant": "wave.two_soft"
       }
     },
     {
-      "id": "coin_19",
+      "id": "s09_coin_01",
       "type": "coin",
       "transform": {
-        "x": 308.9774482916426,
-        "y": -44.5373832090297
+        "x": 300.18826260569045,
+        "y": -44.588761283241936
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_platform",
+        "sourceVariant": "platform.downhill_bridge",
+        "collectionRisk": "pending_playtest",
         "beatId": "outlet",
-        "line": "alternate_high_line",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "An optional descending bridge resolves the downhill theme above safe ground."
+      },
+      "metadata": {
+        "sourceVariant": "platform.downhill_bridge"
       }
     },
     {
-      "id": "coin_20",
+      "id": "s09_coin_02",
       "type": "coin",
       "transform": {
-        "x": 318.1091105122515,
-        "y": -46.709836560533134
+        "x": 309.97066779058474,
+        "y": -44.67586771435271
       },
       "properties": {
         "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_platform",
+        "sourceVariant": "platform.downhill_bridge",
+        "collectionRisk": "pending_playtest",
         "beatId": "outlet",
-        "line": "alternate_high_line",
-        "collectionRisk": "optional_stunt",
-        "validationStatus": "geometry_checked; collectibility needs Unity bike test"
+        "purpose": "An optional descending bridge resolves the downhill theme above safe ground."
+      },
+      "metadata": {
+        "sourceVariant": "platform.downhill_bridge"
+      }
+    },
+    {
+      "id": "s09_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 319.322255206212,
+        "y": -47.64125414919693
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_platform",
+        "sourceVariant": "platform.downhill_bridge",
+        "collectionRisk": "pending_playtest",
+        "beatId": "outlet",
+        "purpose": "An optional descending bridge resolves the downhill theme above safe ground."
+      },
+      "metadata": {
+        "sourceVariant": "platform.downhill_bridge"
+      }
+    },
+    {
+      "id": "s10_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 338.8,
+        "y": -49.073532594268244
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.finish_release",
+        "collectionRisk": "pending_playtest",
+        "beatId": "finish",
+        "purpose": "Finish release after the last challenge."
+      },
+      "metadata": {
+        "sourceVariant": "flat.finish_release"
+      }
+    },
+    {
+      "id": "s10_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 348.8,
+        "y": -49.073532594268244
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.finish_release",
+        "collectionRisk": "pending_playtest",
+        "beatId": "finish",
+        "purpose": "Finish release after the last challenge."
+      },
+      "metadata": {
+        "sourceVariant": "flat.finish_release"
+      }
+    },
+    {
+      "id": "s10_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 358.8,
+        "y": -49.073532594268244
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.finish_release",
+        "collectionRisk": "pending_playtest",
+        "beatId": "finish",
+        "purpose": "Finish release after the last challenge."
+      },
+      "metadata": {
+        "sourceVariant": "flat.finish_release"
       }
     }
   ],
@@ -1425,7 +1799,7 @@
     "units": "unity",
     "previewOnly": false,
     "authoringMode": "curated_catalog_composition",
-    "catalogVersion": "2.1",
+    "catalogVersion": "2.6",
     "recipe": "library/campaign_recipes.json",
     "recipeNumber": 6,
     "referenceLevel": "levels/00_cinder_crown.json",
@@ -1440,8 +1814,8 @@
     "y": -49.27353259426825
   },
   "Top": {
-    "x": 33.01951266977737,
-    "y": 5.2
+    "x": 32.04826115694395,
+    "y": 5.01015873899189
   },
   "Bottom": {
     "x": 213.55,
@@ -1462,10 +1836,16 @@
       "flat.finish_release"
     ],
     "validationStatus": "geometry_checked; Unity bike playtests pending",
-    "coinCount": 20,
+    "coinCount": 33,
+    "coinPolicy": {
+      "perObstacle": 3,
+      "placement": "library_local"
+    },
     "obstacles": [
       {
         "id": "flat.launch_run",
+        "type": "flat",
+        "geometryProfile": "flat",
         "ports": {
           "entry": {
             "x": 0,
@@ -1503,6 +1883,8 @@
       },
       {
         "id": "rise.two_stage",
+        "type": "rise",
+        "geometryProfile": "rise",
         "ports": {
           "entry": {
             "x": 18,
@@ -1540,6 +1922,8 @@
       },
       {
         "id": "drop.long_runout",
+        "type": "drop",
+        "geometryProfile": "drop",
         "ports": {
           "entry": {
             "x": 37,
@@ -1668,6 +2052,8 @@
       },
       {
         "id": "flat.braking_shelf",
+        "type": "flat",
+        "geometryProfile": "flat",
         "ports": {
           "entry": {
             "x": 95.0,
@@ -1705,6 +2091,8 @@
       },
       {
         "id": "step_down.long",
+        "type": "step_down",
+        "geometryProfile": "descending_landing_shelf",
         "ports": {
           "entry": {
             "x": 111.0,
@@ -1833,6 +2221,8 @@
       },
       {
         "id": "valley.long_floor",
+        "type": "valley",
+        "geometryProfile": "valley",
         "ports": {
           "entry": {
             "x": 182.8,
@@ -1870,6 +2260,8 @@
       },
       {
         "id": "flat.braking_shelf",
+        "type": "flat",
+        "geometryProfile": "flat",
         "ports": {
           "entry": {
             "x": 208.8,
@@ -1907,6 +2299,8 @@
       },
       {
         "id": "drop.deep",
+        "type": "drop",
+        "geometryProfile": "drop",
         "ports": {
           "entry": {
             "x": 224.8,
@@ -2035,6 +2429,8 @@
       },
       {
         "id": "wave.two_soft",
+        "type": "wave",
+        "geometryProfile": "wave",
         "ports": {
           "entry": {
             "x": 272.8,
@@ -2072,6 +2468,8 @@
       },
       {
         "id": "platform.downhill_bridge",
+        "type": "platform",
+        "geometryProfile": "platform",
         "ports": {
           "entry": {
             "x": 292.8,
@@ -2109,6 +2507,8 @@
       },
       {
         "id": "flat.finish_release",
+        "type": "flat",
+        "geometryProfile": "flat",
         "ports": {
           "entry": {
             "x": 328.8,
@@ -2305,7 +2705,7 @@
         "beatId": "finish",
         "role": "resolution",
         "tension": 0,
-        "purpose": "Empty finish release after the last challenge.",
+        "purpose": "Finish release after the last challenge.",
         "xRange": [
           328.8,
           368.8
@@ -2327,8 +2727,12 @@
           0,
           18
         ],
-        "objectIds": [],
-        "coinCount": 0,
+        "objectIds": [
+          "s00_coin_01",
+          "s00_coin_02",
+          "s00_coin_03"
+        ],
+        "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
           10,
@@ -2342,7 +2746,7 @@
             "minX": -3,
             "maxX": 21.0,
             "minY": -2,
-            "maxY": 3
+            "maxY": 4.2
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2359,10 +2763,11 @@
           37
         ],
         "objectIds": [
-          "coin_01",
-          "coin_02"
+          "s01_coin_01",
+          "s01_coin_02",
+          "s01_coin_03"
         ],
-        "coinCount": 2,
+        "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
           29,
@@ -2376,7 +2781,7 @@
             "minX": 15,
             "maxX": 40.0,
             "minY": -2,
-            "maxY": 8.2
+            "maxY": 8.01015873899189
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2393,9 +2798,9 @@
           95.0
         ],
         "objectIds": [
-          "coin_03",
-          "coin_04",
-          "coin_05"
+          "s02_coin_01",
+          "s02_coin_02",
+          "s02_coin_03"
         ],
         "coinCount": 3,
         "checkpointId": "cp_first_drop",
@@ -2411,7 +2816,7 @@
             "minX": 34,
             "maxX": 98.0,
             "minY": -18.555882000000008,
-            "maxY": 7.903574309526579
+            "maxY": 7.000000000000001
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2427,8 +2832,12 @@
           95.0,
           111.0
         ],
-        "objectIds": [],
-        "coinCount": 0,
+        "objectIds": [
+          "s03_coin_01",
+          "s03_coin_02",
+          "s03_coin_03"
+        ],
+        "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
           103.0,
@@ -2442,7 +2851,7 @@
             "minX": 92.0,
             "maxX": 114.0,
             "minY": -18.55588235294118,
-            "maxY": -12.755882352941173
+            "maxY": -11.555882352941179
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2459,13 +2868,11 @@
           182.8
         ],
         "objectIds": [
-          "coin_06",
-          "coin_07",
-          "coin_08",
-          "coin_09",
-          "coin_10"
+          "s04_coin_01",
+          "s04_coin_02",
+          "s04_coin_03"
         ],
-        "coinCount": 5,
+        "coinCount": 3,
         "checkpointId": "cp_basalt_flight",
         "recoveryRange": [
           166.8,
@@ -2479,7 +2886,7 @@
             "minX": 108.0,
             "maxX": 185.8,
             "minY": -28.958003352941184,
-            "maxY": -7.99320966416847
+            "maxY": -7.998278502805494
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2496,10 +2903,11 @@
           208.8
         ],
         "objectIds": [
-          "coin_11",
-          "coin_12"
+          "s05_coin_01",
+          "s05_coin_02",
+          "s05_coin_03"
         ],
-        "coinCount": 2,
+        "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
           200.8,
@@ -2513,7 +2921,7 @@
             "minX": 179.8,
             "maxX": 211.8,
             "minY": -30.958003182503546,
-            "maxY": -22.949622728233333
+            "maxY": -23.382953804553072
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2529,8 +2937,12 @@
           208.8,
           224.8
         ],
-        "objectIds": [],
-        "coinCount": 0,
+        "objectIds": [
+          "s06_coin_01",
+          "s06_coin_02",
+          "s06_coin_03"
+        ],
+        "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
           216.8,
@@ -2544,7 +2956,7 @@
             "minX": 205.8,
             "maxX": 227.8,
             "minY": -28.958003182503536,
-            "maxY": -23.158003182503528
+            "maxY": -21.958003182503536
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2561,9 +2973,9 @@
           272.8
         ],
         "objectIds": [
-          "coin_13",
-          "coin_14",
-          "coin_15"
+          "s07_coin_01",
+          "s07_coin_02",
+          "s07_coin_03"
         ],
         "coinCount": 3,
         "checkpointId": "cp_lower_drop",
@@ -2579,7 +2991,7 @@
             "minX": 221.8,
             "maxX": 275.8,
             "minY": -52.273532182503544,
-            "maxY": -22.354456966791087
+            "maxY": -23.158003182503528
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2596,10 +3008,11 @@
           292.8
         ],
         "objectIds": [
-          "coin_16",
-          "coin_17"
+          "s08_coin_01",
+          "s08_coin_02",
+          "s08_coin_03"
         ],
-        "coinCount": 2,
+        "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
           284.8,
@@ -2613,7 +3026,7 @@
             "minX": 269.8,
             "maxX": 295.8,
             "minY": -52.27353259426826,
-            "maxY": -45.073750412028275
+            "maxY": -45.225674651106814
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2630,9 +3043,9 @@
           328.8
         ],
         "objectIds": [
-          "coin_18",
-          "coin_19",
-          "coin_20"
+          "s09_coin_01",
+          "s09_coin_02",
+          "s09_coin_03"
         ],
         "coinCount": 3,
         "checkpointId": null,
@@ -2648,7 +3061,7 @@
             "minX": 289.8,
             "maxX": 331.8,
             "minY": -52.27353259426826,
-            "maxY": -41.5373832090297
+            "maxY": -41.588761283241936
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2659,13 +3072,17 @@
         "id": "finish",
         "role": "resolution",
         "tension": 0,
-        "purpose": "Empty finish release after the last challenge.",
+        "purpose": "Finish release after the last challenge.",
         "xRange": [
           328.8,
           368.8
         ],
-        "objectIds": [],
-        "coinCount": 0,
+        "objectIds": [
+          "s10_coin_01",
+          "s10_coin_02",
+          "s10_coin_03"
+        ],
+        "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
           360.8,
@@ -2679,7 +3096,7 @@
             "minX": 325.8,
             "maxX": 371.8,
             "minY": -52.27353259426826,
-            "maxY": -47.27353259426823
+            "maxY": -46.073532594268244
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -2688,13 +3105,17 @@
       }
     ],
     "coinAllocation": {
-      "rim": 2,
+      "start": 3,
+      "rim": 3,
       "first_drop": 3,
-      "basalt_flight": 5,
-      "basin": 2,
+      "brake_one": 3,
+      "basalt_flight": 3,
+      "basin": 3,
+      "brake_two": 3,
       "lower_drop": 3,
-      "floor_rollers": 2,
-      "outlet": 3
+      "floor_rollers": 3,
+      "outlet": 3,
+      "finish": 3
     },
     "length": 366.8,
     "recommendedPlaytestOrder": [
@@ -2703,13 +3124,13 @@
       "Loop with zero/one/two boosts where present",
       "Spring lip trigger, descending catch and rearming",
       "Barrel at low/typical/high entry speed",
-      "All 20 coins and per-beat camera framing"
+      "All obstacle coins and per-beat camera framing"
     ],
     "validationReport": {
       "status": "passed_static_geometry_and_point_mass_checks",
       "sourceMainShapes": 14,
       "exportedMainShapes": 4,
-      "coinCount": 20,
+      "coinCount": 33,
       "coveredGaps": [
         {
           "xRange": [
@@ -2734,6 +3155,12 @@
         }
       ],
       "springChecks": [],
+      "coinChecks": {
+        "perObstacle": 3,
+        "loopCoinsInsideRing": true,
+        "surfaceCoinsOnDrivingSurface": true,
+        "libraryCoinCount": 33
+      },
       "jumpChecks": [
         {
           "variant": "drop.long_runout",

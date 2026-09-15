@@ -374,6 +374,10 @@ LEGEND_STYLES = {
     'Start': ('#16a34a', '●'), 'End': ('#dc2626', '■'),
     'Top': ('#0ea5e9', '▲'), 'Bottom': ('#94a3b8', '▼'),
 }
+LEGEND_STYLES.update({
+    'Pre-explosion route': ('#f59e0b', '-'),
+    'Revealed route': ('#22d3ee', '--'),
+})
 
 
 def bezier_coordinates(shape: dict[str, Any], *, closed: bool) -> tuple[float, ...]:
@@ -404,6 +408,13 @@ def compile_vector_level(data: dict[str, Any], outline_only: bool = False) -> Ve
     paths: list[VectorPath] = []
     markers: list[VectorMarker] = []
     labels: dict[str, None] = {}
+    palette = data.get('map', {}).get('environment', {}).get('palette', {})
+    legend_styles = dict(LEGEND_STYLES)
+    if palette:
+        for name, key in (('MainPlatform terrain','terrainFill'),('Deadzone','hazardOutline'),
+                          ('RampPlatform','platformOutline')):
+            color, symbol = legend_styles[name]
+            legend_styles[name] = (palette.get(key,color),symbol)
 
     def legend(name: str) -> None:
         labels[name] = None
@@ -424,12 +435,21 @@ def compile_vector_level(data: dict[str, Any], outline_only: bool = False) -> Ve
     # Native Tk polygons have no alpha channel. These fills are preblended
     # against the same dark background, with deadzones behind the ground.
     for shape in required_group(data, 'deadzone'):
-        shape_path(shape, True, 'Deadzone', '#4f2430', '#7f2836', 1)
+        shape_path(shape, True, 'Deadzone', palette.get('hazardFill','#4f2430'),
+                   palette.get('hazardOutline','#7f2836'), 1)
     for shape in required_group(data, 'MainPlatform'):
         shape_path(shape, True, 'MainPlatform terrain',
-                   '' if outline_only else '#43b878', '#14532d', 2)
+                   '' if outline_only else palette.get('terrainFill','#43b878'),
+                   palette.get('terrainOutline','#14532d'), 2)
     for shape in required_group(data, 'RampPlatform'):
-        shape_path(shape, shape.get('closed', False), 'RampPlatform', '', '#d97706', 3)
+        phase = shape.get('metadata', {}).get('routePhase')
+        if phase == 'before_explosion':
+            shape_path(shape, shape.get('closed', False), 'Pre-explosion route', '', '#f59e0b', 3)
+        elif phase == 'after_explosion':
+            shape_path(shape, shape.get('closed', False), 'Revealed route', '', '#22d3ee', 3, (7, 4))
+        else:
+            shape_path(shape, shape.get('closed', False), 'RampPlatform', '',
+                       palette.get('platformOutline','#d97706'), 3)
     for item in required_group(data, 'InteractableObject'):
         kind = item['type']
         if kind == 'explosive_ramp':
@@ -463,7 +483,7 @@ def compile_vector_level(data: dict[str, Any], outline_only: bool = False) -> Ve
         marker(data[name], kind, name, name)
     left, right, bottom, top = bounds(data)
     return VectorLevel(tuple(paths), tuple(markers), (left, -top, right, -bottom),
-                       tuple((name, *LEGEND_STYLES.get(name, (UI_TEXT, '●'))) for name in labels))
+                       tuple((name, *legend_styles.get(name, (UI_TEXT, '●'))) for name in labels))
 
 
 class PreviewCanvas(tk.Canvas):
@@ -552,6 +572,15 @@ class PreviewCanvas(tk.Canvas):
         # Project before Tk's first paint; only subsequent navigation needs
         # coalescing, and a newly selected map must not flash at world scale.
         self._draw_view()
+
+    def clear_scene(self) -> None:
+        self._cancel_pending()
+        self._pan_position = None
+        self.configure(cursor='')
+        self.delete('scene')
+        self._path_items.clear()
+        self._marker_items.clear()
+        self.scene = None
 
     @classmethod
     def _symbol_coords(cls, kind: str, x: float, y: float) -> tuple[float, ...]:
@@ -755,7 +784,7 @@ class ObstacleLibraryWindow:
     COLUMNS = 5
     GAP = 12
     GROUP_TITLE_HEIGHT = 28
-    CELL_HEIGHT = 200
+    CELL_HEIGHT = 150
     CELL_PADDING = 18
 
     def __init__(self, parent: tk.Misc, *, outline_only: bool = False) -> None:
@@ -769,12 +798,18 @@ class ObstacleLibraryWindow:
         self.groups: list[ObstacleGroup] = []
         self._layout_after: str | None = None
         self.window.columnconfigure(0, weight=1)
-        self.window.rowconfigure(0, weight=1)
+        self.window.rowconfigure(1, weight=1)
+        toolbar = ttk_frame(self.window, padding=(12, 8))
+        toolbar.grid(row=0, column=0, columnspan=2, sticky='ew')
+        toolbar.columnconfigure(0, weight=1)
+        tk.Label(toolbar, text='OBSTACLE LIBRARY', bg=UI_BG, fg=UI_TEXT,
+                 font=('Segoe UI', 11, 'bold')).grid(row=0, column=0, sticky='w')
+        self._button(toolbar, 'Refresh', self.reload).grid(row=0, column=1, sticky='e')
         self.canvas = tk.Canvas(self.window, bg=UI_BG, highlightthickness=0,
                                 takefocus=True, yscrollincrement=24)
-        self.canvas.grid(row=0, column=0, sticky='nsew')
+        self.canvas.grid(row=1, column=0, sticky='nsew')
         scrollbar = ttk.Scrollbar(self.window, orient='vertical', command=self.canvas.yview)
-        scrollbar.grid(row=0, column=1, sticky='ns')
+        scrollbar.grid(row=1, column=1, sticky='ns')
         self.canvas.configure(yscrollcommand=scrollbar.set)
         self.canvas.bind('<Configure>', self._resize)
         self.canvas.bind('<Button-1>', lambda _event: self.canvas.focus_set())
@@ -815,16 +850,16 @@ class ObstacleLibraryWindow:
         for group_index, (type_id, variants) in enumerate(scenes):
             group_tag = f'group:{group_index}'
             title = self.canvas.create_text(0, 0, text=type_id.replace('_', ' ').upper(),
-                                            fill=UI_MUTED, font=('Segoe UI', -10, 'bold'),
+                                            fill=UI_TEXT, font=('Segoe UI', -10, 'bold'),
                                             anchor='sw', tags=(group_tag, 'group-title'))
-            rule = self.canvas.create_line(0, 0, 1, 0, fill=UI_BORDER, width=1,
-                                           tags=(group_tag, 'group-rule'))
+            rule = self.canvas.create_rectangle(0, 0, 1, 1, fill=UI_ACCENT, outline='',
+                                                tags=(group_tag, 'group-rule'))
             group = ObstacleGroup(type_id, title, rule, [])
             for variant_id, scene in variants:
                 index = len(self.cards)
                 tag = f'card:{index}'
                 background = self.canvas.create_rectangle(0, 0, 1, 1, fill=PLOT_BG,
-                                                           outline=UI_BORDER, width=1, tags=(tag, 'card'))
+                                                           outline='', tags=(tag, 'card'))
                 card = ObstacleCard(variant_id, scene, background, [], [])
                 for path in scene.paths:
                     options: dict[str, Any] = dict(width=path.width, tags=(tag, 'geometry'),
@@ -865,13 +900,15 @@ class ObstacleLibraryWindow:
         cell_width = max(1, (width-self.GAP*(self.COLUMNS+1))/self.COLUMNS)
         y = self.GAP
         for group in self.groups:
-            self.canvas.coords(group.title_item, self.GAP, y+self.GROUP_TITLE_HEIGHT-6)
-            self.canvas.coords(group.rule_item, self.GAP+175, y+self.GROUP_TITLE_HEIGHT-10, width-self.GAP, y+self.GROUP_TITLE_HEIGHT-10)
+            self.canvas.coords(group.title_item, self.GAP+10, y+self.GROUP_TITLE_HEIGHT-7)
+            self.canvas.coords(group.rule_item, self.GAP, y+self.GROUP_TITLE_HEIGHT-3,
+                               width-self.GAP, y+self.GROUP_TITLE_HEIGHT-1)
             y += self.GROUP_TITLE_HEIGHT
             for index, card in enumerate(group.cards):
                 x = self.GAP+(index % self.COLUMNS)*(cell_width+self.GAP)
                 card_y = y+(index // self.COLUMNS)*(self.CELL_HEIGHT+self.GAP)
-                self.canvas.coords(card.background, x, card_y, x+cell_width, card_y+self.CELL_HEIGHT)
+                self.canvas.coords(card.background, x, card_y, x+cell_width,
+                                   card_y+self.CELL_HEIGHT)
                 left, top, right, bottom = card.scene.extent
                 scale = min(max(1, cell_width-2*self.CELL_PADDING)/max(EPSILON, right-left),
                             (self.CELL_HEIGHT-2*self.CELL_PADDING)/max(EPSILON, bottom-top))
@@ -909,13 +946,16 @@ class LevelBrowserApp:
     COLUMNS = 5
     CACHE_LEVELS = 8
 
-    def __init__(self, root: tk.Tk, levels: list[Path], start_path: Path | None, tolerance: float, outline_only: bool) -> None:
+    def __init__(self, root: tk.Tk, levels: list[Path], level_directory: Path,
+                 start_path: Path | None, tolerance: float, outline_only: bool) -> None:
         self.root = root
         self.levels = levels
+        self.level_directory = level_directory
         self.tolerance = tolerance
         self.outline_only = outline_only
         self.legend_visible = True
         self.current_data: dict[str, Any] | None = None
+        self._warning_suffix = ''
         self.selected = 0
         if start_path:
             try:
@@ -941,6 +981,7 @@ class LevelBrowserApp:
         root.bind("<Key-H>", self.toggle_legend)
         root.bind("<Key-f>", lambda event: self.canvas.fit() if self.canvas else None)
         root.bind("<Key-F>", lambda event: self.canvas.fit() if self.canvas else None)
+        root.bind("<F5>", self.refresh_levels)
         root.columnconfigure(0, weight=1)
         root.rowconfigure(0, weight=1)
 
@@ -963,9 +1004,15 @@ class LevelBrowserApp:
         side = ttk_frame(content, padding=8, relief="groove", borderwidth=1)
         self.right_panel = side
         side.grid(row=0, column=1, sticky="ns")
-        ObstacleLibraryWindow._button(side, 'Obstacle library', self.open_obstacle_library).pack(fill='x', pady=(0, 12))
+        actions = ttk_frame(side)
+        actions.pack(fill='x', pady=(0, 12))
+        ObstacleLibraryWindow._button(actions, 'Obstacle library', self.open_obstacle_library).pack(
+            side='left', fill='x', expand=True, padx=(0, 4))
+        ObstacleLibraryWindow._button(actions, 'Refresh', self.refresh_levels).pack(
+            side='right', fill='x', padx=(4, 0))
         tk.Label(side, text="LEVELS", font=("Segoe UI", 11, "bold"), bg=UI_BG, fg=UI_TEXT).pack(anchor="w")
-        tk.Label(side, text=f"{len(levels)} level(s) | 5 columns", bg=UI_BG, fg=UI_MUTED).pack(anchor="w", pady=(0, 8))
+        self.level_count = tk.StringVar(value=f"{len(levels)} level(s) | 5 columns")
+        tk.Label(side, textvariable=self.level_count, bg=UI_BG, fg=UI_MUTED).pack(anchor="w", pady=(0, 8))
 
         nav = ttk_frame(side)
         nav.pack(fill="x", pady=(0, 8))
@@ -1049,6 +1096,9 @@ class LevelBrowserApp:
                         f'{self._warning_suffix} | Wheel: zoom 1.45x | Left drag: pan 1.6x | F / double-click: fit | H: {state}')
 
     def build_level_grid(self) -> None:
+        for child in self.grid_frame.winfo_children():
+            child.destroy()
+        self.level_buttons.clear()
         for index, level in enumerate(self.levels):
             label = level.stem.replace("_", " ")
             if len(label) > 13:
@@ -1073,6 +1123,32 @@ class LevelBrowserApp:
             self.level_buttons.append(button)
         for column in range(self.COLUMNS):
             self.grid_frame.columnconfigure(column, weight=1)
+
+    def refresh_levels(self, _event: Any = None) -> str:
+        """Rescan the level directory and force the selected file to reload."""
+        current_path = self.levels[self.selected] if self.levels else None
+        refreshed = discover_levels(self.level_directory)
+        self.levels = refreshed
+        self._level_cache.clear()
+        self.level_count.set(f"{len(refreshed)} level(s) | {self.COLUMNS} columns")
+        if current_path in refreshed:
+            self.selected = refreshed.index(current_path)
+        else:
+            self.selected = min(self.selected, max(0, len(refreshed)-1))
+        self.build_level_grid()
+        if refreshed:
+            self.select(self.selected)
+        else:
+            self.current_data = None
+            self._warning_suffix = ''
+            self.preview_title.configure(text='')
+            if self.canvas:
+                self.canvas.clear_scene()
+            self._set_legend(())
+            self.previous_button.configure(state='disabled')
+            self.next_button.configure(state='disabled')
+            self.status.set(f"No level JSON files found in {self.level_directory}")
+        return 'break'
 
     def select(self, index: int, *, preserve_view: bool = False) -> None:
         if not self.levels:
@@ -1141,7 +1217,8 @@ def ttk_frame(parent: Any, **kwargs: Any) -> tk.Frame:
 
 def launch_browser(level_directory: Path, start_path: Path | None, tolerance: float, outline_only: bool) -> None:
     root = tk.Tk()
-    LevelBrowserApp(root, discover_levels(level_directory), start_path, tolerance, outline_only)
+    LevelBrowserApp(root, discover_levels(level_directory), level_directory,
+                    start_path, tolerance, outline_only)
     root.mainloop()
 
 

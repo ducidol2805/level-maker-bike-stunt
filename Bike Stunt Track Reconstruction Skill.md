@@ -4,6 +4,27 @@
 
 Analyze reference gameplay footage from a 2D / 2.5D side-view bike stunt game and reconstruct the playable track as structured level-design data.
 
+Also use the project-specific sections below when maintaining this repository's
+obstacle library, recipes, map generator and export pipeline. Reconstruction
+from footage is a separate mode; ordinary library changes do not require a new
+video, panorama or visual preview.
+
+## Project operating constraints
+
+- Do not run ImageGen, generate preview images, render contact sheets, take
+  screenshots or launch/open a visual preview unless the user explicitly asks.
+  A supplied reference image authorizes reading that reference, not generating
+  another image. Editing preview code is allowed within an implementation task;
+  use geometry/data checks to verify it without launching the UI.
+- Apply the latest user correction. The current coin rule is three coins owned
+  by each library obstacle, replacing both the old 20-coin map budget and the
+  intermediate two-coins-per-cinematic-point rule.
+- Treat exact library counts, themes and campaign numbering below as this
+  project's current brief. A later explicit brief can change them.
+- In-memory builds and passing tests do not update saved maps. When asked to
+  propagate library changes, regenerate the requested JSON files and manifest,
+  then inspect those saved outputs before reporting completion.
+
 The goal is not to copy every visible pixel or manually trace the terrain frame-by-frame.
 
 The goal is to recover the **driving line**, classify the track into meaningful gameplay segments, estimate their geometry, and produce data that can later be converted into Unity SpriteShape splines, ramps, and gameplay objects.
@@ -585,6 +606,25 @@ exitType
 
 ---
 
+# Library Variant Design (Project Brief)
+
+`platform`, `spring_high` and `spring_far` currently have ten variants each.
+Differentiate the geometry and the riding action: approach profile, height
+sequence, crest/basin arrangement, launch, landing and recovery. Scaling the
+same profile or renaming it does not provide the requested diversity.
+
+Platform variants 1/5/8 currently correspond to `flat_bridge`, `wave_bridge`
+and `double_hump`: keep their elevated surfaces disconnected. Reaching the next
+piece should depend on sufficient momentum. Floating platforms are allowed;
+do not fill their gaps or add supports just to make them touch the ground.
+Other platform variants need not become disconnected automatically.
+
+Use stable variant IDs in recipes, not UI indexes. Verify current ordering in
+the family JSON when a user refers to a numbered card. Update catalog counts
+when adding/removing variants and migrate recipes that reference deleted IDs.
+
+---
+
 # Spring Jump Obstacle (Cinematic Platform Transfer)
 
 Treat the complete spring transfer as a reusable obstacle, not a SpringObject
@@ -604,7 +644,7 @@ covering the full horizontal gap with a small edge overlap. Keep the gap empty
 of ground; do not add an invisible bridge or merge across it at export. Give
 both terrain undersides the map's common bottom Y after composition.
 
-Maintain two library groups, each with five authored variants:
+Maintain two library groups, currently with ten authored variants each:
 
 - `spring_high`: strong elevation change, emphasizing an upward cinematic reveal.
 - `spring_far`: long horizontal separation, emphasizing a sweeping flight.
@@ -614,23 +654,25 @@ Read [spring_high](library/types/spring_high.json) and
 parameters are the source of truth. Use the SpringObject contract in this skill
 when authoring launch/target fields or integrating the Unity trigger.
 
-Use these on some maps as a cinematic highlight, not on every map and not in
-back-to-back obstacle slots. The current campaign recipe uses one spring transfer
-on every fifth map, alternating high/far; this cadence is configurable, not a
-universal rule for every authored level.
+Choose these for a named vertical reveal or wide crossing. Authored recipes
+control their cadence and can contain several separated transfers. The fallback
+procedural generator's every-fifth-map rule is not the authored campaign policy.
+Keep recovery between major transfers unless a deliberate expert combination
+has been requested.
 
 Show the spring and destination before commitment, frame the flight apex, and
-leave a broad catch plus stabilization space. Prefer coin rewards along the
-spring flight while keeping exactly 20 optional coins in a complete map.
+leave a broad catch plus stabilization space. The complete spring obstacle owns
+three optional coins along its flight, using the shared library placement rule.
 Place a checkpoint on the first stable post-catch pad, subject to the existing
-End-distance rule. Do not move Start/End when adding or exporting this obstacle.
+End-distance rule. Preserve the composed Start/End during export; a requested
+route extension may change the newly authored End position.
 
 Validate the estimated arc clears the departure lip, the full gap and the
 destination's leading wall, arrives descending over the catch, and never crosses
 the deadzone. Translate the target with the spring during composition. Geometry
 checks alone do not certify playability: trigger timing, full-bike clearance,
 landing impact, rearming and camera behavior require Unity playtests. Isolated
-library previews are not complete maps and need not contain 20 coins.
+library cards and composed maps both retain those same three local coin objects.
 
 ---
 
@@ -1089,7 +1131,8 @@ position A end == position B start
 tangent A end is collinear with tangent B start
 ```
 
-This is a C1-continuous join. There must be no micro-gap, overlap, or
+Opposite, collinear handles provide tangent-direction continuity (G1); exact
+C1 additionally requires matching derivative magnitudes. There must be no micro-gap, overlap, or
 unintentional change of direction at the terrain-to-connector or
 connector-to-loop boundary.
 
@@ -1098,24 +1141,46 @@ describe the arc. Do not approximate it with dozens of short straight lines.
 
 ## Explosive Connector Lifecycle
 
-Use explicit gameplay state:
+The required player experience is:
 
 ```text
-armed
--> player commits to the connector
--> player clears the exit join
--> destroyed
+ride through -> explode behind the bike -> reveal a useful new route -> continue
 ```
 
-Do not destroy the collider when the front wheel first touches the connector.
-Destroy only after the full bike has cleared the connector, such as when the
-rear wheel or bike-center has passed the exit join. Otherwise the bike can
-lose support mid-feature for an unintended failure.
+Use `armed -> committed -> detonated -> route_revealed -> spent`. Do not destroy
+the supporting connector on first contact. Follow rear-wheel progress on the
+ring route; world X is not a valid progress metric on a path that turns back.
+The current trigger is `rear_wheel_clears_route_progress` at normalized progress
+0.42 of its own `pre_route`, after connector clearance.
 
-After destruction, the connector creates an intentional break in the route.
-Record the post-destruction route explicitly: a fallback ground line, a
-one-way shortcut, or a checkpoint reset. Do not assume that deleting the
-segment "creates a path" unless a separate revealed path has been authored.
+Each connector reveals its own exit ramp. That ramp starts hidden with collision
+disabled and becomes collidable with zero reveal delay. Keep debris visual-only
+and restore the assembly on checkpoint reset. Record `revealsRoute` and
+`postDestroyRoute` as real object references and prefix them when placing an
+instance. A deletion without a useful authored continuation does not meet this
+feature's gameplay intent.
+
+## Current crossed-ramp ring family
+
+The library exposes exactly `round`, `double_ring` and `triple_ring`; do not
+restore the abandoned ten-variant family unless requested.
+
+- The orange ring route is the upper semicircle, from the rightmost contact
+  (0 degrees) over the top to the leftmost contact (180 degrees).
+- The explosive ramp curves from the left ground entry to the right contact;
+  the revealed ramp curves from the left contact down to the right ground exit.
+  They cross below the ring, with symmetric tangents and horizontal outer ends.
+- Keep the combined silhouette low and nearly circular. Avoid a tall teardrop
+  or a pinched lower crossing. Entry/exit sit exactly one unit outside the
+  ring's horizontal bounds.
+- The currently accepted local settings are radius X/Y 3, ground clearance 0.5,
+  ground-handle ratio 0.64 and ring handle 3.5. Read
+  [explosive_loop.json](library/types/explosive_loop.json) before editing; these
+  are editable design settings, not a universal physical formula.
+- Variant 2 is two complete copies of variant 1; variant 3 is three copies.
+  Each copy retains its own armed connector, active ring, hidden exit and
+  trigger/reveal references. Join the previous reveal endpoint directly to the
+  next connector start. Do not make one ring reveal or destroy the next ring.
 
 For vertical-loop challenges, estimate the initial speed window before physics
 simulation. A conservative contact-preserving lower bound at the bottom is:
@@ -1192,12 +1257,11 @@ intent fit the route, not just because an empty stretch is available.
 - Explosive barrel: a directed optional pop or transfer with a readable landing,
   clear recovery and a safe route for skipping it. Impulse plus entry velocity
   and bike mass determine its flight; do not treat it as a deterministic spring.
-- Coins: guide the intended flight/contact line and reward commitment. Allocate
-  a budget per beat, with more coins on long cinematic arcs and fewer on short
-  jumps or tight loops. Keep spacing readable and leave intentional empty space
-  on restart pads, recovery and the final release.
+- Coins: carry the three library-owned rewards with each obstacle. Use the
+  actual contact/flight route, with loop coins inset toward the ring center.
+  Do not allocate a second cinematic budget or add map-level filler.
 
-Record beat ID, purpose, participating object IDs, coin budget, camera cue and
+Record beat ID, purpose, participating object IDs, actual coin count, camera cue and
 landing/recovery intent in the authored design. Mark assumed trajectories and
 speeds as unvalidated until tested with the real bike. Do not promise that all
 coins are collectible from static geometry alone.
@@ -1206,45 +1270,37 @@ coins are collectible from static geometry alone.
 
 # Coin Placement Policy
 
-Every map must contain exactly **20 collectible coins** unless an explicit
-level brief overrides that count. Coins are optional rewards; they must not be
-required for the critical driving line or for finishing the map.
+Every library obstacle owns exactly **three optional coin objects in local
+coordinates**. This includes flat/start/finish variants and the whole double-
+or triple-ring variant: three per obstacle, not three per component ring.
 
-Place coins in this priority order:
+- Build coins through `assign_module_coins` in `obstacle_library.py`, as native
+  `InteractableObject` entries. Library cards and composed maps use the same
+  objects. `place` prefixes their IDs and translates their coordinates.
+- Map total = three times the number of obstacle instances, including authored
+  start and finish modules. Do not restore a global 20-coin quota, a two-coin
+  cinematic cap, or an independent map-level distribution pass.
+- For a loop, handle the inside-ring route before a generic `rewardLine`.
+  Shrink toward the actual translated center/radii; adding a fixed positive Y
+  offset to the upper ring puts coins outside it. Keep `supportingRingId`
+  valid after placement, including multiple-ring variants.
+- Follow the spring trajectory for springs and the estimated flight for manual
+  jumps. If a recipe changes a catch or adds a barrel flight, recompute the
+  three local coins from the updated route before placing the module.
+- Follow actual platform segments or the driving surface for terrain. Do not
+  interpolate across disconnected platform gaps or along vertical ledge walls.
+- The current builder uses quarter/half/three-quarter route positions measured
+  by segment arc length, excluding jumps between disconnected paths. Validate
+  separation and support instead of assuming these fractions always suffice.
+- Record unique ID, local/world position, source variant, route association,
+  `optional: true` and collection-risk status. Actual collectibility still
+  requires a bike playtest.
 
-```text
-1. Stunt moments: loop apexes, jump apexes, trick-tabletops, high lines
-2. Flight arcs that reward controlled air trajectory
-3. Optional risk/reward routes and alternate ramp lines
-4. Readable recovery or flow lines that guide the player forward
-5. Remaining coins on safe, visually interesting terrain
-```
-
-Use coin arcs to communicate a desired stunt trajectory. For example:
-
-```text
-Launch
-  -> coin arc through the safe high-flight line
-  -> landing
-```
-
-Do not place a coin so that collecting it demands an impossible landing,
-an untelegraphed blind trajectory, or a collision with a mandatory obstacle.
-Avoid filling a narrow precision landing with many coins; one intentional coin
-is enough. When a coin is placed over a dangerous gap, ensure missing it still
-allows the player to take the safe completion route.
-
-Record for each coin:
-
-```text
-position
-route / stunt association
-optional = true
-collection risk level
-```
-
-Before export, verify both the exact count of 20 and that the strongest visual
-stunt moments received coin placement before any filler placement.
+Verify exactly three coins per variant and per placed instance; no duplicated
+coins on assembly/export; unchanged coin count/coordinates on repeated export;
+correct ID/reference translation; loop containment; and safe surface placement.
+Update `design.coinCount`, per-beat counts and manifest-derived data from the
+actual objects.
 
 ---
 
@@ -1368,12 +1424,30 @@ Test tangent-sensitive features with slow, typical, and high entry speeds.
 Small spline errors are especially destructive at kicker lips, loop entries,
 loop exits, and landing transitions.
 
+## Post-merge straight/curve handles
+
+At a smooth driving-surface point with one collapsed tangent and one active
+curve tangent, extend the handle on the straight side so the two handles are
+collinear and opposite. Retain the point position and the curved-side handle.
+
+The new handle must lie on the adjacent straight segment. Check that both its
+chord and its far-end handle are collinear; skip intentional corners, angled
+ledges, nonstraight neighbors, zero-length edges and underside/closure points.
+Use the active handle length capped to one third of the adjacent straight
+segment; equal lengths are not required if the straight segment is short.
+Set the qualifying point to `continuous` and keep re-export idempotent.
+
+Apply this after terrain merge and boundary padding via
+`extend_straight_join_handles` in `terrain_export.py`. Verify both
+straight-to-curve and curve-to-straight joins, short/sloped straights, retained
+corners and an unchanged second export.
+
 ---
 
 # Start / End Platform Padding (Project Export Rule)
 
 `Start` and `End` are gameplay markers, not the outer vertices of the terrain.
-Keep their complete authored transforms unchanged when extending platforms,
+Keep their complete authored transforms unchanged when adding boundary padding,
 merging terrain, exporting, or preparing a preview. Never regenerate these
 markers from the expanded terrain bounds or rebase the map to remove negative X.
 
@@ -1397,6 +1471,10 @@ gameplay challenge.
 For example, original terrain X bounds `[0, 307]` become `[-20, 327]`, while
 Start `(1, 1)` and End `(306, -6.75)` remain at those exact world positions.
 Use the existing `terrain_export.py` pipeline for this project.
+
+This export rule does not prohibit moving End when the user requests a longer
+authored map. Recompose the route first, then preserve its newly authored
+markers during export.
 
 ---
 
@@ -1584,6 +1662,115 @@ length = ~12
 rather than generating 30 uncertain spline points.
 
 Clearly mark estimated values.
+
+---
+
+# Library-to-Campaign Workflow (This Repository)
+
+## Sources of truth
+
+- `library/types/*.json`: obstacle variants and shape parameters.
+- `library/obstacle_catalog.json`: family files, version and variant counts.
+- `obstacle_library.py`: local builders, three-coin ownership, placement and
+  fallback procedural composition.
+- `library/campaign_recipes.json`: authored map sequence, intent, tension,
+  checkpoints, overrides and length targets. Check this first when updating
+  existing campaign maps; do not reverse-engineer merged terrain unnecessarily.
+- `library/demo_recipe.json`: Cinder Crown's separate authored recipe. Preserve
+  its compact roller, boosts/barrel and finish-elevation overrides when updating
+  it. Include the demo when requested, and check whether its output still exists
+  rather than automatically recreating a file the user removed.
+- `library/campaign_themes.json`: theme materials, palette and scenery metadata.
+  Metadata is not proof that decorative game assets have been implemented.
+- `generate_campaign.py`: author/tune, place, export, validate and save maps.
+- `terrain_export.py`: common underside, endpoint merges, reference remapping,
+  flat/curve tangent handling and non-accumulating boundary padding.
+- `levels/`: generated maps and `campaign_manifest.json`.
+
+Read current files before applying a stored convention. The mutable catalog
+and recipes are authoritative for current IDs, counts, overrides and baselines.
+
+## Propagating changes
+
+When asked to update maps from the library, identify the existing targets and
+their recipes, then use the shared builders. Preserve recipe-specific geometry,
+coin ownership, checkpoint/reset references and theme settings. Do not manually
+patch every translated copy of an obstacle in generated JSON.
+
+For the current 30-map campaign, the regeneration command is:
+
+```powershell
+python generate_campaign.py --output levels --count 30 --overwrite
+```
+
+Add `--include-demo` when the demo is in scope. These commands write files;
+inspect destinations and choose the requested count before executing them.
+They do not launch previews. A standalone skill/document update does not
+authorize regenerating maps.
+
+Validate saved outputs and manifest against recipes, not just an in-memory
+build. Compare hashes for out-of-scope maps if the generator rewrites the whole
+set. Preserve unrelated edits and deletions. Do not recreate atlases, screenshots
+or archives as a side effect of updating map JSON.
+
+## Campaign themes and difficulty
+
+Current authored coverage is maps 01-30. Maps 11-20 are beach; maps 21-30 are
+desert. Beach themes use shore rhythms, piers, coves, cliffs and islands; desert
+themes use dunes, canyon transfers, oasis basins and ruin steps. Choose distinct
+obstacle sequences and riding actions as well as names/palettes. Carry theme and
+setting through saved maps and manifest. This is the current campaign brief,
+not a rule that all future batches must use these themes.
+
+For the current campaign, numbers ending in 3/5/7/0 have been extended to 1.5
+times their recorded original Start-to-End lengths. Endings 5/7 have harder
+obstacles; 10/20/30 are `extreme`. Ending 3 requests length without an automatic
+difficulty increase.
+
+- Treat `lengthPlan.baselineLength` as the frozen original baseline and
+  `targetLength` as the regeneration target. Never multiply the already extended
+  output again on refresh/regeneration.
+- Measure gameplay length as `End.x - Start.x`, excluding export padding.
+- Add purposeful challenges and recovery to lengthen a map; do not stretch
+  every X coordinate or satisfy most of the increase with a long empty flat.
+- Raise difficulty through actual higher-tier variants, technical ledges,
+  precision transfers and multi-loop sequences. Changing the difficulty label
+  alone does not implement the request. Preserve readable landings/recovery.
+- Record overrides in the recipe, keep three coins per added obstacle and
+  verify the resulting marker distance against the target.
+
+## Library and main-app UI conventions
+
+When editing `level_visualizer.py`, preserve Refresh/F5 in both the main map
+browser and library. Refresh rereads current files/catalog; it is not a substitute
+for regenerating stale map JSON.
+
+Library cells retain their background rectangle, have no cell outline, and use
+75% of the earlier cell height. Group titles have no filled title rectangle;
+preserve the existing separate group separator. These are settled UI preferences,
+not authorization to launch a preview during an unrelated task.
+
+## Verification and reporting
+
+Use the existing test suite and generator checks without rendering images:
+
+```powershell
+python -m unittest -v
+git diff --check
+```
+
+Read the test runner's current discovered count instead of repeating a count
+from this conversation. Check relevant contracts: three coins per instance,
+inside-ring coin placement, ID remapping, independent explosive/reveal cycles,
+smooth merge joins, unchanged repeat export, recipe/theme coverage and target
+lengths. Authored jump catches must pass the existing 90/100/110 percent
+point-mass speed checks. When a newly selected variant fails, tune its catch
+with a recipe `landingLength` override and rerun the check; do not weaken the
+validator merely to ship the recipe.
+
+Report separately what was saved, what static checks passed, and any actual
+Unity playtesting. Static geometry or point-mass tests do not prove bike
+reachability, visual reference matching or an "extreme" difficulty rating.
 
 ---
 

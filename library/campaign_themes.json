@@ -1,0 +1,16 @@
+{
+  "beach": {
+    "name": "Beach",
+    "terrainMaterial": "coastal_sand",
+    "hazardAppearance": "deep_water",
+    "scenery": ["ocean", "palm_trees", "wooden_piers", "sea_stacks"],
+    "palette": {"terrainFill": "#d8ba79", "terrainOutline": "#8a6834", "hazardFill": "#163e56", "hazardOutline": "#248ca5", "platformOutline": "#b48653"}
+  },
+  "desert": {
+    "name": "Desert",
+    "terrainMaterial": "sandstone",
+    "hazardAppearance": "canyon_depth",
+    "scenery": ["dunes", "mesas", "oasis", "sandstone_ruins"],
+    "palette": {"terrainFill": "#c98a46", "terrainOutline": "#754626", "hazardFill": "#4a2420", "hazardOutline": "#ae593b", "platformOutline": "#d8b781"}
+  }
+}

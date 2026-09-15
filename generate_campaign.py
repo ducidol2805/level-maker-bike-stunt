@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build reproducible, authored campaign maps and verify their geometry.
 
-Tracks 01-10 use library/campaign_recipes.json, informed by Cinder Crown.
+Tracks 01-30 use library/campaign_recipes.json, informed by Cinder Crown.
 Later tracks retain the procedural catalog workflow. Physics checks are
 point-mass estimates, never a substitute for Unity bike playtests.
 """
@@ -14,7 +14,7 @@ from pathlib import Path
 from statistics import median
 from obstacle_library import (ROOT, GROUPS, as_level, build_campaign_level,
                               build_variant, ground, load_catalog, place,
-                              profile, sample_curve)
+                              profile, sample_curve, catalog_version, assign_module_coins)
 from spring_object import spring_trajectory
 from terrain_export import export_level, surface_count
 
@@ -180,16 +180,19 @@ def distribute(line, count, start=.12, end=.88):
 
 
 def add_barrel(module, beat):
-    ramp = sample_curve(module['RampPlatform'][0], 120)
-    # Use the last crest so the reward arc cannot hit a second raised roller.
-    maximum = max(y for x, y in ramp)
-    x0, surface_y = max((pt for pt in ramp if abs(pt[1]-maximum)<1e-5), key=lambda p:p[0])
-    x0 += .05
+    ramps = [sample_curve(shape, 120) for shape in module['RampPlatform']]
+    # Search every disconnected segment. Prefer the last point on the highest
+    # crest, while keeping the barrel anchor inside its supporting segment.
+    maximum = max(y for ramp in ramps for x, y in ramp)
+    ramp, crest = max(((ramp, point) for ramp in ramps for point in ramp
+                       if abs(point[1]-maximum)<1e-5), key=lambda pair:pair[1][0])
+    x0, surface_y = crest
+    x0 = min(ramp[-1][0]-.05, x0+.05)
     y0 = height_at(ramp, x0)+1
     entry_speed = beat.get('barrelEntrySpeed', 7.0)
     impulse_y = beat.get('barrelImpulseY', 5.0)
     vx, vy = entry_speed+3, impulse_y
-    lines = road_lines(module)+[ramp]
+    lines = road_lines(module)+ramps
 
     def clearance(t):
         x, y = x0+vx*t, y0+vy*t-.5*GRAVITY*t*t
@@ -234,6 +237,7 @@ def author_module(families, stage):
     type_id = stage['variant'].split('.')[0]
     family = families[type_id]
     variant = copy.deepcopy(next(v for v in family['variants'] if v['id']==stage['variant']))
+    variant['parameters'].update(copy.deepcopy(stage.get('parameterOverrides',{})))
     if 'landingLength' in stage:
         if family['builder'] != 'jump' or stage['landingLength']<=0:
             raise ValueError('Landing-length override requires a positive jump catch length')
@@ -272,43 +276,32 @@ def author_module(families, stage):
                     'optionalRoute':True, 'supportingShapeId':'connector',
                     'beatId':stage['beat'], 'purpose':stage['purpose'],
                     'validationStatus':'Check zero/one/two pickups and real loop entry speed in Unity'}})
+    assign_module_coins(module)
     return module
 
 
-def coin_line(module, stage):
-    if 'rewardLine' in module:
-        return module['rewardLine'], 'estimated_flight', .06, .90
-    if module['type'].startswith('spring_'):
-        spring = next(o for o in module['InteractableObject'] if o['type']=='SpringObject')
-        return spring_trajectory(spring, 160), 'cinematic_spring_flight', .10, .84
-    if module['type']=='explosive_loop':
-        p = module['loopParameters']
-        cx = module['ports']['entry']['x']+p['approach']+p['radiusX']
-        cy = module['ports']['entry']['y']+p['radiusY']+2
-        inner = [(cx+(p['radiusX']-.85)*math.cos(math.pi*i/180),
-                  cy+(p['radiusY']-.85)*math.sin(math.pi*i/180)) for i in range(181)]
-        return inner, 'loop_inside_arc', .02, .98
-    if module['RampPlatform']:
-        line = sample_curve(module['RampPlatform'][0], 120)
-        baseline = module['ports']['entry']['y']
-        line = [(x,y+1) for x,y in line if y>baseline+.8]
-        return line, 'alternate_high_line', .15, .85
-    line = road_lines(module)[0]
-    return [(x,y+1.2) for x,y in line], 'crest_or_flow', .20, .80
 
 
 def build_authored_level(recipe, families=None):
     families = families or load_catalog()
     stages = [dict(variant='flat.launch_run', beat='start', role='setup', tension=1,
-                   coins=0, purpose='Clear runway; show the first lesson before commitment.')]
+                   purpose='Clear runway; show the first lesson before commitment.')]
+    stages[0].update(recipe.get('start',{}))
     stages += recipe['stages']
     stages += [dict(variant='flat.finish_release', beat='finish', role='resolution', tension=0,
-                   coins=0, length=recipe['finishLength'], purpose='Empty finish release after the last challenge.')]
-    if sum(s['coins'] for s in stages)!=20:
-        raise ValueError(f"{recipe['name']}: coin budgets must total 20")
+                   length=recipe['finishLength'], purpose='Finish release after the last challenge.')]
     modules, coins, checkpoints, beats, sequence = [], [], [], [], []
     x, y = 0, 0
     for i, stage in enumerate(stages):
+        if 'fitExitY' in stage:
+            stage = copy.deepcopy(stage)
+            family = families[stage['variant'].split('.')[0]]
+            variant = next(v for v in family['variants'] if v['id']==stage['variant'])
+            surface = copy.deepcopy(variant['parameters']['surface'])
+            factor = (stage['fitExitY']-y)/surface[-1][1]
+            for point in surface:
+                point[1] *= factor
+            stage.setdefault('parameterOverrides',{})['surface'] = surface
         local = author_module(families, stage)
         module = place(local, x, y, f's{i:02d}')
         if 'rewardLine' in local:
@@ -327,18 +320,10 @@ def build_authored_level(recipe, families=None):
                          'beatId':stage['beat'], 'role':stage['role'], 'tension':stage['tension'],
                          'purpose':stage['purpose'], 'xRange':[x,stop['x']],
                          'entryY':y, 'exitY':stop['y'],
-                         'parameterOverrides':{k:stage[k] for k in ('length','landingLength','barrelEntrySpeed','barrelImpulseY') if k in stage}})
+                         'parameterOverrides':{k:stage[k] for k in ('length','landingLength','barrelEntrySpeed','barrelImpulseY','parameterOverrides','fitExitY') if k in stage}})
         ids = [o['id'] for o in module['InteractableObject']]
-        if stage['coins']:
-            line, role, start, end = coin_line(module, stage)
-            locations = distribute(line, stage['coins'], start, end)
-            for px,py in locations:
-                coin_id = f'coin_{len(coins)+1:02d}'
-                coins.append({'id':coin_id, 'type':'coin', 'transform':{'x':px,'y':py},
-                    'properties':{'optional':True, 'beatId':stage['beat'], 'line':role,
-                        'collectionRisk':'optional_stunt' if role != 'crest_or_flow' else 'flow',
-                        'validationStatus':'geometry_checked; collectibility needs Unity bike test'}})
-                ids.append(coin_id)
+        module_coins = [o for o in module['InteractableObject'] if o['type']=='coin']
+        coins.extend(module_coins)
         cp_id = None
         if stage.get('checkpoint'):
             if module['jumpUnit']:
@@ -365,7 +350,7 @@ def build_authored_level(recipe, families=None):
             landing = next(o['properties']['landingPosition'] for o in module['InteractableObject'] if o['type']=='explosive_barrel')
             recovery = [landing['x'],stop['x']]
         beats.append({'id':stage['beat'],'role':stage['role'],'tension':stage['tension'],
-            'purpose':stage['purpose'],'xRange':[x,stop['x']],'objectIds':ids,'coinCount':stage['coins'],
+            'purpose':stage['purpose'],'xRange':[x,stop['x']],'objectIds':ids,'coinCount':len(module_coins),
             'checkpointId':cp_id, 'recoveryRange':recovery,
             'cameraCue':'Reveal destination before commitment, track apex, recenter during recovery',
             'camera':{'triggerX':max(0,x-12), 'recenterX':recovery[0]+3,
@@ -375,12 +360,15 @@ def build_authored_level(recipe, families=None):
                        'deadzone catches missed crossing; restart at previous checkpoint' if unit else 'continuous ground',
             'validationStatus':'static geometry and idealized arcs; Unity playtests pending'})
         x,y = stop['x'],stop['y']
-    level = as_level(modules, f"campaign_{recipe['number']:02d}", recipe['name'], preview=True)
-    level['InteractableObject'].extend(coins)
+    level = as_level(modules, recipe.get('mapId',f"campaign_{recipe['number']:02d}"), recipe['name'], preview=True)
     level['map'].update(previewOnly=False, authoringMode='curated_catalog_composition',
-                        catalogVersion='2.1', recipe='library/campaign_recipes.json',
+                        catalogVersion=catalog_version(), recipe=recipe.get('recipePath','library/campaign_recipes.json'),
                         recipeNumber=recipe['number'], referenceLevel='levels/00_cinder_crown.json',
                         subtitle=recipe['signature'])
+    if 'theme' in recipe:
+        themes = json.loads((ROOT/'library/campaign_themes.json').read_text(encoding='utf-8'))
+        level['map'].update(theme=recipe['theme'],setting=recipe['setting'])
+        level['map']['environment'] = copy.deepcopy(themes[recipe['theme']])
     end_x = level['End']['x']
     finish_margin = max(8, (end_x-level['Start']['x'])*.08)
     level['CheckPoint'] = [cp for cp in checkpoints if end_x-cp['transform']['x']>=finish_margin]
@@ -391,13 +379,17 @@ def build_authored_level(recipe, families=None):
             beat['checkpointOmittedBecause']='Within finish release margin'
     level['design'].update(intent=recipe['intent'], signature=recipe['signature'],
         difficulty=recipe['difficulty'], sequence=sequence, cinematicBeats=beats,
-        coinCount=20, coinAllocation={s['beat']:s['coins'] for s in stages if s['coins']},
+        coinCount=len(coins), coinAllocation={b['id']:b['coinCount'] for b in beats},
+        coinPolicy={'perObstacle':3,'placement':'library_local'},
         length=end_x-level['Start']['x'],
         validationStatus='geometry_checked; Unity bike playtests pending',
         recommendedPlaytestOrder=['Main route with no optional stunts',
             'Zero-speed restart at every checkpoint', 'Loop with zero/one/two boosts where present',
             'Spring lip trigger, descending catch and rearming',
-            'Barrel at low/typical/high entry speed', 'All 20 coins and per-beat camera framing'])
+            'Barrel at low/typical/high entry speed', 'All obstacle coins and per-beat camera framing'])
+    if 'lengthPlan' in recipe:
+        level['design']['lengthPlan'] = copy.deepcopy(recipe['lengthPlan'])
+        level['design']['difficultyProgression'] = copy.deepcopy(recipe['difficultyProgression'])
     # The median uses uniform ground-X samples, excluding voids and export padding.
     road = [pt for module in modules for line in road_lines(module)
             for pt in [(px,height_at(line,px)) for px in
@@ -429,7 +421,10 @@ def validate_authored(source, exported):
             errors.append(message)
     objects=exported['InteractableObject']
     coins=[o for o in objects if o['type']=='coin']
-    require(len(coins)==20, 'Expected exactly 20 coins')
+    if 'lengthPlan' in source['design']:
+        require(abs(source['design']['length']-source['design']['lengthPlan']['targetLength'])<1e-5,
+                'Authored length differs from the planned campaign extension')
+    require(len(coins)==3*len(source['design']['sequence']), 'Expected three coins per obstacle')
     ids=[o['id'] for g in GROUPS+('CheckPoint',) for o in exported[g]]
     require(len(ids)==len(set(ids)), 'Object/shape IDs must be unique')
     for i, a in enumerate(coins):
@@ -445,6 +440,25 @@ def validate_authored(source, exported):
     end_surface=terrain[-1]['points'][surface_count(terrain[-1])-1]
     require(abs(end_surface['x']-(source['End']['x']+21))<1e-6, 'Right padding missing')
     lines=road_lines(exported)
+    for beat in source['design']['cinematicBeats']:
+        beat_coins = [c for c in coins if c['properties']['beatId']==beat['id']]
+        require(len(beat_coins)==3, f"Expected three library coins: {beat['id']}")
+        require(len(beat_coins)==beat['coinCount'], f"Stale coin count: {beat['id']}")
+    for coin in coins:
+        props, point = coin['properties'], coin['transform']
+        require(props.get('placement')=='library_obstacle', f"Non-library coin: {coin['id']}")
+        if props.get('line')=='obstacle_surface':
+            heights = [height_at(line,point['x']) for line in lines]
+            require(any(h is not None and abs(point['y']-h-1.2)<.03 for h in heights),
+                    f"Flow coin is not above a driving surface: {coin['id']}")
+        elif props.get('line')=='loop_inside_arc':
+            ring = next(s for s in exported['RampPlatform'] if s['id']==props['supportingRingId'])
+            right, left = ring['points'][0], ring['points'][-1]
+            cx, cy = (right['x']+left['x'])/2, (right['y']+left['y'])/2
+            rx = abs(right['x']-left['x'])/2
+            ry = max(p['y'] for p in ring['points'])-cy
+            require(((point['x']-cx)/rx)**2+((point['y']-cy)/ry)**2<1,
+                    f"Coin outside loop: {coin['id']}")
     for s in terrain:
         require(s['closed'], 'Main terrain must be closed')
         surface_count(s)
@@ -484,6 +498,38 @@ def validate_authored(source, exported):
         props=obj.get('properties',{})
         if 'postDestroyRoute' in props:
             require(props['postDestroyRoute'] in ids, 'Broken fallback reference after merge')
+        if 'revealsRoute' in props:
+            require(props['revealsRoute'] in ids, 'Broken revealed-route reference')
+            revealed = next((shape for shape in exported['RampPlatform']
+                             if shape['id'] == props['revealsRoute']), None)
+            require(revealed is not None, 'Explosion must reveal an authored RampPlatform')
+            if revealed:
+                metadata = revealed.get('metadata', {})
+                require(metadata.get('initialState') == 'hidden', 'Revealed route must start hidden')
+                require(metadata.get('collisionBeforeReveal') is False,
+                        'Revealed route collider must start disabled')
+                require(metadata.get('collisionAfterReveal') is True,
+                        'Revealed route collider must activate after detonation')
+            require(props.get('routeRevealDelaySeconds') == 0,
+                    'Continuation collider must reveal without a gameplay delay')
+            require(props.get('debrisCollision') == 'visual_only',
+                    'Explosion debris must not randomly block the continuation')
+            trigger = props.get('commitTrigger', {})
+            require(trigger.get('mode') == 'rear_wheel_clears_route_progress',
+                    'Explosive trigger must follow rear-wheel route progress')
+            require(trigger.get('routeId') in ids, 'Broken explosive trigger route reference')
+            require(0 < trigger.get('normalizedProgress',0) < 1,
+                    'Explosive trigger progress must be inside the committed route')
+            valid_sequences = (
+                ['ride_pre_route','explode_behind_player','reveal_continuation','continue_forward'],
+                ['ride_current_ring','explode_route_behind_player',
+                 'reveal_next_ring_or_exit','continue_forward'])
+            require(props.get('experienceSequence') in valid_sequences,
+                    'Explosive route lifecycle is incomplete')
+            for target in props.get('revealsObjects', []):
+                require(target in ids, 'Broken sequential reveal reference')
+            for target in props.get('destroysRoutes', []):
+                require(target in ids, 'Broken sequential destroy reference')
         if 'supportingShapeId' in props:
             require(props['supportingShapeId'] in ids, 'Broken boost support reference')
         if obj['type']=='SpringObject':
@@ -522,6 +568,8 @@ def validate_authored(source, exported):
     return {'status':'passed_static_geometry_and_point_mass_checks',
             'sourceMainShapes':len(source['MainPlatform']),'exportedMainShapes':len(terrain),
             'coinCount':len(coins),'coveredGaps':gap_checks,'springChecks':springs,
+            'coinChecks':{'perObstacle':3,'loopCoinsInsideRing':True,
+                          'surfaceCoinsOnDrivingSurface':True,'libraryCoinCount':len(coins)},
             'jumpChecks':jump_checks,
             'checkpointCount':len(exported['CheckPoint']),
             'exportIdempotent':True,'unchangedStartEnd':True,
@@ -533,12 +581,16 @@ def main():
     parser.add_argument("--output", type=Path, default=Path("levels"))
     parser.add_argument("--count", type=int, default=50)
     parser.add_argument("--overwrite", action="store_true", help="Explicitly replace existing generated files")
+    parser.add_argument("--include-demo", action="store_true", help="Also rebuild Cinder Crown from its demo recipe")
     args = parser.parse_args()
     if not 1 <= args.count <= 50:
         parser.error("--count must be between 1 and 50")
     paths = [args.output / f"campaign_{n:02d}.json" for n in range(1, args.count+1)]
     manifest_path = args.output / "campaign_manifest.json"
     existing = [p for p in paths+[manifest_path] if p.exists()]
+    demo_path = args.output/'00_cinder_crown.json'
+    if args.include_demo and demo_path.exists():
+        existing.append(demo_path)
     if existing and not args.overwrite:
         parser.error(f"{len(existing)} destination files exist; choose a new output or use --overwrite")
     recipes = json.loads((ROOT/'library/campaign_recipes.json').read_text(encoding='utf-8'))
@@ -551,19 +603,30 @@ def main():
         if n in authored:
             level['design']['validationReport'] = validate_authored(source, level)
         levels.append(level)
+    demo = None
+    if args.include_demo:
+        demo_recipe = json.loads((ROOT/'library/demo_recipe.json').read_text(encoding='utf-8'))
+        source = build_authored_level(demo_recipe, families)
+        demo = export_level(source)
+        demo['design']['validationReport'] = validate_authored(source,demo)
     args.output.mkdir(parents=True, exist_ok=True)
     for path, level in zip(paths, levels):
         path.write_text(json.dumps(level, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8")
-    manifest = {"count": len(levels), "catalogVersion": "2.1", "recipeVersion":recipes['version'],
+    manifest = {"count": len(levels), "catalogVersion": catalog_version(), "recipeVersion":recipes['version'],
                 "validationStatus": "geometry_only; Unity playtests pending",
                 "maps": [{"id": level["map"]["id"], "file": path.name,
                           "name": level['map']['name'],
                           "intent": level['design'].get('intent'),
                           "signature": level['design'].get('signature'),
                           "difficulty": level['design'].get('difficulty'),
+                          **({"theme":level['map']['theme'],"setting":level['map']['setting']}
+                             if 'theme' in level['map'] else {}),
                           "variants": level["design"]["variants"]}
                          for path, level in zip(paths, levels)]}
     manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+    if demo is not None:
+        demo_path.write_text(json.dumps(demo,ensure_ascii=False,indent=2,allow_nan=False),encoding='utf-8')
+        print(f"Updated demo: {demo_path}")
     print(f"Generated {len(levels)} catalog-based maps in {args.output}")
     return 0
 

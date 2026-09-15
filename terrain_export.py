@@ -79,6 +79,49 @@ def extend_boundaries(level, distance):
     level.setdefault('terrainExport', {})['boundaryPadding'] = distance
 
 
+def extend_straight_join_handles(shape):
+    """Give a collapsed straight-side handle the opposite road tangent.
+
+    Only collinear straight segments qualify. Limit the new handle to a third
+    of that segment so short flats cannot overshoot their adjacent vertex.
+    """
+    points = shape['points'][:surface_count(shape)]
+    epsilon = 1e-8
+
+    def handle(point, key):
+        value = point.get(key, {}) if point.get('tangentMode') != 'linear' else {}
+        return value.get('x', 0), value.get('y', 0)
+
+    for i in range(1, len(points)-1):
+        point = points[i]
+        if point.get('corner') or point.get('tangentMode') == 'linear':
+            continue
+        incoming, outgoing = handle(point, 'tangentIn'), handle(point, 'tangentOut')
+        in_length, out_length = math.hypot(*incoming), math.hypot(*outgoing)
+        if (in_length <= epsilon) == (out_length <= epsilon):
+            continue
+        missing_in = in_length <= epsilon
+        existing = outgoing if missing_in else incoming
+        length = math.hypot(*existing)
+        direction = (-existing[0]/length, -existing[1]/length)
+        neighbor = points[i-1 if missing_in else i+1]
+        chord = (neighbor['x']-point['x'], neighbor['y']-point['y'])
+        span = math.hypot(*chord)
+        if span <= epsilon:
+            continue
+        # The new handle must remain on the straight road, not round a ledge.
+        if (abs(direction[0]*chord[1]-direction[1]*chord[0]) > span*1e-6 or
+                direction[0]*chord[0]+direction[1]*chord[1] <= 0):
+            continue
+        far_handle = handle(neighbor, 'tangentOut' if missing_in else 'tangentIn')
+        if abs(far_handle[0]*chord[1]-far_handle[1]*chord[0]) > span*1e-6:
+            continue
+        extension = min(length, span/3)
+        point['tangentIn' if missing_in else 'tangentOut'] = {
+            'x': direction[0]*extension, 'y': direction[1]*extension}
+        point['tangentMode'] = 'continuous'
+
+
 def export_level(level, tolerance=1e-6, *, boundary_padding=20):
     """Merge endpoint-connected terrain chains, never bridge real gaps.
 
@@ -128,6 +171,8 @@ def export_level(level, tolerance=1e-6, *, boundary_padding=20):
                 remap(child)
     remap(result)
     extend_boundaries(result, boundary_padding)
+    for shape in result['MainPlatform']:
+        extend_straight_join_handles(shape)
     return result
 
 
