@@ -149,8 +149,38 @@ def build_variant(family, variant):
         a, length, h, angle = p["approach"],p["launch"],p["height"],math.radians(p["angle"])
         takeoff_x = a+length
         landing_x, landing_y = takeoff_x+p["gap"],h+p["delta"]
-        coords = [(0,0),(a,0)] + ([(takeoff_x,h)] if length else [])
-        add_surface("launch",coords,{len(coords)-1:math.tan(angle)})
+        # These families all produce a flight, but their ground topology is
+        # deliberate: a kicker ends in a hard lip, a scoop compresses before
+        # release, a gap uses a takeoff bank, and steps lead to a shelf at a
+        # different elevation.  Do not reduce them to one generic ramp.
+        if type_id == "kicker":
+            coords = [(0, 0), (a, 0), (takeoff_x-length*.22, h*.34), (takeoff_x, h)]
+            slopes = {2: math.tan(angle), 3: math.tan(angle)}
+        elif type_id == "curved_ramp":
+            compression = min(1.4, h*.32)
+            coords = [(0, 0), (a*.68, 0), (a+length*.18, -compression),
+                      (a+length*.62, h*.42), (takeoff_x, h)]
+            slopes = {1: 0, 2: 0, 3: math.tan(angle)*.72, 4: math.tan(angle)}
+        elif type_id == "gap":
+            coords = [(0, 0), (a*.55, 0), (a+length*.28, h*.16), (takeoff_x, h)]
+            slopes = {2: math.tan(angle)*.48, 3: math.tan(angle)}
+        elif type_id == "step_up":
+            coords = [(0, 0), (a, 0), (a+length*.38, h*.22), (takeoff_x, h)]
+            slopes = {2: math.tan(angle)*.62, 3: math.tan(angle)}
+        elif type_id == "step_down":
+            coords = [(0, 0), (a*.78, 0), (a+length*.45, h*.28), (takeoff_x, h)]
+            slopes = {2: math.tan(angle)*.58, 3: math.tan(angle)}
+        else:
+            coords = [(0,0),(a,0)] + ([(takeoff_x,h)] if length else [])
+            slopes = {len(coords)-1:math.tan(angle)}
+        launch_surface = add_surface("launch", coords, slopes)
+        if type_id == "kicker":
+            launch_surface[-1]["corner"] = True
+            launch_surface[-1]["tangentMode"] = "broken"
+            # add_surface has already copied the driving line into the closed
+            # terrain shape, so preserve the authored lip in that output too.
+            result["MainPlatform"][-1]["points"][len(launch_surface)-1]["corner"] = True
+            result["MainPlatform"][-1]["points"][len(launch_surface)-1]["tangentMode"] = "broken"
         # Solve a point-mass trajectory to a target on the catch. This is only
         # an initial estimate; wheel radius, torque and suspension are absent.
         distance = p["gap"]+p["landing"]*.2
@@ -164,7 +194,22 @@ def build_variant(family, variant):
         incoming_slope = max(incoming_slope, 3*(landing_end_y-landing_y)/p["landing"])
         catch_end_x = landing_x+p["landing"]
         end = (catch_end_x+p["recovery"],landing_end_y)
-        add_surface("landing_recovery",[(landing_x,landing_y),(catch_end_x,landing_end_y),end],{0:incoming_slope})
+        if type_id == "step_up":
+            shelf_y = landing_y
+            shelf_start = landing_x+p["landing"]*.35
+            add_surface("elevated_shelf", [(landing_x, landing_y), (shelf_start, shelf_y),
+                                             (catch_end_x, shelf_y), end], {0: incoming_slope, 1: 0, 2: 0})
+        elif type_id == "step_down":
+            drop_end = landing_x+p["landing"]*.38
+            add_surface("descending_shelf", [(landing_x, landing_y), (drop_end, landing_end_y),
+                                               (catch_end_x, landing_end_y), end], {0: incoming_slope, 1: 0, 2: 0})
+        elif type_id == "curved_ramp":
+            catch_mid_x = landing_x+p["landing"]*.42
+            catch_mid_y = landing_y + (landing_end_y-landing_y)*.72
+            add_surface("scoop_catch", [(landing_x, landing_y), (catch_mid_x, catch_mid_y),
+                                         (catch_end_x, landing_end_y), end], {0: incoming_slope})
+        else:
+            add_surface("landing_recovery",[(landing_x,landing_y),(catch_end_x,landing_end_y),end],{0:incoming_slope})
         # A compact strip below the lip and landing catches failed crossings.
         kill_y = min(h,landing_y)-1.5
         result["deadzone"].append(linear_polygon("gap_kill",[(takeoff_x-.1,kill_y),(landing_x+.1,kill_y),(landing_x+.1,kill_y-1.5),(takeoff_x-.1,kill_y-1.5)]))
@@ -244,6 +289,7 @@ def build_variant(family, variant):
     for surface in surfaces:
         sampled.extend(sample_curve({"points":surface,"closed":False}))
     result.update({"id":variant["id"],"type":type_id,"difficulty":variant["difficulty"],"intent":variant["intent"],
+        "geometryProfile": family.get("geometryProfile", type_id),
         "ports":{"entry":{"x":0,"y":0,"direction":[1,0]},"exit":{"x":end[0],"y":end[1],"direction":[1,0]}},
         "physics":physics,"jumpUnit":units,"coinCandidates":anchors,"checkpointCandidates":checkpoints,"joins":joins,
         "camera":{"visibleLandingRequired":True,"lookAheadDistance":max(16,p.get("gap",0)+p.get("landing",0)),"verticalFeatureVisibilityRequired":kind in ("loop", "spring_jump")},
@@ -341,7 +387,7 @@ def as_level(modules, map_id, name, *, preview=False):
         "Start":{"x":first["x"]+1,"y":first["y"]+1},"End":{"x":end_x,"y":last["y"]+1},
         "Top":{"x":top[0],"y":top[1]},"Bottom":{"x":bottom[0],"y":bottom[1]},
         "design":{"variants":[m["id"] for m in modules],"validationStatus":"unvalidated_vehicle_physics","coinCount":len(selected),
-                  "obstacles":[{k:m[k] for k in ("id","ports","difficulty","physics","camera","jumpUnit","joins")} for m in modules]}})
+                  "obstacles":[{k:m[k] for k in ("id","type","geometryProfile","ports","difficulty","physics","camera","jumpUnit","joins")} for m in modules]}})
     return normalize_main_platform(level)
 
 
