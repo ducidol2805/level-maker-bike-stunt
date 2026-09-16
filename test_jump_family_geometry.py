@@ -8,6 +8,19 @@ from terrain_export import surface_count
 
 
 class JumpFamilyGeometryTests(unittest.TestCase):
+    def test_ramps_and_explosive_loop_routes_are_continuous(self):
+        families = load_catalog()
+        for family in families.values():
+            for variant in family["variants"]:
+                module = build_variant(family, variant)
+                for shape in module["RampPlatform"]:
+                    self.assertTrue(all(point["tangentMode"] == "continuous"
+                                        for point in shape["points"]), variant["id"])
+                for item in module["InteractableObject"]:
+                    if item.get("type") == "explosive_ramp":
+                        self.assertTrue(all(point["tangentMode"] == "continuous"
+                                            for point in item["points"]), variant["id"])
+
     @classmethod
     def setUpClass(cls):
         cls.families = load_catalog()

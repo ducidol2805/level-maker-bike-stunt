@@ -122,6 +122,20 @@ def extend_straight_join_handles(shape):
         point['tangentMode'] = 'continuous'
 
 
+def are_opposite_tangents(incoming, outgoing, epsilon=1e-8):
+    """Return whether two active handles describe one smooth tangent line."""
+    in_x, in_y = incoming.get('x', 0), incoming.get('y', 0)
+    out_x, out_y = outgoing.get('x', 0), outgoing.get('y', 0)
+    in_length = math.hypot(in_x, in_y)
+    out_length = math.hypot(out_x, out_y)
+    if in_length <= epsilon or out_length <= epsilon:
+        return False
+    # Collinear handles must point away from the shared control point.
+    cross = in_x * out_y - in_y * out_x
+    dot = in_x * out_x + in_y * out_y
+    return abs(cross) <= epsilon * in_length * out_length and dot < 0
+
+
 def export_level(level, tolerance=1e-6, *, boundary_padding=20):
     """Merge endpoint-connected terrain chains, never bridge real gaps.
 
@@ -145,9 +159,13 @@ def export_level(level, tolerance=1e-6, *, boundary_padding=20):
                 # A linear endpoint has no active Bezier handles.
                 incoming = a.get('tangentIn', {}) if a.get('tangentMode') != 'linear' else {}
                 outgoing = b.get('tangentOut', {}) if b.get('tangentMode') != 'linear' else {}
+                tangent_mode = ('continuous'
+                                if not a.get('corner') and not b.get('corner') and
+                                are_opposite_tangents(incoming, outgoing)
+                                else 'broken')
                 a.update(tangentIn={'x': incoming.get('x', 0), 'y': incoming.get('y', 0)},
                          tangentOut={'x': outgoing.get('x', 0), 'y': outgoing.get('y', 0)},
-                         tangentMode='broken')
+                         tangentMode=tangent_mode)
                 previous['points'] = previous['points'][:n] + shape['points'][1:m] + [shape['points'][-2], previous['points'][-1]]
                 meta = previous.setdefault('metadata', {})
                 meta['drivingSurfaceCount'] = n+m-1

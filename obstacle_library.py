@@ -693,6 +693,17 @@ def build_variant(family, variant):
         "physics":physics,"jumpUnit":units,"coinCandidates":anchors,"checkpointCandidates":checkpoints,"joins":joins,
         "camera":{"visibleLandingRequired":True,"lookAheadDistance":max(16,p.get("gap",0)+p.get("landing",0)),"verticalFeatureVisibilityRequired":kind in ("loop", "spring_jump")},
         "groundSamples":sampled,"validationStatus":"geometry_only; Unity bike playtest required"})
+
+    # Open ramps and explosive loop routes are continuous curves, including
+    # their endpoints. Keep the authored handles; only normalize the mode.
+    for shape in result["RampPlatform"]:
+        for point in shape.get("points", []):
+            point["tangentMode"] = "continuous"
+    for item in result["InteractableObject"]:
+        if item.get("type") == "explosive_ramp":
+            for point in item.get("points", []):
+                point["tangentMode"] = "continuous"
+
     assign_module_coins(result)
     return result
 
