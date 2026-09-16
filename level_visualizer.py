@@ -14,6 +14,7 @@ import sys
 import tkinter as tk
 from collections import OrderedDict
 from tkinter import ttk
+from tkinter import font as tkfont
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable
@@ -23,6 +24,13 @@ from spring_object import spring_parameters, spring_trajectory
 try:
     from matplotlib.figure import Figure
     from matplotlib.patches import Polygon
+    from matplotlib import patheffects
+    from matplotlib.text import Text
+    from matplotlib.path import Path as RenderPath
+    from matplotlib.transforms import Affine2D
+    from matplotlib.backends.backend_agg import RendererAgg
+    from matplotlib.colors import to_rgba
+    from PIL import Image, ImageTk
 except ImportError as exc:  # pragma: no cover - user-facing dependency check
     raise SystemExit("Missing dependency. Run: pip install -r requirements.txt") from exc
 
@@ -214,6 +222,25 @@ def draw_path(ax: Any, line: list[Point], **kwargs: Any) -> None:
     ax.plot(xs, ys, **kwargs)
 
 
+TANGENT_COLORS = {'tangentIn': '#0369a1', 'tangentOut': '#be185d'}
+MODE_TAGS = {'linear': 'L', 'broken': 'B', 'continuous': 'C'}
+
+
+def spline_controls(data: dict[str, Any]) -> Iterable[tuple[Point, str, list[tuple[Point, str]]]]:
+    """Expose authored knots and local handles in world coordinates."""
+    for group in ('MainPlatform', 'RampPlatform', 'deadzone', 'InteractableObject'):
+        for shape in data.get(group, []):
+            for knot in shape.get('points', []):
+                x, y = knot['x'], knot['y']
+                handles = []
+                for key, color in TANGENT_COLORS.items():
+                    tangent = knot.get(key, {})
+                    dx, dy = tangent.get('x', 0), tangent.get('y', 0)
+                    if math.hypot(dx, dy) > EPSILON:
+                        handles.append(((x+dx, y+dy), color))
+                yield (x, y), MODE_TAGS.get(knot.get('tangentMode', 'linear'), '?'), handles
+
+
 def build_figure(data: dict[str, Any], tolerance: float, outline_only: bool, show_legend: bool = True) -> Figure:
     figure = Figure(figsize=(16, 8), facecolor=UI_BG)
     ax = figure.add_subplot(111)
@@ -236,13 +263,13 @@ def build_figure(data: dict[str, Any], tolerance: float, outline_only: bool, sho
         ax.add_patch(Polygon(line, closed=True, facecolor="none" if outline_only else "#4ade80", edgecolor="#14532d", linewidth=2.8, alpha=0.82, label="MainPlatform terrain" if index == 0 else None))
 
     for index, shape in enumerate(required_group(data, "RampPlatform")):
-        draw_path(ax, points(shape, f"RampPlatform[{index}]"), color="#d97706", linewidth=3.6, solid_capstyle="round", label="RampPlatform" if index == 0 else None)
+        draw_path(ax, points(shape, f"RampPlatform[{index}]"), color="#d97706", linewidth=18, linestyle="-", solid_capstyle="round", label="RampPlatform" if index == 0 else None)
 
     marker_groups: dict[str, list[Point]] = {}
     for index, item in enumerate(required_group(data, "InteractableObject")):
         kind = item.get("type")
         if kind == "explosive_ramp":
-            draw_path(ax, points(item, f"InteractableObject[{index}]"), color="#dc2626", linewidth=4, linestyle="--", label="Explosive ramp")
+            draw_path(ax, points(item, f"InteractableObject[{index}]"), color="#dc2626", linewidth=20, linestyle="-", label="Explosive ramp")
             continue
         marker_groups.setdefault(kind, []).append(point(item["transform"], f"InteractableObject[{index}].transform"))
         if kind == 'explosive_barrel' and 'previewTrajectory' in item.get('properties', {}):
@@ -269,10 +296,25 @@ def build_figure(data: dict[str, Any], tolerance: float, outline_only: bool, sho
     for name, color, symbol in marker_specs:
         x, y = point(data[name], name)
         ax.scatter(x, y, s=110, marker=symbol, color=color, edgecolor="#111827", linewidth=0.8, zorder=9, label=name)
-        ax.annotate(name, (x, y), xytext=(7, 7), textcoords="offset points", fontsize=9,
-                    weight="bold", color=UI_TEXT)
+        ax.annotate(name, (x, y), xytext=(0, 10), textcoords="offset points", fontsize=9,
+                    ha='center', va='bottom', weight="bold", color=UI_TEXT)
 
     x0, x1, y0, y1 = bounds(data)
+    for text in ax.texts:
+        text.set_path_effects([patheffects.withStroke(linewidth=2, foreground='black')])
+    for (x, y), tag, controls in spline_controls(data):
+        for (hx, hy), color in controls:
+            ax.plot([x, hx], [y, hy], color=color, linewidth=2,
+                    linestyle='-', marker='s', markevery=[1], markersize=3, zorder=10)
+            x0, x1, y0, y1 = min(x0, hx), max(x1, hx), min(y0, hy), max(y1, hy)
+        ax.plot(x, y, marker='o', color='white', markeredgecolor='white',
+                markersize=18, markeredgewidth=0, zorder=11)
+        ax.annotate(tag, (x, y), xytext=(0, 0), textcoords='offset points',
+                    ha='center', va='center', fontsize=8, color='black', zorder=12)
+    if show_legend:
+        for key, color in TANGENT_COLORS.items():
+            ax.plot([], [], color=color, linewidth=2, linestyle='-', label=key)
+        ax.plot([], [], linestyle='none', label='L: linear / B: broken / C: continuous')
     ax.set(xlim=(x0, x1), ylim=(y0, y1))
     if show_legend:
         handles, labels = ax.get_legend_handles_labels()
@@ -291,6 +333,8 @@ def build_figure(data: dict[str, Any], tolerance: float, outline_only: bool, sho
         figure.subplots_adjust(left=0.06, right=0.985, top=0.93, bottom=0.17)
     else:
         figure.subplots_adjust(left=0.06, right=0.985, top=0.93, bottom=0.09)
+    for text in figure.findobj(Text):
+        text.set_fontweight('bold')
     return figure
 
 
@@ -366,7 +410,7 @@ class VectorLevel:
 
 LEGEND_STYLES = {
     'Deadzone': ('#ef4444', '■'), 'MainPlatform terrain': ('#4ade80', '■'),
-    'RampPlatform': ('#d97706', '━'), 'Explosive ramp': ('#dc2626', '┄'),
+    'RampPlatform': ('#d97706', '━'), 'Explosive ramp': ('#dc2626', '━'),
     'Spring arc (estimate)': ('#db2777', '┄'), 'Spring target': ('#db2777', '×'),
     'Barrel arc (estimate)': ('#dc2626', '┄'), 'explosive_barrel': ('#dc2626', '✕'),
     'speed_boost': ('#60a5fa', '▶'), 'coin': ('#eab308', '●'),
@@ -376,7 +420,7 @@ LEGEND_STYLES = {
 }
 LEGEND_STYLES.update({
     'Pre-explosion route': ('#f59e0b', '-'),
-    'Revealed route': ('#22d3ee', '--'),
+    'Revealed route': ('#22d3ee', '-'),
 })
 
 
@@ -403,7 +447,8 @@ def bezier_coordinates(shape: dict[str, Any], *, closed: bool) -> tuple[float, .
     return tuple(result)
 
 
-def compile_vector_level(data: dict[str, Any], outline_only: bool = False) -> VectorLevel:
+def compile_vector_level(data: dict[str, Any], outline_only: bool = False,
+                         *, show_controls: bool = True) -> VectorLevel:
     """Prepare native paths and overlays once; no Matplotlib or raster work."""
     paths: list[VectorPath] = []
     markers: list[VectorMarker] = []
@@ -444,16 +489,16 @@ def compile_vector_level(data: dict[str, Any], outline_only: bool = False) -> Ve
     for shape in required_group(data, 'RampPlatform'):
         phase = shape.get('metadata', {}).get('routePhase')
         if phase == 'before_explosion':
-            shape_path(shape, shape.get('closed', False), 'Pre-explosion route', '', '#f59e0b', 3)
+            shape_path(shape, shape.get('closed', False), 'Pre-explosion route', '', '#f59e0b', 15)
         elif phase == 'after_explosion':
-            shape_path(shape, shape.get('closed', False), 'Revealed route', '', '#22d3ee', 3, (7, 4))
+            shape_path(shape, shape.get('closed', False), 'Revealed route', '', '#22d3ee', 15)
         else:
             shape_path(shape, shape.get('closed', False), 'RampPlatform', '',
-                       palette.get('platformOutline','#d97706'), 3)
+                       palette.get('platformOutline','#d97706'), 15)
     for item in required_group(data, 'InteractableObject'):
         kind = item['type']
         if kind == 'explosive_ramp':
-            shape_path(item, item.get('closed', False), 'Explosive ramp', '', '#dc2626', 3, (6, 3))
+            shape_path(item, item.get('closed', False), 'Explosive ramp', '', '#dc2626', 15)
             continue
         marker(item['transform'], kind, kind)
         if kind == 'SpringObject':
@@ -482,22 +527,34 @@ def compile_vector_level(data: dict[str, Any], outline_only: bool = False) -> Ve
     for name, kind in (('Start', 'start'), ('End', 'end'), ('Top', 'up'), ('Bottom', 'down')):
         marker(data[name], kind, name, name)
     left, right, bottom, top = bounds(data)
+    if show_controls:
+        for index, ((x, y), tag, controls) in enumerate(spline_controls(data)):
+            for (hx, hy), color in controls:
+                paths.append(VectorPath(f'control_{index}', (x, -y, hx, -hy), False,
+                                        '', color, 2, smooth=False))
+                markers.append(VectorMarker((hx, -hy), 'handle', color))
+                left, right = min(left, hx), max(right, hx)
+                bottom, top = min(bottom, hy), max(top, hy)
+            markers.append(VectorMarker((x, -y), 'knot', '#ffffff', tag))
+        for key, color in TANGENT_COLORS.items():
+            legend_styles[key] = (color, '-')
+            legend(key)
+        legend('L: linear / B: broken / C: continuous')
     return VectorLevel(tuple(paths), tuple(markers), (left, -top, right, -bottom),
                        tuple((name, *legend_styles.get(name, (UI_TEXT, '●'))) for name in labels))
 
 
 class PreviewCanvas(tk.Canvas):
-    """Retained vector geometry with fixed-pixel text, icons and line widths.
-
-    Camera changes are coalesced into one update per 16 ms. Only geometry is
-    scaled; overlays are repositioned from immutable world-space anchors.
-    """
+    """Supersampled geometry with fixed-pixel text, icons and line widths."""
 
     PAN_GAIN = 1.6
     ZOOM_STEP = 1.45
     FRAME_MS = 16
-    TEXT_FONT = ('Segoe UI', -11)
-    LABEL_OFFSET = (8, -10)
+    AA_SCALE = 2
+    TEXT_FONT = ('Segoe UI', -11, 'bold')
+    LABEL_OFFSET = (0, -10)
+    STROKE_OFFSETS = ((-1, -1), (0, -1), (1, -1), (-1, 0),
+                      (1, 0), (-1, 1), (0, 1), (1, 1))
     # Pixel offsets around the object anchor. Never scale these dimensions.
     SYMBOLS = {
         'up': (0, -6, 6, 6, -6, 6),
@@ -525,6 +582,14 @@ class PreviewCanvas(tk.Canvas):
         self._draw_after: str | None = None
         self._path_items: list[tuple[int, VectorPath]] = []
         self._marker_items: list[tuple[int, int | None, VectorMarker]] = []
+        self._label_strokes: dict[int, list[int]] = {}
+        self.controls_visible = False
+        self.aa_enabled = False
+        self._aa_paths: list[tuple[VectorPath, RenderPath]] = []
+        self._aa_photo: ImageTk.PhotoImage | None = None
+        self._aa_item: int | None = None
+        self._aa_key: tuple[Any, ...] | None = None
+        self._aa_bounds: list[tuple[float, float, float, float]] = []
         self.bind('<Configure>', self._resize)
         self.bind('<MouseWheel>', self._wheel)
         self.bind('<Button-4>', self._wheel)
@@ -542,10 +607,19 @@ class PreviewCanvas(tk.Canvas):
         self.delete('scene')
         self._path_items.clear()
         self._marker_items.clear()
+        self._label_strokes.clear()
         self.scene = scene
+        self._aa_item = None
+        self._aa_photo = None
+        self._aa_key = None
+        self._aa_paths = [(path, self._render_path(path)) for path in scene.paths]
+        self._aa_bounds = [(min(p.coords[::2]), min(p.coords[1::2]),
+                            max(p.coords[::2]), max(p.coords[1::2])) for p in scene.paths]
         for path in scene.paths:
             options: dict[str, Any] = dict(width=path.width, tags=('scene', 'geometry'),
                                           smooth='raw' if path.smooth else False, splinesteps=64)
+            if path.source_id.startswith('control_'):
+                options['tags'] += ('point_controls',)
             if path.dash:
                 options['dash'] = path.dash
             if path.closed:
@@ -556,17 +630,32 @@ class PreviewCanvas(tk.Canvas):
             self._path_items.append((item, path))
         for spec in scene.markers:
             options = dict(fill=spec.color, outline=PLOT_BG, width=1, tags=('scene', 'overlay', 'marker'))
+            control_tags = ('point_controls',) if spec.kind in ('knot', 'handle') else ()
+            options['tags'] += control_tags
+            if spec.kind == 'knot':
+                options['outline'] = '#ffffff'
+                options['width'] = 0
             coords = self._symbol_coords(spec.kind, 0, 0)
-            if spec.kind in ('coin', 'start'):
+            if spec.kind in ('coin', 'start', 'knot', 'handle'):
                 item = self.create_oval(coords, **options)
             else:
                 item = self.create_polygon(coords, **options)
             label = None
             if spec.label:
-                label = self.create_text(0, 0, text=spec.label, font=self.TEXT_FONT, anchor='sw',
-                                         fill=UI_TEXT, tags=('scene', 'overlay', 'label'))
+                anchor = 'center' if spec.kind == 'knot' else 's'
+                strokes = [self.create_text(0, 0, text=spec.label, font=self.TEXT_FONT,
+                                           anchor=anchor, fill='black',
+                                           tags=('scene', 'overlay', 'text_stroke')+control_tags)
+                           for _ in self.STROKE_OFFSETS] if spec.kind != 'knot' else []
+                label = self.create_text(0, 0, text=spec.label, font=self.TEXT_FONT,
+                                         anchor=anchor,
+                                         fill='black' if spec.kind == 'knot' else UI_TEXT,
+                                         tags=('scene', 'overlay', 'label')+control_tags)
+                self._label_strokes[label] = strokes
             self._marker_items.append((item, label, spec))
+        self.tag_raise('text_stroke')
         self.tag_raise('label')
+        self.itemconfigure('point_controls', state='normal' if self.controls_visible else 'hidden')
         self._size = (max(1, self.winfo_width()), max(1, self.winfo_height()))
         self.fit()
         # Project before Tk's first paint; only subsequent navigation needs
@@ -580,12 +669,127 @@ class PreviewCanvas(tk.Canvas):
         self.delete('scene')
         self._path_items.clear()
         self._marker_items.clear()
+        self._label_strokes.clear()
+        self._aa_paths.clear()
+        self._aa_bounds.clear()
+        self._aa_key = None
+        self._aa_photo = None
+        self._aa_item = None
         self.scene = None
+
+    def toggle_controls(self, _event: Any = None) -> str:
+        """Toggle point annotations without rebuilding the scene or camera."""
+        self.controls_visible = not self.controls_visible
+        self.itemconfigure('point_controls', state='normal' if self.controls_visible else 'hidden')
+        self._draw_view()
+        return 'break'
+
+    def toggle_aa(self, _event: Any = None) -> str:
+        """Switch between native Tk and antialiased rendering."""
+        self.aa_enabled = not self.aa_enabled
+        self._aa_key = None
+        self._draw_view()
+        return 'break'
+
+    @staticmethod
+    def _render_path(path: VectorPath) -> RenderPath:
+        vertices = list(zip(path.coords[::2], path.coords[1::2]))
+        # Tk's closed raw splines omit the final endpoint of the last cubic.
+        if path.closed and path.smooth:
+            vertices.append(vertices[0])
+        codes = [RenderPath.MOVETO] + [RenderPath.CURVE4 if path.smooth else RenderPath.LINETO]*(len(vertices)-1)
+        if path.closed:
+            vertices.append(vertices[0])
+            codes.append(RenderPath.CLOSEPOLY)
+        return RenderPath(vertices, codes)
+
+    def _render_antialiased(self) -> None:
+        """Render at 2x resolution with Agg AA, then filter with bilinear."""
+        # Native Agg AA while dragging; full supersampling on release.
+        factor = 1 if self._pan_position is not None else self.AA_SCALE
+        width, height = self._size
+        key = (width, height, self.scale, *self.offset, self.controls_visible, factor)
+        if key == self._aa_key:
+            return
+        renderer = RendererAgg(width*factor, height*factor, 72)
+        screen = Affine2D().scale(factor, -factor).translate(0, height*factor)
+        world = Affine2D().scale(self.scale).translate(*self.offset) + screen
+
+        def draw(path: RenderPath, transform: Affine2D, color: str,
+                 line_width: float, fill: str = '', dash: tuple[int, ...] = ()) -> None:
+            gc = renderer.new_gc()
+            gc.set_antialiased(True)
+            gc.set_foreground(color)
+            gc.set_linewidth(line_width*factor)
+            gc.set_capstyle('round')
+            gc.set_joinstyle('round')
+            if dash:
+                gc.set_dashes(0, [v*factor for v in dash])
+            renderer.draw_path(gc, path, transform, to_rgba(fill) if fill else None)
+            gc.restore()
+
+        background = RenderPath([(0, 0), (width, 0), (width, height), (0, height), (0, 0)], closed=True)
+        draw(background, screen, PLOT_BG, 0, PLOT_BG)
+        for (spec, path), (left, top, right, bottom) in zip(self._aa_paths, self._aa_bounds):
+            if spec.source_id.startswith('control_') and not self.controls_visible:
+                continue
+            margin = spec.width+12
+            if (right*self.scale+self.offset[0] < -margin or
+                    left*self.scale+self.offset[0] > width+margin or
+                    bottom*self.scale+self.offset[1] < -margin or
+                    top*self.scale+self.offset[1] > height+margin):
+                continue
+            draw(path, world, spec.outline, spec.width, spec.fill, spec.dash)
+            if spec.arrow == 'last':
+                # Fixed-pixel arrow at the final curve derivative.
+                end = path.vertices[-1]
+                previous = next((v for v in reversed(path.vertices[:-1]) if any(v != end)), end)
+                dx, dy = end-previous
+                length = math.hypot(dx, dy)
+                if length:
+                    ux, uy = dx/length, dy/length
+                    x, y = end*self.scale+self.offset
+                    arrow = RenderPath([(x, y), (x-10*ux-4*uy, y-10*uy+4*ux),
+                                        (x-10*ux+4*uy, y-10*uy-4*ux), (x, y)],
+                                       [RenderPath.MOVETO, RenderPath.LINETO, RenderPath.LINETO, RenderPath.CLOSEPOLY])
+                    draw(arrow, screen, spec.outline, 0, spec.outline)
+
+        for spec in self.scene.markers:
+            if spec.kind in ('knot', 'handle') and not self.controls_visible:
+                continue
+            x, y = (spec.position[k]*self.scale+self.offset[k] for k in (0, 1))
+            if not (-12 <= x <= width+12 and -12 <= y <= height+12):
+                continue
+            coords = self._symbol_coords(spec.kind, x, y)
+            if spec.kind in ('coin', 'start', 'knot', 'handle'):
+                radius = (coords[2]-coords[0])/2
+                path = RenderPath.unit_circle()
+                transform = Affine2D().scale(radius).translate(x, y) + screen
+            else:
+                vertices = list(zip(coords[::2], coords[1::2]))
+                path = RenderPath(vertices+[vertices[0]], closed=True)
+                transform = screen
+            draw(path, transform, PLOT_BG, 0 if spec.kind == 'knot' else 1, spec.color)
+
+        pixels = Image.frombuffer('RGBA', (width*factor, height*factor),
+                                  renderer.buffer_rgba(), 'raw', 'RGBA', 0, 1)
+        if factor > 1:
+            pixels = pixels.resize((width, height), Image.Resampling.BILINEAR)
+        self._aa_photo = ImageTk.PhotoImage(pixels, master=self)
+        if self._aa_item is None:
+            self._aa_item = self.create_image(0, 0, anchor='nw', image=self._aa_photo, tags=('scene', 'aa'))
+        else:
+            self.coords(self._aa_item, 0, 0)
+            self.itemconfigure(self._aa_item, image=self._aa_photo, state='normal')
+        self.itemconfigure('geometry', state='hidden')
+        self.itemconfigure('marker', state='hidden')
+        self.tag_lower('aa')
+        self._aa_key = key
 
     @classmethod
     def _symbol_coords(cls, kind: str, x: float, y: float) -> tuple[float, ...]:
-        if kind in ('coin', 'start'):
-            radius = 4 if kind == 'coin' else 6
+        if kind in ('coin', 'start', 'knot', 'handle'):
+            radius = {'coin': 4, 'start': 6, 'knot': 7.5, 'handle': 2}[kind]
             return (x-radius, y-radius, x+radius, y+radius)
         symbol = {'SpringObject': 'up', 'speed_boost': 'right', 'end': 'square',
                   'checkpoint': 'cross', 'target': 'x', 'explosive_barrel': 'x'}.get(kind, kind)
@@ -672,7 +876,10 @@ class PreviewCanvas(tk.Canvas):
             x, y = (spec.position[k]*self.scale+self.offset[k] for k in (0, 1))
             self.coords(item, *self._symbol_coords(spec.kind, x, y))
             if label is not None:
-                self.coords(label, x+self.LABEL_OFFSET[0], y+self.LABEL_OFFSET[1])
+                dx, dy = (0, 0) if spec.kind == 'knot' else self.LABEL_OFFSET
+                self.coords(label, x+dx, y+dy)
+                for stroke, (sx, sy) in zip(self._label_strokes[label], self.STROKE_OFFSETS):
+                    self.coords(stroke, x+dx+sx, y+dy+sy)
 
     def _draw_view(self) -> None:
         self._cancel_pending()
@@ -696,6 +903,13 @@ class PreviewCanvas(tk.Canvas):
         self._drawn_scale = self.scale
         self._drawn_offset = self.offset.copy()
         self._force_project = False
+        if self.aa_enabled:
+            self._render_antialiased()
+        else:
+            self.itemconfigure('aa', state='hidden')
+            self.itemconfigure('geometry', state='normal')
+            self.itemconfigure('marker', state='normal')
+            self.itemconfigure('point_controls', state='normal' if self.controls_visible else 'hidden')
 
     def _cancel_pending(self) -> None:
         if self._draw_after is not None:
@@ -707,6 +921,10 @@ class PreviewCanvas(tk.Canvas):
         self.scene = None
         self._path_items.clear()
         self._marker_items.clear()
+        self._label_strokes.clear()
+        self._aa_paths.clear()
+        self._aa_bounds.clear()
+        self._aa_photo = None
         super().destroy()
 
 
@@ -723,7 +941,7 @@ class PreviewLegend(ttk.Frame):
         for label in self.labels:
             label.destroy()
         self.labels = [tk.Label(self, text=f'{symbol}  {name}', fg=color,
-                                bg=UI_BG, font=('Segoe UI', 9))
+                                bg=UI_BG, font=('Segoe UI', 9, 'bold'))
                        for name, color, symbol in entries]
         self._layout(force=True)
 
@@ -765,7 +983,7 @@ def compile_obstacle_card(family: dict[str, Any], variant: dict[str, Any],
     errors = [issue.message for issue in validate(data, .05) if issue.severity == 'error']
     if errors:
         raise ValueError(f"{variant['id']}: {'; '.join(errors[:2])}")
-    scene = compile_vector_level(data, outline_only)
+    scene = compile_vector_level(data, outline_only, show_controls=False)
     shape_ids = {shape['id'] for group in ('MainPlatform', 'RampPlatform', 'deadzone', 'InteractableObject')
                  for shape in data[group] if 'points' in shape}
     paths = tuple(path for path in scene.paths if path.source_id in shape_ids)
@@ -972,6 +1190,8 @@ class LevelBrowserApp:
         root.minsize(1050, 620)
         root.geometry("1480x860")
         root.configure(background=UI_BG)
+        for name in tkfont.names(root):
+            tkfont.nametofont(name, root=root).configure(weight='bold')
         style = ttk.Style(root)
         style.theme_use("clam")
         style.configure("TFrame", background=UI_BG)
@@ -979,6 +1199,8 @@ class LevelBrowserApp:
                         bordercolor=UI_BORDER, arrowcolor=UI_TEXT)
         root.bind("<Key-h>", self.toggle_legend)
         root.bind("<Key-H>", self.toggle_legend)
+        root.bind("<Key-1>", self.toggle_point_legend)
+        root.bind("<Key-2>", self.toggle_aa)
         root.bind("<Key-f>", lambda event: self.canvas.fit() if self.canvas else None)
         root.bind("<Key-F>", lambda event: self.canvas.fit() if self.canvas else None)
         root.bind("<F5>", self.refresh_levels)
@@ -1093,7 +1315,9 @@ class LevelBrowserApp:
     def _update_status(self) -> None:
         state = 'legend shown' if self.legend_visible else 'legend hidden'
         self.status.set(f'{self.selected+1}/{len(self.levels)}  {self.levels[self.selected].name}'
-                        f'{self._warning_suffix} | Wheel: zoom 1.45x | Left drag: pan 1.6x | F / double-click: fit | H: {state}')
+                        f'{self._warning_suffix} | Wheel: zoom 1.45x | Left drag: pan 1.6x | F / double-click: fit | H: {state}'
+                        f' | 1: point legend {"shown" if self.canvas and self.canvas.controls_visible else "hidden"}'
+                        f' | 2: AA {"on" if self.canvas and self.canvas.aa_enabled else "off"}')
 
     def build_level_grid(self) -> None:
         for child in self.grid_frame.winfo_children():
@@ -1196,6 +1420,20 @@ class LevelBrowserApp:
 
     def step(self, direction: int) -> None:
         self.select(self.selected + direction)
+
+    def toggle_aa(self, _event: Any = None) -> str:
+        if self.canvas:
+            self.canvas.toggle_aa()
+        if self.current_data is not None:
+            self._update_status()
+        return 'break'
+
+    def toggle_point_legend(self, _event: Any = None) -> str:
+        if self.canvas:
+            self.canvas.toggle_controls()
+        if self.current_data is not None:
+            self._update_status()
+        return 'break'
 
     def toggle_legend(self, _event: Any = None) -> str:
         """Hide/show the fixed footer without rendering or rereading the map."""
