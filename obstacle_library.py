@@ -17,6 +17,7 @@ from spring_object import spring_trajectory
 
 ROOT = Path(__file__).resolve().parent
 GROUPS = ("MainPlatform", "RampPlatform", "deadzone", "InteractableObject")
+DEADZONE_Y_OFFSET = -2.0
 
 
 def catalog_version():
@@ -100,6 +101,27 @@ def linear_polygon(name, coords):
     return {"id": name, "closed": True, "points": [vertex(x,y,mode="linear") for x,y in coords]}
 
 
+def platform_body(name, surface):
+    """Trim redundant ground-level tails and close just below the fallback road.
+
+    The 0.01-unit overlap avoids duplicate vertices at ground-touching ends
+    and leaves no visible gap between the platform base and the ground.
+    """
+    def ground_flat(a, b):
+        return (a["y"] == b["y"] == 0 and
+                a["tangentOut"]["y"] == b["tangentIn"]["y"] == 0)
+
+    surface = list(surface)
+    while len(surface) > 2 and ground_flat(surface[0], surface[1]):
+        surface.pop(0)
+    while len(surface) > 2 and ground_flat(surface[-2], surface[-1]):
+        surface.pop()
+    shape = ground(name, surface)
+    for point in shape["points"][-2:]:
+        point["y"] = -.01
+    return shape
+
+
 def assign_module_coins(module):
     """Own three local-space rewards per obstacle, including library cards.
 
@@ -132,7 +154,9 @@ def assign_module_coins(module):
         routes = [([(p['x'],p['y']) for p in module['coinCandidates']],None)]
     elif module['RampPlatform']:
         role = 'obstacle_platform'
-        routes = [([(x,y+1) for x,y in sample_curve(shape,120)],None)
+        routes = [([(x,y+1) for x,y in sample_curve(
+                    {'points': shape['points'][:surface_count(shape)]}
+                    if shape.get('metadata', {}).get('drivingSurfaceCount') else shape,120)],None)
                   for shape in module['RampPlatform']]
     else:
         routes = [([(x,y+1.2) for x,y in sample_curve(
@@ -178,8 +202,23 @@ def build_variant(family, variant):
                "entrySpeedWindow": None, "exitSpeedWindow": None}
     units = None
 
-    def add_surface(name, coords, slopes=None):
+    def add_surface(name, coords, slopes=None, *, smooth_launch=False):
         surface = profile(coords, slopes)
+        if smooth_launch:
+            # Replace the shoulder before the lip with one concave-up cubic.
+            # Preserve the scoop's approach/basin and the authored lip angle.
+            start, end = surface[-3], surface[-1]
+            width, rise = end["x"]-start["x"], end["y"]-start["y"]
+            slope = slopes[len(coords)-1]
+            if not 0 < rise < slope*width:
+                raise ValueError("Smooth launch needs an exit slope above its average slope")
+            out_x = min(width/3, (width-rise/slope)*.5)
+            in_x = min(width/3, rise/(2*slope))
+            # Control polygon slopes: 0 <= middle <= exit slope. Therefore
+            # curvature cannot turn downward anywhere on the ascent.
+            start["tangentOut"] = {"x": out_x, "y": 0}
+            end["tangentIn"] = {"x": -in_x, "y": -in_x*slope}
+            surface.pop(-2)
         result["MainPlatform"].append(ground(name, surface))
         surfaces.append(surface)
         return surface
@@ -229,11 +268,14 @@ def build_variant(family, variant):
                     gap = coords[0][0]-previous_end
                     if gap <= 0:
                         raise ValueError(f"{variant['id']}: broken platform segments must not touch")
+                    if gap > 2:
+                        raise ValueError(f"{variant['id']}: platform gaps must not exceed 2 units")
                     gaps.append([previous_end, coords[0][0]])
                 previous_end = coords[-1][0]
-                result["RampPlatform"].append({
-                    "id": f"open_bridge_{index}", "closed": False, "points": profile(coords),
-                    "metadata": {"floatingSegment": index > 1, "requiresMomentumTransfer": index < len(broken_segments)}})
+                ramp = platform_body(f"open_bridge_{index}", profile(coords))
+                ramp["metadata"].update(floatingSegment=False,
+                                        requiresMomentumTransfer=index < len(broken_segments))
+                result["RampPlatform"].append(ramp)
                 anchor = max(coords, key=lambda point: point[1])
                 anchors.append({"x": anchor[0], "y": anchor[1]+1.2, "priority": 5,
                                 "role": "broken_platform_transfer"})
@@ -244,7 +286,7 @@ def build_variant(family, variant):
             physics["brokenPlatformGaps"] = gaps
             physics["failureMode"] = "Insufficient launch speed drops the bike below the next floating platform"
         else:
-            # Both ends connect to ground; elevated body is an open ramp. Entry
+            # Both ends connect to ground; elevated body is a closed platform. Entry
             # and runout lengths are variant parameters so bridges do not all
             # share the same silhouette even when their profiles differ.
             approach = p.get("approach", 8)
@@ -266,7 +308,7 @@ def build_variant(family, variant):
             end_x = approach+length+runout
             coords = [(0,0),(approach*.5,0)]+middle+[(approach+length+runout*.5,0),(end_x,0)]
             add_surface("safe_fallback", [(0,0),(end_x,0)])
-            ramp = {"id":"open_bridge","closed":False,"points":profile(coords)}
+            ramp = platform_body("open_bridge", profile(coords))
             result["RampPlatform"].append(ramp)
             end = (end_x,0)
             anchors.append({"x":middle[len(middle)//2][0],"y":max(y for x,y in middle)+1.2,"priority":4,"role":"alternate_high_line"})
@@ -298,7 +340,8 @@ def build_variant(family, variant):
         else:
             coords = [(0,0),(a,0)] + ([(takeoff_x,h)] if length else [])
             slopes = {len(coords)-1:math.tan(angle)}
-        launch_surface = add_surface("launch", coords, slopes)
+        launch_surface = add_surface("launch", coords, slopes, smooth_launch=type_id in
+                                     {"curved_ramp", "gap", "step_up", "step_down"})
         if type_id == "kicker":
             launch_surface[-1]["corner"] = True
             launch_surface[-1]["tangentMode"] = "broken"
@@ -693,6 +736,11 @@ def build_variant(family, variant):
         "physics":physics,"jumpUnit":units,"coinCandidates":anchors,"checkpointCandidates":checkpoints,"joins":joins,
         "camera":{"visibleLandingRequired":True,"lookAheadDistance":max(16,p.get("gap",0)+p.get("landing",0)),"verticalFeatureVisibilityRequired":kind in ("loop", "spring_jump")},
         "groundSamples":sampled,"validationStatus":"geometry_only; Unity bike playtest required"})
+    # Apply once in local space after all family-specific zones are finalized.
+    # Placement and export only carry these coordinates; never reapply there.
+    for zone in result["deadzone"]:
+        for point in zone["points"]:
+            point["y"] += DEADZONE_Y_OFFSET
     assign_module_coins(result)
     return result
 

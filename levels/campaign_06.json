@@ -118,7 +118,7 @@
         },
         {
           "x": 53,
-          "y": -53.27353259426825,
+          "y": -80.23153594720944,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -132,7 +132,7 @@
         },
         {
           "x": -20,
-          "y": -53.27353259426825,
+          "y": -80.23153594720944,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -265,22 +265,8 @@
             "y": -0.0
           },
           "tangentOut": {
-            "x": 2.52,
-            "y": 0.0
-          },
-          "tangentMode": "continuous",
-          "corner": false
-        },
-        {
-          "x": 132.6,
-          "y": -15.055882352941179,
-          "tangentIn": {
-            "x": -2.52,
-            "y": -0.681555
-          },
-          "tangentOut": {
-            "x": 1.466667,
-            "y": 0.396672
+            "x": 3.2993663493630523,
+            "y": 0
           },
           "tangentMode": "continuous",
           "corner": false
@@ -289,8 +275,8 @@
           "x": 137.0,
           "y": -13.255882352941178,
           "tangentIn": {
-            "x": -1.466667,
-            "y": -0.683918
+            "x": -2.680633650636948,
+            "y": -1.25
           },
           "tangentOut": {
             "x": 0,
@@ -301,7 +287,7 @@
         },
         {
           "x": 137.0,
-          "y": -53.27353259426825,
+          "y": -80.23153594720944,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -315,7 +301,7 @@
         },
         {
           "x": 57,
-          "y": -53.27353259426825,
+          "y": -80.23153594720944,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -329,7 +315,7 @@
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 10,
+        "drivingSurfaceCount": 9,
         "sourceVariant": "drop.long_runout",
         "sourceShapeIds": [
           "s02_landing_recovery",
@@ -526,7 +512,7 @@
         },
         {
           "x": 238.8,
-          "y": -53.27353259426825,
+          "y": -80.23153594720944,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -540,7 +526,7 @@
         },
         {
           "x": 150.0,
-          "y": -53.27353259426825,
+          "y": -80.23153594720944,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -618,17 +604,45 @@
             "y": -0.0
           },
           "tangentOut": {
-            "x": 1.333333,
+            "x": 1.666667,
             "y": 0.0
           },
           "tangentMode": "broken",
           "corner": false
         },
         {
-          "x": 276.8,
-          "y": -49.27353259426825,
+          "x": 277.8,
+          "y": -48.27353259426825,
           "tangentIn": {
-            "x": -1.333333,
+            "x": -1.666667,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.666667,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 282.8,
+          "y": -48.27353259426825,
+          "tangentIn": {
+            "x": -1.666667,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.666667,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 287.8,
+          "y": -46.27353259426825,
+          "tangentIn": {
+            "x": -1.666667,
             "y": -0.0
           },
           "tangentOut": {
@@ -639,106 +653,36 @@
           "corner": false
         },
         {
-          "x": 280.8,
-          "y": -50.27353259426825,
+          "x": 291.8,
+          "y": -46.27353259426825,
           "tangentIn": {
             "x": -1.333333,
             "y": -0.0
           },
           "tangentOut": {
-            "x": 1.333333,
-            "y": 0.0
-          },
-          "tangentMode": "continuous",
-          "corner": false
-        },
-        {
-          "x": 284.8,
-          "y": -49.27353259426825,
-          "tangentIn": {
-            "x": -1.333333,
-            "y": -0.0
-          },
-          "tangentOut": {
-            "x": 1.333333,
-            "y": 0.0
-          },
-          "tangentMode": "continuous",
-          "corner": false
-        },
-        {
-          "x": 288.8,
-          "y": -50.27353259426825,
-          "tangentIn": {
-            "x": -1.333333,
-            "y": -0.0
-          },
-          "tangentOut": {
-            "x": 1.333333,
-            "y": 0.0
-          },
-          "tangentMode": "continuous",
-          "corner": false
-        },
-        {
-          "x": 292.8,
-          "y": -50.27353259426825,
-          "tangentIn": {
-            "x": -1.333333,
-            "y": -0.0
-          },
-          "tangentOut": {
-            "x": 12.0,
+            "x": 5.333333,
             "y": 0.0
           },
           "tangentMode": "broken",
           "corner": false
         },
         {
-          "x": 328.8,
-          "y": -50.27353259426825,
+          "x": 307.8,
+          "y": -46.27353259426825,
           "tangentIn": {
-            "x": -12.0,
+            "x": -5.333333,
             "y": -0.0
-          },
-          "tangentOut": {
-            "x": 13.333333,
-            "y": 0.0
-          },
-          "tangentMode": "broken",
-          "corner": false
-        },
-        {
-          "x": 368.8,
-          "y": -50.27353259426825,
-          "tangentIn": {
-            "x": -13.333333,
-            "y": -0.0
-          },
-          "tangentOut": {
-            "x": 6.666666666666667,
-            "y": 0.0
-          },
-          "tangentMode": "continuous",
-          "corner": false
-        },
-        {
-          "x": 388.8,
-          "y": -50.27353259426825,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
           },
           "tangentOut": {
             "x": 0,
             "y": 0
           },
-          "tangentMode": "linear",
+          "tangentMode": "broken",
           "corner": false
         },
         {
-          "x": 388.8,
-          "y": -53.27353259426825,
+          "x": 307.8,
+          "y": -80.23153594720944,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -752,7 +696,7 @@
         },
         {
           "x": 242.8,
-          "y": -53.27353259426825,
+          "y": -80.23153594720944,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -766,28 +710,67 @@
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 12,
+        "drivingSurfaceCount": 9,
         "sourceVariant": "drop.deep",
         "sourceShapeIds": [
           "s07_landing_recovery",
           "s08_terrain",
-          "s09_safe_fallback",
-          "s10_terrain"
+          "s09_launch"
         ]
       }
-    }
-  ],
-  "RampPlatform": [
+    },
     {
-      "id": "s09_open_bridge",
-      "closed": false,
+      "id": "s09_landing_recovery",
+      "closed": true,
       "points": [
         {
-          "x": 292.8,
-          "y": -50.27353259426825,
+          "x": 311.8,
+          "y": -49.27353259426825,
           "tangentIn": {
             "x": 0,
             "y": 0
+          },
+          "tangentOut": {
+            "x": 1.833333,
+            "y": -2.739216
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 317.3,
+          "y": -57.491179594268246,
+          "tangentIn": {
+            "x": -1.833333,
+            "y": 2.739216
+          },
+          "tangentOut": {
+            "x": 4.166667,
+            "y": -6.22549
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 329.8,
+          "y": -66.82941459426824,
+          "tangentIn": {
+            "x": -4.166667,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 6.666667,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 349.8,
+          "y": -66.82941459426824,
+          "tangentIn": {
+            "x": -6.666667,
+            "y": -0.0
           },
           "tangentOut": {
             "x": 1.333333,
@@ -797,8 +780,233 @@
           "corner": false
         },
         {
-          "x": 296.8,
-          "y": -50.27353259426825,
+          "x": 353.8,
+          "y": -66.62941494720943,
+          "tangentIn": {
+            "x": -1.333333,
+            "y": -0.088889
+          },
+          "tangentOut": {
+            "x": 2.0,
+            "y": 0.133333
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 359.8,
+          "y": -66.02941494720943,
+          "tangentIn": {
+            "x": -2.0,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 2.0,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 365.8,
+          "y": -66.02941494720943,
+          "tangentIn": {
+            "x": -2.0,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 4.68,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 379.84000000000003,
+          "y": -66.02941494720943,
+          "tangentIn": {
+            "x": -4.68,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 3.2993663493630523,
+            "y": 0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 391.8,
+          "y": -63.52941494720943,
+          "tangentIn": {
+            "x": -2.680633650636948,
+            "y": -1.25
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 391.8,
+          "y": -80.23153594720944,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 311.8,
+          "y": -80.23153594720944,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        }
+      ],
+      "metadata": {
+        "drivingSurfaceCount": 9,
+        "sourceVariant": "drop.long_runout",
+        "sourceShapeIds": [
+          "s09_landing_recovery",
+          "s10_terrain",
+          "s11_launch"
+        ]
+      }
+    },
+    {
+      "id": "s11_landing_recovery",
+      "closed": true,
+      "points": [
+        {
+          "x": 404.8,
+          "y": -66.52941494720943,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 2.133333,
+            "y": -0.988296
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 411.2,
+          "y": -70.22683994720943,
+          "tangentIn": {
+            "x": -2.133333,
+            "y": 1.476654
+          },
+          "tangentOut": {
+            "x": 2.133333,
+            "y": -1.476654
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 417.6,
+          "y": -75.38933794720943,
+          "tangentIn": {
+            "x": -2.133333,
+            "y": 1.965011
+          },
+          "tangentOut": {
+            "x": 1.333333,
+            "y": -1.228132
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 421.6,
+          "y": -77.23153594720944,
+          "tangentIn": {
+            "x": -1.333333,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 5.333333,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 437.6,
+          "y": -77.23153594720944,
+          "tangentIn": {
+            "x": -5.333333,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.333333,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 441.6,
+          "y": -77.03153577677179,
+          "tangentIn": {
+            "x": -1.333333,
+            "y": -0.088889
+          },
+          "tangentOut": {
+            "x": 2.0,
+            "y": 0.133333
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 447.6,
+          "y": -76.4315357767718,
+          "tangentIn": {
+            "x": -2.0,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 2.0,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 453.6,
+          "y": -76.4315357767718,
+          "tangentIn": {
+            "x": -2.0,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.333333,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 457.6,
+          "y": -75.4315357767718,
           "tangentIn": {
             "x": -1.333333,
             "y": -0.0
@@ -811,8 +1019,167 @@
           "corner": false
         },
         {
-          "x": 300.8,
-          "y": -45.27353259426825,
+          "x": 461.6,
+          "y": -76.4315357767718,
+          "tangentIn": {
+            "x": -1.333333,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.333333,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 465.6,
+          "y": -75.4315357767718,
+          "tangentIn": {
+            "x": -1.333333,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.333333,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 469.6,
+          "y": -76.4315357767718,
+          "tangentIn": {
+            "x": -1.333333,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.333333,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 473.6,
+          "y": -76.4315357767718,
+          "tangentIn": {
+            "x": -1.333333,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 12.0,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 509.6,
+          "y": -76.4315357767718,
+          "tangentIn": {
+            "x": -12.0,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 14.2,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 552.2,
+          "y": -76.4315357767718,
+          "tangentIn": {
+            "x": -14.2,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 6.666666666666667,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 572.2,
+          "y": -76.4315357767718,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 572.2,
+          "y": -80.23153594720944,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 404.8,
+          "y": -80.23153594720944,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        }
+      ],
+      "metadata": {
+        "drivingSurfaceCount": 16,
+        "sourceVariant": "step_down.long",
+        "sourceShapeIds": [
+          "s11_landing_recovery",
+          "s12_terrain",
+          "s13_terrain",
+          "s14_safe_fallback",
+          "s15_terrain"
+        ]
+      }
+    }
+  ],
+  "RampPlatform": [
+    {
+      "id": "s14_open_bridge",
+      "closed": true,
+      "points": [
+        {
+          "x": 477.6,
+          "y": -76.4315357767718,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 1.333333,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 481.6,
+          "y": -71.4315357767718,
           "tangentIn": {
             "x": -1.333333,
             "y": -0.0
@@ -825,8 +1192,8 @@
           "corner": false
         },
         {
-          "x": 305.6,
-          "y": -45.27353259426825,
+          "x": 486.40000000000003,
+          "y": -71.4315357767718,
           "tangentIn": {
             "x": -1.6,
             "y": -0.0
@@ -839,8 +1206,8 @@
           "corner": false
         },
         {
-          "x": 316.8,
-          "y": -47.27353259426825,
+          "x": 497.6,
+          "y": -73.4315357767718,
           "tangentIn": {
             "x": -3.733333,
             "y": 0.982456
@@ -853,22 +1220,8 @@
           "corner": false
         },
         {
-          "x": 322.8,
-          "y": -50.27353259426825,
-          "tangentIn": {
-            "x": -2.0,
-            "y": -0.0
-          },
-          "tangentOut": {
-            "x": 2.0,
-            "y": 0.0
-          },
-          "tangentMode": "continuous",
-          "corner": false
-        },
-        {
-          "x": 328.8,
-          "y": -50.27353259426825,
+          "x": 503.6,
+          "y": -76.4315357767718,
           "tangentIn": {
             "x": -2.0,
             "y": -0.0
@@ -879,9 +1232,38 @@
           },
           "tangentMode": "broken",
           "corner": false
+        },
+        {
+          "x": 503.6,
+          "y": -76.4415357767718,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 477.6,
+          "y": -76.4415357767718,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
         }
       ],
       "metadata": {
+        "drivingSurfaceCount": 5,
         "sourceVariant": "platform.downhill_bridge"
       }
     }
@@ -893,7 +1275,7 @@
       "points": [
         {
           "x": 52.9,
-          "y": -0.5,
+          "y": -2.5,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -907,7 +1289,7 @@
         },
         {
           "x": 57.1,
-          "y": -0.5,
+          "y": -2.5,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -921,7 +1303,7 @@
         },
         {
           "x": 57.1,
-          "y": -2.0,
+          "y": -4.0,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -935,7 +1317,7 @@
         },
         {
           "x": 52.9,
-          "y": -2.0,
+          "y": -4.0,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -958,7 +1340,7 @@
       "points": [
         {
           "x": 136.9,
-          "y": -17.75588235294118,
+          "y": -19.75588235294118,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -972,7 +1354,7 @@
         },
         {
           "x": 150.1,
-          "y": -17.75588235294118,
+          "y": -19.75588235294118,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -986,7 +1368,7 @@
         },
         {
           "x": 150.1,
-          "y": -19.25588235294118,
+          "y": -21.25588235294118,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1000,7 +1382,7 @@
         },
         {
           "x": 136.9,
-          "y": -19.25588235294118,
+          "y": -21.25588235294118,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1023,7 +1405,7 @@
       "points": [
         {
           "x": 238.70000000000002,
-          "y": -31.658003182503535,
+          "y": -33.658003182503535,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1037,7 +1419,7 @@
         },
         {
           "x": 242.9,
-          "y": -31.658003182503535,
+          "y": -33.658003182503535,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1051,7 +1433,7 @@
         },
         {
           "x": 242.9,
-          "y": -33.158003182503535,
+          "y": -35.158003182503535,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1065,7 +1447,7 @@
         },
         {
           "x": 238.70000000000002,
-          "y": -33.158003182503535,
+          "y": -35.158003182503535,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1080,6 +1462,136 @@
       ],
       "metadata": {
         "sourceVariant": "drop.deep"
+      }
+    },
+    {
+      "id": "s09_gap_kill",
+      "closed": true,
+      "points": [
+        {
+          "x": 307.7,
+          "y": -52.77353259426825,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 311.90000000000003,
+          "y": -52.77353259426825,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 311.90000000000003,
+          "y": -54.27353259426825,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 307.7,
+          "y": -54.27353259426825,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        }
+      ],
+      "metadata": {
+        "sourceVariant": "drop.long_runout"
+      }
+    },
+    {
+      "id": "s11_gap_kill",
+      "closed": true,
+      "points": [
+        {
+          "x": 391.7,
+          "y": -70.02941494720943,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 404.90000000000003,
+          "y": -70.02941494720943,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 404.90000000000003,
+          "y": -71.52941494720943,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 391.7,
+          "y": -71.52941494720943,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        }
+      ],
+      "metadata": {
+        "sourceVariant": "step_down.long"
       }
     }
   ],
@@ -1568,48 +2080,308 @@
       "id": "s08_coin_01",
       "type": "coin",
       "transform": {
-        "x": 277.7852279289279,
-        "y": -48.225674651106814
+        "x": 277.3278626454969,
+        "y": -47.123738697514014
       },
       "properties": {
         "optional": true,
         "placement": "library_obstacle",
         "line": "obstacle_surface",
-        "sourceVariant": "wave.two_soft",
+        "sourceVariant": "rise.two_stage",
         "collectionRisk": "pending_playtest",
-        "beatId": "floor_rollers",
-        "purpose": "Two low rollers restore a calm forward rhythm."
+        "beatId": "extended_01_rim",
+        "purpose": "Extended route reprise: Reach the crater rim with an intermediate shelf that settles pitch."
       },
       "metadata": {
-        "sourceVariant": "wave.two_soft"
+        "sourceVariant": "rise.two_stage"
       }
     },
     {
       "id": "s08_coin_02",
       "type": "coin",
       "transform": {
-        "x": 282.7315536754781,
-        "y": -48.599189529426006
+        "x": 282.3,
+        "y": -47.073532594268244
       },
       "properties": {
         "optional": true,
         "placement": "library_obstacle",
         "line": "obstacle_surface",
-        "sourceVariant": "wave.two_soft",
+        "sourceVariant": "rise.two_stage",
         "collectionRisk": "pending_playtest",
-        "beatId": "floor_rollers",
-        "purpose": "Two low rollers restore a calm forward rhythm."
+        "beatId": "extended_01_rim",
+        "purpose": "Extended route reprise: Reach the crater rim with an intermediate shelf that settles pitch."
       },
       "metadata": {
-        "sourceVariant": "wave.two_soft"
+        "sourceVariant": "rise.two_stage"
       }
     },
     {
       "id": "s08_coin_03",
       "type": "coin",
       "transform": {
-        "x": 287.67440878281724,
-        "y": -48.88052685748484
+        "x": 286.848261156944,
+        "y": -45.263373855276356
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "rise.two_stage",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_01_rim",
+        "purpose": "Extended route reprise: Reach the crater rim with an intermediate shelf that settles pitch."
+      },
+      "metadata": {
+        "sourceVariant": "rise.two_stage"
+      }
+    },
+    {
+      "id": "s09_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 311.0728341918257,
+        "y": -46.654963285348806
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "drop.long_runout",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_02_first_drop",
+        "purpose": "Extended route reprise: Teach rolling off a horizontal lip into a generous sloped catch."
+      },
+      "metadata": {
+        "sourceVariant": "drop.long_runout"
+      }
+    },
+    {
+      "id": "s09_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 313.44627368072355,
+        "y": -49.38476725962721
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "drop.long_runout",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_02_first_drop",
+        "purpose": "Extended route reprise: Teach rolling off a horizontal lip into a generous sloped catch."
+      },
+      "metadata": {
+        "sourceVariant": "drop.long_runout"
+      }
+    },
+    {
+      "id": "s09_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 315.2895685214731,
+        "y": -52.506861984658215
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "drop.long_runout",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_02_first_drop",
+        "purpose": "Extended route reprise: Teach rolling off a horizontal lip into a generous sloped catch."
+      },
+      "metadata": {
+        "sourceVariant": "drop.long_runout"
+      }
+    },
+    {
+      "id": "s10_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 353.8040202639096,
+        "y": -65.42914138379918
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.braking_shelf",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_03_brake_one",
+        "purpose": "Extended route reprise: Give a visible braking cue before the long step-down."
+      },
+      "metadata": {
+        "sourceVariant": "flat.braking_shelf"
+      }
+    },
+    {
+      "id": "s10_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 357.7853339284087,
+        "y": -64.95698259746355
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.braking_shelf",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_03_brake_one",
+        "purpose": "Extended route reprise: Give a visible braking cue before the long step-down."
+      },
+      "metadata": {
+        "sourceVariant": "flat.braking_shelf"
+      }
+    },
+    {
+      "id": "s10_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 361.7901244399409,
+        "y": -64.82941494720943
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.braking_shelf",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_03_brake_one",
+        "purpose": "Extended route reprise: Give a visible braking cue before the long step-down."
+      },
+      "metadata": {
+        "sourceVariant": "flat.braking_shelf"
+      }
+    },
+    {
+      "id": "s11_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 396.8693493563199,
+        "y": -61.271811097073744
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "step_down.long",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_04_basalt_flight",
+        "purpose": "Extended route reprise: Use a long descending flight to reward deliberate pitch control."
+      },
+      "metadata": {
+        "sourceVariant": "step_down.long"
+      }
+    },
+    {
+      "id": "s11_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 401.99731063682196,
+        "y": -62.24950361281408
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "step_down.long",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_04_basalt_flight",
+        "purpose": "Extended route reprise: Use a long descending flight to reward deliberate pitch control."
+      },
+      "metadata": {
+        "sourceVariant": "step_down.long"
+      }
+    },
+    {
+      "id": "s11_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 406.4835348686543,
+        "y": -64.96121378481021
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "estimated_flight",
+        "sourceVariant": "step_down.long",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_04_basalt_flight",
+        "purpose": "Extended route reprise: Use a long descending flight to reward deliberate pitch control."
+      },
+      "metadata": {
+        "sourceVariant": "step_down.long"
+      }
+    },
+    {
+      "id": "s12_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 441.6040202639096,
+        "y": -75.83126221336154
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.braking_shelf",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_05_brake_two",
+        "purpose": "Extended route reprise: Signal speed reduction before the lower lip."
+      },
+      "metadata": {
+        "sourceVariant": "flat.braking_shelf"
+      }
+    },
+    {
+      "id": "s12_coin_02",
+      "type": "coin",
+      "transform": {
+        "x": 445.5853339284087,
+        "y": -75.35910342702591
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.braking_shelf",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_05_brake_two",
+        "purpose": "Extended route reprise: Signal speed reduction before the lower lip."
+      },
+      "metadata": {
+        "sourceVariant": "flat.braking_shelf"
+      }
+    },
+    {
+      "id": "s12_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 449.5901244399409,
+        "y": -75.23153577677179
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "flat.braking_shelf",
+        "collectionRisk": "pending_playtest",
+        "beatId": "extended_05_brake_two",
+        "purpose": "Extended route reprise: Signal speed reduction before the lower lip."
+      },
+      "metadata": {
+        "sourceVariant": "flat.braking_shelf"
+      }
+    },
+    {
+      "id": "s13_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 458.5852279289279,
+        "y": -74.38367783361036
       },
       "properties": {
         "optional": true,
@@ -1625,11 +2397,51 @@
       }
     },
     {
-      "id": "s09_coin_01",
+      "id": "s13_coin_02",
       "type": "coin",
       "transform": {
-        "x": 300.18826260569045,
-        "y": -44.588761283241936
+        "x": 463.5315536754781,
+        "y": -74.75719271192956
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "wave.two_soft",
+        "collectionRisk": "pending_playtest",
+        "beatId": "floor_rollers",
+        "purpose": "Two low rollers restore a calm forward rhythm."
+      },
+      "metadata": {
+        "sourceVariant": "wave.two_soft"
+      }
+    },
+    {
+      "id": "s13_coin_03",
+      "type": "coin",
+      "transform": {
+        "x": 468.47440878281725,
+        "y": -75.03853003998839
+      },
+      "properties": {
+        "optional": true,
+        "placement": "library_obstacle",
+        "line": "obstacle_surface",
+        "sourceVariant": "wave.two_soft",
+        "collectionRisk": "pending_playtest",
+        "beatId": "floor_rollers",
+        "purpose": "Two low rollers restore a calm forward rhythm."
+      },
+      "metadata": {
+        "sourceVariant": "wave.two_soft"
+      }
+    },
+    {
+      "id": "s14_coin_01",
+      "type": "coin",
+      "transform": {
+        "x": 482.39467973430266,
+        "y": -70.4315357767718
       },
       "properties": {
         "optional": true,
@@ -1645,11 +2457,11 @@
       }
     },
     {
-      "id": "s09_coin_02",
+      "id": "s14_coin_02",
       "type": "coin",
       "transform": {
-        "x": 309.97066779058474,
-        "y": -44.67586771435271
+        "x": 489.7824618384804,
+        "y": -70.6809899230098
       },
       "properties": {
         "optional": true,
@@ -1665,11 +2477,11 @@
       }
     },
     {
-      "id": "s09_coin_03",
+      "id": "s14_coin_03",
       "type": "coin",
       "transform": {
-        "x": 319.322255206212,
-        "y": -47.64125414919693
+        "x": 497.0037883232035,
+        "y": -72.27449954239673
       },
       "properties": {
         "optional": true,
@@ -1685,11 +2497,11 @@
       }
     },
     {
-      "id": "s10_coin_01",
+      "id": "s15_coin_01",
       "type": "coin",
       "transform": {
-        "x": 338.8,
-        "y": -49.073532594268244
+        "x": 520.25,
+        "y": -75.23153577677179
       },
       "properties": {
         "optional": true,
@@ -1705,11 +2517,11 @@
       }
     },
     {
-      "id": "s10_coin_02",
+      "id": "s15_coin_02",
       "type": "coin",
       "transform": {
-        "x": 348.8,
-        "y": -49.073532594268244
+        "x": 530.9,
+        "y": -75.23153577677179
       },
       "properties": {
         "optional": true,
@@ -1725,11 +2537,11 @@
       }
     },
     {
-      "id": "s10_coin_03",
+      "id": "s15_coin_03",
       "type": "coin",
       "transform": {
-        "x": 358.8,
-        "y": -49.073532594268244
+        "x": 541.5500000000001,
+        "y": -75.23153577677179
       },
       "properties": {
         "optional": true,
@@ -1790,6 +2602,36 @@
         "resetExplosiveAssemblies": true,
         "requiresRestartTest": true
       }
+    },
+    {
+      "id": "cp_extended_02_first_drop",
+      "transform": {
+        "x": 332.8,
+        "y": -65.82941494720943,
+        "rotation": 0
+      },
+      "metadata": {
+        "afterBeat": "extended_02_first_drop",
+        "expectedRestartSpeed": 0,
+        "purpose": "First stable pad after challenge resolution",
+        "resetExplosiveAssemblies": true,
+        "requiresRestartTest": true
+      }
+    },
+    {
+      "id": "cp_extended_04_basalt_flight",
+      "transform": {
+        "x": 424.6,
+        "y": -76.23153577677179,
+        "rotation": 0
+      },
+      "metadata": {
+        "afterBeat": "extended_04_basalt_flight",
+        "expectedRestartSpeed": 0,
+        "purpose": "First stable pad after challenge resolution",
+        "resetExplosiveAssemblies": true,
+        "requiresRestartTest": true
+      }
     }
   ],
   "version": "2.0",
@@ -1810,16 +2652,16 @@
     "y": 1
   },
   "End": {
-    "x": 367.8,
-    "y": -49.27353259426825
+    "x": 551.2,
+    "y": -75.4315357767718
   },
   "Top": {
     "x": 32.04826115694395,
     "y": 5.01015873899189
   },
   "Bottom": {
-    "x": 213.55,
-    "y": -26.693923278166036
+    "x": 279.3,
+    "y": -48.27353259426823
   },
   "design": {
     "variants": [
@@ -1831,12 +2673,17 @@
       "valley.long_floor",
       "flat.braking_shelf",
       "drop.deep",
+      "rise.two_stage",
+      "drop.long_runout",
+      "flat.braking_shelf",
+      "step_down.long",
+      "flat.braking_shelf",
       "wave.two_soft",
       "platform.downhill_bridge",
       "flat.finish_release"
     ],
     "validationStatus": "geometry_checked; Unity bike playtests pending",
-    "coinCount": 33,
+    "coinCount": 48,
     "coinPolicy": {
       "perObstacle": 3,
       "placement": "library_local"
@@ -2428,9 +3275,9 @@
         "joins": []
       },
       {
-        "id": "wave.two_soft",
-        "type": "wave",
-        "geometryProfile": "wave",
+        "id": "rise.two_stage",
+        "type": "rise",
+        "geometryProfile": "rise",
         "ports": {
           "entry": {
             "x": 272.8,
@@ -2441,8 +3288,385 @@
             ]
           },
           "exit": {
-            "x": 292.8,
-            "y": -50.27353259426825,
+            "x": 291.8,
+            "y": -46.27353259426825,
+            "direction": [
+              1,
+              0
+            ]
+          }
+        },
+        "difficulty": 3,
+        "physics": {
+          "status": "unvalidated",
+          "requiredBikeSkills": [
+            "uphill_throttle"
+          ],
+          "entrySpeedWindow": null,
+          "exitSpeedWindow": null
+        },
+        "camera": {
+          "visibleLandingRequired": true,
+          "lookAheadDistance": 16,
+          "verticalFeatureVisibilityRequired": false
+        },
+        "jumpUnit": null,
+        "joins": []
+      },
+      {
+        "id": "drop.long_runout",
+        "type": "drop",
+        "geometryProfile": "drop",
+        "ports": {
+          "entry": {
+            "x": 291.8,
+            "y": -46.27353259426825,
+            "direction": [
+              1,
+              0
+            ]
+          },
+          "exit": {
+            "x": 349.8,
+            "y": -66.82941494720943,
+            "direction": [
+              1,
+              0
+            ]
+          }
+        },
+        "difficulty": 2,
+        "physics": {
+          "status": "unvalidated",
+          "requiredBikeSkills": [
+            "drop_pitch_control"
+          ],
+          "entrySpeedWindow": {
+            "minimum": 5.1353,
+            "ideal": 6.1675,
+            "maximum": 7.1997,
+            "units": "units/s",
+            "status": "sampled_point_mass_only"
+          },
+          "exitSpeedWindow": null,
+          "pointMassCheck": {
+            "coordinateSpace": "module_local",
+            "ideal": {
+              "result": "catch",
+              "speed": 6.1675,
+              "x": 25.0308723445982,
+              "y": -10.516714935143993,
+              "airtime": 1.4642679115684152,
+              "pitchMismatchDegrees": 10.56,
+              "landingQuality": "aligned"
+            },
+            "sweep": [
+              {
+                "multiplier": 0.8,
+                "result": "undershoot",
+                "speed": 4.934
+              },
+              {
+                "multiplier": 0.9,
+                "result": "catch",
+                "speed": 5.5508,
+                "x": 22.51593219839038,
+                "y": -6.759098722243805,
+                "airtime": 1.1738832046823187,
+                "pitchMismatchDegrees": 8.06,
+                "landingQuality": "aligned"
+              },
+              {
+                "multiplier": 1,
+                "result": "catch",
+                "speed": 6.1675,
+                "x": 25.0308723445982,
+                "y": -10.516714935143993,
+                "airtime": 1.4642679115684152,
+                "pitchMismatchDegrees": 10.56,
+                "landingQuality": "aligned"
+              },
+              {
+                "multiplier": 1.1,
+                "result": "catch",
+                "speed": 6.7843,
+                "x": 27.39204547531906,
+                "y": -13.830527513108748,
+                "airtime": 1.679190105806693,
+                "pitchMismatchDegrees": 15.9,
+                "landingQuality": "aligned"
+              },
+              {
+                "multiplier": 1.2,
+                "result": "catch",
+                "speed": 7.401,
+                "x": 29.440730000510854,
+                "y": -16.17722095518398,
+                "airtime": 1.8160694501433392,
+                "pitchMismatchDegrees": 21.78,
+                "landingQuality": "hard_impact"
+              }
+            ],
+            "limitations": "No bike size, suspension, wheel collision, motor or air control."
+          },
+          "catchDesign": "Sloped drop catch, Bezier compression, full flat recovery"
+        },
+        "camera": {
+          "visibleLandingRequired": true,
+          "lookAheadDistance": 22,
+          "verticalFeatureVisibilityRequired": false
+        },
+        "jumpUnit": {
+          "approach": [
+            291.8,
+            307.8
+          ],
+          "launch": [
+            307.8,
+            307.8
+          ],
+          "flight": [
+            307.8,
+            311.8
+          ],
+          "landing": [
+            311.8,
+            329.8
+          ],
+          "recovery": [
+            329.8,
+            349.8
+          ],
+          "launchAngle": 0,
+          "landingCategory": "flow",
+          "checkpointCandidateAfterStabilization": 332.8
+        },
+        "joins": []
+      },
+      {
+        "id": "flat.braking_shelf",
+        "type": "flat",
+        "geometryProfile": "flat",
+        "ports": {
+          "entry": {
+            "x": 349.8,
+            "y": -66.82941494720943,
+            "direction": [
+              1,
+              0
+            ]
+          },
+          "exit": {
+            "x": 365.8,
+            "y": -66.02941494720943,
+            "direction": [
+              1,
+              0
+            ]
+          }
+        },
+        "difficulty": 2,
+        "physics": {
+          "status": "unvalidated",
+          "requiredBikeSkills": [
+            "throttle_control"
+          ],
+          "entrySpeedWindow": null,
+          "exitSpeedWindow": null
+        },
+        "camera": {
+          "visibleLandingRequired": true,
+          "lookAheadDistance": 16,
+          "verticalFeatureVisibilityRequired": false
+        },
+        "jumpUnit": null,
+        "joins": []
+      },
+      {
+        "id": "step_down.long",
+        "type": "step_down",
+        "geometryProfile": "descending_landing_shelf",
+        "ports": {
+          "entry": {
+            "x": 365.8,
+            "y": -66.02941494720943,
+            "direction": [
+              1,
+              0
+            ]
+          },
+          "exit": {
+            "x": 437.6,
+            "y": -77.23153577677179,
+            "direction": [
+              1,
+              0
+            ]
+          }
+        },
+        "difficulty": 3,
+        "physics": {
+          "status": "unvalidated",
+          "requiredBikeSkills": [
+            "descending_alignment"
+          ],
+          "entrySpeedWindow": {
+            "minimum": 10.5538,
+            "ideal": 11.77975,
+            "maximum": 13.0057,
+            "units": "units/s",
+            "status": "sampled_point_mass_only"
+          },
+          "exitSpeedWindow": null,
+          "pointMassCheck": {
+            "coordinateSpace": "module_local",
+            "ideal": {
+              "result": "catch",
+              "speed": 11.7797,
+              "x": 44.472371132298775,
+              "y": -3.570744927956591,
+              "airtime": 1.7302579781624083,
+              "pitchMismatchDegrees": 14.95,
+              "landingQuality": "aligned"
+            },
+            "sweep": [
+              {
+                "multiplier": 0.8,
+                "result": "undershoot",
+                "speed": 9.4238
+              },
+              {
+                "multiplier": 0.9,
+                "result": "catch",
+                "speed": 10.6018,
+                "x": 39.18166104145345,
+                "y": -0.5847571013600916,
+                "airtime": 1.3718791172598799,
+                "pitchMismatchDegrees": 17.89,
+                "landingQuality": "aligned"
+              },
+              {
+                "multiplier": 1,
+                "result": "catch",
+                "speed": 11.7797,
+                "x": 44.472371132298775,
+                "y": -3.570744927956591,
+                "airtime": 1.7302579781624083,
+                "pitchMismatchDegrees": 14.95,
+                "landingQuality": "aligned"
+              },
+              {
+                "multiplier": 1.1,
+                "result": "catch",
+                "speed": 12.9577,
+                "x": 52.223623282684585,
+                "y": -9.72941532836534,
+                "airtime": 2.232997450193214,
+                "pitchMismatchDegrees": 14.97,
+                "landingQuality": "aligned"
+              },
+              {
+                "multiplier": 1.2,
+                "result": "catch",
+                "speed": 14.1357,
+                "x": 56.5912189336849,
+                "y": -11.202121000181112,
+                "airtime": 2.387831906844035,
+                "pitchMismatchDegrees": 53.72,
+                "landingQuality": "hard_impact"
+              }
+            ],
+            "limitations": "No bike size, suspension, wheel collision, motor or air control."
+          },
+          "catchDesign": "Velocity-envelope catch, Bezier compression, full flat recovery"
+        },
+        "camera": {
+          "visibleLandingRequired": true,
+          "lookAheadDistance": 29,
+          "verticalFeatureVisibilityRequired": false
+        },
+        "jumpUnit": {
+          "approach": [
+            365.8,
+            383.8
+          ],
+          "launch": [
+            383.8,
+            391.8
+          ],
+          "flight": [
+            391.8,
+            404.8
+          ],
+          "landing": [
+            404.8,
+            421.6
+          ],
+          "recovery": [
+            421.6,
+            437.6
+          ],
+          "launchAngle": 25,
+          "landingCategory": "flow",
+          "checkpointCandidateAfterStabilization": 424.6
+        },
+        "joins": []
+      },
+      {
+        "id": "flat.braking_shelf",
+        "type": "flat",
+        "geometryProfile": "flat",
+        "ports": {
+          "entry": {
+            "x": 437.6,
+            "y": -77.23153577677179,
+            "direction": [
+              1,
+              0
+            ]
+          },
+          "exit": {
+            "x": 453.6,
+            "y": -76.4315357767718,
+            "direction": [
+              1,
+              0
+            ]
+          }
+        },
+        "difficulty": 2,
+        "physics": {
+          "status": "unvalidated",
+          "requiredBikeSkills": [
+            "throttle_control"
+          ],
+          "entrySpeedWindow": null,
+          "exitSpeedWindow": null
+        },
+        "camera": {
+          "visibleLandingRequired": true,
+          "lookAheadDistance": 16,
+          "verticalFeatureVisibilityRequired": false
+        },
+        "jumpUnit": null,
+        "joins": []
+      },
+      {
+        "id": "wave.two_soft",
+        "type": "wave",
+        "geometryProfile": "wave",
+        "ports": {
+          "entry": {
+            "x": 453.6,
+            "y": -76.4315357767718,
+            "direction": [
+              1,
+              0
+            ]
+          },
+          "exit": {
+            "x": 473.6,
+            "y": -76.4315357767718,
             "direction": [
               1,
               0
@@ -2472,16 +3696,16 @@
         "geometryProfile": "platform",
         "ports": {
           "entry": {
-            "x": 292.8,
-            "y": -50.27353259426825,
+            "x": 473.6,
+            "y": -76.4315357767718,
             "direction": [
               1,
               0
             ]
           },
           "exit": {
-            "x": 328.8,
-            "y": -50.27353259426825,
+            "x": 509.6,
+            "y": -76.4315357767718,
             "direction": [
               1,
               0
@@ -2511,16 +3735,16 @@
         "geometryProfile": "flat",
         "ports": {
           "entry": {
-            "x": 328.8,
-            "y": -50.27353259426825,
+            "x": 509.6,
+            "y": -76.4315357767718,
             "direction": [
               1,
               0
             ]
           },
           "exit": {
-            "x": 368.8,
-            "y": -50.27353259426825,
+            "x": 552.2,
+            "y": -76.4315357767718,
             "direction": [
               1,
               0
@@ -2671,49 +3895,124 @@
       },
       {
         "instanceId": "s08",
+        "variant": "rise.two_stage",
+        "beatId": "extended_01_rim",
+        "role": "build",
+        "tension": 2,
+        "purpose": "Extended route reprise: Reach the crater rim with an intermediate shelf that settles pitch.",
+        "xRange": [
+          272.8,
+          291.8
+        ],
+        "entryY": -50.27353259426825,
+        "exitY": -46.27353259426825,
+        "parameterOverrides": {}
+      },
+      {
+        "instanceId": "s09",
+        "variant": "drop.long_runout",
+        "beatId": "extended_02_first_drop",
+        "role": "teach",
+        "tension": 2,
+        "purpose": "Extended route reprise: Teach rolling off a horizontal lip into a generous sloped catch.",
+        "xRange": [
+          291.8,
+          349.8
+        ],
+        "entryY": -46.27353259426825,
+        "exitY": -66.82941494720943,
+        "parameterOverrides": {}
+      },
+      {
+        "instanceId": "s10",
+        "variant": "flat.braking_shelf",
+        "beatId": "extended_03_brake_one",
+        "role": "release",
+        "tension": 1,
+        "purpose": "Extended route reprise: Give a visible braking cue before the long step-down.",
+        "xRange": [
+          349.8,
+          365.8
+        ],
+        "entryY": -66.82941494720943,
+        "exitY": -66.02941494720943,
+        "parameterOverrides": {}
+      },
+      {
+        "instanceId": "s11",
+        "variant": "step_down.long",
+        "beatId": "extended_04_basalt_flight",
+        "role": "climax",
+        "tension": 4,
+        "purpose": "Extended route reprise: Use a long descending flight to reward deliberate pitch control.",
+        "xRange": [
+          365.8,
+          437.6
+        ],
+        "entryY": -66.02941494720943,
+        "exitY": -77.23153577677179,
+        "parameterOverrides": {}
+      },
+      {
+        "instanceId": "s12",
+        "variant": "flat.braking_shelf",
+        "beatId": "extended_05_brake_two",
+        "role": "build",
+        "tension": 2,
+        "purpose": "Extended route reprise: Signal speed reduction before the lower lip.",
+        "xRange": [
+          437.6,
+          453.6
+        ],
+        "entryY": -77.23153577677179,
+        "exitY": -76.4315357767718,
+        "parameterOverrides": {}
+      },
+      {
+        "instanceId": "s13",
         "variant": "wave.two_soft",
         "beatId": "floor_rollers",
         "role": "release",
         "tension": 1,
         "purpose": "Two low rollers restore a calm forward rhythm.",
         "xRange": [
-          272.8,
-          292.8
+          453.6,
+          473.6
         ],
-        "entryY": -50.27353259426825,
-        "exitY": -50.27353259426825,
+        "entryY": -76.4315357767718,
+        "exitY": -76.4315357767718,
         "parameterOverrides": {}
       },
       {
-        "instanceId": "s09",
+        "instanceId": "s14",
         "variant": "platform.downhill_bridge",
         "beatId": "outlet",
         "role": "resolution",
         "tension": 2,
         "purpose": "An optional descending bridge resolves the downhill theme above safe ground.",
         "xRange": [
-          292.8,
-          328.8
+          473.6,
+          509.6
         ],
-        "entryY": -50.27353259426825,
-        "exitY": -50.27353259426825,
+        "entryY": -76.4315357767718,
+        "exitY": -76.4315357767718,
         "parameterOverrides": {}
       },
       {
-        "instanceId": "s10",
+        "instanceId": "s15",
         "variant": "flat.finish_release",
         "beatId": "finish",
         "role": "resolution",
         "tension": 0,
         "purpose": "Finish release after the last challenge.",
         "xRange": [
-          328.8,
-          368.8
+          509.6,
+          552.2
         ],
-        "entryY": -50.27353259426825,
-        "exitY": -50.27353259426825,
+        "entryY": -76.4315357767718,
+        "exitY": -76.4315357767718,
         "parameterOverrides": {
-          "length": 40
+          "length": 42.6
         }
       }
     ],
@@ -2999,13 +4298,13 @@
         "validationStatus": "static geometry and idealized arcs; Unity playtests pending"
       },
       {
-        "id": "floor_rollers",
-        "role": "release",
-        "tension": 1,
-        "purpose": "Two low rollers restore a calm forward rhythm.",
+        "id": "extended_01_rim",
+        "role": "build",
+        "tension": 2,
+        "purpose": "Extended route reprise: Reach the crater rim with an intermediate shelf that settles pitch.",
         "xRange": [
           272.8,
-          292.8
+          291.8
         ],
         "objectIds": [
           "s08_coin_01",
@@ -3015,18 +4314,193 @@
         "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
-          284.8,
-          292.8
+          283.8,
+          291.8
         ],
         "cameraCue": "Reveal destination before commitment, track apex, recenter during recovery",
         "camera": {
           "triggerX": 260.8,
-          "recenterX": 287.8,
+          "recenterX": 286.8,
           "framingBounds": {
             "minX": 269.8,
-            "maxX": 295.8,
-            "minY": -52.27353259426826,
-            "maxY": -45.225674651106814
+            "maxX": 294.8,
+            "minY": -52.27353259426825,
+            "maxY": -42.263373855276356
+          },
+          "implementationStatus": "authored intent; Unity camera implementation pending"
+        },
+        "fallback": "continuous ground",
+        "validationStatus": "static geometry and idealized arcs; Unity playtests pending"
+      },
+      {
+        "id": "extended_02_first_drop",
+        "role": "teach",
+        "tension": 2,
+        "purpose": "Extended route reprise: Teach rolling off a horizontal lip into a generous sloped catch.",
+        "xRange": [
+          291.8,
+          349.8
+        ],
+        "objectIds": [
+          "s09_coin_01",
+          "s09_coin_02",
+          "s09_coin_03"
+        ],
+        "coinCount": 3,
+        "checkpointId": "cp_extended_02_first_drop",
+        "recoveryRange": [
+          329.8,
+          349.8
+        ],
+        "cameraCue": "Reveal destination before commitment, track apex, recenter during recovery",
+        "camera": {
+          "triggerX": 279.8,
+          "recenterX": 332.8,
+          "framingBounds": {
+            "minX": 288.8,
+            "maxX": 352.8,
+            "minY": -68.82941459426826,
+            "maxY": -43.27353259426823
+          },
+          "implementationStatus": "authored intent; Unity camera implementation pending"
+        },
+        "fallback": "deadzone catches missed crossing; restart at previous checkpoint",
+        "validationStatus": "static geometry and idealized arcs; Unity playtests pending"
+      },
+      {
+        "id": "extended_03_brake_one",
+        "role": "release",
+        "tension": 1,
+        "purpose": "Extended route reprise: Give a visible braking cue before the long step-down.",
+        "xRange": [
+          349.8,
+          365.8
+        ],
+        "objectIds": [
+          "s10_coin_01",
+          "s10_coin_02",
+          "s10_coin_03"
+        ],
+        "coinCount": 3,
+        "checkpointId": null,
+        "recoveryRange": [
+          357.8,
+          365.8
+        ],
+        "cameraCue": "Reveal destination before commitment, track apex, recenter during recovery",
+        "camera": {
+          "triggerX": 337.8,
+          "recenterX": 360.8,
+          "framingBounds": {
+            "minX": 346.8,
+            "maxX": 368.8,
+            "minY": -68.82941494720943,
+            "maxY": -61.82941494720943
+          },
+          "implementationStatus": "authored intent; Unity camera implementation pending"
+        },
+        "fallback": "continuous ground",
+        "validationStatus": "static geometry and idealized arcs; Unity playtests pending"
+      },
+      {
+        "id": "extended_04_basalt_flight",
+        "role": "climax",
+        "tension": 4,
+        "purpose": "Extended route reprise: Use a long descending flight to reward deliberate pitch control.",
+        "xRange": [
+          365.8,
+          437.6
+        ],
+        "objectIds": [
+          "s11_coin_01",
+          "s11_coin_02",
+          "s11_coin_03"
+        ],
+        "coinCount": 3,
+        "checkpointId": "cp_extended_04_basalt_flight",
+        "recoveryRange": [
+          421.6,
+          437.6
+        ],
+        "cameraCue": "Reveal destination before commitment, track apex, recenter during recovery",
+        "camera": {
+          "triggerX": 353.8,
+          "recenterX": 424.6,
+          "framingBounds": {
+            "minX": 362.8,
+            "maxX": 440.6,
+            "minY": -79.23153594720945,
+            "maxY": -58.271811097073744
+          },
+          "implementationStatus": "authored intent; Unity camera implementation pending"
+        },
+        "fallback": "deadzone catches missed crossing; restart at previous checkpoint",
+        "validationStatus": "static geometry and idealized arcs; Unity playtests pending"
+      },
+      {
+        "id": "extended_05_brake_two",
+        "role": "build",
+        "tension": 2,
+        "purpose": "Extended route reprise: Signal speed reduction before the lower lip.",
+        "xRange": [
+          437.6,
+          453.6
+        ],
+        "objectIds": [
+          "s12_coin_01",
+          "s12_coin_02",
+          "s12_coin_03"
+        ],
+        "coinCount": 3,
+        "checkpointId": null,
+        "recoveryRange": [
+          445.6,
+          453.6
+        ],
+        "cameraCue": "Reveal destination before commitment, track apex, recenter during recovery",
+        "camera": {
+          "triggerX": 425.6,
+          "recenterX": 448.6,
+          "framingBounds": {
+            "minX": 434.6,
+            "maxX": 456.6,
+            "minY": -79.23153577677179,
+            "maxY": -72.23153577677179
+          },
+          "implementationStatus": "authored intent; Unity camera implementation pending"
+        },
+        "fallback": "continuous ground",
+        "validationStatus": "static geometry and idealized arcs; Unity playtests pending"
+      },
+      {
+        "id": "floor_rollers",
+        "role": "release",
+        "tension": 1,
+        "purpose": "Two low rollers restore a calm forward rhythm.",
+        "xRange": [
+          453.6,
+          473.6
+        ],
+        "objectIds": [
+          "s13_coin_01",
+          "s13_coin_02",
+          "s13_coin_03"
+        ],
+        "coinCount": 3,
+        "checkpointId": null,
+        "recoveryRange": [
+          465.6,
+          473.6
+        ],
+        "cameraCue": "Reveal destination before commitment, track apex, recenter during recovery",
+        "camera": {
+          "triggerX": 441.6,
+          "recenterX": 468.6,
+          "framingBounds": {
+            "minX": 450.6,
+            "maxX": 476.6,
+            "minY": -78.43153577677181,
+            "maxY": -71.38367783361036
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -3039,29 +4513,29 @@
         "tension": 2,
         "purpose": "An optional descending bridge resolves the downhill theme above safe ground.",
         "xRange": [
-          292.8,
-          328.8
+          473.6,
+          509.6
         ],
         "objectIds": [
-          "s09_coin_01",
-          "s09_coin_02",
-          "s09_coin_03"
+          "s14_coin_01",
+          "s14_coin_02",
+          "s14_coin_03"
         ],
         "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
-          320.8,
-          328.8
+          501.6,
+          509.6
         ],
         "cameraCue": "Reveal destination before commitment, track apex, recenter during recovery",
         "camera": {
-          "triggerX": 280.8,
-          "recenterX": 323.8,
+          "triggerX": 461.6,
+          "recenterX": 504.6,
           "framingBounds": {
-            "minX": 289.8,
-            "maxX": 331.8,
-            "minY": -52.27353259426826,
-            "maxY": -41.588761283241936
+            "minX": 470.6,
+            "maxX": 512.6,
+            "minY": -78.44153577677181,
+            "maxY": -67.4315357767718
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -3074,29 +4548,29 @@
         "tension": 0,
         "purpose": "Finish release after the last challenge.",
         "xRange": [
-          328.8,
-          368.8
+          509.6,
+          552.2
         ],
         "objectIds": [
-          "s10_coin_01",
-          "s10_coin_02",
-          "s10_coin_03"
+          "s15_coin_01",
+          "s15_coin_02",
+          "s15_coin_03"
         ],
         "coinCount": 3,
         "checkpointId": null,
         "recoveryRange": [
-          360.8,
-          368.8
+          544.2,
+          552.2
         ],
         "cameraCue": "Reveal destination before commitment, track apex, recenter during recovery",
         "camera": {
-          "triggerX": 316.8,
-          "recenterX": 363.8,
+          "triggerX": 497.6,
+          "recenterX": 547.2,
           "framingBounds": {
-            "minX": 325.8,
-            "maxX": 371.8,
-            "minY": -52.27353259426826,
-            "maxY": -46.073532594268244
+            "minX": 506.6,
+            "maxX": 555.2,
+            "minY": -78.43153577677181,
+            "maxY": -72.23153577677179
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -3113,11 +4587,16 @@
       "basin": 3,
       "brake_two": 3,
       "lower_drop": 3,
+      "extended_01_rim": 3,
+      "extended_02_first_drop": 3,
+      "extended_03_brake_one": 3,
+      "extended_04_basalt_flight": 3,
+      "extended_05_brake_two": 3,
       "floor_rollers": 3,
       "outlet": 3,
       "finish": 3
     },
-    "length": 366.8,
+    "length": 550.2,
     "recommendedPlaytestOrder": [
       "Main route with no optional stunts",
       "Zero-speed restart at every checkpoint",
@@ -3126,11 +4605,20 @@
       "Barrel at low/typical/high entry speed",
       "All obstacle coins and per-beat camera framing"
     ],
+    "lengthPlan": {
+      "baselineLength": 366.8,
+      "multiplier": 1.5,
+      "targetLength": 550.2,
+      "addedChallengeCount": 3,
+      "addedStageCount": 5,
+      "extraFinishLength": 2.6,
+      "baselineSource": "saved campaign before full-campaign 1.5x extension"
+    },
     "validationReport": {
       "status": "passed_static_geometry_and_point_mass_checks",
-      "sourceMainShapes": 14,
-      "exportedMainShapes": 4,
-      "coinCount": 33,
+      "sourceMainShapes": 21,
+      "exportedMainShapes": 6,
+      "coinCount": 48,
       "coveredGaps": [
         {
           "xRange": [
@@ -3152,6 +4640,20 @@
             242.8
           ],
           "covered": true
+        },
+        {
+          "xRange": [
+            307.8,
+            311.8
+          ],
+          "covered": true
+        },
+        {
+          "xRange": [
+            391.8,
+            404.8
+          ],
+          "covered": true
         }
       ],
       "springChecks": [],
@@ -3159,7 +4661,7 @@
         "perObstacle": 3,
         "loopCoinsInsideRing": true,
         "surfaceCoinsOnDrivingSurface": true,
-        "libraryCoinCount": 33
+        "libraryCoinCount": 48
       },
       "jumpChecks": [
         {
@@ -3191,9 +4693,29 @@
             1.1
           ],
           "status": "point_mass_only"
+        },
+        {
+          "variant": "drop.long_runout",
+          "coordinateSpace": "module_local",
+          "alignedSpeedMultipliers": [
+            0.9,
+            1,
+            1.1
+          ],
+          "status": "point_mass_only"
+        },
+        {
+          "variant": "step_down.long",
+          "coordinateSpace": "module_local",
+          "alignedSpeedMultipliers": [
+            0.9,
+            1,
+            1.1
+          ],
+          "status": "point_mass_only"
         }
       ],
-      "checkpointCount": 3,
+      "checkpointCount": 5,
       "exportIdempotent": true,
       "unchangedStartEnd": true,
       "remainingValidation": "Unity bike size, torque, suspension, restart, impulse, coin pickup and camera playtests"

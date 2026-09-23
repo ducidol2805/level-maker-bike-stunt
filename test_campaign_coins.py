@@ -7,7 +7,7 @@ import unittest
 from generate_campaign import build_authored_level, validate_authored
 from obstacle_library import (ROOT, as_level, assign_module_coins, build_variant,
                               load_catalog, place)
-from terrain_export import export_level
+from terrain_export import export_level, surface_count
 
 
 def coins(module):
@@ -56,8 +56,16 @@ class LibraryCoinTests(unittest.TestCase):
             module = build_variant(family,variant)
             for coin in coins(module):
                 x = coin['transform']['x']
-                self.assertTrue(any(shape['points'][0]['x']<=x<=shape['points'][-1]['x']
+                self.assertTrue(any(shape['points'][0]['x']<=x<=shape['points'][surface_count(shape)-1]['x']
                                     for shape in module['RampPlatform']))
+            # Closing a platform must not put rewards on sides or undersides.
+            open_copy = copy.deepcopy(module)
+            for shape in open_copy['RampPlatform']:
+                shape['points'] = shape['points'][:surface_count(shape)]
+                shape['closed'] = False
+                shape['metadata'].pop('drivingSurfaceCount')
+            assign_module_coins(open_copy)
+            self.assertEqual(coins(module), coins(open_copy))
 
 
 class CampaignCoinTests(unittest.TestCase):

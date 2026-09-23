@@ -180,7 +180,9 @@ def distribute(line, count, start=.12, end=.88):
 
 
 def add_barrel(module, beat):
-    ramps = [sample_curve(shape, 120) for shape in module['RampPlatform']]
+    ramps = [sample_curve({'points':shape['points'][:surface_count(shape)]}
+                          if shape.get('metadata', {}).get('drivingSurfaceCount') else shape, 120)
+             for shape in module['RampPlatform']]
     # Search every disconnected segment. Prefer the last point on the highest
     # crest, while keeping the barrel anchor inside its supporting segment.
     maximum = max(y for ramp in ramps for x, y in ramp)
@@ -389,6 +391,7 @@ def build_authored_level(recipe, families=None):
             'Barrel at low/typical/high entry speed', 'All obstacle coins and per-beat camera framing'])
     if 'lengthPlan' in recipe:
         level['design']['lengthPlan'] = copy.deepcopy(recipe['lengthPlan'])
+    if 'difficultyProgression' in recipe:
         level['design']['difficultyProgression'] = copy.deepcopy(recipe['difficultyProgression'])
     # The median uses uniform ground-X samples, excluding voids and export padding.
     road = [pt for module in modules for line in road_lines(module)
@@ -465,7 +468,11 @@ def validate_authored(source, exported):
         for p in s['points']:
             require(all(k in p for k in ('tangentIn','tangentOut','tangentMode','corner')), 'Missing SpriteShape tangent data')
     for s in exported['RampPlatform']:
-        require(not s['closed'], 'Auxiliary ramp must be open')
+        if s.get('metadata', {}).get('sourceVariant', '').startswith('platform.'):
+            require(s['closed'], 'Library platform must be closed')
+            surface_count(s)
+        else:
+            require(not s['closed'], 'Auxiliary ramp must be open')
     gap_checks=[]
     for left,right in zip(lines,lines[1:]):
         a,b=left[-1][0],right[0][0]

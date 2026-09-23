@@ -1,5 +1,5 @@
 {
-  "version": "1.4",
+  "version": "1.5",
   "referenceLevel": "levels/00_cinder_crown.json",
   "designSkill": "Bike Stunt Track Reconstruction Skill.md",
   "maps": [
@@ -7,7 +7,7 @@
       "number": 1,
       "name": "Ember Rhythm",
       "difficulty": "easy-medium",
-      "finishLength": 36,
+      "finishLength": 37.9,
       "intent": "Learn to pump two rollers, carry that rhythm into a visible gap, then repeat with a quicker pop.",
       "signature": "Pumping rhythm becomes flight timing; a broad tabletop teaches the motion before the first void.",
       "stages": [
@@ -48,6 +48,35 @@
           "purpose": "Settle on the valley floor and rebuild speed gradually."
         },
         {
+          "variant": "wave.two_soft",
+          "beat": "extended_01_pump",
+          "role": "teach",
+          "tension": 1,
+          "purpose": "Extended route reprise: Teach two readable weight shifts without a failure gap."
+        },
+        {
+          "variant": "tabletop.learner",
+          "beat": "extended_02_table",
+          "role": "practice",
+          "tension": 2,
+          "purpose": "Extended route reprise: Practice crest timing with continuous rollable ground."
+        },
+        {
+          "variant": "hill.round_roller",
+          "beat": "extended_03_approach",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Extended route reprise: One rounded crest prepares the first flight."
+        },
+        {
+          "variant": "gap.flow_double",
+          "beat": "extended_04_first_flight",
+          "role": "climax",
+          "tension": 3,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Spend learned momentum on a visible gap and long sloped catch."
+        },
+        {
           "variant": "kicker.quick_pop",
           "beat": "reprise",
           "role": "combine",
@@ -62,13 +91,22 @@
           "tension": 2,
           "purpose": "Finish with a readable three-beat rhythm, then clear runout."
         }
-      ]
+      ],
+      "lengthPlan": {
+        "baselineLength": 273.0,
+        "multiplier": 1.5,
+        "targetLength": 409.5,
+        "addedChallengeCount": 4,
+        "addedStageCount": 4,
+        "extraFinishLength": 1.9,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension"
+      }
     },
     {
       "number": 2,
       "name": "Azure Terrace",
       "difficulty": "medium",
-      "finishLength": 36,
+      "finishLength": 46.4,
       "intent": "Climb toward a visible terrace, rehearse an elevated catch, then reveal the skyline with one high spring.",
       "signature": "A 10-unit spring lift unlocks an upper route; the final terraced descent releases the tension.",
       "stages": [
@@ -110,6 +148,36 @@
           "purpose": "Reward the upper ramp line while preserving continuous ground fallback."
         },
         {
+          "variant": "rise.long_climb",
+          "beat": "extended_01_foothill",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Extended route reprise: Teach sustained throttle while the upper route enters view."
+        },
+        {
+          "variant": "step_up.small_shelf",
+          "beat": "extended_02_first_shelf",
+          "role": "practice",
+          "tension": 2,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Rehearse reaching a higher catch before the cinematic lift."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_03_lift_setup",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Reset bike pitch and camera before the spring approach."
+        },
+        {
+          "variant": "spring_high.lift_2",
+          "beat": "extended_04_terrace_reveal",
+          "role": "climax",
+          "tension": 3,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Reveal the 10-unit higher terrace through a tall coin-guided arc."
+        },
+        {
           "variant": "fall.terraced",
           "beat": "home_stairs",
           "role": "release",
@@ -123,13 +191,22 @@
           "tension": 2,
           "purpose": "Use the long deck as a final relaxed stunt before the finish."
         }
-      ]
+      ],
+      "lengthPlan": {
+        "baselineLength": 287.2,
+        "multiplier": 1.5,
+        "targetLength": 430.8,
+        "addedChallengeCount": 3,
+        "addedStageCount": 4,
+        "extraFinishLength": 10.4,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension"
+      }
     },
     {
       "number": 3,
       "name": "Fuse Halo",
       "difficulty": "medium / optional advanced loop",
-      "finishLength": 40,
+      "finishLength": 66.5,
       "intent": "Teach curved takeoff, show the explosive connector and loop, then give the player a safe ground return.",
       "signature": "One boosted one-use loop is the landmark; the connector disappears only after full-bike clearance.",
       "stages": [
@@ -211,6 +288,60 @@
           "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
         },
         {
+          "variant": "wave.two_soft",
+          "beat": "extended_01_warmup",
+          "role": "teach",
+          "tension": 1,
+          "purpose": "Extended route reprise: Establish stable pumping before curved takeoff."
+        },
+        {
+          "variant": "curved_ramp.gentle_scoop",
+          "beat": "extended_02_scoop",
+          "role": "practice",
+          "tension": 2,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Teach leaning into a smooth rising curve and matching the catch."
+        },
+        {
+          "variant": "rise.crest_relief",
+          "beat": "extended_03_halo_approach",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Extended route reprise: Bring the halo into view and settle at its entry elevation."
+        },
+        {
+          "variant": "explosive_loop.round",
+          "beat": "extended_04_halo",
+          "role": "climax",
+          "tension": 4,
+          "boosts": 1,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Commit to the optional connector, boost into inversion, then land on the revealed fallback."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_05_halo_reset",
+          "role": "release",
+          "tension": 1,
+          "length": 16,
+          "purpose": "Extended route reprise: Let suspension and camera settle after the loop return."
+        },
+        {
+          "variant": "wave.three_even",
+          "beat": "extended_06_halo_echo_rollers",
+          "role": "combine",
+          "tension": 2,
+          "purpose": "Extended route reprise: Repeat three flowing rollers after the ignition landmark."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_07_extended_recovery_2",
+          "role": "release",
+          "tension": 1,
+          "length": 10.8,
+          "purpose": "Extended route reprise: Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
           "variant": "platform.arched_bridge",
           "beat": "halo_echo_bridge",
           "role": "combine",
@@ -227,10 +358,19 @@
         }
       ],
       "lengthPlan": {
-        "baselineLength": 276.4,
+        "baselineLength": 414.6,
         "multiplier": 1.5,
-        "targetLength": 414.6,
-        "addedChallengeCount": 3
+        "targetLength": 621.9,
+        "addedChallengeCount": 5,
+        "addedStageCount": 7,
+        "extraFinishLength": 26.5,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension",
+        "previousPlan": {
+          "baselineLength": 276.4,
+          "multiplier": 1.5,
+          "targetLength": 414.6,
+          "addedChallengeCount": 3
+        }
       },
       "difficultyProgression": {
         "previous": "medium / optional advanced loop",
@@ -241,7 +381,7 @@
       "number": 4,
       "name": "Skyline Courier",
       "difficulty": "medium",
-      "finishLength": 40,
+      "finishLength": 45.0,
       "intent": "Teach the high bridge route, then use an optional crest barrel for a short aerial delivery onto a readable catch.",
       "signature": "A barrel-assisted skybridge pop is the centerpiece; the ground route remains continuous below it.",
       "stages": [
@@ -284,6 +424,44 @@
           "purpose": "Leave room after barrel landing for a zero-speed restart."
         },
         {
+          "variant": "hill.mesa",
+          "beat": "extended_01_rooftop",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Extended route reprise: Introduce climbing onto and leaving a broad roof-like plateau."
+        },
+        {
+          "variant": "platform.flat_bridge",
+          "beat": "extended_02_first_bridge",
+          "role": "practice",
+          "tension": 2,
+          "purpose": "Extended route reprise: Teach the high reward line over an unobstructed ground fallback."
+        },
+        {
+          "variant": "valley.shallow_bowl",
+          "beat": "extended_03_street",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Return to ground level and normalize speed before the barrel."
+        },
+        {
+          "variant": "platform.arched_bridge",
+          "beat": "extended_04_delivery",
+          "role": "climax",
+          "tension": 3,
+          "barrel": true,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Use the crest barrel for an optional forward-up pop, descending onto the bridge return."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_05_delivery_reset",
+          "role": "release",
+          "tension": 1,
+          "length": 16,
+          "purpose": "Extended route reprise: Leave room after barrel landing for a zero-speed restart."
+        },
+        {
           "variant": "step_down.gentle",
           "beat": "off_ramp",
           "role": "combine",
@@ -298,13 +476,22 @@
           "tension": 2,
           "purpose": "Finish on a wide, rollable deck with no further impulse objects."
         }
-      ]
+      ],
+      "lengthPlan": {
+        "baselineLength": 284.0,
+        "multiplier": 1.5,
+        "targetLength": 426.0,
+        "addedChallengeCount": 4,
+        "addedStageCount": 5,
+        "extraFinishLength": 5.0,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension"
+      }
     },
     {
       "number": 5,
       "name": "Broken Horizon",
       "difficulty": "hard",
-      "finishLength": 44,
+      "finishLength": 69.4875,
       "intent": "Build a sense of increasing horizontal distance, then let a spring carry the bike across the central canyon.",
       "signature": "A 36-unit void and long spring arc with three obstacle coins create the widest single reveal so far. Extended with higher-tier transfers and technical obstacles.",
       "stages": [
@@ -370,6 +557,37 @@
           "purpose": "Read irregular trough timing before the final scoop."
         },
         {
+          "variant": "wave.trough_train",
+          "beat": "extended_01_low_rhythm",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Extended route reprise: Keep the bike low through three troughs before opening the horizon."
+        },
+        {
+          "variant": "gap.precision",
+          "beat": "extended_02_near_bank",
+          "role": "practice",
+          "tension": 4,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Master gap / precision with controlled entry speed and a stable recovery.",
+          "landingLength": 17
+        },
+        {
+          "variant": "hill.early_crest",
+          "beat": "extended_03_horizon_setup",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Extended route reprise: Show the distant destination from an early crest with time to settle."
+        },
+        {
+          "variant": "spring_far.crossing_5",
+          "beat": "extended_04_horizon",
+          "role": "climax",
+          "tension": 4,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Master spring far / crossing 5 with controlled entry speed and a stable recovery."
+        },
+        {
           "variant": "flat.checkpoint_pad",
           "beat": "extended_recovery_2",
           "role": "release",
@@ -388,10 +606,19 @@
         }
       ],
       "lengthPlan": {
-        "baselineLength": 348.45,
+        "baselineLength": 522.675,
         "multiplier": 1.5,
-        "targetLength": 522.675,
-        "addedChallengeCount": 2
+        "targetLength": 784.0125,
+        "addedChallengeCount": 4,
+        "addedStageCount": 4,
+        "extraFinishLength": 25.4875,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension",
+        "previousPlan": {
+          "baselineLength": 348.45,
+          "multiplier": 1.5,
+          "targetLength": 522.675,
+          "addedChallengeCount": 2
+        }
       },
       "difficultyProgression": {
         "previous": "medium",
@@ -402,7 +629,7 @@
       "number": 6,
       "name": "Basalt Descent",
       "difficulty": "medium-hard",
-      "finishLength": 40,
+      "finishLength": 42.6,
       "intent": "Teach braking and descending alignment in successive lower catch basins, separated by stabilization shelves.",
       "signature": "A downhill route built around horizontal drops and sloped catches; braking, rather than boosts, sets the pace.",
       "stages": [
@@ -459,6 +686,43 @@
           "purpose": "Apply the learned drop technique to greater vertical separation."
         },
         {
+          "variant": "rise.two_stage",
+          "beat": "extended_01_rim",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Extended route reprise: Reach the crater rim with an intermediate shelf that settles pitch."
+        },
+        {
+          "variant": "drop.long_runout",
+          "beat": "extended_02_first_drop",
+          "role": "teach",
+          "tension": 2,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Teach rolling off a horizontal lip into a generous sloped catch."
+        },
+        {
+          "variant": "flat.braking_shelf",
+          "beat": "extended_03_brake_one",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Give a visible braking cue before the long step-down."
+        },
+        {
+          "variant": "step_down.long",
+          "beat": "extended_04_basalt_flight",
+          "role": "climax",
+          "tension": 4,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Use a long descending flight to reward deliberate pitch control."
+        },
+        {
+          "variant": "flat.braking_shelf",
+          "beat": "extended_05_brake_two",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Extended route reprise: Signal speed reduction before the lower lip."
+        },
+        {
           "variant": "wave.two_soft",
           "beat": "floor_rollers",
           "role": "release",
@@ -472,13 +736,22 @@
           "tension": 2,
           "purpose": "An optional descending bridge resolves the downhill theme above safe ground."
         }
-      ]
+      ],
+      "lengthPlan": {
+        "baselineLength": 366.8,
+        "multiplier": 1.5,
+        "targetLength": 550.2,
+        "addedChallengeCount": 3,
+        "addedStageCount": 5,
+        "extraFinishLength": 2.6,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension"
+      }
     },
     {
       "number": 7,
       "name": "Quarry Cadence",
       "difficulty": "hard",
-      "finishLength": 40,
+      "finishLength": 47.2,
       "intent": "Alternate deliberate low-speed ledges with a faster optional loop so speed control becomes the central skill.",
       "signature": "Curb, double curb, elevated catch, then a round ignition halo; each speed regime has its own reset. Extended with higher-tier transfers and technical obstacles.",
       "stages": [
@@ -570,6 +843,60 @@
           "checkpoint": true
         },
         {
+          "variant": "balance.single_curb",
+          "beat": "extended_01_curb",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Extended route reprise: Introduce one intentional ledge and a broad wheel-settling shelf."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_02_curb_reset",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Allow a clean approach before repeating the ledge skill."
+        },
+        {
+          "variant": "balance.unequal_stairs",
+          "beat": "extended_03_stairs",
+          "role": "practice",
+          "tension": 4,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Master balance / unequal stairs with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "valley.shallow_bowl",
+          "beat": "extended_04_speed_reset",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Transition from careful ledges into forward momentum."
+        },
+        {
+          "variant": "step_up.high_shelf",
+          "beat": "extended_05_shelf_transfer",
+          "role": "combine",
+          "tension": 4,
+          "landingLength": 16,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Master step up / high shelf with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "hill.mesa",
+          "beat": "extended_06_halo_setup",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Extended route reprise: Use the plateau to reveal the loop and normalize its entry."
+        },
+        {
+          "variant": "explosive_loop.double_ring",
+          "beat": "extended_07_quarry_halo",
+          "role": "climax",
+          "tension": 4,
+          "boosts": 2,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Master explosive loop / double ring with controlled entry speed and a stable recovery."
+        },
+        {
           "variant": "wave.irregular",
           "beat": "quarry_broken_rhythm",
           "role": "combine",
@@ -585,10 +912,19 @@
         }
       ],
       "lengthPlan": {
-        "baselineLength": 308.8,
+        "baselineLength": 463.2,
         "multiplier": 1.5,
-        "targetLength": 463.2,
-        "addedChallengeCount": 3
+        "targetLength": 694.8,
+        "addedChallengeCount": 6,
+        "addedStageCount": 7,
+        "extraFinishLength": 7.2,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension",
+        "previousPlan": {
+          "baselineLength": 308.8,
+          "multiplier": 1.5,
+          "targetLength": 463.2,
+          "addedChallengeCount": 3
+        }
       },
       "difficultyProgression": {
         "previous": "medium-hard / optional loop",
@@ -599,7 +935,7 @@
       "number": 8,
       "name": "Cloud Observatory",
       "difficulty": "medium-hard",
-      "finishLength": 40,
+      "finishLength": 43.0,
       "intent": "Make the upper destination the visual goal, reach it through a tall spring reveal, then explore its raised bridge.",
       "signature": "A 14-unit lift leads to a raised roller bridge with an optional barrel reprise.",
       "stages": [
@@ -645,6 +981,36 @@
           "purpose": "A restrained pop from the last raised crest rewards controlled bridge speed; ground remains available."
         },
         {
+          "variant": "curved_ramp.gentle_scoop",
+          "beat": "extended_01_first_air",
+          "role": "teach",
+          "tension": 2,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Establish airborne alignment before the much taller cinematic transfer."
+        },
+        {
+          "variant": "rise.long_climb",
+          "beat": "extended_02_observatory_approach",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Extended route reprise: Climb toward the visible observatory silhouette."
+        },
+        {
+          "variant": "spring_high.lift_3",
+          "beat": "extended_03_observatory",
+          "role": "climax",
+          "tension": 4,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Frame both platform heights and the apex of a 14-unit lift."
+        },
+        {
+          "variant": "hill.mesa",
+          "beat": "extended_04_lookout",
+          "role": "release",
+          "tension": 2,
+          "purpose": "Extended route reprise: Give a wide upper plateau for camera recentering before the bridge."
+        },
+        {
           "variant": "fall.long_descent",
           "beat": "return",
           "role": "release",
@@ -658,13 +1024,22 @@
           "tension": 2,
           "purpose": "Echo the raised rollers safely at ground level before the finish."
         }
-      ]
+      ],
+      "lengthPlan": {
+        "baselineLength": 328.0,
+        "multiplier": 1.5,
+        "targetLength": 492.0,
+        "addedChallengeCount": 4,
+        "addedStageCount": 4,
+        "extraFinishLength": 3.0,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension"
+      }
     },
     {
       "number": 9,
       "name": "Redline Viaduct",
       "difficulty": "hard / optional advanced loop",
-      "finishLength": 40,
+      "finishLength": 41.0,
       "intent": "Build speed through compression, spend it on a tall optional loop, recover, then test one long manual gap.",
       "signature": "A round ignition halo and long-clear gap form two separated peaks, with a downhill bridge between them.",
       "stages": [
@@ -715,6 +1090,52 @@
           "purpose": "Use a descending high line to rebuild readable forward flow."
         },
         {
+          "variant": "valley.offset_exit",
+          "beat": "extended_01_compression",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Extended route reprise: Teach early acceleration out of a long rising bowl exit."
+        },
+        {
+          "variant": "kicker.long_flick",
+          "beat": "extended_02_speed_read",
+          "role": "practice",
+          "tension": 3,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Read a longer takeoff and descending catch before the loop approach."
+        },
+        {
+          "variant": "flat.rolling_reset",
+          "beat": "extended_03_loop_setup",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Settle the suspension before entering the boost branch."
+        },
+        {
+          "variant": "explosive_loop.round",
+          "beat": "extended_04_redline",
+          "role": "climax",
+          "tension": 5,
+          "boosts": 2,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Use two connector boosts to commit to the ignition loop and continue over its revealed tangent exit."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_05_redline_reset",
+          "role": "release",
+          "tension": 1,
+          "length": 18,
+          "purpose": "Extended route reprise: Separate the loop speed regime from the later manual gap."
+        },
+        {
+          "variant": "wave.two_soft",
+          "beat": "extended_06_cooldown",
+          "role": "resolution",
+          "tension": 1,
+          "purpose": "Extended route reprise: One final reward marks the calm roller cooldown."
+        },
+        {
           "variant": "gap.long_clear",
           "beat": "last_span",
           "role": "combine",
@@ -730,13 +1151,22 @@
           "tension": 1,
           "purpose": "One final reward marks the calm roller cooldown."
         }
-      ]
+      ],
+      "lengthPlan": {
+        "baselineLength": 344.0,
+        "multiplier": 1.5,
+        "targetLength": 516.0,
+        "addedChallengeCount": 4,
+        "addedStageCount": 6,
+        "extraFinishLength": 1.0,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension"
+      }
     },
     {
       "number": 10,
       "name": "Crown Relay",
       "difficulty": "extreme",
-      "finishLength": 48,
+      "finishLength": 65.6,
       "intent": "Extreme finale: combine precision manual catches, technical control and maximum-difficulty spring/loop sequences across an extended route.",
       "signature": "Triple ignition crown, summit lift and frontier crossing followed by expert ruin control.",
       "stages": [
@@ -830,6 +1260,62 @@
           "checkpoint": true
         },
         {
+          "variant": "hill.double_crest",
+          "beat": "extended_01_relay_start",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Extended route reprise: Two distinct crests establish the relay rhythm."
+        },
+        {
+          "variant": "gap.precision",
+          "beat": "extended_02_qualifier",
+          "role": "practice",
+          "tension": 5,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Master gap / precision with controlled entry speed and a stable recovery.",
+          "landingLength": 17
+        },
+        {
+          "variant": "rise.crest_relief",
+          "beat": "extended_03_crown_setup",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Extended route reprise: Reveal the loop landmark and settle its approach."
+        },
+        {
+          "variant": "explosive_loop.triple_ring",
+          "beat": "extended_04_crown",
+          "role": "climax",
+          "tension": 5,
+          "boosts": 2,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Master explosive loop / triple ring with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_05_crown_release",
+          "role": "release",
+          "tension": 1,
+          "length": 16,
+          "purpose": "Extended route reprise: Normalize velocity before the spring replaces it."
+        },
+        {
+          "variant": "spring_high.summit_lift",
+          "beat": "extended_06_upper_relay",
+          "role": "combine",
+          "tension": 5,
+          "checkpoint": true,
+          "purpose": "Extended route reprise: Master spring high / summit lift with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_07_crossing_setup",
+          "role": "release",
+          "tension": 1,
+          "length": 16,
+          "purpose": "Extended route reprise: Separate barrel landing from the long spring trigger and preview the far bank."
+        },
+        {
           "variant": "wave.irregular",
           "beat": "crown_expert_rhythm",
           "role": "combine",
@@ -845,10 +1331,19 @@
         }
       ],
       "lengthPlan": {
-        "baselineLength": 428.6,
+        "baselineLength": 642.9,
         "multiplier": 1.5,
-        "targetLength": 642.9,
-        "addedChallengeCount": 2
+        "targetLength": 964.35,
+        "addedChallengeCount": 5,
+        "addedStageCount": 7,
+        "extraFinishLength": 17.6,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension",
+        "previousPlan": {
+          "baselineLength": 428.6,
+          "multiplier": 1.5,
+          "targetLength": 642.9,
+          "addedChallengeCount": 2
+        }
       },
       "difficultyProgression": {
         "previous": "medium-hard / optional advanced stunts",
@@ -861,7 +1356,7 @@
       "theme": "beach",
       "setting": "Low-tide sandbars",
       "difficulty": "medium",
-      "finishLength": 40,
+      "finishLength": 81.9,
       "intent": "Read gentle wave rhythms, cross the first tidal channel and settle on broad sandbanks.",
       "signature": "Low rollers lead into a low spring skim; short manual hops echo the incoming tide.",
       "stages": [
@@ -910,6 +1405,42 @@
           "purpose": "Let the bike settle after the skim."
         },
         {
+          "variant": "wave.two_soft",
+          "beat": "extended_01_ripple",
+          "role": "teach",
+          "tension": 1,
+          "purpose": "Extended route reprise: Read two shallow sand ripples."
+        },
+        {
+          "variant": "hill.round_roller",
+          "beat": "extended_02_sandbar",
+          "role": "practice",
+          "tension": 2,
+          "purpose": "Extended route reprise: Carry speed over the first rounded sandbar."
+        },
+        {
+          "variant": "gap.flow_double",
+          "beat": "extended_03_tidal_channel",
+          "role": "build",
+          "tension": 3,
+          "purpose": "Extended route reprise: Clear a visible channel onto the broad opposite bank.",
+          "checkpoint": true
+        },
+        {
+          "variant": "valley.shallow_bowl",
+          "beat": "extended_04_tidal_pool",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Settle in the sheltered tidal pool."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_05_shore_reset",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Let the bike settle after the skim."
+        },
+        {
           "variant": "kicker.quick_pop",
           "beat": "foam_hop",
           "role": "combine",
@@ -924,7 +1455,16 @@
           "tension": 1,
           "purpose": "Roll onto a long dry sandbank."
         }
-      ]
+      ],
+      "lengthPlan": {
+        "baselineLength": 343.0,
+        "multiplier": 1.5,
+        "targetLength": 514.5,
+        "addedChallengeCount": 4,
+        "addedStageCount": 5,
+        "extraFinishLength": 41.9,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension"
+      }
     },
     {
       "number": 12,
@@ -932,7 +1472,7 @@
       "theme": "beach",
       "setting": "Abandoned wooden piers",
       "difficulty": "medium",
-      "finishLength": 40,
+      "finishLength": 55.5,
       "intent": "Carry momentum between detached pier sections, alternating elevated transfers with ground recovery.",
       "signature": "Three different pier profiles culminate in a barrel pop above the shoreline.",
       "stages": [
@@ -982,6 +1522,35 @@
           "checkpoint": true
         },
         {
+          "variant": "tabletop.learner",
+          "beat": "extended_01_pier_entry",
+          "role": "teach",
+          "tension": 1,
+          "purpose": "Extended route reprise: Use the wide deck to establish a stable approach."
+        },
+        {
+          "variant": "platform.flat_bridge",
+          "beat": "extended_02_broken_pier",
+          "role": "practice",
+          "tension": 2,
+          "purpose": "Extended route reprise: Keep enough speed to reach the next detached pier section.",
+          "checkpoint": true
+        },
+        {
+          "variant": "valley.long_floor",
+          "beat": "extended_03_under_pier",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Recover along the sand beneath the old pier."
+        },
+        {
+          "variant": "platform.crowned_span",
+          "beat": "extended_04_watch_deck",
+          "role": "build",
+          "tension": 3,
+          "purpose": "Extended route reprise: Cross the raised watch deck with a readable return."
+        },
+        {
           "variant": "step_down.gentle",
           "beat": "beach_return",
           "role": "combine",
@@ -996,7 +1565,16 @@
           "tension": 2,
           "purpose": "Finish with three even boardwalk-like beats."
         }
-      ]
+      ],
+      "lengthPlan": {
+        "baselineLength": 321.0,
+        "multiplier": 1.5,
+        "targetLength": 481.5,
+        "addedChallengeCount": 4,
+        "addedStageCount": 4,
+        "extraFinishLength": 15.5,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension"
+      }
     },
     {
       "number": 13,
@@ -1004,7 +1582,7 @@
       "theme": "beach",
       "setting": "Reef shelves and shallow channels",
       "difficulty": "medium",
-      "finishLength": 40,
+      "finishLength": 42.75,
       "intent": "Alternate low reef shelves and short channels before a raised spring transfer.",
       "signature": "A dipping spring launches from a reef basin onto an upper coral shelf.",
       "stages": [
@@ -1099,6 +1677,58 @@
           "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
         },
         {
+          "variant": "rise.gentle_climb",
+          "beat": "extended_01_reef_rise",
+          "role": "teach",
+          "tension": 1,
+          "purpose": "Extended route reprise: Climb onto the first reef shelf."
+        },
+        {
+          "variant": "balance.single_curb",
+          "beat": "extended_02_coral_step",
+          "role": "practice",
+          "tension": 2,
+          "purpose": "Extended route reprise: Lift the front wheel over one readable reef edge.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_03_reef_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Recover wheel contact before the scoop."
+        },
+        {
+          "variant": "curved_ramp.gentle_scoop",
+          "beat": "extended_04_reef_scoop",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Extended route reprise: Use a curved lip to cross a shallow channel.",
+          "checkpoint": true
+        },
+        {
+          "variant": "valley.shallow_bowl",
+          "beat": "extended_05_reef_basin",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Collect the bike in a broad basin."
+        },
+        {
+          "variant": "spring_high.dip_lift",
+          "beat": "extended_06_coral_lift",
+          "role": "climax",
+          "tension": 3,
+          "purpose": "Extended route reprise: Dip then spring onto the high coral shelf.",
+          "checkpoint": true
+        },
+        {
+          "variant": "platform.sag_bridge",
+          "beat": "extended_07_reef_span",
+          "role": "combine",
+          "tension": 2,
+          "purpose": "Extended route reprise: Ride the sagging connection between shelves."
+        },
+        {
           "variant": "hill.round_roller",
           "beat": "outer_reef_bank",
           "role": "combine",
@@ -1114,10 +1744,19 @@
         }
       ],
       "lengthPlan": {
-        "baselineLength": 301,
+        "baselineLength": 451.5,
         "multiplier": 1.5,
-        "targetLength": 451.5,
-        "addedChallengeCount": 4
+        "targetLength": 677.25,
+        "addedChallengeCount": 6,
+        "addedStageCount": 7,
+        "extraFinishLength": 2.75,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension",
+        "previousPlan": {
+          "baselineLength": 301,
+          "multiplier": 1.5,
+          "targetLength": 451.5,
+          "addedChallengeCount": 4
+        }
       },
       "difficultyProgression": {
         "previous": "medium",
@@ -1130,7 +1769,7 @@
       "theme": "beach",
       "setting": "Terraced coastal bluffs",
       "difficulty": "medium-hard",
-      "finishLength": 40,
+      "finishLength": 70.9,
       "intent": "Climb a coastal bluff, then control descending speed across a sequence of lower catches.",
       "signature": "Three descending transfers are separated by braking shelves and a sheltered cove.",
       "stages": [
@@ -1187,6 +1826,49 @@
           "checkpoint": true
         },
         {
+          "variant": "rise.two_stage",
+          "beat": "extended_01_bluff_climb",
+          "role": "build",
+          "tension": 3,
+          "purpose": "Extended route reprise: Climb the bluff with a pause on its middle shelf."
+        },
+        {
+          "variant": "flat.braking_shelf",
+          "beat": "extended_02_cliff_brake",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Read the first drop before accelerating."
+        },
+        {
+          "variant": "drop.long_runout",
+          "beat": "extended_03_upper_drop",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Extended route reprise: Roll off a level lip into a long coastal catch.",
+          "checkpoint": true
+        },
+        {
+          "variant": "valley.long_floor",
+          "beat": "extended_04_sheltered_cove",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Rebuild control in the cove."
+        },
+        {
+          "variant": "flat.braking_shelf",
+          "beat": "extended_05_lower_brake",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Reduce speed before the final drop."
+        },
+        {
+          "variant": "wave.two_soft",
+          "beat": "extended_06_shoreline",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Ease back into shoreline rhythm."
+        },
+        {
           "variant": "platform.downhill_bridge",
           "beat": "coastal_ramp",
           "role": "resolution",
@@ -1200,7 +1882,16 @@
           "tension": 1,
           "purpose": "Ease back into shoreline rhythm."
         }
-      ]
+      ],
+      "lengthPlan": {
+        "baselineLength": 371.8,
+        "multiplier": 1.5,
+        "targetLength": 557.7,
+        "addedChallengeCount": 4,
+        "addedStageCount": 6,
+        "extraFinishLength": 30.9,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension"
+      }
     },
     {
       "number": 15,
@@ -1208,7 +1899,7 @@
       "theme": "beach",
       "setting": "Wide lagoon and far-bank dunes",
       "difficulty": "very hard",
-      "finishLength": 40,
+      "finishLength": 42.4875,
       "intent": "Build horizontal momentum and spend it on two separated lagoon crossings.",
       "signature": "A low manual channel precedes a long spring crossing, followed by a curved reprise. Extended with higher-tier transfers and technical obstacles.",
       "stages": [
@@ -1292,6 +1983,52 @@
           "purpose": "Read the uneven approach left by crosswind."
         },
         {
+          "variant": "wave.trough_train",
+          "beat": "extended_01_lagoon_ripples",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Extended route reprise: Pump three low shoreline troughs."
+        },
+        {
+          "variant": "gap.precision",
+          "beat": "extended_02_first_inlet",
+          "role": "practice",
+          "tension": 4,
+          "purpose": "Extended route reprise: Master gap / precision with controlled entry speed and a stable recovery.",
+          "checkpoint": true,
+          "landingLength": 17
+        },
+        {
+          "variant": "hill.early_crest",
+          "beat": "extended_03_lagoon_lookout",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Extended route reprise: Reveal the far bank early."
+        },
+        {
+          "variant": "spring_far.crossing_5",
+          "beat": "extended_04_wide_lagoon",
+          "role": "climax",
+          "tension": 4,
+          "purpose": "Extended route reprise: Master spring far / crossing 5 with controlled entry speed and a stable recovery.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_05_far_bank_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Stabilize on the far bank.",
+          "length": 16
+        },
+        {
+          "variant": "platform.uphill_bridge",
+          "beat": "extended_06_bank_steps",
+          "role": "combine",
+          "tension": 3,
+          "purpose": "Extended route reprise: Carry momentum between rising bank platforms."
+        },
+        {
           "variant": "kicker.precision_pop",
           "beat": "lagoon_precise_pop",
           "role": "combine",
@@ -1309,10 +2046,19 @@
         }
       ],
       "lengthPlan": {
-        "baselineLength": 384.45,
+        "baselineLength": 576.675,
         "multiplier": 1.5,
-        "targetLength": 576.675,
-        "addedChallengeCount": 3
+        "targetLength": 865.0125,
+        "addedChallengeCount": 5,
+        "addedStageCount": 6,
+        "extraFinishLength": 2.4875,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension",
+        "previousPlan": {
+          "baselineLength": 384.45,
+          "multiplier": 1.5,
+          "targetLength": 576.675,
+          "addedChallengeCount": 3
+        }
       },
       "difficultyProgression": {
         "previous": "medium-hard",
@@ -1325,7 +2071,7 @@
       "theme": "beach",
       "setting": "Lighthouse headland",
       "difficulty": "medium-hard",
-      "finishLength": 40,
+      "finishLength": 55.1,
       "intent": "Climb toward the lighthouse, commit through its explosive ring and descend by the outer shore.",
       "signature": "A raised spring approach introduces one ring with a revealed curved exit.",
       "stages": [
@@ -1386,6 +2132,37 @@
           "length": 16
         },
         {
+          "variant": "hill.mesa",
+          "beat": "extended_01_headland",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Extended route reprise: Reach a broad headland plateau."
+        },
+        {
+          "variant": "step_up.long_shelf",
+          "beat": "extended_02_lighthouse_base",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Extended route reprise: Transfer onto the higher foundation.",
+          "landingLength": 12,
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.rolling_reset",
+          "beat": "extended_03_tower_reset",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Settle before the lighthouse lift."
+        },
+        {
+          "variant": "spring_high.crest_lift",
+          "beat": "extended_04_lantern_lift",
+          "role": "build",
+          "tension": 3,
+          "purpose": "Extended route reprise: Launch off the crest toward the lantern terrace.",
+          "checkpoint": true
+        },
+        {
           "variant": "platform.crowned_span",
           "beat": "gallery",
           "role": "combine",
@@ -1399,7 +2176,16 @@
           "tension": 2,
           "purpose": "Return down the headland."
         }
-      ]
+      ],
+      "lengthPlan": {
+        "baselineLength": 365.8,
+        "multiplier": 1.5,
+        "targetLength": 548.7,
+        "addedChallengeCount": 3,
+        "addedStageCount": 4,
+        "extraFinishLength": 15.1,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension"
+      }
     },
     {
       "number": 17,
@@ -1407,7 +2193,7 @@
       "theme": "beach",
       "setting": "Storm-damaged offshore piers",
       "difficulty": "very hard",
-      "finishLength": 44,
+      "finishLength": 72.45,
       "intent": "Link broken high platforms and changing wave rhythms while managing landing speed.",
       "signature": "Detached double-hump piers lead to a roller spring crossing and a long final gap. Extended with higher-tier transfers and technical obstacles.",
       "stages": [
@@ -1505,6 +2291,58 @@
           "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
         },
         {
+          "variant": "wave.irregular",
+          "beat": "extended_01_rising_swell",
+          "role": "teach",
+          "tension": 4,
+          "purpose": "Extended route reprise: Master wave / irregular with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "platform.double_hump",
+          "beat": "extended_02_broken_docks",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Extended route reprise: Maintain momentum across separated dock humps.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_03_dock_shelter",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Pause between broken pier sections."
+        },
+        {
+          "variant": "spring_far.frontier_crossing",
+          "beat": "extended_04_storm_channel",
+          "role": "climax",
+          "tension": 4,
+          "purpose": "Extended route reprise: Master spring far / frontier crossing with controlled entry speed and a stable recovery.",
+          "checkpoint": true
+        },
+        {
+          "variant": "valley.long_floor",
+          "beat": "extended_05_lee_shore",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Recenter on the sheltered shore."
+        },
+        {
+          "variant": "platform.switchback_bridge",
+          "beat": "extended_06_bent_pier",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Extended route reprise: Adjust pitch through the bent pier profile."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_07_extended_recovery_1",
+          "role": "release",
+          "tension": 1,
+          "length": 14.05,
+          "purpose": "Extended route reprise: Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
           "variant": "kicker.precision_pop",
           "beat": "storm_last_pop",
           "role": "combine",
@@ -1522,10 +2360,19 @@
         }
       ],
       "lengthPlan": {
-        "baselineLength": 486,
+        "baselineLength": 729.0,
         "multiplier": 1.5,
-        "targetLength": 729,
-        "addedChallengeCount": 4
+        "targetLength": 1093.5,
+        "addedChallengeCount": 5,
+        "addedStageCount": 7,
+        "extraFinishLength": 28.45,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension",
+        "previousPlan": {
+          "baselineLength": 486,
+          "multiplier": 1.5,
+          "targetLength": 729,
+          "addedChallengeCount": 4
+        }
       },
       "difficultyProgression": {
         "previous": "hard",
@@ -1538,7 +2385,7 @@
       "theme": "beach",
       "setting": "Twin coves beneath coastal terraces",
       "difficulty": "hard",
-      "finishLength": 40,
+      "finishLength": 71.4,
       "intent": "Use alternating basins and elevated catches to reveal a hidden upper beach.",
       "signature": "A deep scoop and a high spring connect two coves separated by a rock wall.",
       "stages": [
@@ -1589,6 +2436,37 @@
           "checkpoint": true
         },
         {
+          "variant": "valley.double_bowl",
+          "beat": "extended_01_twin_coves",
+          "role": "teach",
+          "tension": 3,
+          "purpose": "Extended route reprise: Pump through two sheltered coves."
+        },
+        {
+          "variant": "curved_ramp.deep_scoop",
+          "landingLength": 15,
+          "beat": "extended_02_cove_launch",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Extended route reprise: Climb out of the deep basin on a curved takeoff.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_03_rock_shelf",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Settle on a stable rock shelf."
+        },
+        {
+          "variant": "spring_high.ramp_lift",
+          "beat": "extended_04_hidden_beach",
+          "role": "climax",
+          "tension": 4,
+          "purpose": "Extended route reprise: Lift over the dividing wall onto the hidden beach.",
+          "checkpoint": true
+        },
+        {
           "variant": "fall.terraced",
           "beat": "cove_steps",
           "role": "release",
@@ -1603,7 +2481,16 @@
           "purpose": "Leave the cove with one final high pop.",
           "checkpoint": true
         }
-      ]
+      ],
+      "lengthPlan": {
+        "baselineLength": 376.8,
+        "multiplier": 1.5,
+        "targetLength": 565.2,
+        "addedChallengeCount": 3,
+        "addedStageCount": 4,
+        "extraFinishLength": 31.4,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension"
+      }
     },
     {
       "number": 19,
@@ -1611,7 +2498,7 @@
       "theme": "beach",
       "setting": "Two harbor breakwaters",
       "difficulty": "hard",
-      "finishLength": 44,
+      "finishLength": 46.575,
       "intent": "Prepare for two consecutive explosive loops, then use the harbor bridge as a controlled exit.",
       "signature": "Two independent ignition rings connect directly across the harbor landmark.",
       "stages": [
@@ -1663,6 +2550,53 @@
           "purpose": "Control pitch over the high wave bridge."
         },
         {
+          "variant": "wave.three_even",
+          "beat": "extended_01_harbor_rhythm",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Extended route reprise: Establish a steady approach rhythm."
+        },
+        {
+          "variant": "curved_ramp.speed_scoop",
+          "beat": "extended_02_breakwater_scoop",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Extended route reprise: Warm up inversion entry with a speed scoop.",
+          "landingLength": 17,
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.rolling_reset",
+          "beat": "extended_03_ring_runway",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Settle the bike before both rings."
+        },
+        {
+          "variant": "explosive_loop.double_ring",
+          "beat": "extended_04_harbor_rings",
+          "role": "climax",
+          "tension": 5,
+          "purpose": "Extended route reprise: Complete two full explosive/reveal cycles in direct succession.",
+          "boosts": 2,
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_05_harbor_recovery",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Recover fully after the two-ring assembly.",
+          "length": 20
+        },
+        {
+          "variant": "fall.long_descent",
+          "beat": "extended_06_harbor_exit",
+          "role": "resolution",
+          "tension": 2,
+          "purpose": "Extended route reprise: Descend toward the outer beach."
+        },
+        {
           "variant": "spring_far.downhill_crossing",
           "beat": "harbor_mouth",
           "role": "combine",
@@ -1677,7 +2611,16 @@
           "tension": 2,
           "purpose": "Descend toward the outer beach."
         }
-      ]
+      ],
+      "lengthPlan": {
+        "baselineLength": 426.85,
+        "multiplier": 1.5,
+        "targetLength": 640.275,
+        "addedChallengeCount": 4,
+        "addedStageCount": 6,
+        "extraFinishLength": 2.575,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension"
+      }
     },
     {
       "number": 20,
@@ -1685,7 +2628,7 @@
       "theme": "beach",
       "setting": "Chain of offshore islands",
       "difficulty": "extreme",
-      "finishLength": 48,
+      "finishLength": 64.6,
       "intent": "Extreme finale: combine precision manual catches, technical control and maximum-difficulty spring/loop sequences across an extended route.",
       "signature": "Triple island rings, summit launch, frontier channel and precision island ruins.",
       "stages": [
@@ -1795,6 +2738,69 @@
           "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
         },
         {
+          "variant": "hill.double_crest",
+          "beat": "extended_01_island_approach",
+          "role": "teach",
+          "tension": 3,
+          "purpose": "Extended route reprise: Read two island-shaped crests."
+        },
+        {
+          "variant": "platform.double_hump",
+          "beat": "extended_02_stepping_piers",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Extended route reprise: Carry momentum across separated pier islands.",
+          "checkpoint": true
+        },
+        {
+          "variant": "spring_high.summit_lift",
+          "beat": "extended_03_high_island",
+          "role": "build",
+          "tension": 5,
+          "purpose": "Extended route reprise: Master spring high / summit lift with controlled entry speed and a stable recovery.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_04_island_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Recover on the island before both rings.",
+          "length": 18
+        },
+        {
+          "variant": "explosive_loop.triple_ring",
+          "beat": "extended_05_island_rings",
+          "role": "climax",
+          "tension": 5,
+          "purpose": "Extended route reprise: Master explosive loop / triple ring with controlled entry speed and a stable recovery.",
+          "boosts": 2,
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_06_lagoon_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Normalize velocity before the final spring.",
+          "length": 20
+        },
+        {
+          "variant": "platform.skyline_bridge",
+          "beat": "extended_07_island_skyline",
+          "role": "combine",
+          "tension": 5,
+          "purpose": "Extended route reprise: Traverse the high island skyline."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_08_extended_recovery_1",
+          "role": "release",
+          "tension": 1,
+          "length": 18.4,
+          "purpose": "Extended route reprise: Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
           "variant": "wave.irregular",
           "beat": "archipelago_rough_shore",
           "role": "combine",
@@ -1810,10 +2816,19 @@
         }
       ],
       "lengthPlan": {
-        "baselineLength": 512,
+        "baselineLength": 768.0,
         "multiplier": 1.5,
-        "targetLength": 768,
-        "addedChallengeCount": 4
+        "targetLength": 1152.0,
+        "addedChallengeCount": 5,
+        "addedStageCount": 8,
+        "extraFinishLength": 16.6,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension",
+        "previousPlan": {
+          "baselineLength": 512,
+          "multiplier": 1.5,
+          "targetLength": 768,
+          "addedChallengeCount": 4
+        }
       },
       "difficultyProgression": {
         "previous": "hard",
@@ -1826,7 +2841,7 @@
       "theme": "desert",
       "setting": "Rolling dunes along a caravan trail",
       "difficulty": "medium-hard",
-      "finishLength": 40,
+      "finishLength": 50.7,
       "intent": "Establish desert rhythm with rounded dunes, compression basins and one broad manual crossing.",
       "signature": "Alternating dune crests build momentum into a low gap and a final long tabletop.",
       "stages": [
@@ -1874,6 +2889,35 @@
           "purpose": "Maintain rhythm over paired dunes."
         },
         {
+          "variant": "hill.round_roller",
+          "beat": "extended_01_first_dune",
+          "role": "teach",
+          "tension": 1,
+          "purpose": "Extended route reprise: Read the first rounded dune."
+        },
+        {
+          "variant": "wave.growing",
+          "beat": "extended_02_dune_train",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Extended route reprise: Pump through dunes of increasing height."
+        },
+        {
+          "variant": "valley.offset_exit",
+          "beat": "extended_03_wind_basin",
+          "role": "build",
+          "tension": 3,
+          "purpose": "Extended route reprise: Carry acceleration out of the wind-carved basin."
+        },
+        {
+          "variant": "gap.flow_double",
+          "beat": "extended_04_dry_wash",
+          "role": "climax",
+          "tension": 3,
+          "purpose": "Extended route reprise: Cross a dry wash onto a broad catch.",
+          "checkpoint": true
+        },
+        {
           "variant": "tabletop.steep_face",
           "beat": "dune_table",
           "role": "combine",
@@ -1887,7 +2931,16 @@
           "tension": 1,
           "purpose": "Ease down to the finish."
         }
-      ]
+      ],
+      "lengthPlan": {
+        "baselineLength": 284.6,
+        "multiplier": 1.5,
+        "targetLength": 426.9,
+        "addedChallengeCount": 4,
+        "addedStageCount": 4,
+        "extraFinishLength": 10.7,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension"
+      }
     },
     {
       "number": 22,
@@ -1895,7 +2948,7 @@
       "theme": "desert",
       "setting": "Weathered sandstone terraces",
       "difficulty": "medium-hard",
-      "finishLength": 40,
+      "finishLength": 50.0,
       "intent": "Alternate technical ledges and elevated catches while keeping recovery between changes in speed.",
       "signature": "Unequal ruin stairs feed a high shelf transfer, followed by a descending terrace exit.",
       "stages": [
@@ -1953,6 +3006,52 @@
           "purpose": "Prepare for the lower terrace."
         },
         {
+          "variant": "rise.two_stage",
+          "beat": "extended_01_mesa_entry",
+          "role": "build",
+          "tension": 3,
+          "purpose": "Extended route reprise: Climb the lower mesa in two stages."
+        },
+        {
+          "variant": "balance.double_curb",
+          "beat": "extended_02_ruin_steps",
+          "role": "teach",
+          "tension": 3,
+          "purpose": "Extended route reprise: Read two deliberate sandstone steps.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_03_steps_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Reestablish speed after the ledges."
+        },
+        {
+          "variant": "step_up.long_shelf",
+          "beat": "extended_04_sandstone_shelf",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Extended route reprise: Reach a broad upper sandstone shelf.",
+          "landingLength": 12,
+          "checkpoint": true
+        },
+        {
+          "variant": "valley.long_floor",
+          "beat": "extended_05_mesa_basin",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Recover in a long basin."
+        },
+        {
+          "variant": "balance.unequal_stairs",
+          "beat": "extended_06_eroded_steps",
+          "role": "climax",
+          "tension": 4,
+          "purpose": "Extended route reprise: Adjust wheel lift to unequal stair heights.",
+          "checkpoint": true
+        },
+        {
           "variant": "step_down.long",
           "beat": "terrace_drop",
           "role": "combine",
@@ -1967,7 +3066,16 @@
           "tension": 2,
           "purpose": "Finish across a broad ruin roof."
         }
-      ]
+      ],
+      "lengthPlan": {
+        "baselineLength": 359.6,
+        "multiplier": 1.5,
+        "targetLength": 539.4,
+        "addedChallengeCount": 5,
+        "addedStageCount": 6,
+        "extraFinishLength": 10.0,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension"
+      }
     },
     {
       "number": 23,
@@ -1975,7 +3083,7 @@
       "theme": "desert",
       "setting": "Palm oasis in a dune basin",
       "difficulty": "medium-hard",
-      "finishLength": 40,
+      "finishLength": 41.6,
       "intent": "Descend into an oasis, cross its basin and rise onto the surrounding dunes.",
       "signature": "A dipping long spring and a high spring trace an up-and-out oasis route.",
       "stages": [
@@ -2069,6 +3177,59 @@
           "purpose": "Recover in the sheltered outer basin."
         },
         {
+          "variant": "fall.terraced",
+          "beat": "extended_01_oasis_entry",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Extended route reprise: Descend in clear terraces toward the oasis."
+        },
+        {
+          "variant": "valley.deep_bowl",
+          "beat": "extended_02_oasis_bowl",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Extended route reprise: Pump through the deep oasis basin."
+        },
+        {
+          "variant": "spring_far.dip_crossing",
+          "beat": "extended_03_oasis_water",
+          "role": "climax",
+          "tension": 4,
+          "purpose": "Extended route reprise: Launch out of the dip across the central pool.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_04_palm_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Settle on the palm-shaded bank.",
+          "length": 16
+        },
+        {
+          "variant": "platform.sag_bridge",
+          "beat": "extended_05_oasis_bridge",
+          "role": "combine",
+          "tension": 2,
+          "purpose": "Extended route reprise: Ride the sagging bank connection."
+        },
+        {
+          "variant": "spring_high.dip_lift",
+          "beat": "extended_06_dune_exit_lift",
+          "role": "combine",
+          "tension": 3,
+          "purpose": "Extended route reprise: Climb from the basin onto the dune rim.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_07_extended_recovery_1",
+          "role": "release",
+          "tension": 1,
+          "length": 9.4,
+          "purpose": "Extended route reprise: Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
           "variant": "wave.two_soft",
           "beat": "outer_oasis_ripples",
           "role": "combine",
@@ -2084,10 +3245,19 @@
         }
       ],
       "lengthPlan": {
-        "baselineLength": 352,
+        "baselineLength": 528.0,
         "multiplier": 1.5,
-        "targetLength": 528,
-        "addedChallengeCount": 5
+        "targetLength": 792.0,
+        "addedChallengeCount": 5,
+        "addedStageCount": 7,
+        "extraFinishLength": 1.6,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension",
+        "previousPlan": {
+          "baselineLength": 352,
+          "multiplier": 1.5,
+          "targetLength": 528,
+          "addedChallengeCount": 5
+        }
       },
       "difficultyProgression": {
         "previous": "medium-hard",
@@ -2100,7 +3270,7 @@
       "theme": "desert",
       "setting": "Deep red sandstone canyon",
       "difficulty": "hard",
-      "finishLength": 44,
+      "finishLength": 76.95,
       "intent": "Manage speed through lower canyon catches and a wide spring transfer between canyon walls.",
       "signature": "Two controlled drops frame a long horizontal crossing across the canyon mouth.",
       "stages": [
@@ -2150,6 +3320,50 @@
           "length": 18
         },
         {
+          "variant": "hill.mesa",
+          "beat": "extended_01_canyon_rim",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Extended route reprise: Reach the flat canyon rim."
+        },
+        {
+          "variant": "flat.braking_shelf",
+          "beat": "extended_02_rim_brake",
+          "role": "teach",
+          "tension": 1,
+          "purpose": "Extended route reprise: Signal braking before leaving the rim."
+        },
+        {
+          "variant": "drop.deep",
+          "beat": "extended_03_upper_canyon",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Extended route reprise: Drop onto the first lower canyon catch.",
+          "checkpoint": true
+        },
+        {
+          "variant": "valley.long_floor",
+          "beat": "extended_04_canyon_floor",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Recover on the long canyon floor."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_05_far_wall_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Stabilize against the far wall.",
+          "length": 18
+        },
+        {
+          "variant": "platform.downhill_bridge",
+          "beat": "extended_06_stone_ramp",
+          "role": "resolution",
+          "tension": 3,
+          "purpose": "Extended route reprise: Follow the stone ramp out of the canyon."
+        },
+        {
           "variant": "step_down.deep",
           "beat": "lower_wall",
           "role": "combine",
@@ -2164,7 +3378,16 @@
           "tension": 3,
           "purpose": "Follow the stone ramp out of the canyon."
         }
-      ]
+      ],
+      "lengthPlan": {
+        "baselineLength": 399.9,
+        "multiplier": 1.5,
+        "targetLength": 599.85,
+        "addedChallengeCount": 4,
+        "addedStageCount": 6,
+        "extraFinishLength": 32.95,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension"
+      }
     },
     {
       "number": 25,
@@ -2172,7 +3395,7 @@
       "theme": "desert",
       "setting": "Salt flats and distant dune islands",
       "difficulty": "very hard",
-      "finishLength": 48,
+      "finishLength": 50.1,
       "intent": "Contrast long low approaches with sudden distant catches and broad recovery shelves.",
       "signature": "A low skim rehearses the much longer crossing toward the apparent mirage. Extended with higher-tier transfers and technical obstacles.",
       "stages": [
@@ -2272,6 +3495,50 @@
           "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
         },
         {
+          "variant": "wave.irregular",
+          "beat": "extended_01_salt_ripples",
+          "role": "teach",
+          "tension": 4,
+          "purpose": "Extended route reprise: Master wave / irregular with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "spring_far.low_skim",
+          "beat": "extended_02_first_mirage",
+          "role": "practice",
+          "tension": 2,
+          "purpose": "Extended route reprise: Skim low to a nearby dune island.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.rolling_reset",
+          "beat": "extended_03_salt_flat_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Recover on the open salt flat."
+        },
+        {
+          "variant": "platform.double_hump",
+          "beat": "extended_04_island_fragments",
+          "role": "build",
+          "tension": 4,
+          "purpose": "Extended route reprise: Master platform / double hump with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "hill.early_crest",
+          "beat": "extended_05_far_mirage_reveal",
+          "role": "build",
+          "tension": 2,
+          "purpose": "Extended route reprise: Show the distant landing from an early crest."
+        },
+        {
+          "variant": "spring_far.frontier_crossing",
+          "beat": "extended_06_mirage_crossing",
+          "role": "climax",
+          "tension": 4,
+          "purpose": "Extended route reprise: Master spring far / frontier crossing with controlled entry speed and a stable recovery.",
+          "checkpoint": true
+        },
+        {
           "variant": "balance.unequal_stairs",
           "beat": "mirage_stone_steps",
           "role": "combine",
@@ -2288,10 +3555,19 @@
         }
       ],
       "lengthPlan": {
-        "baselineLength": 474.8,
+        "baselineLength": 712.2,
         "multiplier": 1.5,
-        "targetLength": 712.2,
-        "addedChallengeCount": 3
+        "targetLength": 1068.3,
+        "addedChallengeCount": 5,
+        "addedStageCount": 6,
+        "extraFinishLength": 2.1,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension",
+        "previousPlan": {
+          "baselineLength": 474.8,
+          "multiplier": 1.5,
+          "targetLength": 712.2,
+          "addedChallengeCount": 3
+        }
       },
       "difficultyProgression": {
         "previous": "hard",
@@ -2304,7 +3580,7 @@
       "theme": "desert",
       "setting": "Paired sandstone arches",
       "difficulty": "hard",
-      "finishLength": 44,
+      "finishLength": 47.55,
       "intent": "Climb out of buried ruins, pass two ignition arches and return through stepped desert ground.",
       "signature": "Two directly linked explosive loops form the central paired-arch landmark.",
       "stages": [
@@ -2357,6 +3633,46 @@
           "length": 20
         },
         {
+          "variant": "balance.single_curb",
+          "beat": "extended_01_buried_stone",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Extended route reprise: Clear the first half-buried sandstone block."
+        },
+        {
+          "variant": "rise.late_steepening",
+          "beat": "extended_02_arch_climb",
+          "role": "build",
+          "tension": 3,
+          "purpose": "Extended route reprise: Climb toward the paired arches."
+        },
+        {
+          "variant": "curved_ramp.deep_scoop",
+          "landingLength": 15,
+          "beat": "extended_03_arch_scoop",
+          "role": "practice",
+          "tension": 3,
+          "purpose": "Extended route reprise: Rehearse curved entry beneath the arches.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_04_arch_setup",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Settle before the ignition sequence.",
+          "length": 16
+        },
+        {
+          "variant": "explosive_loop.double_ring",
+          "beat": "extended_05_buried_rings",
+          "role": "climax",
+          "tension": 5,
+          "purpose": "Extended route reprise: Complete two independent explosive and reveal cycles.",
+          "boosts": 2,
+          "checkpoint": true
+        },
+        {
           "variant": "step_down.trick",
           "landingLength": 22,
           "beat": "ruin_transfer",
@@ -2372,7 +3688,16 @@
           "tension": 2,
           "purpose": "Descend through weathered sandstone terraces."
         }
-      ]
+      ],
+      "lengthPlan": {
+        "baselineLength": 345.1,
+        "multiplier": 1.5,
+        "targetLength": 517.65,
+        "addedChallengeCount": 4,
+        "addedStageCount": 5,
+        "extraFinishLength": 3.55,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension"
+      }
     },
     {
       "number": 27,
@@ -2380,7 +3705,7 @@
       "theme": "desert",
       "setting": "High bridges between desert mesas",
       "difficulty": "very hard",
-      "finishLength": 44,
+      "finishLength": 51.1,
       "intent": "Alternate mesa rises and changing bridge profiles before a spring crossing to the caravan road.",
       "signature": "A high lift unlocks the skyline bridge; a descending spring returns to the lower trail. Extended with higher-tier transfers and technical obstacles.",
       "stages": [
@@ -2469,6 +3794,66 @@
           "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
         },
         {
+          "variant": "rise.long_climb",
+          "beat": "extended_01_caravan_climb",
+          "role": "teach",
+          "tension": 2,
+          "purpose": "Extended route reprise: Climb onto the first mesa."
+        },
+        {
+          "variant": "platform.crowned_span",
+          "beat": "extended_02_mesa_bridge",
+          "role": "practice",
+          "tension": 2,
+          "purpose": "Extended route reprise: Read a broad crowned connection."
+        },
+        {
+          "variant": "spring_high.summit_lift",
+          "beat": "extended_03_skyway_lift",
+          "role": "climax",
+          "tension": 4,
+          "purpose": "Extended route reprise: Master spring high / summit lift with controlled entry speed and a stable recovery.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_04_skyway_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Stabilize before the exposed bridge."
+        },
+        {
+          "variant": "platform.skyline_bridge",
+          "beat": "extended_05_skyway",
+          "role": "combine",
+          "tension": 5,
+          "purpose": "Extended route reprise: Manage pitch across the skyline profile."
+        },
+        {
+          "variant": "valley.long_floor",
+          "beat": "extended_06_mesa_shelter",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Recover inside the high mesa basin."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_07_extended_recovery_1",
+          "role": "release",
+          "tension": 1,
+          "length": 8.7,
+          "purpose": "Extended route reprise: Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "step_up.precision_shelf",
+          "beat": "extended_08_skyway_precision_mesa",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Extended route reprise: Transfer onto a precise upper mesa catch.",
+          "landingLength": 13,
+          "checkpoint": true
+        },
+        {
           "variant": "step_down.tight",
           "beat": "skyway_lower_catch",
           "role": "combine",
@@ -2486,10 +3871,19 @@
         }
       ],
       "lengthPlan": {
-        "baselineLength": 434,
+        "baselineLength": 651.0,
         "multiplier": 1.5,
-        "targetLength": 651,
-        "addedChallengeCount": 3
+        "targetLength": 976.5,
+        "addedChallengeCount": 6,
+        "addedStageCount": 8,
+        "extraFinishLength": 7.1,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension",
+        "previousPlan": {
+          "baselineLength": 434,
+          "multiplier": 1.5,
+          "targetLength": 651,
+          "addedChallengeCount": 3
+        }
       },
       "difficultyProgression": {
         "previous": "hard",
@@ -2502,7 +3896,7 @@
       "theme": "desert",
       "setting": "Tiered temple above a dune plateau",
       "difficulty": "hard",
-      "finishLength": 48,
+      "finishLength": 70.8,
       "intent": "Combine technical ruin steps, high catches and a summit lift to climb the sun temple.",
       "signature": "A summit spring reaches the temple crown; a controlled drop resolves the ascent.",
       "stages": [
@@ -2562,6 +3956,53 @@
           "checkpoint": true
         },
         {
+          "variant": "balance.unequal_stairs",
+          "beat": "extended_01_temple_steps",
+          "role": "teach",
+          "tension": 4,
+          "purpose": "Extended route reprise: Adapt to weathered steps of unequal height.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_02_temple_court",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Reset speed in the lower temple court."
+        },
+        {
+          "variant": "step_up.high_shelf",
+          "landingLength": 16,
+          "beat": "extended_03_temple_wall",
+          "role": "practice",
+          "tension": 4,
+          "purpose": "Extended route reprise: Reach the high temple wall catch.",
+          "checkpoint": true
+        },
+        {
+          "variant": "hill.mesa",
+          "beat": "extended_04_temple_terrace",
+          "role": "release",
+          "tension": 2,
+          "purpose": "Extended route reprise: Recover on a wide temple terrace."
+        },
+        {
+          "variant": "flat.braking_shelf",
+          "beat": "extended_05_crown_brake",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Prepare for the descent from the crown."
+        },
+        {
+          "variant": "drop.brake",
+          "landingLength": 7,
+          "beat": "extended_06_temple_descent",
+          "role": "combine",
+          "tension": 4,
+          "purpose": "Extended route reprise: Use a controlled roll-off onto the lower catch.",
+          "checkpoint": true
+        },
+        {
           "variant": "platform.switchback_bridge",
           "beat": "temple_gallery",
           "role": "combine",
@@ -2575,7 +4016,16 @@
           "tension": 2,
           "purpose": "Descend from the temple toward open dunes."
         }
-      ]
+      ],
+      "lengthPlan": {
+        "baselineLength": 416.4,
+        "multiplier": 1.5,
+        "targetLength": 624.6,
+        "addedChallengeCount": 4,
+        "addedStageCount": 6,
+        "extraFinishLength": 22.8,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension"
+      }
     },
     {
       "number": 29,
@@ -2583,7 +4033,7 @@
       "theme": "desert",
       "setting": "Irregular wind-carved dunes",
       "difficulty": "hard",
-      "finishLength": 44,
+      "finishLength": 82.375,
       "intent": "Read irregular terrain rhythms and change speed deliberately between precision transfers.",
       "signature": "Broken dune timing culminates in a roller spring crossing, followed by one precise final gap.",
       "stages": [
@@ -2634,6 +4084,51 @@
           "length": 18
         },
         {
+          "variant": "wave.irregular",
+          "beat": "extended_01_wind_ripples",
+          "role": "teach",
+          "tension": 4,
+          "purpose": "Extended route reprise: Read each irregular wind-carved crest."
+        },
+        {
+          "variant": "kicker.precision_pop",
+          "landingLength": 7,
+          "beat": "extended_02_dune_pop",
+          "role": "practice",
+          "tension": 4,
+          "purpose": "Extended route reprise: Time a precise pop over the first dune break.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.braking_shelf",
+          "beat": "extended_03_storm_shelter",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Reset speed behind a sheltering ridge."
+        },
+        {
+          "variant": "valley.double_bowl",
+          "beat": "extended_04_wind_basins",
+          "role": "build",
+          "tension": 4,
+          "purpose": "Extended route reprise: Pump through two uneven basins."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_05_ridge_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Recover on a clear ridge shelf.",
+          "length": 18
+        },
+        {
+          "variant": "tabletop.brake_table",
+          "beat": "extended_06_storm_exit",
+          "role": "resolution",
+          "tension": 4,
+          "purpose": "Extended route reprise: Brake into the final wide table."
+        },
+        {
           "variant": "gap.precision",
           "landingLength": 17,
           "beat": "last_dune_break",
@@ -2649,7 +4144,16 @@
           "tension": 4,
           "purpose": "Brake into the final wide table."
         }
-      ]
+      ],
+      "lengthPlan": {
+        "baselineLength": 416.95,
+        "multiplier": 1.5,
+        "targetLength": 625.425,
+        "addedChallengeCount": 4,
+        "addedStageCount": 6,
+        "extraFinishLength": 38.375,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension"
+      }
     },
     {
       "number": 30,
@@ -2657,7 +4161,7 @@
       "theme": "desert",
       "setting": "Three ancient arches at the desert frontier",
       "difficulty": "extreme",
-      "finishLength": 56,
+      "finishLength": 76.8,
       "intent": "Extreme finale: combine precision manual catches, technical control and maximum-difficulty spring/loop sequences across an extended route.",
       "signature": "Triple desert crown, summit lift, frontier flight and an expert manual ruin gauntlet.",
       "stages": [
@@ -2768,6 +4272,78 @@
           "purpose": "Settle wheel contact and rebuild controlled entry speed between the added challenges."
         },
         {
+          "variant": "hill.double_crest",
+          "beat": "extended_01_frontier_dunes",
+          "role": "teach",
+          "tension": 3,
+          "purpose": "Extended route reprise: Read the twin dunes approaching the ruins."
+        },
+        {
+          "variant": "step_up.precision_shelf",
+          "beat": "extended_02_ruin_ascent",
+          "role": "practice",
+          "tension": 5,
+          "purpose": "Extended route reprise: Master step up / precision shelf with controlled entry speed and a stable recovery.",
+          "checkpoint": true,
+          "landingLength": 13
+        },
+        {
+          "variant": "spring_high.summit_lift",
+          "beat": "extended_03_crown_terrace",
+          "role": "build",
+          "tension": 5,
+          "purpose": "Extended route reprise: Master spring high / summit lift with controlled entry speed and a stable recovery.",
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_04_crown_setup",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Settle fully before the triple ring.",
+          "length": 20
+        },
+        {
+          "variant": "explosive_loop.triple_ring",
+          "beat": "extended_05_desert_crown",
+          "role": "climax",
+          "tension": 5,
+          "purpose": "Extended route reprise: Ride three directly connected explosive/reveal assemblies.",
+          "boosts": 2,
+          "checkpoint": true
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_06_crown_rest",
+          "role": "release",
+          "tension": 1,
+          "purpose": "Extended route reprise: Recover before the final frontier crossing.",
+          "length": 24
+        },
+        {
+          "variant": "platform.skyline_bridge",
+          "beat": "extended_07_victory_span",
+          "role": "resolution",
+          "tension": 5,
+          "purpose": "Extended route reprise: Master platform / skyline bridge with controlled entry speed and a stable recovery."
+        },
+        {
+          "variant": "flat.checkpoint_pad",
+          "beat": "extended_08_extended_recovery_1",
+          "role": "release",
+          "tension": 1,
+          "length": 21.35,
+          "purpose": "Extended route reprise: Settle wheel contact and rebuild controlled entry speed between the added challenges."
+        },
+        {
+          "variant": "balance.tight_stairs",
+          "beat": "extended_09_frontier_expert_steps",
+          "role": "combine",
+          "tension": 5,
+          "purpose": "Extended route reprise: Clear the tightest frontier ruin steps.",
+          "checkpoint": true
+        },
+        {
           "variant": "wave.irregular",
           "beat": "frontier_rough_dunes",
           "role": "combine",
@@ -2783,10 +4359,19 @@
         }
       ],
       "lengthPlan": {
-        "baselineLength": 549.8,
+        "baselineLength": 824.7,
         "multiplier": 1.5,
-        "targetLength": 824.7,
-        "addedChallengeCount": 4
+        "targetLength": 1237.05,
+        "addedChallengeCount": 6,
+        "addedStageCount": 9,
+        "extraFinishLength": 20.8,
+        "baselineSource": "saved campaign before full-campaign 1.5x extension",
+        "previousPlan": {
+          "baselineLength": 549.8,
+          "multiplier": 1.5,
+          "targetLength": 824.7,
+          "addedChallengeCount": 4
+        }
       },
       "difficultyProgression": {
         "previous": "expert",
