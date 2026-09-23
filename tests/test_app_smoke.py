@@ -98,6 +98,9 @@ class TkSmokeTests(unittest.TestCase):
 
         def exercise():
             root.update()
+            studio_editor = next(w for w in self.descendants(root)
+                                 if isinstance(w, tk.Toplevel) and w.title().startswith('Edit obstacle'))
+            self.assertTrue(studio_editor.winfo_exists())
             canvas = next(w for w in self.descendants(root)
                           if isinstance(w, tk.Canvas) and w.find_withtag('card'))
             self.assertEqual(len(canvas.find_withtag('card')), expected)
@@ -139,7 +142,8 @@ class TkSmokeTests(unittest.TestCase):
             module = build_variant(family, saved, scale=family['_worldScale'])
             changed = next(item for item in module[group] if item['id'] == shape['id'])
             self.assertEqual(changed['points'][1], expected)
-            self.assertFalse(editor.window.winfo_exists())
+        self.assertTrue(editor.window.winfo_exists())
+        self.assertFalse(editor.dirty)
         self.assertEqual(self.callback_errors, [])
 
 

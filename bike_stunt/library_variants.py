@@ -2,6 +2,7 @@
 from bike_stunt.obstacle_library import (ROOT, GROUPS, DEADZONE_Y_OFFSET, vertex, profile, sample_curve, ground, editable_points, apply_geometry_overrides, linear_polygon, platform_body, assign_module_coins)
 from bike_stunt.terrain_export import normalize_main_platform, surface_count
 from bike_stunt.spring_object import spring_trajectory
+from bike_stunt.spring_fallback import build_tunnel, merge_approach
 from bike_stunt.world_scale import scale_world_data
 import copy, json, math
 from statistics import median
@@ -253,7 +254,26 @@ def build_variant(family, variant, *, scale=1, deadzone_y_offset=DEADZONE_Y_OFFS
         landing_coords = landing_profiles[landing_profile]
         end = (end_x, landing_coords[-1][1])
         add_surface('spring_approach', approach_coords)
-        add_surface('spring_landing_recovery', landing_coords)
+        if p.get('fallbackRoute') == 'tunnel':
+            road, roof, zone, lower = build_tunnel(lip, launch_y, landing_coords, p)
+            if p['platformConnection'] == 'connected':
+                merged = merge_approach(result['MainPlatform'][-1], road)
+                result['MainPlatform'][-1] = merged
+                surfaces[-1] = merged['points'][:surface_count(merged)]
+            else:
+                result['MainPlatform'].append(road)
+                surfaces.append(lower)
+            result['FreePlatform'].append(roof)
+            if zone is not None:
+                result['deadzone'].append(zone)
+            physics['missedSpring'] = {
+                'route': ('ride connected lower road beneath floating catch, climb to exit'
+                          if p['platformConnection'] == 'connected' else
+                          'clear the short deadzone gap to reach the lower tunnel road'),
+                'penalty': 'lost momentum on the drop and a longer unassisted uphill ride',
+                'status': 'geometry_checked; traversal time and bike clearance need Unity playtest'}
+        else:
+            add_surface('spring_landing_recovery', landing_coords)
         target_x = landing_x+p['targetInset']
         clearance = p['referenceClearance']
         distance = target_x-lip
@@ -266,19 +286,21 @@ def build_variant(family, variant, *, scale=1, deadzone_y_offset=DEADZONE_Y_OFFS
                 'flightTimeSeconds': duration, 'gravity': 9.81, 'launchMode': 'target_arc',
                 'activation': 'on_player_enter', 'rearm': 'on_exit', 'cinematic': True}}
         result['InteractableObject'].append(spring)
-        result['deadzone'].append(linear_polygon('spring_gap_kill',
-            [(lip-.1,min(launch_y,landing_y)-1.5),(landing_x+.1,min(launch_y,landing_y)-1.5),
-             (landing_x+.1,min(launch_y,landing_y)-3),(lip-.1,min(launch_y,landing_y)-3)]))
+        if p.get('fallbackRoute') != 'tunnel':
+            result['deadzone'].append(linear_polygon('spring_gap_kill',
+                [(lip-.1,min(launch_y,landing_y)-1.5),(landing_x+.1,min(launch_y,landing_y)-1.5),
+                 (landing_x+.1,min(launch_y,landing_y)-3),(lip-.1,min(launch_y,landing_y)-3)]))
         arc = spring_trajectory(spring)
         for fraction in (.15, .325, .5, .675, .85):
             x, y = arc[round(fraction*(len(arc)-1))]
             anchors.append({'x':x, 'y':y, 'priority':7, 'role':'cinematic_spring_flight'})
+        checkpoint_x = end_x-p['recovery']*.15 if p.get('fallbackRoute') == 'tunnel' else catch_end+3
         units = {'approach':[0,lip], 'launch':[lip,lip], 'flight':[lip,landing_x],
             'landing':[landing_x,catch_end], 'recovery':[catch_end,end[0]],
             'launchAngle': math.degrees(math.atan2(height+.5*9.81*duration**2, distance)),
-            'landingCategory':'safe', 'checkpointCandidateAfterStabilization':catch_end+3,
+            'landingCategory':'safe', 'checkpointCandidateAfterStabilization':checkpoint_x,
             'launchMechanism':'SpringObject'}
-        checkpoints.append({'x':catch_end+3,'y':end[1]+clearance,
+        checkpoints.append({'x':checkpoint_x,'y':end[1]+clearance,
                             'expectedRestartSpeed':0,'requiresRestartTest':True})
         physics['springLaunch'] = {'status':'idealized_target_arc_only',
             'flightTimeSeconds':duration, 'arrivalSlope':p['arrivalSlope'],

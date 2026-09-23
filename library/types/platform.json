@@ -14,9 +14,48 @@
         "profile": "flat",
         "totalLength": 42,
         "segments": [
-          [[0, 0], [6, 0], [11, 2], [17.5, 4]],
-          [[19.5, 3], [30, 3.5]],
-          [[32, 4], [38, 1.5], [42, 0]]
+          [
+            [
+              0,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              17.5,
+              4
+            ]
+          ],
+          [
+            [
+              19.5,
+              3
+            ],
+            [
+              30,
+              3.5
+            ]
+          ],
+          [
+            [
+              32,
+              4
+            ],
+            [
+              38,
+              1.5
+            ],
+            [
+              42,
+              0
+            ]
+          ]
         ]
       },
       "physicsStatus": "unvalidated",
@@ -88,9 +127,56 @@
         "profile": "wave",
         "totalLength": 54,
         "segments": [
-          [[0, 0], [6, 0], [11, 2.5], [19, 5]],
-          [[21, 4], [29, 6.2], [37, 4.2]],
-          [[39, 5.2], [47, 3], [51, 1.2], [54, 0]]
+          [
+            [
+              0,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              11,
+              2.5
+            ],
+            [
+              19,
+              5
+            ]
+          ],
+          [
+            [
+              21,
+              4
+            ],
+            [
+              29,
+              6.2
+            ],
+            [
+              37,
+              4.2
+            ]
+          ],
+          [
+            [
+              39,
+              5.2
+            ],
+            [
+              47,
+              3
+            ],
+            [
+              51,
+              1.2
+            ],
+            [
+              54,
+              0
+            ]
+          ]
         ]
       },
       "physicsStatus": "unvalidated",
@@ -151,10 +237,66 @@
         "runout": 15,
         "totalLength": 68,
         "segments": [
-          [[0, 0], [7, 0], [12, 3], [20.5, 6]],
-          [[22.5, 5], [31, 7.2], [39.5, 5]],
-          [[41.5, 6], [49, 4.2], [57, 5.5]],
-          [[59, 4.5], [65, 2], [68, 0]]
+          [
+            [
+              0,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              12,
+              3
+            ],
+            [
+              20.5,
+              6
+            ]
+          ],
+          [
+            [
+              22.5,
+              5
+            ],
+            [
+              31,
+              7.2
+            ],
+            [
+              39.5,
+              5
+            ]
+          ],
+          [
+            [
+              41.5,
+              6
+            ],
+            [
+              49,
+              4.2
+            ],
+            [
+              57,
+              5.5
+            ]
+          ],
+          [
+            [
+              59,
+              4.5
+            ],
+            [
+              65,
+              2
+            ],
+            [
+              68,
+              0
+            ]
+          ]
         ]
       },
       "physicsStatus": "unvalidated",
@@ -162,6 +304,100 @@
         "role": "challenge",
         "recoveryRequired": true,
         "repeatCooldown": 3
+      },
+      "geometryOverrides": {
+        "RampPlatform": {
+          "open_bridge_2": {
+            "drivingSurfaceCount": 4,
+            "freeBottomCorners": false,
+            "points": [
+              {
+                "x": 22.5,
+                "y": 5.0,
+                "tangentIn": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 2.833333,
+                  "y": 0.0
+                },
+                "tangentMode": "broken",
+                "corner": false
+              },
+              {
+                "x": 30.0,
+                "y": 7.0,
+                "tangentIn": {
+                  "x": -2.5,
+                  "y": 1.0
+                },
+                "tangentOut": {
+                  "x": 2.5,
+                  "y": -1.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 36.5,
+                "y": 5.0,
+                "tangentIn": {
+                  "x": -1.5,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 1.5,
+                  "y": 0.0
+                },
+                "tangentMode": "broken",
+                "corner": false
+              },
+              {
+                "x": 39.5,
+                "y": 5.5,
+                "tangentIn": {
+                  "x": -1.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentMode": "broken",
+                "corner": false
+              },
+              {
+                "x": 39.5,
+                "y": -0.01,
+                "tangentIn": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentMode": "linear",
+                "corner": false
+              },
+              {
+                "x": 22.5,
+                "y": -0.01,
+                "tangentIn": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentMode": "linear",
+                "corner": false
+              }
+            ]
+          }
+        }
       }
     },
     {

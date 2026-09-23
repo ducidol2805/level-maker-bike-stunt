@@ -360,7 +360,9 @@ def build_authored_level(recipe, families=None):
             'camera':{'triggerX':max(0,x-12), 'recenterX':recovery[0]+3,
                 'framingBounds':{'minX':min(xs)-3,'maxX':max(xs)+3,'minY':min(ys)-2,'maxY':max(ys)+3},
                 'implementationStatus':'authored intent; Unity camera implementation pending'},
-            'fallback':'continuous ground below optional ramp' if module['RampPlatform'] else
+            'fallback':module['physics']['missedSpring']['route']
+                       if module['physics'].get('missedSpring') else
+                       'continuous ground below optional ramp' if module['RampPlatform'] else
                        'deadzone catches missed crossing; restart at previous checkpoint' if unit else 'continuous ground',
             'validationStatus':'static geometry and idealized arcs; Unity playtests pending'})
         x,y = stop['x'],stop['y']

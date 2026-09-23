@@ -21,7 +21,7 @@ from pathlib import Path
 from typing import Any, Iterable
 from obstacle_library import ROOT, GROUPS, as_level, build_variant, ground, linear_polygon, load_catalog, sample_curve, vertex
 from bike_stunt.map_viewer.validation import validate, overview, visualize, load_json, discover_levels
-from bike_stunt.map_viewer.canvas import PreviewCanvas, PreviewLegend, compile_vector_level
+from bike_stunt.rendering import PreviewCanvas, PreviewLegend, compile_vector_level
 from spring_object import spring_parameters, spring_trajectory
 from terrain_export import surface_count
 from world_scale import scale_world_data

@@ -8,7 +8,7 @@ def main():
     root = tk.Tk()
     root.withdraw()
     studio = ObstacleLibraryWindow(root)
-    studio.window.protocol("WM_DELETE_WINDOW", root.destroy)
+    studio.window.protocol("WM_DELETE_WINDOW", lambda: studio.close(root.destroy))
     root.mainloop()
     return 0
 

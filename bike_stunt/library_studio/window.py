@@ -20,10 +20,12 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable
 from obstacle_library import ROOT, GROUPS, as_level, build_variant, ground, linear_polygon, load_catalog, sample_curve, vertex
-from bike_stunt.map_viewer.canvas import (
+from bike_stunt.rendering import (
     PreviewCanvas, PreviewLegend, VectorLevel, VectorMarker, VectorPath, compile_vector_level,
+    shape_line_color,
 )
 from bike_stunt.map_viewer.validation import validate
+from bike_stunt.library_studio.editor_session import EditorSession
 from spring_object import spring_parameters, spring_trajectory
 from terrain_export import surface_count
 from world_scale import scale_world_data
@@ -98,7 +100,7 @@ def compile_obstacle_card(family: dict[str, Any], variant: dict[str, Any],
     return VectorLevel(paths, markers, (min(xs), min(ys), max(xs), max(ys)), ())
 
 
-class ObstacleEditorWindow:
+class ObstacleEditorWindow(EditorSession):
     """Edit a variant's local-space Bezier points and persist shape overrides."""
 
     def __init__(self, library: 'ObstacleLibraryWindow', family: dict[str, Any],
@@ -136,8 +138,9 @@ class ObstacleEditorWindow:
         top_line.pack(fill='x')
         mode_line = ttk.Frame(toolbar)
         mode_line.pack(fill='x', pady=(6, 0))
-        tk.Label(top_line, text=variant['id'], bg=UI_BG, fg=UI_TEXT,
-                 font=('Segoe UI', 12, 'bold')).pack(side='left', padx=(0, 16))
+        self.variant_label = tk.Label(top_line, text=variant['id'], bg=UI_BG, fg=UI_TEXT,
+                                      font=('Segoe UI', 12, 'bold'))
+        self.variant_label.pack(side='left', padx=(0, 16))
         labels = [f'{group} / {shape["id"]}' for group, shape in self.shapes]
         self.shape_choice = ttk.Combobox(top_line, values=labels, state='readonly', width=34)
         self.shape_choice.current(0)
@@ -215,7 +218,7 @@ class ObstacleEditorWindow:
         self.status = tk.StringVar(value='Select a point to edit.')
         tk.Label(footer, textvariable=self.status, bg=UI_BG, fg=UI_MUTED).pack(side='left')
         self._button(footer, 'Save', self.save).pack(side='right', padx=(8, 0))
-        self._button(footer, 'Cancel', self.close).pack(side='right')
+        self._button(footer, 'Revert', self.revert).pack(side='right')
         self.fit()
 
     @staticmethod
@@ -337,7 +340,7 @@ class ObstacleEditorWindow:
         return round(round(value/size)*size, 4)
 
     @staticmethod
-    def faded_color(color: str, alpha: float = .2) -> str:
+    def faded_color(color: str, alpha: float = .4) -> str:
         return '#' + ''.join(f'{round(int(PLOT_BG[i:i+2], 16)*(1-alpha) + int(color[i:i+2], 16)*alpha):02x}'
                              for i in (1, 3, 5))
 
@@ -386,24 +389,24 @@ class ObstacleEditorWindow:
                         x = self.screen(n*spacing, 0)[0]
                         minor = spacing < major and n % 2 != 0
                         canvas.create_line(x, 0, x, height,
-                                           fill='#192335' if minor else '#27364d')
+                                           fill=self.faded_color('#192335' if minor else '#27364d', .5))
                     for n in range(math.ceil(bottom/spacing), math.floor(top/spacing)+1):
                         y = self.screen(0, n*spacing)[1]
                         minor = spacing < major and n % 2 != 0
                         canvas.create_line(0, y, width, y,
-                                           fill='#192335' if minor else '#27364d')
+                                           fill=self.faded_color('#192335' if minor else '#27364d', .5))
         except ValueError:
             pass
-        for shape_index, (_other_group, other_shape) in enumerate(self.shapes):
+        for shape_index, (other_group, other_shape) in enumerate(self.shapes):
             if shape_index == self.shape_index:
                 continue
             route = sample_curve(other_shape, 20)
             coords = [value for x, y in route for value in self.screen(x, y)]
-            canvas.create_line(*coords, fill=self.faded_color(UI_ACCENT), width=2,
+            canvas.create_line(*coords, fill=self.faded_color(shape_line_color(other_group, other_shape)), width=2,
                                smooth=False, tags=(f'shape:{shape_index}',))
         route = sample_curve(shape, 20)
         coords = [value for x, y in route for value in self.screen(x, y)]
-        canvas.create_line(*coords, fill=UI_ACCENT, width=3, smooth=False,
+        canvas.create_line(*coords, fill=shape_line_color(group, shape), width=3, smooth=False,
                            tags=(f'shape:{self.shape_index}',))
         for index, point in enumerate(points):
             x, y = self.screen(point['x'], point['y'])
@@ -557,9 +560,9 @@ class ObstacleEditorWindow:
     def mouse_up(self, _event: Any) -> None:
         self.drag = None
 
-    def apply_fields(self, _event: Any = None) -> None:
+    def apply_fields(self, _event: Any = None) -> bool:
         if self.selected is None:
-            return
+            return False
         group, shape, points = self.current()
         try:
             values = {key: float(variable.get()) for key, variable in self.fields.items()}
@@ -575,7 +578,7 @@ class ObstacleEditorWindow:
                     raise ValueError('Surface points must run left to right')
         except ValueError as exc:
             self.status.set(str(exc))
-            return
+            return False
         point = points[self.selected]
         old_in = point['tangentIn']
         old_out = point['tangentOut']
@@ -593,6 +596,7 @@ class ObstacleEditorWindow:
         self.dirty = True
         self.changed_shapes.add((group, self.current()[1]['id']))
         self.select(self.selected)
+        return True
 
     def add_point(self) -> None:
         group, shape, points = self.current()
@@ -693,11 +697,13 @@ class ObstacleEditorWindow:
             proposed['shapeTypeOverrides'] = type_overrides
         return proposed
 
-    def save(self) -> None:
+    def save(self) -> bool:
         from tkinter import messagebox
+        if self.pending_fields():
+            if not self.apply_fields():
+                return False
         if not self.dirty:
-            self.close()
-            return
+            return True
         try:
             proposed = self.proposed_variant()
             compile_obstacle_card(self.family, proposed, self.library.outline_only)
@@ -715,17 +721,14 @@ class ObstacleEditorWindow:
             source.write_text(json.dumps(family_data, indent=2, ensure_ascii=False)+'\n', encoding='utf-8')
         except (OSError, ValueError, KeyError, TypeError, StopIteration) as exc:
             messagebox.showerror('Cannot save obstacle', str(exc), parent=self.window)
-            return
+            return False
+        self.variant = copy.deepcopy(proposed)
+        self.changed_shapes.clear()
         self.dirty = False
         self.library.reload()
-        self.close()
+        self.status.set('Saved.')
+        return True
 
-    def close(self) -> None:
-        if self.dirty:
-            from tkinter import messagebox
-            if not messagebox.askyesno('Discard changes?', 'Discard unsaved point changes?', parent=self.window):
-                return
-        self.window.destroy()
 
 
 class ObstacleLibraryWindow:
@@ -747,6 +750,8 @@ class ObstacleLibraryWindow:
         self.cards: list[ObstacleCard] = []
         self.groups: list[ObstacleGroup] = []
         self.editors: dict[str, ObstacleEditorWindow] = {}
+        self.editor: ObstacleEditorWindow | None = None
+        self.window.protocol('WM_DELETE_WINDOW', self.close)
         self._layout_after: str | None = None
         self.window.columnconfigure(0, weight=1)
         self.window.rowconfigure(1, weight=1)
@@ -775,6 +780,8 @@ class ObstacleLibraryWindow:
         self.window.bind('<F5>', self.reload)
         self.window.bind('<Destroy>', self._destroyed, add='+')
         self.reload()
+        if self.cards:
+            self.open_editor(self.cards[0].variant_id)
 
     @staticmethod
     def _button(parent: Any, text: str, command: Any) -> tk.Button:
@@ -814,8 +821,6 @@ class ObstacleLibraryWindow:
                 edit_button = self.canvas.create_text(0, 0, text='⋯', fill=UI_TEXT,
                                                       font=('Segoe UI', 15, 'bold'),
                                                       anchor='center', tags=(tag, 'edit'))
-                self.canvas.tag_bind(edit_button, '<Button-1>',
-                                     lambda _event, value=variant_id: self.open_editor(value))
                 card = ObstacleCard(variant_id, scene, background, edit_button, [], [])
                 for path in scene.paths:
                     options: dict[str, Any] = dict(width=path.width, tags=(tag, 'geometry'),
@@ -836,12 +841,15 @@ class ObstacleLibraryWindow:
                     else:
                         item = self.canvas.create_polygon(coords, **options)
                     card.markers.append((item, marker))
+                self.canvas.tag_bind(tag, '<Button-1>',
+                                     lambda _event, value=variant_id: self.open_editor(value))
                 self.canvas.tag_raise(edit_button)
                 self.cards.append(card)
                 group.cards.append(card)
             self.groups.append(group)
         self.window.title(f'Bike Stunt - Obstacle Library ({len(self.cards)})')
         self._layout()
+        self.highlight_selection()
         return 'break'
 
     def _resize(self, _event: Any) -> None:
@@ -882,20 +890,34 @@ class ObstacleLibraryWindow:
         self.canvas.configure(scrollregion=(0, 0, width, height))
         self.canvas.yview_moveto(fraction)
 
+    def highlight_selection(self) -> None:
+        selected = self.editor.variant['id'] if self.editor else None
+        for card in self.cards:
+            self.canvas.itemconfigure(card.background,
+                                      fill=UI_SELECTED if card.variant_id == selected else PLOT_BG)
+
     def open_editor(self, variant_id: str) -> None:
-        editor = self.editors.get(variant_id)
-        if editor is not None and editor.window.winfo_exists():
-            editor.window.lift()
-            editor.window.focus_set()
+        if self.editor is not None and self.editor.variant['id'] == variant_id:
+            self.editor.window.lift()
             return
         try:
             family = next(family for family in load_catalog().values()
                           if any(item['id'] == variant_id for item in family['variants']))
             variant = next(item for item in family['variants'] if item['id'] == variant_id)
-            self.editors[variant_id] = ObstacleEditorWindow(self, family, variant)
+            if self.editor is None:
+                self.editor = ObstacleEditorWindow(self, family, variant)
+            elif not self.editor.load_variant(family, variant):
+                return
+            self.editors = {variant_id: self.editor}
+            self.highlight_selection()
+            self.editor.window.lift()
         except (OSError, ValueError, KeyError, StopIteration) as exc:
             from tkinter import messagebox
             messagebox.showerror('Cannot open obstacle editor', str(exc), parent=self.window)
+
+    def close(self, destroy: Any = None) -> None:
+        if self.editor is None or self.editor.confirm_leave():
+            (destroy or self.window.destroy)()
 
     def _wheel(self, event: Any) -> str:
         number = getattr(event, 'num', None)

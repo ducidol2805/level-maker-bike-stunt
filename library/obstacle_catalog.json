@@ -103,7 +103,7 @@
     "difficulty": "teach, practice, combine within a difficulty band",
     "checkpoint": "first stable pad after hard gap; keep finish distance max(8 units,8% length)",
     "geometry": "local cubic Bezier; closed ground; open auxiliary ramps",
-    "spring": "Two ground platforms, lip-mounted SpringObject and compact full-gap deadzone; spring_high 10 variants, spring_far 10 variants with varied approaches and landing profiles; one cinematic highlight on every fifth campaign map, with recovery",
+    "spring": "Each spring_high/spring_far family: first 5 variants have separated ground platforms with a deadzone in the gap; last 5 have connected ground platforms and no deadzone. Floating spring catches retain a lower tunnel and uphill recovery.",
     "joins": "position and travel tangent must match; check speed compatibility",
     "validation": "geometry verified separately from bike simulation"
   }
