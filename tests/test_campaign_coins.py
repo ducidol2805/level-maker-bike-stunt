@@ -69,10 +69,9 @@ class LibraryCoinTests(unittest.TestCase):
 
 
 class CampaignCoinTests(unittest.TestCase):
-    def test_campaigns_and_demo_preserve_three_coins_per_instance(self):
+    def test_campaigns_preserve_three_coins_per_instance(self):
         families = load_catalog()
         recipes = json.loads((ROOT/'library/campaign_recipes.json').read_text(encoding='utf-8'))['maps']
-        recipes.append(json.loads((ROOT/'library/demo_recipe.json').read_text(encoding='utf-8')))
         for recipe in recipes:
             with self.subTest(map=recipe['name']):
                 source = build_authored_level(recipe,families)

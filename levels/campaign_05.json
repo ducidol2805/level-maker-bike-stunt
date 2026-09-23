@@ -1163,12 +1163,12 @@
           "x": 1328.95,
           "y": -97.49639718428446,
           "tangentIn": {
-            "x": -5.04,
-            "y": -0.0
+            "x": -4.4,
+            "y": -0.92
           },
           "tangentOut": {
-            "x": 0.7523231972285247,
-            "y": 0
+            "x": 4.4,
+            "y": 0.92
           },
           "tangentMode": "continuous",
           "corner": false
@@ -1181,10 +1181,10 @@
             "y": -2.9066782264160835
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
-          "tangentMode": "broken",
+          "tangentMode": "linear",
           "corner": false
         },
         {
@@ -1368,6 +1368,7 @@
     }
   ],
   "RampPlatform": [],
+  "FreePlatform": [],
   "deadzone": [
     {
       "id": "s02_gap_kill",
@@ -2876,7 +2877,6 @@
     "catalogVersion": "2.7",
     "recipe": "library/campaign_recipes.json",
     "recipeNumber": 5,
-    "referenceLevel": "levels/00_cinder_crown.json",
     "subtitle": "A 36-unit void and long spring arc with three obstacle coins create the widest single reveal so far. Extended with higher-tier transfers and technical obstacles.",
     "worldScale": 2
   },

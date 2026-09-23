@@ -9,6 +9,14 @@ obstacle library, recipes, map generator and export pipeline. Reconstruction
 from footage is a separate mode; ordinary library changes do not require a new
 video, panorama or visual preview.
 
+## Project application layout
+
+- `apps/map_viewer/`: independent read-only map viewer; launch with `python -m apps.map_viewer`.
+- `apps/library_studio/`: obstacle library preview and shape editor; launch with `python -m apps.library_studio`.
+- `bike_stunt/`: shared geometry, campaign, export and UI implementation modules.
+- `tests/`: automated tests. Keep every `.py` file, including tests and launchers, below 1,000 physical lines.
+- Root scripts such as `level_visualizer.py`, `obstacle_library.py` and `generate_campaign.py` are compatibility launchers. New implementation belongs in the packages above.
+
 ## Project operating constraints
 
 - Do not run ImageGen, generate preview images, render contact sheets, take
@@ -1278,7 +1286,7 @@ Every library obstacle owns exactly **three optional coin objects in local
 coordinates**. This includes flat/start/finish variants and the whole double-
 or triple-ring variant: three per obstacle, not three per component ring.
 
-- Build coins through `assign_module_coins` in `obstacle_library.py`, as native
+- Build coins through `assign_module_coins` in `bike_stunt/obstacle_library.py`, as native
   `InteractableObject` entries. Library cards and composed maps use the same
   objects. `place` prefixes their IDs and translates their coordinates.
 - Map total = three times the number of obstacle instances, including authored
@@ -1442,7 +1450,7 @@ segment; equal lengths are not required if the straight segment is short.
 Set the qualifying point to `continuous` and keep re-export idempotent.
 
 Apply this after terrain merge and boundary padding via
-`extend_straight_join_handles` in `terrain_export.py`. Verify both
+`extend_straight_join_handles` in `bike_stunt/terrain_export.py`. Verify both
 straight-to-curve and curve-to-straight joins, short/sloped straights, retained
 corners and an unchanged second export.
 
@@ -1476,7 +1484,7 @@ For example, original source terrain X bounds `[0, 307]` become `[-20, 327]`,
 while source Start `(1, 1)` and End `(306, -6.75)` remain unchanged during
 export. With the current 2x output scale, the saved bounds are `[-40, 654]`,
 Start `(2, 2)` and End `(612, -13.5)`.
-Use the existing `terrain_export.py` pipeline for this project.
+Use the existing `bike_stunt/terrain_export.py` pipeline for this project.
 
 This export rule does not prohibit moving End when the user requests a longer
 authored map. Recompose the route first, then preserve its newly authored
@@ -1676,20 +1684,19 @@ Clearly mark estimated values.
 ## Sources of truth
 
 - `library/types/*.json`: obstacle variants and shape parameters.
+  Authored `geometryOverrides` are authoritative, including the curved ramp
+  shapes tuned from real data. Tests must preserve these points, handles and
+  tangent modes rather than enforce the procedural builder's default profile.
 - `library/obstacle_catalog.json`: family files, version and variant counts.
-- `obstacle_library.py`: local builders, three-coin ownership, placement and
+- `bike_stunt/obstacle_library.py`: local builders, three-coin ownership, placement and
   fallback procedural composition.
 - `library/campaign_recipes.json`: authored map sequence, intent, tension,
   checkpoints, overrides and length targets. Check this first when updating
   existing campaign maps; do not reverse-engineer merged terrain unnecessarily.
-- `library/demo_recipe.json`: Cinder Crown's separate authored recipe. Preserve
-  its compact roller, boosts/barrel and finish-elevation overrides when updating
-  it. Include the demo when requested, and check whether its output still exists
-  rather than automatically recreating a file the user removed.
 - `library/campaign_themes.json`: theme materials, palette and scenery metadata.
   Metadata is not proof that decorative game assets have been implemented.
-- `generate_campaign.py`: author/tune, place, export, validate and save maps.
-- `terrain_export.py`: common underside, endpoint merges, reference remapping,
+- `bike_stunt/campaign.py`: author/tune, place, export, validate and save maps.
+- `bike_stunt/terrain_export.py`: common underside, endpoint merges, reference remapping,
   flat/curve tangent handling and non-accumulating boundary padding.
 - `levels/`: generated maps and `campaign_manifest.json`.
 
@@ -1706,11 +1713,11 @@ patch every translated copy of an obstacle in generated JSON.
 For the current 30-map campaign, the regeneration command is:
 
 ```powershell
-python generate_campaign.py --output levels --count 30 --overwrite
+python -m bike_stunt.campaign --output levels --count 30 --overwrite
 ```
 
-Add `--include-demo` when the demo is in scope. These commands write files;
-inspect destinations and choose the requested count before executing them.
+These commands write files; inspect destinations and choose the requested
+count before executing them.
 They do not launch previews. A standalone skill/document update does not
 authorize regenerating maps.
 
@@ -1774,9 +1781,9 @@ difficulty increase.
 
 ## Library and main-app UI conventions
 
-When editing `level_visualizer.py`, preserve Refresh/F5 in both the main map
-browser and library. Refresh rereads current files/catalog; it is not a substitute
-for regenerating stale map JSON.
+When editing `bike_stunt/map_viewer/browser.py`, preserve Refresh/F5 in the map
+browser. In Library Studio, keep the library refresh action available. Refresh
+rereads current files/catalog; it is not a substitute for regenerating stale map JSON.
 
 Library cells retain their background rectangle, have no cell outline, and use
 75% of the earlier cell height. Group titles have no filled title rectangle;
@@ -1788,7 +1795,7 @@ not authorization to launch a preview during an unrelated task.
 Use the existing test suite and generator checks without rendering images:
 
 ```powershell
-python -m unittest -v
+python -m unittest discover -s tests -v
 git diff --check
 ```
 

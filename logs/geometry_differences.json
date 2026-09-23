@@ -1,0 +1,178 @@
+{
+  "capturedAt": "2026-09-23T17:57:05.574729+07:00",
+  "indexing": "JSON Pointer; zero-based arrays",
+  "curvedRamp": [
+    {
+      "variant": "curved_ramp.gentle_scoop",
+      "shape": "MainPlatform/launch",
+      "pointIndex": 2,
+      "compressionTangentIn": {
+        "expected": {
+          "x": -1.7,
+          "y": -0.0
+        },
+        "actual": {
+          "x": -2.24,
+          "y": -0.14
+        }
+      },
+      "launchInitialSlope": {
+        "expected": 0,
+        "actual": 0.0625
+      },
+      "withoutOverrides": {
+        "compressionTangentIn": {
+          "x": -1.7,
+          "y": -0.0
+        },
+        "launchInitialSlope": 0.0
+      }
+    },
+    {
+      "variant": "curved_ramp.deep_scoop",
+      "shape": "MainPlatform/launch",
+      "pointIndex": 2,
+      "compressionTangentIn": {
+        "expected": {
+          "x": -1.973333,
+          "y": -0.0
+        },
+        "actual": {
+          "x": -1.44,
+          "y": 0.12
+        }
+      },
+      "launchInitialSlope": {
+        "expected": 0,
+        "actual": -0.08333333333333333
+      },
+      "withoutOverrides": {
+        "compressionTangentIn": {
+          "x": -1.973333,
+          "y": -0.0
+        },
+        "launchInitialSlope": 0.0
+      }
+    },
+    {
+      "variant": "curved_ramp.speed_scoop",
+      "shape": "MainPlatform/launch",
+      "pointIndex": 2,
+      "compressionTangentIn": {
+        "expected": {
+          "x": -2.52,
+          "y": -0.0
+        },
+        "actual": {
+          "x": -2.2,
+          "y": -0.46
+        }
+      },
+      "launchInitialSlope": {
+        "expected": 0,
+        "actual": 0.20909090909090908
+      },
+      "withoutOverrides": {
+        "compressionTangentIn": {
+          "x": -2.52,
+          "y": -0.0
+        },
+        "launchInitialSlope": 0.0
+      }
+    },
+    {
+      "variant": "curved_ramp.trick_scoop",
+      "shape": "MainPlatform/launch",
+      "pointIndex": 2,
+      "compressionTangentIn": {
+        "expected": {
+          "x": -2.246667,
+          "y": -0.0
+        },
+        "actual": {
+          "x": -2.246667,
+          "y": -0.0
+        }
+      },
+      "launchInitialSlope": {
+        "expected": 0,
+        "actual": 0.0
+      },
+      "withoutOverrides": {
+        "compressionTangentIn": {
+          "x": -2.246667,
+          "y": -0.0
+        },
+        "launchInitialSlope": 0.0
+      }
+    },
+    {
+      "variant": "curved_ramp.raised_catch",
+      "shape": "MainPlatform/launch",
+      "pointIndex": 2,
+      "compressionTangentIn": {
+        "expected": {
+          "x": -2.246667,
+          "y": -0.0
+        },
+        "actual": {
+          "x": -2.246667,
+          "y": -0.0
+        }
+      },
+      "launchInitialSlope": {
+        "expected": 0,
+        "actual": 0.0
+      },
+      "withoutOverrides": {
+        "compressionTangentIn": {
+          "x": -2.246667,
+          "y": -0.0
+        },
+        "launchInitialSlope": 0.0
+      }
+    }
+  ],
+  "campaign05": {
+    "differences": [
+      {
+        "path": "/FreePlatform",
+        "actual": null,
+        "expected": [],
+        "actualPresent": false,
+        "expectedPresent": true
+      },
+      {
+        "path": "/MainPlatform/5/points/5/tangentIn/x",
+        "actual": -5.04,
+        "expected": -4.4
+      },
+      {
+        "path": "/MainPlatform/5/points/5/tangentIn/y",
+        "actual": -0.0,
+        "expected": -0.92
+      },
+      {
+        "path": "/MainPlatform/5/points/5/tangentOut/x",
+        "actual": 0.7523231972285247,
+        "expected": 4.4
+      },
+      {
+        "path": "/MainPlatform/5/points/5/tangentOut/y",
+        "actual": 0,
+        "expected": 0.92
+      },
+      {
+        "path": "/MainPlatform/5/points/6/tangentMode",
+        "actual": "broken",
+        "expected": "linear"
+      }
+    ],
+    "mergedShapeId": "s12_spring_landing_recovery",
+    "sourceInstance": "s14",
+    "matchesBaseGeometryWithEmptyFreePlatform": true,
+    "boundaryPadding": 40,
+    "exportIdempotent": true,
+    "springArcMaxScaleError": 5.684341886080802e-14
+  }
+}

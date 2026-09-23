@@ -72,10 +72,13 @@ class JumpFamilyGeometryTests(unittest.TestCase):
         launch_height = self.surface(step_down["MainPlatform"][0])[-1]["y"]
         self.assertLess(self.surface(step_down["MainPlatform"][1])[0]["y"], launch_height)
 
-    def test_launch_ascent_curves_up_without_a_shoulder(self):
+    def test_generated_launch_ascent_curves_up_without_a_shoulder(self):
         for name in ("curved_ramp", "gap", "step_up", "step_down"):
             family = self.families[name]
             for variant in family["variants"]:
+                # Authored launches follow library data, checked separately below.
+                if variant.get('geometryOverrides', {}).get('MainPlatform', {}).get('launch') is not None:
+                    continue
                 with self.subTest(variant=variant["id"]):
                     surface = self.surface(build_variant(family, variant)["MainPlatform"][0])
                     # Test slope progression, not just height: a monotonically
@@ -98,12 +101,18 @@ class JumpFamilyGeometryTests(unittest.TestCase):
                     handle = surface[-1]["tangentIn"]
                     self.assertAlmostEqual(handle["y"]/handle["x"], math.tan(math.radians(p["angle"])), places=5)
 
-    def test_curved_ramps_keep_original_compression_entry(self):
+    def test_curved_ramps_preserve_library_geometry(self):
         family = self.families["curved_ramp"]
         for variant in family["variants"]:
             with self.subTest(variant=variant["id"]):
                 p = variant["parameters"]
                 surface = self.surface(build_variant(family, variant)["MainPlatform"][0])
+                override = variant.get('geometryOverrides', {}).get('MainPlatform', {}).get('launch')
+                if override is not None:
+                    expected = (override['points'][:override['drivingSurfaceCount']]
+                                if isinstance(override, dict) else override)
+                    self.assertEqual(surface, expected)
+                    continue
                 expected = profile([(0,0), (p["approach"]*.68,0),
                                     (p["approach"]+p["launch"]*.18, -min(1.4,p["height"]*.32))],
                                    {1:0,2:0})
