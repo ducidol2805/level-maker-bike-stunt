@@ -225,6 +225,10 @@ Assumed world wheelbase = 2 units
 Scale ≈ 80 px / unit
 ```
 
+The current catalog uses `worldScale: 2`. The example above calibrates the
+unscaled source geometry; built Library previews and saved campaign maps use
+twice those coordinates. This does not resize the Unity bike automatically.
+
 Scale may vary because of camera zoom.
 
 If camera zoom changes, treat scale as frame-dependent.
@@ -1451,8 +1455,8 @@ Keep their complete authored transforms unchanged when adding boundary padding,
 merging terrain, exporting, or preparing a preview. Never regenerate these
 markers from the expanded terrain bounds or rebase the map to remove negative X.
 
-After composition, extend only the first `MainPlatform` 20 world units to the
-left of its original outer edge and the last `MainPlatform` 20 world units to
+After composition, extend only the first `MainPlatform` 20 source units to the
+left of its original outer edge and the last `MainPlatform` 20 source units to
 the right of its original outer edge. This ground padding prevents the map
 from looking cut off; it does not move the spawn or finish or add another
 gameplay challenge.
@@ -1468,8 +1472,10 @@ gameplay challenge.
 - Compare Start/End transforms with the authoring source after export and
   after copying to the preview folder; they must match exactly.
 
-For example, original terrain X bounds `[0, 307]` become `[-20, 327]`, while
-Start `(1, 1)` and End `(306, -6.75)` remain at those exact world positions.
+For example, original source terrain X bounds `[0, 307]` become `[-20, 327]`,
+while source Start `(1, 1)` and End `(306, -6.75)` remain unchanged during
+export. With the current 2x output scale, the saved bounds are `[-40, 654]`,
+Start `(2, 2)` and End `(612, -13.5)`.
 Use the existing `terrain_export.py` pipeline for this project.
 
 This export rule does not prohibit moving End when the user requests a longer
@@ -1712,6 +1718,33 @@ Validate saved outputs and manifest against recipes, not just an in-memory
 build. Compare hashes for out-of-scope maps if the generator rewrites the whole
 set. Preserve unrelated edits and deletions. Do not recreate atlases, screenshots
 or archives as a side effect of updating map JSON.
+
+## Uniformly scaling an authored map
+
+The current `library/obstacle_catalog.json` sets `worldScale: 2`. Keep type
+parameters, geometry overrides and campaign recipes in source units. Apply
+the factor once when building a Library preview, and once after authoring,
+export and static validation when writing each campaign map. Do not scale a
+Library module before recipe composition or scale an already saved map again.
+
+The 2x output scale multiplies every spatial quantity by 2: spline point
+positions and local `tangentIn`/`tangentOut`
+vectors; Start, End, Top, Bottom, checkpoints, coins and other object positions;
+target/landing/trigger/trajectory positions; terrain padding; obstacle ports;
+camera look-ahead, framing bounds and trigger positions; route X/Y ranges; and
+stored length, gap, recovery and spacing values. `world_scale.py` owns these
+field rules. Library editor point changes are converted back to source units
+on save, so reopening a variant does not double its override. Re-exporting a
+saved map reuses its recorded 40-unit padding; new source exports start at 20
+units before the 2x output scale.
+
+Keep counts, IDs, rotations/angles, tangent modes, normalized progress,
+direction vectors, multipliers, difficulty and event delays unchanged. Physical
+speed, impulse and flight time use sqrt(2) for similar ballistic motion under
+unchanged gravity. This transforms stored point-mass estimates; it is not a
+Unity physics validation. Recompute estimates if the bike or gravity changes,
+and validate in Unity. Verify closed terrain, joins, coins and metadata after
+saving.
 
 ## Campaign themes and difficulty
 

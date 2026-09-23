@@ -14,9 +14,10 @@ from pathlib import Path
 from statistics import median
 from terrain_export import normalize_main_platform, surface_count
 from spring_object import spring_trajectory
+from world_scale import scale_world_data
 
 ROOT = Path(__file__).resolve().parent
-GROUPS = ("MainPlatform", "RampPlatform", "deadzone", "InteractableObject")
+GROUPS = ("MainPlatform", "RampPlatform", "FreePlatform", "deadzone", "InteractableObject")
 DEADZONE_Y_OFFSET = -2.0
 
 
@@ -30,6 +31,7 @@ def load_catalog():
     actual_total = 0
     for group in catalog["groups"]:
         family = json.loads((ROOT / "library" / group["path"]).read_text(encoding="utf-8"))
+        family['_worldScale'] = catalog.get('worldScale', 1)
         actual_count = len(family["variants"])
         if group.get("variantCount") != actual_count:
             raise ValueError(f"{family['type']}: catalog declares {group.get('variantCount')} variants, found {actual_count}")
@@ -95,6 +97,82 @@ def ground(name, surface):
     points += [vertex(surface[-1]["x"], floor, mode="linear"), vertex(surface[0]["x"], floor, mode="linear")]
     return {"id": name, "closed": True, "points": points,
             "metadata": {"drivingSurfaceCount": len(surface)}}
+
+
+def editable_points(shape, group):
+    """Return the driving surface without its two bottom corners."""
+    if group == "MainPlatform" or (group == "RampPlatform" and shape.get("closed") and
+                                   "drivingSurfaceCount" in shape.get("metadata", {})):
+        return shape["points"][:surface_count(shape)]
+    return shape["points"]
+
+
+def apply_geometry_overrides(module, overrides):
+    if not isinstance(overrides, dict):
+        raise ValueError("geometryOverrides must be an object")
+    for group, shapes in overrides.items():
+        if group not in GROUPS or not isinstance(shapes, dict):
+            raise ValueError(f"Invalid geometry override group: {group}")
+        available = {shape["id"]: shape for shape in module[group] if "points" in shape}
+        for shape_id, override in shapes.items():
+            full_polygon = isinstance(override, dict)
+            points = override.get('points') if full_polygon else override
+            if shape_id not in available or not isinstance(points, list):
+                raise ValueError(f"Invalid geometry override shape: {group}/{shape_id}")
+            shape = available[shape_id]
+            generated_underside = group == "MainPlatform" or (group == "RampPlatform" and
+                shape.get("closed") and "drivingSurfaceCount" in shape.get("metadata", {}))
+            if full_polygon and not generated_underside:
+                raise ValueError(f"{group}/{shape_id}: full polygon override requires a terrain body")
+            if full_polygon and 'freeBottomCorners' in override and not isinstance(override['freeBottomCorners'], bool):
+                raise ValueError(f"{group}/{shape_id}: freeBottomCorners must be boolean")
+            minimum = 2 if generated_underside or not shape.get("closed") else 4 if group == 'deadzone' else 3
+            if len(points) < minimum + (2 if full_polygon else 0):
+                raise ValueError(f"{group}/{shape_id} needs at least {minimum} points")
+            checked = []
+            for point in points:
+                if not isinstance(point, dict) or point.get("tangentMode") not in ("linear", "broken", "continuous"):
+                    raise ValueError(f"Invalid point or tangent mode in {group}/{shape_id}")
+                values = [point.get("x"), point.get("y")]
+                for key in ("tangentIn", "tangentOut"):
+                    tangent = point.get(key)
+                    if not isinstance(tangent, dict):
+                        raise ValueError(f"Missing {key} in {group}/{shape_id}")
+                    values.extend((tangent.get("x"), tangent.get("y")))
+                if any(not isinstance(value, (int, float)) or not math.isfinite(value) for value in values):
+                    raise ValueError(f"Non-finite point in {group}/{shape_id}")
+                checked.append(copy.deepcopy(point))
+            if generated_underside:
+                count = override.get('drivingSurfaceCount') if full_polygon else len(checked)
+                if full_polygon and (not isinstance(count, int) or count != len(checked)-2):
+                    raise ValueError(f"{group}/{shape_id}: invalid driving surface count")
+                surface = checked[:count]
+                if any(a["x"] > b["x"] for a, b in zip(surface, surface[1:])):
+                    raise ValueError(f"{shape_id}: driving surface must run left to right")
+                original = editable_points(shape, group)
+                if group == "MainPlatform":
+                    for port_name, before, after in (("entry", original[0], surface[0]),
+                                                     ("exit", original[-1], surface[-1])):
+                        port = module["ports"][port_name]
+                        if abs(port["x"]-before["x"]) < 1e-6 and abs(port["y"]-before["y"]) < 1e-6:
+                            port.update(x=after["x"], y=after["y"])
+                if full_polygon:
+                    candidate = {**shape, 'points': checked,
+                                 'metadata': {**shape.get('metadata', {}), 'drivingSurfaceCount': count,
+                                              'freeBottomCorners': override.get('freeBottomCorners', False)}}
+                    surface_count(candidate)
+                    shape['points'] = checked
+                    if candidate['metadata']['freeBottomCorners']:
+                        shape.setdefault('metadata', {})['freeBottomCorners'] = True
+                else:
+                    underside = copy.deepcopy(shape["points"][-2:])
+                    floor = min(underside[0]["y"], underside[1]["y"], min(p["y"] for p in checked)-0.01)
+                    underside[0].update(x=surface[-1]["x"], y=floor)
+                    underside[1].update(x=surface[0]["x"], y=floor)
+                    shape["points"] = checked + underside
+                shape.setdefault("metadata", {})["drivingSurfaceCount"] = count
+            else:
+                shape["points"] = checked
 
 
 def linear_polygon(name, coords):
@@ -192,7 +270,7 @@ def assign_module_coins(module):
     module['coinCandidates'] = [dict(c['transform'],priority=1,role=role) for c in coins]
 
 
-def build_variant(family, variant):
+def build_variant(family, variant, *, scale=1):
     p = variant["parameters"]
     kind = family["builder"]
     type_id = family["type"]
@@ -755,7 +833,64 @@ def build_variant(family, variant):
             for point in item.get("points", []):
                 point["tangentMode"] = "continuous"
 
+    if variant.get("geometryOverrides"):
+        apply_geometry_overrides(result, variant["geometryOverrides"])
+        result["groundSamples"] = [point for shape in result["MainPlatform"]
+                                   for point in sample_curve({"points": editable_points(shape, "MainPlatform")})]
+
     assign_module_coins(result)
+    added_shapes = variant.get('addedShapes', {})
+    if not isinstance(added_shapes, dict) or set(added_shapes) - {'MainPlatform', 'RampPlatform', 'FreePlatform', 'deadzone'}:
+        raise ValueError(f"{variant['id']}: invalid addedShapes group")
+    known_ids = {item['id'] for group in GROUPS for item in result[group] if 'id' in item}
+    for group in ('MainPlatform', 'RampPlatform', 'FreePlatform', 'deadzone'):
+        shapes = added_shapes.get(group, [])
+        if not isinstance(shapes, list):
+            raise ValueError(f"{variant['id']}: invalid addedShapes/{group}")
+        for shape in shapes:
+            if not isinstance(shape, dict) or not isinstance(shape.get('id'), str) or shape['id'] in known_ids:
+                raise ValueError(f"{variant['id']}: invalid or duplicate added shape ID")
+            if group == 'MainPlatform' or (group == 'RampPlatform' and shape.get('closed') and
+                                           'drivingSurfaceCount' in shape.get('metadata', {})):
+                surface_count(shape)
+            elif group == 'RampPlatform' and shape.get('closed') and len(shape.get('points', [])) < 4:
+                raise ValueError(f"{variant['id']}: closed platform needs 4+ points")
+            elif group == 'deadzone' and (not shape.get('closed') or len(shape.get('points', [])) < 4):
+                raise ValueError(f"{variant['id']}: deadzone needs a closed polygon with 4+ points")
+            elif group == 'FreePlatform' and len(shape.get('points', [])) < (3 if shape.get('closed') else 2):
+                raise ValueError(f"{variant['id']}: free platform needs at least 2 open or 3 closed points")
+            sample_curve(shape)
+            known_ids.add(shape['id'])
+            result[group].append(copy.deepcopy(shape))
+    conversions = variant.get('shapeTypeOverrides', {})
+    if not isinstance(conversions, dict):
+        raise ValueError(f"{variant['id']}: shapeTypeOverrides must be an object")
+    for shape_id, override in conversions.items():
+        if not isinstance(override, dict):
+            raise ValueError(f"{variant['id']}: invalid shape type override for {shape_id}")
+        target = override.get('group')
+        shape = override.get('shape')
+        matches = [(group, existing) for group in ('MainPlatform', 'RampPlatform', 'FreePlatform', 'deadzone')
+                   for existing in result[group] if existing['id'] == shape_id]
+        if target not in ('MainPlatform', 'RampPlatform', 'FreePlatform', 'deadzone') or len(matches) != 1 or not isinstance(shape, dict) or shape.get('id') != shape_id:
+            raise ValueError(f"{variant['id']}: invalid shape type override for {shape_id}")
+        if target == 'MainPlatform' or (target == 'RampPlatform' and shape.get('closed') and
+                                        'drivingSurfaceCount' in shape.get('metadata', {})):
+            surface_count(shape)
+        elif target == 'deadzone' and (not shape.get('closed') or len(shape.get('points', [])) < 4):
+            raise ValueError(f"{variant['id']}: deadzone needs a closed polygon with 4+ points")
+        elif target == 'FreePlatform' and len(shape.get('points', [])) < (3 if shape.get('closed') else 2):
+            raise ValueError(f"{variant['id']}: free platform needs at least 2 open or 3 closed points")
+        sample_curve(shape)
+        old_group, old_shape = matches[0]
+        result[old_group].remove(old_shape)
+        result[target].append(copy.deepcopy(shape))
+    if result['MainPlatform'] and (added_shapes.get('MainPlatform') or conversions):
+        result['groundSamples'] = [point for shape in result['MainPlatform']
+                                   for point in sample_curve({'points': editable_points(shape, 'MainPlatform')})]
+    if scale != 1:
+        result = scale_world_data(result, scale)
+        result['worldScale'] = scale
     return result
 
 
@@ -827,7 +962,7 @@ def as_level(modules, map_id, name, *, preview=False):
     first,last = modules[0]["ports"]["entry"],modules[-1]["ports"]["exit"]
     end_x=last["x"]-1
     all_points=[]
-    for group in ("MainPlatform","RampPlatform"):
+    for group in ("MainPlatform","RampPlatform","FreePlatform"):
         for shape in level[group]:
             all_points.extend(sample_curve(shape))
     for shape in level["InteractableObject"]:
@@ -883,7 +1018,7 @@ def build_campaign_level(number):
             variant=next(v for v in family["variants"] if v["id"]==type_id+"."+named)
         else:
             variant=rng.choice(variants)
-        local=build_variant(family,variant)
+        local=build_variant(family,variant,scale=1)
         module=place(local,x,y,f"m{len(modules):02d}")
         modules.append(module)
         x,y=module["ports"]["exit"]["x"],module["ports"]["exit"]["y"]
@@ -914,7 +1049,7 @@ def main():
             parser.error("Unknown type: "+args.type)
         families={args.type:families[args.type]}
     for family in families.values():
-        modules=[build_variant(family,v) for v in family["variants"]]
+        modules=[build_variant(family,v,scale=family['_worldScale']) for v in family["variants"]]
         print(f"{family['type']}: {len(modules)} variants")
         if args.output:
             args.output.mkdir(parents=True,exist_ok=True)
@@ -931,7 +1066,7 @@ def main():
                 # Contact sheets show the same finalized ground cross-section
                 # as the JSON preview, not independent local underside heights.
                 module = normalize_main_platform(module)
-                for group,color in (("deadzone","#ef6666"),("MainPlatform","#3eae78"),("RampPlatform","#e6a12c"),("InteractableObject","#ee4444")):
+                for group,color in (("deadzone","#ef6666"),("MainPlatform","#3eae78"),("RampPlatform","#e6a12c"),("FreePlatform","#a78bfa"),("InteractableObject","#ee4444")):
                     for shape in module[group]:
                         if 'points' not in shape:
                             if shape.get('type') == 'SpringObject':

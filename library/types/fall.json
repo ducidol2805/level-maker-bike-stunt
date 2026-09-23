@@ -101,6 +101,68 @@
         "role": "challenge",
         "recoveryRequired": true,
         "repeatCooldown": 2
+      },
+      "geometryOverrides": {
+        "MainPlatform": {
+          "terrain": [
+            {
+              "x": 0,
+              "y": 0,
+              "tangentIn": {
+                "x": 0,
+                "y": 0
+              },
+              "tangentOut": {
+                "x": 1.666667,
+                "y": 0.0
+              },
+              "tangentMode": "broken",
+              "corner": false
+            },
+            {
+              "x": 5,
+              "y": -0.3,
+              "tangentIn": {
+                "x": -1.666667,
+                "y": 0.185
+              },
+              "tangentOut": {
+                "x": 1.666667,
+                "y": -0.185
+              },
+              "tangentMode": "continuous",
+              "corner": false
+            },
+            {
+              "x": 15,
+              "y": -5,
+              "tangentIn": {
+                "x": -7.0,
+                "y": 0.0
+              },
+              "tangentOut": {
+                "x": 7.0,
+                "y": -0.0
+              },
+              "tangentMode": "continuous",
+              "corner": false
+            },
+            {
+              "x": 22,
+              "y": -5,
+              "tangentIn": {
+                "x": -2.333333,
+                "y": -0.0
+              },
+              "tangentOut": {
+                "x": 0,
+                "y": 0
+              },
+              "tangentMode": "broken",
+              "corner": false
+            }
+          ]
+        }
       }
     },
     {

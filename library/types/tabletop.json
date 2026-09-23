@@ -55,6 +55,96 @@
         "role": "challenge",
         "recoveryRequired": true,
         "repeatCooldown": 2
+      },
+      "geometryOverrides": {
+        "MainPlatform": {
+          "rollable_table": [
+            {
+              "x": 0,
+              "y": 0,
+              "tangentIn": {
+                "x": 0,
+                "y": 0
+              },
+              "tangentOut": {
+                "x": 2.666667,
+                "y": 0.0
+              },
+              "tangentMode": "broken",
+              "corner": false
+            },
+            {
+              "x": 8,
+              "y": 0,
+              "tangentIn": {
+                "x": -2.666667,
+                "y": -0.0
+              },
+              "tangentOut": {
+                "x": 1.333333,
+                "y": 0.0
+              },
+              "tangentMode": "continuous",
+              "corner": false
+            },
+            {
+              "x": 12,
+              "y": 3,
+              "tangentIn": {
+                "x": -1.0,
+                "y": 0.0
+              },
+              "tangentOut": {
+                "x": 1.0,
+                "y": -0.0
+              },
+              "tangentMode": "continuous",
+              "corner": false
+            },
+            {
+              "x": 19,
+              "y": 3,
+              "tangentIn": {
+                "x": -2.333333,
+                "y": -0.0
+              },
+              "tangentOut": {
+                "x": 3.333333,
+                "y": 0.0
+              },
+              "tangentMode": "continuous",
+              "corner": false
+            },
+            {
+              "x": 29,
+              "y": 0,
+              "tangentIn": {
+                "x": -3.333333,
+                "y": -0.0
+              },
+              "tangentOut": {
+                "x": 3.333333,
+                "y": 0.0
+              },
+              "tangentMode": "continuous",
+              "corner": false
+            },
+            {
+              "x": 39,
+              "y": 0,
+              "tangentIn": {
+                "x": -3.333333,
+                "y": -0.0
+              },
+              "tangentOut": {
+                "x": 0,
+                "y": 0
+              },
+              "tangentMode": "broken",
+              "corner": false
+            }
+          ]
+        }
       }
     },
     {

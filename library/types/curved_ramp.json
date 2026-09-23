@@ -24,6 +24,68 @@
         "role": "challenge",
         "recoveryRequired": false,
         "repeatCooldown": 2
+      },
+      "geometryOverrides": {
+        "MainPlatform": {
+          "launch": [
+            {
+              "x": 0.0,
+              "y": 0.0,
+              "tangentIn": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "tangentOut": {
+                "x": 2.72,
+                "y": 0.0
+              },
+              "tangentMode": "broken",
+              "corner": false
+            },
+            {
+              "x": 8.16,
+              "y": 0.0,
+              "tangentIn": {
+                "x": -2.72,
+                "y": -0.0
+              },
+              "tangentOut": {
+                "x": 1.7,
+                "y": 0.0
+              },
+              "tangentMode": "continuous",
+              "corner": false
+            },
+            {
+              "x": 13.26,
+              "y": -0.64,
+              "tangentIn": {
+                "x": -2.24,
+                "y": -0.14
+              },
+              "tangentOut": {
+                "x": 2.24,
+                "y": 0.14
+              },
+              "tangentMode": "continuous",
+              "corner": false
+            },
+            {
+              "x": 19.0,
+              "y": 2.0,
+              "tangentIn": {
+                "x": -0.5,
+                "y": 0.0
+              },
+              "tangentOut": {
+                "x": 0.5,
+                "y": 0.0
+              },
+              "tangentMode": "linear",
+              "corner": false
+            }
+          ]
+        }
       }
     },
     {
@@ -46,6 +108,68 @@
         "role": "challenge",
         "recoveryRequired": true,
         "repeatCooldown": 2
+      },
+      "geometryOverrides": {
+        "MainPlatform": {
+          "launch": [
+            {
+              "x": 0.0,
+              "y": 0.0,
+              "tangentIn": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "tangentOut": {
+                "x": 3.173333,
+                "y": 0.0
+              },
+              "tangentMode": "broken",
+              "corner": false
+            },
+            {
+              "x": 9.52,
+              "y": 0.0,
+              "tangentIn": {
+                "x": -3.173333,
+                "y": -0.0
+              },
+              "tangentOut": {
+                "x": 1.973333,
+                "y": 0.0
+              },
+              "tangentMode": "continuous",
+              "corner": false
+            },
+            {
+              "x": 15.44,
+              "y": -1.12,
+              "tangentIn": {
+                "x": -1.44,
+                "y": 0.12
+              },
+              "tangentOut": {
+                "x": 1.44,
+                "y": -0.12
+              },
+              "tangentMode": "continuous",
+              "corner": false
+            },
+            {
+              "x": 22.0,
+              "y": 3.5,
+              "tangentIn": {
+                "x": -2.186666666666667,
+                "y": -1.8348311935076524
+              },
+              "tangentOut": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "tangentMode": "linear",
+              "corner": false
+            }
+          ]
+        }
       }
     },
     {
@@ -68,6 +192,68 @@
         "role": "challenge",
         "recoveryRequired": true,
         "repeatCooldown": 2
+      },
+      "geometryOverrides": {
+        "MainPlatform": {
+          "launch": [
+            {
+              "x": 0.0,
+              "y": 0.0,
+              "tangentIn": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "tangentOut": {
+                "x": 4.08,
+                "y": 0.0
+              },
+              "tangentMode": "broken",
+              "corner": false
+            },
+            {
+              "x": 12.24,
+              "y": 0.0,
+              "tangentIn": {
+                "x": -4.08,
+                "y": -0.0
+              },
+              "tangentOut": {
+                "x": 2.52,
+                "y": 0.0
+              },
+              "tangentMode": "continuous",
+              "corner": false
+            },
+            {
+              "x": 19.8,
+              "y": -0.96,
+              "tangentIn": {
+                "x": -2.2,
+                "y": -0.46
+              },
+              "tangentOut": {
+                "x": 2.2,
+                "y": 0.46
+              },
+              "tangentMode": "continuous",
+              "corner": false
+            },
+            {
+              "x": 28.0,
+              "y": 3.0,
+              "tangentIn": {
+                "x": -2.733333333333333,
+                "y": -1.4533391132080418
+              },
+              "tangentOut": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "tangentMode": "linear",
+              "corner": false
+            }
+          ]
+        }
       }
     },
     {

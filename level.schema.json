@@ -46,6 +46,7 @@
     "deadzone": {"type": "array", "items": {"allOf": [{"$ref": "#/$defs/shape"}, {"properties": {"closed": {"const": true}}, "required": ["closed"]}]}},
     "MainPlatform": {"type": "array", "items": {"allOf": [{"$ref": "#/$defs/shape"}, {"properties": {"closed": {"const": true}, "points": {"minItems": 3}}, "required": ["closed"]}]}},
     "RampPlatform": {"type": "array", "items": {"$ref": "#/$defs/shape"}},
+    "FreePlatform": {"type": "array", "items": {"$ref": "#/$defs/shape"}},
     "CheckPoint": {"type": "array", "items": {"type": "object", "required": ["transform"], "properties": {"id": {"type": "string"}, "transform": {"$ref": "#/$defs/point"}}}},
     "InteractableObject": {
       "type": "array",

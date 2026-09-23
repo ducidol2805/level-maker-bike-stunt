@@ -11,11 +11,12 @@ from pathlib import Path
 
 def surface_count(shape):
     points = shape['points']
-    count = shape.get('metadata', {}).get('drivingSurfaceCount', len(points)-2)
+    metadata = shape.get('metadata', {})
+    count = metadata.get('drivingSurfaceCount', len(points)-2)
     if not shape.get('closed') or count < 2 or count != len(points)-2:
         raise ValueError(f"{shape.get('id')}: expected a surface followed by two bottom corners")
     right, left = points[-2:]
-    if (abs(right['x']-points[count-1]['x']) > 1e-6 or
+    if not metadata.get('freeBottomCorners') and (abs(right['x']-points[count-1]['x']) > 1e-6 or
             abs(left['x']-points[0]['x']) > 1e-6 or
             max(right['y'], left['y']) >= min(p['y'] for p in points[:count])):
         raise ValueError(f"{shape.get('id')}: unsupported terrain closure; cannot safely infer bottom corners")
@@ -25,7 +26,7 @@ def surface_count(shape):
 
 
 def normalize_main_platform(level):
-    """Return a copy with all underside corners at the lowest existing bottom Y.
+    """Normalize generated undersides while preserving freely edited corners.
 
     The gameplay Bottom marker (median ground height) is deliberately unchanged.
     """
@@ -33,9 +34,10 @@ def normalize_main_platform(level):
     shapes = result.get('MainPlatform', [])
     for shape in shapes:
         surface_count(shape)
-    if shapes:
-        floor = min(p['y'] for s in shapes for p in s['points'][-2:])
-        for shape in shapes:
+    generated = [s for s in shapes if not s.get('metadata', {}).get('freeBottomCorners')]
+    if generated:
+        floor = min(p['y'] for s in generated for p in s['points'][-2:])
+        for shape in generated:
             for p in shape['points'][-2:]:
                 p.update(y=floor, tangentIn={'x': 0, 'y': 0},
                          tangentOut={'x': 0, 'y': 0}, tangentMode='linear')
@@ -73,7 +75,8 @@ def extend_boundaries(level, distance):
         new = {'x': x, 'y': edge['y'], 'tangentIn': {'x': 0, 'y': 0},
                'tangentOut': {'x': 0, 'y': 0}, 'tangentMode': 'linear', 'corner': False}
         surface = [new] + surface if is_left else surface + [new]
-        shape['points'][-1 if is_left else -2]['x'] = x
+        if not shape.get('metadata', {}).get('freeBottomCorners'):
+            shape['points'][-1 if is_left else -2]['x'] = x
         shape['points'] = surface + shape['points'][-2:]
         shape.setdefault('metadata', {})['drivingSurfaceCount'] = n+1
     level.setdefault('terrainExport', {})['boundaryPadding'] = distance
@@ -136,7 +139,7 @@ def are_opposite_tangents(incoming, outgoing, epsilon=1e-8):
     return abs(cross) <= epsilon * in_length * out_length and dot < 0
 
 
-def export_level(level, tolerance=1e-6, *, boundary_padding=20):
+def export_level(level, tolerance=1e-6, *, boundary_padding=None):
     """Merge endpoint-connected terrain chains, never bridge real gaps.
 
     Preserve incoming/outgoing Bezier handles at each shared road vertex.
@@ -144,6 +147,8 @@ def export_level(level, tolerance=1e-6, *, boundary_padding=20):
     """
     if not math.isfinite(tolerance) or tolerance < 0:
         raise ValueError('tolerance must be finite and non-negative')
+    if boundary_padding is None:
+        boundary_padding = level.get('terrainExport', {}).get('boundaryPadding', 20)
     result = normalize_main_platform(level)
     shapes = sorted(result.get('MainPlatform', []), key=lambda s: s['points'][0]['x'])
     merged, id_map = [], {}
@@ -154,7 +159,9 @@ def export_level(level, tolerance=1e-6, *, boundary_padding=20):
             n, m = surface_count(previous), surface_count(shape)
             a, b = previous['points'][n-1], shape['points'][0]
             # Overlap is not an endpoint join; it needs a polygon-union workflow.
-            join = b['x'] >= a['x'] and math.hypot(a['x']-b['x'], a['y']-b['y']) <= tolerance
+            join = (not previous.get('metadata', {}).get('freeBottomCorners') and
+                    not shape.get('metadata', {}).get('freeBottomCorners') and
+                    b['x'] >= a['x'] and math.hypot(a['x']-b['x'], a['y']-b['y']) <= tolerance)
             if join:
                 # A linear endpoint has no active Bezier handles.
                 incoming = a.get('tangentIn', {}) if a.get('tangentMode') != 'linear' else {}

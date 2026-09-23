@@ -8,6 +8,18 @@ from terrain_export import export_level, surface_count
 
 
 class TerrainTangentTests(unittest.TestCase):
+    def test_free_bottom_corners_survive_export_without_merging(self):
+        left = ground('free', [vertex(0, 0, mode='linear'), vertex(6, 0, mode='linear')])
+        left['metadata']['freeBottomCorners'] = True
+        left['points'][-2].update(x=8, y=2)
+        left['points'][-1].update(x=-5, y=-1)
+        right = ground('generated', [vertex(6, 0, mode='linear'), vertex(12, 0, mode='linear')])
+        result = export_level({'MainPlatform': [left, right]}, boundary_padding=0)
+        self.assertEqual(len(result['MainPlatform']), 2)
+        self.assertEqual([(p['x'], p['y']) for p in result['MainPlatform'][0]['points'][-2:]],
+                         [(8, 2), (-5, -1)])
+        self.assertEqual([p['y'] for p in result['MainPlatform'][1]['points'][-2:]], [-3, -3])
+
     def test_merges_smooth_endpoint_join_as_continuous(self):
         left = [vertex(0, 0, mode='linear'), vertex(6, 0, incoming=(-6, 0))]
         right = [vertex(6, 0, outgoing=(4, 0)), vertex(12, 1, incoming=(-2, 0))]

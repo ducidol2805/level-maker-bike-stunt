@@ -17,6 +17,7 @@ from obstacle_library import (ROOT, GROUPS, as_level, build_campaign_level,
                               profile, sample_curve, catalog_version, assign_module_coins)
 from spring_object import spring_trajectory
 from terrain_export import export_level, surface_count
+from world_scale import scale_world_data
 
 GRAVITY = 9.81
 
@@ -250,7 +251,7 @@ def author_module(families, stage):
         factor = stage['length']/variant['parameters']['surface'][-1][0]
         for point in variant['parameters']['surface']:
             point[0] *= factor
-    module = build_variant(family, variant)
+    module = build_variant(family, variant, scale=1)
     if family['builder'] == 'loop':
         module['loopParameters'] = variant['parameters']
     if family['builder'] == 'jump':
@@ -338,7 +339,8 @@ def build_authored_level(recipe, families=None):
                     'purpose':'First stable pad after challenge resolution',
                     'resetExplosiveAssemblies':True,'requiresRestartTest':True}})
         feature = [pt for line in road_lines(module) for pt in line]
-        feature += [pt for shape in module['RampPlatform'] for pt in sample_curve(shape)]
+        feature += [pt for group in ('RampPlatform', 'FreePlatform')
+                    for shape in module[group] for pt in sample_curve(shape)]
         feature += [(c['transform']['x'],c['transform']['y']) for c in coins if c['properties']['beatId']==stage['beat']]
         for obj in module['InteractableObject']:
             if obj['type']=='SpringObject':
@@ -401,7 +403,7 @@ def build_authored_level(recipe, families=None):
     bx, by = min(road, key=lambda p: abs(p[1]-middle))
     level['Bottom']={'x':bx,'y':by}
     visible = [pt for module in modules for line in road_lines(module) for pt in line]
-    for group in ('RampPlatform','InteractableObject'):
+    for group in ('RampPlatform','FreePlatform','InteractableObject'):
         for obj in level[group]:
             if 'points' in obj:
                 visible += sample_curve(obj, 100)
@@ -438,7 +440,9 @@ def validate_authored(source, exported):
     require(source['Start']==exported['Start'] and source['End']==exported['End'], 'Markers moved during export')
     require(export_level(exported)==exported, 'Export is not idempotent')
     terrain=exported['MainPlatform']
-    require(len({p['y'] for s in terrain for p in s['points'][-2:]})==1, 'Terrain floors differ')
+    generated_terrain = [s for s in terrain if not s.get('metadata', {}).get('freeBottomCorners')]
+    require(len({p['y'] for s in generated_terrain for p in s['points'][-2:]})<=1,
+            'Terrain floors differ')
     require(terrain[0]['points'][0]['x']==-20, 'Left padding missing')
     end_surface=terrain[-1]['points'][surface_count(terrain[-1])-1]
     require(abs(end_surface['x']-(source['End']['x']+21))<1e-6, 'Right padding missing')
@@ -474,10 +478,12 @@ def validate_authored(source, exported):
         else:
             require(not s['closed'], 'Auxiliary ramp must be open')
     gap_checks=[]
-    for left,right in zip(lines,lines[1:]):
+    for (left_shape,left),(right_shape,right) in zip(zip(terrain,lines),zip(terrain[1:],lines[1:])):
         a,b=left[-1][0],right[0][0]
         if b-a <= 1e-5:
-            require(False,'Touching ground was not merged')
+            require(left_shape.get('metadata', {}).get('freeBottomCorners') or
+                    right_shape.get('metadata', {}).get('freeBottomCorners'),
+                    'Touching ground was not merged')
             continue
         covering=[z for z in exported['deadzone'] if
                   min(p['x'] for p in z['points'])<=a and max(p['x'] for p in z['points'])>=b]
@@ -603,12 +609,15 @@ def main():
     recipes = json.loads((ROOT/'library/campaign_recipes.json').read_text(encoding='utf-8'))
     authored = {r['number']: r for r in recipes['maps']}
     families = load_catalog()
+    world_scale = next(iter(families.values()))['_worldScale']
     levels = []
     for n in range(1, args.count+1):
         source = build_authored_level(authored[n], families) if n in authored else build_campaign_level(n)
         level = export_level(source)
         if n in authored:
             level['design']['validationReport'] = validate_authored(source, level)
+        level = scale_world_data(level, world_scale)
+        level['map']['worldScale'] = world_scale
         levels.append(level)
     demo = None
     if args.include_demo:
@@ -616,10 +625,13 @@ def main():
         source = build_authored_level(demo_recipe, families)
         demo = export_level(source)
         demo['design']['validationReport'] = validate_authored(source,demo)
+        demo = scale_world_data(demo, world_scale)
+        demo['map']['worldScale'] = world_scale
     args.output.mkdir(parents=True, exist_ok=True)
     for path, level in zip(paths, levels):
         path.write_text(json.dumps(level, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8")
     manifest = {"count": len(levels), "catalogVersion": catalog_version(), "recipeVersion":recipes['version'],
+                "worldScale": world_scale,
                 "validationStatus": "geometry_only; Unity playtests pending",
                 "maps": [{"id": level["map"]["id"], "file": path.name,
                           "name": level['map']['name'],

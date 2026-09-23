@@ -1,6 +1,7 @@
 {
-  "version": "2.6",
-  "units": "world units; assumed wheelbase 2; requires bike calibration",
+  "version": "2.7",
+  "worldScale": 2,
+  "units": "authored world units scaled 2x at build; bike calibration required",
   "groups": [
     {
       "type": "flat",
