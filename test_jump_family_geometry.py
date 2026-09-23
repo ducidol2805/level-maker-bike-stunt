@@ -2,7 +2,7 @@
 import math
 import unittest
 
-from obstacle_library import build_variant, load_catalog, place, sample_curve
+from obstacle_library import build_variant, load_catalog, place, profile, sample_curve
 from spring_object import spring_trajectory
 from terrain_export import surface_count
 
@@ -41,7 +41,8 @@ class JumpFamilyGeometryTests(unittest.TestCase):
         step_down = self.module("step_down")
 
         self.assertTrue(self.surface(kicker["MainPlatform"][0])[-1]["corner"])
-        self.assertLess(min(y for _, y in sample_curve({"points": self.surface(scoop["MainPlatform"][0])})), -.1)
+        scoop_surface = self.surface(scoop["MainPlatform"][0])
+        self.assertLess(min(y for _, y in sample_curve({"points": scoop_surface})), -.1)
         self.assertEqual(gap["MainPlatform"][1]["id"], "landing_recovery")
         self.assertEqual(step_up["MainPlatform"][1]["id"], "elevated_shelf")
         self.assertEqual(step_down["MainPlatform"][1]["id"], "descending_shelf")
@@ -50,6 +51,45 @@ class JumpFamilyGeometryTests(unittest.TestCase):
         self.assertGreater(self.surface(step_up["MainPlatform"][1])[0]["y"], launch_height)
         launch_height = self.surface(step_down["MainPlatform"][0])[-1]["y"]
         self.assertLess(self.surface(step_down["MainPlatform"][1])[0]["y"], launch_height)
+
+    def test_launch_ascent_curves_up_without_a_shoulder(self):
+        for name in ("curved_ramp", "gap", "step_up", "step_down"):
+            family = self.families[name]
+            for variant in family["variants"]:
+                with self.subTest(variant=variant["id"]):
+                    surface = self.surface(build_variant(family, variant)["MainPlatform"][0])
+                    # Test slope progression, not just height: a monotonically
+                    # rising S-curve can still have the unwanted convex hump.
+                    left, right = surface[-2:]
+                    controls = [(left["x"], left["y"]),
+                                (left["x"]+left["tangentOut"]["x"], left["y"]+left["tangentOut"]["y"]),
+                                (right["x"]+right["tangentIn"]["x"], right["y"]+right["tangentIn"]["y"]),
+                                (right["x"], right["y"])]
+                    slopes = [(b[1]-a[1])/(b[0]-a[0]) for a,b in zip(controls, controls[1:])]
+                    self.assertEqual(slopes[0], 0)
+                    self.assertTrue(all(a <= b+1e-9 for a,b in zip(slopes, slopes[1:])))
+                    samples = sample_curve({"points": surface[-2:]}, 400)
+                    slopes = [(b[1]-a[1])/(b[0]-a[0]) for a,b in zip(samples, samples[1:])]
+                    self.assertTrue(all(a <= b+1e-9 for a,b in zip(slopes, slopes[1:])))
+                    p = variant["parameters"]
+                    self.assertEqual((surface[0]["x"], surface[0]["y"]), (0, 0))
+                    self.assertAlmostEqual(surface[-1]["x"], p["approach"]+p["launch"])
+                    self.assertAlmostEqual(surface[-1]["y"], p["height"])
+                    handle = surface[-1]["tangentIn"]
+                    self.assertAlmostEqual(handle["y"]/handle["x"], math.tan(math.radians(p["angle"])), places=5)
+
+    def test_curved_ramps_keep_original_compression_entry(self):
+        family = self.families["curved_ramp"]
+        for variant in family["variants"]:
+            with self.subTest(variant=variant["id"]):
+                p = variant["parameters"]
+                surface = self.surface(build_variant(family, variant)["MainPlatform"][0])
+                expected = profile([(0,0), (p["approach"]*.68,0),
+                                    (p["approach"]+p["launch"]*.18, -min(1.4,p["height"]*.32))],
+                                   {1:0,2:0})
+                self.assertEqual(surface[:2], expected[:2])
+                self.assertEqual(surface[2]["y"], expected[2]["y"])
+                self.assertEqual(surface[2]["tangentIn"], expected[2]["tangentIn"])
 
     def test_expanded_families_have_ten_distinct_variants(self):
         for name in ("platform", "spring_high", "spring_far"):
@@ -94,14 +134,44 @@ class JumpFamilyGeometryTests(unittest.TestCase):
                 module = build_variant(family, variant)
                 ramps = module["RampPlatform"]
                 self.assertEqual(len(ramps), expected[variant["id"]])
-                intervals = [(shape["points"][0]["x"], shape["points"][-1]["x"])
+                intervals = [(self.surface(shape)[0]["x"], self.surface(shape)[-1]["x"])
                              for shape in ramps]
-                self.assertTrue(all(left[1] < right[0]
+                self.assertTrue(all(0 < right[0]-left[1] <= 2
                                     for left, right in zip(intervals, intervals[1:])))
                 self.assertTrue(all(shape["metadata"]["requiresMomentumTransfer"]
                                     for shape in ramps[:-1]))
                 self.assertGreater(max(point["y"] for shape in ramps
                                        for point in shape["points"]), 3)
+
+    def test_all_platforms_are_closed_with_separate_undersides(self):
+        family = self.families["platform"]
+        for variant in family["variants"]:
+            with self.subTest(variant=variant["id"]):
+                module = build_variant(family, variant)
+                for shape in module["RampPlatform"]:
+                    self.assertTrue(shape["closed"])
+                    count = surface_count(shape)
+                    self.assertEqual(count, len(shape["points"])-2)
+                    self.assertEqual(shape["points"][0]["tangentIn"], {"x":0,"y":0})
+                    self.assertEqual(shape["points"][count-1]["tangentOut"], {"x":0,"y":0})
+                    self.assertTrue(all(p["tangentMode"] == "linear" for p in shape["points"][-2:]))
+                if "totalLength" in variant["parameters"]:
+                    self.assertEqual(module["ports"]["exit"]["x"], variant["parameters"]["totalLength"])
+
+    def test_platform_bases_touch_ground_and_have_no_flat_tails(self):
+        family = self.families["platform"]
+        for variant in family["variants"]:
+            with self.subTest(variant=variant["id"]):
+                module = build_variant(family, variant)
+                for shape in module["RampPlatform"]:
+                    surface = self.surface(shape)
+                    self.assertTrue(all(p["y"] == -.01 for p in shape["points"][-2:]))
+                    self.assertFalse(surface[0]["y"] == surface[1]["y"] == 0)
+                    self.assertFalse(surface[-2]["y"] == surface[-1]["y"] == 0)
+                translated = place(module, 20, -8, "base_test")
+                for shape in translated["RampPlatform"]:
+                    for point in shape["points"][-2:]:
+                        self.assertAlmostEqual(point["y"], -8.01)
 
     def test_explosive_ring_variants_have_deterministic_reveals(self):
         family = self.families["explosive_loop"]
