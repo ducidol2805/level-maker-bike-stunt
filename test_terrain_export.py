@@ -8,6 +8,16 @@ from terrain_export import export_level, surface_count
 
 
 class TerrainTangentTests(unittest.TestCase):
+    def test_merges_smooth_endpoint_join_as_continuous(self):
+        left = [vertex(0, 0, mode='linear'), vertex(6, 0, incoming=(-6, 0))]
+        right = [vertex(6, 0, outgoing=(4, 0)), vertex(12, 1, incoming=(-2, 0))]
+        result = export_level({'MainPlatform': [ground('a', left), ground('b', right)]},
+                              boundary_padding=0)
+        join = result['MainPlatform'][0]['points'][1]
+        self.assertEqual(join['tangentMode'], 'continuous')
+        self.assertEqual(join['tangentIn'], {'x': -6, 'y': 0})
+        self.assertEqual(join['tangentOut'], {'x': 4, 'y': 0})
+
     def test_extends_either_straight_side_after_merge(self):
         for straight_first in (True, False):
             with self.subTest(straight_first=straight_first):

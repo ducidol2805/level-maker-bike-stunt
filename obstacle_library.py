@@ -741,6 +741,20 @@ def build_variant(family, variant):
     for zone in result["deadzone"]:
         for point in zone["points"]:
             point["y"] += DEADZONE_Y_OFFSET
+
+    # Open ramps and explosive loop routes are continuous curves, including
+    # their endpoints. Keep the authored handles; only normalize the mode.
+    for shape in result["RampPlatform"]:
+        # Closed platform bodies retain broken edge joins and linear bottoms.
+        if shape.get("closed"):
+            continue
+        for point in shape.get("points", []):
+            point["tangentMode"] = "continuous"
+    for item in result["InteractableObject"]:
+        if item.get("type") == "explosive_ramp":
+            for point in item.get("points", []):
+                point["tangentMode"] = "continuous"
+
     assign_module_coins(result)
     return result
 
