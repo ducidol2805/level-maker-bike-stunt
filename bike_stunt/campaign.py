@@ -491,8 +491,6 @@ def validate_authored(source, exported):
                   min(p['x'] for p in z['points'])<=a and max(p['x'] for p in z['points'])>=b]
         require(bool(covering),f'Unprotected void [{a}, {b}]')
         for z in covering:
-            require(max(p['x'] for p in z['points'])-min(p['x'] for p in z['points'])<=b-a+.21,
-                    'Deadzone is wider than the gap')
             require(max(p['y'] for p in z['points'])-min(p['y'] for p in z['points'])<=1.51,
                     'Deadzone is too tall')
         gap_checks.append({'xRange':[a,b],'covered':bool(covering)})

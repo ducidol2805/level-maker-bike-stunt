@@ -1,0 +1,274 @@
+test_all_library_cards_compile (test_app_smoke.SceneSmokeTests.test_all_library_cards_compile) ... ok
+test_all_saved_maps_compile_with_point_controls (test_app_smoke.SceneSmokeTests.test_all_saved_maps_compile_with_point_controls) ... ok
+test_library_editor_save_round_trip (test_app_smoke.TkSmokeTests.test_library_editor_save_round_trip) ... FAIL
+test_library_studio_entry_point (test_app_smoke.TkSmokeTests.test_library_studio_entry_point) ... ok
+test_map_viewer_entry_point_and_navigation (test_app_smoke.TkSmokeTests.test_map_viewer_entry_point_and_navigation) ... ok
+test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) ... 
+  test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_high.lift_1') ... FAIL
+  test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_high.lift_2') ... FAIL
+  test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_high.lift_3') ... FAIL
+  test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_high.lift_4') ... FAIL
+  test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_high.lift_5') ... FAIL
+  test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_far.crossing_1') ... FAIL
+  test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_far.crossing_2') ... FAIL
+  test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_far.crossing_3') ... FAIL
+  test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_far.crossing_4') ... FAIL
+  test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_far.crossing_5') ... FAIL
+  test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='explosive_loop.round') ... FAIL
+  test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='explosive_loop.double_ring') ... FAIL
+  test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='explosive_loop.triple_ring') ... FAIL
+test_export_keeps_tunnel_roof_coins_and_exit (test_spring_fallback.SpringFallbackTests.test_export_keeps_tunnel_roof_coins_and_exit) ... ok
+test_first_five_separated_last_five_connected_in_both_families (test_spring_fallback.SpringFallbackTests.test_first_five_separated_last_five_connected_in_both_families) ... 
+  test_first_five_separated_last_five_connected_in_both_families (test_spring_fallback.SpringFallbackTests.test_first_five_separated_last_five_connected_in_both_families) (variant='spring_far.crossing_3') ... FAIL
+  test_first_five_separated_last_five_connected_in_both_families (test_spring_fallback.SpringFallbackTests.test_first_five_separated_last_five_connected_in_both_families) (variant='spring_far.crossing_5') ... FAIL
+test_generated_springs_have_lower_road_and_safe_exit (test_spring_fallback.SpringFallbackTests.test_generated_springs_have_lower_road_and_safe_exit) ... ok
+test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) ... 
+  test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) (variant='spring_high.lift_2') ... FAIL
+  test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) (variant='spring_high.lift_3') ... FAIL
+  test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) (variant='spring_high.lift_4') ... FAIL
+  test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) (variant='spring_high.lift_5') ... FAIL
+  test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) (variant='spring_high.dip_lift') ... FAIL
+  test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) (variant='spring_high.ramp_lift') ... FAIL
+  test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) (variant='spring_high.crest_lift') ... FAIL
+  test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) (variant='spring_high.roller_lift') ... FAIL
+  test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) (variant='spring_high.summit_lift') ... FAIL
+
+======================================================================
+FAIL: test_library_editor_save_round_trip (test_app_smoke.TkSmokeTests.test_library_editor_save_round_trip)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_app_smoke.py", line 144, in test_library_editor_save_round_trip
+    self.assertEqual(changed['points'][1], expected)
+AssertionError: {'x': 21.0, 'y': 0.0, 'tangentIn': {'x': -6.6667,[92 chars]alse} != {'x': 21, 'y': 0, 'tangentIn': {'x': -6.666666, '[88 chars]alse}
+  {'corner': False,
+-  'tangentIn': {'x': -6.6667, 'y': -0.0},
+?                           ^
+
++  'tangentIn': {'x': -6.666666, 'y': -0.0},
+?                           ^^^
+
+   'tangentMode': 'continuous',
+-  'tangentOut': {'x': 6.6667, 'y': 0.0},
+?                      ^ ^^^^
+
++  'tangentOut': {'x': 2.08, 'y': 0.0},
+?                      ^ ^^
+
+-  'x': 21.0,
+?         --
+
++  'x': 21,
+-  'y': 0.0}
+?       --
+
++  'y': 0}
+
+======================================================================
+FAIL: test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_high.lift_1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_deadzone_offset.py", line 24, in test_all_variants_lower_only_deadzone_y_by_two
+    self.assertEqual(actual, expected)
+AssertionError: {'Mai[2992 chars]y': -4.0, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[7904 chars]red'} != {'Mai[2992 chars]y': -6.0, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[7904 chars]red'}
+Diff is 21102 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_high.lift_2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_deadzone_offset.py", line 24, in test_all_variants_lower_only_deadzone_y_by_two
+    self.assertEqual(actual, expected)
+AssertionError: {'Mai[3553 chars]y': -5.0, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[8357 chars]red'} != {'Mai[3553 chars]y': -7.0, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[8357 chars]red'}
+Diff is 23442 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_high.lift_3')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_deadzone_offset.py", line 24, in test_all_variants_lower_only_deadzone_y_by_two
+    self.assertEqual(actual, expected)
+AssertionError: {'Mai[3370 chars]y': -4.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[8255 chars]red'} != {'Mai[3370 chars]y': -6.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[8255 chars]red'}
+Diff is 22960 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_high.lift_4')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_deadzone_offset.py", line 24, in test_all_variants_lower_only_deadzone_y_by_two
+    self.assertEqual(actual, expected)
+AssertionError: {'Mai[3328 chars]y': -4.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[7970 chars]red'} != {'Mai[3328 chars]y': -6.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[7970 chars]red'}
+Diff is 22633 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_high.lift_5')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_deadzone_offset.py", line 24, in test_all_variants_lower_only_deadzone_y_by_two
+    self.assertEqual(actual, expected)
+AssertionError: {'Mai[3357 chars]y': -4.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[8310 chars]red'} != {'Mai[3357 chars]y': -6.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[8310 chars]red'}
+Diff is 23002 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_far.crossing_1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_deadzone_offset.py", line 24, in test_all_variants_lower_only_deadzone_y_by_two
+    self.assertEqual(actual, expected)
+AssertionError: {'Mai[3344 chars]y': -5.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[8502 chars]red'} != {'Mai[3344 chars]y': -7.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[8502 chars]red'}
+Diff is 23181 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_far.crossing_2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_deadzone_offset.py", line 24, in test_all_variants_lower_only_deadzone_y_by_two
+    self.assertEqual(actual, expected)
+AssertionError: {'Mai[3320 chars]y': -4.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[8407 chars]red'} != {'Mai[3320 chars]y': -6.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[8407 chars]red'}
+Diff is 23062 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_far.crossing_3')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_deadzone_offset.py", line 24, in test_all_variants_lower_only_deadzone_y_by_two
+    self.assertEqual(actual, expected)
+AssertionError: {'Mai[3322 chars]y': -4.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[8158 chars]red'} != {'Mai[3322 chars]y': -6.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[8158 chars]red'}
+Diff is 22815 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_far.crossing_4')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_deadzone_offset.py", line 24, in test_all_variants_lower_only_deadzone_y_by_two
+    self.assertEqual(actual, expected)
+AssertionError: {'Mai[3294 chars]y': -4.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[8017 chars]red'} != {'Mai[3294 chars]y': -6.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[8017 chars]red'}
+Diff is 22663 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='spring_far.crossing_5')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_deadzone_offset.py", line 24, in test_all_variants_lower_only_deadzone_y_by_two
+    self.assertEqual(actual, expected)
+AssertionError: {'Mai[3315 chars]y': -5.0, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[8328 chars]red'} != {'Mai[3315 chars]y': -7.0, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[8328 chars]red'}
+Diff is 22978 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='explosive_loop.round')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_deadzone_offset.py", line 24, in test_all_variants_lower_only_deadzone_y_by_two
+    self.assertEqual(actual, expected)
+AssertionError: {'Mai[3647 chars]y': -3.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[38167 chars]red'} != {'Mai[3647 chars]y': -5.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[38167 chars]red'}
+Diff is 68578 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='explosive_loop.double_ring')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_deadzone_offset.py", line 24, in test_all_variants_lower_only_deadzone_y_by_two
+    self.assertEqual(actual, expected)
+AssertionError: {'Mai[5883 chars]y': -3.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[72800 chars]red'} != {'Mai[5883 chars]y': -5.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[72800 chars]red'}
+Diff is 126358 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_variants_lower_only_deadzone_y_by_two (test_deadzone_offset.DeadzoneOffsetTests.test_all_variants_lower_only_deadzone_y_by_two) (variant='explosive_loop.triple_ring')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_deadzone_offset.py", line 24, in test_all_variants_lower_only_deadzone_y_by_two
+    self.assertEqual(actual, expected)
+AssertionError: {'Mai[8109 chars]y': -3.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[106874 chars]red'} != {'Mai[8109 chars]y': -5.5, 'tangentIn': {'x': 0.0, 'y': 0.0}, '[106874 chars]red'}
+Diff is 183678 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_first_five_separated_last_five_connected_in_both_families (test_spring_fallback.SpringFallbackTests.test_first_five_separated_last_five_connected_in_both_families) (variant='spring_far.crossing_3')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_spring_fallback.py", line 81, in test_first_five_separated_last_five_connected_in_both_families
+    self.assertLessEqual(max(p['x'] for p in zone)-start['x'], 1.01)
+AssertionError: 3.4000000000000057 not less than or equal to 1.01
+
+======================================================================
+FAIL: test_first_five_separated_last_five_connected_in_both_families (test_spring_fallback.SpringFallbackTests.test_first_five_separated_last_five_connected_in_both_families) (variant='spring_far.crossing_5')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_spring_fallback.py", line 81, in test_first_five_separated_last_five_connected_in_both_families
+    self.assertLessEqual(max(p['x'] for p in zone)-start['x'], 1.01)
+AssertionError: 1.7999999999999972 not less than or equal to 1.01
+
+======================================================================
+FAIL: test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) (variant='spring_high.lift_2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_spring_fallback.py", line 57, in test_tunnel_has_clearance_along_curves_and_solid_roof
+    self.assertEqual(len(floor), len(ceiling))
+AssertionError: 301 != 401
+
+======================================================================
+FAIL: test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) (variant='spring_high.lift_3')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_spring_fallback.py", line 59, in test_tunnel_has_clearance_along_curves_and_solid_roof
+    self.assertAlmostEqual(lower[0], upper[0], places=5)
+AssertionError: 32 != 31.5 within 5 places (0.5 difference)
+
+======================================================================
+FAIL: test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) (variant='spring_high.lift_4')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_spring_fallback.py", line 59, in test_tunnel_has_clearance_along_curves_and_solid_roof
+    self.assertAlmostEqual(lower[0], upper[0], places=5)
+AssertionError: 36 != 34.5 within 5 places (1.5 difference)
+
+======================================================================
+FAIL: test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) (variant='spring_high.lift_5')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_spring_fallback.py", line 59, in test_tunnel_has_clearance_along_curves_and_solid_roof
+    self.assertAlmostEqual(lower[0], upper[0], places=5)
+AssertionError: 40 != 36.5 within 5 places (3.5 difference)
+
+======================================================================
+FAIL: test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) (variant='spring_high.dip_lift')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_spring_fallback.py", line 59, in test_tunnel_has_clearance_along_curves_and_solid_roof
+    self.assertAlmostEqual(lower[0], upper[0], places=5)
+AssertionError: 49.021 != 49.0210297 within 5 places (2.9699999998911153e-05 difference)
+
+======================================================================
+FAIL: test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) (variant='spring_high.ramp_lift')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_spring_fallback.py", line 57, in test_tunnel_has_clearance_along_curves_and_solid_roof
+    self.assertEqual(len(floor), len(ceiling))
+AssertionError: 301 != 401
+
+======================================================================
+FAIL: test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) (variant='spring_high.crest_lift')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_spring_fallback.py", line 57, in test_tunnel_has_clearance_along_curves_and_solid_roof
+    self.assertEqual(len(floor), len(ceiling))
+AssertionError: 301 != 501
+
+======================================================================
+FAIL: test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) (variant='spring_high.roller_lift')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_spring_fallback.py", line 57, in test_tunnel_has_clearance_along_curves_and_solid_roof
+    self.assertEqual(len(floor), len(ceiling))
+AssertionError: 301 != 601
+
+======================================================================
+FAIL: test_tunnel_has_clearance_along_curves_and_solid_roof (test_spring_fallback.SpringFallbackTests.test_tunnel_has_clearance_along_curves_and_solid_roof) (variant='spring_high.summit_lift')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Project\level-maker-bike-stunt\tests\test_spring_fallback.py", line 57, in test_tunnel_has_clearance_along_curves_and_solid_roof
+    self.assertEqual(len(floor), len(ceiling))
+AssertionError: 301 != 701
+
+----------------------------------------------------------------------
+Ran 10 tests in 2.460s
+
+FAILED (failures=25)

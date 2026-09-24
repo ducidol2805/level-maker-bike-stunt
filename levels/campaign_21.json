@@ -884,14 +884,14 @@
           "x": 668.4000000000001,
           "y": -17.297356142522105,
           "tangentIn": {
-            "x": -2.0,
-            "y": 0.0
+            "x": 0.0,
+            "y": -4.0
           },
           "tangentOut": {
-            "x": 2.0,
-            "y": -0.0
+            "x": 1.0,
+            "y": 0.0
           },
-          "tangentMode": "continuous",
+          "tangentMode": "broken",
           "corner": false
         },
         {
@@ -1048,6 +1048,7 @@
     }
   ],
   "RampPlatform": [],
+  "FreePlatform": [],
   "deadzone": [
     {
       "id": "s04_gap_kill",
@@ -1845,8 +1846,8 @@
       "id": "s11_coin_01",
       "type": "coin",
       "transform": {
-        "x": 663.9518428954572,
-        "y": -18.62416395389392
+        "x": 664.7163152406099,
+        "y": -19.77148341685447
       },
       "properties": {
         "optional": true,
@@ -1865,8 +1866,8 @@
       "id": "s11_coin_02",
       "type": "coin",
       "transform": {
-        "x": 682.8140463831342,
-        "y": -14.905263429926126
+        "x": 682.4492847879861,
+        "y": -14.897723724935013
       },
       "properties": {
         "optional": true,
@@ -1885,8 +1886,8 @@
       "id": "s11_coin_03",
       "type": "coin",
       "transform": {
-        "x": 702.0863769508026,
-        "y": -20.892849429974703
+        "x": 701.9040611706669,
+        "y": -20.886442719641693
       },
       "properties": {
         "optional": true,
@@ -3487,7 +3488,7 @@
             "minX": 638.4000000000001,
             "maxX": 728.4000000000001,
             "minY": -27.297356142522112,
-            "maxY": -8.905263429926126
+            "maxY": -8.897723724935013
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },

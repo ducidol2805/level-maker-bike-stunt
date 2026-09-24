@@ -48,7 +48,7 @@
         },
         {
           "x": 52.32,
-          "y": 0,
+          "y": 0.0,
           "tangentIn": {
             "x": -5.44,
             "y": -0.0
@@ -64,32 +64,32 @@
           "x": 62.519999999999996,
           "y": -1.28,
           "tangentIn": {
-            "x": -3.4,
-            "y": -0.0
+            "x": -4.48,
+            "y": -0.28
           },
           "tangentOut": {
-            "x": 0.07850172985476522,
-            "y": 0
+            "x": 4.48,
+            "y": 0.28
           },
           "tangentMode": "continuous",
           "corner": false
         },
         {
-          "x": 74,
-          "y": 4,
+          "x": 74.0,
+          "y": 4.0,
           "tangentIn": {
-            "x": -3.8266666666666667,
-            "y": -1.784403971873128
+            "x": -1.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 1.0,
+            "y": 0.0
           },
-          "tangentMode": "broken",
+          "tangentMode": "linear",
           "corner": false
         },
         {
-          "x": 74,
+          "x": 74.0,
           "y": -20.99229030961088,
           "tangentIn": {
             "x": 0,
@@ -236,20 +236,6 @@
             "y": -0.0
           },
           "tangentOut": {
-            "x": 12.0,
-            "y": 0.0
-          },
-          "tangentMode": "continuous",
-          "corner": false
-        },
-        {
-          "x": 216.0,
-          "y": -4.992290309610878,
-          "tangentIn": {
-            "x": -12.0,
-            "y": -0.0
-          },
-          "tangentOut": {
             "x": 0,
             "y": 0
           },
@@ -257,7 +243,7 @@
           "corner": false
         },
         {
-          "x": 216.0,
+          "x": 180.0,
           "y": -20.99229030961088,
           "tangentIn": {
             "x": 0,
@@ -286,42 +272,164 @@
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 9,
+        "drivingSurfaceCount": 8,
         "sourceVariant": "curved_ramp.gentle_scoop",
         "sourceShapeIds": [
           "s01_landing_recovery",
-          "s02_terrain",
-          "s03_spring_approach"
+          "s02_terrain"
         ]
       }
     },
     {
-      "id": "s03_spring_landing_recovery",
+      "id": "s03_spring_approach",
       "closed": true,
       "points": [
         {
-          "x": 244.0,
-          "y": 23.00770969038912,
+          "x": 180.0,
+          "y": -4.992290309610878,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 10.666666,
+            "x": 12.0,
             "y": 0.0
           },
           "tangentMode": "broken",
           "corner": false
         },
         {
-          "x": 276.0,
-          "y": 23.00770969038912,
+          "x": 216.0,
+          "y": -4.992290309610878,
           "tangentIn": {
-            "x": -10.666666,
+            "x": -12.0,
             "y": -0.0
           },
           "tangentOut": {
-            "x": 12.0,
+            "x": 0.0,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 216.0,
+          "y": -16.99229030961088,
+          "tangentIn": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "tangentOut": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 180.0,
+          "y": -16.99229030961088,
+          "tangentIn": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "tangentOut": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        }
+      ],
+      "metadata": {
+        "drivingSurfaceCount": 2,
+        "freeBottomCorners": true,
+        "sourceVariant": "spring_high.lift_3"
+      }
+    },
+    {
+      "id": "s03_spring_lower_recovery",
+      "closed": true,
+      "points": [
+        {
+          "x": 231.4,
+          "y": -10.992290309610878,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 4.2,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 244.0,
+          "y": -10.992290309610878,
+          "tangentIn": {
+            "x": -4.2,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 3.333334,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 254.0,
+          "y": -4.992290309610878,
+          "tangentIn": {
+            "x": -3.333334,
+            "y": -2.307692
+          },
+          "tangentOut": {
+            "x": 7.333334,
+            "y": 5.076924
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 276.0,
+          "y": 13.007709690389122,
+          "tangentIn": {
+            "x": -7.333334,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.8,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 281.4,
+          "y": 13.007709690389122,
+          "tangentIn": {
+            "x": -1.8,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 6.6,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 301.2,
+          "y": 23.00770969038912,
+          "tangentIn": {
+            "x": -6.6,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 3.6,
             "y": 0.0
           },
           "tangentMode": "continuous",
@@ -331,7 +439,7 @@
           "x": 312.0,
           "y": 23.00770969038912,
           "tangentIn": {
-            "x": -12.0,
+            "x": -3.6,
             "y": -0.0
           },
           "tangentOut": {
@@ -429,12 +537,12 @@
           "x": 492.52,
           "y": 21.72770969038912,
           "tangentIn": {
-            "x": -3.4,
-            "y": -0.0
+            "x": -4.48,
+            "y": -0.28
           },
           "tangentOut": {
-            "x": 0.07850172985476522,
-            "y": 0
+            "x": 4.48,
+            "y": 0.28
           },
           "tangentMode": "continuous",
           "corner": false
@@ -443,14 +551,14 @@
           "x": 504.0,
           "y": 27.00770969038912,
           "tangentIn": {
-            "x": -3.8266666666666667,
-            "y": -1.784403971873128
+            "x": -1.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 1.0,
+            "y": 0.0
           },
-          "tangentMode": "broken",
+          "tangentMode": "linear",
           "corner": false
         },
         {
@@ -468,7 +576,7 @@
           "corner": false
         },
         {
-          "x": 244.0,
+          "x": 231.4,
           "y": -20.99229030961088,
           "tangentIn": {
             "x": 0,
@@ -483,10 +591,11 @@
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 11,
+        "drivingSurfaceCount": 15,
+        "role": "missed_spring_tunnel_and_climb",
         "sourceVariant": "spring_high.lift_3",
         "sourceShapeIds": [
-          "s03_spring_landing_recovery",
+          "s03_spring_lower_recovery",
           "s04_terrain",
           "s05_safe_fallback",
           "s06_launch"
@@ -603,20 +712,6 @@
             "y": -0.0
           },
           "tangentOut": {
-            "x": 12.0,
-            "y": 0.0
-          },
-          "tangentMode": "continuous",
-          "corner": false
-        },
-        {
-          "x": 646.0,
-          "y": 18.01541938077824,
-          "tangentIn": {
-            "x": -12.0,
-            "y": -0.0
-          },
-          "tangentOut": {
             "x": 0,
             "y": 0
           },
@@ -624,7 +719,7 @@
           "corner": false
         },
         {
-          "x": 646.0,
+          "x": 610.0,
           "y": -20.99229030961088,
           "tangentIn": {
             "x": 0,
@@ -653,42 +748,164 @@
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 9,
+        "drivingSurfaceCount": 8,
         "sourceVariant": "curved_ramp.gentle_scoop",
         "sourceShapeIds": [
           "s06_landing_recovery",
-          "s07_terrain",
-          "s08_spring_approach"
+          "s07_terrain"
         ]
       }
     },
     {
-      "id": "s08_spring_landing_recovery",
+      "id": "s08_spring_approach",
       "closed": true,
       "points": [
         {
-          "x": 674.0,
-          "y": 46.01541938077824,
+          "x": 610.0,
+          "y": 18.01541938077824,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 10.666666,
+            "x": 12.0,
             "y": 0.0
           },
           "tangentMode": "broken",
           "corner": false
         },
         {
-          "x": 706.0,
-          "y": 46.01541938077824,
+          "x": 646.0,
+          "y": 18.01541938077824,
           "tangentIn": {
-            "x": -10.666666,
+            "x": -12.0,
             "y": -0.0
           },
           "tangentOut": {
-            "x": 12.0,
+            "x": 0.0,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 646.0,
+          "y": 6.015419380778241,
+          "tangentIn": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "tangentOut": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        },
+        {
+          "x": 610.0,
+          "y": 6.015419380778241,
+          "tangentIn": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "tangentOut": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "tangentMode": "linear",
+          "corner": false
+        }
+      ],
+      "metadata": {
+        "drivingSurfaceCount": 2,
+        "freeBottomCorners": true,
+        "sourceVariant": "spring_high.lift_3"
+      }
+    },
+    {
+      "id": "s08_spring_lower_recovery",
+      "closed": true,
+      "points": [
+        {
+          "x": 661.4,
+          "y": 12.01541938077824,
+          "tangentIn": {
+            "x": 0,
+            "y": 0
+          },
+          "tangentOut": {
+            "x": 4.2,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 674.0,
+          "y": 12.01541938077824,
+          "tangentIn": {
+            "x": -4.2,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 3.333334,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 684.0,
+          "y": 18.01541938077824,
+          "tangentIn": {
+            "x": -3.333334,
+            "y": -2.307692
+          },
+          "tangentOut": {
+            "x": 7.333334,
+            "y": 5.076924
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 706.0,
+          "y": 36.01541938077824,
+          "tangentIn": {
+            "x": -7.333334,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.8,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 711.4,
+          "y": 36.01541938077824,
+          "tangentIn": {
+            "x": -1.8,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 6.6,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 731.2,
+          "y": 46.01541938077824,
+          "tangentIn": {
+            "x": -6.6,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 3.6,
             "y": 0.0
           },
           "tangentMode": "continuous",
@@ -698,7 +915,7 @@
           "x": 742.0,
           "y": 46.01541938077824,
           "tangentIn": {
-            "x": -12.0,
+            "x": -3.6,
             "y": -0.0
           },
           "tangentOut": {
@@ -947,7 +1164,7 @@
           "corner": false
         },
         {
-          "x": 674.0,
+          "x": 661.4,
           "y": -20.99229030961088,
           "tangentIn": {
             "x": 0,
@@ -962,10 +1179,11 @@
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 19,
+        "drivingSurfaceCount": 23,
+        "role": "missed_spring_tunnel_and_climb",
         "sourceVariant": "spring_high.lift_3",
         "sourceShapeIds": [
-          "s08_spring_landing_recovery",
+          "s08_spring_lower_recovery",
           "s09_terrain",
           "s10_terrain",
           "s11_terrain",
@@ -1236,6 +1454,226 @@
       }
     }
   ],
+  "FreePlatform": [
+    {
+      "id": "s03_spring_landing_recovery",
+      "closed": true,
+      "points": [
+        {
+          "x": 244.0,
+          "y": 23.00770969038912,
+          "tangentIn": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "tangentOut": {
+            "x": 10.666666,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 276.0,
+          "y": 23.00770969038912,
+          "tangentIn": {
+            "x": -10.666666,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.8,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 289.0,
+          "y": 23.00770969038912,
+          "tangentIn": {
+            "x": -1.0,
+            "y": 0.0
+          },
+          "tangentOut": {
+            "x": -1.0,
+            "y": -3.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 282.0,
+          "y": 19.00770969038912,
+          "tangentIn": {
+            "x": 2.0,
+            "y": 0.0
+          },
+          "tangentOut": {
+            "x": -2.0,
+            "y": -0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 276.0,
+          "y": 19.00770969038912,
+          "tangentIn": {
+            "x": 1.8,
+            "y": 0.0
+          },
+          "tangentOut": {
+            "x": -7.333334,
+            "y": -0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 254.0,
+          "y": 1.007709690389122,
+          "tangentIn": {
+            "x": 7.333334,
+            "y": 5.076924
+          },
+          "tangentOut": {
+            "x": -3.333334,
+            "y": -2.307692
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 243.0,
+          "y": 9.007709690389122,
+          "tangentIn": {
+            "x": 0.9578,
+            "y": -4.9169
+          },
+          "tangentOut": {
+            "x": -0.9578,
+            "y": 4.9169
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        }
+      ],
+      "metadata": {
+        "drivingSurfaceCount": 3,
+        "role": "spring_catch_and_tunnel_roof",
+        "sourceVariant": "spring_high.lift_3"
+      }
+    },
+    {
+      "id": "s08_spring_landing_recovery",
+      "closed": true,
+      "points": [
+        {
+          "x": 674.0,
+          "y": 46.01541938077824,
+          "tangentIn": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "tangentOut": {
+            "x": 10.666666,
+            "y": 0.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 706.0,
+          "y": 46.01541938077824,
+          "tangentIn": {
+            "x": -10.666666,
+            "y": -0.0
+          },
+          "tangentOut": {
+            "x": 1.8,
+            "y": 0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 719.0,
+          "y": 46.01541938077824,
+          "tangentIn": {
+            "x": -1.0,
+            "y": 0.0
+          },
+          "tangentOut": {
+            "x": -1.0,
+            "y": -3.0
+          },
+          "tangentMode": "broken",
+          "corner": false
+        },
+        {
+          "x": 712.0,
+          "y": 42.01541938077824,
+          "tangentIn": {
+            "x": 2.0,
+            "y": 0.0
+          },
+          "tangentOut": {
+            "x": -2.0,
+            "y": -0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 706.0,
+          "y": 42.01541938077824,
+          "tangentIn": {
+            "x": 1.8,
+            "y": 0.0
+          },
+          "tangentOut": {
+            "x": -7.333334,
+            "y": -0.0
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 684.0,
+          "y": 24.01541938077824,
+          "tangentIn": {
+            "x": 7.333334,
+            "y": 5.076924
+          },
+          "tangentOut": {
+            "x": -3.333334,
+            "y": -2.307692
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        },
+        {
+          "x": 673.0,
+          "y": 32.01541938077824,
+          "tangentIn": {
+            "x": 0.9578,
+            "y": -4.9169
+          },
+          "tangentOut": {
+            "x": -0.9578,
+            "y": 4.9169
+          },
+          "tangentMode": "continuous",
+          "corner": false
+        }
+      ],
+      "metadata": {
+        "drivingSurfaceCount": 3,
+        "role": "spring_catch_and_tunnel_roof",
+        "sourceVariant": "spring_high.lift_3"
+      }
+    }
+  ],
   "deadzone": [
     {
       "id": "s01_gap_kill",
@@ -1307,57 +1745,57 @@
       "closed": true,
       "points": [
         {
-          "x": 215.8,
-          "y": -11.992290309610878,
+          "x": 215.0,
+          "y": -13.992290309610878,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "linear",
           "corner": false
         },
         {
-          "x": 244.2,
-          "y": -11.992290309610878,
+          "x": 232.0,
+          "y": -13.992290309610878,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "linear",
           "corner": false
         },
         {
-          "x": 244.2,
-          "y": -14.992290309610878,
+          "x": 232.0,
+          "y": -16.99229030961088,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "linear",
           "corner": false
         },
         {
-          "x": 215.8,
-          "y": -14.992290309610878,
+          "x": 215.0,
+          "y": -16.99229030961088,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "linear",
           "corner": false
@@ -1437,57 +1875,57 @@
       "closed": true,
       "points": [
         {
-          "x": 645.8,
-          "y": 11.01541938077824,
+          "x": 645.0,
+          "y": 9.01541938077824,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "linear",
           "corner": false
         },
         {
-          "x": 674.2,
-          "y": 11.01541938077824,
+          "x": 662.0,
+          "y": 9.01541938077824,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "linear",
           "corner": false
         },
         {
-          "x": 674.2,
-          "y": 8.01541938077824,
+          "x": 662.0,
+          "y": 6.015419380778241,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "linear",
           "corner": false
         },
         {
-          "x": 645.8,
-          "y": 8.01541938077824,
+          "x": 645.0,
+          "y": 6.015419380778241,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "linear",
           "corner": false
@@ -1841,7 +2279,7 @@
         "forceMode": "impulse",
         "activation": "on_player_contact",
         "optionalRoute": true,
-        "postDestroyRoute": "s03_spring_landing_recovery",
+        "postDestroyRoute": "s03_spring_lower_recovery",
         "resetOnCheckpoint": true,
         "beatId": "cloud_walk",
         "purpose": "A restrained pop from the last raised crest rewards controlled bridge speed; ground remains available.",
@@ -2716,7 +3154,7 @@
     {
       "id": "cp_observatory",
       "transform": {
-        "x": 282.0,
+        "x": 306.6,
         "y": 25.00770969038912,
         "rotation": 0
       },
@@ -2761,7 +3199,7 @@
     {
       "id": "cp_extended_03_observatory",
       "transform": {
-        "x": 712.0,
+        "x": 736.6,
         "y": 48.01541938077824,
         "rotation": 0
       },
@@ -2800,8 +3238,8 @@
     "y": 54.41541938077824
   },
   "Bottom": {
-    "x": 244.0,
-    "y": 23.00770969038912
+    "x": 301.4,
+    "y": 23.007709690389117
   },
   "design": {
     "variants": [
@@ -2871,8 +3309,8 @@
         "geometryProfile": "compression_scoop",
         "ports": {
           "entry": {
-            "x": 36,
-            "y": 0,
+            "x": 36.0,
+            "y": 0.0,
             "direction": [
               1,
               0
@@ -3064,6 +3502,11 @@
           ],
           "entrySpeedWindow": null,
           "exitSpeedWindow": null,
+          "missedSpring": {
+            "route": "clear the short deadzone gap to reach the lower tunnel road",
+            "penalty": "lost momentum on the drop and a longer unassisted uphill ride",
+            "status": "geometry_checked; traversal time and bike clearance need Unity playtest"
+          },
           "springLaunch": {
             "status": "idealized_target_arc_only",
             "flightTimeSeconds": 2.877024173305093,
@@ -3100,7 +3543,7 @@
           ],
           "launchAngle": 62.310349325479606,
           "landingCategory": "safe",
-          "checkpointCandidateAfterStabilization": 282.0,
+          "checkpointCandidateAfterStabilization": 306.6,
           "launchMechanism": "SpringObject"
         },
         "joins": []
@@ -3404,6 +3847,11 @@
           ],
           "entrySpeedWindow": null,
           "exitSpeedWindow": null,
+          "missedSpring": {
+            "route": "clear the short deadzone gap to reach the lower tunnel road",
+            "penalty": "lost momentum on the drop and a longer unassisted uphill ride",
+            "status": "geometry_checked; traversal time and bike clearance need Unity playtest"
+          },
           "springLaunch": {
             "status": "idealized_target_arc_only",
             "flightTimeSeconds": 2.877024173305093,
@@ -3440,7 +3888,7 @@
           ],
           "launchAngle": 62.310349325479606,
           "landingCategory": "safe",
-          "checkpointCandidateAfterStabilization": 712.0,
+          "checkpointCandidateAfterStabilization": 736.6,
           "launchMechanism": "SpringObject"
         },
         "joins": []
@@ -3868,7 +4316,7 @@
           "triggerX": 12,
           "recenterX": 114.0,
           "framingBounds": {
-            "minX": 30,
+            "minX": 30.0,
             "maxX": 138.0,
             "minY": -18.992290000000004,
             "maxY": 13.112717249065334
@@ -3941,12 +4389,12 @@
           "framingBounds": {
             "minX": 174.0,
             "maxX": 318.0,
-            "minY": -8.99229030961088,
+            "minY": -14.992290309610881,
             "maxY": 31.985295897285674
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
-        "fallback": "deadzone catches missed crossing; restart at previous checkpoint",
+        "fallback": "clear the short deadzone gap to reach the lower tunnel road",
         "validationStatus": "static geometry and idealized arcs; Unity playtests pending"
       },
       {
@@ -4118,12 +4566,12 @@
           "framingBounds": {
             "minX": 604.0,
             "maxX": 748.0,
-            "minY": 14.015419380778233,
+            "minY": 8.015419380778237,
             "maxY": 54.993005587674794
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
-        "fallback": "deadzone catches missed crossing; restart at previous checkpoint",
+        "fallback": "clear the short deadzone gap to reach the lower tunnel road",
         "validationStatus": "static geometry and idealized arcs; Unity playtests pending"
       },
       {
@@ -4303,7 +4751,7 @@
     "validationReport": {
       "status": "passed_static_geometry_and_point_mass_checks",
       "sourceMainShapes": 17,
-      "exportedMainShapes": 5,
+      "exportedMainShapes": 7,
       "coinCount": 39,
       "coveredGaps": [
         {
@@ -4316,7 +4764,7 @@
         {
           "xRange": [
             216.0,
-            244.0
+            231.4
           ],
           "covered": true
         },
@@ -4330,7 +4778,7 @@
         {
           "xRange": [
             646.0,
-            674.0
+            661.4
           ],
           "covered": true
         }

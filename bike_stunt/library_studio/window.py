@@ -163,7 +163,7 @@ class ObstacleEditorWindow(EditorSession):
         body.columnconfigure(0, weight=1)
         body.rowconfigure(0, weight=1)
         self.canvas = tk.Canvas(body, bg=PLOT_BG, highlightthickness=1,
-                                highlightbackground=UI_BORDER, cursor='crosshair', takefocus=True)
+                                highlightbackground=UI_BORDER, cursor='arrow', takefocus=True)
         self.canvas.grid(row=0, column=0, sticky='nsew', padx=(0, 10))
         self.canvas.bind('<Configure>', self.redraw)
         self.canvas.bind('<ButtonPress-1>', self.mouse_down)
@@ -211,7 +211,7 @@ class ObstacleEditorWindow(EditorSession):
         self._button(panel, 'Add point after', self.add_point).pack(fill='x', pady=3)
         self._button(panel, 'Remove point', self.remove_point).pack(fill='x', pady=3)
         self._button(panel, 'Add shape', self.add_shape).pack(fill='x', pady=(12, 3))
-        tk.Label(panel, text='Wheel: zoom  |  Middle drag: pan\nCtrl+drag: snap  |  WASD: move point 1\n1/2/3: tangent  |  Z/X/C/V: convert shape',
+        tk.Label(panel, text='Wheel: zoom  |  Middle drag: pan\nShift+drag: snap  |  WASD: move point/shape 1\n1/2/3: tangent  |  Z/X/C/V: convert shape',
                  bg=UI_BG, fg=UI_MUTED, justify='left').pack(anchor='w', pady=(16, 0))
         footer = ttk.Frame(self.window, padding=(10, 0, 10, 10))
         footer.grid(row=2, column=0, sticky='ew')
@@ -404,6 +404,12 @@ class ObstacleEditorWindow(EditorSession):
             coords = [value for x, y in route for value in self.screen(x, y)]
             canvas.create_line(*coords, fill=self.faded_color(shape_line_color(other_group, other_shape)), width=2,
                                smooth=False, tags=(f'shape:{shape_index}',))
+            for index, point in enumerate(other_shape['points']):
+                x, y = self.screen(point['x'], point['y'])
+                canvas.create_oval(x-6, y-6, x+6, y+6, fill=self.faded_color('#f8fafc'),
+                                   outline=PLOT_BG, tags=(f'shape:{shape_index}',))
+                canvas.create_text(x+10, y-10, text=str(index+1), fill=self.faded_color(UI_TEXT),
+                                   anchor='w', font=('Segoe UI', 9), tags=(f'shape:{shape_index}',))
         route = sample_curve(shape, 20)
         coords = [value for x, y in route for value in self.screen(x, y)]
         canvas.create_line(*coords, fill=shape_line_color(group, shape), width=3, smooth=False,
@@ -474,10 +480,16 @@ class ObstacleEditorWindow(EditorSession):
         return 'break'
 
     def nudge_point(self, dx: int, dy: int) -> None:
-        if self.selected is None:
-            self.status.set('Select a point before moving it')
-            return
         group, shape, points = self.current()
+        if self.selected is None:
+            for point in points:
+                point['x'] = round(point['x']+dx, 4)
+                point['y'] = round(point['y']+dy, 4)
+            self.dirty = True
+            self.changed_shapes.add((group, shape['id']))
+            self.status.set(f"Shape {shape['id']} moved ({dx:+}, {dy:+})")
+            self.redraw()
+            return
         point = points[self.selected]
         x, y = round(point['x']+dx, 4), round(point['y']+dy, 4)
         count = shape.get('metadata', {}).get('drivingSurfaceCount', len(points))
@@ -525,7 +537,7 @@ class ObstacleEditorWindow(EditorSession):
         point = points[index]
         try:
             x, y = self.world(event.x, event.y)
-            if event.state & 0x0004:
+            if event.state & 0x0001:
                 x, y = self.snap_value(x), self.snap_value(y)
             else:
                 x, y = round(x, 4), round(y, 4)
