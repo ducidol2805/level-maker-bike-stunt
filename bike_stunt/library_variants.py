@@ -7,6 +7,62 @@ from bike_stunt.world_scale import scale_world_data
 import copy, json, math
 from statistics import median
 
+PLATFORM_POINT_MERGE_DISTANCE = 0.05
+PLATFORM_MERGED_COORDINATE_DIGITS = 2
+
+def merge_close_platform_points(shape, tolerance=PLATFORM_POINT_MERGE_DISTANCE):
+    """Collapse adjacent platform vertices closer than tolerance in source units."""
+    points = shape.get("points", [])
+    metadata = shape.setdefault("metadata", {})
+    surface_count = metadata.get("drivingSurfaceCount", len(points))
+    closed = shape.get("closed", False)
+    changed = False
+
+    def merge_pair(keep_index, remove_index):
+        nonlocal surface_count, changed
+        keep, remove = points[keep_index], points[remove_index]
+        keep["x"] = round((keep["x"] + remove["x"]) / 2, PLATFORM_MERGED_COORDINATE_DIGITS)
+        keep["y"] = round((keep["y"] + remove["y"]) / 2, PLATFORM_MERGED_COORDINATE_DIGITS)
+        # Keep handles and flags from the driving vertex; only its position is averaged.
+        if keep_index < surface_count and remove_index < surface_count:
+            surface_count -= 1
+        else:
+            metadata["mergedClosePoints"] = True
+        del points[remove_index]
+        changed = True
+
+    index = 0
+    while index < len(points) - 1:
+        a, b = points[index], points[index + 1]
+        if math.hypot(a["x"] - b["x"], a["y"] - b["y"]) < tolerance:
+            merge_pair(index, index + 1)
+        else:
+            index += 1
+
+    # Closed bodies also have a neighbor across the last-to-first seam. Keep
+    # the first vertex's tangent data when collapsing that seam.
+    if closed and len(points) > 1:
+        first, last = points[0], points[-1]
+        if math.hypot(first["x"] - last["x"], first["y"] - last["y"]) < tolerance:
+            first["x"] = round((first["x"] + last["x"]) / 2, PLATFORM_MERGED_COORDINATE_DIGITS)
+            first["y"] = round((first["y"] + last["y"]) / 2, PLATFORM_MERGED_COORDINATE_DIGITS)
+            if len(points) - 1 < surface_count:
+                surface_count -= 1
+            else:
+                metadata["mergedClosePoints"] = True
+            points.pop()
+            changed = True
+
+    if changed and "drivingSurfaceCount" in metadata:
+        metadata["drivingSurfaceCount"] = surface_count
+    return changed
+
+def merge_close_points_in_platforms(module):
+    """Merge tiny seams in generated or authored platform ramp polygons."""
+    for shape in module.get("RampPlatform", []):
+        if shape.get("closed") and len(shape.get("points", [])) > 1:
+            merge_close_platform_points(shape)
+
 def build_variant(family, variant, *, scale=1, deadzone_y_offset=DEADZONE_Y_OFFSET):
     p = variant["parameters"]
     kind = family["builder"]
@@ -646,6 +702,8 @@ def build_variant(family, variant, *, scale=1, deadzone_y_offset=DEADZONE_Y_OFFS
     if result['MainPlatform'] and (added_shapes.get('MainPlatform') or conversions):
         result['groundSamples'] = [point for shape in result['MainPlatform']
                                    for point in sample_curve({'points': editable_points(shape, 'MainPlatform')})]
+    if type_id == 'platform':
+        merge_close_points_in_platforms(result)
     if scale != 1:
         result = scale_world_data(result, scale)
         result['worldScale'] = scale

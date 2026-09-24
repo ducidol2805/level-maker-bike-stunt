@@ -384,7 +384,7 @@
         },
         {
           "x": 618.0,
-          "y": -37.389976,
+          "y": -15.0,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -398,7 +398,7 @@
         },
         {
           "x": -40,
-          "y": -37.389976,
+          "y": -15.0,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -420,62 +420,62 @@
           {
             "id": "s00_1_terrain",
             "x": 18.0,
-            "y": -18.694988
+            "y": -7.5
           },
           {
             "id": "s01_19_terrain",
             "x": 59.0,
-            "y": -15.694987999999999
+            "y": -4.5
           },
           {
             "id": "s02_66_safe_fallback",
             "x": 124.0,
-            "y": -18.694988
+            "y": -7.5
           },
           {
             "id": "s03_21_terrain",
             "x": 186.0,
-            "y": -18.694988
+            "y": -9.0
           },
           {
             "id": "s04_67_safe_fallback",
             "x": 242.0,
-            "y": -18.694988
+            "y": -7.5
           },
           {
             "id": "s05_2_terrain",
             "x": 294.0,
-            "y": -18.694988
+            "y": -7.5
           },
           {
             "id": "s06_19_terrain",
             "x": 333.0,
-            "y": -15.694987999999999
+            "y": -4.5
           },
           {
             "id": "s07_66_safe_fallback",
             "x": 398.0,
-            "y": -18.694988
+            "y": -7.5
           },
           {
             "id": "s08_21_terrain",
             "x": 460.0,
-            "y": -18.694988
+            "y": -9.0
           },
           {
             "id": "s09_67_safe_fallback",
             "x": 516.0,
-            "y": -18.694988
+            "y": -7.5
           },
           {
             "id": "s10_2_terrain",
             "x": 568.0,
-            "y": -18.694988
+            "y": -7.5
           },
           {
             "id": "s11_56_launch",
             "x": 601.0,
-            "y": -17.194988
+            "y": -6.0
           }
         ],
         "sourceShapeIds": [
@@ -668,7 +668,7 @@
         },
         {
           "x": 896.0,
-          "y": -37.389976,
+          "y": -37.389975930101755,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -709,12 +709,12 @@
           {
             "id": "s12_42_rollable_table",
             "x": 720.0,
-            "y": -27.88997596505088
+            "y": -27.889975930101755
           },
           {
             "id": "s13_5_terrain",
             "x": 811.0,
-            "y": -29.88997596505088
+            "y": -29.889975930101755
           }
         ],
         "sourceShapeIds": [
@@ -731,80 +731,67 @@
       "closed": true,
       "points": [
         {
-          "x": 94,
-          "y": 0,
+          "x": 105.0,
+          "y": 5.0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": -3.0,
+            "y": -1.0
           },
           "tangentOut": {
-            "x": 3.333334,
-            "y": 0.0
-          },
-          "tangentMode": "broken",
-          "corner": false
-        },
-        {
-          "x": 104,
-          "y": 4,
-          "tangentIn": {
-            "x": -3.333334,
-            "y": -1.15942
-          },
-          "tangentOut": {
-            "x": 4.333334,
-            "y": 1.507246
+            "x": 3.0,
+            "y": 1.0
           },
           "tangentMode": "continuous",
           "corner": false
         },
         {
           "x": 117.0,
-          "y": 8,
+          "y": 8.0,
           "tangentIn": {
             "x": -4.333334,
             "y": -0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "broken",
           "corner": false
         },
         {
           "x": 117.0,
-          "y": -0.02,
+          "y": 0.0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "linear",
           "corner": false
         },
         {
-          "x": 94,
-          "y": -0.02,
+          "x": 93.0,
+          "y": 0.0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 2.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 2.0,
+            "y": 0.0
           },
-          "tangentMode": "linear",
+          "tangentMode": "broken",
           "corner": false
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 3,
+        "drivingSurfaceCount": 2,
         "floatingSegment": false,
         "requiresMomentumTransfer": true,
+        "freeBottomCorners": true,
         "libID": 66,
         "libName": "open_bridge_1",
         "sourceVariant": "platform.flat_bridge"
@@ -816,10 +803,10 @@
       "points": [
         {
           "x": 121.0,
-          "y": 6,
+          "y": 6.0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
             "x": 7.0,
@@ -829,43 +816,43 @@
           "corner": false
         },
         {
-          "x": 142,
+          "x": 142.0,
           "y": 7.0,
           "tangentIn": {
             "x": -7.0,
             "y": -0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "broken",
           "corner": false
         },
         {
-          "x": 142,
-          "y": -0.02,
+          "x": 142.0,
+          "y": 0.0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "linear",
           "corner": false
         },
         {
           "x": 121.0,
-          "y": -0.02,
+          "y": 0.0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "linear",
           "corner": false
@@ -875,6 +862,7 @@
         "drivingSurfaceCount": 2,
         "floatingSegment": false,
         "requiresMomentumTransfer": true,
+        "freeBottomCorners": true,
         "libID": 66,
         "libName": "open_bridge_2",
         "sourceVariant": "platform.flat_bridge"
@@ -885,11 +873,11 @@
       "closed": true,
       "points": [
         {
-          "x": 146,
-          "y": 8,
+          "x": 146.0,
+          "y": 8.0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
             "x": 4.0,
@@ -899,7 +887,7 @@
           "corner": false
         },
         {
-          "x": 158,
+          "x": 158.0,
           "y": 3.0,
           "tangentIn": {
             "x": -4.0,
@@ -913,52 +901,39 @@
           "corner": false
         },
         {
-          "x": 166,
-          "y": 0,
+          "x": 166.0,
+          "y": 0.0,
           "tangentIn": {
-            "x": -2.666666,
-            "y": -0.0
+            "x": -2.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": -2.0,
+            "y": 0.0
           },
           "tangentMode": "broken",
           "corner": false
         },
         {
-          "x": 166,
-          "y": -0.02,
+          "x": 146.0,
+          "y": 0.0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        },
-        {
-          "x": 146,
-          "y": -0.02,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "linear",
           "corner": false
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 3,
+        "drivingSurfaceCount": 2,
         "floatingSegment": false,
         "requiresMomentumTransfer": false,
+        "freeBottomCorners": true,
         "libID": 66,
         "libName": "open_bridge_3",
         "sourceVariant": "platform.flat_bridge"
@@ -970,7 +945,7 @@
       "points": [
         {
           "x": 214.0,
-          "y": 0,
+          "y": -0.02,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1026,7 +1001,7 @@
         },
         {
           "x": 266.0,
-          "y": 0,
+          "y": -0.02,
           "tangentIn": {
             "x": -4.0,
             "y": -0.0
@@ -1037,38 +1012,11 @@
           },
           "tangentMode": "broken",
           "corner": false
-        },
-        {
-          "x": 266.0,
-          "y": -0.02,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        },
-        {
-          "x": 214.0,
-          "y": -0.02,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
         }
       ],
       "metadata": {
         "drivingSurfaceCount": 5,
+        "mergedClosePoints": true,
         "libID": 67,
         "libName": "open_bridge",
         "sourceVariant": "platform.arched_bridge"
@@ -1079,80 +1027,67 @@
       "closed": true,
       "points": [
         {
-          "x": 368.0,
-          "y": 0,
+          "x": 379.0,
+          "y": 5.0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": -3.0,
+            "y": -1.0
           },
           "tangentOut": {
-            "x": 3.333334,
-            "y": 0.0
-          },
-          "tangentMode": "broken",
-          "corner": false
-        },
-        {
-          "x": 378.0,
-          "y": 4,
-          "tangentIn": {
-            "x": -3.333334,
-            "y": -1.15942
-          },
-          "tangentOut": {
-            "x": 4.333334,
-            "y": 1.507246
+            "x": 3.0,
+            "y": 1.0
           },
           "tangentMode": "continuous",
           "corner": false
         },
         {
           "x": 391.0,
-          "y": 8,
+          "y": 8.0,
           "tangentIn": {
             "x": -4.333334,
             "y": -0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "broken",
           "corner": false
         },
         {
           "x": 391.0,
-          "y": -0.02,
+          "y": 0.0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "linear",
           "corner": false
         },
         {
-          "x": 368.0,
-          "y": -0.02,
+          "x": 367.0,
+          "y": 0.0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 2.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 2.0,
+            "y": 0.0
           },
-          "tangentMode": "linear",
+          "tangentMode": "broken",
           "corner": false
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 3,
+        "drivingSurfaceCount": 2,
         "floatingSegment": false,
         "requiresMomentumTransfer": true,
+        "freeBottomCorners": true,
         "libID": 66,
         "libName": "open_bridge_1",
         "sourceVariant": "platform.flat_bridge"
@@ -1164,10 +1099,10 @@
       "points": [
         {
           "x": 395.0,
-          "y": 6,
+          "y": 6.0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
             "x": 7.0,
@@ -1184,36 +1119,36 @@
             "y": -0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "broken",
           "corner": false
         },
         {
           "x": 416.0,
-          "y": -0.02,
+          "y": 0.0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "linear",
           "corner": false
         },
         {
           "x": 395.0,
-          "y": -0.02,
+          "y": 0.0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "linear",
           "corner": false
@@ -1223,6 +1158,7 @@
         "drivingSurfaceCount": 2,
         "floatingSegment": false,
         "requiresMomentumTransfer": true,
+        "freeBottomCorners": true,
         "libID": 66,
         "libName": "open_bridge_2",
         "sourceVariant": "platform.flat_bridge"
@@ -1234,10 +1170,10 @@
       "points": [
         {
           "x": 420.0,
-          "y": 8,
+          "y": 8.0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
             "x": 4.0,
@@ -1262,51 +1198,38 @@
         },
         {
           "x": 440.0,
-          "y": 0,
+          "y": 0.0,
           "tangentIn": {
-            "x": -2.666666,
-            "y": -0.0
+            "x": -2.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": -2.0,
+            "y": 0.0
           },
           "tangentMode": "broken",
           "corner": false
         },
         {
-          "x": 440.0,
-          "y": -0.02,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        },
-        {
           "x": 420.0,
-          "y": -0.02,
+          "y": 0.0,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "linear",
           "corner": false
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 3,
+        "drivingSurfaceCount": 2,
         "floatingSegment": false,
         "requiresMomentumTransfer": false,
+        "freeBottomCorners": true,
         "libID": 66,
         "libName": "open_bridge_3",
         "sourceVariant": "platform.flat_bridge"
@@ -1318,7 +1241,7 @@
       "points": [
         {
           "x": 488.0,
-          "y": 0,
+          "y": -0.02,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1374,7 +1297,7 @@
         },
         {
           "x": 540.0,
-          "y": 0,
+          "y": -0.02,
           "tangentIn": {
             "x": -4.0,
             "y": -0.0
@@ -1385,38 +1308,11 @@
           },
           "tangentMode": "broken",
           "corner": false
-        },
-        {
-          "x": 540.0,
-          "y": -0.02,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        },
-        {
-          "x": 488.0,
-          "y": -0.02,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
         }
       ],
       "metadata": {
         "drivingSurfaceCount": 5,
+        "mergedClosePoints": true,
         "libID": 67,
         "libName": "open_bridge",
         "sourceVariant": "platform.arched_bridge"
@@ -1618,8 +1514,8 @@
       "id": "s02_coin_01",
       "type": "coin",
       "transform": {
-        "x": 109.54636900121362,
-        "y": 8.197194578740673
+        "x": 116.21226305007062,
+        "y": 9.97873861546474
       },
       "properties": {
         "optional": true,
@@ -1638,8 +1534,8 @@
       "id": "s02_coin_02",
       "type": "coin",
       "transform": {
-        "x": 130.09644830738898,
-        "y": 8.40034399759985
+        "x": 131.83981376582423,
+        "y": 8.524263624170244
       },
       "properties": {
         "optional": true,
@@ -1658,8 +1554,8 @@
       "id": "s02_coin_03",
       "type": "coin",
       "transform": {
-        "x": 150.69627408465016,
-        "y": 8.743561743297795
+        "x": 147.46038462989236,
+        "y": 9.857344463111637
       },
       "properties": {
         "optional": true,
@@ -2283,8 +2179,8 @@
       "id": "s07_coin_01",
       "type": "coin",
       "transform": {
-        "x": 383.54636900121363,
-        "y": 8.197194578740673
+        "x": 390.2122630500706,
+        "y": 9.97873861546474
       },
       "properties": {
         "optional": true,
@@ -2303,8 +2199,8 @@
       "id": "s07_coin_02",
       "type": "coin",
       "transform": {
-        "x": 404.096448307389,
-        "y": 8.40034399759985
+        "x": 405.83981376582426,
+        "y": 8.524263624170244
       },
       "properties": {
         "optional": true,
@@ -2323,8 +2219,8 @@
       "id": "s07_coin_03",
       "type": "coin",
       "transform": {
-        "x": 424.69627408465016,
-        "y": 8.743561743297795
+        "x": 421.46038462989236,
+        "y": 9.857344463111637
       },
       "properties": {
         "optional": true,
@@ -4193,9 +4089,9 @@
           "recenterX": 156,
           "framingBounds": {
             "minX": 76,
-            "maxX": 172.00000000000003,
-            "minY": -4.02,
-            "maxY": 14.743561743297795
+            "maxX": 172.0,
+            "minY": -4,
+            "maxY": 15.97873861546474
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },
@@ -4369,9 +4265,9 @@
           "recenterX": 430.0,
           "framingBounds": {
             "minX": 350.0,
-            "maxX": 446.00000000000006,
-            "minY": -4.02,
-            "maxY": 14.743561743297795
+            "maxX": 446.0,
+            "minY": -4,
+            "maxY": 15.97873861546474
           },
           "implementationStatus": "authored intent; Unity camera implementation pending"
         },

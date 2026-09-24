@@ -11,8 +11,8 @@
       "intent": "Cross beneath the ring on a curved explosive ramp, ride the upper ring from right to left, then cross back beneath it on the symmetric revealed ramp",
       "parameters": {
         "layout": "round_loop",
-        "radiusX": 3,
-        "radiusY": 3,
+        "radiusX": 4,
+        "radiusY": 4,
         "entryAngle": 0,
         "exitAngle": 180,
         "approach": 18,
@@ -20,7 +20,7 @@
         "boundaryClearance": 1,
         "ringGroundClearance": 0.5,
         "rampGroundHandleRatio": 0.64,
-        "ringTangentHandle": 3.5,
+        "ringTangentHandle": 4.5,
         "revealLength": 18,
         "revealProfile": "symmetric_tangent",
         "revealRelief": 2,
@@ -40,7 +40,7 @@
             "freeBottomCorners": true,
             "points": [
               {
-                "x": 25.0,
+                "x": 27.0,
                 "y": 0.0,
                 "tangentIn": {
                   "x": 0.0,
@@ -54,7 +54,7 @@
                 "corner": false
               },
               {
-                "x": 43.0,
+                "x": 45.0,
                 "y": 0.0,
                 "tangentIn": {
                   "x": -6.0,
@@ -68,7 +68,7 @@
                 "corner": false
               },
               {
-                "x": 43.0,
+                "x": 45.0,
                 "y": -7.5,
                 "tangentIn": {
                   "x": 0.0,
@@ -82,7 +82,7 @@
                 "corner": false
               },
               {
-                "x": 25.0,
+                "x": 27.0,
                 "y": -7.5,
                 "tangentIn": {
                   "x": 0.0,
@@ -177,7 +177,7 @@
               "corner": false
             },
             {
-              "x": 25.5,
+              "x": 27.5,
               "y": -3.5,
               "tangentIn": {
                 "x": 0.0,
@@ -191,7 +191,7 @@
               "corner": false
             },
             {
-              "x": 25.5,
+              "x": 27.5,
               "y": -5.0,
               "tangentIn": {
                 "x": 0.0,
@@ -230,8 +230,8 @@
       "intent": "Complete two end-to-end copies of the crossed-ramp ring, each with its own explosion and revealed continuation",
       "parameters": {
         "layout": "ring_chain_2",
-        "radiusX": 3,
-        "radiusY": 3,
+        "radiusX": 4,
+        "radiusY": 4,
         "entryAngle": 0,
         "exitAngle": 180,
         "approach": 18,
@@ -240,7 +240,7 @@
         "boundaryClearance": 1,
         "ringGroundClearance": 0.5,
         "rampGroundHandleRatio": 0.64,
-        "ringTangentHandle": 3.5,
+        "ringTangentHandle": 4.5,
         "revealLength": 18,
         "revealProfile": "symmetric_tangent",
         "revealRelief": 2,
@@ -260,7 +260,7 @@
             "freeBottomCorners": true,
             "points": [
               {
-                "x": 33.0,
+                "x": 37.0,
                 "y": 0.0,
                 "tangentIn": {
                   "x": 0.0,
@@ -274,7 +274,7 @@
                 "corner": false
               },
               {
-                "x": 53.0,
+                "x": 57.0,
                 "y": 0.0,
                 "tangentIn": {
                   "x": -6.666667,
@@ -288,7 +288,7 @@
                 "corner": false
               },
               {
-                "x": 53.0,
+                "x": 57.0,
                 "y": -7.5,
                 "tangentIn": {
                   "x": 0.0,
@@ -302,7 +302,7 @@
                 "corner": false
               },
               {
-                "x": 33.0,
+                "x": 37.0,
                 "y": -7.5,
                 "tangentIn": {
                   "x": 0.0,
@@ -397,7 +397,7 @@
               "corner": false
             },
             {
-              "x": 33.5,
+              "x": 37.5,
               "y": -3.5,
               "tangentIn": {
                 "x": 0.0,
@@ -411,7 +411,7 @@
               "corner": false
             },
             {
-              "x": 33.5,
+              "x": 37.5,
               "y": -5.0,
               "tangentIn": {
                 "x": 0.0,
@@ -450,8 +450,8 @@
       "intent": "Complete three end-to-end copies of the crossed-ramp ring, preserving the explosion and reveal logic in every copy",
       "parameters": {
         "layout": "ring_chain_3",
-        "radiusX": 3,
-        "radiusY": 3,
+        "radiusX": 4,
+        "radiusY": 4,
         "entryAngle": 0,
         "exitAngle": 180,
         "approach": 18,
@@ -460,7 +460,7 @@
         "boundaryClearance": 1,
         "ringGroundClearance": 0.5,
         "rampGroundHandleRatio": 0.64,
-        "ringTangentHandle": 3.5,
+        "ringTangentHandle": 4.5,
         "revealLength": 18,
         "revealProfile": "symmetric_tangent",
         "revealRelief": 2,
@@ -480,7 +480,7 @@
             "freeBottomCorners": true,
             "points": [
               {
-                "x": 41.0,
+                "x": 47.0,
                 "y": 0.0,
                 "tangentIn": {
                   "x": 0.0,
@@ -494,7 +494,7 @@
                 "corner": false
               },
               {
-                "x": 63.0,
+                "x": 69.0,
                 "y": 0.0,
                 "tangentIn": {
                   "x": -7.333333,
@@ -508,7 +508,7 @@
                 "corner": false
               },
               {
-                "x": 63.0,
+                "x": 69.0,
                 "y": -7.5,
                 "tangentIn": {
                   "x": 0.0,
@@ -522,7 +522,7 @@
                 "corner": false
               },
               {
-                "x": 41.0,
+                "x": 47.0,
                 "y": -7.5,
                 "tangentIn": {
                   "x": 0.0,
@@ -617,7 +617,7 @@
               "corner": false
             },
             {
-              "x": 41.5,
+              "x": 47.5,
               "y": -3.5,
               "tangentIn": {
                 "x": 0.0,
@@ -631,7 +631,7 @@
               "corner": false
             },
             {
-              "x": 41.5,
+              "x": 47.5,
               "y": -5.0,
               "tangentIn": {
                 "x": 0.0,

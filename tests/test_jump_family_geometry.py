@@ -266,7 +266,8 @@ class JumpFamilyGeometryTests(unittest.TestCase):
                                center_y+variant["parameters"]["radiusY"])
         self.assertAlmostEqual(connector["points"][0]["tangentOut"]["x"],
                                (connector["points"][1]["x"]-connector["points"][0]["x"])*.64)
-        self.assertAlmostEqual(abs(connector["points"][1]["tangentIn"]["y"]),3.5)
+        self.assertAlmostEqual(abs(connector["points"][1]["tangentIn"]["y"]),
+                               variant["parameters"]["ringTangentHandle"])
         center_x = variant["parameters"]["approach"]+variant["parameters"]["radiusX"]
         crossing = min(sample_curve(connector,200),key=lambda point: abs(point[0]-center_x))
         self.assertGreaterEqual(crossing[1],0)

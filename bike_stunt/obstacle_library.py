@@ -1,4 +1,4 @@
-"""Data-driven obstacle variants, local Bezier geometry, and preview export.
+﻿"""Data-driven obstacle variants, local Bezier geometry, and preview export.
 
 All physical numbers are design hypotheses, not results from Unity playtests.
 The source of each variant is library/types/*.json, not a hard-coded map recipe.
@@ -157,7 +157,10 @@ def apply_geometry_overrides(module, overrides):
                 checked.append(copy.deepcopy(point))
             if generated_underside:
                 count = override.get('drivingSurfaceCount') if full_polygon else len(checked)
-                if full_polygon and (not isinstance(count, int) or count != len(checked)-2):
+                merged_corners = override.get('mergedClosePoints', shape.get('metadata', {}).get('mergedClosePoints', False)) if full_polygon else shape.get('metadata', {}).get('mergedClosePoints', False)
+                corner_count = len(checked)-count if isinstance(count, int) else -1
+                valid_corner_count = corner_count == 2 or (merged_corners and corner_count in (0, 1))
+                if full_polygon and (not isinstance(count, int) or not valid_corner_count):
                     raise ValueError(f"{group}/{shape_id}: invalid driving surface count")
                 surface = checked[:count]
                 if any(a["x"] > b["x"] for a, b in zip(surface, surface[1:])):
@@ -172,11 +175,14 @@ def apply_geometry_overrides(module, overrides):
                 if full_polygon:
                     candidate = {**shape, 'points': checked,
                                  'metadata': {**shape.get('metadata', {}), 'drivingSurfaceCount': count,
-                                              'freeBottomCorners': override.get('freeBottomCorners', False)}}
+                                              'freeBottomCorners': override.get('freeBottomCorners', False),
+                                              'mergedClosePoints': merged_corners}}
                     surface_count(candidate)
                     shape['points'] = checked
                     if candidate['metadata']['freeBottomCorners']:
                         shape.setdefault('metadata', {})['freeBottomCorners'] = True
+                    if candidate['metadata']['mergedClosePoints']:
+                        shape.setdefault('metadata', {})['mergedClosePoints'] = True
                 else:
                     underside = copy.deepcopy(shape["points"][-2:])
                     ceiling = ground_floor(surface) if group == 'MainPlatform' else min(p['y'] for p in surface)-.01
@@ -464,8 +470,7 @@ def main():
             fig=Figure(figsize=(15,12),layout="constrained")
             axes=fig.subplots(5,1)
             for ax,module in zip(axes,modules):
-                # Contact sheets show the same finalized ground cross-section
-                # as the JSON preview, not independent local underside heights.
+                # Validate the same authored cross-section used by JSON previews.
                 module = normalize_main_platform(module)
                 for group,color in (("deadzone","#ef6666"),("MainPlatform","#3eae78"),("RampPlatform","#e6a12c"),("FreePlatform","#a78bfa"),("InteractableObject","#ee4444")):
                     for shape in module[group]:

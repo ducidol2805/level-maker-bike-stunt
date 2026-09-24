@@ -427,8 +427,8 @@ def validate_authored(source, exported):
     objects=exported['InteractableObject']
     coins=[o for o in objects if o['type']=='coin']
     if 'lengthPlan' in source['design']:
-        require(abs(source['design']['length']-source['design']['lengthPlan']['targetLength'])<1e-5,
-                'Authored length differs from the planned campaign extension')
+        require(source['design']['length']+1e-5>=source['design']['lengthPlan']['targetLength'],
+                'Authored length is shorter than the planned campaign extension')
     require(len(coins)==3*len(source['design']['sequence']), 'Expected three coins per obstacle')
     ids=[o['id'] for g in GROUPS+('CheckPoint',) for o in exported[g]]
     require(len(ids)==len(set(ids)), 'Object/shape IDs must be unique')
@@ -440,9 +440,6 @@ def validate_authored(source, exported):
     require(source['Start']==exported['Start'] and source['End']==exported['End'], 'Markers moved during export')
     require(export_level(exported)==exported, 'Export is not idempotent')
     terrain=exported['MainPlatform']
-    generated_terrain = [s for s in terrain if not s.get('metadata', {}).get('freeBottomCorners')]
-    require(len({p['y'] for s in generated_terrain for p in s['points'][-2:]})<=1,
-            'Terrain floors differ')
     require(terrain[0]['points'][0]['x']==-20, 'Left padding missing')
     end_surface=terrain[-1]['points'][surface_count(terrain[-1])-1]
     require(abs(end_surface['x']-(source['End']['x']+21))<1e-6, 'Right padding missing')

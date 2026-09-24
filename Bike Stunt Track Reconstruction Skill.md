@@ -14,6 +14,7 @@ video, panorama or visual preview.
 - `apps/map_viewer/`: independent read-only map viewer; launch with `python -m apps.map_viewer`.
 - `apps/library_studio/`: obstacle library preview and shape editor; launch with `python -m apps.library_studio`.
 - `bike_stunt/`: shared geometry, campaign, export and UI implementation modules.
+- Platform library ramp polygons merge adjacent points closer than 0.05 source units after overrides and before world scaling; the merged position is averaged and rounded to 2 decimals.
 - `tests/`: automated tests. Keep every `.py` file, including tests and launchers, below 1,000 physical lines.
 - Root scripts such as `level_visualizer.py`, `obstacle_library.py` and `generate_campaign.py` are compatibility launchers. New implementation belongs in the packages above.
 
@@ -1185,8 +1186,10 @@ restore the abandoned ten-variant family unless requested.
 - Keep the combined silhouette low and nearly circular. Avoid a tall teardrop
   or a pinched lower crossing. Entry/exit sit exactly one unit outside the
   ring's horizontal bounds.
-- The currently accepted local settings are radius X/Y 3, ground clearance 0.5,
-  ground-handle ratio 0.64 and ring handle 3.5. Read
+- The currently accepted local settings are radius X/Y 4, ground clearance 0.5,
+  boundary clearance 1, ground-handle ratio 0.64 and ring handle 4.5. At world
+  scale 2, each ring spans 16 units; the two 2-unit outer gaps make 20 units per
+  ring assembly. Read
   [explosive_loop.json](library/types/explosive_loop.json) before editing; these
   are editable design settings, not a universal physical formula.
 - Variant 2 is two complete copies of variant 1; variant 3 is three copies.
@@ -1696,8 +1699,12 @@ Clearly mark estimated values.
 - `library/campaign_themes.json`: theme materials, palette and scenery metadata.
   Metadata is not proof that decorative game assets have been implemented.
 - `bike_stunt/campaign.py`: author/tune, place, export, validate and save maps.
-- `bike_stunt/terrain_export.py`: common underside, endpoint merges, reference remapping,
-  flat/curve tangent handling and non-accumulating boundary padding.
+- `bike_stunt/terrain_export.py`: merge all touching/overlapping MainPlatform ground,
+  including side contact and containment; never use global bottom height as a merge gate.
+  Keep exposed Bezier curves, source labels, reference remapping and stable boundary padding.
+  `bike_stunt/terrain_union.py` handles intersecting outlines when endpoint splicing is insufficient.
+  Collapse generated union edges below 0.05 source units before saving; validate adjacent
+  spline spacing (including closed seams) to catch Unity import failures such as maps 17/29.
 - `levels/`: generated maps and `campaign_manifest.json`.
 
 Read current files before applying a stored convention. The mutable catalog
@@ -1768,8 +1775,9 @@ obstacles; 10/20/30 are `extreme`. Ending 3 requests length without an automatic
 difficulty increase.
 
 - Treat `lengthPlan.baselineLength` as the frozen original baseline and
-  `targetLength` as the regeneration target. Never multiply the already extended
-  output again on refresh/regeneration.
+  `targetLength` as the minimum regeneration length; longer maps are allowed.
+  Preserve the finish release length when library obstacles grow. Never shorten
+  it just to match the target or multiply the extended output again on refresh.
 - Measure gameplay length as `End.x - Start.x`, excluding export padding.
 - Add purposeful challenges and recovery to lengthen a map; do not stretch
   every X coordinate or satisfy most of the increase with a long empty flat.

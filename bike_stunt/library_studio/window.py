@@ -238,7 +238,16 @@ class ObstacleEditorWindow(EditorSession):
     def sync_terrain_closure(shape: dict[str, Any]) -> None:
         if shape.get('metadata', {}).get('freeBottomCorners'):
             return
-        count = shape['metadata']['drivingSurfaceCount']
+        metadata = shape['metadata']
+        count = metadata['drivingSurfaceCount']
+        if metadata.get('mergedClosePoints'):
+            surface = shape['points'][:count]
+            floor = min(point['y'] for point in surface)-.01
+            shape['points'] = surface + [
+                vertex(surface[-1]['x'], floor, mode='linear'),
+                vertex(surface[0]['x'], floor, mode='linear'),
+            ]
+            metadata.pop('mergedClosePoints', None)
         surface = shape['points'][:count]
         ceiling = min(point['y'] for point in surface)-.01
         shape['points'][-2].update(x=surface[-1]['x'],
@@ -693,6 +702,7 @@ class ObstacleEditorWindow(EditorSession):
                     overrides.setdefault(group, {})[shape['id']] = {
                         'drivingSurfaceCount': shape['metadata']['drivingSurfaceCount'],
                         'freeBottomCorners': shape['metadata'].get('freeBottomCorners', False),
+                        'mergedClosePoints': shape['metadata'].get('mergedClosePoints', False),
                         'points': scale_world_data(shape['points'], inverse_scale)}
                 else:
                     overrides.setdefault(group, {})[shape['id']] = scale_world_data(

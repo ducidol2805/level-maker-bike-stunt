@@ -1,7 +1,4 @@
-"""Finalize closed terrain cross-sections without tessellating Bezier surfaces.
-
-Authoring retains separate obstacles; export removes only shared terrain seams.
-"""
+"""Merge touching ground while retaining exposed Bezier terrain curves."""
 import argparse
 import copy
 import json
@@ -13,34 +10,29 @@ def surface_count(shape):
     points = shape['points']
     metadata = shape.get('metadata', {})
     count = metadata.get('drivingSurfaceCount', len(points)-2)
-    if not shape.get('closed') or count < 2 or count != len(points)-2:
-        raise ValueError(f"{shape.get('id')}: expected a surface followed by two bottom corners")
-    right, left = points[-2:]
-    if not metadata.get('freeBottomCorners') and (abs(right['x']-points[count-1]['x']) > 1e-6 or
-            abs(left['x']-points[0]['x']) > 1e-6 or
-            max(right['y'], left['y']) >= min(p['y'] for p in points[:count])):
-        raise ValueError(f"{shape.get('id')}: unsupported terrain closure; cannot safely infer bottom corners")
-    if any(a['x'] > b['x'] for a, b in zip(points[:count], points[1:count])):
+    merged_corners = metadata.get('mergedClosePoints', False)
+    expected_bottom_count = len(points)-count
+    union = metadata.get('terrainUnion', False)
+    if (not shape.get('closed') or count < 2 or count > len(points) or
+            (not union and expected_bottom_count != 2 and not (merged_corners and expected_bottom_count in (0, 1)))):
+        raise ValueError(f"{shape.get('id')}: expected a surface followed by bottom corners")
+    if expected_bottom_count == 2:
+        right, left = points[-2:]
+        if not metadata.get('freeBottomCorners') and (abs(right['x']-points[count-1]['x']) > 1e-6 or
+                abs(left['x']-points[0]['x']) > 1e-6 or
+                max(right['y'], left['y']) >= min(p['y'] for p in points[:count])):
+            raise ValueError(f"{shape.get('id')}: unsupported terrain closure; cannot safely infer bottom corners")
+    if not union and any(a['x'] > b['x'] for a, b in zip(points[:count], points[1:count])):
         raise ValueError(f"{shape.get('id')}: driving surface must run left to right")
     return count
 
 
 def normalize_main_platform(level):
-    """Normalize generated undersides while preserving freely edited corners.
-
-    The gameplay Bottom marker (median ground height) is deliberately unchanged.
-    """
+    """Copy and validate terrain without moving its authored bottom corners."""
     result = copy.deepcopy(level)
     shapes = result.get('MainPlatform', [])
     for shape in shapes:
         surface_count(shape)
-    generated = [s for s in shapes if not s.get('metadata', {}).get('freeBottomCorners')]
-    if generated:
-        floor = min(p['y'] for s in generated for p in s['points'][-2:])
-        for shape in generated:
-            for p in shape['points'][-2:]:
-                p.update(y=floor, tangentIn={'x': 0, 'y': 0},
-                         tangentOut={'x': 0, 'y': 0}, tangentMode='linear')
     return result
 
 
@@ -77,7 +69,7 @@ def extend_boundaries(level, distance):
         surface = [new] + surface if is_left else surface + [new]
         if not shape.get('metadata', {}).get('freeBottomCorners'):
             shape['points'][-1 if is_left else -2]['x'] = x
-        shape['points'] = surface + shape['points'][-2:]
+        shape['points'] = surface + shape['points'][n:]
         shape.setdefault('metadata', {})['drivingSurfaceCount'] = n+1
     level.setdefault('terrainExport', {})['boundaryPadding'] = distance
 
@@ -140,76 +132,109 @@ def are_opposite_tangents(incoming, outgoing, epsilon=1e-8):
 
 
 def can_merge_terrain(left, right, tolerance=1e-6):
-    """Accept ordinary closures even when their bottom corners were edited."""
+    """Any filled ground contact qualifies, including overlap and containment."""
+    from bike_stunt.terrain_union import touches
+    n = surface_count(left)
+    surface_count(right)
+    a, b = left['points'][n-1], right['points'][0]
+    if math.hypot(a['x']-b['x'], a['y']-b['y']) <= tolerance:
+        return True
+    return touches(left, right, tolerance)
+
+
+def _can_splice(left, right, tolerance):
+    """Keep exact road knots for ordinary endpoint joins with a safe underside."""
+    from bike_stunt.terrain_union import controls
     n, m = surface_count(left), surface_count(right)
     a, b = left['points'][n-1], right['points'][0]
-    if b['x'] < a['x'] or math.hypot(a['x']-b['x'], a['y']-b['y']) > tolerance:
+    if math.hypot(a['x']-b['x'], a['y']-b['y']) > tolerance:
         return False
     for shape, count in ((left, n), (right, m)):
         points = shape['points']
+        if len(points)-count != 2:
+            return False
         bottom_right, bottom_left = points[-2:]
         if (abs(bottom_right['x']-points[count-1]['x']) > tolerance or
-                abs(bottom_left['x']-points[0]['x']) > tolerance or
-                max(bottom_right['y'], bottom_left['y']) >= min(p['y'] for p in points[:count])):
+                abs(bottom_left['x']-points[0]['x']) > tolerance):
             return False
-        # A curved or overhanging underside needs polygon union, not a splice.
-        closure_handles = ((points[0], 'tangentIn'), (points[count-1], 'tangentOut'))
-        closure_handles += tuple((p, key) for p in points[-2:] for key in ('tangentIn', 'tangentOut'))
+        handles = ((points[0], 'tangentIn'), (points[count-1], 'tangentOut'))
+        handles += tuple((p, key) for p in points[-2:] for key in ('tangentIn', 'tangentOut'))
         if any(p.get('tangentMode') != 'linear' and
                math.hypot(p.get(key, {}).get('x', 0), p.get(key, {}).get('y', 0)) > tolerance
-               for p, key in closure_handles):
+               for p, key in handles):
             return False
-    # Retained outer corners must stay below both driving surfaces.
-    return max(left['points'][-1]['y'], right['points'][-2]['y']) < min(
-        p['y'] for shape, count in ((left, n), (right, m)) for p in shape['points'][:count])
+    low_left, low_right = left['points'][-1], right['points'][-2]
+    width = low_right['x']-low_left['x']
+    if width <= tolerance:
+        return False
+    slope = (low_right['y']-low_left['y'])/width
+    # Compare the bottom to the road at the same X, not a global minimum Y.
+    return all(y-low_left['y']-slope*(x-low_left['x']) > tolerance
+               for shape, count in ((left, n), (right, m))
+               for p, q in zip(shape['points'][:count], shape['points'][1:count])
+               for x, y in controls(p, q))
+
+
+def _merge_ground(left, right, tolerance):
+    from bike_stunt.shape_labels import shape_labels
+    from bike_stunt.terrain_union import union_shape
+    source_labels = copy.deepcopy(shape_labels(left)+shape_labels(right))
+    sources = list(dict.fromkeys(left.get('metadata', {}).get('sourceShapeIds', [left['id']])+
+                                 right.get('metadata', {}).get('sourceShapeIds', [right['id']])))
+    if _can_splice(left, right, tolerance):
+        n, m = surface_count(left), surface_count(right)
+        a, b = left['points'][n-1], right['points'][0]
+        incoming = a.get('tangentIn', {}) if a.get('tangentMode') != 'linear' else {}
+        outgoing = b.get('tangentOut', {}) if b.get('tangentMode') != 'linear' else {}
+        mode = ('continuous' if not a.get('corner') and not b.get('corner') and
+                are_opposite_tangents(incoming, outgoing) else 'broken')
+        a.update(tangentIn={'x': incoming.get('x', 0), 'y': incoming.get('y', 0)},
+                 tangentOut={'x': outgoing.get('x', 0), 'y': outgoing.get('y', 0)},
+                 tangentMode=mode)
+        left['points'] = left['points'][:n]+right['points'][1:m]+[right['points'][-2], left['points'][-1]]
+        result = left
+        meta = result.setdefault('metadata', {})
+        meta['drivingSurfaceCount'] = n+m-1
+        if (right.get('metadata', {}).get('freeBottomCorners') or
+                max(p['y'] for p in result['points'][-2:]) >=
+                min(p['y'] for p in result['points'][:n+m-1])):
+            meta['freeBottomCorners'] = True
+    else:
+        result = union_shape(left, right)
+    result.setdefault('metadata', {}).update(sourceShapeLabels=source_labels, sourceShapeIds=sources)
+    return result
 
 
 def export_level(level, tolerance=1e-6, *, boundary_padding=None):
-    """Merge endpoint-connected terrain chains, never bridge real gaps.
+    """Merge every connected ground component, never bridge real gaps.
 
     Preserve incoming/outgoing Bezier handles at each shared road vertex.
     Keep the first shape ID and remap fallback references to surviving IDs.
     """
-    from bike_stunt.shape_labels import shape_labels
-
     if not math.isfinite(tolerance) or tolerance < 0:
         raise ValueError('tolerance must be finite and non-negative')
     if boundary_padding is None:
         boundary_padding = level.get('terrainExport', {}).get('boundaryPadding', 20)
     result = normalize_main_platform(level)
     shapes = sorted(result.get('MainPlatform', []), key=lambda s: s['points'][0]['x'])
-    merged, id_map = [], {}
-    for shape in shapes:
-        sid = shape['id']
-        if merged:
-            previous = merged[-1]
-            n, m = surface_count(previous), surface_count(shape)
-            a, b = previous['points'][n-1], shape['points'][0]
-            join = can_merge_terrain(previous, shape, tolerance)
-            if join:
-                source_labels = copy.deepcopy(shape_labels(previous) + shape_labels(shape))
-                # A linear endpoint has no active Bezier handles.
-                incoming = a.get('tangentIn', {}) if a.get('tangentMode') != 'linear' else {}
-                outgoing = b.get('tangentOut', {}) if b.get('tangentMode') != 'linear' else {}
-                tangent_mode = ('continuous'
-                                if not a.get('corner') and not b.get('corner') and
-                                are_opposite_tangents(incoming, outgoing)
-                                else 'broken')
-                a.update(tangentIn={'x': incoming.get('x', 0), 'y': incoming.get('y', 0)},
-                         tangentOut={'x': outgoing.get('x', 0), 'y': outgoing.get('y', 0)},
-                         tangentMode=tangent_mode)
-                previous['points'] = previous['points'][:n] + shape['points'][1:m] + [shape['points'][-2], previous['points'][-1]]
-                meta = previous.setdefault('metadata', {})
-                if shape.get('metadata', {}).get('freeBottomCorners'):
-                    meta['freeBottomCorners'] = True
-                meta['sourceShapeLabels'] = source_labels
-                meta['drivingSurfaceCount'] = n+m-1
-                sources = meta.setdefault('sourceShapeIds', [previous['id']])
-                sources.extend(shape.get('metadata', {}).get('sourceShapeIds', [sid]))
-                id_map[sid] = previous['id']
-                continue
-        merged.append(shape)
-        id_map[sid] = sid
+    merged, id_map = shapes, {}
+    changed = True
+    while changed:
+        changed = False
+        for i, left in enumerate(merged):
+            for j in range(i+1, len(merged)):
+                right = merged[j]
+                if can_merge_terrain(left, right, tolerance):
+                    merged[i] = _merge_ground(left, right, tolerance)
+                    merged.pop(j)
+                    changed = True
+                    break
+            if changed:
+                break
+    merged.sort(key=lambda shape: shape['points'][0]['x'])
+    for shape in merged:
+        for sid in [shape['id'], *shape.get('metadata', {}).get('sourceShapeIds', [])]:
+            id_map[sid] = shape['id']
     result['MainPlatform'] = merged
     # References to the ground route must survive merging (explosive loop).
     def remap(value):
@@ -224,8 +249,13 @@ def export_level(level, tolerance=1e-6, *, boundary_padding=None):
                 remap(child)
     remap(result)
     extend_boundaries(result, boundary_padding)
+    from bike_stunt.spline_spacing import (collapse_union_edges, validate_spline_spacing,
+                                          UNION_POINT_MERGE_DISTANCE)
+    spacing = UNION_POINT_MERGE_DISTANCE*result.get('map', {}).get('worldScale', 1)
     for shape in result['MainPlatform']:
+        collapse_union_edges(shape, spacing)
         extend_straight_join_handles(shape)
+    validate_spline_spacing(result)
     return result
 
 

@@ -27,3 +27,13 @@ Ground bodies (`MainPlatform`) have at least 15 units of depth in the editor/map
 (7.5 source units at world scale 2). Lower the bottom corners to meet this depth;
 keep the driving surface unchanged. Curves below their knots count toward the
 minimum depth. Thicker authored bodies remain unchanged.
+
+Map composition and export do not align or offset bottom Y coordinates. Merging
+retains the left shape's outer left bottom corner and the right shape's outer
+right bottom corner at their original heights.
+
+
+Platform-library closed ramp bodies merge adjacent vertices within 0.05 source
+units after geometry overrides and before world scaling. The merged position is
+the average rounded to 2 decimals; merged bottom corners are tagged so the
+driving-surface count and library editor round-trip remain valid.

@@ -4,10 +4,37 @@ import math
 import unittest
 
 from obstacle_library import ground, vertex
-from terrain_export import export_level, surface_count
+from terrain_export import export_level, normalize_main_platform, surface_count
 
 
 class TerrainTangentTests(unittest.TestCase):
+    def test_merge_rechecks_previous_seam_without_moving_bottoms(self):
+        left = ground('a', [vertex(0, 0), vertex(6, 4)], depth=8)
+        middle = ground('b', [vertex(6, 4), vertex(12, 4)], depth=2)
+        right = ground('c', [vertex(12, 4), vertex(18, 4)], depth=12)
+        source = {'MainPlatform': [left, middle, right],
+                  'InteractableObject': [{'properties': {'postDestroyRoute': 'c'}}]}
+        result = export_level(source, boundary_padding=0)
+        self.assertEqual(len(result['MainPlatform']), 1)
+        self.assertEqual(result['MainPlatform'][0]['points'][-2:],
+                         [right['points'][-2], left['points'][-1]])
+        self.assertEqual(result['MainPlatform'][0]['metadata']['sourceShapeIds'], ['a', 'b', 'c'])
+        self.assertEqual(result['InteractableObject'][0]['properties']['postDestroyRoute'], 'a')
+        self.assertEqual(export_level(result, boundary_padding=0), result)
+
+    def test_merge_does_not_align_different_bottom_heights(self):
+        left = ground('left', [vertex(0, 0), vertex(6, 0)], depth=8)
+        right = ground('right', [vertex(6, 0), vertex(12, 0)], depth=12)
+        separate = ground('separate', [vertex(20, 0), vertex(26, 0)], depth=20)
+        source = {'MainPlatform': [left, right, separate]}
+        self.assertEqual(normalize_main_platform(source), source)
+        result = export_level(source, boundary_padding=0)
+        self.assertEqual(len(result['MainPlatform']), 2)
+        self.assertEqual(result['MainPlatform'][0]['points'][-2:],
+                         [right['points'][-2], left['points'][-1]])
+        self.assertEqual(result['MainPlatform'][1]['points'][-2:], separate['points'][-2:])
+        self.assertEqual(export_level(result, boundary_padding=0), result)
+
     def test_level_08_terrain_merges_into_both_spring_approaches(self):
         import json
         from bike_stunt.campaign import build_authored_level
@@ -51,7 +78,7 @@ class TerrainTangentTests(unittest.TestCase):
                 self.assertEqual(result['InteractableObject'][0]['properties']['postDestroyRoute'], 'before')
                 self.assertEqual(export_level(result, boundary_padding=0), result)
 
-    def test_curved_underside_and_real_gap_are_not_spliced(self):
+    def test_curved_underside_merges_but_real_gap_stays_open(self):
         for gap, curve in ((1, 0), (0, 1)):
             with self.subTest(gap=gap, curve=curve):
                 left = ground('left', [vertex(0, 0), vertex(6, 0)])
@@ -59,19 +86,19 @@ class TerrainTangentTests(unittest.TestCase):
                 right['metadata']['freeBottomCorners'] = True
                 right['points'][-1].update(tangentMode='broken', tangentIn={'x': curve, 'y': 0})
                 result = export_level({'MainPlatform': [left, right]}, boundary_padding=0)
-                self.assertEqual(len(result['MainPlatform']), 2)
+                self.assertEqual(len(result['MainPlatform']), 2 if gap else 1)
+                self.assertEqual(export_level(result, boundary_padding=0), result)
 
-    def test_free_bottom_corners_survive_export_without_merging(self):
+    def test_overhanging_ground_merges_on_contact(self):
         left = ground('free', [vertex(0, 0, mode='linear'), vertex(6, 0, mode='linear')])
         left['metadata']['freeBottomCorners'] = True
         left['points'][-2].update(x=8, y=2)
         left['points'][-1].update(x=-5, y=-1)
         right = ground('generated', [vertex(6, 0, mode='linear'), vertex(12, 0, mode='linear')])
         result = export_level({'MainPlatform': [left, right]}, boundary_padding=0)
-        self.assertEqual(len(result['MainPlatform']), 2)
-        self.assertEqual([(p['x'], p['y']) for p in result['MainPlatform'][0]['points'][-2:]],
-                         [(8, 2), (-5, -1)])
-        self.assertEqual([p['y'] for p in result['MainPlatform'][1]['points'][-2:]], [-7.5, -7.5])
+        self.assertEqual(len(result['MainPlatform']), 1)
+        self.assertEqual(result['MainPlatform'][0]['metadata']['sourceShapeIds'], ['free', 'generated'])
+        self.assertEqual(export_level(result, boundary_padding=0), result)
 
     def test_merges_smooth_endpoint_join_as_continuous(self):
         left = [vertex(0, 0, mode='linear'), vertex(6, 0, incoming=(-6, 0))]

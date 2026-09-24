@@ -203,8 +203,8 @@
                 "corner": false
               },
               {
-                "x": 25.0,
-                "y": 0.5,
+                "x": 25.25895,
+                "y": 0.114,
                 "tangentIn": {
                   "x": -1.5,
                   "y": -1.0
@@ -330,71 +330,43 @@
                 "corner": false
               },
               {
-                "x": 38.5,
+                "x": 37.0,
                 "y": 6.0,
                 "tangentIn": {
                   "x": -1.0,
                   "y": 0.0
                 },
                 "tangentOut": {
-                  "x": 0.0,
-                  "y": -1.0
+                  "x": -1.149,
+                  "y": -0.8472
                 },
                 "tangentMode": "broken",
                 "corner": false
               },
               {
-                "x": 34.5,
-                "y": 4.5,
+                "x": 31.0973,
+                "y": 4.0445,
                 "tangentIn": {
-                  "x": 1.5,
-                  "y": -0.5
+                  "x": 1.6062,
+                  "y": 1.75965
                 },
                 "tangentOut": {
-                  "x": -1.5,
-                  "y": 0.5
+                  "x": -1.6062,
+                  "y": -1.75965
                 },
                 "tangentMode": "continuous",
                 "corner": false
               },
               {
-                "x": 31.0,
-                "y": 2.0,
+                "x": 24.3123,
+                "y": 2.36245,
                 "tangentIn": {
-                  "x": 1.0,
-                  "y": 0.5
+                  "x": 1.55055,
+                  "y": 1.28145
                 },
                 "tangentOut": {
-                  "x": -1.0,
-                  "y": -0.5
-                },
-                "tangentMode": "continuous",
-                "corner": false
-              },
-              {
-                "x": 27.5,
-                "y": 2.5,
-                "tangentIn": {
-                  "x": 2.0,
-                  "y": 0.0
-                },
-                "tangentOut": {
-                  "x": -2.0,
-                  "y": -0.0
-                },
-                "tangentMode": "continuous",
-                "corner": false
-              },
-              {
-                "x": 24.0,
-                "y": 1.5,
-                "tangentIn": {
-                  "x": 1.0,
-                  "y": -0.0
-                },
-                "tangentOut": {
-                  "x": -1.0,
-                  "y": 0.0
+                  "x": -1.55055,
+                  "y": -1.28145
                 },
                 "tangentMode": "continuous",
                 "corner": false
@@ -794,8 +766,8 @@
                 "y": 0.0
               },
               "tangentOut": {
-                "x": 0.0,
-                "y": -1.5
+                "x": -0.5,
+                "y": -1.0
               },
               "tangentMode": "broken",
               "corner": false
@@ -815,8 +787,8 @@
               "corner": false
             },
             {
-              "x": 42.0,
-              "y": 8.0,
+              "x": 38.5933,
+              "y": 7.89465,
               "tangentIn": {
                 "x": 0.8,
                 "y": 0.0
@@ -825,12 +797,12 @@
                 "x": -3.0,
                 "y": -0.0
               },
-              "tangentMode": "continuous",
+              "tangentMode": "linear",
               "corner": false
             },
             {
-              "x": 33.0,
-              "y": 2.0,
+              "x": 32.57205,
+              "y": 2.4897,
               "tangentIn": {
                 "x": 3.0,
                 "y": 1.5
@@ -839,7 +811,7 @@
                 "x": -1.666667,
                 "y": -0.833333
               },
-              "tangentMode": "continuous",
+              "tangentMode": "linear",
               "corner": false
             },
             {
@@ -853,12 +825,26 @@
                 "x": -2.0,
                 "y": -0.0
               },
-              "tangentMode": "continuous",
+              "tangentMode": "linear",
               "corner": false
             },
             {
-              "x": 29.7659,
-              "y": 5.47125,
+              "x": 27.21025,
+              "y": 4.2277,
+              "tangentIn": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "tangentOut": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "tangentMode": "linear",
+              "corner": false
+            },
+            {
+              "x": 28.8188,
+              "y": 6.8531,
               "tangentIn": {
                 "x": 0.2659,
                 "y": -2.02875
@@ -867,7 +853,7 @@
                 "x": -0.2659,
                 "y": 2.02875
               },
-              "tangentMode": "continuous",
+              "tangentMode": "linear",
               "corner": false
             }
           ]
@@ -949,6 +935,139 @@
               {
                 "x": 0.0,
                 "y": -7.5,
+                "tangentIn": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentMode": "linear",
+                "corner": false
+              }
+            ]
+          },
+          "spring_lower_recovery": {
+            "drivingSurfaceCount": 7,
+            "freeBottomCorners": false,
+            "mergedClosePoints": false,
+            "points": [
+              {
+                "x": 25.7,
+                "y": -3.0,
+                "tangentIn": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 2.1,
+                  "y": 0.0
+                },
+                "tangentMode": "broken",
+                "corner": false
+              },
+              {
+                "x": 32.0,
+                "y": -3.0,
+                "tangentIn": {
+                  "x": -2.1,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 1.666667,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 37.0,
+                "y": 0.0,
+                "tangentIn": {
+                  "x": -1.666667,
+                  "y": -1.153846
+                },
+                "tangentOut": {
+                  "x": 3.666667,
+                  "y": 2.538462
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 48.0,
+                "y": 8.5,
+                "tangentIn": {
+                  "x": -3.666667,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 0.9,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 51.0,
+                "y": 8.5,
+                "tangentIn": {
+                  "x": -0.9,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 3.3,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 60.6,
+                "y": 14.0,
+                "tangentIn": {
+                  "x": -2.6,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 2.6,
+                  "y": -0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 66.0,
+                "y": 14.0,
+                "tangentIn": {
+                  "x": -1.8,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentMode": "broken",
+                "corner": false
+              },
+              {
+                "x": 66.0,
+                "y": -10.5,
+                "tangentIn": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentMode": "linear",
+                "corner": false
+              },
+              {
+                "x": 25.7,
+                "y": -10.5,
                 "tangentIn": {
                   "x": 0.0,
                   "y": 0.0
@@ -1068,8 +1187,8 @@
               "corner": false
             },
             {
-              "x": 51.0,
-              "y": 12.0,
+              "x": 50.5,
+              "y": 11.5,
               "tangentIn": {
                 "x": 1.0,
                 "y": 0.0
@@ -1078,12 +1197,12 @@
                 "x": -1.0,
                 "y": -0.0
               },
-              "tangentMode": "continuous",
+              "tangentMode": "linear",
               "corner": false
             },
             {
-              "x": 48.0,
-              "y": 12.0,
+              "x": 42.9394,
+              "y": 11.65215,
               "tangentIn": {
                 "x": 0.9,
                 "y": 0.0
@@ -1092,12 +1211,12 @@
                 "x": -3.666667,
                 "y": -0.0
               },
-              "tangentMode": "continuous",
+              "tangentMode": "linear",
               "corner": false
             },
             {
-              "x": 37.0,
-              "y": 3.0,
+              "x": 36.92555,
+              "y": 3.962,
               "tangentIn": {
                 "x": 3.666667,
                 "y": 2.538462
@@ -1106,7 +1225,7 @@
                 "x": -1.666667,
                 "y": -1.153846
               },
-              "tangentMode": "continuous",
+              "tangentMode": "linear",
               "corner": false
             },
             {
@@ -1314,14 +1433,14 @@
                 "y": 0.0
               },
               "tangentOut": {
-                "x": 1.5,
+                "x": 1.0,
                 "y": -0.5
               },
               "tangentMode": "broken",
               "corner": false
             },
             {
-              "x": 59.0,
+              "x": 56.5,
               "y": 16.0,
               "tangentIn": {
                 "x": 1.0,
@@ -1349,15 +1468,43 @@
               "corner": false
             },
             {
-              "x": 41.4,
-              "y": 4.0,
+              "x": 46.37365,
+              "y": 13.5063,
               "tangentIn": {
-                "x": 4.2,
-                "y": 3.5
+                "x": -0.6745,
+                "y": 1.7705
               },
               "tangentOut": {
-                "x": -1.8,
-                "y": -1.5
+                "x": 0.6745,
+                "y": -1.7705
+              },
+              "tangentMode": "continuous",
+              "corner": false
+            },
+            {
+              "x": 42.2706,
+              "y": 9.9091,
+              "tangentIn": {
+                "x": 2.10775,
+                "y": 0.22485
+              },
+              "tangentOut": {
+                "x": -2.10775,
+                "y": -0.22485
+              },
+              "tangentMode": "continuous",
+              "corner": false
+            },
+            {
+              "x": 40.19095,
+              "y": 5.4969,
+              "tangentIn": {
+                "x": 2.7261,
+                "y": 0.4969
+              },
+              "tangentOut": {
+                "x": -2.7261,
+                "y": -0.4969
               },
               "tangentMode": "continuous",
               "corner": false
@@ -1560,7 +1707,7 @@
               "corner": false
             },
             {
-              "x": 69.5,
+              "x": 66.0,
               "y": 24.0,
               "tangentIn": {
                 "x": -0.5,
@@ -1574,8 +1721,8 @@
               "corner": false
             },
             {
-              "x": 63.3,
-              "y": 22.0,
+              "x": 61.75425,
+              "y": 22.21935,
               "tangentIn": {
                 "x": 0.8,
                 "y": -0.0
@@ -1588,8 +1735,8 @@
               "corner": false
             },
             {
-              "x": 60.0,
-              "y": 22.0,
+              "x": 56.10925,
+              "y": 21.99345,
               "tangentIn": {
                 "x": 1.1,
                 "y": 0.0
@@ -1602,8 +1749,8 @@
               "corner": false
             },
             {
-              "x": 46.0,
-              "y": 5.5,
+              "x": 43.92525,
+              "y": 8.3602,
               "tangentIn": {
                 "x": 4.666667,
                 "y": 4.8125
@@ -1791,6 +1938,211 @@
               "corner": false
             }
           ]
+        },
+        "MainPlatform": {
+          "spring_approach": {
+            "drivingSurfaceCount": 12,
+            "freeBottomCorners": false,
+            "mergedClosePoints": false,
+            "points": [
+              {
+                "x": 0.0,
+                "y": 0.0,
+                "tangentIn": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 1.68,
+                  "y": 0.0
+                },
+                "tangentMode": "broken",
+                "corner": false
+              },
+              {
+                "x": 5.04,
+                "y": 0.0,
+                "tangentIn": {
+                  "x": -1.68,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 1.8,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 10.44,
+                "y": -2.2,
+                "tangentIn": {
+                  "x": -1.8,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 1.44,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 14.76,
+                "y": -0.35,
+                "tangentIn": {
+                  "x": -1.44,
+                  "y": -0.248441
+                },
+                "tangentOut": {
+                  "x": 1.08,
+                  "y": 0.186331
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 18.0,
+                "y": 0.0,
+                "tangentIn": {
+                  "x": -1.08,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 2.5,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 25.82455,
+                "y": -3.25255,
+                "tangentIn": {
+                  "x": -2.3651,
+                  "y": 0.57685
+                },
+                "tangentOut": {
+                  "x": 2.3651,
+                  "y": -0.57685
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 33.09295,
+                "y": -3.71405,
+                "tangentIn": {
+                  "x": -1.66665,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 1.66665,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 38.51535,
+                "y": -2.2719,
+                "tangentIn": {
+                  "x": -1.666667,
+                  "y": -0.576923
+                },
+                "tangentOut": {
+                  "x": 3.666667,
+                  "y": 1.269231
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 48.0046,
+                "y": 2.16985,
+                "tangentIn": {
+                  "x": -3.666667,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 0.7,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 51.7542,
+                "y": 2.1987,
+                "tangentIn": {
+                  "x": -0.7,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 2.566667,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 58.8,
+                "y": 8.0,
+                "tangentIn": {
+                  "x": -2.566667,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 1.4,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 63.0,
+                "y": 8.0,
+                "tangentIn": {
+                  "x": -1.4,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentMode": "broken",
+                "corner": false
+              },
+              {
+                "x": 63.0,
+                "y": -10.5,
+                "tangentIn": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentMode": "linear",
+                "corner": false
+              },
+              {
+                "x": 0.0,
+                "y": -10.5,
+                "tangentIn": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentMode": "linear",
+                "corner": false
+              }
+            ]
+          }
         }
       }
     },
@@ -1868,7 +2220,7 @@
               "corner": false
             },
             {
-              "x": 52.0,
+              "x": 50.0,
               "y": 17.5,
               "tangentIn": {
                 "x": -0.5,
@@ -1882,22 +2234,22 @@
               "corner": false
             },
             {
-              "x": 47.0,
-              "y": 12.5,
+              "x": 45.82685,
+              "y": 13.70335,
               "tangentIn": {
-                "x": 1.0,
-                "y": 0.0
+                "x": 2.17315,
+                "y": -0.20335
               },
               "tangentOut": {
-                "x": -1.0,
-                "y": -0.0
+                "x": -2.17315,
+                "y": 0.20335
               },
               "tangentMode": "continuous",
               "corner": false
             },
             {
-              "x": 44.0,
-              "y": 12.5,
+              "x": 42.1425,
+              "y": 13.7826,
               "tangentIn": {
                 "x": 0.8,
                 "y": 0.0
@@ -1910,8 +2262,8 @@
               "corner": false
             },
             {
-              "x": 32.0,
-              "y": 5.0,
+              "x": 31.4064,
+              "y": 5.9385,
               "tangentIn": {
                 "x": 4.0,
                 "y": 2.0
@@ -1924,8 +2276,8 @@
               "corner": false
             },
             {
-              "x": 26.0,
-              "y": 2.5,
+              "x": 25.9789,
+              "y": 3.8388,
               "tangentIn": {
                 "x": 2.0,
                 "y": 0.0
@@ -1952,6 +2304,197 @@
               "corner": false
             }
           ]
+        },
+        "MainPlatform": {
+          "spring_approach": {
+            "drivingSurfaceCount": 11,
+            "freeBottomCorners": false,
+            "mergedClosePoints": false,
+            "points": [
+              {
+                "x": 0.0,
+                "y": 0.0,
+                "tangentIn": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 1.5,
+                  "y": 0.0
+                },
+                "tangentMode": "broken",
+                "corner": false
+              },
+              {
+                "x": 4.5,
+                "y": 0.0,
+                "tangentIn": {
+                  "x": -1.5,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 2.1,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 10.8,
+                "y": 1.125,
+                "tangentIn": {
+                  "x": -2.1,
+                  "y": -0.485294
+                },
+                "tangentOut": {
+                  "x": 1.4,
+                  "y": 0.323529
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 15.0,
+                "y": 2.5,
+                "tangentIn": {
+                  "x": -1.4,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 1.833333,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 20.5,
+                "y": -0.5,
+                "tangentIn": {
+                  "x": -1.833333,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 1.833333,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 26.0,
+                "y": -0.5,
+                "tangentIn": {
+                  "x": -1.833333,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 2.0,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 32.68945,
+                "y": 1.65855,
+                "tangentIn": {
+                  "x": -2.0,
+                  "y": -1.0
+                },
+                "tangentOut": {
+                  "x": 4.0,
+                  "y": 2.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 44.0,
+                "y": 9.5,
+                "tangentIn": {
+                  "x": -4.0,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 0.8,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 46.4,
+                "y": 9.5,
+                "tangentIn": {
+                  "x": -0.8,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 2.933333,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 55.2,
+                "y": 17.5,
+                "tangentIn": {
+                  "x": -2.933333,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 1.6,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 60.0,
+                "y": 17.5,
+                "tangentIn": {
+                  "x": -1.6,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentMode": "broken",
+                "corner": false
+              },
+              {
+                "x": 60.0,
+                "y": -8.0,
+                "tangentIn": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentMode": "linear",
+                "corner": false
+              },
+              {
+                "x": 0.0,
+                "y": -8.0,
+                "tangentIn": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentMode": "linear",
+                "corner": false
+              }
+            ]
+          }
         }
       }
     },
@@ -2032,25 +2575,25 @@
               "x": 59.7,
               "y": 11.5,
               "tangentIn": {
-                "x": -1.8,
-                "y": -0.0
-              },
-              "tangentOut": {
-                "x": 1.8,
+                "x": -0.5,
                 "y": 0.0
               },
-              "tangentMode": "continuous",
+              "tangentOut": {
+                "x": 0.53105,
+                "y": -1.5011
+              },
+              "tangentMode": "broken",
               "corner": false
             },
             {
-              "x": 62.5,
-              "y": 9.5,
+              "x": 59.0,
+              "y": 8.5,
               "tangentIn": {
-                "x": 1.0,
-                "y": -0.0
+                "x": -0.5,
+                "y": 0.0
               },
               "tangentOut": {
-                "x": -1.0,
+                "x": 0.5,
                 "y": 0.0
               },
               "tangentMode": "linear",
@@ -2058,7 +2601,7 @@
             },
             {
               "x": 57.0,
-              "y": 9.5,
+              "y": 8.5,
               "tangentIn": {
                 "x": 0.9,
                 "y": 0.0
@@ -2067,12 +2610,26 @@
                 "x": -4.333333,
                 "y": -0.0
               },
-              "tangentMode": "continuous",
+              "tangentMode": "linear",
               "corner": false
             },
             {
-              "x": 44.0,
-              "y": 2.375,
+              "x": 54.7737,
+              "y": 8.4764,
+              "tangentIn": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "tangentOut": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "tangentMode": "linear",
+              "corner": false
+            },
+            {
+              "x": 46.5,
+              "y": 5.0,
               "tangentIn": {
                 "x": 4.333333,
                 "y": 1.991935
@@ -2081,19 +2638,19 @@
                 "x": -2.0,
                 "y": -0.919355
               },
-              "tangentMode": "continuous",
+              "tangentMode": "linear",
               "corner": false
             },
             {
               "x": 37.0,
               "y": 0.0,
               "tangentIn": {
-                "x": 2.0,
+                "x": 2.5,
                 "y": 0.0
               },
               "tangentOut": {
-                "x": 0.0,
-                "y": 0.0
+                "x": -2.5,
+                "y": -0.0
               },
               "tangentMode": "continuous",
               "corner": false
@@ -2127,6 +2684,211 @@
               "corner": false
             }
           ]
+        },
+        "MainPlatform": {
+          "spring_approach": {
+            "drivingSurfaceCount": 12,
+            "freeBottomCorners": false,
+            "mergedClosePoints": false,
+            "points": [
+              {
+                "x": 0.0,
+                "y": 0.0,
+                "tangentIn": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 2.133333,
+                  "y": 0.0
+                },
+                "tangentMode": "broken",
+                "corner": false
+              },
+              {
+                "x": 6.4,
+                "y": 0.0,
+                "tangentIn": {
+                  "x": -2.133333,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 2.0,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 12.4,
+                "y": 2.8,
+                "tangentIn": {
+                  "x": -2.0,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 1.466667,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 16.8,
+                "y": 0.35,
+                "tangentIn": {
+                  "x": -1.466667,
+                  "y": 0.268159
+                },
+                "tangentOut": {
+                  "x": 1.066667,
+                  "y": -0.195025
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 20.0,
+                "y": 0.0,
+                "tangentIn": {
+                  "x": -1.066667,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 3.0,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 29.0,
+                "y": -3.0,
+                "tangentIn": {
+                  "x": -3.0,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 3.0,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 38.0,
+                "y": -3.0,
+                "tangentIn": {
+                  "x": -3.0,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 2.0,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 44.0,
+                "y": -0.625,
+                "tangentIn": {
+                  "x": -2.0,
+                  "y": -0.919355
+                },
+                "tangentOut": {
+                  "x": 4.333333,
+                  "y": 1.991935
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 57.5,
+                "y": 6.5,
+                "tangentIn": {
+                  "x": 0.1862,
+                  "y": -1.8051
+                },
+                "tangentOut": {
+                  "x": 0.5,
+                  "y": 0.0
+                },
+                "tangentMode": "broken",
+                "corner": false
+              },
+              {
+                "x": 60.0,
+                "y": 6.5,
+                "tangentIn": {
+                  "x": -0.9,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 3.3,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 69.6,
+                "y": 11.5,
+                "tangentIn": {
+                  "x": -3.3,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 1.8,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 75.0,
+                "y": 11.5,
+                "tangentIn": {
+                  "x": -1.8,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentMode": "broken",
+                "corner": false
+              },
+              {
+                "x": 75.0,
+                "y": -10.5,
+                "tangentIn": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentMode": "linear",
+                "corner": false
+              },
+              {
+                "x": 0.0,
+                "y": -10.5,
+                "tangentIn": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentMode": "linear",
+                "corner": false
+              }
+            ]
+          }
         }
       }
     },
@@ -2260,8 +3022,8 @@
               "corner": false
             },
             {
-              "x": 62.0,
-              "y": 17.0,
+              "x": 59.38985,
+              "y": 16.97915,
               "tangentIn": {
                 "x": 1.0,
                 "y": 0.0
@@ -2274,8 +3036,8 @@
               "corner": false
             },
             {
-              "x": 47.0,
-              "y": 4.25,
+              "x": 46.8721,
+              "y": 8.93425,
               "tangentIn": {
                 "x": 5.0,
                 "y": 3.541667
@@ -2289,7 +3051,7 @@
             },
             {
               "x": 40.0,
-              "y": 0.0,
+              "y": 1.0,
               "tangentIn": {
                 "x": 2.333333,
                 "y": 0.0
@@ -2463,8 +3225,8 @@
               "corner": false
             },
             {
-              "x": 76.6,
-              "y": 23.0,
+              "x": 72.9085,
+              "y": 23.198,
               "tangentIn": {
                 "x": 1.9,
                 "y": 0.0
@@ -2477,8 +3239,8 @@
               "corner": false
             },
             {
-              "x": 73.0,
-              "y": 23.0,
+              "x": 68.45455,
+              "y": 23.1326,
               "tangentIn": {
                 "x": 1.2,
                 "y": 0.0
@@ -2487,26 +3249,96 @@
                 "x": -5.6,
                 "y": -0.0
               },
-              "tangentMode": "continuous",
+              "tangentMode": "linear",
               "corner": false
             },
             {
-              "x": 56.2,
-              "y": 5.75,
+              "x": 65.1842,
+              "y": 19.90325,
               "tangentIn": {
-                "x": 5.6,
-                "y": 5.03125
+                "x": 0.0,
+                "y": 0.0
               },
               "tangentOut": {
-                "x": -2.4,
-                "y": -2.15625
+                "x": 0.0,
+                "y": 0.0
               },
-              "tangentMode": "continuous",
+              "tangentMode": "linear",
               "corner": false
             },
             {
-              "x": 49.0,
-              "y": 0.0,
+              "x": 61.4868,
+              "y": 18.32915,
+              "tangentIn": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "tangentOut": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "tangentMode": "linear",
+              "corner": false
+            },
+            {
+              "x": 60.27875,
+              "y": 14.26565,
+              "tangentIn": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "tangentOut": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "tangentMode": "linear",
+              "corner": false
+            },
+            {
+              "x": 56.83755,
+              "y": 12.58165,
+              "tangentIn": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "tangentOut": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "tangentMode": "linear",
+              "corner": false
+            },
+            {
+              "x": 54.6777,
+              "y": 8.7744,
+              "tangentIn": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "tangentOut": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "tangentMode": "linear",
+              "corner": false
+            },
+            {
+              "x": 51.6392,
+              "y": 6.8708,
+              "tangentIn": {
+                "x": 4.61265,
+                "y": 4.24655
+              },
+              "tangentOut": {
+                "x": -4.61265,
+                "y": -4.24655
+              },
+              "tangentMode": "linear",
+              "corner": false
+            },
+            {
+              "x": 49.04005,
+              "y": 2.07515,
               "tangentIn": {
                 "x": 2.4,
                 "y": 0.0
@@ -2561,6 +3393,211 @@
               "corner": false
             }
           ]
+        },
+        "MainPlatform": {
+          "spring_approach": {
+            "drivingSurfaceCount": 12,
+            "freeBottomCorners": false,
+            "mergedClosePoints": false,
+            "points": [
+              {
+                "x": 0.0,
+                "y": 0.0,
+                "tangentIn": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 2.426667,
+                  "y": 0.0
+                },
+                "tangentMode": "broken",
+                "corner": false
+              },
+              {
+                "x": 7.28,
+                "y": 0.0,
+                "tangentIn": {
+                  "x": -2.426667,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 2.6,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 15.08,
+                "y": -3.5,
+                "tangentIn": {
+                  "x": -2.6,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 2.08,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 21.32,
+                "y": -0.35,
+                "tangentIn": {
+                  "x": -2.08,
+                  "y": -0.270968
+                },
+                "tangentOut": {
+                  "x": 1.56,
+                  "y": 0.203226
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 26.0,
+                "y": 0.0,
+                "tangentIn": {
+                  "x": -1.56,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 3.833333,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 37.5,
+                "y": -3.0,
+                "tangentIn": {
+                  "x": -3.833333,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 3.833333,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 49.0,
+                "y": -3.0,
+                "tangentIn": {
+                  "x": -3.833333,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 2.4,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 58.441,
+                "y": 4.48875,
+                "tangentIn": {
+                  "x": -6.18535,
+                  "y": -3.58095
+                },
+                "tangentOut": {
+                  "x": 6.18535,
+                  "y": 3.58095
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 70.52165,
+                "y": 13.099,
+                "tangentIn": {
+                  "x": -6.53685,
+                  "y": -2.1752
+                },
+                "tangentOut": {
+                  "x": 6.53685,
+                  "y": 2.1752
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 80.3532,
+                "y": 20.6336,
+                "tangentIn": {
+                  "x": -5.09585,
+                  "y": -1.97685
+                },
+                "tangentOut": {
+                  "x": 5.09585,
+                  "y": 1.97685
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 89.8,
+                "y": 28.0,
+                "tangentIn": {
+                  "x": -4.4,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 2.4,
+                  "y": 0.0
+                },
+                "tangentMode": "continuous",
+                "corner": false
+              },
+              {
+                "x": 97.0,
+                "y": 28.0,
+                "tangentIn": {
+                  "x": -2.4,
+                  "y": -0.0
+                },
+                "tangentOut": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentMode": "broken",
+                "corner": false
+              },
+              {
+                "x": 97.0,
+                "y": -11.0,
+                "tangentIn": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentMode": "linear",
+                "corner": false
+              },
+              {
+                "x": 0.0,
+                "y": -11.0,
+                "tangentIn": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentOut": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "tangentMode": "linear",
+                "corner": false
+              }
+            ]
+          }
         }
       }
     }

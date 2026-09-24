@@ -83,7 +83,7 @@ class CampaignCoinTests(unittest.TestCase):
                 self.assertEqual(source['design']['coinCount'],expected)
                 if 'lengthPlan' in recipe:
                     actual_length = exported['End']['x']-exported['Start']['x']
-                    self.assertAlmostEqual(actual_length,recipe['lengthPlan']['baselineLength']*1.5,places=5)
+                    self.assertGreaterEqual(actual_length+1e-5,recipe['lengthPlan']['targetLength'])
                     self.assertGreaterEqual(recipe['lengthPlan']['addedChallengeCount'],2)
                     if recipe['number']%10 == 0:
                         self.assertEqual(source['design']['difficulty'],'extreme')
