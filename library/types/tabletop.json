@@ -5,6 +5,7 @@
   "variants": [
     {
       "id": "tabletop.learner",
+      "libID": 41,
       "name": "learner",
       "difficulty": 1,
       "intent": "Rollable fallback",
@@ -23,6 +24,7 @@
     },
     {
       "id": "tabletop.long_deck",
+      "libID": 42,
       "name": "long deck",
       "difficulty": 2,
       "intent": "Longer deck",
@@ -41,6 +43,7 @@
     },
     {
       "id": "tabletop.steep_face",
+      "libID": 43,
       "name": "steep face",
       "difficulty": 3,
       "intent": "Pitch on ascent",
@@ -148,7 +151,7 @@
               },
               {
                 "x": 39.0,
-                "y": -3.0,
+                "y": -7.5,
                 "tangentIn": {
                   "x": 0.0,
                   "y": 0.0
@@ -162,7 +165,7 @@
               },
               {
                 "x": 0.0,
-                "y": -3.0,
+                "y": -7.5,
                 "tangentIn": {
                   "x": 0.0,
                   "y": 0.0
@@ -181,6 +184,7 @@
     },
     {
       "id": "tabletop.trick_table",
+      "libID": 44,
       "name": "trick table",
       "difficulty": 3,
       "intent": "Broad fallback",
@@ -288,7 +292,7 @@
               },
               {
                 "x": 46.0,
-                "y": -3.0,
+                "y": -7.5,
                 "tangentIn": {
                   "x": 0.0,
                   "y": 0.0
@@ -302,7 +306,7 @@
               },
               {
                 "x": 0.0,
-                "y": -3.0,
+                "y": -7.5,
                 "tangentIn": {
                   "x": 0.0,
                   "y": 0.0
@@ -321,6 +325,7 @@
     },
     {
       "id": "tabletop.brake_table",
+      "libID": 45,
       "name": "brake table",
       "difficulty": 4,
       "intent": "Brake before shoulder",

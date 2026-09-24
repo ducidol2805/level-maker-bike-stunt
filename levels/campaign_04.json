@@ -1,7 +1,7 @@
 {
   "MainPlatform": [
     {
-      "id": "s00_terrain",
+      "id": "s00_1_terrain",
       "closed": true,
       "points": [
         {
@@ -384,7 +384,7 @@
         },
         {
           "x": 618.0,
-          "y": -28.389976,
+          "y": -37.389976,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -398,7 +398,7 @@
         },
         {
           "x": -40,
-          "y": -28.389976,
+          "y": -37.389976,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -413,25 +413,89 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 27,
+        "libID": 1,
+        "libName": "terrain",
         "sourceVariant": "flat.launch_run",
+        "sourceShapeLabels": [
+          {
+            "id": "s00_1_terrain",
+            "x": 18.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s01_19_terrain",
+            "x": 59.0,
+            "y": -15.694987999999999
+          },
+          {
+            "id": "s02_66_safe_fallback",
+            "x": 124.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s03_21_terrain",
+            "x": 186.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s04_67_safe_fallback",
+            "x": 242.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s05_2_terrain",
+            "x": 294.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s06_19_terrain",
+            "x": 333.0,
+            "y": -15.694987999999999
+          },
+          {
+            "id": "s07_66_safe_fallback",
+            "x": 398.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s08_21_terrain",
+            "x": 460.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s09_67_safe_fallback",
+            "x": 516.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s10_2_terrain",
+            "x": 568.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s11_56_launch",
+            "x": 601.0,
+            "y": -17.194988
+          }
+        ],
         "sourceShapeIds": [
-          "s00_terrain",
-          "s01_terrain",
-          "s02_safe_fallback",
-          "s03_terrain",
-          "s04_safe_fallback",
-          "s05_terrain",
-          "s06_terrain",
-          "s07_safe_fallback",
-          "s08_terrain",
-          "s09_safe_fallback",
-          "s10_terrain",
-          "s11_launch"
+          "s00_1_terrain",
+          "s01_19_terrain",
+          "s02_66_safe_fallback",
+          "s03_21_terrain",
+          "s04_67_safe_fallback",
+          "s05_2_terrain",
+          "s06_19_terrain",
+          "s07_66_safe_fallback",
+          "s08_21_terrain",
+          "s09_67_safe_fallback",
+          "s10_2_terrain",
+          "s11_56_launch"
         ]
       }
     },
     {
-      "id": "s11_landing_recovery",
+      "id": "s11_56_landing_recovery",
       "closed": true,
       "points": [
         {
@@ -604,7 +668,7 @@
         },
         {
           "x": 896.0,
-          "y": -28.389976,
+          "y": -37.389976,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -618,7 +682,7 @@
         },
         {
           "x": 626.0,
-          "y": -28.389976,
+          "y": -37.389976,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -633,18 +697,37 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 12,
+        "libID": 56,
+        "libName": "landing_recovery",
         "sourceVariant": "step_down.gentle",
+        "sourceShapeLabels": [
+          {
+            "id": "s11_56_landing_recovery",
+            "x": 650.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s12_42_rollable_table",
+            "x": 720.0,
+            "y": -27.88997596505088
+          },
+          {
+            "id": "s13_5_terrain",
+            "x": 811.0,
+            "y": -29.88997596505088
+          }
+        ],
         "sourceShapeIds": [
-          "s11_landing_recovery",
-          "s12_rollable_table",
-          "s13_terrain"
+          "s11_56_landing_recovery",
+          "s12_42_rollable_table",
+          "s13_5_terrain"
         ]
       }
     }
   ],
   "RampPlatform": [
     {
-      "id": "s02_open_bridge_1",
+      "id": "s02_66_open_bridge_1",
       "closed": true,
       "points": [
         {
@@ -722,11 +805,13 @@
         "drivingSurfaceCount": 3,
         "floatingSegment": false,
         "requiresMomentumTransfer": true,
+        "libID": 66,
+        "libName": "open_bridge_1",
         "sourceVariant": "platform.flat_bridge"
       }
     },
     {
-      "id": "s02_open_bridge_2",
+      "id": "s02_66_open_bridge_2",
       "closed": true,
       "points": [
         {
@@ -790,11 +875,13 @@
         "drivingSurfaceCount": 2,
         "floatingSegment": false,
         "requiresMomentumTransfer": true,
+        "libID": 66,
+        "libName": "open_bridge_2",
         "sourceVariant": "platform.flat_bridge"
       }
     },
     {
-      "id": "s02_open_bridge_3",
+      "id": "s02_66_open_bridge_3",
       "closed": true,
       "points": [
         {
@@ -872,11 +959,13 @@
         "drivingSurfaceCount": 3,
         "floatingSegment": false,
         "requiresMomentumTransfer": false,
+        "libID": 66,
+        "libName": "open_bridge_3",
         "sourceVariant": "platform.flat_bridge"
       }
     },
     {
-      "id": "s04_open_bridge",
+      "id": "s04_67_open_bridge",
       "closed": true,
       "points": [
         {
@@ -980,11 +1069,13 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 5,
+        "libID": 67,
+        "libName": "open_bridge",
         "sourceVariant": "platform.arched_bridge"
       }
     },
     {
-      "id": "s07_open_bridge_1",
+      "id": "s07_66_open_bridge_1",
       "closed": true,
       "points": [
         {
@@ -1062,11 +1153,13 @@
         "drivingSurfaceCount": 3,
         "floatingSegment": false,
         "requiresMomentumTransfer": true,
+        "libID": 66,
+        "libName": "open_bridge_1",
         "sourceVariant": "platform.flat_bridge"
       }
     },
     {
-      "id": "s07_open_bridge_2",
+      "id": "s07_66_open_bridge_2",
       "closed": true,
       "points": [
         {
@@ -1130,11 +1223,13 @@
         "drivingSurfaceCount": 2,
         "floatingSegment": false,
         "requiresMomentumTransfer": true,
+        "libID": 66,
+        "libName": "open_bridge_2",
         "sourceVariant": "platform.flat_bridge"
       }
     },
     {
-      "id": "s07_open_bridge_3",
+      "id": "s07_66_open_bridge_3",
       "closed": true,
       "points": [
         {
@@ -1212,11 +1307,13 @@
         "drivingSurfaceCount": 3,
         "floatingSegment": false,
         "requiresMomentumTransfer": false,
+        "libID": 66,
+        "libName": "open_bridge_3",
         "sourceVariant": "platform.flat_bridge"
       }
     },
     {
-      "id": "s09_open_bridge",
+      "id": "s09_67_open_bridge",
       "closed": true,
       "points": [
         {
@@ -1320,6 +1417,8 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 5,
+        "libID": 67,
+        "libName": "open_bridge",
         "sourceVariant": "platform.arched_bridge"
       }
     }
@@ -1327,7 +1426,7 @@
   "FreePlatform": [],
   "deadzone": [
     {
-      "id": "s11_gap_kill",
+      "id": "s11_56_gap_kill",
       "closed": true,
       "points": [
         {
@@ -1388,6 +1487,8 @@
         }
       ],
       "metadata": {
+        "libID": 56,
+        "libName": "gap_kill",
         "sourceVariant": "step_down.gentle"
       }
     }
@@ -1649,7 +1750,7 @@
         "forceMode": "impulse",
         "activation": "on_player_contact",
         "optionalRoute": true,
-        "postDestroyRoute": "s00_terrain",
+        "postDestroyRoute": "s00_1_terrain",
         "resetOnCheckpoint": true,
         "beatId": "delivery",
         "purpose": "Use the crest barrel for an optional forward-up pop, descending onto the bridge return.",
@@ -2314,7 +2415,7 @@
         "forceMode": "impulse",
         "activation": "on_player_contact",
         "optionalRoute": true,
-        "postDestroyRoute": "s00_terrain",
+        "postDestroyRoute": "s00_1_terrain",
         "resetOnCheckpoint": true,
         "beatId": "extended_04_delivery",
         "purpose": "Extended route reprise: Use the crest barrel for an optional forward-up pop, descending onto the bridge return.",
@@ -3018,7 +3119,7 @@
     "units": "unity",
     "previewOnly": false,
     "authoringMode": "curated_catalog_composition",
-    "catalogVersion": "2.7",
+    "catalogVersion": "2.8",
     "recipe": "library/campaign_recipes.json",
     "recipeNumber": 4,
     "subtitle": "A barrel-assisted skybridge pop is the centerpiece; the ground route remains continuous below it.",
@@ -3066,6 +3167,7 @@
     "obstacles": [
       {
         "id": "flat.launch_run",
+        "libID": 1,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3105,6 +3207,7 @@
       },
       {
         "id": "hill.mesa",
+        "libID": 19,
         "type": "hill",
         "geometryProfile": "hill",
         "ports": {
@@ -3144,6 +3247,7 @@
       },
       {
         "id": "platform.flat_bridge",
+        "libID": 66,
         "type": "platform",
         "geometryProfile": "platform",
         "ports": {
@@ -3196,6 +3300,7 @@
       },
       {
         "id": "valley.shallow_bowl",
+        "libID": 21,
         "type": "valley",
         "geometryProfile": "valley",
         "ports": {
@@ -3235,6 +3340,7 @@
       },
       {
         "id": "platform.arched_bridge",
+        "libID": 67,
         "type": "platform",
         "geometryProfile": "platform",
         "ports": {
@@ -3283,6 +3389,7 @@
       },
       {
         "id": "flat.checkpoint_pad",
+        "libID": 2,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3322,6 +3429,7 @@
       },
       {
         "id": "hill.mesa",
+        "libID": 19,
         "type": "hill",
         "geometryProfile": "hill",
         "ports": {
@@ -3361,6 +3469,7 @@
       },
       {
         "id": "platform.flat_bridge",
+        "libID": 66,
         "type": "platform",
         "geometryProfile": "platform",
         "ports": {
@@ -3413,6 +3522,7 @@
       },
       {
         "id": "valley.shallow_bowl",
+        "libID": 21,
         "type": "valley",
         "geometryProfile": "valley",
         "ports": {
@@ -3452,6 +3562,7 @@
       },
       {
         "id": "platform.arched_bridge",
+        "libID": 67,
         "type": "platform",
         "geometryProfile": "platform",
         "ports": {
@@ -3500,6 +3611,7 @@
       },
       {
         "id": "flat.checkpoint_pad",
+        "libID": 2,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3539,6 +3651,7 @@
       },
       {
         "id": "step_down.gentle",
+        "libID": 56,
         "type": "step_down",
         "geometryProfile": "descending_landing_shelf",
         "ports": {
@@ -3669,6 +3782,7 @@
       },
       {
         "id": "tabletop.long_deck",
+        "libID": 42,
         "type": "tabletop",
         "geometryProfile": "tabletop",
         "ports": {
@@ -3708,6 +3822,7 @@
       },
       {
         "id": "flat.finish_release",
+        "libID": 5,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3753,6 +3868,7 @@
       {
         "instanceId": "s00",
         "variant": "flat.launch_run",
+        "libID": 1,
         "beatId": "start",
         "role": "setup",
         "tension": 1,
@@ -3768,6 +3884,7 @@
       {
         "instanceId": "s01",
         "variant": "hill.mesa",
+        "libID": 19,
         "beatId": "rooftop",
         "role": "teach",
         "tension": 2,
@@ -3783,6 +3900,7 @@
       {
         "instanceId": "s02",
         "variant": "platform.flat_bridge",
+        "libID": 66,
         "beatId": "first_bridge",
         "role": "practice",
         "tension": 2,
@@ -3798,6 +3916,7 @@
       {
         "instanceId": "s03",
         "variant": "valley.shallow_bowl",
+        "libID": 21,
         "beatId": "street",
         "role": "release",
         "tension": 1,
@@ -3813,6 +3932,7 @@
       {
         "instanceId": "s04",
         "variant": "platform.arched_bridge",
+        "libID": 67,
         "beatId": "delivery",
         "role": "climax",
         "tension": 3,
@@ -3828,6 +3948,7 @@
       {
         "instanceId": "s05",
         "variant": "flat.checkpoint_pad",
+        "libID": 2,
         "beatId": "delivery_reset",
         "role": "release",
         "tension": 1,
@@ -3845,6 +3966,7 @@
       {
         "instanceId": "s06",
         "variant": "hill.mesa",
+        "libID": 19,
         "beatId": "extended_01_rooftop",
         "role": "teach",
         "tension": 2,
@@ -3860,6 +3982,7 @@
       {
         "instanceId": "s07",
         "variant": "platform.flat_bridge",
+        "libID": 66,
         "beatId": "extended_02_first_bridge",
         "role": "practice",
         "tension": 2,
@@ -3875,6 +3998,7 @@
       {
         "instanceId": "s08",
         "variant": "valley.shallow_bowl",
+        "libID": 21,
         "beatId": "extended_03_street",
         "role": "release",
         "tension": 1,
@@ -3890,6 +4014,7 @@
       {
         "instanceId": "s09",
         "variant": "platform.arched_bridge",
+        "libID": 67,
         "beatId": "extended_04_delivery",
         "role": "climax",
         "tension": 3,
@@ -3905,6 +4030,7 @@
       {
         "instanceId": "s10",
         "variant": "flat.checkpoint_pad",
+        "libID": 2,
         "beatId": "extended_05_delivery_reset",
         "role": "release",
         "tension": 1,
@@ -3922,6 +4048,7 @@
       {
         "instanceId": "s11",
         "variant": "step_down.gentle",
+        "libID": 56,
         "beatId": "off_ramp",
         "role": "combine",
         "tension": 2,
@@ -3937,6 +4064,7 @@
       {
         "instanceId": "s12",
         "variant": "tabletop.long_deck",
+        "libID": 42,
         "beatId": "arrival",
         "role": "resolution",
         "tension": 2,
@@ -3952,6 +4080,7 @@
       {
         "instanceId": "s13",
         "variant": "flat.finish_release",
+        "libID": 5,
         "beatId": "finish",
         "role": "resolution",
         "tension": 0,

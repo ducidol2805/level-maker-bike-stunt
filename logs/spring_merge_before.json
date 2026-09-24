@@ -1,0 +1,1880 @@
+{
+  "library": {
+    "library\\campaign_recipes.json": "358374297bc8320057dca5de67cd96f64cf591aee76d7600b1dc33be203d0b83",
+    "library\\campaign_themes.json": "ed460feb162462fcc6951c6cdd0b2506a14846f273ecc9b5f96f56a3b0373783",
+    "library\\obstacle_catalog.json": "d9a98dc1dba06e9fa2af970d07402f1e794d7fc7204dd5e0cd5a56850c0e98f7",
+    "library\\README.md": "b57032ecda847ff2b3bf3d00816920fae7c37d6aec32a6c5e8159f782ad0d261",
+    "library\\types\\balance.json": "1bb545fcf36381c007fbb1c23a51b89796082dd093926726a0f7c11256ae9851",
+    "library\\types\\curved_ramp.json": "68c1e8f52a80fde386665db12009182cff0026e467f4b6d46e5a12a2c5766eb9",
+    "library\\types\\drop.json": "dc330b4c9a4a0c1ebe874cb8cf477ea1d986fd46b902d3763654a47457788b18",
+    "library\\types\\explosive_loop.json": "c7119055547293da34f0157bb0a57bcbc9f80f98ed23f3aef43653e34ac07e81",
+    "library\\types\\fall.json": "313e3127ab8c7d4403f329895146893c7b458783746b89374f4491246d894ea3",
+    "library\\types\\flat.json": "4e8a3f3d09d5fc17501092448f8179ea5fecf8e2f8249117087f7748ebeb42b3",
+    "library\\types\\gap.json": "e9893de19dd9f1bbb7c18eff8d7448afadb25137266eec2bc160e5a7e8b45f61",
+    "library\\types\\hill.json": "a3e4de8a1c705dfb679bc851c64d462b57fb15186d67d726da3f438581f8a2f8",
+    "library\\types\\kicker.json": "0753a6c90c53a5bc28c5c920a65329fff63cf7c5e0739e846456acacc7da51ec",
+    "library\\types\\platform.json": "18d5aa32d6af5cecabe1e03fc0faa8d3b833bea60647dc6f6685fa7bdb484e72",
+    "library\\types\\rise.json": "c71258d14c811cead68335a50b413af142d2f89d5fc7d931aae388749ea2ff27",
+    "library\\types\\spring_far.json": "6fc2b3833e9a03184984d4e0daf6283928e9b8a476affd28f9a154565a90ea4f",
+    "library\\types\\spring_high.json": "87bc1860ef264a677b1907c9c5ce506ddeb92c63d4aafa3de4f061370f2bfbda",
+    "library\\types\\step_down.json": "b638fe9d0ff03c78db297cd7a5b36bc5179de3a84e0f6d2f9a4ce6ba840963c5",
+    "library\\types\\step_up.json": "71903a659979e30e4659d76d2d0b5a75b5db72d8df86bf34986baa7606d6a8bb",
+    "library\\types\\tabletop.json": "a901f1ec0a67efaafff74c840f64c139a177f3e41dbd1860d062eae65825648a",
+    "library\\types\\valley.json": "a96af1346eb9a3b4f7599f7cadbb6130dd3653649ca49327eecf70722ec4267e",
+    "library\\types\\wave.json": "f8adf382988bc71a1990f93bec140e8761d6d5ff48192fb705416944a5f0f261"
+  },
+  "maps": {
+    "campaign_01.json": {
+      "mainShapes": 4,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_26_terrain",
+        "s02_41_rollable_table",
+        "s03_16_terrain",
+        "s04_47_landing_recovery",
+        "s04_47_launch",
+        "s05_23_terrain",
+        "s06_26_terrain",
+        "s07_41_rollable_table",
+        "s08_16_terrain",
+        "s09_47_landing_recovery",
+        "s09_47_launch",
+        "s10_32_landing_recovery",
+        "s10_32_launch",
+        "s11_27_terrain",
+        "s12_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 820.9999999999999,
+          "y": -38.65739517334585
+        },
+        "Top": {
+          "x": 238.91250178320934,
+          "y": 10.519440578108915
+        },
+        "Bottom": {
+          "x": 388.2,
+          "y": -12.362628044365058
+        }
+      },
+      "gaps": [
+        [
+          232,
+          250
+        ],
+        [
+          553.2,
+          571.2
+        ],
+        [
+          652.4,
+          660.4
+        ]
+      ]
+    },
+    "campaign_02.json": {
+      "mainShapes": 7,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_7_terrain",
+        "s02_51_landing_recovery",
+        "s02_51_launch",
+        "s03_2_terrain",
+        "s04_82_spring_approach",
+        "s04_82_spring_lower_recovery",
+        "s05_68_safe_fallback",
+        "s06_7_terrain",
+        "s07_51_landing_recovery",
+        "s07_51_launch",
+        "s08_2_terrain",
+        "s09_82_spring_approach",
+        "s09_82_spring_lower_recovery",
+        "s10_14_terrain",
+        "s11_42_rollable_table",
+        "s12_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 863.5999999999999,
+          "y": 55.29838681483261
+        },
+        "Top": {
+          "x": 579.0564102564102,
+          "y": 64.30351501996081
+        },
+        "Bottom": {
+          "x": 408.4,
+          "y": 40.53639839574443
+        }
+      },
+      "gaps": [
+        [
+          118,
+          124
+        ],
+        [
+          218.4,
+          230.4
+        ],
+        [
+          452.4,
+          458.4
+        ],
+        [
+          552.8,
+          564.8
+        ]
+      ]
+    },
+    "campaign_03.json": {
+      "mainShapes": 11,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_26_terrain",
+        "s02_36_landing_recovery",
+        "s02_36_launch",
+        "s03_10_terrain",
+        "s04_101_entry_run",
+        "s04_101_exit_recovery",
+        "s05_2_terrain",
+        "s06_67_safe_fallback",
+        "s07_2_terrain",
+        "s08_27_terrain",
+        "s09_47_landing_recovery",
+        "s09_47_launch",
+        "s10_2_terrain",
+        "s11_26_terrain",
+        "s12_36_landing_recovery",
+        "s12_36_launch",
+        "s13_10_terrain",
+        "s14_101_entry_run",
+        "s14_101_exit_recovery",
+        "s15_2_terrain",
+        "s16_27_terrain",
+        "s17_2_terrain",
+        "s18_67_safe_fallback",
+        "s19_31_landing_recovery",
+        "s19_31_launch",
+        "s20_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1245.8,
+          "y": -34.83600413662639
+        },
+        "Top": {
+          "x": 118.6326717247685,
+          "y": 7.112717249065333
+        },
+        "Bottom": {
+          "x": 586.3000000000001,
+          "y": -20.440968380871926
+        }
+      },
+      "gaps": [
+        [
+          114.0,
+          124
+        ],
+        [
+          246.0,
+          262.0
+        ],
+        [
+          511.6,
+          529.6
+        ],
+        [
+          684.4000000000001,
+          694.4000000000001
+        ],
+        [
+          816.4000000000001,
+          832.4000000000001
+        ],
+        [
+          1068.0,
+          1074.0
+        ]
+      ]
+    },
+    "campaign_04.json": {
+      "mainShapes": 2,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_19_terrain",
+        "s02_66_safe_fallback",
+        "s03_21_terrain",
+        "s04_67_safe_fallback",
+        "s05_2_terrain",
+        "s06_19_terrain",
+        "s07_66_safe_fallback",
+        "s08_21_terrain",
+        "s09_67_safe_fallback",
+        "s10_2_terrain",
+        "s11_56_landing_recovery",
+        "s11_56_launch",
+        "s12_42_rollable_table",
+        "s13_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 854.0,
+          "y": -20.38997593010176
+        },
+        "Top": {
+          "x": 248.1530193576566,
+          "y": 12.547549326294513
+        },
+        "Bottom": {
+          "x": 0.0,
+          "y": 0.0
+        }
+      },
+      "gaps": [
+        [
+          618.0,
+          626.0
+        ]
+      ]
+    },
+    "campaign_05.json": {
+      "mainShapes": 9,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_30_terrain",
+        "s02_49_landing_recovery",
+        "s02_49_launch",
+        "s03_17_terrain",
+        "s04_95_spring_approach",
+        "s04_95_spring_lower_recovery",
+        "s05_12_terrain",
+        "s06_2_terrain",
+        "s07_58_landing_recovery",
+        "s07_58_launch",
+        "s08_29_terrain",
+        "s09_30_terrain",
+        "s10_49_landing_recovery",
+        "s10_49_launch",
+        "s11_17_terrain",
+        "s12_95_spring_approach",
+        "s12_95_spring_lower_recovery",
+        "s13_2_terrain",
+        "s14_38_landing_recovery",
+        "s14_38_launch",
+        "s15_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1570.025,
+          "y": -108.0931455333348
+        },
+        "Top": {
+          "x": 158.56918992655235,
+          "y": 12.026711693036503
+        },
+        "Bottom": {
+          "x": 694.7750000000001,
+          "y": -87.58217153802497
+        }
+      },
+      "gaps": [
+        [
+          142,
+          162
+        ],
+        [
+          319.7,
+          376.9
+        ],
+        [
+          637.7750000000001,
+          655.7750000000001
+        ],
+        [
+          897.575,
+          917.575
+        ],
+        [
+          1075.275,
+          1132.4750000000001
+        ],
+        [
+          1345.3500000000001,
+          1369.3500000000001
+        ]
+      ]
+    },
+    "campaign_06.json": {
+      "mainShapes": 6,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_9_terrain",
+        "s02_65_landing_recovery",
+        "s02_65_launch",
+        "s03_3_terrain",
+        "s04_57_landing_recovery",
+        "s04_57_launch",
+        "s05_23_terrain",
+        "s06_3_terrain",
+        "s07_62_landing_recovery",
+        "s07_62_launch",
+        "s08_9_terrain",
+        "s09_65_landing_recovery",
+        "s09_65_launch",
+        "s10_3_terrain",
+        "s11_57_landing_recovery",
+        "s11_57_launch",
+        "s12_3_terrain",
+        "s13_26_terrain",
+        "s14_69_safe_fallback",
+        "s15_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1102.4,
+          "y": -150.8630715535436
+        },
+        "Top": {
+          "x": 64.0965223138879,
+          "y": 10.02031747798378
+        },
+        "Bottom": {
+          "x": 558.6,
+          "y": -96.54706518853646
+        }
+      },
+      "gaps": [
+        [
+          106,
+          114
+        ],
+        [
+          274.0,
+          300.0
+        ],
+        [
+          477.6,
+          485.6
+        ],
+        [
+          615.6,
+          623.6
+        ],
+        [
+          783.6,
+          809.6
+        ]
+      ]
+    },
+    "campaign_07.json": {
+      "mainShapes": 10,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_76_intentional_ledges",
+        "s02_2_terrain",
+        "s03_78_intentional_ledges",
+        "s04_21_terrain",
+        "s05_53_landing_recovery",
+        "s05_53_launch",
+        "s06_19_terrain",
+        "s07_102_entry_run",
+        "s07_102_exit_recovery",
+        "s08_2_terrain",
+        "s09_2_terrain",
+        "s10_80_intentional_ledges",
+        "s11_59_landing_recovery",
+        "s11_59_launch",
+        "s12_76_intentional_ledges",
+        "s13_2_terrain",
+        "s14_78_intentional_ledges",
+        "s15_21_terrain",
+        "s16_53_landing_recovery",
+        "s16_53_launch",
+        "s17_19_terrain",
+        "s18_102_entry_run",
+        "s18_102_exit_recovery",
+        "s19_29_terrain",
+        "s20_41_rollable_table",
+        "s21_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1391.6,
+          "y": -24.390370026962223
+        },
+        "Top": {
+          "x": 270.3056391243037,
+          "y": 19.47239392832142
+        },
+        "Bottom": {
+          "x": 928.3999999999999,
+          "y": -13.954033187886782
+        }
+      },
+      "gaps": [
+        [
+          262.0,
+          272.0
+        ],
+        [
+          412.8,
+          444.8
+        ],
+        [
+          647.5999999999999,
+          661.5999999999999
+        ],
+        [
+          940.3999999999999,
+          950.3999999999999
+        ],
+        [
+          1091.1999999999998,
+          1123.1999999999998
+        ]
+      ]
+    },
+    "campaign_08.json": {
+      "mainShapes": 7,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_36_landing_recovery",
+        "s01_36_launch",
+        "s02_7_terrain",
+        "s03_83_spring_approach",
+        "s03_83_spring_lower_recovery",
+        "s04_19_terrain",
+        "s05_70_safe_fallback",
+        "s06_36_landing_recovery",
+        "s06_36_launch",
+        "s07_7_terrain",
+        "s08_83_spring_approach",
+        "s08_83_spring_lower_recovery",
+        "s09_19_terrain",
+        "s10_12_terrain",
+        "s11_30_terrain",
+        "s12_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 986.0,
+          "y": 38.01541938077824
+        },
+        "Top": {
+          "x": 765.0,
+          "y": 54.41541938077824
+        },
+        "Bottom": {
+          "x": 301.4,
+          "y": 23.007709690389117
+        }
+      },
+      "gaps": [
+        [
+          74.0,
+          84
+        ],
+        [
+          216.0,
+          231.4
+        ],
+        [
+          504.0,
+          514.0
+        ],
+        [
+          646.0,
+          661.4
+        ]
+      ]
+    },
+    "campaign_09.json": {
+      "mainShapes": 10,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_24_terrain",
+        "s02_33_landing_recovery",
+        "s02_33_launch",
+        "s03_4_terrain",
+        "s04_101_entry_run",
+        "s04_101_exit_recovery",
+        "s05_2_terrain",
+        "s06_69_safe_fallback",
+        "s07_24_terrain",
+        "s08_33_landing_recovery",
+        "s08_33_launch",
+        "s09_4_terrain",
+        "s10_101_entry_run",
+        "s10_101_exit_recovery",
+        "s11_2_terrain",
+        "s12_26_terrain",
+        "s13_48_landing_recovery",
+        "s13_48_launch",
+        "s14_26_terrain",
+        "s15_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1034.0,
+          "y": -31.185610572899336
+        },
+        "Top": {
+          "x": 258.0,
+          "y": 6.9402738143382265
+        },
+        "Bottom": {
+          "x": 797.5,
+          "y": -9.242624047374258
+        }
+      },
+      "gaps": [
+        [
+          122,
+          136
+        ],
+        [
+          250.0,
+          266.0
+        ],
+        [
+          496.0,
+          510.0
+        ],
+        [
+          624.0,
+          640.0
+        ],
+        [
+          810.0,
+          840.0
+        ]
+      ]
+    },
+    "campaign_10.json": {
+      "mainShapes": 9,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_20_terrain",
+        "s02_49_landing_recovery",
+        "s02_49_launch",
+        "s03_10_terrain",
+        "s04_103_entry_run",
+        "s04_103_exit_recovery",
+        "s05_2_terrain",
+        "s06_90_spring_approach",
+        "s07_67_safe_fallback",
+        "s08_2_terrain",
+        "s09_100_spring_approach",
+        "s10_2_terrain",
+        "s11_80_intentional_ledges",
+        "s12_20_terrain",
+        "s13_49_landing_recovery",
+        "s13_49_launch",
+        "s14_10_terrain",
+        "s15_103_entry_run",
+        "s15_103_exit_recovery",
+        "s16_2_terrain",
+        "s17_90_spring_approach",
+        "s18_2_terrain",
+        "s19_29_terrain",
+        "s20_12_terrain",
+        "s21_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1930.7000000000003,
+          "y": 109.81154892395004
+        },
+        "Top": {
+          "x": 1558.1598521096132,
+          "y": 123.32699476997007
+        },
+        "Bottom": {
+          "x": 1230.8000000000002,
+          "y": 54.811548461975015
+        }
+      },
+      "gaps": [
+        [
+          132,
+          152
+        ],
+        [
+          293.7,
+          341.7
+        ],
+        [
+          1173.8000000000002,
+          1193.8000000000002
+        ],
+        [
+          1335.5000000000002,
+          1383.5000000000002
+        ]
+      ]
+    },
+    "campaign_11.json": {
+      "mainShapes": 4,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_26_terrain",
+        "s02_16_terrain",
+        "s03_47_landing_recovery",
+        "s03_47_launch",
+        "s04_21_terrain",
+        "s05_96_spring_approach",
+        "s06_2_terrain",
+        "s07_26_terrain",
+        "s08_16_terrain",
+        "s09_47_landing_recovery",
+        "s09_47_launch",
+        "s10_21_terrain",
+        "s11_2_terrain",
+        "s12_32_landing_recovery",
+        "s12_32_launch",
+        "s13_42_rollable_table",
+        "s14_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1031.0,
+          "y": -34.65739517334585
+        },
+        "Top": {
+          "x": 164.91250178320934,
+          "y": 10.519440578108915
+        },
+        "Bottom": {
+          "x": 397.2,
+          "y": -18.872345911929965
+        }
+      },
+      "gaps": [
+        [
+          158,
+          176
+        ],
+        [
+          565.2,
+          583.2
+        ],
+        [
+          728.4000000000001,
+          736.4000000000001
+        ]
+      ]
+    },
+    "campaign_12.json": {
+      "mainShapes": 2,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_41_rollable_table",
+        "s02_66_safe_fallback",
+        "s03_23_terrain",
+        "s04_71_safe_fallback",
+        "s05_4_terrain",
+        "s06_67_safe_fallback",
+        "s07_41_rollable_table",
+        "s08_66_safe_fallback",
+        "s09_23_terrain",
+        "s10_71_safe_fallback",
+        "s11_56_landing_recovery",
+        "s11_56_launch",
+        "s12_27_terrain",
+        "s13_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 965.0,
+          "y": -20.38997593010176
+        },
+        "Top": {
+          "x": 282.5787928062541,
+          "y": 12.917380921896171
+        },
+        "Bottom": {
+          "x": 0.0,
+          "y": 0.0
+        }
+      },
+      "gaps": [
+        [
+          754,
+          762
+        ]
+      ]
+    },
+    "campaign_13.json": {
+      "mainShapes": 4,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_6_terrain",
+        "s02_76_intentional_ledges",
+        "s03_2_terrain",
+        "s04_36_landing_recovery",
+        "s04_36_launch",
+        "s05_21_terrain",
+        "s06_86_spring_approach",
+        "s07_72_safe_fallback",
+        "s08_2_terrain",
+        "s09_46_landing_recovery",
+        "s09_46_launch",
+        "s10_67_safe_fallback",
+        "s11_27_terrain",
+        "s12_2_terrain",
+        "s13_6_terrain",
+        "s14_76_intentional_ledges",
+        "s15_2_terrain",
+        "s16_36_landing_recovery",
+        "s16_36_launch",
+        "s17_21_terrain",
+        "s18_86_spring_approach",
+        "s19_72_safe_fallback",
+        "s20_16_terrain",
+        "s21_14_terrain",
+        "s22_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1356.5,
+          "y": -13.404212542374001
+        },
+        "Top": {
+          "x": 422.52697110281065,
+          "y": 15.28432649904098
+        },
+        "Bottom": {
+          "x": 866.5,
+          "y": -9.608295823824376
+        }
+      },
+      "gaps": [
+        [
+          174.0,
+          184.0
+        ],
+        [
+          540.9,
+          550.9
+        ],
+        [
+          881.0,
+          891.0
+        ]
+      ]
+    },
+    "campaign_14.json": {
+      "mainShapes": 5,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_9_terrain",
+        "s02_3_terrain",
+        "s03_65_landing_recovery",
+        "s03_65_launch",
+        "s04_23_terrain",
+        "s05_57_landing_recovery",
+        "s05_57_launch",
+        "s06_3_terrain",
+        "s07_63_landing_recovery",
+        "s07_63_launch",
+        "s08_9_terrain",
+        "s09_3_terrain",
+        "s10_65_landing_recovery",
+        "s10_65_launch",
+        "s11_23_terrain",
+        "s12_3_terrain",
+        "s13_26_terrain",
+        "s14_69_safe_fallback",
+        "s15_26_terrain",
+        "s16_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1117.4,
+          "y": -100.48235930618355
+        },
+        "Top": {
+          "x": 97.98024887988177,
+          "y": 12.0
+        },
+        "Bottom": {
+          "x": 504.6,
+          "y": -64.95634157034584
+        }
+      },
+      "gaps": [
+        [
+          138,
+          146
+        ],
+        [
+          326.0,
+          352.0
+        ],
+        [
+          481.6,
+          495.6
+        ],
+        [
+          657.6,
+          665.6
+        ]
+      ]
+    },
+    "campaign_15.json": {
+      "mainShapes": 10,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_30_terrain",
+        "s02_49_landing_recovery",
+        "s02_49_launch",
+        "s03_17_terrain",
+        "s04_95_spring_approach",
+        "s04_95_spring_lower_recovery",
+        "s05_2_terrain",
+        "s06_68_safe_fallback",
+        "s07_38_landing_recovery",
+        "s07_38_launch",
+        "s08_2_terrain",
+        "s09_53_landing_recovery",
+        "s09_53_launch",
+        "s10_29_terrain",
+        "s11_30_terrain",
+        "s12_49_landing_recovery",
+        "s12_49_launch",
+        "s13_17_terrain",
+        "s14_95_spring_approach",
+        "s14_95_spring_lower_recovery",
+        "s15_2_terrain",
+        "s16_68_safe_fallback",
+        "s17_35_landing_recovery",
+        "s17_35_launch",
+        "s18_11_terrain",
+        "s19_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1732.025,
+          "y": -51.29072184922424
+        },
+        "Top": {
+          "x": 158.56918992655235,
+          "y": 12.026711693036503
+        },
+        "Bottom": {
+          "x": 1091.65,
+          "y": -31.170214143738665
+        }
+      },
+      "gaps": [
+        [
+          142,
+          162
+        ],
+        [
+          319.7,
+          376.9
+        ],
+        [
+          663.7,
+          687.7
+        ],
+        [
+          826.3500000000001,
+          836.3500000000001
+        ],
+        [
+          1065.15,
+          1085.15
+        ],
+        [
+          1242.8500000000001,
+          1300.0500000000002
+        ],
+        [
+          1561.8500000000001,
+          1571.8500000000001
+        ]
+      ]
+    },
+    "campaign_16.json": {
+      "mainShapes": 6,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_19_terrain",
+        "s02_52_landing_recovery",
+        "s02_52_launch",
+        "s03_4_terrain",
+        "s04_88_spring_approach",
+        "s05_2_terrain",
+        "s06_101_entry_run",
+        "s06_101_exit_recovery",
+        "s07_2_terrain",
+        "s08_19_terrain",
+        "s09_52_landing_recovery",
+        "s09_52_launch",
+        "s10_4_terrain",
+        "s11_88_spring_approach",
+        "s12_71_safe_fallback",
+        "s13_12_terrain",
+        "s14_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1099.4,
+          "y": 34.6130801275582
+        },
+        "Top": {
+          "x": 893.7787928062542,
+          "y": 55.530461049454374
+        },
+        "Bottom": {
+          "x": 361.1,
+          "y": 21.306540063779096
+        }
+      },
+      "gaps": [
+        [
+          128,
+          140
+        ],
+        [
+          437.6,
+          453.6
+        ],
+        [
+          613.6,
+          625.6
+        ]
+      ]
+    },
+    "campaign_17.json": {
+      "mainShapes": 4,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_29_terrain",
+        "s02_73_safe_fallback",
+        "s03_2_terrain",
+        "s04_100_spring_approach",
+        "s05_23_terrain",
+        "s06_74_safe_fallback",
+        "s07_50_landing_recovery",
+        "s07_50_launch",
+        "s08_2_terrain",
+        "s09_75_safe_fallback",
+        "s10_59_landing_recovery",
+        "s10_59_launch",
+        "s11_78_intentional_ledges",
+        "s12_2_terrain",
+        "s13_29_terrain",
+        "s14_73_safe_fallback",
+        "s15_2_terrain",
+        "s16_100_spring_approach",
+        "s17_23_terrain",
+        "s18_74_safe_fallback",
+        "s19_2_terrain",
+        "s20_35_landing_recovery",
+        "s20_35_launch",
+        "s21_42_rollable_table",
+        "s22_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 2189.0,
+          "y": -72.7022330953882
+        },
+        "Top": {
+          "x": 747.6484450004474,
+          "y": 44.341073418488406
+        },
+        "Bottom": {
+          "x": 1974.1,
+          "y": -73.90910389144852
+        }
+      },
+      "gaps": [
+        [
+          734,
+          758
+        ],
+        [
+          1036.9,
+          1050.9
+        ],
+        [
+          1900.8999999999999,
+          1910.8999999999999
+        ]
+      ]
+    },
+    "campaign_18.json": {
+      "mainShapes": 5,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_25_terrain",
+        "s02_37_landing_recovery",
+        "s02_37_launch",
+        "s03_2_terrain",
+        "s04_87_spring_approach",
+        "s05_72_safe_fallback",
+        "s06_55_landing_recovery",
+        "s06_55_launch",
+        "s07_25_terrain",
+        "s08_37_landing_recovery",
+        "s08_37_launch",
+        "s09_2_terrain",
+        "s10_87_spring_approach",
+        "s11_14_terrain",
+        "s12_34_landing_recovery",
+        "s12_34_launch",
+        "s13_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1132.4,
+          "y": -53.69917709917792
+        },
+        "Top": {
+          "x": 137.83495760907795,
+          "y": 12.413416014260251
+        },
+        "Bottom": {
+          "x": 887.1,
+          "y": -23.95475864724154
+        }
+      },
+      "gaps": [
+        [
+          130.0,
+          146
+        ],
+        [
+          480.0,
+          490.0
+        ],
+        [
+          637.6,
+          653.6
+        ],
+        [
+          933.6,
+          943.6
+        ]
+      ]
+    },
+    "campaign_19.json": {
+      "mainShapes": 9,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_27_terrain",
+        "s02_38_landing_recovery",
+        "s02_38_launch",
+        "s03_4_terrain",
+        "s04_102_entry_run",
+        "s04_102_exit_recovery",
+        "s05_2_terrain",
+        "s06_70_safe_fallback",
+        "s07_27_terrain",
+        "s08_38_landing_recovery",
+        "s08_38_launch",
+        "s09_4_terrain",
+        "s10_102_entry_run",
+        "s10_102_exit_recovery",
+        "s11_2_terrain",
+        "s12_12_terrain",
+        "s13_98_spring_approach",
+        "s14_12_terrain",
+        "s15_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1282.5500000000002,
+          "y": -42.033496698100684
+        },
+        "Top": {
+          "x": 147.1811017587467,
+          "y": 11.17256377869073
+        },
+        "Bottom": {
+          "x": 665.7,
+          "y": -26.224324375144743
+        }
+      },
+      "gaps": [
+        [
+          138.0,
+          162
+        ],
+        [
+          291.7,
+          323.7
+        ],
+        [
+          613.7,
+          637.7
+        ],
+        [
+          767.4000000000001,
+          799.4000000000001
+        ]
+      ]
+    },
+    "campaign_20.json": {
+      "mainShapes": 9,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_20_terrain",
+        "s02_73_safe_fallback",
+        "s03_90_spring_approach",
+        "s04_2_terrain",
+        "s05_103_entry_run",
+        "s05_103_exit_recovery",
+        "s06_2_terrain",
+        "s07_100_spring_approach",
+        "s08_75_safe_fallback",
+        "s09_2_terrain",
+        "s10_80_intentional_ledges",
+        "s11_54_landing_recovery",
+        "s11_54_launch",
+        "s12_64_landing_recovery",
+        "s12_64_launch",
+        "s13_2_terrain",
+        "s14_20_terrain",
+        "s15_73_safe_fallback",
+        "s16_90_spring_approach",
+        "s17_2_terrain",
+        "s18_103_entry_run",
+        "s18_103_exit_recovery",
+        "s19_2_terrain",
+        "s20_75_safe_fallback",
+        "s21_2_terrain",
+        "s22_29_terrain",
+        "s23_14_terrain",
+        "s24_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 2306.0,
+          "y": 109.57969090437798
+        },
+        "Top": {
+          "x": 1975.1406630583606,
+          "y": 132.779690904378
+        },
+        "Bottom": {
+          "x": 1340.0,
+          "y": 59.995690832047664
+        }
+      },
+      "gaps": [
+        [
+          486.0,
+          534.0
+        ],
+        [
+          1155.8,
+          1165.8
+        ],
+        [
+          1249.2,
+          1255.2
+        ],
+        [
+          1788.0,
+          1836.0
+        ]
+      ]
+    },
+    "campaign_21.json": {
+      "mainShapes": 3,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_16_terrain",
+        "s02_28_terrain",
+        "s03_24_terrain",
+        "s04_47_landing_recovery",
+        "s04_47_launch",
+        "s05_3_terrain",
+        "s06_20_terrain",
+        "s07_16_terrain",
+        "s08_28_terrain",
+        "s09_24_terrain",
+        "s10_47_landing_recovery",
+        "s10_47_launch",
+        "s11_43_rollable_table",
+        "s12_11_terrain",
+        "s13_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 855.8000000000001,
+          "y": -25.297356142522105
+        },
+        "Top": {
+          "x": 232.91250178320934,
+          "y": 10.519440578108915
+        },
+        "Bottom": {
+          "x": 321.2,
+          "y": -10.848678071261052
+        }
+      },
+      "gaps": [
+        [
+          226,
+          244
+        ],
+        [
+          571.2,
+          589.2
+        ]
+      ]
+    },
+    "campaign_22.json": {
+      "mainShapes": 4,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_9_terrain",
+        "s02_77_intentional_ledges",
+        "s03_2_terrain",
+        "s04_52_landing_recovery",
+        "s04_52_launch",
+        "s05_23_terrain",
+        "s06_78_intentional_ledges",
+        "s07_3_terrain",
+        "s08_9_terrain",
+        "s09_77_intentional_ledges",
+        "s10_2_terrain",
+        "s11_52_landing_recovery",
+        "s11_52_launch",
+        "s12_23_terrain",
+        "s13_78_intentional_ledges",
+        "s14_57_landing_recovery",
+        "s14_57_launch",
+        "s15_42_rollable_table",
+        "s16_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1080.8000000000002,
+          "y": 7.408838468433487
+        },
+        "Top": {
+          "x": 809.3386987126398,
+          "y": 37.32828782782957
+        },
+        "Bottom": {
+          "x": 102.5,
+          "y": 10.600000000000001
+        }
+      },
+      "gaps": [
+        [
+          196.0,
+          208.0
+        ],
+        [
+          567.6,
+          579.6
+        ],
+        [
+          799.2,
+          825.2
+        ]
+      ]
+    },
+    "campaign_23.json": {
+      "mainShapes": 2,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_14_terrain",
+        "s02_22_terrain",
+        "s03_97_spring_approach",
+        "s04_2_terrain",
+        "s05_72_safe_fallback",
+        "s06_86_spring_approach",
+        "s07_17_terrain",
+        "s08_2_terrain",
+        "s09_19_terrain",
+        "s10_47_landing_recovery",
+        "s10_47_launch",
+        "s11_71_safe_fallback",
+        "s12_23_terrain",
+        "s13_14_terrain",
+        "s14_22_terrain",
+        "s15_97_spring_approach",
+        "s16_2_terrain",
+        "s17_72_safe_fallback",
+        "s18_86_spring_approach",
+        "s19_2_terrain",
+        "s20_26_terrain",
+        "s21_26_terrain",
+        "s22_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1586.0,
+          "y": 21.551321928738947
+        },
+        "Top": {
+          "x": 701.7125017832093,
+          "y": 26.519440578108913
+        },
+        "Bottom": {
+          "x": 0.0,
+          "y": 0.0
+        }
+      },
+      "gaps": [
+        [
+          694.8,
+          712.8
+        ]
+      ]
+    },
+    "campaign_24.json": {
+      "mainShapes": 6,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_19_terrain",
+        "s02_3_terrain",
+        "s03_62_landing_recovery",
+        "s03_62_launch",
+        "s04_23_terrain",
+        "s05_94_spring_approach",
+        "s05_94_spring_lower_recovery",
+        "s06_2_terrain",
+        "s07_19_terrain",
+        "s08_3_terrain",
+        "s09_62_landing_recovery",
+        "s09_62_launch",
+        "s10_23_terrain",
+        "s11_2_terrain",
+        "s12_69_safe_fallback",
+        "s13_58_landing_recovery",
+        "s13_58_launch",
+        "s14_69_safe_fallback",
+        "s15_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1201.7,
+          "y": -150.85006375529335
+        },
+        "Top": {
+          "x": 59.0,
+          "y": 8.4
+        },
+        "Bottom": {
+          "x": 623.5,
+          "y": -58.64870602504142
+        }
+      },
+      "gaps": [
+        [
+          142,
+          150
+        ],
+        [
+          302.0,
+          350.4
+        ],
+        [
+          608.0,
+          616.0
+        ],
+        [
+          886.0,
+          904.0
+        ]
+      ]
+    },
+    "campaign_25.json": {
+      "mainShapes": 4,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_29_terrain",
+        "s02_96_spring_approach",
+        "s03_4_terrain",
+        "s04_73_safe_fallback",
+        "s05_17_terrain",
+        "s06_100_spring_approach",
+        "s07_2_terrain",
+        "s08_40_landing_recovery",
+        "s08_40_launch",
+        "s09_2_terrain",
+        "s10_39_landing_recovery",
+        "s10_39_launch",
+        "s11_59_landing_recovery",
+        "s11_59_launch",
+        "s12_2_terrain",
+        "s13_29_terrain",
+        "s14_96_spring_approach",
+        "s15_4_terrain",
+        "s16_73_safe_fallback",
+        "s17_17_terrain",
+        "s18_100_spring_approach",
+        "s19_78_intentional_ledges",
+        "s20_12_terrain",
+        "s21_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 2138.6,
+          "y": -142.23241993511044
+        },
+        "Top": {
+          "x": 846.6157388131418,
+          "y": 45.63063082463901
+        },
+        "Bottom": {
+          "x": 1956.4,
+          "y": -134.23241993511044
+        }
+      },
+      "gaps": [
+        [
+          834.0,
+          848.0
+        ],
+        [
+          979.25,
+          997.25
+        ],
+        [
+          1125.95,
+          1139.95
+        ]
+      ]
+    },
+    "campaign_26.json": {
+      "mainShapes": 10,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_76_intentional_ledges",
+        "s02_8_terrain",
+        "s03_37_landing_recovery",
+        "s03_37_launch",
+        "s04_2_terrain",
+        "s05_102_entry_run",
+        "s05_102_exit_recovery",
+        "s06_2_terrain",
+        "s07_76_intentional_ledges",
+        "s08_8_terrain",
+        "s09_37_landing_recovery",
+        "s09_37_launch",
+        "s10_2_terrain",
+        "s11_102_entry_run",
+        "s11_102_exit_recovery",
+        "s12_60_landing_recovery",
+        "s12_60_launch",
+        "s13_14_terrain",
+        "s14_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1037.3,
+          "y": -176.07560619241536
+        },
+        "Top": {
+          "x": 167.83495760907795,
+          "y": 23.41341601426025
+        },
+        "Bottom": {
+          "x": 242.0,
+          "y": -28.75157196947328
+        }
+      },
+      "gaps": [
+        [
+          160.0,
+          176.0
+        ],
+        [
+          302.0,
+          334.0
+        ],
+        [
+          538.0,
+          554.0
+        ],
+        [
+          680.0,
+          712.0
+        ],
+        [
+          800.0,
+          818.0
+        ]
+      ]
+    },
+    "campaign_27.json": {
+      "mainShapes": 4,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_7_terrain",
+        "s02_71_safe_fallback",
+        "s03_90_spring_approach",
+        "s04_2_terrain",
+        "s05_75_safe_fallback",
+        "s06_23_terrain",
+        "s07_100_spring_approach",
+        "s08_2_terrain",
+        "s09_54_landing_recovery",
+        "s09_54_launch",
+        "s10_80_intentional_ledges",
+        "s11_2_terrain",
+        "s12_7_terrain",
+        "s13_71_safe_fallback",
+        "s14_90_spring_approach",
+        "s15_2_terrain",
+        "s16_75_safe_fallback",
+        "s17_23_terrain",
+        "s18_2_terrain",
+        "s19_54_landing_recovery",
+        "s19_54_launch",
+        "s20_59_landing_recovery",
+        "s20_59_launch",
+        "s21_45_rollable_table",
+        "s22_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1955.0000000000002,
+          "y": 134.14523958755316
+        },
+        "Top": {
+          "x": 1436.3406630583606,
+          "y": 174.10698502202501
+        },
+        "Bottom": {
+          "x": 819.0,
+          "y": 92.99999999999999
+        }
+      },
+      "gaps": [
+        [
+          891.4,
+          901.4
+        ],
+        [
+          1606.6000000000001,
+          1616.6000000000001
+        ],
+        [
+          1712.0000000000002,
+          1726.0000000000002
+        ]
+      ]
+    },
+    "campaign_28.json": {
+      "mainShapes": 5,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_78_intentional_ledges",
+        "s02_2_terrain",
+        "s03_53_landing_recovery",
+        "s03_53_launch",
+        "s04_19_terrain",
+        "s05_90_spring_approach",
+        "s06_3_terrain",
+        "s07_64_landing_recovery",
+        "s07_64_launch",
+        "s08_78_intentional_ledges",
+        "s09_2_terrain",
+        "s10_53_landing_recovery",
+        "s10_53_launch",
+        "s11_19_terrain",
+        "s12_3_terrain",
+        "s13_64_landing_recovery",
+        "s13_64_launch",
+        "s14_74_safe_fallback",
+        "s15_12_terrain",
+        "s16_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1251.1999999999998,
+          "y": -6.776227805759419
+        },
+        "Top": {
+          "x": 393.4598521096129,
+          "y": 53.85462606078735
+        },
+        "Bottom": {
+          "x": 72.0,
+          "y": 4.2
+        }
+      },
+      "gaps": [
+        [
+          178.0,
+          188.0
+        ],
+        [
+          548.8,
+          554.8
+        ],
+        [
+          742.8,
+          752.8
+        ],
+        [
+          919.5999999999999,
+          925.5999999999999
+        ]
+      ]
+    },
+    "campaign_29.json": {
+      "mainShapes": 4,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_29_terrain",
+        "s02_35_landing_recovery",
+        "s02_35_launch",
+        "s03_3_terrain",
+        "s04_25_terrain",
+        "s05_99_spring_approach",
+        "s06_2_terrain",
+        "s07_29_terrain",
+        "s08_35_landing_recovery",
+        "s08_35_launch",
+        "s09_3_terrain",
+        "s10_25_terrain",
+        "s11_2_terrain",
+        "s12_45_rollable_table",
+        "s13_49_landing_recovery",
+        "s13_49_launch",
+        "s14_45_rollable_table",
+        "s15_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 1252.8500000000001,
+          "y": -11.52363081580755
+        },
+        "Top": {
+          "x": 641.1766318999323,
+          "y": 19.323916413366252
+        },
+        "Bottom": {
+          "x": 469.2,
+          "y": -0.9629354054584454
+        }
+      },
+      "gaps": [
+        [
+          129.0,
+          139.0
+        ],
+        [
+          633.2,
+          643.2
+        ],
+        [
+          926.4000000000001,
+          946.4000000000001
+        ]
+      ]
+    },
+    "campaign_30.json": {
+      "mainShapes": 11,
+      "shapeLabels": [
+        "s00_1_terrain",
+        "s01_20_terrain",
+        "s02_54_landing_recovery",
+        "s02_54_launch",
+        "s03_90_spring_approach",
+        "s04_2_terrain",
+        "s05_103_entry_run",
+        "s05_103_exit_recovery",
+        "s06_2_terrain",
+        "s07_100_spring_approach",
+        "s08_75_safe_fallback",
+        "s09_2_terrain",
+        "s10_80_intentional_ledges",
+        "s11_50_landing_recovery",
+        "s11_50_launch",
+        "s12_59_landing_recovery",
+        "s12_59_launch",
+        "s13_2_terrain",
+        "s14_20_terrain",
+        "s15_54_landing_recovery",
+        "s15_54_launch",
+        "s16_90_spring_approach",
+        "s17_2_terrain",
+        "s18_103_entry_run",
+        "s18_103_exit_recovery",
+        "s19_2_terrain",
+        "s20_75_safe_fallback",
+        "s21_2_terrain",
+        "s22_80_intentional_ledges",
+        "s23_29_terrain",
+        "s24_12_terrain",
+        "s25_5_terrain"
+      ],
+      "markers": {
+        "Start": {
+          "x": 2,
+          "y": 2
+        },
+        "End": {
+          "x": 2476.1,
+          "y": 0.8364395875531763
+        },
+        "Top": {
+          "x": 1170.7484450004474,
+          "y": 98.24805844051345
+        },
+        "Bottom": {
+          "x": 1760.8,
+          "y": 4.036439587553176
+        }
+      },
+      "gaps": [
+        [
+          126,
+          136
+        ],
+        [
+          459.4,
+          507.4
+        ],
+        [
+          1157.1,
+          1181.1
+        ],
+        [
+          1315.8999999999999,
+          1329.8999999999999
+        ],
+        [
+          1515.3999999999999,
+          1525.3999999999999
+        ],
+        [
+          1848.8,
+          1896.8
+        ]
+      ]
+    }
+  }
+}

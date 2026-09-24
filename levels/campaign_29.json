@@ -1,7 +1,7 @@
 {
   "MainPlatform": [
     {
-      "id": "s00_terrain",
+      "id": "s00_1_terrain",
       "closed": true,
       "points": [
         {
@@ -188,7 +188,7 @@
         },
         {
           "x": 129.0,
-          "y": -19.523631277782574,
+          "y": -28.52363127778257,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -202,7 +202,7 @@
         },
         {
           "x": -40,
-          "y": -19.523631277782574,
+          "y": -28.52363127778257,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -217,16 +217,35 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 13,
+        "libID": 1,
+        "libName": "terrain",
         "sourceVariant": "flat.launch_run",
+        "sourceShapeLabels": [
+          {
+            "id": "s00_1_terrain",
+            "x": 18.0,
+            "y": -14.261815638891285
+          },
+          {
+            "id": "s01_29_terrain",
+            "x": 67.0,
+            "y": -12.261815638891285
+          },
+          {
+            "id": "s02_35_launch",
+            "x": 113.5,
+            "y": -12.461815638891284
+          }
+        ],
         "sourceShapeIds": [
-          "s00_terrain",
-          "s01_terrain",
-          "s02_launch"
+          "s00_1_terrain",
+          "s01_29_terrain",
+          "s02_35_launch"
         ]
       }
     },
     {
-      "id": "s02_landing_recovery",
+      "id": "s02_35_landing_recovery",
       "closed": true,
       "points": [
         {
@@ -721,7 +740,7 @@
         },
         {
           "x": 633.2,
-          "y": -19.523631277782574,
+          "y": -28.52363127778257,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -735,7 +754,7 @@
         },
         {
           "x": 139.0,
-          "y": -19.523631277782574,
+          "y": -28.52363127778257,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -750,20 +769,59 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 35,
+        "libID": 35,
+        "libName": "landing_recovery",
         "sourceVariant": "kicker.precision_pop",
+        "sourceShapeLabels": [
+          {
+            "id": "s02_35_landing_recovery",
+            "x": 160.6,
+            "y": -12.461815638891284
+          },
+          {
+            "id": "s03_3_terrain",
+            "x": 198.2,
+            "y": -16.92416695833693
+          },
+          {
+            "id": "s04_25_terrain",
+            "x": 239.2,
+            "y": -16.92416695833693
+          },
+          {
+            "id": "s05_99_spring_approach",
+            "x": 384.2,
+            "y": -8.364166958336927
+          },
+          {
+            "id": "s06_2_terrain",
+            "x": 522.2,
+            "y": -8.364166958336927
+          },
+          {
+            "id": "s07_29_terrain",
+            "x": 571.2,
+            "y": -6.364166958336928
+          },
+          {
+            "id": "s08_35_launch",
+            "x": 617.7,
+            "y": -6.564166958336928
+          }
+        ],
         "sourceShapeIds": [
-          "s02_landing_recovery",
-          "s03_terrain",
-          "s04_terrain",
-          "s05_spring_approach",
-          "s06_terrain",
-          "s07_terrain",
-          "s08_launch"
+          "s02_35_landing_recovery",
+          "s03_3_terrain",
+          "s04_25_terrain",
+          "s05_99_spring_approach",
+          "s06_2_terrain",
+          "s07_29_terrain",
+          "s08_35_launch"
         ]
       }
     },
     {
-      "id": "s08_landing_recovery",
+      "id": "s08_35_landing_recovery",
       "closed": true,
       "points": [
         {
@@ -1062,7 +1120,7 @@
         },
         {
           "x": 926.4000000000001,
-          "y": -19.523631277782574,
+          "y": -28.52363127778257,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1076,7 +1134,7 @@
         },
         {
           "x": 643.2,
-          "y": -19.523631277782574,
+          "y": -28.52363127778257,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1091,19 +1149,53 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 21,
+        "libID": 35,
+        "libName": "landing_recovery",
         "sourceVariant": "kicker.precision_pop",
+        "sourceShapeLabels": [
+          {
+            "id": "s08_35_landing_recovery",
+            "x": 664.8000000000001,
+            "y": -6.564166958336928
+          },
+          {
+            "id": "s09_3_terrain",
+            "x": 702.4000000000001,
+            "y": -11.026518277782571
+          },
+          {
+            "id": "s10_25_terrain",
+            "x": 743.4000000000001,
+            "y": -11.026518277782571
+          },
+          {
+            "id": "s11_2_terrain",
+            "x": 786.4000000000001,
+            "y": -11.026518277782571
+          },
+          {
+            "id": "s12_45_rollable_table",
+            "x": 842.4000000000001,
+            "y": -8.026518277782571
+          },
+          {
+            "id": "s13_49_launch",
+            "x": 903.4000000000001,
+            "y": -8.026518277782571
+          }
+        ],
         "sourceShapeIds": [
-          "s08_landing_recovery",
-          "s09_terrain",
-          "s10_terrain",
-          "s11_terrain",
-          "s12_rollable_table",
-          "s13_launch"
+          "s08_35_landing_recovery",
+          "s09_3_terrain",
+          "s10_25_terrain",
+          "s11_2_terrain",
+          "s12_45_rollable_table",
+          "s13_49_launch"
         ]
       }
     },
     {
-      "id": "s13_landing_recovery",
+      "id": "s13_49_landing_recovery",
       "closed": true,
       "points": [
         {
@@ -1276,7 +1368,7 @@
         },
         {
           "x": 1294.8500000000001,
-          "y": -19.523631277782574,
+          "y": -28.52363127778257,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1290,7 +1382,7 @@
         },
         {
           "x": 946.4000000000001,
-          "y": -19.523631277782574,
+          "y": -28.52363127778257,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1305,11 +1397,30 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 12,
+        "libID": 49,
+        "libName": "landing_recovery",
         "sourceVariant": "gap.precision",
+        "sourceShapeLabels": [
+          {
+            "id": "s13_49_landing_recovery",
+            "x": 980.2500000000001,
+            "y": -8.026518277782571
+          },
+          {
+            "id": "s14_45_rollable_table",
+            "x": 1052.1000000000001,
+            "y": -18.02363104679506
+          },
+          {
+            "id": "s15_5_terrain",
+            "x": 1172.4750000000001,
+            "y": -21.02363104679506
+          }
+        ],
         "sourceShapeIds": [
-          "s13_landing_recovery",
-          "s14_rollable_table",
-          "s15_terrain"
+          "s13_49_landing_recovery",
+          "s14_45_rollable_table",
+          "s15_5_terrain"
         ]
       }
     }
@@ -1317,7 +1428,7 @@
   "RampPlatform": [],
   "FreePlatform": [
     {
-      "id": "s05_spring_landing_recovery",
+      "id": "s05_99_spring_landing_recovery",
       "closed": true,
       "points": [
         {
@@ -1464,13 +1575,15 @@
       "metadata": {
         "drivingSurfaceCount": 6,
         "role": "spring_catch_and_tunnel_roof",
+        "libID": 99,
+        "libName": "spring_landing_recovery",
         "sourceVariant": "spring_far.roller_crossing"
       }
     }
   ],
   "deadzone": [
     {
-      "id": "s02_gap_kill",
+      "id": "s02_35_gap_kill",
       "closed": true,
       "points": [
         {
@@ -1531,11 +1644,13 @@
         }
       ],
       "metadata": {
+        "libID": 35,
+        "libName": "gap_kill",
         "sourceVariant": "kicker.precision_pop"
       }
     },
     {
-      "id": "s08_gap_kill",
+      "id": "s08_35_gap_kill",
       "closed": true,
       "points": [
         {
@@ -1596,11 +1711,13 @@
         }
       ],
       "metadata": {
+        "libID": 35,
+        "libName": "gap_kill",
         "sourceVariant": "kicker.precision_pop"
       }
     },
     {
-      "id": "s13_gap_kill",
+      "id": "s13_49_gap_kill",
       "closed": true,
       "points": [
         {
@@ -1661,6 +1778,8 @@
         }
       ],
       "metadata": {
+        "libID": 49,
+        "libName": "gap_kill",
         "sourceVariant": "gap.precision"
       }
     }
@@ -2722,7 +2841,7 @@
     "units": "unity",
     "previewOnly": false,
     "authoringMode": "curated_catalog_composition",
-    "catalogVersion": "2.7",
+    "catalogVersion": "2.8",
     "recipe": "library/campaign_recipes.json",
     "recipeNumber": 29,
     "subtitle": "Broken dune timing culminates in a roller spring crossing, followed by one precise final gap.",
@@ -2792,6 +2911,7 @@
     "obstacles": [
       {
         "id": "flat.launch_run",
+        "libID": 1,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -2831,6 +2951,7 @@
       },
       {
         "id": "wave.irregular",
+        "libID": 29,
         "type": "wave",
         "geometryProfile": "wave",
         "ports": {
@@ -2870,6 +2991,7 @@
       },
       {
         "id": "kicker.precision_pop",
+        "libID": 35,
         "type": "kicker",
         "geometryProfile": "short_hard_lip",
         "ports": {
@@ -3000,6 +3122,7 @@
       },
       {
         "id": "flat.braking_shelf",
+        "libID": 3,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3039,6 +3162,7 @@
       },
       {
         "id": "valley.double_bowl",
+        "libID": 25,
         "type": "valley",
         "geometryProfile": "valley",
         "ports": {
@@ -3078,6 +3202,7 @@
       },
       {
         "id": "spring_far.roller_crossing",
+        "libID": 99,
         "type": "spring_far",
         "geometryProfile": "spring_far",
         "ports": {
@@ -3154,6 +3279,7 @@
       },
       {
         "id": "flat.checkpoint_pad",
+        "libID": 2,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3193,6 +3319,7 @@
       },
       {
         "id": "wave.irregular",
+        "libID": 29,
         "type": "wave",
         "geometryProfile": "wave",
         "ports": {
@@ -3232,6 +3359,7 @@
       },
       {
         "id": "kicker.precision_pop",
+        "libID": 35,
         "type": "kicker",
         "geometryProfile": "short_hard_lip",
         "ports": {
@@ -3362,6 +3490,7 @@
       },
       {
         "id": "flat.braking_shelf",
+        "libID": 3,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3401,6 +3530,7 @@
       },
       {
         "id": "valley.double_bowl",
+        "libID": 25,
         "type": "valley",
         "geometryProfile": "valley",
         "ports": {
@@ -3440,6 +3570,7 @@
       },
       {
         "id": "flat.checkpoint_pad",
+        "libID": 2,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3479,6 +3610,7 @@
       },
       {
         "id": "tabletop.brake_table",
+        "libID": 45,
         "type": "tabletop",
         "geometryProfile": "tabletop",
         "ports": {
@@ -3518,6 +3650,7 @@
       },
       {
         "id": "gap.precision",
+        "libID": 49,
         "type": "gap",
         "geometryProfile": "takeoff_and_landing_banks",
         "ports": {
@@ -3648,6 +3781,7 @@
       },
       {
         "id": "tabletop.brake_table",
+        "libID": 45,
         "type": "tabletop",
         "geometryProfile": "tabletop",
         "ports": {
@@ -3687,6 +3821,7 @@
       },
       {
         "id": "flat.finish_release",
+        "libID": 5,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3732,6 +3867,7 @@
       {
         "instanceId": "s00",
         "variant": "flat.launch_run",
+        "libID": 1,
         "beatId": "start",
         "role": "setup",
         "tension": 1,
@@ -3747,6 +3883,7 @@
       {
         "instanceId": "s01",
         "variant": "wave.irregular",
+        "libID": 29,
         "beatId": "wind_ripples",
         "role": "teach",
         "tension": 4,
@@ -3762,6 +3899,7 @@
       {
         "instanceId": "s02",
         "variant": "kicker.precision_pop",
+        "libID": 35,
         "beatId": "dune_pop",
         "role": "practice",
         "tension": 4,
@@ -3779,6 +3917,7 @@
       {
         "instanceId": "s03",
         "variant": "flat.braking_shelf",
+        "libID": 3,
         "beatId": "storm_shelter",
         "role": "release",
         "tension": 1,
@@ -3794,6 +3933,7 @@
       {
         "instanceId": "s04",
         "variant": "valley.double_bowl",
+        "libID": 25,
         "beatId": "wind_basins",
         "role": "build",
         "tension": 4,
@@ -3809,6 +3949,7 @@
       {
         "instanceId": "s05",
         "variant": "spring_far.roller_crossing",
+        "libID": 99,
         "beatId": "storm_crossing",
         "role": "climax",
         "tension": 4,
@@ -3824,6 +3965,7 @@
       {
         "instanceId": "s06",
         "variant": "flat.checkpoint_pad",
+        "libID": 2,
         "beatId": "ridge_rest",
         "role": "release",
         "tension": 1,
@@ -3841,6 +3983,7 @@
       {
         "instanceId": "s07",
         "variant": "wave.irregular",
+        "libID": 29,
         "beatId": "extended_01_wind_ripples",
         "role": "teach",
         "tension": 4,
@@ -3856,6 +3999,7 @@
       {
         "instanceId": "s08",
         "variant": "kicker.precision_pop",
+        "libID": 35,
         "beatId": "extended_02_dune_pop",
         "role": "practice",
         "tension": 4,
@@ -3873,6 +4017,7 @@
       {
         "instanceId": "s09",
         "variant": "flat.braking_shelf",
+        "libID": 3,
         "beatId": "extended_03_storm_shelter",
         "role": "release",
         "tension": 1,
@@ -3888,6 +4033,7 @@
       {
         "instanceId": "s10",
         "variant": "valley.double_bowl",
+        "libID": 25,
         "beatId": "extended_04_wind_basins",
         "role": "build",
         "tension": 4,
@@ -3903,6 +4049,7 @@
       {
         "instanceId": "s11",
         "variant": "flat.checkpoint_pad",
+        "libID": 2,
         "beatId": "extended_05_ridge_rest",
         "role": "release",
         "tension": 1,
@@ -3920,6 +4067,7 @@
       {
         "instanceId": "s12",
         "variant": "tabletop.brake_table",
+        "libID": 45,
         "beatId": "extended_06_storm_exit",
         "role": "resolution",
         "tension": 4,
@@ -3935,6 +4083,7 @@
       {
         "instanceId": "s13",
         "variant": "gap.precision",
+        "libID": 49,
         "beatId": "last_dune_break",
         "role": "combine",
         "tension": 4,
@@ -3952,6 +4101,7 @@
       {
         "instanceId": "s14",
         "variant": "tabletop.brake_table",
+        "libID": 45,
         "beatId": "storm_exit",
         "role": "resolution",
         "tension": 4,
@@ -3967,6 +4117,7 @@
       {
         "instanceId": "s15",
         "variant": "flat.finish_release",
+        "libID": 5,
         "beatId": "finish",
         "role": "resolution",
         "tension": 0,

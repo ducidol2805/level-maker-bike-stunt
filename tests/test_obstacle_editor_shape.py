@@ -55,7 +55,7 @@ class EditorShapeTests(unittest.TestCase):
         shape = editor.shapes[-1][1]
         self.assertEqual((min(p['x'] for p in shape['points']), min(p['y'] for p in shape['points']),
                           max(p['x'] for p in shape['points']), max(p['y'] for p in shape['points'])),
-                         (0, 5, 3, 8))
+                         (0, -7, 3, 8))
         variant['addedShapes'] = {'MainPlatform': [scale_world_data(shape, .5)]}
         rebuilt = build_variant(family, variant, scale=2)
         self.assertEqual(rebuilt['MainPlatform'][-1]['points'], shape['points'])

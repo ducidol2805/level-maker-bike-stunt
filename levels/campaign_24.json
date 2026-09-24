@@ -1,7 +1,7 @@
 {
   "MainPlatform": [
     {
-      "id": "s00_terrain",
+      "id": "s00_1_terrain",
       "closed": true,
       "points": [
         {
@@ -160,7 +160,7 @@
         },
         {
           "x": 142,
-          "y": -158.85006375529335,
+          "y": -167.85006375529335,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -174,7 +174,7 @@
         },
         {
           "x": -40,
-          "y": -158.85006375529335,
+          "y": -167.85006375529335,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -189,17 +189,41 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 11,
+        "libID": 1,
+        "libName": "terrain",
         "sourceVariant": "flat.launch_run",
+        "sourceShapeLabels": [
+          {
+            "id": "s00_1_terrain",
+            "x": 18.0,
+            "y": -83.92503187764667
+          },
+          {
+            "id": "s01_19_terrain",
+            "x": 59.0,
+            "y": -80.92503187764667
+          },
+          {
+            "id": "s02_3_terrain",
+            "x": 98.0,
+            "y": -83.12503187764668
+          },
+          {
+            "id": "s03_62_launch",
+            "x": 128.0,
+            "y": -83.12503187764668
+          }
+        ],
         "sourceShapeIds": [
-          "s00_terrain",
-          "s01_terrain",
-          "s02_terrain",
-          "s03_launch"
+          "s00_1_terrain",
+          "s01_19_terrain",
+          "s02_3_terrain",
+          "s03_62_launch"
         ]
       }
     },
     {
-      "id": "s03_landing_recovery",
+      "id": "s03_62_landing_recovery",
       "closed": true,
       "points": [
         {
@@ -308,66 +332,10 @@
             "y": -0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "broken",
-          "corner": false
-        },
-        {
-          "x": 262.0,
-          "y": -158.85006375529335,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        },
-        {
-          "x": 150,
-          "y": -158.85006375529335,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        }
-      ],
-      "metadata": {
-        "drivingSurfaceCount": 8,
-        "sourceVariant": "drop.deep",
-        "sourceShapeIds": [
-          "s03_landing_recovery",
-          "s04_terrain"
-        ]
-      }
-    },
-    {
-      "id": "s05_spring_approach",
-      "closed": true,
-      "points": [
-        {
-          "x": 262.0,
-          "y": -46.63105882352942,
-          "tangentIn": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "tangentOut": {
             "x": 13.333334,
             "y": 0.0
           },
-          "tangentMode": "broken",
+          "tangentMode": "continuous",
           "corner": false
         },
         {
@@ -386,7 +354,7 @@
         },
         {
           "x": 302.0,
-          "y": -58.63105882352942,
+          "y": -61.63105882352942,
           "tangentIn": {
             "x": 0.0,
             "y": 0.0
@@ -399,28 +367,52 @@
           "corner": false
         },
         {
-          "x": 262.0,
-          "y": -58.63105882352942,
+          "x": 150,
+          "y": -167.85006375529335,
           "tangentIn": {
-            "x": 0.0,
-            "y": 0.0
+            "x": 0,
+            "y": 0
           },
           "tangentOut": {
-            "x": 0.0,
-            "y": 0.0
+            "x": 0,
+            "y": 0
           },
           "tangentMode": "linear",
           "corner": false
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 2,
-        "freeBottomCorners": true,
-        "sourceVariant": "spring_far.crossing_4"
+        "drivingSurfaceCount": 9,
+        "libID": 62,
+        "libName": "landing_recovery",
+        "sourceVariant": "drop.deep",
+        "sourceShapeLabels": [
+          {
+            "id": "s03_62_landing_recovery",
+            "x": 180.0,
+            "y": -87.12503187764668
+          },
+          {
+            "id": "s04_23_terrain",
+            "x": 236.0,
+            "y": -107.24056128941139
+          },
+          {
+            "id": "s05_94_spring_approach",
+            "x": 282.0,
+            "y": -54.13105882352942
+          }
+        ],
+        "sourceShapeIds": [
+          "s03_62_landing_recovery",
+          "s04_23_terrain",
+          "s05_94_spring_approach"
+        ],
+        "freeBottomCorners": true
       }
     },
     {
-      "id": "s05_spring_lower_recovery",
+      "id": "s05_94_spring_lower_recovery",
       "closed": true,
       "points": [
         {
@@ -649,7 +641,7 @@
         },
         {
           "x": 608.0,
-          "y": -158.85006375529335,
+          "y": -167.85006375529335,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -663,7 +655,7 @@
         },
         {
           "x": 350.4,
-          "y": -158.85006375529335,
+          "y": -167.85006375529335,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -679,18 +671,47 @@
       "metadata": {
         "drivingSurfaceCount": 16,
         "role": "missed_spring_tunnel_and_climb",
+        "libID": 94,
+        "libName": "spring_lower_recovery",
         "sourceVariant": "spring_far.crossing_4",
+        "sourceShapeLabels": [
+          {
+            "id": "s05_94_spring_lower_recovery",
+            "x": 408.2,
+            "y": -102.24056128941139
+          },
+          {
+            "id": "s06_2_terrain",
+            "x": 484.0,
+            "y": -102.24056128941139
+          },
+          {
+            "id": "s07_19_terrain",
+            "x": 525.0,
+            "y": -99.24056128941139
+          },
+          {
+            "id": "s08_3_terrain",
+            "x": 564.0,
+            "y": -101.44056128941139
+          },
+          {
+            "id": "s09_62_launch",
+            "x": 594.0,
+            "y": -101.44056128941139
+          }
+        ],
         "sourceShapeIds": [
-          "s05_spring_lower_recovery",
-          "s06_terrain",
-          "s07_terrain",
-          "s08_terrain",
-          "s09_launch"
+          "s05_94_spring_lower_recovery",
+          "s06_2_terrain",
+          "s07_19_terrain",
+          "s08_3_terrain",
+          "s09_62_launch"
         ]
       }
     },
     {
-      "id": "s09_landing_recovery",
+      "id": "s09_62_landing_recovery",
       "closed": true,
       "points": [
         {
@@ -863,7 +884,7 @@
         },
         {
           "x": 886.0,
-          "y": -158.85006375529335,
+          "y": -167.85006375529335,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -877,7 +898,7 @@
         },
         {
           "x": 616.0,
-          "y": -158.85006375529335,
+          "y": -167.85006375529335,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -892,18 +913,47 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 12,
+        "libID": 62,
+        "libName": "landing_recovery",
         "sourceVariant": "drop.deep",
+        "sourceShapeLabels": [
+          {
+            "id": "s09_62_landing_recovery",
+            "x": 646.0,
+            "y": -105.44056128941139
+          },
+          {
+            "id": "s10_23_terrain",
+            "x": 702.0,
+            "y": -125.55609070117609
+          },
+          {
+            "id": "s11_2_terrain",
+            "x": 746.0,
+            "y": -125.55609070117609
+          },
+          {
+            "id": "s12_69_safe_fallback",
+            "x": 800.0,
+            "y": -125.55609070117609
+          },
+          {
+            "id": "s13_58_launch",
+            "x": 861.0,
+            "y": -123.55609070117609
+          }
+        ],
         "sourceShapeIds": [
-          "s09_landing_recovery",
-          "s10_terrain",
-          "s11_terrain",
-          "s12_safe_fallback",
-          "s13_launch"
+          "s09_62_landing_recovery",
+          "s10_23_terrain",
+          "s11_2_terrain",
+          "s12_69_safe_fallback",
+          "s13_58_launch"
         ]
       }
     },
     {
-      "id": "s13_landing_recovery",
+      "id": "s13_58_landing_recovery",
       "closed": true,
       "points": [
         {
@@ -1020,7 +1070,7 @@
         },
         {
           "x": 1243.7,
-          "y": -158.85006375529335,
+          "y": -167.85006375529335,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1034,7 +1084,7 @@
         },
         {
           "x": 904.0,
-          "y": -158.85006375529335,
+          "y": -167.85006375529335,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1049,18 +1099,37 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 8,
+        "libID": 58,
+        "libName": "landing_recovery",
         "sourceVariant": "step_down.deep",
+        "sourceShapeLabels": [
+          {
+            "id": "s13_58_landing_recovery",
+            "x": 940.9,
+            "y": -128.5560907011761
+          },
+          {
+            "id": "s14_69_safe_fallback",
+            "x": 1013.8,
+            "y": -160.35006375529335
+          },
+          {
+            "id": "s15_5_terrain",
+            "x": 1126.75,
+            "y": -160.35006375529335
+          }
+        ],
         "sourceShapeIds": [
-          "s13_landing_recovery",
-          "s14_safe_fallback",
-          "s15_terrain"
+          "s13_58_landing_recovery",
+          "s14_69_safe_fallback",
+          "s15_5_terrain"
         ]
       }
     }
   ],
   "RampPlatform": [
     {
-      "id": "s12_open_bridge",
+      "id": "s12_69_open_bridge",
       "closed": true,
       "points": [
         {
@@ -1164,11 +1233,13 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 5,
+        "libID": 69,
+        "libName": "open_bridge",
         "sourceVariant": "platform.downhill_bridge"
       }
     },
     {
-      "id": "s14_open_bridge",
+      "id": "s14_69_open_bridge",
       "closed": true,
       "points": [
         {
@@ -1272,13 +1343,15 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 5,
+        "libID": 69,
+        "libName": "open_bridge",
         "sourceVariant": "platform.downhill_bridge"
       }
     }
   ],
   "FreePlatform": [
     {
-      "id": "s05_spring_landing_recovery",
+      "id": "s05_94_spring_landing_recovery",
       "closed": true,
       "points": [
         {
@@ -1383,13 +1456,15 @@
       "metadata": {
         "drivingSurfaceCount": 3,
         "role": "spring_catch_and_tunnel_roof",
+        "libID": 94,
+        "libName": "spring_landing_recovery",
         "sourceVariant": "spring_far.crossing_4"
       }
     }
   ],
   "deadzone": [
     {
-      "id": "s03_gap_kill",
+      "id": "s03_62_gap_kill",
       "closed": true,
       "points": [
         {
@@ -1450,11 +1525,13 @@
         }
       ],
       "metadata": {
+        "libID": 62,
+        "libName": "gap_kill",
         "sourceVariant": "drop.deep"
       }
     },
     {
-      "id": "s05_spring_gap_kill",
+      "id": "s05_94_spring_gap_kill",
       "closed": true,
       "points": [
         {
@@ -1516,11 +1593,13 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 2,
+        "libID": 94,
+        "libName": "spring_gap_kill",
         "sourceVariant": "spring_far.crossing_4"
       }
     },
     {
-      "id": "s09_gap_kill",
+      "id": "s09_62_gap_kill",
       "closed": true,
       "points": [
         {
@@ -1581,11 +1660,13 @@
         }
       ],
       "metadata": {
+        "libID": 62,
+        "libName": "gap_kill",
         "sourceVariant": "drop.deep"
       }
     },
     {
-      "id": "s13_gap_kill",
+      "id": "s13_58_gap_kill",
       "closed": true,
       "points": [
         {
@@ -1646,6 +1727,8 @@
         }
       ],
       "metadata": {
+        "libID": 58,
+        "libName": "gap_kill",
         "sourceVariant": "step_down.deep"
       }
     }
@@ -2707,7 +2790,7 @@
     "units": "unity",
     "previewOnly": false,
     "authoringMode": "curated_catalog_composition",
-    "catalogVersion": "2.7",
+    "catalogVersion": "2.8",
     "recipe": "library/campaign_recipes.json",
     "recipeNumber": 24,
     "subtitle": "Two controlled drops frame a long horizontal crossing across the canyon mouth.",
@@ -2777,6 +2860,7 @@
     "obstacles": [
       {
         "id": "flat.launch_run",
+        "libID": 1,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -2816,6 +2900,7 @@
       },
       {
         "id": "hill.mesa",
+        "libID": 19,
         "type": "hill",
         "geometryProfile": "hill",
         "ports": {
@@ -2855,6 +2940,7 @@
       },
       {
         "id": "flat.braking_shelf",
+        "libID": 3,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -2894,6 +2980,7 @@
       },
       {
         "id": "drop.deep",
+        "libID": 62,
         "type": "drop",
         "geometryProfile": "drop",
         "ports": {
@@ -3024,6 +3111,7 @@
       },
       {
         "id": "valley.long_floor",
+        "libID": 23,
         "type": "valley",
         "geometryProfile": "valley",
         "ports": {
@@ -3063,6 +3151,7 @@
       },
       {
         "id": "spring_far.crossing_4",
+        "libID": 94,
         "type": "spring_far",
         "geometryProfile": "spring_far",
         "ports": {
@@ -3139,6 +3228,7 @@
       },
       {
         "id": "flat.checkpoint_pad",
+        "libID": 2,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3178,6 +3268,7 @@
       },
       {
         "id": "hill.mesa",
+        "libID": 19,
         "type": "hill",
         "geometryProfile": "hill",
         "ports": {
@@ -3217,6 +3308,7 @@
       },
       {
         "id": "flat.braking_shelf",
+        "libID": 3,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3256,6 +3348,7 @@
       },
       {
         "id": "drop.deep",
+        "libID": 62,
         "type": "drop",
         "geometryProfile": "drop",
         "ports": {
@@ -3386,6 +3479,7 @@
       },
       {
         "id": "valley.long_floor",
+        "libID": 23,
         "type": "valley",
         "geometryProfile": "valley",
         "ports": {
@@ -3425,6 +3519,7 @@
       },
       {
         "id": "flat.checkpoint_pad",
+        "libID": 2,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3464,6 +3559,7 @@
       },
       {
         "id": "platform.downhill_bridge",
+        "libID": 69,
         "type": "platform",
         "geometryProfile": "platform",
         "ports": {
@@ -3503,6 +3599,7 @@
       },
       {
         "id": "step_down.deep",
+        "libID": 58,
         "type": "step_down",
         "geometryProfile": "descending_landing_shelf",
         "ports": {
@@ -3633,6 +3730,7 @@
       },
       {
         "id": "platform.downhill_bridge",
+        "libID": 69,
         "type": "platform",
         "geometryProfile": "platform",
         "ports": {
@@ -3672,6 +3770,7 @@
       },
       {
         "id": "flat.finish_release",
+        "libID": 5,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3717,6 +3816,7 @@
       {
         "instanceId": "s00",
         "variant": "flat.launch_run",
+        "libID": 1,
         "beatId": "start",
         "role": "setup",
         "tension": 1,
@@ -3732,6 +3832,7 @@
       {
         "instanceId": "s01",
         "variant": "hill.mesa",
+        "libID": 19,
         "beatId": "canyon_rim",
         "role": "build",
         "tension": 2,
@@ -3747,6 +3848,7 @@
       {
         "instanceId": "s02",
         "variant": "flat.braking_shelf",
+        "libID": 3,
         "beatId": "rim_brake",
         "role": "teach",
         "tension": 1,
@@ -3762,6 +3864,7 @@
       {
         "instanceId": "s03",
         "variant": "drop.deep",
+        "libID": 62,
         "beatId": "upper_canyon",
         "role": "practice",
         "tension": 3,
@@ -3777,6 +3880,7 @@
       {
         "instanceId": "s04",
         "variant": "valley.long_floor",
+        "libID": 23,
         "beatId": "canyon_floor",
         "role": "release",
         "tension": 1,
@@ -3792,6 +3896,7 @@
       {
         "instanceId": "s05",
         "variant": "spring_far.crossing_4",
+        "libID": 94,
         "beatId": "canyon_mouth",
         "role": "climax",
         "tension": 4,
@@ -3807,6 +3912,7 @@
       {
         "instanceId": "s06",
         "variant": "flat.checkpoint_pad",
+        "libID": 2,
         "beatId": "far_wall_rest",
         "role": "release",
         "tension": 1,
@@ -3824,6 +3930,7 @@
       {
         "instanceId": "s07",
         "variant": "hill.mesa",
+        "libID": 19,
         "beatId": "extended_01_canyon_rim",
         "role": "build",
         "tension": 2,
@@ -3839,6 +3946,7 @@
       {
         "instanceId": "s08",
         "variant": "flat.braking_shelf",
+        "libID": 3,
         "beatId": "extended_02_rim_brake",
         "role": "teach",
         "tension": 1,
@@ -3854,6 +3962,7 @@
       {
         "instanceId": "s09",
         "variant": "drop.deep",
+        "libID": 62,
         "beatId": "extended_03_upper_canyon",
         "role": "practice",
         "tension": 3,
@@ -3869,6 +3978,7 @@
       {
         "instanceId": "s10",
         "variant": "valley.long_floor",
+        "libID": 23,
         "beatId": "extended_04_canyon_floor",
         "role": "release",
         "tension": 1,
@@ -3884,6 +3994,7 @@
       {
         "instanceId": "s11",
         "variant": "flat.checkpoint_pad",
+        "libID": 2,
         "beatId": "extended_05_far_wall_rest",
         "role": "release",
         "tension": 1,
@@ -3901,6 +4012,7 @@
       {
         "instanceId": "s12",
         "variant": "platform.downhill_bridge",
+        "libID": 69,
         "beatId": "extended_06_stone_ramp",
         "role": "resolution",
         "tension": 3,
@@ -3916,6 +4028,7 @@
       {
         "instanceId": "s13",
         "variant": "step_down.deep",
+        "libID": 58,
         "beatId": "lower_wall",
         "role": "combine",
         "tension": 4,
@@ -3931,6 +4044,7 @@
       {
         "instanceId": "s14",
         "variant": "platform.downhill_bridge",
+        "libID": 69,
         "beatId": "stone_ramp",
         "role": "resolution",
         "tension": 3,
@@ -3946,6 +4060,7 @@
       {
         "instanceId": "s15",
         "variant": "flat.finish_release",
+        "libID": 5,
         "beatId": "finish",
         "role": "resolution",
         "tension": 0,
@@ -4563,7 +4678,7 @@
     "validationReport": {
       "status": "passed_static_geometry_and_point_mass_checks",
       "sourceMainShapes": 20,
-      "exportedMainShapes": 6,
+      "exportedMainShapes": 5,
       "coinCount": 48,
       "coveredGaps": [
         {

@@ -139,12 +139,39 @@ def are_opposite_tangents(incoming, outgoing, epsilon=1e-8):
     return abs(cross) <= epsilon * in_length * out_length and dot < 0
 
 
+def can_merge_terrain(left, right, tolerance=1e-6):
+    """Accept ordinary closures even when their bottom corners were edited."""
+    n, m = surface_count(left), surface_count(right)
+    a, b = left['points'][n-1], right['points'][0]
+    if b['x'] < a['x'] or math.hypot(a['x']-b['x'], a['y']-b['y']) > tolerance:
+        return False
+    for shape, count in ((left, n), (right, m)):
+        points = shape['points']
+        bottom_right, bottom_left = points[-2:]
+        if (abs(bottom_right['x']-points[count-1]['x']) > tolerance or
+                abs(bottom_left['x']-points[0]['x']) > tolerance or
+                max(bottom_right['y'], bottom_left['y']) >= min(p['y'] for p in points[:count])):
+            return False
+        # A curved or overhanging underside needs polygon union, not a splice.
+        closure_handles = ((points[0], 'tangentIn'), (points[count-1], 'tangentOut'))
+        closure_handles += tuple((p, key) for p in points[-2:] for key in ('tangentIn', 'tangentOut'))
+        if any(p.get('tangentMode') != 'linear' and
+               math.hypot(p.get(key, {}).get('x', 0), p.get(key, {}).get('y', 0)) > tolerance
+               for p, key in closure_handles):
+            return False
+    # Retained outer corners must stay below both driving surfaces.
+    return max(left['points'][-1]['y'], right['points'][-2]['y']) < min(
+        p['y'] for shape, count in ((left, n), (right, m)) for p in shape['points'][:count])
+
+
 def export_level(level, tolerance=1e-6, *, boundary_padding=None):
     """Merge endpoint-connected terrain chains, never bridge real gaps.
 
     Preserve incoming/outgoing Bezier handles at each shared road vertex.
     Keep the first shape ID and remap fallback references to surviving IDs.
     """
+    from bike_stunt.shape_labels import shape_labels
+
     if not math.isfinite(tolerance) or tolerance < 0:
         raise ValueError('tolerance must be finite and non-negative')
     if boundary_padding is None:
@@ -158,11 +185,9 @@ def export_level(level, tolerance=1e-6, *, boundary_padding=None):
             previous = merged[-1]
             n, m = surface_count(previous), surface_count(shape)
             a, b = previous['points'][n-1], shape['points'][0]
-            # Overlap is not an endpoint join; it needs a polygon-union workflow.
-            join = (not previous.get('metadata', {}).get('freeBottomCorners') and
-                    not shape.get('metadata', {}).get('freeBottomCorners') and
-                    b['x'] >= a['x'] and math.hypot(a['x']-b['x'], a['y']-b['y']) <= tolerance)
+            join = can_merge_terrain(previous, shape, tolerance)
             if join:
+                source_labels = copy.deepcopy(shape_labels(previous) + shape_labels(shape))
                 # A linear endpoint has no active Bezier handles.
                 incoming = a.get('tangentIn', {}) if a.get('tangentMode') != 'linear' else {}
                 outgoing = b.get('tangentOut', {}) if b.get('tangentMode') != 'linear' else {}
@@ -175,6 +200,9 @@ def export_level(level, tolerance=1e-6, *, boundary_padding=None):
                          tangentMode=tangent_mode)
                 previous['points'] = previous['points'][:n] + shape['points'][1:m] + [shape['points'][-2], previous['points'][-1]]
                 meta = previous.setdefault('metadata', {})
+                if shape.get('metadata', {}).get('freeBottomCorners'):
+                    meta['freeBottomCorners'] = True
+                meta['sourceShapeLabels'] = source_labels
                 meta['drivingSurfaceCount'] = n+m-1
                 sources = meta.setdefault('sourceShapeIds', [previous['id']])
                 sources.extend(shape.get('metadata', {}).get('sourceShapeIds', [sid]))

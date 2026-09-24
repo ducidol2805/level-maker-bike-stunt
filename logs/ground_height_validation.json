@@ -1,0 +1,738 @@
+{
+  "worldMinimum": 15,
+  "sourceMinimum": 7.5,
+  "groundShapes": 146,
+  "onlyBottomYChanged": true,
+  "shapes": [
+    {
+      "variant": "flat.launch_run",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "flat.checkpoint_pad",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "flat.braking_shelf",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "flat.rolling_reset",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "flat.finish_release",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "rise.gentle_climb",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "rise.long_climb",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "rise.late_steepening",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "rise.two_stage",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "rise.crest_relief",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "fall.gentle_descent",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "fall.long_descent",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "fall.late_compression",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "fall.terraced",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "fall.steep_shelf",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "hill.round_roller",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "hill.early_crest",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "hill.late_crest",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "hill.mesa",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "hill.double_crest",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "valley.shallow_bowl",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "valley.deep_bowl",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "valley.long_floor",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "valley.offset_exit",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "valley.double_bowl",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "wave.two_soft",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "wave.three_even",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "wave.growing",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "wave.irregular",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "wave.trough_train",
+      "shape": "terrain",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "kicker.low_skip",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "kicker.low_skip",
+      "shape": "landing_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "kicker.quick_pop",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "kicker.quick_pop",
+      "shape": "landing_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "kicker.long_flick",
+      "shape": "launch",
+      "minimumDepth": 15.096015
+    },
+    {
+      "variant": "kicker.long_flick",
+      "shape": "landing_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "kicker.high_pop",
+      "shape": "launch",
+      "minimumDepth": 15.175963
+    },
+    {
+      "variant": "kicker.high_pop",
+      "shape": "landing_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "kicker.precision_pop",
+      "shape": "launch",
+      "minimumDepth": 15.003606
+    },
+    {
+      "variant": "kicker.precision_pop",
+      "shape": "landing_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "curved_ramp.gentle_scoop",
+      "shape": "launch",
+      "minimumDepth": 15.246387
+    },
+    {
+      "variant": "curved_ramp.gentle_scoop",
+      "shape": "scoop_catch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "curved_ramp.deep_scoop",
+      "shape": "launch",
+      "minimumDepth": 15.235697
+    },
+    {
+      "variant": "curved_ramp.deep_scoop",
+      "shape": "scoop_catch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "curved_ramp.speed_scoop",
+      "shape": "launch",
+      "minimumDepth": 15.736578
+    },
+    {
+      "variant": "curved_ramp.speed_scoop",
+      "shape": "scoop_catch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "curved_ramp.trick_scoop",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "curved_ramp.trick_scoop",
+      "shape": "scoop_catch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "curved_ramp.raised_catch",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "curved_ramp.raised_catch",
+      "shape": "scoop_catch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "tabletop.learner",
+      "shape": "rollable_table",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "tabletop.long_deck",
+      "shape": "rollable_table",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "tabletop.steep_face",
+      "shape": "rollable_table",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "tabletop.trick_table",
+      "shape": "rollable_table",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "tabletop.brake_table",
+      "shape": "rollable_table",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "gap.intro",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "gap.intro",
+      "shape": "landing_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "gap.flow_double",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "gap.flow_double",
+      "shape": "landing_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "gap.long_clear",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "gap.long_clear",
+      "shape": "landing_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "gap.precision",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "gap.precision",
+      "shape": "landing_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "gap.trick_gap",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "gap.trick_gap",
+      "shape": "landing_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_up.small_shelf",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_up.small_shelf",
+      "shape": "elevated_shelf",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_up.long_shelf",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_up.long_shelf",
+      "shape": "elevated_shelf",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_up.high_shelf",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_up.high_shelf",
+      "shape": "elevated_shelf",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_up.precision_shelf",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_up.precision_shelf",
+      "shape": "elevated_shelf",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_up.uphill_extension",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_up.uphill_extension",
+      "shape": "elevated_shelf",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_down.gentle",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_down.gentle",
+      "shape": "descending_shelf",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_down.long",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_down.long",
+      "shape": "descending_shelf",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_down.deep",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_down.deep",
+      "shape": "descending_shelf",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_down.tight",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_down.tight",
+      "shape": "descending_shelf",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_down.trick",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "step_down.trick",
+      "shape": "descending_shelf",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "drop.small",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "drop.small",
+      "shape": "landing_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "drop.deep",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "drop.deep",
+      "shape": "landing_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "drop.offset",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "drop.offset",
+      "shape": "landing_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "drop.brake",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "drop.brake",
+      "shape": "landing_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "drop.long_runout",
+      "shape": "launch",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "drop.long_runout",
+      "shape": "landing_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "platform.flat_bridge",
+      "shape": "safe_fallback",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "platform.arched_bridge",
+      "shape": "safe_fallback",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "platform.uphill_bridge",
+      "shape": "safe_fallback",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "platform.downhill_bridge",
+      "shape": "safe_fallback",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "platform.wave_bridge",
+      "shape": "safe_fallback",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "platform.crowned_span",
+      "shape": "safe_fallback",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "platform.sag_bridge",
+      "shape": "safe_fallback",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "platform.double_hump",
+      "shape": "safe_fallback",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "platform.switchback_bridge",
+      "shape": "safe_fallback",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "platform.skyline_bridge",
+      "shape": "safe_fallback",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "balance.single_curb",
+      "shape": "intentional_ledges",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "balance.double_curb",
+      "shape": "intentional_ledges",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "balance.unequal_stairs",
+      "shape": "intentional_ledges",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "balance.tall_ledge",
+      "shape": "intentional_ledges",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "balance.tight_stairs",
+      "shape": "intentional_ledges",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_high.lift_1",
+      "shape": "spring_approach",
+      "minimumDepth": 22.0
+    },
+    {
+      "variant": "spring_high.lift_1",
+      "shape": "custom_shape_01",
+      "minimumDepth": 18.0
+    },
+    {
+      "variant": "spring_high.lift_2",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_high.lift_2",
+      "shape": "spring_lower_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_high.lift_3",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_high.lift_3",
+      "shape": "spring_lower_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_high.lift_4",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_high.lift_4",
+      "shape": "spring_lower_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_high.lift_5",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_high.lift_5",
+      "shape": "spring_lower_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_high.dip_lift",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_high.ramp_lift",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_high.crest_lift",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_high.roller_lift",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_high.summit_lift",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_far.crossing_1",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_far.crossing_1",
+      "shape": "spring_lower_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_far.crossing_2",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_far.crossing_2",
+      "shape": "spring_lower_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_far.crossing_3",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_far.crossing_3",
+      "shape": "spring_lower_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_far.crossing_4",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_far.crossing_4",
+      "shape": "spring_lower_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_far.crossing_5",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_far.crossing_5",
+      "shape": "spring_lower_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_far.low_skim",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_far.dip_crossing",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_far.downhill_crossing",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_far.roller_crossing",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "spring_far.frontier_crossing",
+      "shape": "spring_approach",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "explosive_loop.round",
+      "shape": "exit_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "explosive_loop.round",
+      "shape": "entry_run",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "explosive_loop.double_ring",
+      "shape": "exit_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "explosive_loop.double_ring",
+      "shape": "entry_run",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "explosive_loop.triple_ring",
+      "shape": "exit_recovery",
+      "minimumDepth": 15.0
+    },
+    {
+      "variant": "explosive_loop.triple_ring",
+      "shape": "entry_run",
+      "minimumDepth": 15.0
+    }
+  ]
+}

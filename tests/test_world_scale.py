@@ -3,9 +3,9 @@ import json
 import unittest
 
 from generate_campaign import build_authored_level
-from obstacle_library import ROOT, build_variant, load_catalog
+from obstacle_library import ROOT, build_variant, ground, load_catalog, sample_curve, vertex
 from spring_object import spring_trajectory
-from terrain_export import export_level
+from terrain_export import export_level, surface_count
 from world_scale import scale_world_data
 
 
@@ -18,6 +18,10 @@ class WorldScaleTests(unittest.TestCase):
                     raw = build_variant(family, variant)
                     scaled = build_variant(family, variant, scale=family['_worldScale'])
                     self.assertEqual(scaled['worldScale'], 2)
+                    for shape in scaled['MainPlatform']:
+                        surface = shape['points'][:surface_count(shape)]
+                        lowest = min(y for _, y in sample_curve({'points': surface}, 100))
+                        self.assertGreaterEqual(lowest-max(p['y'] for p in shape['points'][-2:]), 15-1e-8)
                     for group in ('MainPlatform', 'RampPlatform', 'deadzone', 'InteractableObject'):
                         for source, output in zip(raw[group], scaled[group]):
                             if 'points' in source:
@@ -31,6 +35,13 @@ class WorldScaleTests(unittest.TestCase):
                                 for key in ('x', 'y'):
                                     self.assertEqual(output['transform'][key], 2*source['transform'][key])
                     self.assertEqual(sum(o['type']=='coin' for o in scaled['InteractableObject']), 3)
+
+    def test_ground_depth_accounts_for_curves_below_their_knots(self):
+        shape = ground('dip', [vertex(0, 0, outgoing=(2, -3)),
+                               vertex(6, 0, incoming=(-2, -3))])
+        surface = shape['points'][:surface_count(shape)]
+        lowest = min(y for _, y in sample_curve({'points': surface}, 100))
+        self.assertGreaterEqual(lowest-max(p['y'] for p in shape['points'][-2:]), 7.5)
 
     def test_saved_map_is_scaled_once_and_spring_arc_keeps_shape(self):
         families = load_catalog()

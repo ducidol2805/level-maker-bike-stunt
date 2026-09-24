@@ -22,6 +22,7 @@ from world_scale import scale_world_data
 from bike_stunt.map_viewer.validation import (
     TANGENT_COLORS, bounds, point, points, required_group, spline_controls,
 )
+from bike_stunt.shape_labels import map_shape_labels
 
 try:
     from matplotlib.figure import Figure
@@ -151,7 +152,7 @@ def shape_line_color(group: str, shape: dict[str, Any]) -> str:
 
 
 def compile_vector_level(data: dict[str, Any], outline_only: bool = False,
-                         *, show_controls: bool = True) -> VectorLevel:
+                         *, show_controls: bool = True, show_shape_names: bool = True) -> VectorLevel:
     """Prepare native paths and overlays once; no Matplotlib or raster work."""
     paths: list[VectorPath] = []
     markers: list[VectorMarker] = []
@@ -225,6 +226,9 @@ def compile_vector_level(data: dict[str, Any], outline_only: bool = False,
     for name, kind in (('Start', 'start'), ('End', 'end'), ('Top', 'up'), ('Bottom', 'down')):
         marker(data[name], kind, name, name)
     left, right, bottom, top = bounds(data)
+    if show_shape_names:
+        markers.extend(VectorMarker((label['x'], -label['y']), 'shape_label', UI_TEXT, label['id'])
+                       for label in map_shape_labels(data))
     if show_controls:
         for index, ((x, y), tag, controls) in enumerate(spline_controls(data)):
             for (hx, hy), color in controls:
@@ -279,7 +283,7 @@ class PreviewCanvas(tk.Canvas):
         self._pan_position: tuple[int, int] | None = None
         self._draw_after: str | None = None
         self._path_items: list[tuple[int, VectorPath]] = []
-        self._marker_items: list[tuple[int, int | None, VectorMarker]] = []
+        self._marker_items: list[tuple[int | None, int | None, VectorMarker]] = []
         self._label_strokes: dict[int, list[int]] = {}
         self.controls_visible = False
         self.aa_enabled = False
@@ -334,13 +338,17 @@ class PreviewCanvas(tk.Canvas):
                 options['outline'] = '#ffffff'
                 options['width'] = 0
             coords = self._symbol_coords(spec.kind, 0, 0)
-            if spec.kind in ('coin', 'start', 'knot', 'handle'):
+            if spec.kind == 'shape_label':
+                item = None
+            elif spec.kind in ('coin', 'start', 'knot', 'handle'):
                 item = self.create_oval(coords, **options)
             else:
                 item = self.create_polygon(coords, **options)
             label = None
             if spec.label:
-                anchor = 'center' if spec.kind == 'knot' else 's'
+                anchor = 'center' if spec.kind in ('knot', 'shape_label') else 's'
+                if spec.kind == 'shape_label':
+                    control_tags += ('shape_labels',)
                 strokes = [self.create_text(0, 0, text=spec.label, font=self.TEXT_FONT,
                                            anchor=anchor, fill='black',
                                            tags=('scene', 'overlay', 'text_stroke')+control_tags)
@@ -453,6 +461,8 @@ class PreviewCanvas(tk.Canvas):
                     draw(arrow, screen, spec.outline, 0, spec.outline)
 
         for spec in self.scene.markers:
+            if spec.kind == 'shape_label':
+                continue
             if spec.kind in ('knot', 'handle') and not self.controls_visible:
                 continue
             x, y = (spec.position[k]*self.scale+self.offset[k] for k in (0, 1))
@@ -572,9 +582,10 @@ class PreviewCanvas(tk.Canvas):
     def _project_markers(self) -> None:
         for item, label, spec in self._marker_items:
             x, y = (spec.position[k]*self.scale+self.offset[k] for k in (0, 1))
-            self.coords(item, *self._symbol_coords(spec.kind, x, y))
+            if item is not None:
+                self.coords(item, *self._symbol_coords(spec.kind, x, y))
             if label is not None:
-                dx, dy = (0, 0) if spec.kind == 'knot' else self.LABEL_OFFSET
+                dx, dy = (0, 0) if spec.kind in ('knot', 'shape_label') else self.LABEL_OFFSET
                 self.coords(label, x+dx, y+dy)
                 for stroke, (sx, sy) in zip(self._label_strokes[label], self.STROKE_OFFSETS):
                     self.coords(stroke, x+dx+sx, y+dy+sy)

@@ -87,7 +87,7 @@ def compile_obstacle_card(family: dict[str, Any], variant: dict[str, Any],
     errors = [issue.message for issue in validate(data, .05) if issue.severity == 'error']
     if errors:
         raise ValueError(f"{variant['id']}: {'; '.join(errors[:2])}")
-    scene = compile_vector_level(data, outline_only, show_controls=False)
+    scene = compile_vector_level(data, outline_only, show_controls=False, show_shape_names=False)
     shape_ids = {shape['id'] for group in GROUPS
                  for shape in data[group] if 'points' in shape}
     paths = tuple(path for path in scene.paths if path.source_id in shape_ids)
@@ -261,7 +261,7 @@ class ObstacleEditorWindow(EditorSession):
             raise ValueError(f'Unknown shape type: {target}')
         converted = copy.deepcopy(shape)
         if not converted.get('closed') and target not in ('RampPlatform', 'FreePlatform'):
-            converted = ground(shape['id'], converted['points'])
+            converted = ground(shape['id'], converted['points'], depth=15 if target == 'MainPlatform' else 3)
         if target == 'MainPlatform':
             converted['closed'] = True
             converted.setdefault('metadata', {})['drivingSurfaceCount'] = len(converted['points'])-2
@@ -647,7 +647,8 @@ class ObstacleEditorWindow(EditorSession):
                                    [(0, 8), (3, 8), (3, 5), (0, 5)])
         else:
             shape = ground(f'custom_shape_{number:02d}',
-                           [vertex(0, 8, mode='linear'), vertex(3, 8, mode='linear')])
+                           [vertex(0, 8, mode='linear'), vertex(3, 8, mode='linear')],
+                           depth=15 if group == 'MainPlatform' else 3)
         self.module[group].append(shape)
         self.shapes.append((group, shape))
         self.added_shapes.add((group, shape['id']))

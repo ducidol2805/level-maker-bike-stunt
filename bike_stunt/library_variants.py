@@ -566,7 +566,7 @@ def build_variant(family, variant, *, scale=1, deadzone_y_offset=DEADZONE_Y_OFFS
     sampled=[]
     for surface in surfaces:
         sampled.extend(sample_curve({"points":surface,"closed":False}))
-    result.update({"id":variant["id"],"type":type_id,"difficulty":variant["difficulty"],"intent":variant["intent"],
+    result.update({"id":variant["id"],"libID":variant["libID"],"type":type_id,"difficulty":variant["difficulty"],"intent":variant["intent"],
         "geometryProfile": family.get("geometryProfile", type_id),
         "ports":{"entry":{"x":0,"y":0,"direction":[1,0]},"exit":{"x":end[0],"y":end[1],"direction":[1,0]}},
         "physics":physics,"jumpUnit":units,"coinCandidates":anchors,"checkpointCandidates":checkpoints,"joins":joins,

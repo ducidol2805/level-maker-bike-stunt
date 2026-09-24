@@ -5,6 +5,7 @@
   "variants": [
     {
       "id": "spring_high.lift_1",
+      "libID": 81,
       "name": "Lift 1",
       "difficulty": 1,
       "intent": "Cinematic ascent to a 6-unit higher platform",
@@ -476,6 +477,7 @@
     },
     {
       "id": "spring_high.lift_2",
+      "libID": 82,
       "name": "Lift 2",
       "difficulty": 2,
       "intent": "Cinematic ascent to a 10-unit higher platform",
@@ -533,7 +535,7 @@
               },
               {
                 "x": 16.0,
-                "y": -6.0,
+                "y": -7.5,
                 "tangentIn": {
                   "x": 0.0,
                   "y": 0.0
@@ -547,7 +549,7 @@
               },
               {
                 "x": 0.0,
-                "y": -6.0,
+                "y": -7.5,
                 "tangentIn": {
                   "x": 0.0,
                   "y": 0.0
@@ -665,7 +667,7 @@
               },
               {
                 "x": 58.0,
-                "y": -6.0,
+                "y": -10.5,
                 "tangentIn": {
                   "x": 0.0,
                   "y": 0.0
@@ -679,7 +681,7 @@
               },
               {
                 "x": 22.0,
-                "y": -6.0,
+                "y": -10.5,
                 "tangentIn": {
                   "x": 0.0,
                   "y": 0.0
@@ -874,6 +876,7 @@
     },
     {
       "id": "spring_high.lift_3",
+      "libID": 83,
       "name": "Lift 3",
       "difficulty": 3,
       "intent": "Cinematic ascent to a 14-unit higher platform",
@@ -931,7 +934,7 @@
               },
               {
                 "x": 18.0,
-                "y": -6.0,
+                "y": -7.5,
                 "tangentIn": {
                   "x": 0.0,
                   "y": 0.0
@@ -945,7 +948,7 @@
               },
               {
                 "x": 0.0,
-                "y": -6.0,
+                "y": -7.5,
                 "tangentIn": {
                   "x": 0.0,
                   "y": 0.0
@@ -1126,6 +1129,7 @@
     },
     {
       "id": "spring_high.lift_4",
+      "libID": 84,
       "name": "Lift 4",
       "difficulty": 4,
       "intent": "Cinematic ascent to a 18-unit higher platform",
@@ -1183,7 +1187,7 @@
               },
               {
                 "x": 20.0,
-                "y": -6.0,
+                "y": -7.5,
                 "tangentIn": {
                   "x": 0.0,
                   "y": 0.0
@@ -1197,7 +1201,7 @@
               },
               {
                 "x": 0.0,
-                "y": -6.0,
+                "y": -7.5,
                 "tangentIn": {
                   "x": 0.0,
                   "y": 0.0
@@ -1378,6 +1382,7 @@
     },
     {
       "id": "spring_high.lift_5",
+      "libID": 85,
       "name": "Lift 5",
       "difficulty": 5,
       "intent": "Cinematic ascent to a 24-unit higher platform",
@@ -1435,7 +1440,7 @@
               },
               {
                 "x": 22.0,
-                "y": -6.0,
+                "y": -7.5,
                 "tangentIn": {
                   "x": 0.0,
                   "y": 0.0
@@ -1449,7 +1454,7 @@
               },
               {
                 "x": 0.0,
-                "y": -6.0,
+                "y": -7.5,
                 "tangentIn": {
                   "x": 0.0,
                   "y": 0.0
@@ -1630,6 +1635,7 @@
     },
     {
       "id": "spring_high.dip_lift",
+      "libID": 86,
       "name": "Dip Lift",
       "difficulty": 2,
       "intent": "Compress through a shallow dip before an 8-unit lift onto a crowned landing",
@@ -1790,6 +1796,7 @@
     },
     {
       "id": "spring_high.ramp_lift",
+      "libID": 87,
       "name": "Ramp Lift",
       "difficulty": 3,
       "intent": "Launch from a raised approach into a 12-unit terraced transfer",
@@ -1950,6 +1957,7 @@
     },
     {
       "id": "spring_high.crest_lift",
+      "libID": 88,
       "name": "Crest Lift",
       "difficulty": 3,
       "intent": "Cross a crest approach into a 15-unit high descending terrace",
@@ -2124,6 +2132,7 @@
     },
     {
       "id": "spring_high.roller_lift",
+      "libID": 89,
       "name": "Roller Lift",
       "difficulty": 4,
       "intent": "Time two approach rollers before a 19-unit lift onto a rolling summit",
@@ -2340,6 +2349,7 @@
     },
     {
       "id": "spring_high.summit_lift",
+      "libID": 90,
       "name": "Summit Lift",
       "difficulty": 5,
       "intent": "Commit from a deep compression into a 28-unit summit transfer",

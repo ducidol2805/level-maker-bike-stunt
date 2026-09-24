@@ -6,6 +6,7 @@
   "variants": [
     {
       "id": "kicker.low_skip",
+      "libID": 31,
       "name": "low skip",
       "difficulty": 1,
       "intent": "Low flight",
@@ -28,6 +29,7 @@
     },
     {
       "id": "kicker.quick_pop",
+      "libID": 32,
       "name": "quick pop",
       "difficulty": 2,
       "intent": "Brief pitch correction",
@@ -50,6 +52,7 @@
     },
     {
       "id": "kicker.long_flick",
+      "libID": 33,
       "name": "long flick",
       "difficulty": 3,
       "intent": "Carry speed",
@@ -72,6 +75,7 @@
     },
     {
       "id": "kicker.high_pop",
+      "libID": 34,
       "name": "high pop",
       "difficulty": 3,
       "intent": "Higher arc",
@@ -94,6 +98,7 @@
     },
     {
       "id": "kicker.precision_pop",
+      "libID": 35,
       "name": "precision pop",
       "difficulty": 4,
       "intent": "Tighter catch",

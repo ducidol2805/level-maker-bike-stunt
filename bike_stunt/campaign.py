@@ -16,7 +16,7 @@ from bike_stunt.obstacle_library import (ROOT, GROUPS, as_level, build_campaign_
                               build_variant, ground, load_catalog, place,
                               profile, sample_curve, catalog_version, assign_module_coins)
 from bike_stunt.spring_object import spring_trajectory
-from bike_stunt.terrain_export import export_level, surface_count
+from bike_stunt.terrain_export import can_merge_terrain, export_level, surface_count
 from bike_stunt.world_scale import scale_world_data
 
 GRAVITY = 9.81
@@ -312,14 +312,12 @@ def build_authored_level(recipe, families=None):
         for obj in module['InteractableObject']:
             props = obj.setdefault('properties', {})
             props.update(beatId=stage['beat'], purpose=stage['purpose'])
-            if 'supportingShapeId' in props:
-                props['supportingShapeId'] = f"s{i:02d}_"+props['supportingShapeId']
             if 'landingPosition' in props:
                 props['landingPosition']['x'] += x
                 props['landingPosition']['y'] += y
         modules.append(module)
         stop = module['ports']['exit']
-        sequence.append({'instanceId':f's{i:02d}', 'variant':stage['variant'],
+        sequence.append({'instanceId':f's{i:02d}', 'variant':stage['variant'], 'libID':local['libID'],
                          'beatId':stage['beat'], 'role':stage['role'], 'tension':stage['tension'],
                          'purpose':stage['purpose'], 'xRange':[x,stop['x']],
                          'entryY':y, 'exitY':stop['y'],
@@ -483,8 +481,7 @@ def validate_authored(source, exported):
     for (left_shape,left),(right_shape,right) in zip(zip(terrain,lines),zip(terrain[1:],lines[1:])):
         a,b=left[-1][0],right[0][0]
         if b-a <= 1e-5:
-            require(left_shape.get('metadata', {}).get('freeBottomCorners') or
-                    right_shape.get('metadata', {}).get('freeBottomCorners'),
+            require(not can_merge_terrain(left_shape, right_shape),
                     'Touching ground was not merged')
             continue
         covering=[z for z in exported['deadzone'] if

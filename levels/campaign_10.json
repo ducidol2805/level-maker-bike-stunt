@@ -1,7 +1,7 @@
 {
   "MainPlatform": [
     {
-      "id": "s00_terrain",
+      "id": "s00_1_terrain",
       "closed": true,
       "points": [
         {
@@ -146,7 +146,7 @@
         },
         {
           "x": 132,
-          "y": -25.994226,
+          "y": -34.994226,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -160,7 +160,7 @@
         },
         {
           "x": -40,
-          "y": -25.994226,
+          "y": -34.994226,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -175,16 +175,35 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 10,
+        "libID": 1,
+        "libName": "terrain",
         "sourceVariant": "flat.launch_run",
+        "sourceShapeLabels": [
+          {
+            "id": "s00_1_terrain",
+            "x": 18.0,
+            "y": -17.497113
+          },
+          {
+            "id": "s01_20_terrain",
+            "x": 61.0,
+            "y": -14.497112999999999
+          },
+          {
+            "id": "s02_49_launch",
+            "x": 109.0,
+            "y": -14.497112999999999
+          }
+        ],
         "sourceShapeIds": [
-          "s00_terrain",
-          "s01_terrain",
-          "s02_launch"
+          "s00_1_terrain",
+          "s01_20_terrain",
+          "s02_49_launch"
         ]
       }
     },
     {
-      "id": "s02_landing_recovery",
+      "id": "s02_49_landing_recovery",
       "closed": true,
       "points": [
         {
@@ -307,66 +326,10 @@
             "y": -0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "broken",
-          "corner": false
-        },
-        {
-          "x": 259.7,
-          "y": -25.994226,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        },
-        {
-          "x": 152,
-          "y": -25.994226,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        }
-      ],
-      "metadata": {
-        "drivingSurfaceCount": 9,
-        "sourceVariant": "gap.precision",
-        "sourceShapeIds": [
-          "s02_landing_recovery",
-          "s03_terrain"
-        ]
-      }
-    },
-    {
-      "id": "s04_entry_run",
-      "closed": true,
-      "points": [
-        {
-          "x": 259.7,
-          "y": -12.994225538024978,
-          "tangentIn": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "tangentOut": {
             "x": 11.333334,
             "y": 0.0
           },
-          "tangentMode": "broken",
+          "tangentMode": "continuous",
           "corner": false
         },
         {
@@ -385,7 +348,7 @@
         },
         {
           "x": 293.7,
-          "y": -22.994225538024978,
+          "y": -27.994225538024978,
           "tangentIn": {
             "x": 0.0,
             "y": 0.0
@@ -398,28 +361,52 @@
           "corner": false
         },
         {
-          "x": 259.7,
-          "y": -22.994225538024978,
+          "x": 152,
+          "y": -34.994226,
           "tangentIn": {
-            "x": 0.0,
-            "y": 0.0
+            "x": 0,
+            "y": 0
           },
           "tangentOut": {
-            "x": 0.0,
-            "y": 0.0
+            "x": 0,
+            "y": 0
           },
           "tangentMode": "linear",
           "corner": false
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 2,
-        "freeBottomCorners": true,
-        "sourceVariant": "explosive_loop.triple_ring"
+        "drivingSurfaceCount": 10,
+        "libID": 49,
+        "libName": "landing_recovery",
+        "sourceVariant": "gap.precision",
+        "sourceShapeLabels": [
+          {
+            "id": "s02_49_landing_recovery",
+            "x": 185.85,
+            "y": -14.497112999999999
+          },
+          {
+            "id": "s03_10_terrain",
+            "x": 239.7,
+            "y": -23.994225769012488
+          },
+          {
+            "id": "s04_103_entry_run",
+            "x": 276.7,
+            "y": -20.494225538024978
+          }
+        ],
+        "sourceShapeIds": [
+          "s02_49_landing_recovery",
+          "s03_10_terrain",
+          "s04_103_entry_run"
+        ],
+        "freeBottomCorners": true
       }
     },
     {
-      "id": "s04_exit_recovery",
+      "id": "s04_103_exit_recovery",
       "closed": true,
       "points": [
         {
@@ -444,63 +431,10 @@
             "y": -0.0
           },
           "tangentOut": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "tangentMode": "broken",
-          "corner": false
-        },
-        {
-          "x": 385.7,
-          "y": -22.994225538024978,
-          "tangentIn": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "tangentOut": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        },
-        {
-          "x": 341.7,
-          "y": -22.994225538024978,
-          "tangentIn": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "tangentOut": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        }
-      ],
-      "metadata": {
-        "drivingSurfaceCount": 2,
-        "freeBottomCorners": true,
-        "sourceVariant": "explosive_loop.triple_ring"
-      }
-    },
-    {
-      "id": "s05_terrain",
-      "closed": true,
-      "points": [
-        {
-          "x": 385.7,
-          "y": -12.994225538024978,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
             "x": 10.666666,
             "y": 0.0
           },
-          "tangentMode": "broken",
+          "tangentMode": "continuous",
           "corner": false
         },
         {
@@ -1065,7 +999,7 @@
         },
         {
           "x": 1173.8000000000002,
-          "y": -25.994226,
+          "y": -34.994226,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1078,38 +1012,94 @@
           "corner": false
         },
         {
-          "x": 385.7,
-          "y": -25.994226,
+          "x": 341.7,
+          "y": -27.994225538024978,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "linear",
           "corner": false
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 41,
-        "sourceVariant": "flat.checkpoint_pad",
+        "drivingSurfaceCount": 42,
+        "freeBottomCorners": true,
+        "libID": 103,
+        "libName": "exit_recovery",
+        "sourceVariant": "explosive_loop.triple_ring",
+        "sourceShapeLabels": [
+          {
+            "id": "s04_103_exit_recovery",
+            "x": 363.7,
+            "y": -20.494225538024978
+          },
+          {
+            "id": "s05_2_terrain",
+            "x": 401.7,
+            "y": -23.994225769012488
+          },
+          {
+            "id": "s06_90_spring_approach",
+            "x": 514.7,
+            "y": 4.005774230987512
+          },
+          {
+            "id": "s07_67_safe_fallback",
+            "x": 647.7,
+            "y": 4.005774230987512
+          },
+          {
+            "id": "s08_2_terrain",
+            "x": 699.7,
+            "y": 4.005774230987512
+          },
+          {
+            "id": "s09_100_spring_approach",
+            "x": 857.7,
+            "y": 17.505774230987512
+          },
+          {
+            "id": "s10_2_terrain",
+            "x": 1008.25,
+            "y": 17.505774230987512
+          },
+          {
+            "id": "s11_80_intentional_ledges",
+            "x": 1047.3000000000002,
+            "y": 19.90577423098751
+          },
+          {
+            "id": "s12_20_terrain",
+            "x": 1102.8000000000002,
+            "y": 22.90577423098751
+          },
+          {
+            "id": "s13_49_launch",
+            "x": 1150.8000000000002,
+            "y": 22.90577423098751
+          }
+        ],
         "sourceShapeIds": [
-          "s05_terrain",
-          "s06_spring_approach",
-          "s07_safe_fallback",
-          "s08_terrain",
-          "s09_spring_approach",
-          "s10_terrain",
-          "s11_intentional_ledges",
-          "s12_terrain",
-          "s13_launch"
+          "s04_103_exit_recovery",
+          "s05_2_terrain",
+          "s06_90_spring_approach",
+          "s07_67_safe_fallback",
+          "s08_2_terrain",
+          "s09_100_spring_approach",
+          "s10_2_terrain",
+          "s11_80_intentional_ledges",
+          "s12_20_terrain",
+          "s13_49_launch"
         ]
       }
     },
     {
-      "id": "s13_landing_recovery",
+      "id": "s13_49_landing_recovery",
       "closed": true,
       "points": [
         {
@@ -1232,66 +1222,10 @@
             "y": -0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "broken",
-          "corner": false
-        },
-        {
-          "x": 1301.5000000000002,
-          "y": -25.994226,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        },
-        {
-          "x": 1193.8000000000002,
-          "y": -25.994226,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        }
-      ],
-      "metadata": {
-        "drivingSurfaceCount": 9,
-        "sourceVariant": "gap.precision",
-        "sourceShapeIds": [
-          "s13_landing_recovery",
-          "s14_terrain"
-        ]
-      }
-    },
-    {
-      "id": "s15_entry_run",
-      "closed": true,
-      "points": [
-        {
-          "x": 1301.5000000000002,
-          "y": 61.81154892395004,
-          "tangentIn": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "tangentOut": {
             "x": 11.333334,
             "y": 0.0
           },
-          "tangentMode": "broken",
+          "tangentMode": "continuous",
           "corner": false
         },
         {
@@ -1310,7 +1244,7 @@
         },
         {
           "x": 1335.5000000000002,
-          "y": 51.81154892395004,
+          "y": 46.81154892395004,
           "tangentIn": {
             "x": 0.0,
             "y": 0.0
@@ -1323,28 +1257,52 @@
           "corner": false
         },
         {
-          "x": 1301.5000000000002,
-          "y": 51.81154892395004,
+          "x": 1193.8000000000002,
+          "y": -34.994226,
           "tangentIn": {
-            "x": 0.0,
-            "y": 0.0
+            "x": 0,
+            "y": 0
           },
           "tangentOut": {
-            "x": 0.0,
-            "y": 0.0
+            "x": 0,
+            "y": 0
           },
           "tangentMode": "linear",
           "corner": false
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 2,
-        "freeBottomCorners": true,
-        "sourceVariant": "explosive_loop.triple_ring"
+        "drivingSurfaceCount": 10,
+        "libID": 49,
+        "libName": "landing_recovery",
+        "sourceVariant": "gap.precision",
+        "sourceShapeLabels": [
+          {
+            "id": "s13_49_landing_recovery",
+            "x": 1227.65,
+            "y": 22.90577423098751
+          },
+          {
+            "id": "s14_10_terrain",
+            "x": 1281.5000000000002,
+            "y": 13.408661461975022
+          },
+          {
+            "id": "s15_103_entry_run",
+            "x": 1318.5000000000002,
+            "y": 54.31154892395004
+          }
+        ],
+        "sourceShapeIds": [
+          "s13_49_landing_recovery",
+          "s14_10_terrain",
+          "s15_103_entry_run"
+        ],
+        "freeBottomCorners": true
       }
     },
     {
-      "id": "s15_exit_recovery",
+      "id": "s15_103_exit_recovery",
       "closed": true,
       "points": [
         {
@@ -1369,63 +1327,10 @@
             "y": -0.0
           },
           "tangentOut": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "tangentMode": "broken",
-          "corner": false
-        },
-        {
-          "x": 1427.5000000000002,
-          "y": 51.81154892395004,
-          "tangentIn": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "tangentOut": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        },
-        {
-          "x": 1383.5000000000002,
-          "y": 51.81154892395004,
-          "tangentIn": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "tangentOut": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "tangentMode": "linear",
-          "corner": false
-        }
-      ],
-      "metadata": {
-        "drivingSurfaceCount": 2,
-        "freeBottomCorners": true,
-        "sourceVariant": "explosive_loop.triple_ring"
-      }
-    },
-    {
-      "id": "s16_terrain",
-      "closed": true,
-      "points": [
-        {
-          "x": 1427.5000000000002,
-          "y": 61.81154892395004,
-          "tangentIn": {
-            "x": 0,
-            "y": 0
-          },
-          "tangentOut": {
             "x": 10.666666,
             "y": 0.0
           },
-          "tangentMode": "broken",
+          "tangentMode": "continuous",
           "corner": false
         },
         {
@@ -1779,8 +1684,8 @@
           "corner": false
         },
         {
-          "x": 1972.7000000000003,
-          "y": -25.994226,
+          "x": 1932.7000000000003,
+          "y": -34.994226,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1793,37 +1698,78 @@
           "corner": false
         },
         {
-          "x": 1427.5000000000002,
-          "y": -25.994226,
+          "x": 1383.5000000000002,
+          "y": 46.81154892395004,
           "tangentIn": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentOut": {
-            "x": 0,
-            "y": 0
+            "x": 0.0,
+            "y": 0.0
           },
           "tangentMode": "linear",
           "corner": false
         }
       ],
       "metadata": {
-        "drivingSurfaceCount": 26,
-        "sourceVariant": "flat.checkpoint_pad",
+        "drivingSurfaceCount": 27,
+        "freeBottomCorners": true,
+        "libID": 103,
+        "libName": "exit_recovery",
+        "sourceVariant": "explosive_loop.triple_ring",
+        "sourceShapeLabels": [
+          {
+            "id": "s15_103_exit_recovery",
+            "x": 1405.5000000000002,
+            "y": 54.31154892395004
+          },
+          {
+            "id": "s16_2_terrain",
+            "x": 1443.5000000000002,
+            "y": 13.408661461975022
+          },
+          {
+            "id": "s17_90_spring_approach",
+            "x": 1556.5000000000002,
+            "y": 41.40866146197502
+          },
+          {
+            "id": "s18_2_terrain",
+            "x": 1669.5000000000002,
+            "y": 41.40866146197502
+          },
+          {
+            "id": "s19_29_terrain",
+            "x": 1716.5000000000002,
+            "y": 43.40866146197502
+          },
+          {
+            "id": "s20_12_terrain",
+            "x": 1774.5000000000002,
+            "y": 41.40866146197502
+          },
+          {
+            "id": "s21_5_terrain",
+            "x": 1867.1000000000004,
+            "y": 36.40866146197502
+          }
+        ],
         "sourceShapeIds": [
-          "s16_terrain",
-          "s17_spring_approach",
-          "s18_terrain",
-          "s19_terrain",
-          "s20_terrain",
-          "s21_terrain"
+          "s15_103_exit_recovery",
+          "s16_2_terrain",
+          "s17_90_spring_approach",
+          "s18_2_terrain",
+          "s19_29_terrain",
+          "s20_12_terrain",
+          "s21_5_terrain"
         ]
       }
     }
   ],
   "RampPlatform": [
     {
-      "id": "s04_pre_route",
+      "id": "s04_103_pre_route",
       "closed": false,
       "points": [
         {
@@ -1958,11 +1904,13 @@
         "routePhase": "before_explosion",
         "initialState": "active",
         "disableAfterExplosion": true,
+        "libID": 103,
+        "libName": "pre_route",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     },
     {
-      "id": "s04_revealed_route",
+      "id": "s04_103_revealed_route",
       "closed": false,
       "points": [
         {
@@ -2001,11 +1949,13 @@
         "collisionBeforeReveal": false,
         "collisionAfterReveal": true,
         "revealMode": "deterministic_state_swap",
+        "libID": 103,
+        "libName": "revealed_route",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     },
     {
-      "id": "s04_pre_route_2",
+      "id": "s04_103_pre_route_2",
       "closed": false,
       "points": [
         {
@@ -2141,11 +2091,13 @@
         "sequenceStage": 2,
         "initialState": "active",
         "disableAfterExplosion": true,
+        "libID": 103,
+        "libName": "pre_route_2",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     },
     {
-      "id": "s04_revealed_route_2",
+      "id": "s04_103_revealed_route_2",
       "closed": false,
       "points": [
         {
@@ -2185,11 +2137,13 @@
         "collisionBeforeReveal": false,
         "collisionAfterReveal": true,
         "revealMode": "deterministic_state_swap",
+        "libID": 103,
+        "libName": "revealed_route_2",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     },
     {
-      "id": "s04_pre_route_3",
+      "id": "s04_103_pre_route_3",
       "closed": false,
       "points": [
         {
@@ -2325,11 +2279,13 @@
         "sequenceStage": 3,
         "initialState": "active",
         "disableAfterExplosion": true,
+        "libID": 103,
+        "libName": "pre_route_3",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     },
     {
-      "id": "s04_revealed_route_3",
+      "id": "s04_103_revealed_route_3",
       "closed": false,
       "points": [
         {
@@ -2369,11 +2325,13 @@
         "collisionBeforeReveal": false,
         "collisionAfterReveal": true,
         "revealMode": "deterministic_state_swap",
+        "libID": 103,
+        "libName": "revealed_route_3",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     },
     {
-      "id": "s07_open_bridge",
+      "id": "s07_67_open_bridge",
       "closed": true,
       "points": [
         {
@@ -2477,11 +2435,13 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 5,
+        "libID": 67,
+        "libName": "open_bridge",
         "sourceVariant": "platform.arched_bridge"
       }
     },
     {
-      "id": "s15_pre_route",
+      "id": "s15_103_pre_route",
       "closed": false,
       "points": [
         {
@@ -2616,11 +2576,13 @@
         "routePhase": "before_explosion",
         "initialState": "active",
         "disableAfterExplosion": true,
+        "libID": 103,
+        "libName": "pre_route",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     },
     {
-      "id": "s15_revealed_route",
+      "id": "s15_103_revealed_route",
       "closed": false,
       "points": [
         {
@@ -2659,11 +2621,13 @@
         "collisionBeforeReveal": false,
         "collisionAfterReveal": true,
         "revealMode": "deterministic_state_swap",
+        "libID": 103,
+        "libName": "revealed_route",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     },
     {
-      "id": "s15_pre_route_2",
+      "id": "s15_103_pre_route_2",
       "closed": false,
       "points": [
         {
@@ -2799,11 +2763,13 @@
         "sequenceStage": 2,
         "initialState": "active",
         "disableAfterExplosion": true,
+        "libID": 103,
+        "libName": "pre_route_2",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     },
     {
-      "id": "s15_revealed_route_2",
+      "id": "s15_103_revealed_route_2",
       "closed": false,
       "points": [
         {
@@ -2843,11 +2809,13 @@
         "collisionBeforeReveal": false,
         "collisionAfterReveal": true,
         "revealMode": "deterministic_state_swap",
+        "libID": 103,
+        "libName": "revealed_route_2",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     },
     {
-      "id": "s15_pre_route_3",
+      "id": "s15_103_pre_route_3",
       "closed": false,
       "points": [
         {
@@ -2983,11 +2951,13 @@
         "sequenceStage": 3,
         "initialState": "active",
         "disableAfterExplosion": true,
+        "libID": 103,
+        "libName": "pre_route_3",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     },
     {
-      "id": "s15_revealed_route_3",
+      "id": "s15_103_revealed_route_3",
       "closed": false,
       "points": [
         {
@@ -3027,13 +2997,15 @@
         "collisionBeforeReveal": false,
         "collisionAfterReveal": true,
         "revealMode": "deterministic_state_swap",
+        "libID": 103,
+        "libName": "revealed_route_3",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     }
   ],
   "FreePlatform": [
     {
-      "id": "s06_spring_landing_recovery",
+      "id": "s06_90_spring_landing_recovery",
       "closed": true,
       "points": [
         {
@@ -3222,11 +3194,13 @@
       "metadata": {
         "drivingSurfaceCount": 5,
         "role": "spring_catch_and_tunnel_roof",
+        "libID": 90,
+        "libName": "spring_landing_recovery",
         "sourceVariant": "spring_high.summit_lift"
       }
     },
     {
-      "id": "s09_spring_landing_recovery",
+      "id": "s09_100_spring_landing_recovery",
       "closed": true,
       "points": [
         {
@@ -3345,11 +3319,13 @@
       "metadata": {
         "drivingSurfaceCount": 4,
         "role": "spring_catch_and_tunnel_roof",
+        "libID": 100,
+        "libName": "spring_landing_recovery",
         "sourceVariant": "spring_far.frontier_crossing"
       }
     },
     {
-      "id": "s17_spring_landing_recovery",
+      "id": "s17_90_spring_landing_recovery",
       "closed": true,
       "points": [
         {
@@ -3538,13 +3514,15 @@
       "metadata": {
         "drivingSurfaceCount": 5,
         "role": "spring_catch_and_tunnel_roof",
+        "libID": 90,
+        "libName": "spring_landing_recovery",
         "sourceVariant": "spring_high.summit_lift"
       }
     }
   ],
   "deadzone": [
     {
-      "id": "s02_gap_kill",
+      "id": "s02_49_gap_kill",
       "closed": true,
       "points": [
         {
@@ -3605,11 +3583,13 @@
         }
       ],
       "metadata": {
+        "libID": 49,
+        "libName": "gap_kill",
         "sourceVariant": "gap.precision"
       }
     },
     {
-      "id": "s04_assembly_kill",
+      "id": "s04_103_assembly_kill",
       "closed": true,
       "points": [
         {
@@ -3670,11 +3650,13 @@
         }
       ],
       "metadata": {
+        "libID": 103,
+        "libName": "assembly_kill",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     },
     {
-      "id": "s13_gap_kill",
+      "id": "s13_49_gap_kill",
       "closed": true,
       "points": [
         {
@@ -3735,11 +3717,13 @@
         }
       ],
       "metadata": {
+        "libID": 49,
+        "libName": "gap_kill",
         "sourceVariant": "gap.precision"
       }
     },
     {
-      "id": "s15_assembly_kill",
+      "id": "s15_103_assembly_kill",
       "closed": true,
       "points": [
         {
@@ -3800,6 +3784,8 @@
         }
       ],
       "metadata": {
+        "libID": 103,
+        "libName": "assembly_kill",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     }
@@ -4046,7 +4032,7 @@
       }
     },
     {
-      "id": "s04_connector",
+      "id": "s04_103_connector",
       "type": "explosive_ramp",
       "closed": false,
       "points": [
@@ -4091,7 +4077,7 @@
         ],
         "commitTrigger": {
           "mode": "rear_wheel_clears_route_progress",
-          "routeId": "s04_pre_route",
+          "routeId": "s04_103_pre_route",
           "normalizedProgress": 0.42,
           "position": {
             "x": 303.191669143552,
@@ -4099,8 +4085,8 @@
           }
         },
         "destroyAfter": "rear_wheel_clears_commit_trigger",
-        "revealsRoute": "s04_revealed_route",
-        "postDestroyRoute": "s04_revealed_route",
+        "revealsRoute": "s04_103_revealed_route",
+        "postDestroyRoute": "s04_103_revealed_route",
         "routeRevealDelaySeconds": 0,
         "debrisCollision": "visual_only",
         "resetOnCheckpoint": true,
@@ -4116,11 +4102,13 @@
         "purpose": "Master explosive loop / triple ring with controlled entry speed and a stable recovery."
       },
       "metadata": {
+        "libID": 103,
+        "libName": "connector",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     },
     {
-      "id": "s04_connector_2",
+      "id": "s04_103_connector_2",
       "type": "explosive_ramp",
       "closed": false,
       "points": [
@@ -4166,7 +4154,7 @@
         ],
         "commitTrigger": {
           "mode": "rear_wheel_clears_route_progress",
-          "routeId": "s04_pre_route_2",
+          "routeId": "s04_103_pre_route_2",
           "normalizedProgress": 0.42,
           "position": {
             "x": 319.191669143552,
@@ -4174,8 +4162,8 @@
           }
         },
         "destroyAfter": "rear_wheel_clears_commit_trigger",
-        "revealsRoute": "s04_revealed_route_2",
-        "postDestroyRoute": "s04_revealed_route_2",
+        "revealsRoute": "s04_103_revealed_route_2",
+        "postDestroyRoute": "s04_103_revealed_route_2",
         "routeRevealDelaySeconds": 0,
         "debrisCollision": "visual_only",
         "resetOnCheckpoint": true,
@@ -4191,11 +4179,13 @@
         "purpose": "Master explosive loop / triple ring with controlled entry speed and a stable recovery."
       },
       "metadata": {
+        "libID": 103,
+        "libName": "connector_2",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     },
     {
-      "id": "s04_connector_3",
+      "id": "s04_103_connector_3",
       "type": "explosive_ramp",
       "closed": false,
       "points": [
@@ -4241,7 +4231,7 @@
         ],
         "commitTrigger": {
           "mode": "rear_wheel_clears_route_progress",
-          "routeId": "s04_pre_route_3",
+          "routeId": "s04_103_pre_route_3",
           "normalizedProgress": 0.42,
           "position": {
             "x": 335.19166914355196,
@@ -4249,8 +4239,8 @@
           }
         },
         "destroyAfter": "rear_wheel_clears_commit_trigger",
-        "revealsRoute": "s04_revealed_route_3",
-        "postDestroyRoute": "s04_revealed_route_3",
+        "revealsRoute": "s04_103_revealed_route_3",
+        "postDestroyRoute": "s04_103_revealed_route_3",
         "routeRevealDelaySeconds": 0,
         "debrisCollision": "visual_only",
         "resetOnCheckpoint": true,
@@ -4266,6 +4256,8 @@
         "purpose": "Master explosive loop / triple ring with controlled entry speed and a stable recovery."
       },
       "metadata": {
+        "libID": 103,
+        "libName": "connector_3",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     },
@@ -4281,7 +4273,7 @@
         "stackable": true,
         "speedMultiplier": 1.12,
         "optionalRoute": true,
-        "supportingShapeId": "s04_connector",
+        "supportingShapeId": "s04_103_connector",
         "beatId": "crown",
         "purpose": "Master explosive loop / triple ring with controlled entry speed and a stable recovery.",
         "validationStatus": "Check zero/one/two pickups and real loop entry speed in Unity"
@@ -4302,7 +4294,7 @@
         "stackable": true,
         "speedMultiplier": 1.12,
         "optionalRoute": true,
-        "supportingShapeId": "s04_connector",
+        "supportingShapeId": "s04_103_connector",
         "beatId": "crown",
         "purpose": "Master explosive loop / triple ring with controlled entry speed and a stable recovery.",
         "validationStatus": "Check zero/one/two pickups and real loop entry speed in Unity"
@@ -4324,7 +4316,7 @@
         "line": "loop_inside_arc",
         "sourceVariant": "explosive_loop.triple_ring",
         "collectionRisk": "pending_playtest",
-        "supportingRingId": "s04_pre_route",
+        "supportingRingId": "s04_103_pre_route",
         "beatId": "crown",
         "purpose": "Master explosive loop / triple ring with controlled entry speed and a stable recovery."
       },
@@ -4345,7 +4337,7 @@
         "line": "loop_inside_arc",
         "sourceVariant": "explosive_loop.triple_ring",
         "collectionRisk": "pending_playtest",
-        "supportingRingId": "s04_pre_route_2",
+        "supportingRingId": "s04_103_pre_route_2",
         "beatId": "crown",
         "purpose": "Master explosive loop / triple ring with controlled entry speed and a stable recovery."
       },
@@ -4366,7 +4358,7 @@
         "line": "loop_inside_arc",
         "sourceVariant": "explosive_loop.triple_ring",
         "collectionRisk": "pending_playtest",
-        "supportingRingId": "s04_pre_route_3",
+        "supportingRingId": "s04_103_pre_route_3",
         "beatId": "crown",
         "purpose": "Master explosive loop / triple ring with controlled entry speed and a stable recovery."
       },
@@ -4536,7 +4528,7 @@
         "forceMode": "impulse",
         "activation": "on_player_contact",
         "optionalRoute": true,
-        "postDestroyRoute": "s05_terrain",
+        "postDestroyRoute": "s04_103_exit_recovery",
         "resetOnCheckpoint": true,
         "beatId": "flourish",
         "purpose": "Offer a brief optional barrel flourish on the upper bridge with a clear landing.",
@@ -5392,7 +5384,7 @@
       }
     },
     {
-      "id": "s15_connector",
+      "id": "s15_103_connector",
       "type": "explosive_ramp",
       "closed": false,
       "points": [
@@ -5437,7 +5429,7 @@
         ],
         "commitTrigger": {
           "mode": "rear_wheel_clears_route_progress",
-          "routeId": "s15_pre_route",
+          "routeId": "s15_103_pre_route",
           "normalizedProgress": 0.42,
           "position": {
             "x": 1344.9916691435521,
@@ -5445,8 +5437,8 @@
           }
         },
         "destroyAfter": "rear_wheel_clears_commit_trigger",
-        "revealsRoute": "s15_revealed_route",
-        "postDestroyRoute": "s15_revealed_route",
+        "revealsRoute": "s15_103_revealed_route",
+        "postDestroyRoute": "s15_103_revealed_route",
         "routeRevealDelaySeconds": 0,
         "debrisCollision": "visual_only",
         "resetOnCheckpoint": true,
@@ -5462,11 +5454,13 @@
         "purpose": "Extended route reprise: Master explosive loop / triple ring with controlled entry speed and a stable recovery."
       },
       "metadata": {
+        "libID": 103,
+        "libName": "connector",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     },
     {
-      "id": "s15_connector_2",
+      "id": "s15_103_connector_2",
       "type": "explosive_ramp",
       "closed": false,
       "points": [
@@ -5512,7 +5506,7 @@
         ],
         "commitTrigger": {
           "mode": "rear_wheel_clears_route_progress",
-          "routeId": "s15_pre_route_2",
+          "routeId": "s15_103_pre_route_2",
           "normalizedProgress": 0.42,
           "position": {
             "x": 1360.9916691435521,
@@ -5520,8 +5514,8 @@
           }
         },
         "destroyAfter": "rear_wheel_clears_commit_trigger",
-        "revealsRoute": "s15_revealed_route_2",
-        "postDestroyRoute": "s15_revealed_route_2",
+        "revealsRoute": "s15_103_revealed_route_2",
+        "postDestroyRoute": "s15_103_revealed_route_2",
         "routeRevealDelaySeconds": 0,
         "debrisCollision": "visual_only",
         "resetOnCheckpoint": true,
@@ -5537,11 +5531,13 @@
         "purpose": "Extended route reprise: Master explosive loop / triple ring with controlled entry speed and a stable recovery."
       },
       "metadata": {
+        "libID": 103,
+        "libName": "connector_2",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     },
     {
-      "id": "s15_connector_3",
+      "id": "s15_103_connector_3",
       "type": "explosive_ramp",
       "closed": false,
       "points": [
@@ -5587,7 +5583,7 @@
         ],
         "commitTrigger": {
           "mode": "rear_wheel_clears_route_progress",
-          "routeId": "s15_pre_route_3",
+          "routeId": "s15_103_pre_route_3",
           "normalizedProgress": 0.42,
           "position": {
             "x": 1376.9916691435521,
@@ -5595,8 +5591,8 @@
           }
         },
         "destroyAfter": "rear_wheel_clears_commit_trigger",
-        "revealsRoute": "s15_revealed_route_3",
-        "postDestroyRoute": "s15_revealed_route_3",
+        "revealsRoute": "s15_103_revealed_route_3",
+        "postDestroyRoute": "s15_103_revealed_route_3",
         "routeRevealDelaySeconds": 0,
         "debrisCollision": "visual_only",
         "resetOnCheckpoint": true,
@@ -5612,6 +5608,8 @@
         "purpose": "Extended route reprise: Master explosive loop / triple ring with controlled entry speed and a stable recovery."
       },
       "metadata": {
+        "libID": 103,
+        "libName": "connector_3",
         "sourceVariant": "explosive_loop.triple_ring"
       }
     },
@@ -5627,7 +5625,7 @@
         "stackable": true,
         "speedMultiplier": 1.12,
         "optionalRoute": true,
-        "supportingShapeId": "s15_connector",
+        "supportingShapeId": "s15_103_connector",
         "beatId": "extended_04_crown",
         "purpose": "Extended route reprise: Master explosive loop / triple ring with controlled entry speed and a stable recovery.",
         "validationStatus": "Check zero/one/two pickups and real loop entry speed in Unity"
@@ -5648,7 +5646,7 @@
         "stackable": true,
         "speedMultiplier": 1.12,
         "optionalRoute": true,
-        "supportingShapeId": "s15_connector",
+        "supportingShapeId": "s15_103_connector",
         "beatId": "extended_04_crown",
         "purpose": "Extended route reprise: Master explosive loop / triple ring with controlled entry speed and a stable recovery.",
         "validationStatus": "Check zero/one/two pickups and real loop entry speed in Unity"
@@ -5670,7 +5668,7 @@
         "line": "loop_inside_arc",
         "sourceVariant": "explosive_loop.triple_ring",
         "collectionRisk": "pending_playtest",
-        "supportingRingId": "s15_pre_route",
+        "supportingRingId": "s15_103_pre_route",
         "beatId": "extended_04_crown",
         "purpose": "Extended route reprise: Master explosive loop / triple ring with controlled entry speed and a stable recovery."
       },
@@ -5691,7 +5689,7 @@
         "line": "loop_inside_arc",
         "sourceVariant": "explosive_loop.triple_ring",
         "collectionRisk": "pending_playtest",
-        "supportingRingId": "s15_pre_route_2",
+        "supportingRingId": "s15_103_pre_route_2",
         "beatId": "extended_04_crown",
         "purpose": "Extended route reprise: Master explosive loop / triple ring with controlled entry speed and a stable recovery."
       },
@@ -5712,7 +5710,7 @@
         "line": "loop_inside_arc",
         "sourceVariant": "explosive_loop.triple_ring",
         "collectionRisk": "pending_playtest",
-        "supportingRingId": "s15_pre_route_3",
+        "supportingRingId": "s15_103_pre_route_3",
         "beatId": "extended_04_crown",
         "purpose": "Extended route reprise: Master explosive loop / triple ring with controlled entry speed and a stable recovery."
       },
@@ -6251,7 +6249,7 @@
     "units": "unity",
     "previewOnly": false,
     "authoringMode": "curated_catalog_composition",
-    "catalogVersion": "2.7",
+    "catalogVersion": "2.8",
     "recipe": "library/campaign_recipes.json",
     "recipeNumber": 10,
     "subtitle": "Triple ignition crown, summit lift and frontier crossing followed by expert ruin control.",
@@ -6307,6 +6305,7 @@
     "obstacles": [
       {
         "id": "flat.launch_run",
+        "libID": 1,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -6346,6 +6345,7 @@
       },
       {
         "id": "hill.double_crest",
+        "libID": 20,
         "type": "hill",
         "geometryProfile": "hill",
         "ports": {
@@ -6385,6 +6385,7 @@
       },
       {
         "id": "gap.precision",
+        "libID": 49,
         "type": "gap",
         "geometryProfile": "takeoff_and_landing_banks",
         "ports": {
@@ -6515,6 +6516,7 @@
       },
       {
         "id": "rise.crest_relief",
+        "libID": 10,
         "type": "rise",
         "geometryProfile": "rise",
         "ports": {
@@ -6554,6 +6556,7 @@
       },
       {
         "id": "explosive_loop.triple_ring",
+        "libID": 103,
         "type": "explosive_loop",
         "geometryProfile": "explosive_loop",
         "ports": {
@@ -6608,22 +6611,22 @@
         "jumpUnit": null,
         "joins": [
           {
-            "from": "s04_connector",
-            "to": "s04_pre_route",
+            "from": "s04_103_connector",
+            "to": "s04_103_pre_route",
             "continuity": "C1",
             "fromPoint": 1,
             "toPoint": 0
           },
           {
-            "from": "s04_connector_2",
-            "to": "s04_pre_route_2",
+            "from": "s04_103_connector_2",
+            "to": "s04_103_pre_route_2",
             "continuity": "C1",
             "fromPoint": 1,
             "toPoint": 0
           },
           {
-            "from": "s04_connector_3",
-            "to": "s04_pre_route_3",
+            "from": "s04_103_connector_3",
+            "to": "s04_103_pre_route_3",
             "continuity": "C1",
             "fromPoint": 1,
             "toPoint": 0
@@ -6632,6 +6635,7 @@
       },
       {
         "id": "flat.checkpoint_pad",
+        "libID": 2,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -6671,6 +6675,7 @@
       },
       {
         "id": "spring_high.summit_lift",
+        "libID": 90,
         "type": "spring_high",
         "geometryProfile": "spring_high",
         "ports": {
@@ -6747,6 +6752,7 @@
       },
       {
         "id": "platform.arched_bridge",
+        "libID": 67,
         "type": "platform",
         "geometryProfile": "platform",
         "ports": {
@@ -6795,6 +6801,7 @@
       },
       {
         "id": "flat.checkpoint_pad",
+        "libID": 2,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -6834,6 +6841,7 @@
       },
       {
         "id": "spring_far.frontier_crossing",
+        "libID": 100,
         "type": "spring_far",
         "geometryProfile": "spring_far",
         "ports": {
@@ -6910,6 +6918,7 @@
       },
       {
         "id": "flat.checkpoint_pad",
+        "libID": 2,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -6949,6 +6958,7 @@
       },
       {
         "id": "balance.tight_stairs",
+        "libID": 80,
         "type": "balance",
         "geometryProfile": "balance",
         "ports": {
@@ -6989,6 +6999,7 @@
       },
       {
         "id": "hill.double_crest",
+        "libID": 20,
         "type": "hill",
         "geometryProfile": "hill",
         "ports": {
@@ -7028,6 +7039,7 @@
       },
       {
         "id": "gap.precision",
+        "libID": 49,
         "type": "gap",
         "geometryProfile": "takeoff_and_landing_banks",
         "ports": {
@@ -7158,6 +7170,7 @@
       },
       {
         "id": "rise.crest_relief",
+        "libID": 10,
         "type": "rise",
         "geometryProfile": "rise",
         "ports": {
@@ -7197,6 +7210,7 @@
       },
       {
         "id": "explosive_loop.triple_ring",
+        "libID": 103,
         "type": "explosive_loop",
         "geometryProfile": "explosive_loop",
         "ports": {
@@ -7251,22 +7265,22 @@
         "jumpUnit": null,
         "joins": [
           {
-            "from": "s15_connector",
-            "to": "s15_pre_route",
+            "from": "s15_103_connector",
+            "to": "s15_103_pre_route",
             "continuity": "C1",
             "fromPoint": 1,
             "toPoint": 0
           },
           {
-            "from": "s15_connector_2",
-            "to": "s15_pre_route_2",
+            "from": "s15_103_connector_2",
+            "to": "s15_103_pre_route_2",
             "continuity": "C1",
             "fromPoint": 1,
             "toPoint": 0
           },
           {
-            "from": "s15_connector_3",
-            "to": "s15_pre_route_3",
+            "from": "s15_103_connector_3",
+            "to": "s15_103_pre_route_3",
             "continuity": "C1",
             "fromPoint": 1,
             "toPoint": 0
@@ -7275,6 +7289,7 @@
       },
       {
         "id": "flat.checkpoint_pad",
+        "libID": 2,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -7314,6 +7329,7 @@
       },
       {
         "id": "spring_high.summit_lift",
+        "libID": 90,
         "type": "spring_high",
         "geometryProfile": "spring_high",
         "ports": {
@@ -7390,6 +7406,7 @@
       },
       {
         "id": "flat.checkpoint_pad",
+        "libID": 2,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -7429,6 +7446,7 @@
       },
       {
         "id": "wave.irregular",
+        "libID": 29,
         "type": "wave",
         "geometryProfile": "wave",
         "ports": {
@@ -7468,6 +7486,7 @@
       },
       {
         "id": "fall.long_descent",
+        "libID": 12,
         "type": "fall",
         "geometryProfile": "fall",
         "ports": {
@@ -7507,6 +7526,7 @@
       },
       {
         "id": "flat.finish_release",
+        "libID": 5,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -7552,6 +7572,7 @@
       {
         "instanceId": "s00",
         "variant": "flat.launch_run",
+        "libID": 1,
         "beatId": "start",
         "role": "setup",
         "tension": 1,
@@ -7567,6 +7588,7 @@
       {
         "instanceId": "s01",
         "variant": "hill.double_crest",
+        "libID": 20,
         "beatId": "relay_start",
         "role": "teach",
         "tension": 2,
@@ -7582,6 +7604,7 @@
       {
         "instanceId": "s02",
         "variant": "gap.precision",
+        "libID": 49,
         "beatId": "qualifier",
         "role": "practice",
         "tension": 5,
@@ -7599,6 +7622,7 @@
       {
         "instanceId": "s03",
         "variant": "rise.crest_relief",
+        "libID": 10,
         "beatId": "crown_setup",
         "role": "build",
         "tension": 2,
@@ -7614,6 +7638,7 @@
       {
         "instanceId": "s04",
         "variant": "explosive_loop.triple_ring",
+        "libID": 103,
         "beatId": "crown",
         "role": "climax",
         "tension": 5,
@@ -7629,6 +7654,7 @@
       {
         "instanceId": "s05",
         "variant": "flat.checkpoint_pad",
+        "libID": 2,
         "beatId": "crown_release",
         "role": "release",
         "tension": 1,
@@ -7646,6 +7672,7 @@
       {
         "instanceId": "s06",
         "variant": "spring_high.summit_lift",
+        "libID": 90,
         "beatId": "upper_relay",
         "role": "combine",
         "tension": 5,
@@ -7661,6 +7688,7 @@
       {
         "instanceId": "s07",
         "variant": "platform.arched_bridge",
+        "libID": 67,
         "beatId": "flourish",
         "role": "practice",
         "tension": 3,
@@ -7676,6 +7704,7 @@
       {
         "instanceId": "s08",
         "variant": "flat.checkpoint_pad",
+        "libID": 2,
         "beatId": "crossing_setup",
         "role": "release",
         "tension": 1,
@@ -7693,6 +7722,7 @@
       {
         "instanceId": "s09",
         "variant": "spring_far.frontier_crossing",
+        "libID": 100,
         "beatId": "final_relay",
         "role": "climax",
         "tension": 5,
@@ -7708,6 +7738,7 @@
       {
         "instanceId": "s10",
         "variant": "flat.checkpoint_pad",
+        "libID": 2,
         "beatId": "extended_recovery_1",
         "role": "release",
         "tension": 1,
@@ -7725,6 +7756,7 @@
       {
         "instanceId": "s11",
         "variant": "balance.tight_stairs",
+        "libID": 80,
         "beatId": "crown_expert_steps",
         "role": "combine",
         "tension": 5,
@@ -7740,6 +7772,7 @@
       {
         "instanceId": "s12",
         "variant": "hill.double_crest",
+        "libID": 20,
         "beatId": "extended_01_relay_start",
         "role": "teach",
         "tension": 2,
@@ -7755,6 +7788,7 @@
       {
         "instanceId": "s13",
         "variant": "gap.precision",
+        "libID": 49,
         "beatId": "extended_02_qualifier",
         "role": "practice",
         "tension": 5,
@@ -7772,6 +7806,7 @@
       {
         "instanceId": "s14",
         "variant": "rise.crest_relief",
+        "libID": 10,
         "beatId": "extended_03_crown_setup",
         "role": "build",
         "tension": 2,
@@ -7787,6 +7822,7 @@
       {
         "instanceId": "s15",
         "variant": "explosive_loop.triple_ring",
+        "libID": 103,
         "beatId": "extended_04_crown",
         "role": "climax",
         "tension": 5,
@@ -7802,6 +7838,7 @@
       {
         "instanceId": "s16",
         "variant": "flat.checkpoint_pad",
+        "libID": 2,
         "beatId": "extended_05_crown_release",
         "role": "release",
         "tension": 1,
@@ -7819,6 +7856,7 @@
       {
         "instanceId": "s17",
         "variant": "spring_high.summit_lift",
+        "libID": 90,
         "beatId": "extended_06_upper_relay",
         "role": "combine",
         "tension": 5,
@@ -7834,6 +7872,7 @@
       {
         "instanceId": "s18",
         "variant": "flat.checkpoint_pad",
+        "libID": 2,
         "beatId": "extended_07_crossing_setup",
         "role": "release",
         "tension": 1,
@@ -7851,6 +7890,7 @@
       {
         "instanceId": "s19",
         "variant": "wave.irregular",
+        "libID": 29,
         "beatId": "crown_expert_rhythm",
         "role": "combine",
         "tension": 4,
@@ -7866,6 +7906,7 @@
       {
         "instanceId": "s20",
         "variant": "fall.long_descent",
+        "libID": 12,
         "beatId": "home",
         "role": "resolution",
         "tension": 1,
@@ -7881,6 +7922,7 @@
       {
         "instanceId": "s21",
         "variant": "flat.finish_release",
+        "libID": 5,
         "beatId": "finish",
         "role": "resolution",
         "tension": 0,
@@ -8047,9 +8089,9 @@
           385.7
         ],
         "objectIds": [
-          "s04_connector",
-          "s04_connector_2",
-          "s04_connector_3",
+          "s04_103_connector",
+          "s04_103_connector_2",
+          "s04_103_connector_3",
           "s04_boost_1",
           "s04_boost_2",
           "s04_coin_01",
@@ -8440,9 +8482,9 @@
           1427.5000000000002
         ],
         "objectIds": [
-          "s15_connector",
-          "s15_connector_2",
-          "s15_connector_3",
+          "s15_103_connector",
+          "s15_103_connector_2",
+          "s15_103_connector_3",
           "s15_boost_1",
           "s15_boost_2",
           "s15_coin_01",
@@ -8737,7 +8779,7 @@
     "validationReport": {
       "status": "passed_static_geometry_and_point_mass_checks",
       "sourceMainShapes": 26,
-      "exportedMainShapes": 9,
+      "exportedMainShapes": 5,
       "coinCount": 66,
       "coveredGaps": [
         {

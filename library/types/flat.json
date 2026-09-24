@@ -5,6 +5,7 @@
   "variants": [
     {
       "id": "flat.launch_run",
+      "libID": 1,
       "name": "launch run",
       "difficulty": 1,
       "intent": "Build speed",
@@ -29,6 +30,7 @@
     },
     {
       "id": "flat.checkpoint_pad",
+      "libID": 2,
       "name": "checkpoint pad",
       "difficulty": 1,
       "intent": "Stable restart",
@@ -53,6 +55,7 @@
     },
     {
       "id": "flat.braking_shelf",
+      "libID": 3,
       "name": "braking shelf",
       "difficulty": 2,
       "intent": "Brake before precision",
@@ -85,6 +88,7 @@
     },
     {
       "id": "flat.rolling_reset",
+      "libID": 4,
       "name": "rolling reset",
       "difficulty": 2,
       "intent": "Settle suspension",
@@ -117,6 +121,7 @@
     },
     {
       "id": "flat.finish_release",
+      "libID": 5,
       "name": "finish release",
       "difficulty": 1,
       "intent": "Clear runout",

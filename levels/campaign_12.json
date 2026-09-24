@@ -1,7 +1,7 @@
 {
   "MainPlatform": [
     {
-      "id": "s00_terrain",
+      "id": "s00_1_terrain",
       "closed": true,
       "points": [
         {
@@ -440,7 +440,7 @@
         },
         {
           "x": 754,
-          "y": -28.389976,
+          "y": -37.389976,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -454,7 +454,7 @@
         },
         {
           "x": -40,
-          "y": -28.389976,
+          "y": -37.389976,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -469,25 +469,89 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 31,
+        "libID": 1,
+        "libName": "terrain",
         "sourceVariant": "flat.launch_run",
+        "sourceShapeLabels": [
+          {
+            "id": "s00_1_terrain",
+            "x": 18.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s01_41_rollable_table",
+            "x": 73.0,
+            "y": -17.194988
+          },
+          {
+            "id": "s02_66_safe_fallback",
+            "x": 152.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s03_23_terrain",
+            "x": 220.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s04_71_safe_fallback",
+            "x": 286.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s05_4_terrain",
+            "x": 342.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s06_67_safe_fallback",
+            "x": 394.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s07_41_rollable_table",
+            "x": 467.0,
+            "y": -17.194988
+          },
+          {
+            "id": "s08_66_safe_fallback",
+            "x": 546.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s09_23_terrain",
+            "x": 614.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s10_71_safe_fallback",
+            "x": 680.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s11_56_launch",
+            "x": 737.0,
+            "y": -17.194988
+          }
+        ],
         "sourceShapeIds": [
-          "s00_terrain",
-          "s01_rollable_table",
-          "s02_safe_fallback",
-          "s03_terrain",
-          "s04_safe_fallback",
-          "s05_terrain",
-          "s06_safe_fallback",
-          "s07_rollable_table",
-          "s08_safe_fallback",
-          "s09_terrain",
-          "s10_safe_fallback",
-          "s11_launch"
+          "s00_1_terrain",
+          "s01_41_rollable_table",
+          "s02_66_safe_fallback",
+          "s03_23_terrain",
+          "s04_71_safe_fallback",
+          "s05_4_terrain",
+          "s06_67_safe_fallback",
+          "s07_41_rollable_table",
+          "s08_66_safe_fallback",
+          "s09_23_terrain",
+          "s10_71_safe_fallback",
+          "s11_56_launch"
         ]
       }
     },
     {
-      "id": "s11_landing_recovery",
+      "id": "s11_56_landing_recovery",
       "closed": true,
       "points": [
         {
@@ -688,7 +752,7 @@
         },
         {
           "x": 1007.0,
-          "y": -28.389976,
+          "y": -37.389976,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -702,7 +766,7 @@
         },
         {
           "x": 762,
-          "y": -28.389976,
+          "y": -37.389976,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -717,18 +781,37 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 14,
+        "libID": 56,
+        "libName": "landing_recovery",
         "sourceVariant": "step_down.gentle",
+        "sourceShapeLabels": [
+          {
+            "id": "s11_56_landing_recovery",
+            "x": 786.0,
+            "y": -18.694988
+          },
+          {
+            "id": "s12_27_terrain",
+            "x": 833.0,
+            "y": -28.689975965050877
+          },
+          {
+            "id": "s13_5_terrain",
+            "x": 911.5,
+            "y": -29.88997596505088
+          }
+        ],
         "sourceShapeIds": [
-          "s11_landing_recovery",
-          "s12_terrain",
-          "s13_terrain"
+          "s11_56_landing_recovery",
+          "s12_27_terrain",
+          "s13_5_terrain"
         ]
       }
     }
   ],
   "RampPlatform": [
     {
-      "id": "s02_open_bridge_1",
+      "id": "s02_66_open_bridge_1",
       "closed": true,
       "points": [
         {
@@ -806,11 +889,13 @@
         "drivingSurfaceCount": 3,
         "floatingSegment": false,
         "requiresMomentumTransfer": true,
+        "libID": 66,
+        "libName": "open_bridge_1",
         "sourceVariant": "platform.flat_bridge"
       }
     },
     {
-      "id": "s02_open_bridge_2",
+      "id": "s02_66_open_bridge_2",
       "closed": true,
       "points": [
         {
@@ -874,11 +959,13 @@
         "drivingSurfaceCount": 2,
         "floatingSegment": false,
         "requiresMomentumTransfer": true,
+        "libID": 66,
+        "libName": "open_bridge_2",
         "sourceVariant": "platform.flat_bridge"
       }
     },
     {
-      "id": "s02_open_bridge_3",
+      "id": "s02_66_open_bridge_3",
       "closed": true,
       "points": [
         {
@@ -956,11 +1043,13 @@
         "drivingSurfaceCount": 3,
         "floatingSegment": false,
         "requiresMomentumTransfer": false,
+        "libID": 66,
+        "libName": "open_bridge_3",
         "sourceVariant": "platform.flat_bridge"
       }
     },
     {
-      "id": "s04_open_bridge",
+      "id": "s04_71_open_bridge",
       "closed": true,
       "points": [
         {
@@ -1092,11 +1181,13 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 7,
+        "libID": 71,
+        "libName": "open_bridge",
         "sourceVariant": "platform.crowned_span"
       }
     },
     {
-      "id": "s06_open_bridge",
+      "id": "s06_67_open_bridge",
       "closed": true,
       "points": [
         {
@@ -1200,11 +1291,13 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 5,
+        "libID": 67,
+        "libName": "open_bridge",
         "sourceVariant": "platform.arched_bridge"
       }
     },
     {
-      "id": "s08_open_bridge_1",
+      "id": "s08_66_open_bridge_1",
       "closed": true,
       "points": [
         {
@@ -1282,11 +1375,13 @@
         "drivingSurfaceCount": 3,
         "floatingSegment": false,
         "requiresMomentumTransfer": true,
+        "libID": 66,
+        "libName": "open_bridge_1",
         "sourceVariant": "platform.flat_bridge"
       }
     },
     {
-      "id": "s08_open_bridge_2",
+      "id": "s08_66_open_bridge_2",
       "closed": true,
       "points": [
         {
@@ -1350,11 +1445,13 @@
         "drivingSurfaceCount": 2,
         "floatingSegment": false,
         "requiresMomentumTransfer": true,
+        "libID": 66,
+        "libName": "open_bridge_2",
         "sourceVariant": "platform.flat_bridge"
       }
     },
     {
-      "id": "s08_open_bridge_3",
+      "id": "s08_66_open_bridge_3",
       "closed": true,
       "points": [
         {
@@ -1432,11 +1529,13 @@
         "drivingSurfaceCount": 3,
         "floatingSegment": false,
         "requiresMomentumTransfer": false,
+        "libID": 66,
+        "libName": "open_bridge_3",
         "sourceVariant": "platform.flat_bridge"
       }
     },
     {
-      "id": "s10_open_bridge",
+      "id": "s10_71_open_bridge",
       "closed": true,
       "points": [
         {
@@ -1568,6 +1667,8 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 7,
+        "libID": 71,
+        "libName": "open_bridge",
         "sourceVariant": "platform.crowned_span"
       }
     }
@@ -1575,7 +1676,7 @@
   "FreePlatform": [],
   "deadzone": [
     {
-      "id": "s11_gap_kill",
+      "id": "s11_56_gap_kill",
       "closed": true,
       "points": [
         {
@@ -1636,6 +1737,8 @@
         }
       ],
       "metadata": {
+        "libID": 56,
+        "libName": "gap_kill",
         "sourceVariant": "step_down.gentle"
       }
     }
@@ -2017,7 +2120,7 @@
         "forceMode": "impulse",
         "activation": "on_player_contact",
         "optionalRoute": true,
-        "postDestroyRoute": "s00_terrain",
+        "postDestroyRoute": "s00_1_terrain",
         "resetOnCheckpoint": true,
         "beatId": "barrel_dock",
         "purpose": "Pop from the arched dock and land before its runout.",
@@ -2916,7 +3019,7 @@
     "units": "unity",
     "previewOnly": false,
     "authoringMode": "curated_catalog_composition",
-    "catalogVersion": "2.7",
+    "catalogVersion": "2.8",
     "recipe": "library/campaign_recipes.json",
     "recipeNumber": 12,
     "subtitle": "Three different pier profiles culminate in a barrel pop above the shoreline.",
@@ -2984,6 +3087,7 @@
     "obstacles": [
       {
         "id": "flat.launch_run",
+        "libID": 1,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3023,6 +3127,7 @@
       },
       {
         "id": "tabletop.learner",
+        "libID": 41,
         "type": "tabletop",
         "geometryProfile": "tabletop",
         "ports": {
@@ -3062,6 +3167,7 @@
       },
       {
         "id": "platform.flat_bridge",
+        "libID": 66,
         "type": "platform",
         "geometryProfile": "platform",
         "ports": {
@@ -3114,6 +3220,7 @@
       },
       {
         "id": "valley.long_floor",
+        "libID": 23,
         "type": "valley",
         "geometryProfile": "valley",
         "ports": {
@@ -3153,6 +3260,7 @@
       },
       {
         "id": "platform.crowned_span",
+        "libID": 71,
         "type": "platform",
         "geometryProfile": "platform",
         "ports": {
@@ -3192,6 +3300,7 @@
       },
       {
         "id": "flat.rolling_reset",
+        "libID": 4,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3231,6 +3340,7 @@
       },
       {
         "id": "platform.arched_bridge",
+        "libID": 67,
         "type": "platform",
         "geometryProfile": "platform",
         "ports": {
@@ -3279,6 +3389,7 @@
       },
       {
         "id": "tabletop.learner",
+        "libID": 41,
         "type": "tabletop",
         "geometryProfile": "tabletop",
         "ports": {
@@ -3318,6 +3429,7 @@
       },
       {
         "id": "platform.flat_bridge",
+        "libID": 66,
         "type": "platform",
         "geometryProfile": "platform",
         "ports": {
@@ -3370,6 +3482,7 @@
       },
       {
         "id": "valley.long_floor",
+        "libID": 23,
         "type": "valley",
         "geometryProfile": "valley",
         "ports": {
@@ -3409,6 +3522,7 @@
       },
       {
         "id": "platform.crowned_span",
+        "libID": 71,
         "type": "platform",
         "geometryProfile": "platform",
         "ports": {
@@ -3448,6 +3562,7 @@
       },
       {
         "id": "step_down.gentle",
+        "libID": 56,
         "type": "step_down",
         "geometryProfile": "descending_landing_shelf",
         "ports": {
@@ -3578,6 +3693,7 @@
       },
       {
         "id": "wave.three_even",
+        "libID": 27,
         "type": "wave",
         "geometryProfile": "wave",
         "ports": {
@@ -3617,6 +3733,7 @@
       },
       {
         "id": "flat.finish_release",
+        "libID": 5,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3662,6 +3779,7 @@
       {
         "instanceId": "s00",
         "variant": "flat.launch_run",
+        "libID": 1,
         "beatId": "start",
         "role": "setup",
         "tension": 1,
@@ -3677,6 +3795,7 @@
       {
         "instanceId": "s01",
         "variant": "tabletop.learner",
+        "libID": 41,
         "beatId": "pier_entry",
         "role": "teach",
         "tension": 1,
@@ -3692,6 +3811,7 @@
       {
         "instanceId": "s02",
         "variant": "platform.flat_bridge",
+        "libID": 66,
         "beatId": "broken_pier",
         "role": "practice",
         "tension": 2,
@@ -3707,6 +3827,7 @@
       {
         "instanceId": "s03",
         "variant": "valley.long_floor",
+        "libID": 23,
         "beatId": "under_pier",
         "role": "release",
         "tension": 1,
@@ -3722,6 +3843,7 @@
       {
         "instanceId": "s04",
         "variant": "platform.crowned_span",
+        "libID": 71,
         "beatId": "watch_deck",
         "role": "build",
         "tension": 3,
@@ -3737,6 +3859,7 @@
       {
         "instanceId": "s05",
         "variant": "flat.rolling_reset",
+        "libID": 4,
         "beatId": "dock_reset",
         "role": "release",
         "tension": 1,
@@ -3752,6 +3875,7 @@
       {
         "instanceId": "s06",
         "variant": "platform.arched_bridge",
+        "libID": 67,
         "beatId": "barrel_dock",
         "role": "climax",
         "tension": 3,
@@ -3767,6 +3891,7 @@
       {
         "instanceId": "s07",
         "variant": "tabletop.learner",
+        "libID": 41,
         "beatId": "extended_01_pier_entry",
         "role": "teach",
         "tension": 1,
@@ -3782,6 +3907,7 @@
       {
         "instanceId": "s08",
         "variant": "platform.flat_bridge",
+        "libID": 66,
         "beatId": "extended_02_broken_pier",
         "role": "practice",
         "tension": 2,
@@ -3797,6 +3923,7 @@
       {
         "instanceId": "s09",
         "variant": "valley.long_floor",
+        "libID": 23,
         "beatId": "extended_03_under_pier",
         "role": "release",
         "tension": 1,
@@ -3812,6 +3939,7 @@
       {
         "instanceId": "s10",
         "variant": "platform.crowned_span",
+        "libID": 71,
         "beatId": "extended_04_watch_deck",
         "role": "build",
         "tension": 3,
@@ -3827,6 +3955,7 @@
       {
         "instanceId": "s11",
         "variant": "step_down.gentle",
+        "libID": 56,
         "beatId": "beach_return",
         "role": "combine",
         "tension": 2,
@@ -3842,6 +3971,7 @@
       {
         "instanceId": "s12",
         "variant": "wave.three_even",
+        "libID": 27,
         "beatId": "plank_rhythm",
         "role": "resolution",
         "tension": 2,
@@ -3857,6 +3987,7 @@
       {
         "instanceId": "s13",
         "variant": "flat.finish_release",
+        "libID": 5,
         "beatId": "finish",
         "role": "resolution",
         "tension": 0,

@@ -5,6 +5,7 @@
   "variants": [
     {
       "id": "fall.gentle_descent",
+      "libID": 11,
       "name": "gentle descent",
       "difficulty": 1,
       "intent": "Learn speed gain",
@@ -37,6 +38,7 @@
     },
     {
       "id": "fall.long_descent",
+      "libID": 12,
       "name": "long descent",
       "difficulty": 2,
       "intent": "Brake progressively",
@@ -69,6 +71,7 @@
     },
     {
       "id": "fall.late_compression",
+      "libID": 13,
       "name": "late compression",
       "difficulty": 3,
       "intent": "Prepare bottom compression",
@@ -167,6 +170,7 @@
     },
     {
       "id": "fall.terraced",
+      "libID": 14,
       "name": "terraced",
       "difficulty": 2,
       "intent": "Reset weight on shelves",
@@ -203,6 +207,7 @@
     },
     {
       "id": "fall.steep_shelf",
+      "libID": 15,
       "name": "steep shelf",
       "difficulty": 4,
       "intent": "Control pitch before shelf",

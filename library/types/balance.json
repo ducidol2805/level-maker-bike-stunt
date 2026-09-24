@@ -5,6 +5,7 @@
   "variants": [
     {
       "id": "balance.single_curb",
+      "libID": 76,
       "name": "single curb",
       "difficulty": 2,
       "intent": "First front wheel lift",
@@ -86,6 +87,7 @@
     },
     {
       "id": "balance.double_curb",
+      "libID": 77,
       "name": "double curb",
       "difficulty": 3,
       "intent": "Reset before second lift",
@@ -196,6 +198,7 @@
     },
     {
       "id": "balance.unequal_stairs",
+      "libID": 78,
       "name": "unequal stairs",
       "difficulty": 4,
       "intent": "Change lift timing",
@@ -335,6 +338,7 @@
     },
     {
       "id": "balance.tall_ledge",
+      "libID": 79,
       "name": "tall ledge",
       "difficulty": 4,
       "intent": "Bunny hop rear wheel drive",
@@ -416,6 +420,7 @@
     },
     {
       "id": "balance.tight_stairs",
+      "libID": 80,
       "name": "tight stairs",
       "difficulty": 5,
       "intent": "Consecutive precise lifts",

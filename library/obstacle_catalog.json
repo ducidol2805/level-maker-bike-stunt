@@ -1,5 +1,5 @@
 {
-  "version": "2.7",
+  "version": "2.8",
   "worldScale": 2,
   "units": "authored world units scaled 2x at build; bike calibration required",
   "groups": [
@@ -106,5 +106,6 @@
     "spring": "Each spring_high/spring_far family: first 5 variants have separated ground platforms with a deadzone in the gap; last 5 have connected ground platforms and no deadzone. Floating spring catches retain a lower tunnel and uphill recovery.",
     "joins": "position and travel tangent must match; check speed compatibility",
     "validation": "geometry verified separately from bike simulation"
-  }
+  },
+  "nextLibID": 104
 }

@@ -1,0 +1,663 @@
+{
+  "flat.launch_run": {
+    "hash": "803dec13301145135bb8001757e46b80e110a48845a66b0ca8421f072da0e3e8",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "flat.checkpoint_pad": {
+    "hash": "efbaaf2e65715648603ef19dc0dacd90da46357b8f39918f49f133dcaf20f610",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "flat.braking_shelf": {
+    "hash": "26dc4eba350d978cb5000e1686dbb962f94a01ea38249cc9aa02fa287d2ea611",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "flat.rolling_reset": {
+    "hash": "3d8491a8bc2035ea101c8cef5aed9256dc63ed1f808a52ba27dd74af99cad4c4",
+    "depths": {
+      "terrain": 6.0
+    }
+  },
+  "flat.finish_release": {
+    "hash": "e0c63962c28fb59a134445b720712fcafa043bf238a38e30e4e452b233d8c9b1",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "rise.gentle_climb": {
+    "hash": "ef310a7faa30289e60a42ae4c114474a0ea415f0f11e8563444b3219c0e6d59a",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "rise.long_climb": {
+    "hash": "21512933dd43ceafbabf1a298690bc4ab1c985f01d92e1a5435712a38b0eaa4a",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "rise.late_steepening": {
+    "hash": "c6e8de8c0b8d95dc4d3d69f35cb433529ab5596aad4c31e4e3579fabc5d81a05",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "rise.two_stage": {
+    "hash": "75ba6ba3007c24db69c71ca26a315e040da5577a54a072c8d6364c2e940d7737",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "rise.crest_relief": {
+    "hash": "22eec0f124121ada56f3c63536c2e99940f29cfbaf11c1046671faed4f53c092",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "fall.gentle_descent": {
+    "hash": "b912726040d9f0e11f18eb826b8a4790154e006b36aecab84c1653acc23dcd1e",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "fall.long_descent": {
+    "hash": "3e1e255a50478a3231ab0baae99f50e96080b6eee1566d166ef2558221b74e54",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "fall.late_compression": {
+    "hash": "184419c3ac901fbd1b8fa625990242d35ac7cef95159721dbb113465c9041e17",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "fall.terraced": {
+    "hash": "4fe7ed4dcdea391250a6f573bb7070deff2824da66f783932ea2fbe70a090fd7",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "fall.steep_shelf": {
+    "hash": "b24107e81f2d6e752fcc1370c626ae78d2d09d1d63128cd9cc7ca44b232a0360",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "hill.round_roller": {
+    "hash": "d23bcb44c8294c92830fd2bf94aaaa3f723bef94101f954e67d2955277552ea5",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "hill.early_crest": {
+    "hash": "8dbaa990c7a2fd786a9dab499d130fc0bdee9e3a3d4310f22dddcfd124be9244",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "hill.late_crest": {
+    "hash": "08e9858f8728f3059fe5c45b1c87bdea64c3196e081bb0dea80b1b4eb54507d4",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "hill.mesa": {
+    "hash": "4fcf71fd5407974c39e0634282619cfa3f170d554984aaf625ccac518f41f776",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "hill.double_crest": {
+    "hash": "0b45793b06cabd4d7373eb4d21bef2b16287adfcdb47d851ee4b372536c9fd62",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "valley.shallow_bowl": {
+    "hash": "d967120df68a18f9c986f3f934388b967b625fb1d610b094318b4a8d5ee358b4",
+    "depths": {
+      "terrain": 6.0
+    }
+  },
+  "valley.deep_bowl": {
+    "hash": "af310966fc45b0eb5234bba245ba4731fe555d4f631ae0496b582fdee72d925e",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "valley.long_floor": {
+    "hash": "2783be2e47d721907694bc6e4f3890f47f94562be937406ed0b81b88275586c3",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "valley.offset_exit": {
+    "hash": "d361d89492dc20391dada6cb944bd9ae9b7bc07a37ec80a200cf9a9e55187aea",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "valley.double_bowl": {
+    "hash": "02910ad66b23cf6c34e2fb6c37d63d4ec8fa7017f45776d069b1195cd7669c3e",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "wave.two_soft": {
+    "hash": "06966ad46dc38ce09588b7e4d5b6117e448089529ca2bdd7b63e2a82ad463802",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "wave.three_even": {
+    "hash": "3d295364c464a831a6749c6a9b9ce02d3c95e5c43cf48743c830cb7add45b287",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "wave.growing": {
+    "hash": "f70b59808e598f7fac855ec920081a6ab465a580eabc66e58760efe09a485409",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "wave.irregular": {
+    "hash": "faf6c81a01f6d775d8f59a049953eeea4b34cb53fff27fa05f40e5d04898577f",
+    "depths": {
+      "terrain": 6
+    }
+  },
+  "wave.trough_train": {
+    "hash": "1521bb057ced3f7147e1886e92ec36357fcc5284532c652f558d474b2316e9ee",
+    "depths": {
+      "terrain": 6.0
+    }
+  },
+  "kicker.low_skip": {
+    "hash": "4f55ae77a7ddfa46ab9b243ab20454018201cb155f34dedd4a33a2c2536a30e8",
+    "depths": {
+      "launch": 6,
+      "landing_recovery": 6.0
+    }
+  },
+  "kicker.quick_pop": {
+    "hash": "09ac361ac41b9ba77f583bedc0a21477197a72f9652c0a2952b406e20960444e",
+    "depths": {
+      "launch": 6,
+      "landing_recovery": 6.0
+    }
+  },
+  "kicker.long_flick": {
+    "hash": "1534758330537e4b2b4f5aae88b48b95e7c8b05f3de5a1cf6112fe95b0e2ae0c",
+    "depths": {
+      "launch": 6,
+      "landing_recovery": 6.0
+    }
+  },
+  "kicker.high_pop": {
+    "hash": "500f51736e2bb18428b2473ce378fd9d9ff7bd029ab706c2fe45f9878e4f5a56",
+    "depths": {
+      "launch": 6,
+      "landing_recovery": 6.0
+    }
+  },
+  "kicker.precision_pop": {
+    "hash": "a18def2d08261d081c22718cf5f7a92803c1a77915ae2b9db8215c3fe646ba8f",
+    "depths": {
+      "launch": 6,
+      "landing_recovery": 6.0
+    }
+  },
+  "curved_ramp.gentle_scoop": {
+    "hash": "1b0b5d0c573b6cc043344a37ae02df59faf41265b07dd172398b1824faa0a3ab",
+    "depths": {
+      "launch": 6.0,
+      "scoop_catch": 6.0
+    }
+  },
+  "curved_ramp.deep_scoop": {
+    "hash": "8eda5cc0c3fce2bb255bf90ea9af3cdfc410d6f91aeebb385b5e1d19cfe5bd12",
+    "depths": {
+      "launch": 6.0,
+      "scoop_catch": 6.0
+    }
+  },
+  "curved_ramp.speed_scoop": {
+    "hash": "0b585bf6d6c5168a5efbed9850dbe44be9aa06b08deb140c835e1427ba57661d",
+    "depths": {
+      "launch": 6.0,
+      "scoop_catch": 6.0
+    }
+  },
+  "curved_ramp.trick_scoop": {
+    "hash": "5fb35b6e73d099e67cef86dc985f04237987b118dece8cce505edac493e20215",
+    "depths": {
+      "launch": 6.000000000000001,
+      "scoop_catch": 6.0
+    }
+  },
+  "curved_ramp.raised_catch": {
+    "hash": "71565225a34db7783e12daadb2033db624a97ca7cebc23bdbbc90a6e1c615b7c",
+    "depths": {
+      "launch": 6.0,
+      "scoop_catch": 6.0
+    }
+  },
+  "tabletop.learner": {
+    "hash": "0b1256f4ccc169d46eeef4c30339b4f7d8db73b4cf52935aff5e36828a2eb980",
+    "depths": {
+      "rollable_table": 6
+    }
+  },
+  "tabletop.long_deck": {
+    "hash": "f2df637c0a86f8d5ef565159be0629c5b6713de44e544c8a45c09151772425c4",
+    "depths": {
+      "rollable_table": 6
+    }
+  },
+  "tabletop.steep_face": {
+    "hash": "43005e9d5c13286012ba6d71e95851e062cc1ca295909c2ac095386f5665829c",
+    "depths": {
+      "rollable_table": 6.0
+    }
+  },
+  "tabletop.trick_table": {
+    "hash": "aa970ecdc08db04f39f7a831d48de6e896d16478fcc3792bdf80e7f0e4aa569f",
+    "depths": {
+      "rollable_table": 6.0
+    }
+  },
+  "tabletop.brake_table": {
+    "hash": "d3ef44fb0eac6437daec44e3b5b71153132cdb4c51506a59470d325bbdb3b334",
+    "depths": {
+      "rollable_table": 6
+    }
+  },
+  "gap.intro": {
+    "hash": "d1a5ba56b5526acd299ba1f9d337fd555488d38dac9ea964acc6c7d99e43aac3",
+    "depths": {
+      "launch": 6,
+      "landing_recovery": 6.0
+    }
+  },
+  "gap.flow_double": {
+    "hash": "3fca804e9d82eab0821d86b2a8eafca635ce4bd4bbbbb12e4825bb8ab0981b37",
+    "depths": {
+      "launch": 6,
+      "landing_recovery": 6.0
+    }
+  },
+  "gap.long_clear": {
+    "hash": "466346645bbee20eb8d9c4cfdcaf3a889568f3b14f5868048715cd557e7fb33b",
+    "depths": {
+      "launch": 6,
+      "landing_recovery": 6.0
+    }
+  },
+  "gap.precision": {
+    "hash": "bf96df1ab209bb5578ae932b05a566d89e4c125d7b8ea38913a44bf2060eb184",
+    "depths": {
+      "launch": 6,
+      "landing_recovery": 6.0
+    }
+  },
+  "gap.trick_gap": {
+    "hash": "955d2a23689309276305dd25b4f11ff51486c16b63867b2ba84e5ff52d65966e",
+    "depths": {
+      "launch": 6,
+      "landing_recovery": 6.0
+    }
+  },
+  "step_up.small_shelf": {
+    "hash": "cdbb17f4eca937b53e2c4a4d669f6c677d18ac13cc3b2c027287199c2f82a3bd",
+    "depths": {
+      "launch": 6,
+      "elevated_shelf": 6.0
+    }
+  },
+  "step_up.long_shelf": {
+    "hash": "044c1452bc3c1cffb9fd3e2fce0104caaa53d624d1ca8408eaa716368bcc233d",
+    "depths": {
+      "launch": 6,
+      "elevated_shelf": 6.0
+    }
+  },
+  "step_up.high_shelf": {
+    "hash": "8496a2b68b0172e220058dd739fb0438fa25eb9fa9c9e72db85f480cfaf11453",
+    "depths": {
+      "launch": 6,
+      "elevated_shelf": 6.0
+    }
+  },
+  "step_up.precision_shelf": {
+    "hash": "614d41bd52512595e310352b0cf3782218072469a69377a7ab90d31553f60a8d",
+    "depths": {
+      "launch": 6,
+      "elevated_shelf": 6.0
+    }
+  },
+  "step_up.uphill_extension": {
+    "hash": "454f26154120a578f1864350df3cbd6319533554556cf577b226011584d982a8",
+    "depths": {
+      "launch": 6,
+      "elevated_shelf": 6.0
+    }
+  },
+  "step_down.gentle": {
+    "hash": "37f81cfc75a041ed539e4cdd1e2f632370e3baf7c119bb8efceb8fb90da3a117",
+    "depths": {
+      "launch": 6,
+      "descending_shelf": 6.0
+    }
+  },
+  "step_down.long": {
+    "hash": "3a5c98fca0d63fe0814850ad72e5027726b1e85053a379082413afc420338524",
+    "depths": {
+      "launch": 6,
+      "descending_shelf": 6.0
+    }
+  },
+  "step_down.deep": {
+    "hash": "8a4beb4799e843903804a9390ad41f00fe2c48a903d84e43f6a3eaeb577badf2",
+    "depths": {
+      "launch": 6,
+      "descending_shelf": 6
+    }
+  },
+  "step_down.tight": {
+    "hash": "d4b2a1834d604fb9fdfe7b2be901a0cf31cdef676cbdb422186d0f8d779cdd98",
+    "depths": {
+      "launch": 6,
+      "descending_shelf": 6.000000000000001
+    }
+  },
+  "step_down.trick": {
+    "hash": "83e377471a6ffb4714e33c357937739031168a9df8df4b202985b9d0e4fa2d10",
+    "depths": {
+      "launch": 6,
+      "descending_shelf": 6
+    }
+  },
+  "drop.small": {
+    "hash": "c2669ec6326e9cb5021656de399d4d9bf3f371ceac02606ad1e6f58e1a4678ae",
+    "depths": {
+      "launch": 6,
+      "landing_recovery": 5.999999999999999
+    }
+  },
+  "drop.deep": {
+    "hash": "13edf8254f9ca497cf5747be29e2e9e78a549c37fbadee5aecea71487df8d77d",
+    "depths": {
+      "launch": 6,
+      "landing_recovery": 6
+    }
+  },
+  "drop.offset": {
+    "hash": "84c525c9a2f2f72cfd260b285a07aab315a47550ef608209c0216e7e93919885",
+    "depths": {
+      "launch": 6,
+      "landing_recovery": 6
+    }
+  },
+  "drop.brake": {
+    "hash": "af6f4da6511339f736089fc1c62b73e203596f3241f4b026bd51ed9e1cad651f",
+    "depths": {
+      "launch": 6,
+      "landing_recovery": 6.0
+    }
+  },
+  "drop.long_runout": {
+    "hash": "3323585675fca880116452ae262b71ab1d916b363e724388f3586f7731084237",
+    "depths": {
+      "launch": 6,
+      "landing_recovery": 6
+    }
+  },
+  "platform.flat_bridge": {
+    "hash": "92cdd18ff3e4b2996871f7a922c6b7112617a60afc39b2b4ef40c1ec95522d61",
+    "depths": {
+      "safe_fallback": 6
+    }
+  },
+  "platform.arched_bridge": {
+    "hash": "ed268fded653aaa1d00675325075a828113e10b6e83952d6ca91438aa3387b85",
+    "depths": {
+      "safe_fallback": 6
+    }
+  },
+  "platform.uphill_bridge": {
+    "hash": "6fbeb5d842b1b871195f596fd1cc2a6c9d81aa0bdc4f413fe88c61a90c1fcab2",
+    "depths": {
+      "safe_fallback": 6
+    }
+  },
+  "platform.downhill_bridge": {
+    "hash": "d9633c2cd591945b843c5880b0fb65b24f04c57447081e2160da3758bf6a2989",
+    "depths": {
+      "safe_fallback": 6
+    }
+  },
+  "platform.wave_bridge": {
+    "hash": "81df476cc46ff2324bd3da60a430a64350a6fba1de0d2eae339d386346a67362",
+    "depths": {
+      "safe_fallback": 6
+    }
+  },
+  "platform.crowned_span": {
+    "hash": "27212946af1f572fc4a28a907fd7554af1dfffeaf1010194d29ed77c2454112c",
+    "depths": {
+      "safe_fallback": 6
+    }
+  },
+  "platform.sag_bridge": {
+    "hash": "b30e4c89ba1e034a6fde57a80bcd24c7184e6fa153847f30e53b7ca025b2327b",
+    "depths": {
+      "safe_fallback": 6
+    }
+  },
+  "platform.double_hump": {
+    "hash": "7429d87974aafc130952252f449bab70795ca10f108dbd7ea7067e701346a616",
+    "depths": {
+      "safe_fallback": 6
+    }
+  },
+  "platform.switchback_bridge": {
+    "hash": "76ddfe108274f06d344cec966112bbb1f17fc6056a5dfcb1243a52a59a8e200b",
+    "depths": {
+      "safe_fallback": 6
+    }
+  },
+  "platform.skyline_bridge": {
+    "hash": "048437fbe7b2abc6f30c36c4e37dc1668384c40d18883a65a3118808311632cd",
+    "depths": {
+      "safe_fallback": 6
+    }
+  },
+  "balance.single_curb": {
+    "hash": "27593657d9ba463fd4bad80682aab5f700a9d4525a138dd67d2e71c823aee528",
+    "depths": {
+      "intentional_ledges": 6.0
+    }
+  },
+  "balance.double_curb": {
+    "hash": "c76198886b5b53ecfc4a20b6c3fcb1dd110cffa6a90c4e15962323d39769f90b",
+    "depths": {
+      "intentional_ledges": 6.0
+    }
+  },
+  "balance.unequal_stairs": {
+    "hash": "8390e1eecca0df7e4f9e971300b52185f88f1b6bc788d96de89c42ae88de2858",
+    "depths": {
+      "intentional_ledges": 6.0
+    }
+  },
+  "balance.tall_ledge": {
+    "hash": "d684459f576ef1dc25a8eff200468efdbe0c7b6f1d352255355bc4544bd43721",
+    "depths": {
+      "intentional_ledges": 6.0
+    }
+  },
+  "balance.tight_stairs": {
+    "hash": "935e38aa39c96aebb8774392f270b264a22eebe0a47fcc210bd802954fef0d6f",
+    "depths": {
+      "intentional_ledges": 6.0
+    }
+  },
+  "spring_high.lift_1": {
+    "hash": "18b94c3f53578ecf719e15fe47727d78288c5913d952ef94361c29bff20a5432",
+    "depths": {
+      "spring_approach": 22.0,
+      "custom_shape_01": 18.0
+    }
+  },
+  "spring_high.lift_2": {
+    "hash": "dafe6727af6db51c3cb5ba7bc339d48e7a9289a5f8248a8889da779c1aaf860b",
+    "depths": {
+      "spring_approach": 12.0,
+      "spring_lower_recovery": 6.0
+    }
+  },
+  "spring_high.lift_3": {
+    "hash": "7e372dfba01ebae56dde61bdecad9d9d7bc3dd62dd7126c352f59326e5da4adb",
+    "depths": {
+      "spring_approach": 12.0,
+      "spring_lower_recovery": 6
+    }
+  },
+  "spring_high.lift_4": {
+    "hash": "52c829379b6fa26bf4f1ad0f8cbfd96102bd88f874500d20e8043359eba9b76c",
+    "depths": {
+      "spring_approach": 12.0,
+      "spring_lower_recovery": 6
+    }
+  },
+  "spring_high.lift_5": {
+    "hash": "c01ce49022677841a3f7febe083fdf20c187f9ee2aa0a9a7b553b35345338369",
+    "depths": {
+      "spring_approach": 12.0,
+      "spring_lower_recovery": 6
+    }
+  },
+  "spring_high.dip_lift": {
+    "hash": "15f0b6041783969e434c06919e036f44bcab7090f06b047d28837d28921065c7",
+    "depths": {
+      "spring_approach": 6
+    }
+  },
+  "spring_high.ramp_lift": {
+    "hash": "1b41c2e36c932fbf2419a8bfd5f49a129470d157da462f0e3af65e5612085700",
+    "depths": {
+      "spring_approach": 6.0
+    }
+  },
+  "spring_high.crest_lift": {
+    "hash": "7d83eb198d0b8a0971c6761e99f383a9858f3945e43ea9d7ea6079d932477dd9",
+    "depths": {
+      "spring_approach": 6
+    }
+  },
+  "spring_high.roller_lift": {
+    "hash": "6159672f9d18cf354f8e67b24c11d68c06ece35bf3df3afcf33bea4bb8a2622a",
+    "depths": {
+      "spring_approach": 6
+    }
+  },
+  "spring_high.summit_lift": {
+    "hash": "8b7cde39cfab6e1a9f4568c45309b6aae725d6009897cf52042b8086e5769266",
+    "depths": {
+      "spring_approach": 6.0
+    }
+  },
+  "spring_far.crossing_1": {
+    "hash": "3bf575b083df1f6cdb9449c81d281bd1bfe75a75278eabbd55d1997837ae68e8",
+    "depths": {
+      "spring_approach": 14.0,
+      "spring_lower_recovery": 6.0
+    }
+  },
+  "spring_far.crossing_2": {
+    "hash": "276b15714552b70a8d5817f08ac38493f1181444889c028387b971725d0c5a5f",
+    "depths": {
+      "spring_approach": 12.0,
+      "spring_lower_recovery": 6
+    }
+  },
+  "spring_far.crossing_3": {
+    "hash": "ff3e198c75f9835a461342a3597849229ac8fdbfd4b313b5fbce879663f57d7a",
+    "depths": {
+      "spring_approach": 12.0,
+      "spring_lower_recovery": 6
+    }
+  },
+  "spring_far.crossing_4": {
+    "hash": "e55371f5fb90c3391d904ff8cf6759369c470c5b559dc9ca9dd9c9bb066efd66",
+    "depths": {
+      "spring_approach": 12.0,
+      "spring_lower_recovery": 6
+    }
+  },
+  "spring_far.crossing_5": {
+    "hash": "338a22e4d997e661ec5294c122868bce5bc35b7e818f9e5d1123f3129d20858c",
+    "depths": {
+      "spring_approach": 12.0,
+      "spring_lower_recovery": 6
+    }
+  },
+  "spring_far.low_skim": {
+    "hash": "eed153e7b8057294348888ecc01b2068532e91f52db7a98344d66a0be154a7e0",
+    "depths": {
+      "spring_approach": 6.0
+    }
+  },
+  "spring_far.dip_crossing": {
+    "hash": "e5f81d44c684da83d95a5d0e4a905f4924248528a97dcf01c51f6768f9fa8796",
+    "depths": {
+      "spring_approach": 6
+    }
+  },
+  "spring_far.downhill_crossing": {
+    "hash": "970543e9aa7285b5016e344f70d666a5d1235f6ca1cb0304a393fd2a546e1f55",
+    "depths": {
+      "spring_approach": 6.0
+    }
+  },
+  "spring_far.roller_crossing": {
+    "hash": "a48f6589ec9f8063398069eec2e6f1a2ed58dca3ded0246580626977af2f7e0b",
+    "depths": {
+      "spring_approach": 6
+    }
+  },
+  "spring_far.frontier_crossing": {
+    "hash": "7abc3facf92a1512fe6d7890882c3d1071e9ac64865243371c440684d585f9bb",
+    "depths": {
+      "spring_approach": 6
+    }
+  },
+  "explosive_loop.round": {
+    "hash": "72600cfd0063bdb67060cbeecce866f2074808ddc050565e2ca602b545e3fcbc",
+    "depths": {
+      "exit_recovery": 10.0,
+      "entry_run": 10.0
+    }
+  },
+  "explosive_loop.double_ring": {
+    "hash": "377e39c9075aa4fbbb92c109d8cbf78cd98eb0cd62da8dfc33ea3d58ac729c57",
+    "depths": {
+      "exit_recovery": 10.0,
+      "entry_run": 10.0
+    }
+  },
+  "explosive_loop.triple_ring": {
+    "hash": "16969f463ac4ce4f2fbef496cf010682b8e2f8723e953169ec991409be1d5cde",
+    "depths": {
+      "exit_recovery": 10.0,
+      "entry_run": 10.0
+    }
+  }
+}

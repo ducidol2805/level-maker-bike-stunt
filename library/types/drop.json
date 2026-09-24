@@ -5,6 +5,7 @@
   "variants": [
     {
       "id": "drop.small",
+      "libID": 61,
       "name": "small",
       "difficulty": 1,
       "intent": "Roll off",
@@ -27,6 +28,7 @@
     },
     {
       "id": "drop.deep",
+      "libID": 62,
       "name": "deep",
       "difficulty": 3,
       "intent": "Descending alignment",
@@ -49,6 +51,7 @@
     },
     {
       "id": "drop.offset",
+      "libID": 63,
       "name": "offset",
       "difficulty": 3,
       "intent": "Horizontal commitment",
@@ -71,6 +74,7 @@
     },
     {
       "id": "drop.brake",
+      "libID": 64,
       "name": "brake",
       "difficulty": 4,
       "intent": "Slow for short catch",
@@ -93,6 +97,7 @@
     },
     {
       "id": "drop.long_runout",
+      "libID": 65,
       "name": "long runout",
       "difficulty": 2,
       "intent": "Recovery practice",

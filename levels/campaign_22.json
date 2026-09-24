@@ -1,7 +1,7 @@
 {
   "MainPlatform": [
     {
-      "id": "s00_terrain",
+      "id": "s00_1_terrain",
       "closed": true,
       "points": [
         {
@@ -216,7 +216,7 @@
         },
         {
           "x": 196.0,
-          "y": -6,
+          "y": -15.0,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -230,7 +230,7 @@
         },
         {
           "x": -40,
-          "y": -6,
+          "y": -15.0,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -245,18 +245,47 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 15,
+        "libID": 1,
+        "libName": "terrain",
         "sourceVariant": "flat.launch_run",
+        "sourceShapeLabels": [
+          {
+            "id": "s00_1_terrain",
+            "x": 18.0,
+            "y": -7.5
+          },
+          {
+            "id": "s01_9_terrain",
+            "x": 55.0,
+            "y": -3.5
+          },
+          {
+            "id": "s02_77_intentional_ledges",
+            "x": 100.0,
+            "y": -2.2
+          },
+          {
+            "id": "s03_2_terrain",
+            "x": 138.0,
+            "y": -2.2
+          },
+          {
+            "id": "s04_52_launch",
+            "x": 173.0,
+            "y": 0.8000000000000007
+          }
+        ],
         "sourceShapeIds": [
-          "s00_terrain",
-          "s01_terrain",
-          "s02_intentional_ledges",
-          "s03_terrain",
-          "s04_launch"
+          "s00_1_terrain",
+          "s01_9_terrain",
+          "s02_77_intentional_ledges",
+          "s03_2_terrain",
+          "s04_52_launch"
         ]
       }
     },
     {
-      "id": "s04_landing_recovery",
+      "id": "s04_52_landing_recovery",
       "closed": true,
       "points": [
         {
@@ -695,7 +724,7 @@
         },
         {
           "x": 567.6,
-          "y": -6,
+          "y": -15.0,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -709,7 +738,7 @@
         },
         {
           "x": 208.0,
-          "y": -6,
+          "y": -15.0,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -724,21 +753,65 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 31,
+        "libID": 52,
+        "libName": "landing_recovery",
         "sourceVariant": "step_up.long_shelf",
+        "sourceShapeLabels": [
+          {
+            "id": "s04_52_landing_recovery",
+            "x": 232.8,
+            "y": 1.8000000000000007
+          },
+          {
+            "id": "s05_23_terrain",
+            "x": 283.6,
+            "y": -3.0467299681104505
+          },
+          {
+            "id": "s06_78_intentional_ledges",
+            "x": 342.6,
+            "y": -0.94672996811045
+          },
+          {
+            "id": "s07_3_terrain",
+            "x": 391.6,
+            "y": -0.14672996811045014
+          },
+          {
+            "id": "s08_9_terrain",
+            "x": 426.6,
+            "y": 3.8532700318895508
+          },
+          {
+            "id": "s09_77_intentional_ledges",
+            "x": 471.6,
+            "y": 5.1532700318895515
+          },
+          {
+            "id": "s10_2_terrain",
+            "x": 509.6,
+            "y": 5.1532700318895515
+          },
+          {
+            "id": "s11_52_launch",
+            "x": 544.6,
+            "y": 8.153270031889551
+          }
+        ],
         "sourceShapeIds": [
-          "s04_landing_recovery",
-          "s05_terrain",
-          "s06_intentional_ledges",
-          "s07_terrain",
-          "s08_terrain",
-          "s09_intentional_ledges",
-          "s10_terrain",
-          "s11_launch"
+          "s04_52_landing_recovery",
+          "s05_23_terrain",
+          "s06_78_intentional_ledges",
+          "s07_3_terrain",
+          "s08_9_terrain",
+          "s09_77_intentional_ledges",
+          "s10_2_terrain",
+          "s11_52_launch"
         ]
       }
     },
     {
-      "id": "s11_landing_recovery",
+      "id": "s11_52_landing_recovery",
       "closed": true,
       "points": [
         {
@@ -995,7 +1068,7 @@
         },
         {
           "x": 799.2,
-          "y": -6,
+          "y": -15.0,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1009,7 +1082,7 @@
         },
         {
           "x": 579.6,
-          "y": -6,
+          "y": -15.0,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1024,17 +1097,41 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 18,
+        "libID": 52,
+        "libName": "landing_recovery",
         "sourceVariant": "step_up.long_shelf",
+        "sourceShapeLabels": [
+          {
+            "id": "s11_52_landing_recovery",
+            "x": 604.4000000000001,
+            "y": 9.153270031889551
+          },
+          {
+            "id": "s12_23_terrain",
+            "x": 655.2,
+            "y": 4.306540063779101
+          },
+          {
+            "id": "s13_78_intentional_ledges",
+            "x": 714.2,
+            "y": 6.406540063779101
+          },
+          {
+            "id": "s14_57_launch",
+            "x": 773.2,
+            "y": 8.9065400637791
+          }
+        ],
         "sourceShapeIds": [
-          "s11_landing_recovery",
-          "s12_terrain",
-          "s13_intentional_ledges",
-          "s14_launch"
+          "s11_52_landing_recovery",
+          "s12_23_terrain",
+          "s13_78_intentional_ledges",
+          "s14_57_launch"
         ]
       }
     },
     {
-      "id": "s14_landing_recovery",
+      "id": "s14_57_landing_recovery",
       "closed": true,
       "points": [
         {
@@ -1207,7 +1304,7 @@
         },
         {
           "x": 1122.8000000000002,
-          "y": -6,
+          "y": -15.0,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1221,7 +1318,7 @@
         },
         {
           "x": 825.2,
-          "y": -6,
+          "y": -15.0,
           "tangentIn": {
             "x": 0,
             "y": 0
@@ -1236,11 +1333,30 @@
       ],
       "metadata": {
         "drivingSurfaceCount": 12,
+        "libID": 57,
+        "libName": "landing_recovery",
         "sourceVariant": "step_down.long",
+        "sourceShapeLabels": [
+          {
+            "id": "s14_57_landing_recovery",
+            "x": 858.0,
+            "y": 5.906540063779101
+          },
+          {
+            "id": "s15_42_rollable_table",
+            "x": 936.8000000000001,
+            "y": -2.7955807657832565
+          },
+          {
+            "id": "s16_5_terrain",
+            "x": 1032.8000000000002,
+            "y": -4.7955807657832565
+          }
+        ],
         "sourceShapeIds": [
-          "s14_landing_recovery",
-          "s15_rollable_table",
-          "s16_terrain"
+          "s14_57_landing_recovery",
+          "s15_42_rollable_table",
+          "s16_5_terrain"
         ]
       }
     }
@@ -1249,7 +1365,7 @@
   "FreePlatform": [],
   "deadzone": [
     {
-      "id": "s04_gap_kill",
+      "id": "s04_52_gap_kill",
       "closed": true,
       "points": [
         {
@@ -1310,11 +1426,13 @@
         }
       ],
       "metadata": {
+        "libID": 52,
+        "libName": "gap_kill",
         "sourceVariant": "step_up.long_shelf"
       }
     },
     {
-      "id": "s11_gap_kill",
+      "id": "s11_52_gap_kill",
       "closed": true,
       "points": [
         {
@@ -1375,11 +1493,13 @@
         }
       ],
       "metadata": {
+        "libID": 52,
+        "libName": "gap_kill",
         "sourceVariant": "step_up.long_shelf"
       }
     },
     {
-      "id": "s14_gap_kill",
+      "id": "s14_57_gap_kill",
       "closed": true,
       "points": [
         {
@@ -1440,6 +1560,8 @@
         }
       ],
       "metadata": {
+        "libID": 57,
+        "libName": "gap_kill",
         "sourceVariant": "step_down.long"
       }
     }
@@ -2580,7 +2702,7 @@
     "units": "unity",
     "previewOnly": false,
     "authoringMode": "curated_catalog_composition",
-    "catalogVersion": "2.7",
+    "catalogVersion": "2.8",
     "recipe": "library/campaign_recipes.json",
     "recipeNumber": 22,
     "subtitle": "Unequal ruin stairs feed a high shelf transfer, followed by a descending terrace exit.",
@@ -2651,6 +2773,7 @@
     "obstacles": [
       {
         "id": "flat.launch_run",
+        "libID": 1,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -2690,6 +2813,7 @@
       },
       {
         "id": "rise.two_stage",
+        "libID": 9,
         "type": "rise",
         "geometryProfile": "rise",
         "ports": {
@@ -2729,6 +2853,7 @@
       },
       {
         "id": "balance.double_curb",
+        "libID": 77,
         "type": "balance",
         "geometryProfile": "balance",
         "ports": {
@@ -2769,6 +2894,7 @@
       },
       {
         "id": "flat.checkpoint_pad",
+        "libID": 2,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -2808,6 +2934,7 @@
       },
       {
         "id": "step_up.long_shelf",
+        "libID": 52,
         "type": "step_up",
         "geometryProfile": "elevated_landing_shelf",
         "ports": {
@@ -2938,6 +3065,7 @@
       },
       {
         "id": "valley.long_floor",
+        "libID": 23,
         "type": "valley",
         "geometryProfile": "valley",
         "ports": {
@@ -2977,6 +3105,7 @@
       },
       {
         "id": "balance.unequal_stairs",
+        "libID": 78,
         "type": "balance",
         "geometryProfile": "balance",
         "ports": {
@@ -3017,6 +3146,7 @@
       },
       {
         "id": "flat.braking_shelf",
+        "libID": 3,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3056,6 +3186,7 @@
       },
       {
         "id": "rise.two_stage",
+        "libID": 9,
         "type": "rise",
         "geometryProfile": "rise",
         "ports": {
@@ -3095,6 +3226,7 @@
       },
       {
         "id": "balance.double_curb",
+        "libID": 77,
         "type": "balance",
         "geometryProfile": "balance",
         "ports": {
@@ -3135,6 +3267,7 @@
       },
       {
         "id": "flat.checkpoint_pad",
+        "libID": 2,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3174,6 +3307,7 @@
       },
       {
         "id": "step_up.long_shelf",
+        "libID": 52,
         "type": "step_up",
         "geometryProfile": "elevated_landing_shelf",
         "ports": {
@@ -3304,6 +3438,7 @@
       },
       {
         "id": "valley.long_floor",
+        "libID": 23,
         "type": "valley",
         "geometryProfile": "valley",
         "ports": {
@@ -3343,6 +3478,7 @@
       },
       {
         "id": "balance.unequal_stairs",
+        "libID": 78,
         "type": "balance",
         "geometryProfile": "balance",
         "ports": {
@@ -3383,6 +3519,7 @@
       },
       {
         "id": "step_down.long",
+        "libID": 57,
         "type": "step_down",
         "geometryProfile": "descending_landing_shelf",
         "ports": {
@@ -3513,6 +3650,7 @@
       },
       {
         "id": "tabletop.long_deck",
+        "libID": 42,
         "type": "tabletop",
         "geometryProfile": "tabletop",
         "ports": {
@@ -3552,6 +3690,7 @@
       },
       {
         "id": "flat.finish_release",
+        "libID": 5,
         "type": "flat",
         "geometryProfile": "flat",
         "ports": {
@@ -3597,6 +3736,7 @@
       {
         "instanceId": "s00",
         "variant": "flat.launch_run",
+        "libID": 1,
         "beatId": "start",
         "role": "setup",
         "tension": 1,
@@ -3612,6 +3752,7 @@
       {
         "instanceId": "s01",
         "variant": "rise.two_stage",
+        "libID": 9,
         "beatId": "mesa_entry",
         "role": "build",
         "tension": 3,
@@ -3627,6 +3768,7 @@
       {
         "instanceId": "s02",
         "variant": "balance.double_curb",
+        "libID": 77,
         "beatId": "ruin_steps",
         "role": "teach",
         "tension": 3,
@@ -3642,6 +3784,7 @@
       {
         "instanceId": "s03",
         "variant": "flat.checkpoint_pad",
+        "libID": 2,
         "beatId": "steps_rest",
         "role": "release",
         "tension": 1,
@@ -3657,6 +3800,7 @@
       {
         "instanceId": "s04",
         "variant": "step_up.long_shelf",
+        "libID": 52,
         "beatId": "sandstone_shelf",
         "role": "practice",
         "tension": 3,
@@ -3674,6 +3818,7 @@
       {
         "instanceId": "s05",
         "variant": "valley.long_floor",
+        "libID": 23,
         "beatId": "mesa_basin",
         "role": "release",
         "tension": 1,
@@ -3689,6 +3834,7 @@
       {
         "instanceId": "s06",
         "variant": "balance.unequal_stairs",
+        "libID": 78,
         "beatId": "eroded_steps",
         "role": "climax",
         "tension": 4,
@@ -3704,6 +3850,7 @@
       {
         "instanceId": "s07",
         "variant": "flat.braking_shelf",
+        "libID": 3,
         "beatId": "descent_brake",
         "role": "release",
         "tension": 1,
@@ -3719,6 +3866,7 @@
       {
         "instanceId": "s08",
         "variant": "rise.two_stage",
+        "libID": 9,
         "beatId": "extended_01_mesa_entry",
         "role": "build",
         "tension": 3,
@@ -3734,6 +3882,7 @@
       {
         "instanceId": "s09",
         "variant": "balance.double_curb",
+        "libID": 77,
         "beatId": "extended_02_ruin_steps",
         "role": "teach",
         "tension": 3,
@@ -3749,6 +3898,7 @@
       {
         "instanceId": "s10",
         "variant": "flat.checkpoint_pad",
+        "libID": 2,
         "beatId": "extended_03_steps_rest",
         "role": "release",
         "tension": 1,
@@ -3764,6 +3914,7 @@
       {
         "instanceId": "s11",
         "variant": "step_up.long_shelf",
+        "libID": 52,
         "beatId": "extended_04_sandstone_shelf",
         "role": "practice",
         "tension": 3,
@@ -3781,6 +3932,7 @@
       {
         "instanceId": "s12",
         "variant": "valley.long_floor",
+        "libID": 23,
         "beatId": "extended_05_mesa_basin",
         "role": "release",
         "tension": 1,
@@ -3796,6 +3948,7 @@
       {
         "instanceId": "s13",
         "variant": "balance.unequal_stairs",
+        "libID": 78,
         "beatId": "extended_06_eroded_steps",
         "role": "climax",
         "tension": 4,
@@ -3811,6 +3964,7 @@
       {
         "instanceId": "s14",
         "variant": "step_down.long",
+        "libID": 57,
         "beatId": "terrace_drop",
         "role": "combine",
         "tension": 3,
@@ -3826,6 +3980,7 @@
       {
         "instanceId": "s15",
         "variant": "tabletop.long_deck",
+        "libID": 42,
         "beatId": "ruin_exit",
         "role": "resolution",
         "tension": 2,
@@ -3841,6 +3996,7 @@
       {
         "instanceId": "s16",
         "variant": "flat.finish_release",
+        "libID": 5,
         "beatId": "finish",
         "role": "resolution",
         "tension": 0,

@@ -15,10 +15,12 @@ from statistics import median
 from bike_stunt.terrain_export import normalize_main_platform, surface_count
 from bike_stunt.spring_object import spring_trajectory
 from bike_stunt.world_scale import scale_world_data
+from bike_stunt.library_ids import validate_library_ids
 
 ROOT = Path(__file__).resolve().parent.parent
 GROUPS = ("MainPlatform", "RampPlatform", "FreePlatform", "deadzone", "InteractableObject")
 DEADZONE_Y_OFFSET = -2.0
+GROUND_DEPTH = 7.5  # 15 editor/map units at the catalog's 2x world scale.
 
 
 def catalog_version():
@@ -39,6 +41,7 @@ def load_catalog():
         actual_total += actual_count
     if catalog.get("variantCount") != actual_total:
         raise ValueError(f"Catalog declares {catalog.get('variantCount')} variants, found {actual_total}")
+    validate_library_ids(v for family in families.values() for v in family['variants'])
     return families
 
 
@@ -87,8 +90,18 @@ def sample_curve(shape, steps=24):
     return result
 
 
-def ground(name, surface):
-    floor = min(p["y"] for p in surface)-3
+def ground_floor(surface, depth=GROUND_DEPTH):
+    """Keep the underside below the full Bezier control hull."""
+    heights = [p['y'] for p in surface]
+    for a, b in zip(surface, surface[1:]):
+        for point, key in ((a, 'tangentOut'), (b, 'tangentIn')):
+            if point.get('tangentMode') != 'linear':
+                heights.append(point['y'] + point.get(key, {}).get('y', 0))
+    return min(heights) - depth
+
+
+def ground(name, surface, *, depth=GROUND_DEPTH):
+    floor = ground_floor(surface, depth)
     points = copy.deepcopy(surface)
     # Closure handles must not bulge beyond the terrain footprint.
     points[0]["tangentIn"] = {"x": 0, "y": 0}
@@ -166,7 +179,8 @@ def apply_geometry_overrides(module, overrides):
                         shape.setdefault('metadata', {})['freeBottomCorners'] = True
                 else:
                     underside = copy.deepcopy(shape["points"][-2:])
-                    floor = min(underside[0]["y"], underside[1]["y"], min(p["y"] for p in checked)-0.01)
+                    ceiling = ground_floor(surface) if group == 'MainPlatform' else min(p['y'] for p in surface)-.01
+                    floor = min(underside[0]["y"], underside[1]["y"], ceiling)
                     underside[0].update(x=surface[-1]["x"], y=floor)
                     underside[1].update(x=surface[0]["x"], y=floor)
                     shape["points"] = checked + underside
@@ -278,9 +292,15 @@ def build_variant(family, variant, *, scale=1):
 def place(module, x, y, instance_id):
     """Instantiate local coordinates without changing the library source."""
     placed = copy.deepcopy(module)
+    id_map = {item['id']: (f"{instance_id}_{module['libID']}_{item['id']}"
+                          if 'points' in item else f"{instance_id}_{item['id']}")
+              for group in GROUPS for item in module[group]}
     for group in GROUPS:
         for item in placed[group]:
-            item["id"] = f"{instance_id}_{item['id']}"
+            local_id = item['id']
+            item['id'] = id_map[local_id]
+            if 'points' in item:
+                item.setdefault('metadata', {}).update(libID=module['libID'], libName=local_id)
             for point in item.get("points",[]):
                 point["x"] += x
                 point["y"] += y
@@ -298,16 +318,16 @@ def place(module, x, y, instance_id):
                 meta=item.get(field,{})
                 if "assemblyId" in meta:
                     meta["assemblyId"] = f"{instance_id}_{meta['assemblyId']}"
-                for reference in ("postDestroyRoute", "revealsRoute", "supportingRingId"):
+                for reference in ("postDestroyRoute", "revealsRoute", "supportingRingId", "supportingShapeId"):
                     if reference in meta:
-                        meta[reference] = f"{instance_id}_{meta[reference]}"
+                        meta[reference] = id_map[meta[reference]]
                 for references in ("revealsObjects", "destroysRoutes"):
                     if references in meta:
-                        meta[references] = [f"{instance_id}_{value}" for value in meta[references]]
+                        meta[references] = [id_map[value] for value in meta[references]]
                 if isinstance(meta.get("commitTrigger"), dict):
                     trigger = meta["commitTrigger"]
                     if "routeId" in trigger:
-                        trigger["routeId"] = f"{instance_id}_{trigger['routeId']}"
+                        trigger["routeId"] = id_map[trigger['routeId']]
                     if isinstance(trigger.get("position"), dict):
                         trigger["position"]["x"] += x
                         trigger["position"]["y"] += y
@@ -326,8 +346,8 @@ def place(module, x, y, instance_id):
             unit[interval]=[value+x for value in unit[interval]]
         unit["checkpointCandidateAfterStabilization"] += x
     for joint in placed["joins"]:
-        joint["from"] = f"{instance_id}_{joint['from']}"
-        joint["to"] = f"{instance_id}_{joint['to']}"
+        joint["from"] = id_map[joint['from']]
+        joint["to"] = id_map[joint['to']]
     return placed
 
 
@@ -366,7 +386,7 @@ def as_level(modules, map_id, name, *, preview=False):
         "Top":{"x":top[0],"y":top[1]},"Bottom":{"x":bottom[0],"y":bottom[1]},
         "design":{"variants":[m["id"] for m in modules],"validationStatus":"unvalidated_vehicle_physics","coinCount":coin_count,
                   "coinPolicy":{"perObstacle":3,"placement":"library_local"},
-                  "obstacles":[{k:m[k] for k in ("id","type","geometryProfile","ports","difficulty","physics","camera","jumpUnit","joins")} for m in modules]}})
+                  "obstacles":[{k:m[k] for k in ("id","libID","type","geometryProfile","ports","difficulty","physics","camera","jumpUnit","joins")} for m in modules]}})
     return normalize_main_platform(level)
 
 
@@ -400,7 +420,7 @@ def build_campaign_level(number):
         else:
             variant=rng.choice(variants)
         local=build_variant(family,variant,scale=1)
-        module=place(local,x,y,f"m{len(modules):02d}")
+        module=place(local,x,y,f"s{len(modules):02d}")
         modules.append(module)
         x,y=module["ports"]["exit"]["x"],module["ports"]["exit"]["y"]
 

@@ -23,6 +23,7 @@ from obstacle_library import ROOT, GROUPS, as_level, build_variant, ground, line
 from spring_object import spring_parameters, spring_trajectory
 from terrain_export import surface_count
 from world_scale import scale_world_data
+from bike_stunt.shape_labels import map_shape_labels
 
 try:
     from matplotlib.figure import Figure
@@ -317,6 +318,9 @@ def build_figure(data: dict[str, Any], tolerance: float, outline_only: bool, sho
                     ha='center', va='bottom', weight="bold", color=UI_TEXT)
 
     x0, x1, y0, y1 = bounds(data)
+    for label in map_shape_labels(data):
+        ax.annotate(label['id'], (label['x'], label['y']), fontsize=8,
+                    ha='center', va='center', weight='bold', color=UI_TEXT, zorder=13)
     for text in ax.texts:
         text.set_path_effects([patheffects.withStroke(linewidth=2, foreground='black')])
     for (x, y), tag, controls in spline_controls(data):
